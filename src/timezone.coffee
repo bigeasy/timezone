@@ -93,11 +93,10 @@
         [ prefix, flags, specifier, rest ] = match.slice(1)
         value = specifiers[specifier](offset, locale)
         if padding[specifier]
-          pad = paddings["0"]
-          console.log pad
+          flag = "0"
           for i in [0..flags.length]
-            pad = paddings[flags[i]] or pad
-          value = pad(value, padding[specifier])
+            flag = flags[i] if paddings[flags[i]]
+          value = paddings[flag](value, padding[specifier])
         transform = transforms.none
         for i in [0..flags.length]
           transform = transforms[flags[i]] or transform

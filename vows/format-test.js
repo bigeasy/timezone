@@ -17,5 +17,11 @@ vows.describe('format').addBatch({
     'the full weekday': function (topic) {
       assert.equal(format(topic.bicentenial, "%A"), "Sunday");
     },
+    'the date': function (topic) {
+      assert.equal(format(topic.bicentenial, "%d"), "04");
+    },
+    'the single-digit date': function (topic) {
+      assert.equal(format(topic.bicentenial, "%e"), "4");
+    }
   }
 }).export(module);
