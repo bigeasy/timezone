@@ -104,5 +104,6 @@
         format = rest
       else if format.length
         output.push format
+        format = ""
     output.join ""
 )(if module? and module.exports? then module.exports else this.timezone = {})

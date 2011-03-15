@@ -24,13 +24,12 @@ task "gitignore", "create a .gitignore for node-ec2 based on git branch", ->
                 lib-cov
                 .DS_Store
                 **/.DS_Store
+                lib/*
                 
                 '''
 
     if branch is "gh-pages"
       gitignore += '''
-                   lib/packet.js
-                   lib/pattern.js
                    '''
     else if branch is "master"
       gitignore += '''
