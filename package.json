@@ -1,0 +1,6 @@
+{   "name":             "timezone"
+,   "version":          "0.0.1"
+,   "author":           "Alan Gutierrez"
+,   "directories":      { "lib" : "./lib" }
+,   "main":             "./lib/timezone"
+}
