@@ -25,6 +25,9 @@ vows.describe('format').addBatch({
     'the date unpadded': function (topic) {
       assert.equal(format(topic.bicentenial, "%-d"), "4");
     },
+    'the date space padded': function (topic) {
+      assert.equal(format(topic.bicentenial, "%_d"), " 4");
+    },
     'the single-digit date': function (topic) {
       assert.equal(format(topic.bicentenial, "%e"), "4");
     },

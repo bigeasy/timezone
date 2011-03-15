@@ -75,8 +75,9 @@
     j: 3
 
   paddings = { "-": (number) -> number }
-  for char in [ "_", "0" ]
-    paddings[char] = (number, padding) -> pad(number, padding, char)
+  for flag, ch of { "_": " ", "0": "0" }
+    paddings[flag] = do (ch) ->
+      (number, padding) -> pad(number, padding, ch)
 
   transforms =
     none: (value) -> value
@@ -93,7 +94,7 @@
         value = specifiers[specifier](offset, locale)
         if padding[specifier]
           flag = "0"
-          for i in [0..flags.length]
+          for i in [0...flags.length]
             flag = flags[i] if paddings[flags[i]]
           value = paddings[flag](value, padding[specifier])
         transform = transforms.none
