@@ -1,6 +1,8 @@
 # Some local times do not exist, like when clocks are set forward for daylight
 # savings time.
 
+# Wrap everything in a function and pass in an exports map appropriate for node
+# or the browser, depending on where we are.
 ((exports) ->
   locales =
     en_US:
@@ -31,9 +33,9 @@
   # Map the specifiers to a function that implements the specifier.
   specifiers =
     a: (date, locale) -> locale.day.abbrev[date.getUTCDay()]
-    A: (date, locale) -> locale.day.full[date.getDay()]
-    d: (date) -> date.getDate()
-    e: (date) -> date.getDate()
+    A: (date, locale) -> locale.day.full[date.getUTCDay()]
+    d: (date) -> date.getUTCDate()
+    e: (date) -> date.getUTCDate()
     j: (date) ->
       days = 0
       for month in [0..date.getMonth()]
@@ -81,14 +83,15 @@
     none: (value) -> value
     "^": (value) -> value.toUpperCase()
 
-  exports.format = format = (date, format, locale) ->
+  exports.format = format = (date, format, zone, locale) ->
     locale or= locales.en_US
+    offset = date
     output = []
     while format.length
       match = /^(.*?)%([-0_^]?)([aAdejuwUmhbByYc])(.*)$/.exec(format)
       if match
         [ prefix, flags, specifier, rest ] = match.slice(1)
-        value = specifiers[specifier](date, locale)
+        value = specifiers[specifier](offset, locale)
         if padding[specifier]
           pad = paddings["0"]
           console.log pad

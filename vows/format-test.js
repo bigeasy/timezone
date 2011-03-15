@@ -13,6 +13,9 @@ vows.describe('format').addBatch({
     'the weekday abbreviated with percents front and back': function (topic) {
       assert.equal(format(topic.bicentenial, "%%a%"), "%Sun%");
       assert.equal(format(topic.bicentenial, "%%%a%%"), "%%Sun%%");
-    }
+    },
+    'the full weekday': function (topic) {
+      assert.equal(format(topic.bicentenial, "%A"), "Sunday");
+    },
   }
 }).export(module);
