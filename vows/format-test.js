@@ -5,7 +5,9 @@ var vows = require('vows'),
 vows.describe('format').addBatch({
   'We can format': {
     topic: {
-      bicentenial: new Date(Date.UTC(1976, 6, 4))
+      bicentenial: new Date(Date.UTC(1976, 6, 4)),
+      moonwalk: new Date(Date.UTC(1969, 6, 21, 02, 36)),
+      ytk: new Date(Date.UTC(2000, 0, 1)),
     },
     'the weekday abbreviated': function (topic) {
       assert.equal(format(topic.bicentenial, "%a"), "Sun");
@@ -25,6 +27,16 @@ vows.describe('format').addBatch({
     },
     'the single-digit date': function (topic) {
       assert.equal(format(topic.bicentenial, "%e"), "4");
+    },
+    'the day of the year': function (topic) {
+      assert.equal(format(topic.ytk, "%j"), "001");
+      assert.equal(format(topic.moonwalk, "%j"), "202");
+      assert.equal(format(topic.bicentenial, "%j"), "186");
+    },
+    'the day of the year': function (topic) {
+      assert.equal(format(new Date(Date.UTC(2011, 0, 1)), "%j"), "001");
+      assert.equal(format(topic.moonwalk, "%j"), "202");
+      assert.equal(format(topic.bicentenial, "%j"), "186");
     }
   }
 }).export(module);

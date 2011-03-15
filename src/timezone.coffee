@@ -17,15 +17,15 @@
     string = String(number)
     "#{new Array((padding - string.length) + 1).join(char)}#{string}"
 
-  daysInMonth = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
+  monthDayOfYear = [ 1, 32, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335 ]
 
   isLeapYear = (date) ->
-    year = date.getFullYear()
+    year = date.getUTCFullYear()
     if year % 400 is 0
       true
     else if year % 100 is 0
       false
-    else if year modulo 4 is 0
+    else if year % 4 is 0
       true
     else
       false
@@ -37,12 +37,11 @@
     d: (date) -> date.getUTCDate()
     e: (date) -> date.getUTCDate()
     j: (date) ->
-      days = 0
-      for month in [0..date.getMonth()]
-        days += daysInMonth[month]
-      if date.getMonth() > 2 and isLeapYear(date)
+      month = date.getUTCMonth()
+      days = monthDayOfYear[month]
+      if month > 2 and isLeapYear(date)
         days++
-      days += date.getDate()
+      days += date.getUTCDate() - 1
       days
     u: (date) ->
       day = date.getDay() - 1
