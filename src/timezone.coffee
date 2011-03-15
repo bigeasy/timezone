@@ -44,10 +44,10 @@
       days += date.getUTCDate() - 1
       days
     u: (date) ->
-      day = date.getDay() - 1
-      day = 6 if day < 0
+      day = date.getUTCDay()
+      day = 7 if day is 0
       day
-    w: (date) -> date.getDay()
+    w: (date) -> date.getUTCDay()
     U: (date) ->
       utc = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()))
       nyd = new Date(Date.UTC(date.getFullYear(), 0, 1))
