@@ -30,7 +30,7 @@
 
   # Map the specifiers to a function that implements the specifier.
   specifiers =
-    a: (date, locale) -> locale.day.abbrev[date.getDay()]
+    a: (date, locale) -> locale.day.abbrev[date.getUTCDay()]
     A: (date, locale) -> locale.day.full[date.getDay()]
     d: (date) -> date.getDate()
     e: (date) -> date.getDate()
@@ -75,7 +75,6 @@
 
   paddings = { "-": (number) -> number }
   for char in [ "_", "0" ]
-    console.log char
     paddings[char] = (number, padding) -> pad(number, padding, char)
 
   transforms =
@@ -89,7 +88,6 @@
       match = /^(.*?)%([-0_^]?)([aAdejuwUmhbByYc])(.*)$/.exec(format)
       if match
         [ prefix, flags, specifier, rest ] = match.slice(1)
-        console.log [ prefix, flags, specifier, rest ]
         value = specifiers[specifier](date, locale)
         if padding[specifier]
           pad = paddings["0"]
