@@ -3,9 +3,11 @@ fs = require "fs"
 
 {tz} = require "timezone"
 
-bicentenial = new Date(Date.UTC(1976, 6, 4))
-moonwalk = new Date(Date.UTC(1969, 6, 21, 02, 36))
-y2k = new Date(Date.UTC(2000, 0, 1))
+utc = (splat...) -> new Date(Date.UTC.apply(null, splat))
+
+bicentenial = utc(1976, 6, 4)
+moonwalk = utc(1969, 6, 21, 02, 36)
+y2k = utc(2000, 0, 1)
 
 MINUTE = 60 * 1000
 HOUR = MINUTE * 60
@@ -126,3 +128,45 @@ class exports.FormatTest extends TwerpTest
   testLongFormat: (done) ->
     @equal tz("%F", bicentenial), "1976-07-04"
     done 1
+
+  testDialHours: (done) ->
+    @equal tz("%l", utc(2011, 0, 1, 0)), "12"
+    @equal tz("%l", utc(2011, 0, 1, 1)), "1"
+    @equal tz("%l", utc(2011, 0, 1, 12)), "12"
+    @equal tz("%l", utc(2011, 0, 1, 13)), "1"
+    done 4
+
+  testDialHoursPadded: (done) ->
+    @equal tz("%I", utc(2011, 0, 1, 0)), "12"
+    @equal tz("%I", utc(2011, 0, 1, 1)), "01"
+    @equal tz("%I", utc(2011, 0, 1, 12)), "12"
+    @equal tz("%I", utc(2011, 0, 1, 13)), "01"
+    done 4
+
+  testMilitaryHours: (done) ->
+    @equal tz("%k", utc(2011, 0, 1, 0)), " 0"
+    @equal tz("%k", utc(2011, 0, 1, 1)), " 1"
+    @equal tz("%k", utc(2011, 0, 1, 12)), "12"
+    @equal tz("%k", utc(2011, 0, 1, 13)), "13"
+    done 4
+
+  testMilitaryHoursPadded: (done) ->
+    @equal tz("%H", utc(2011, 0, 1, 0)), "00"
+    @equal tz("%H", utc(2011, 0, 1, 1)), "01"
+    @equal tz("%H", utc(2011, 0, 1, 12)), "12"
+    @equal tz("%H", utc(2011, 0, 1, 13)), "13"
+    done 4
+
+  testMeridiem: (done) ->
+    @equal tz("%P", utc(2011, 0, 1, 0)), "am"
+    @equal tz("%P", utc(2011, 0, 1, 1)), "am"
+    @equal tz("%P", utc(2011, 0, 1, 12)), "pm"
+    @equal tz("%P", utc(2011, 0, 1, 13)), "pm"
+    done 4
+
+  testUppercaseMeridiem: (done) ->
+    @equal tz("%p", utc(2011, 0, 1, 0)), "AM"
+    @equal tz("%p", utc(2011, 0, 1, 1)), "AM"
+    @equal tz("%p", utc(2011, 0, 1, 12)), "PM"
+    @equal tz("%p", utc(2011, 0, 1, 13)), "PM"
+    done 4

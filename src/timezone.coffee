@@ -13,6 +13,7 @@
         abbrev: "Jan Feb Mar Apr Jun Jul Aug Sep Oct Nov Dec".split /\s/
         full: "January February March April June July August September October Novomber December".split /\s/
       dateFormat: "%m/%d/%y"
+      meridiem: [ "am", "pm" ]
 
   MINUTE  = 1000 * 60
   HOUR    = MINUTE * 60
@@ -67,6 +68,10 @@
     else
       [ week, date.getUTCFullYear() ]
 
+  dialHours = (date) ->
+    hours = Math.floor(date.getUTCHours() % 12)
+    if hours is 0 then 12 else hours
+
   # Map the specifiers to a function that implements the specifier.
   specifiers =
     a: (date, locale) -> locale.day.abbrev[date.getUTCDay()]
@@ -100,6 +105,12 @@
     D: (date) -> tz("%m/%d/%y", date)
     x: (date, locale) -> tz(locale.dateFormat, date, locale)
     F: (date) -> tz("%Y-%m-%d", date)
+    l: (date) -> dialHours(date)
+    I: (date) -> dialHours(date)
+    k: (date) -> date.getUTCHours()
+    H: (date) -> date.getUTCHours()
+    P: (date, locale) -> locale.meridiem[Math.floor(date.getUTCHours() / 12)]
+    p: (date, locale) -> locale.meridiem[Math.floor(date.getUTCHours() / 12)].toUpperCase()
 
   padding =
     d: 2
@@ -110,6 +121,12 @@
     m: 2
     j: 3
     C: 2
+    I: 2
+    H: 2
+    k: 2
+
+  spaced =
+    k: true
 
   paddings = { "-": (number) -> number }
   for flag, ch of { "_": " ", "0": "0" }
@@ -125,12 +142,12 @@
     offset = date
     output = []
     while format.length
-      match = /^(.*?)%([-0_^]?)([aAdDeFjuwUWVmhbByYcGgCx])(.*)$/.exec(format)
+      match = /^(.*?)%([-0_^]?)([aAdDeFHIjklpPuwUWVmhbByYcGgCx])(.*)$/.exec(format)
       if match
         [ prefix, flags, specifier, rest ] = match.slice(1)
         value = specifiers[specifier](offset, locale)
         if padding[specifier]
-          flag = "0"
+          flag = if spaced[specifier] then "_" else "0"
           for i in [0...flags.length]
             flag = flags[i] if paddings[flags[i]]
           value = paddings[flag](value, padding[specifier])
