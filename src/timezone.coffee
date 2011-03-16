@@ -111,6 +111,7 @@
     H: (date) -> date.getUTCHours()
     P: (date, locale) -> locale.meridiem[Math.floor(date.getUTCHours() / 12)]
     p: (date, locale) -> locale.meridiem[Math.floor(date.getUTCHours() / 12)].toUpperCase()
+    M: (date) -> date.getUTCMinutes()
 
   padding =
     d: 2
@@ -124,6 +125,7 @@
     I: 2
     H: 2
     k: 2
+    M: 2
 
   spaced =
     k: true
@@ -142,7 +144,7 @@
     offset = date
     output = []
     while format.length
-      match = /^(.*?)%([-0_^]?)([aAdDeFHIjklpPuwUWVmhbByYcGgCx])(.*)$/.exec(format)
+      match = /^(.*?)%([-0_^]?)([aAdDeFHIjklMpPuwUWVmhbByYcGgCx])(.*)$/.exec(format)
       if match
         [ prefix, flags, specifier, rest ] = match.slice(1)
         value = specifiers[specifier](offset, locale)

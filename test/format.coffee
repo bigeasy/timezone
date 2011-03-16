@@ -170,3 +170,9 @@ class exports.FormatTest extends TwerpTest
     @equal tz("%p", utc(2011, 0, 1, 12)), "PM"
     @equal tz("%p", utc(2011, 0, 1, 13)), "PM"
     done 4
+
+  testMinutes: (done) ->
+    @equal tz("%M", utc(2011, 0, 1, 0, 0)), "00"
+    @equal tz("%M", utc(2011, 0, 1, 0, 1)), "01"
+    @equal tz("%M", utc(2011, 0, 1, 0, 59)), "59"
+    done 3
