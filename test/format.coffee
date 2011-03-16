@@ -176,3 +176,21 @@ class exports.FormatTest extends TwerpTest
     @equal tz("%M", utc(2011, 0, 1, 0, 1)), "01"
     @equal tz("%M", utc(2011, 0, 1, 0, 59)), "59"
     done 3
+
+  testEpochSeconds: (done) ->
+    @equal tz("%s", utc(1970, 0, 4, 5, 0, 1)), "277201"
+    @equal tz("%s", moonwalk), "-14160240"
+    @equal tz("%s", y2k), "946684800"
+    done 3
+
+  testSeconds: (done) ->
+    @equal tz("%S", utc(1980, 0, 1, 0, 0, 1)), "01"
+    @equal tz("%S", moonwalk), "00"
+    @equal tz("%S", utc(1980, 0, 1, 0, 0, 59)), "59"
+    done 3
+
+  testNanoSeconds: (done) ->
+    @equal tz("%N", y2k), "000000000"
+    @equal tz("%N", utc(1980, 0, 1, 0, 0, 1, 999)), "999000000"
+    @equal tz("%N", utc(1980, 0, 1, 0, 0, 1, 3)), "003000000"
+    done 3
