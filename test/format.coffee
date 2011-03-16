@@ -194,3 +194,19 @@ class exports.FormatTest extends TwerpTest
     @equal tz("%N", utc(1980, 0, 1, 0, 0, 1, 999)), "999000000"
     @equal tz("%N", utc(1980, 0, 1, 0, 0, 1, 3)), "003000000"
     done 3
+
+  testMeridiemTimeFormat: (done) ->
+    @equal tz("%r", moonwalk), "02:36:00 AM"
+    done 1
+
+  testMilitaryTimeFormat: (done) ->
+    @equal tz("%R", moonwalk), "02:36"
+    done 1
+
+  testMilitaryTimeFormatWithSeconds: (done) ->
+    @equal tz("%T", moonwalk), "02:36:00"
+    done 1
+
+  testLocaleTimeFormat: (done) ->
+    @equal tz("%X", moonwalk), "02:36:00"
+    done 1

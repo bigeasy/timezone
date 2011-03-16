@@ -13,6 +13,8 @@
         abbrev: "Jan Feb Mar Apr Jun Jul Aug Sep Oct Nov Dec".split /\s/
         full: "January February March April June July August September October Novomber December".split /\s/
       dateFormat: "%m/%d/%y"
+      timeFormat: "%H:%M:%S"
+      dateTimeFormat: "%a %b %_d %H:%M:%S %Y"
       meridiem: [ "am", "pm" ]
 
   MINUTE  = 1000 * 60
@@ -115,6 +117,11 @@
     s: (date) -> Math.floor(date.getTime() / 1000) # Affeced by TZ in unix date.
     S: (date) -> date.getUTCSeconds()
     N: (date) -> (date.getTime() % 1000) * 1000000
+    r: (date) -> tz("%I:%M:%S %p", date)
+    R: (date) -> tz("%H:%M", date)
+    T: (date) -> tz("%H:%M:%S", date)
+    X: (date, locale) -> tz(locale.timeFormat, date, locale)
+    c: (date, locale) -> tz(locale.dateTimeFormat, date, locale)
 
   padding =
     d: 2
@@ -149,7 +156,7 @@
     offset = date
     output = []
     while format.length
-      match = /^(.*?)%([-0_^]?)([aAdDeFHIjklMNpPsSuwUWVmhbByYcGgCx])(.*)$/.exec(format)
+      match = /^(.*?)%([-0_^]?)([aAcdDeFHIjklMNpPsrRSTuwXUWVmhbByYcGgCx])(.*)$/.exec(format)
       if match
         [ prefix, flags, specifier, rest ] = match.slice(1)
         value = specifiers[specifier](offset, locale)
