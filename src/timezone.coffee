@@ -95,7 +95,7 @@
     B: (date, locale) -> locale.month.full[date.getMonth()]
     y: (date) -> date.getFullYear() % 100
     Y: (date) -> date.getFullYear()
-    c: (date) -> Math.floor(date.getFullYear() / 100) / 100
+    C: (date) -> Math.floor(date.getFullYear() / 100)
 
   padding =
     d: 2
@@ -105,6 +105,7 @@
     g: 2
     m: 2
     j: 3
+    C: 2
 
   paddings = { "-": (number) -> number }
   for flag, ch of { "_": " ", "0": "0" }
@@ -120,7 +121,7 @@
     offset = date
     output = []
     while format.length
-      match = /^(.*?)%([-0_^]?)([aAdejuwUWVmhbByYcGg])(.*)$/.exec(format)
+      match = /^(.*?)%([-0_^]?)([aAdejuwUWVmhbByYcGgC])(.*)$/.exec(format)
       if match
         [ prefix, flags, specifier, rest ] = match.slice(1)
         value = specifiers[specifier](offset, locale)
