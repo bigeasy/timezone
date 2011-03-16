@@ -9,6 +9,7 @@ Development tasks:
    CPAN's DateTime::TimeZone or UNIX `date`.
  * Create a timezone conversion method.
  * Create a date offset method.
+ * Create French and German locales to seed the locale set.
 
 Decisions:
 
@@ -16,5 +17,7 @@ Decisions:
  * On the browser side, it is the job of the client to initialize the timezone
    data, to load it and whatnot.
  * In Node.js, timezone data is loaded *synchonously* as needed, or at startup. 
+ * Make a magic function that does format, parse and date math based on
+   parameter order, to simplify import and minimize burden on namespace.
 
 NODE_PATH=lib vows vows/*.js  --spec
