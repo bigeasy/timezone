@@ -114,3 +114,15 @@ class exports.FormatTest extends TwerpTest
   testCentury: (done) ->
     @equal tz("%C", bicentenial), "19"
     done 1
+
+  testShortFormat: (done) ->
+    @equal tz("%D", bicentenial), "07/04/76"
+    done 1
+
+  testLocaleFormat: (done) ->
+    @equal tz("%x", bicentenial), "07/04/76"
+    done 1
+
+  testLongFormat: (done) ->
+    @equal tz("%F", bicentenial), "1976-07-04"
+    done 1

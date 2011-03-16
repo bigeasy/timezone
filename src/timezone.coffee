@@ -12,6 +12,7 @@
       month:
         abbrev: "Jan Feb Mar Apr Jun Jul Aug Sep Oct Nov Dec".split /\s/
         full: "January February March April June July August September October Novomber December".split /\s/
+      dateFormat: "%m/%d/%y"
 
   MINUTE  = 1000 * 60
   HOUR    = MINUTE * 60
@@ -96,6 +97,9 @@
     y: (date) -> date.getFullYear() % 100
     Y: (date) -> date.getFullYear()
     C: (date) -> Math.floor(date.getFullYear() / 100)
+    D: (date) -> tz("%m/%d/%y", date)
+    x: (date, locale) -> tz(locale.dateFormat, date, locale)
+    F: (date) -> tz("%Y-%m-%d", date)
 
   padding =
     d: 2
@@ -116,12 +120,12 @@
     none: (value) -> value
     "^": (value) -> value.toUpperCase()
 
-  format = (format, date, zone, locale) ->
+  format = (format, date, locale) ->
     locale or= locales.en_US
     offset = date
     output = []
     while format.length
-      match = /^(.*?)%([-0_^]?)([aAdejuwUWVmhbByYcGgC])(.*)$/.exec(format)
+      match = /^(.*?)%([-0_^]?)([aAdDeFjuwUWVmhbByYcGgCx])(.*)$/.exec(format)
       if match
         [ prefix, flags, specifier, rest ] = match.slice(1)
         value = specifiers[specifier](offset, locale)
@@ -146,7 +150,7 @@
 
   parse = (pattern) ->
 
-  exports.tz = exports.timezone = (splat...) ->
+  exports.tz = exports.timezone = tz = (splat...) ->
     return null unless splat.length and splat[0]?
     if splat[0].getTimezoneOffset and splat[0].setUTCFullYear
       offset.apply null, splat
