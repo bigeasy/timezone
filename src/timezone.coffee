@@ -87,6 +87,8 @@
     U: (date) -> weekOfYear(date, 0)
     W: (date) -> weekOfYear(date, 1)
     V: (date) -> iso = isoWeek(date)[0]
+    G: (date) -> iso = isoWeek(date)[1]
+    g: (date) -> iso = isoWeek(date)[1] % 100
     m: (date) -> date.getMonth() + 1
     h: (date, locale) -> locale.month.abbrev[date.getMonth()]
     b: (date, locale) -> locale.month.abbrev[date.getMonth()]
@@ -100,6 +102,7 @@
     U: 2
     W: 2
     V: 2
+    g: 2
     m: 2
     j: 3
 
@@ -117,7 +120,7 @@
     offset = date
     output = []
     while format.length
-      match = /^(.*?)%([-0_^]?)([aAdejuwUWVmhbByYc])(.*)$/.exec(format)
+      match = /^(.*?)%([-0_^]?)([aAdejuwUWVmhbByYcGg])(.*)$/.exec(format)
       if match
         [ prefix, flags, specifier, rest ] = match.slice(1)
         value = specifiers[specifier](offset, locale)
