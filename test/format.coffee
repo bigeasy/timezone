@@ -105,6 +105,44 @@ class exports.FormatTest extends TwerpTest
       @equal tz("%g", readDate(date)), dayOfYear
     done lines.length
 
+  testMonth: (done) ->
+    @equal tz("%m", moonwalk), "07"
+    @equal tz("%m", y2k), "01"
+    done 2
+
+  testShortMonth: (done) ->
+    @equal tz("%h", moonwalk), "Jul"
+    @equal tz("%b", moonwalk), "Jul"
+    @equal tz("%b", utc(1980, 0, 1)), "Jan"
+    @equal tz("%b", utc(1980, 1, 1)), "Feb"
+    @equal tz("%b", utc(1980, 2, 1)), "Mar"
+    @equal tz("%b", utc(1980, 3, 1)), "Apr"
+    @equal tz("%b", utc(1980, 4, 1)), "May"
+    @equal tz("%b", utc(1980, 5, 1)), "Jun"
+    @equal tz("%b", utc(1980, 6, 1)), "Jul"
+    @equal tz("%b", utc(1980, 7, 1)), "Aug"
+    @equal tz("%b", utc(1980, 8, 1)), "Sep"
+    @equal tz("%b", utc(1980, 9, 1)), "Oct"
+    @equal tz("%b", utc(1980, 10, 1)), "Nov"
+    @equal tz("%b", utc(1980, 11, 1)), "Dec"
+    done 14
+
+  testLongMonth: (done) ->
+    @equal tz("%B", moonwalk), "July"
+    @equal tz("%B", utc(1980, 0, 1)), "January"
+    @equal tz("%B", utc(1980, 1, 1)), "February"
+    @equal tz("%B", utc(1980, 2, 1)), "March"
+    @equal tz("%B", utc(1980, 3, 1)), "April"
+    @equal tz("%B", utc(1980, 4, 1)), "May"
+    @equal tz("%B", utc(1980, 5, 1)), "June"
+    @equal tz("%B", utc(1980, 6, 1)), "July"
+    @equal tz("%B", utc(1980, 7, 1)), "August"
+    @equal tz("%B", utc(1980, 8, 1)), "September"
+    @equal tz("%B", utc(1980, 9, 1)), "October"
+    @equal tz("%B", utc(1980, 10, 1)), "November"
+    @equal tz("%B", utc(1980, 11, 1)), "December"
+    done 13
+
   testShortYear: (done) ->
     @equal tz("%y", bicentenial), "76"
     done 1

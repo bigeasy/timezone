@@ -10,8 +10,8 @@
         abbrev: "Sun Mon Tue Wed Thu Fri Sat".split /\s/
         full: "Sunday Monday Tuesday Wednesday Thursday Friday Saturday".split /\s/
       month:
-        abbrev: "Jan Feb Mar Apr Jun Jul Aug Sep Oct Nov Dec".split /\s/
-        full: "January February March April June July August September October Novomber December".split /\s/
+        abbrev: "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split /\s/
+        full: "January February March April May June July August September October November December".split /\s/
       dateFormat: "%m/%d/%y"
       timeFormat: "%H:%M:%S"
       dateTimeFormat: "%a %b %_d %H:%M:%S %Y"
@@ -97,10 +97,10 @@
     V: (date) -> iso = isoWeek(date)[0]
     G: (date) -> iso = isoWeek(date)[1]
     g: (date) -> iso = isoWeek(date)[1] % 100
-    m: (date) -> date.getMonth() + 1
-    h: (date, locale) -> locale.month.abbrev[date.getMonth()]
-    b: (date, locale) -> locale.month.abbrev[date.getMonth()]
-    B: (date, locale) -> locale.month.full[date.getMonth()]
+    m: (date) -> date.getUTCMonth() + 1
+    h: (date, locale) -> locale.month.abbrev[date.getUTCMonth()]
+    b: (date, locale) -> locale.month.abbrev[date.getUTCMonth()]
+    B: (date, locale) -> locale.month.full[date.getUTCMonth()]
     y: (date) -> date.getFullYear() % 100
     Y: (date) -> date.getFullYear()
     C: (date) -> Math.floor(date.getFullYear() / 100)
