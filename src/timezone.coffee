@@ -13,6 +13,10 @@
         abbrev: "Jan Feb Mar Apr Jun Jul Aug Sep Oct Nov Dec".split /\s/
         full: "January February March April June July August September October Novomber December".split /\s/
 
+  MINUTE  = 1000 * 60
+  HOUR    = MINUTE * 60
+  DAY     = HOUR * 24
+
   pad = (number, padding, char) ->
     string = String(number)
     "#{new Array((padding - string.length) + 1).join(char)}#{string}"
@@ -29,6 +33,22 @@
       true
     else
       false
+
+  weekOfYear = (date, startOfWeek) ->
+    utc = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()))
+    nyd = new Date(Date.UTC(date.getUTCFullYear(), 0, 1))
+    diff = (utc.getTime() - nyd.getTime()) / DAY
+    day = utc.getUTCDay()
+    weekStart = (7 - startOfWeek) - utc.getUTCDay()
+    weekStart = 7 if weekStart < 0
+    console.log weekStart
+    remaining = diff - weekStart
+    week = 0
+    if diff > weekStart
+      week++
+      diff -= weekStart
+      week += Math.floor((diff + 7 - 1) / 7 * 7)
+    week
 
   # Map the specifiers to a function that implements the specifier.
   specifiers =
@@ -48,19 +68,8 @@
       day = 7 if day is 0
       day
     w: (date) -> date.getUTCDay()
-    U: (date) ->
-      utc = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()))
-      nyd = new Date(Date.UTC(date.getFullYear(), 0, 1))
-      weekStart = 6 - utc.getDay()
-      weekStart = 7 if weekStart < 0
-      diff = (utc.getTime() - nyd.getTime()) / DAY
-      remaining = diff - weekStart
-      week = 0
-      if diff > weekStart
-        week++
-        diff -= weekStart
-        week += Math.floor((diff + 7 - 1) / 7 * 7)
-      week
+    U: (date) -> weekOfYear(date, 0)
+    W: (date) -> weekOfYear(date, 1)
     m: (date) -> date.getMonth() + 1
     h: (date, locale) -> locale.month.abbrev[date.getMonth()]
     b: (date, locale) -> locale.month.abbrev[date.getMonth()]
@@ -83,7 +92,7 @@
     none: (value) -> value
     "^": (value) -> value.toUpperCase()
 
-  exports.format = format = (date, format, zone, locale) ->
+  format = (format, date, zone, locale) ->
     locale or= locales.en_US
     offset = date
     output = []
@@ -108,4 +117,18 @@
         output.push format
         format = ""
     output.join ""
+
+  isDate = (object) ->
+
+  parse = (pattern) ->
+
+  exports.tz = exports.timezone = (splat...) ->
+    return null unless splat.length and splat[0]?
+    if splat[0].getTimezoneOffset and splat[0].setUTCFullYear
+      offset.apply null, splat
+    else if splat[0].charCodeAt and splat[0].substring
+      if splat.length is 1
+        parse.apply null, splat
+      else
+        format.apply null, splat
 )(if module? and module.exports? then module.exports else this.timezone = {})
