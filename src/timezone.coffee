@@ -140,9 +140,6 @@
     N: 9
     y: 2
 
-  spaced =
-    k: true
-
   paddings = { "-": (number) -> number }
   for flag, ch of { "_": " ", "0": "0" }
     paddings[flag] = do (ch) ->
@@ -162,7 +159,7 @@
         [ prefix, flags, specifier, rest ] = match.slice(1)
         value = specifiers[specifier](offset, locale)
         if padding[specifier]
-          flag = if spaced[specifier] then "_" else "0"
+          flag = if specifier is "k" then "_" else "0"
           for i in [0...flags.length]
             flag = flags[i] if paddings[flags[i]]
           value = paddings[flag](value, padding[specifier])
