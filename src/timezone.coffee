@@ -39,15 +39,17 @@
     nyd = new Date(Date.UTC(date.getUTCFullYear(), 0, 1))
     diff = (utc.getTime() - nyd.getTime()) / DAY
     day = utc.getUTCDay()
-    weekStart = (7 - startOfWeek) - utc.getUTCDay()
-    weekStart = 7 if weekStart < 0
-    console.log weekStart
+    if nyd.getUTCDay() is startOfWeek
+      weekStart = 0
+    else
+      weekStart = (7 - startOfWeek) - nyd.getUTCDay()
+      weekStart = 7 if weekStart < 0
     remaining = diff - weekStart
     week = 0
-    if diff > weekStart
+    if diff >= weekStart
       week++
       diff -= weekStart
-      week += Math.floor((diff + 7 - 1) / 7 * 7)
+      week += Math.floor(diff / 7)
     week
 
   # Map the specifiers to a function that implements the specifier.
@@ -80,6 +82,7 @@
 
   padding =
     d: 2
+    U: 2
     m: 2
     j: 3
 

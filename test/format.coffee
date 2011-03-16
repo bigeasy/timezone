@@ -1,3 +1,4 @@
+fs = require "fs"
 {TwerpTest} = require "twerp"
 
 {tz} = require "timezone"
@@ -5,6 +6,14 @@
 bicentenial = new Date(Date.UTC(1976, 6, 4))
 moonwalk = new Date(Date.UTC(1969, 6, 21, 02, 36))
 y2k = new Date(Date.UTC(2000, 0, 1))
+
+MINUTE = 60 * 1000
+HOUR = MINUTE * 60
+DAY = HOUR * 24
+
+readDate = (date) ->
+  [year, month, day] = /^(\d{4})(\d{2})(\d{2})$/.exec(date).slice(1)
+  new Date(Date.UTC(parseInt(year, 10), parseInt(month, 10) - 1, parseInt(day, 10)))
 
 class exports.FormatTest extends TwerpTest
   testWeekdayShort: ( done ) ->
@@ -53,3 +62,11 @@ class exports.FormatTest extends TwerpTest
     @equal tz("%w", moonwalk), "1"
     @equal tz("%w", bicentenial), "0"
     done 3
+
+  testWeekOfYear: (done) ->
+    lines = fs.readFileSync("#{__dirname}/data/format/U", "utf8").split(/\n/)
+    lines.pop()
+    for line in lines
+      [date, dayOfYear] = line.split /\s+/
+      @equal tz("%U", readDate(date)), dayOfYear
+    done lines.length
