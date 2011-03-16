@@ -102,3 +102,11 @@ class exports.FormatTest extends TwerpTest
       [date, dayOfYear] = line.split /\s+/
       @equal tz("%g", readDate(date)), dayOfYear
     done lines.length
+
+  testShortYear: (done) ->
+    @equal tz("%y", bicentenial), "76"
+    done 1
+
+  testLongYear: (done) ->
+    @equal tz("%Y", bicentenial), "1976"
+    done 1
