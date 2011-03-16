@@ -250,3 +250,8 @@ class exports.FormatTest extends TwerpTest
   testLocaleTimeFormat: (done) ->
     @equal tz("%X", moonwalk), "02:36:00"
     done 1
+
+  testLocaleDateTimeFormat: (done) ->
+    @equal tz("%c", moonwalk), "Mon Jul 21 02:36:00 1969"
+    @equal tz("%c", y2k), "Sat Jan  1 00:00:00 2000"
+    done 2
