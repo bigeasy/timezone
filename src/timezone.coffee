@@ -101,8 +101,8 @@
     h: (date, locale) -> locale.month.abbrev[date.getUTCMonth()]
     b: (date, locale) -> locale.month.abbrev[date.getUTCMonth()]
     B: (date, locale) -> locale.month.full[date.getUTCMonth()]
-    y: (date) -> date.getFullYear() % 100
-    Y: (date) -> date.getFullYear()
+    y: (date) -> date.getUTCFullYear() % 100
+    Y: (date) -> date.getUTCFullYear()
     C: (date) -> Math.floor(date.getFullYear() / 100)
     D: (date) -> tz("%m/%d/%y", date)
     x: (date, locale) -> tz(locale.dateFormat, date, locale)
@@ -138,6 +138,7 @@
     M: 2
     S: 2
     N: 9
+    y: 2
 
   spaced =
     k: true

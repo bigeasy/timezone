@@ -144,12 +144,14 @@ class exports.FormatTest extends TwerpTest
     done 13
 
   testShortYear: (done) ->
+    @equal tz("%y", y2k), "00"
     @equal tz("%y", bicentenial), "76"
-    done 1
+    done 2
 
   testLongYear: (done) ->
+    @equal tz("%Y", y2k), "2000"
     @equal tz("%Y", bicentenial), "1976"
-    done 1
+    done 2
 
   testCentury: (done) ->
     @equal tz("%C", bicentenial), "19"
