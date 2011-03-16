@@ -63,10 +63,26 @@ class exports.FormatTest extends TwerpTest
     @equal tz("%w", bicentenial), "0"
     done 3
 
-  testWeekOfYear: (done) ->
+  testWeekOfYearStartingSunday: (done) ->
     lines = fs.readFileSync("#{__dirname}/data/format/U", "utf8").split(/\n/)
     lines.pop()
     for line in lines
       [date, dayOfYear] = line.split /\s+/
       @equal tz("%U", readDate(date)), dayOfYear
+    done lines.length
+
+  testWeekOfYearStartingMonday: (done) ->
+    lines = fs.readFileSync("#{__dirname}/data/format/W", "utf8").split(/\n/)
+    lines.pop()
+    for line in lines
+      [date, dayOfYear] = line.split /\s+/
+      @equal tz("%W", readDate(date)), dayOfYear
+    done lines.length
+
+  testISOWeek: (done) ->
+    lines = fs.readFileSync("#{__dirname}/data/format/V", "utf8").split(/\n/)
+    lines.pop()
+    for line in lines
+      [date, dayOfYear] = line.split /\s+/
+      @equal tz("%V", readDate(date)), dayOfYear
     done lines.length

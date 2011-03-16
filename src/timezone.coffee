@@ -42,8 +42,8 @@
     if nyd.getUTCDay() is startOfWeek
       weekStart = 0
     else
-      weekStart = (7 - startOfWeek) - nyd.getUTCDay()
-      weekStart = 7 if weekStart < 0
+      weekStart = 7 - nyd.getUTCDay() + startOfWeek
+      weekStart = 1 if weekStart is 8
     remaining = diff - weekStart
     week = 0
     if diff >= weekStart
@@ -51,6 +51,20 @@
       diff -= weekStart
       week += Math.floor(diff / 7)
     week
+
+  isoWeek = (date) ->
+    nyd = new Date(Date.UTC(date.getUTCFullYear(), 0, 1)).getUTCDay()
+    offset = if nyd > 1 and nyd <= 4 then 1 else 0
+    week = weekOfYear(date, 1) + offset
+    if week is 0
+      ny = new Date(Date.UTC(date.getUTCFullYear() - 1, 0, 1))
+      nyd = ny.getUTCDay()
+      week = if nyd is 4 or (nyd is 3 and isLeapYear(ny)) then 53 else 52
+      [ week, date.getUTCFullYear() - 1 ]
+    else if week is 53 and not (nyd is 4 or (nyd is 3 and isLeapYear(date)))
+      [ 1, date.getUTCFullYear() + 1 ]
+    else
+      [ week, date.getUTCFullYear() ]
 
   # Map the specifiers to a function that implements the specifier.
   specifiers =
@@ -72,6 +86,7 @@
     w: (date) -> date.getUTCDay()
     U: (date) -> weekOfYear(date, 0)
     W: (date) -> weekOfYear(date, 1)
+    V: (date) -> iso = isoWeek(date)[0]
     m: (date) -> date.getMonth() + 1
     h: (date, locale) -> locale.month.abbrev[date.getMonth()]
     b: (date, locale) -> locale.month.abbrev[date.getMonth()]
@@ -83,6 +98,8 @@
   padding =
     d: 2
     U: 2
+    W: 2
+    V: 2
     m: 2
     j: 3
 
@@ -100,7 +117,7 @@
     offset = date
     output = []
     while format.length
-      match = /^(.*?)%([-0_^]?)([aAdejuwUmhbByYc])(.*)$/.exec(format)
+      match = /^(.*?)%([-0_^]?)([aAdejuwUWVmhbByYc])(.*)$/.exec(format)
       if match
         [ prefix, flags, specifier, rest ] = match.slice(1)
         value = specifiers[specifier](offset, locale)
