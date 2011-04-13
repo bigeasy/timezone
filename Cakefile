@@ -25,9 +25,18 @@ coffeeSearch = (from, to, commands) ->
       file = match[1]
       source = "#{from}/#{file}.coffee"
       try
-        if fs.statSync(source).mtime > fs.statSync("#{to}/#{file}.js").mtime
+        try
+          stat = fs.statSync("#{to}/#{file}.js")
+         catch e
+          throw e if e.number != process.binding("net").ENOENT
+          try
+            stat = fs.statSync("#{to}/#{file}")
+          catch e
+            throw e if e.number != process.binding("net").ENOENT
+        if not stat or fs.statSync(source).mtime > stat.mtime
           files.push source
       catch e
+        throw e if e.number != process.binding("net").ENOENT
         files.push source
     else
       try
@@ -48,28 +57,40 @@ coffeeSearch = (from, to, commands) ->
   for dir in dirs
     coffeeSearch "#{from}/#{dir}",  "#{to}/#{dir}", commands
 
+shebang = (shebang, files...) ->
+  for file in files
+    try
+      program = file.replace /^(.*)\/(.*?)\..*$/, "$1/$2"
+      contents = "#{shebang}\n#{fs.readFileSync file, "utf8"}"
+      fs.writeFileSync program, contents, "utf8"
+      fs.chmodSync program, 0755
+      fs.unlinkSync file
+    catch e
+      throw e if e.number != process.binding("net").ENOENT
+      continue
+
 task "gitignore", "create a .gitignore for node-ec2 based on git branch", ->
   currentBranch (branch) ->
     gitignore = '''
                 .gitignore
                 lib-cov
                 .DS_Store
+                lib/*
+                bin/*
                 **/.DS_Store
                 
                 '''
 
     if branch is "gh-pages"
       gitignore += '''
-                   lib/packet.js
-                   lib/pattern.js
+                   lib/*
                    '''
     else if branch is "master"
       gitignore += '''
                    documentation
                    site
                    index.html
-                   lib/packet.js
-                   lib/pattern.js
+                   lib/*
                    '''
     fs.writeFile(".gitignore", gitignore)
 
@@ -88,18 +109,20 @@ task "docco", "rebuild the CoffeeScript docco documentation.", ->
 task "compile", "compile the CoffeeScript into JavaScript", ->
   commands = []
   coffeeSearch "src/lib", "lib", commands
+  coffeeSearch "src/bin", "bin", commands
   index = 0
-  next = ->
+  next = (callback) ->
     if commands.length is 0
-      callback() if callback?
+      callback()
     else
       command = commands.shift()
       command.push { customFds: [ 0, 1, 2 ] }
       less = spawn.apply null, command
       less.on "exit", (code) ->
         process.exit(code) unless code is 0
-        next()
-  next()
+        next(callback)
+  next ->
+    shebang "#!/usr/bin/env node", "bin/tz2json.js"
 
 # Run Expresso test coverage.
 task "coverage", "run coverage", ->
