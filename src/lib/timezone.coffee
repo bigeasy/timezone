@@ -3,8 +3,9 @@
 
 # Wrap everything in a function and pass in an exports map appropriate for node
 # or the browser, depending on where we are.
-((exports) ->
-  locales =
+defintion = (exports) ->
+  TIMEZONES = { zones: {}, rules: {} }
+  LOCALES =
     en_US:
       day:
         abbrev: "Sun Mon Tue Wed Thu Fri Sat".split /\s/
@@ -17,7 +18,8 @@
       dateTimeFormat: "%a %b %_d %H:%M:%S %Y"
       meridiem: [ "am", "pm" ]
 
-  MINUTE  = 1000 * 60
+  SECOND  = 1000
+  MINUTE  = SECOND * 60
   HOUR    = MINUTE * 60
   DAY     = HOUR * 24
 
@@ -122,6 +124,12 @@
     T: (date) -> tz("%H:%M:%S", date)
     X: (date, locale) -> tz(locale.timeFormat, date, locale)
     c: (date, locale) -> tz(locale.dateTimeFormat, date, locale)
+    z: (date, locale, tzdata) ->
+      offset = Math.floor(offsetInMilliseconds(tzdata.offset) / 1000 / 60)
+      if offset < 0
+        "-#{pad Math.abs(offset), 4, "0"}"
+      else
+        pad Math.abs(offset), 4, "0"
 
   padding =
     d: 2
@@ -149,10 +157,13 @@
     none: (value) -> value
     "^": (value) -> value.toUpperCase()
 
-  format = (format, date, locale) ->
-    locale or= locales.en_US
-    offset = date
-    output = []
+  # Probably should transpose.
+  format = (date, request) ->
+    { format, locale, zone } = request
+    [ offset, output ] = [ new Date(date), [] ]
+    tzdata = TIMEZONES.zones[zone]
+    if zone isnt "UTC"
+      offset = wallclock(offset, tzdata)
     while format.length
       match = /^(.*?)%([-0_^]?)([aAcdDeFHIjklMNpPsrRSTuwXUWVmhbByYcGgCx])(.*)$/.exec(format)
       if match
@@ -162,7 +173,7 @@
           flag = if specifier is "k" then "_" else "0"
           for i in [0...flags.length]
             flag = flags[i] if paddings[flags[i]]
-          value = paddings[flag](value, padding[specifier])
+          value = paddings[flag](value, padding[specifier], tzdata)
         transform = transforms.none
         for i in [0..flags.length]
           transform = transforms[flags[i]] or transform
@@ -179,13 +190,82 @@
 
   parse = (pattern) ->
 
-  exports.tz = exports.timezone = tz = (splat...) ->
-    return null unless splat.length and splat[0]?
-    if splat[0].getTimezoneOffset and splat[0].setUTCFullYear
-      offset.apply null, splat
-    else if splat[0].charCodeAt and splat[0].substring
-      if splat.length is 1
-        parse.apply null, splat
-      else
-        format.apply null, splat
-)(if module? and module.exports? then module.exports else this.timezone = {})
+  offsetInMilliseconds = (pattern) ->
+    match = /^(-?)(\d)+:(\d)+(?::(\d+))?$/.exec(pattern).slice(1)
+    sign = match.shift()
+    [ hours, minutes, seconds ] = match.map (number) -> parseInt number, 10
+    offset = hours * HOUR
+    offset += minutes * MINUTE
+    offset += (seconds or 0) * SECOND
+    offset *= -1 if sign is '-'
+    console.log offset, pattern
+    offset
+
+  compare: (left, right, fields...) ->
+    for field in fields
+      field = field.replace /^./, (m) -> "getUTC#{m.toUpperCase()}"
+      difference = left[field]() - right[field]()
+      return difference if not difference
+
+  wallclock = (date, tzdata) ->
+    time = date.getTime()
+    for i in [(tzdata.length - 1)..0]
+      candidate = tzdata[i]
+      adjustment = time + offsetInMilliseconds(candidate.offset)
+      console.log time, adjustment, new Date(time).toUTCString(), new Date(adjustment).toUTCString()
+      if candidate.until
+        parsed = new Date(candidate.until)
+        if parsed.getTime() < adjustment
+          break
+      adjusted = adjustment
+    new Date(adjusted)
+
+  exports.tz = tz = (date, splat...) ->
+    throw new Error "invalid arguments" if not date?
+    request = { zone: "UTC", adjustments: [] }
+    # This is temporary, until we change over the tests for date formatting.
+    if typeof date is "string" and date.indexOf("%") != -1
+      request.format = date
+      date = splat.shift()
+    else
+      for argument in splat
+        argument = String(argument)
+        if argument.indexOf("%") != -1
+          request.format or= argument
+        else if TIMEZONES.zones[argument]
+          request.zone or= argument
+        else if /^\w{2}_\w+{2}$/.test argument
+          request.locale or= LOCALES[argument]
+          throw new Error "unknown locale" if not request.locale
+        else
+          request.adjustments.push argument
+    request.locale or= LOCALES.en_US
+    if date.getTime
+      date = date.getTime()
+    else if typeof date is "string"
+      date = parse date, request
+    for adjustment in request.adjustments
+      date = adjust adjustment, request
+    if request.format
+      format date, request
+    else
+      date
+
+  tz.locales = (override) ->
+    if override?
+      for k, v of override
+        LOCALES[k] = v
+    LOCALES
+
+  tz.timezones = (override) ->
+    if override?
+      for k, v of override?.zones
+        TIMEZONES.zones[k] = v
+      for k, v of override?.rules
+        TIMEZONES.rules[k] = v
+    TIMEZONES
+
+if module? and module.exports?
+  defintion module.exports
+else
+  defintion this
