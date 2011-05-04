@@ -28,7 +28,7 @@ class exports.FormatTest extends TwerpTest
     done 2
 
   testWeekdayLong: ( done ) ->
-    @equal tz("%A", bicentenial), "Sundayx"
+    @equal tz("%A", bicentenial), "Sunday"
     done 1
 
   testDate: (done) ->

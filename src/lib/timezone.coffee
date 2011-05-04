@@ -158,7 +158,7 @@ defintion = (exports) ->
     "^": (value) -> value.toUpperCase()
 
   # Probably should transpose.
-  format = (date, request) ->
+  toString = (date, request) ->
     { format, locale, zone } = request
     [ offset, output ] = [ new Date(date), [] ]
     tzdata = TIMEZONES.zones[zone]
@@ -247,7 +247,7 @@ defintion = (exports) ->
     for adjustment in request.adjustments
       date = adjust adjustment, request
     if request.format
-      format date, request
+      toString date, request
     else
       date
 
