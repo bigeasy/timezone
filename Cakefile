@@ -102,7 +102,7 @@ task "index", "rebuild the Node IDL landing page.", ->
 
 # Generate Docco documentation.
 task "docco", "rebuild the CoffeeScript docco documentation.", ->
-  exec "rm -rf documentation && docco src/*.coffee && cp -rf docs documentation && rm -r docs", (err) ->
+  exec "rm -rf documentation && docco src/lib/*.coffee && cp -rf docs documentation && rm -r docs", (err) ->
     throw err if err
 
 # Compile CoffeeScript sources.
