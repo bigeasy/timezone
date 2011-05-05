@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Node Timezone</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="site/idl.css">
+  <script src="http://code.jquery.com/jquery-1.5.2.js" type="text/javascript"></script>
+  <script src="site/idl.js" type="text/javascript"></script>
+</head>
+<body>
+  
+  <a href="http://github.com/bigeasy/node-timezone"><img style="position: fixed; top: 0; right:
+  0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"
+  alt="Fork me on GitHub" /></a>
+  
+  <div id="container">
+    <div id="narrative">
+      
+        
+          <h2 class="namespace"><a name=""></a></h2>
+        
+        
+        
+          <h1>Node Timezone</h1>
+
+<p>Minimalist time library for Node.js and the browser.</p>
+        
+      
+        
+          <h2 class="namespace"><a name="Synopsis">Synopsis</a></h2>
+        
+        
+        
+          <p><strong>FIXME</strong> &mdash; Use <code>assert</code> for examples, after you create a test from this.</p>
+        
+          <div class="highlight"><pre><span class="c1">// Import tz function and initialize.</span>
+<span class="kd">var</span> <span class="nx">tz</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;tz&quot;</span><span class="p">).</span><span class="nx">tz</span><span class="p">;</span>
+<span class="nx">tz</span><span class="p">.</span><span class="nx">timezones</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./zones/northamerica&quot;</span><span class="p">));</span>
+
+<span class="c1">// Parse a UTC date.</span>
+<span class="nx">y2k</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;2000/01/01&quot;</span><span class="p">);</span>
+
+<span class="c1">// Parse a date offset by a time zone.</span>
+<span class="nx">bicentenial</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1976/07/04&quot;</span><span class="p">,</span> <span class="s2">&quot;America/Detroit&quot;</span><span class="p">,</span> <span class="s2">&quot;%c&quot;</span><span class="p">);</span>
+
+<span class="c1">// Date math accounting for daylight savings time.</span>
+<span class="nx">ago</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;6 months ago&quot;</span><span class="p">,</span> <span class="s2">&quot;America/Detroit&quot;</span><span class="p">);</span>
+
+<span class="c1">// Accounts for leap year.</span>
+<span class="nx">date</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="nx">bicentenial</span><span class="p">,</span> <span class="s2">&quot;last year&quot;</span><span class="p">);</span> 
+
+<span class="c1">// Format using UNIX date formats.</span>
+<span class="nx">moonwalk</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1969/06/21 02:36&quot;</span><span class="p">,</span> <span class="s2">&quot;%c&quot;</span><span class="p">,</span> <span class="s2">&quot;America/Houston&quot;</span><span class="p">);</span>
+
+<span class="c1">// Accounts for leap year and DST.</span>
+<span class="nx">date</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="nx">bicentenial</span><span class="p">,</span> <span class="s2">&quot;last January&quot;</span><span class="p">,</span> <span class="s2">&quot;%c&quot;</span><span class="p">,</span> <span class="s2">&quot;America/Detroit&quot;</span><span class="p">);</span>
+<span class="nx">date</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;now&quot;</span><span class="p">,</span> <span class="s2">&quot;last January&quot;</span><span class="p">,</span> <span class="s2">&quot;%c&quot;</span><span class="p">,</span> <span class="s2">&quot;America/Detroit&quot;</span><span class="p">);</span>
+<span class="nx">date</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span> <span class="s2">&quot;last January&quot;</span><span class="p">,</span> <span class="s2">&quot;%c&quot;</span><span class="p">,</span> <span class="s2">&quot;America/Detroit&quot;</span><span class="p">);</span>
+
+<span class="c1">// Format using a locale.</span>
+<span class="nx">bicentenial</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1989/07/14&quot;</span><span class="p">,</span> <span class="s2">&quot;Europe/Paris&quot;</span><span class="p">,</span> <span class="s2">&quot;fr_FR&quot;</span><span class="p">,</span> <span class="s2">&quot;%c&quot;</span><span class="p">);</span>
+
+<span class="c1">// Reduce the noise by creating custom tz functions.</span>
+<span class="nx">detroit</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">.</span><span class="nx">curry</span><span class="p">(</span><span class="s2">&quot;America/Detroit&quot;</span><span class="p">);</span>
+<span class="nx">detroit</span><span class="p">(</span><span class="nx">y2k</span><span class="p">,</span> <span class="s2">&quot;%c&quot;</span><span class="p">);</span>
+
+<span class="nx">hamtramck</span> <span class="o">=</span> <span class="nx">detroit</span><span class="p">.</span><span class="nx">curry</span><span class="p">(</span><span class="s2">&quot;pl_PL&quot;</span><span class="p">);</span>
+<span class="nx">hamtramck</span><span class="p">(</span><span class="nx">y2k</span><span class="p">,</span> <span class="s2">&quot;%c&quot;</span><span class="p">);</span>
+</pre></div>
+
+        
+          <p>Thus, <code>tz</code> always returns either milliseconds since the epoch in UTC, or a
+formatted string if a format specifier is provided.</p>
+        
+      
+        
+          <h3 class="namespace"><a name="tz">tz</a></h3>
+        
+        
+        
+          <p>The namespace.</p>
+        
+      
+        
+          
+            <h3 class="function"><a name="tz">tz.tz()</a></h3>
+          
+        
+        
+            
+        
+        
+          <p>One function to rule them all and in the darkness bind them.</p>
+        
+      
+    </div>
+    <div id="api">
+      
+        
+      
+        
+          <h2 class="heading"><a href="#Synopsis">Synopsis</a></h3>
+        
+      
+        
+          <h3 class="namespace depth-0"><a href="#tz">tz</a></h3>
+        
+      
+        
+          <h3 class="function depth-1"><a href="#tz">tz</a></h3>
+        
+      
+      
+        <h2 class="heading">Docco</h3>
+        
+          
+        
+          
+            
+            <h3 class="docco depth-0"><a href="./documentation/timezone.html">timezone.coffee</a></h3>
+          
+        
+      
+    </div>
+  </div>
+</body>
+</html>
