@@ -163,8 +163,7 @@ do (exports) ->
     { format, locale, zone } = request
     [ offset, output ] = [ new Date(date), [] ]
     tzdata = TIMEZONES.zones[zone]
-    if zone isnt "UTC"
-      offset = wallclock(offset, tzdata)
+    offset = wallclock(offset, tzdata) if zone isnt "UTC"
     while format.length
       match = /^(.*?)%([-0_^]?)([aAcdDeFHIjklMNpPsrRSTuwXUWVmhbByYcGgCx])(.*)$/.exec(format)
       if match
@@ -219,9 +218,17 @@ do (exports) ->
       adjusted = adjustment
     new Date(adjusted)
 
+  # The all purpose exported function.
   exports.tz = tz = (date, splat...) ->
+    # Assert that we've been given a date.
     throw new Error "invalid arguments" if not date?
+
+    # Create a default request.
     request = { zone: "UTC", adjustments: [] }
+
+    # Arguments with a `%` are date formats. Arguments that match a timezone are
+    # timezones, while arguments that look like locales are locales. If nothing
+    # matches, we assume that it is date math.
     for argument in splat
       argument = String(argument)
       if argument.indexOf("%") != -1
@@ -233,13 +240,21 @@ do (exports) ->
         throw new Error "unknown locale" if not request.locale
       else
         request.adjustments.push argument
+
+    # America No. 1! U-S-A! U-S-A!
     request.locale or= LOCALES.en_US
+
+    # Convert the date argument to seconds since the epoch.
     if date.getTime
       date = date.getTime()
     else if typeof date is "string"
       date = parse date, request
+
+    # Apply date math if any.
     for adjustment in request.adjustments
       date = adjust adjustment, request
+
+    # Apply format if any.
     if request.format
       toString date, request
     else
