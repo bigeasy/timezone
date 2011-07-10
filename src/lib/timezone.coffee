@@ -3,7 +3,8 @@
 
 # Wrap everything in a function and pass in an exports map appropriate for node
 # or the browser, depending on where we are.
-defintion = (exports) ->
+exports or= window
+do (exports) ->
   TIMEZONES = { zones: {}, rules: {} }
   LOCALES =
     en_US:
@@ -223,22 +224,17 @@ defintion = (exports) ->
   exports.tz = tz = (date, splat...) ->
     throw new Error "invalid arguments" if not date?
     request = { zone: "UTC", adjustments: [] }
-    # This is temporary, until we change over the tests for date formatting.
-    if typeof date is "string" and date.indexOf("%") != -1
-      request.format = date
-      date = splat.shift()
-    else
-      for argument in splat
-        argument = String(argument)
-        if argument.indexOf("%") != -1
-          request.format or= argument
-        else if TIMEZONES.zones[argument]
-          request.zone or= argument
-        else if /^\w{2}_\w+{2}$/.test argument
-          request.locale or= LOCALES[argument]
-          throw new Error "unknown locale" if not request.locale
-        else
-          request.adjustments.push argument
+    for argument in splat
+      argument = String(argument)
+      if argument.indexOf("%") != -1
+        request.format or= argument
+      else if TIMEZONES.zones[argument]
+        request.zone or= argument
+      else if /^\w{2}_\w+{2}$/.test argument
+        request.locale or= LOCALES[argument]
+        throw new Error "unknown locale" if not request.locale
+      else
+        request.adjustments.push argument
     request.locale or= LOCALES.en_US
     if date.getTime
       date = date.getTime()
@@ -264,8 +260,3 @@ defintion = (exports) ->
       for k, v of override?.rules
         TIMEZONES.rules[k] = v
     TIMEZONES
-
-if module? and module.exports?
-  defintion module.exports
-else
-  defintion this
