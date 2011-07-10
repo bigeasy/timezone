@@ -107,9 +107,9 @@ do (exports) ->
     y: (date) -> date.getUTCFullYear() % 100
     Y: (date) -> date.getUTCFullYear()
     C: (date) -> Math.floor(date.getFullYear() / 100)
-    D: (date) -> tz("%m/%d/%y", date)
+    D: (date) -> tz(date, "%m/%d/%y")
     x: (date, locale) -> tz(locale.dateFormat, date, locale)
-    F: (date) -> tz("%Y-%m-%d", date)
+    F: (date) -> tz(date, "%Y-%m-%d")
     l: (date) -> dialHours(date)
     I: (date) -> dialHours(date)
     k: (date) -> date.getUTCHours()
@@ -120,11 +120,11 @@ do (exports) ->
     s: (date) -> Math.floor(date.getTime() / 1000) # Affeced by TZ in unix date.
     S: (date) -> date.getUTCSeconds()
     N: (date) -> (date.getTime() % 1000) * 1000000
-    r: (date) -> tz("%I:%M:%S %p", date)
-    R: (date) -> tz("%H:%M", date)
-    T: (date) -> tz("%H:%M:%S", date)
-    X: (date, locale) -> tz(locale.timeFormat, date, locale)
-    c: (date, locale) -> tz(locale.dateTimeFormat, date, locale)
+    r: (date) -> tz(date, "%I:%M:%S %p")
+    R: (date) -> tz(date, "%H:%M")
+    T: (date) -> tz(date, "%H:%M:%S")
+    X: (date, locale) -> tz(date, locale.timeFormat, locale)
+    c: (date, locale) -> tz(date, locale.dateTimeFormat, locale)
     z: (date, locale, tzdata) ->
       offset = Math.floor(offsetInMilliseconds(tzdata.offset) / 1000 / 60)
       if offset < 0
@@ -199,7 +199,6 @@ do (exports) ->
     offset += minutes * MINUTE
     offset += (seconds or 0) * SECOND
     offset *= -1 if sign is '-'
-    console.log offset, pattern
     offset
 
   compare: (left, right, fields...) ->
@@ -213,7 +212,6 @@ do (exports) ->
     for i in [(tzdata.length - 1)..0]
       candidate = tzdata[i]
       adjustment = time + offsetInMilliseconds(candidate.offset)
-      console.log time, adjustment, new Date(time).toUTCString(), new Date(adjustment).toUTCString()
       if candidate.until
         parsed = new Date(candidate.until)
         if parsed.getTime() < adjustment
@@ -229,8 +227,8 @@ do (exports) ->
       if argument.indexOf("%") != -1
         request.format or= argument
       else if TIMEZONES.zones[argument]
-        request.zone or= argument
-      else if /^\w{2}_\w+{2}$/.test argument
+        request.zone = argument
+      else if /^\w{2}_\w{2}$/.test argument
         request.locale or= LOCALES[argument]
         throw new Error "unknown locale" if not request.locale
       else

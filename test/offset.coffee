@@ -21,5 +21,5 @@ readDate = (date) ->
 
 class exports.OffsetTest extends TwerpTest
   "test: convert from UTC to America/Detroit": (done) ->
-    @equal tz(utc(1980, 0, 1), "America/Detroit"), 315532800000
+    @equal tz(utc(1980, 0, 1), "America/Detroit", "%F %T"), "1979-12-31 19:00:00"
     done 1
