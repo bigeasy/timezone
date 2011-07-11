@@ -23,3 +23,10 @@ class exports.OffsetTest extends TwerpTest
   "test: convert from UTC to America/Detroit": (done) ->
     @equal tz(utc(1980, 0, 1), "America/Detroit", "%F %T"), "1979-12-31 19:00:00"
     done 1
+
+  "test: convert from UTC to America/Detroit during DST": (done) ->
+    try
+      @equal tz(utc(1976, 6, 4), "America/Detroit", "%F %T"), "1976-07-03 20:00:00"
+    catch e
+      console.log e.stack
+    done 1

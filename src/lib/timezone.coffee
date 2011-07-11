@@ -30,6 +30,8 @@ do (exports) ->
 
   monthDayOfYear = [ 1, 32, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335 ]
 
+  daysInMonth = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
+
   isLeapYear = (date) ->
     year = date.getUTCFullYear()
     if year % 400 is 0
@@ -206,17 +208,65 @@ do (exports) ->
       difference = left[field]() - right[field]()
       return difference if not difference
 
+  ruleToDate = (year, rule, adjusted) ->
+    match = /^(\d)+:(\d)+(?::(\d+))?$/.exec(rule.time).slice(1)
+    [ hours, minutes, seconds ] = (parseInt number or 0, 10 for number in match)
+    match = /^(?:(\d+)|(?:last)?(\w+)|(\w+)>=(\d+))$/.exec(rule.day)
+    if match[1]
+      date = new Date(Date.UTC(year, rule.month, parseInt(match[1], 10)))
+    else if match[2]
+      for day, i in LOCALES.en_US.day.abbrev
+        if day is match[2]
+          index = i
+          break
+      day = daysInMonth[rule.month]
+      day++ if rule.month is 1 and isLeapYear year
+      loop
+        date = new Date(Date.UTC(year, rule.month, day, hours, minutes, seconds))
+        if date.getDay() is index
+          break
+        day--
+    else
+      min = parseInt match[4], 10
+      for day, i in LOCALES.en_US.day.abbrev
+        if day is match[3]
+          index = i
+          break
+      day = 1
+      loop
+        date = new Date(Date.UTC(year, rule.month, day))
+        if date.getDay() is index and date.getDate() >= min
+          break
+        day++
+    date.getTime()
+
   wallclock = (date, tzdata) ->
     time = date.getTime()
     for i in [(tzdata.length - 1)..0]
-      candidate = tzdata[i]
-      adjustment = time + offsetInMilliseconds(candidate.offset)
-      if candidate.until
-        parsed = new Date(candidate.until)
+      zone = tzdata[i]
+      adjustment = time + offsetInMilliseconds(zone.offset)
+      if zone.until
+        parsed = new Date(zone.until)
         if parsed.getTime() < adjustment
           break
       adjusted = adjustment
-    new Date(adjusted)
+
+      # Now we have an adjusted time. We're going to pretend that seconds since
+      # the epoch starts from 1/1/1970 in the current timezone, instead of in
+      # UTC. We're going to use our date a structure for the field names, and
+      # treat UTC values as if the were local time. This means we can do simple
+      # compares between seconds since the epoch, but this is our little secret.
+      if rules = TIMEZONES.rules[zone.rules]
+        year = new Date(adjusted).getUTCFullYear()
+        previous = new Date(year - 1, 0, 1).getTime()
+        for rule in rules
+          if rule.from <= year and year <= rule.to
+            start = ruleToDate(year, rule, adjusted)
+            if start <= adjusted and previous < start
+              previous = start
+              dst = rule
+    adjusted += offsetInMilliseconds(dst.save) if dst and dst.save isnt '0'
+    new new Date(adjusted)
 
   # The all purpose exported function.
   exports.tz = tz = (date, splat...) ->
