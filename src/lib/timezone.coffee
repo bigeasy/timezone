@@ -190,7 +190,73 @@ do (exports) ->
 
   isDate = (object) ->
 
+  # Parse a pattern, possibly fuzzy.
   parse = (pattern) ->
+    # Best foot forward, an ISO date. An ISO date can also be YYYY, but we catch
+    # that case later on, so we don't pluck YYYY/MM or some such now.
+    if match = ///
+      (.*)
+      (?:
+        (\d\d\d\d)-(\d\d)(?:-(\d\d))?
+        |
+        (\d{4})(\d{2})(\d{2})
+      )
+      (?:\s+|T)
+      (?:
+        (\d\d)(?::?(\d\d))?(?::?(\d\d))?
+        (?:.(\d+))?
+      )?
+      (?:
+        (?:\s+|Z)
+        (?:([+-])(\d{2})(?::?(\d{2}))?)
+      )
+      (.*)
+    ///.exec(pattern)
+      before = match.splice(0, 2).pop()
+      
+      date = match.splice(0, 3)
+      [ year, month, day ] = date if date[0]?
+
+      date = match.splice(0, 3)
+      [ year, month, day ] = date if date[0]?
+
+      time = match.splice(0, 4)
+      [ hours, minutes, seconds, milliseconds ] = time if time[0]?
+
+      zone = match.splice(0, 3)
+      [ sign, zoneHours, zoneMinutes ] = time if time[0]?
+
+      after = match.pop()
+
+      remaining = (before + after).replace(/\s+/, "").length
+
+      if remaining is 0
+        return makeDate year, month, day, hours, minutes, seconds, milliseconds
+
+    # Parse a UNIX date.
+   
+    # Try to find something date like, interpret using locale.
+   
+      # Take the locale preference for month/day ordering.
+
+      # If it doesn't fit, try the other way.
+
+      # If that doesn't fit, see if you can find a date in the remaining bit.
+
+    # Look for a time, either in the whole pattern, or in what's left after the
+    # date consumed a date-like thing.
+
+    # Now let's split what we've got and look for locale specific words that are
+    # meaningful.
+
+    # If we're willing to be fuzzy, then we'll look harder. Maybe we have a
+    # bunch of regular expressions to run, that will extract locale specific
+    # strings, say, this looks like an hour, this looks like a day of the week,
+    # this looks like a date. So /at (\d+)\s*([pa]m?)/i or some such, with ()
+    # for place holders for bits of the pattern that won't match.
+
+    # Let's start by parsing ISO, UNIX and not very fuzzy dates. Really, you can
+    # just tell the user to try harder, or else prompt with a date format.
 
   offsetInMilliseconds = (pattern) ->
     match = /^(-?)(\d)+:(\d)+(?::(\d+))?$/.exec(pattern).slice(1)
