@@ -3,8 +3,7 @@
 
 # Wrap everything in a function and pass in an exports map appropriate for node
 # or the browser, depending on where we are.
-exports or= window
-do (exports) ->
+do -> (exports or= window) and do (exports) ->
   TIMEZONES = { zones: {}, rules: {} }
   LOCALES =
     en_US:
@@ -190,27 +189,103 @@ do (exports) ->
 
   isDate = (object) ->
 
+  # Create a date, filling in the blanks.
+  makeDate = (year, month, day, hours, minutes, seconds, milliseconds) ->
+    date = []
+
+    if not year?
+      now = new Date()
+      date.push now.getUTCFullYear()
+    else
+      date.push parseInt year, 10
+
+    if not month?
+      if not year?
+        date.push now.getUTCMonth()
+      else
+        date.push 0
+    else
+      date.push parseInt(month, 10) - 1
+
+    if not day?
+      if not year?
+        date.push now.getUTCDate()
+      else
+        date.push 1
+    else
+      date.push parseInt day, 10
+
+    if not hours?
+      date.push 0
+    else
+      date.push parseInt hours, 10
+
+    if not minutes?
+      date.push 0
+    else
+      date.push parseInt minutes, 10
+
+    if not seconds?
+      date.push 0
+    else
+      date.push parseInt seconds, 10
+
+    if not milliseconds?
+      date.push 0
+    else
+      date.push parseInt milliseconds, 10
+
+    Date.UTC.apply null, date
+
   # Parse a pattern, possibly fuzzy.
   parse = (pattern) ->
     # Best foot forward, an ISO date. An ISO date can also be YYYY, but we catch
     # that case later on, so we don't pluck YYYY/MM or some such now.
     if match = ///
-      (.*)
-      (?:
-        (\d\d\d\d)-(\d\d)(?:-(\d\d))?
-        |
-        (\d{4})(\d{2})(\d{2})
+      ^             # start
+      (.*?)         # before
+      (?:           # year 
+        (\d\d\d\d)    # four digit year
+          -           # hyphen
+        (\d\d)        # two digit month
+        (?:           # optional date
+            -           # hypen
+          (\d{2})       # two digit date
+        )?
+      |             # year with no hyphens
+        (\d{4})       # year
+        (\d{2})       # month
+        (\d{2})?      # date
       )
-      (?:\s+|T)
-      (?:
-        (\d\d)(?::?(\d\d))?(?::?(\d\d))?
-        (?:.(\d+))?
+      (?:           # optional time
+        (?:\s+|T)     # time delimiter
+        (\d\d)        # hours
+        (?:           # optional minutes
+          :?            # optional colon
+          (\d\d)        # minutes 
+          (?:           # optional seconds
+            :?            # optional colon
+            (\d\d)        # seconds
+            (?:           # optional milliseconds
+              \.            # period
+              (\d+)         # milliseconds
+            )?
+          )?
+        )?
       )?
-      (?:
-        (?:\s+|Z)
-        (?:([+-])(\d{2})(?::?(\d{2}))?)
-      )
-      (.*)
+      (?:           # optional zone 
+        (?:\s+|Z)     # zone delimiter
+        (?:
+          ([+-])      # sign
+          (\d{2})     # hours
+          (?:         # optional minutes
+            :?          # optional colon
+            (\d{2})     # minutes
+          )?
+        )
+      )?
+      (.*)          # after
+      $
     ///.exec(pattern)
       before = match.splice(0, 2).pop()
       
@@ -224,16 +299,16 @@ do (exports) ->
       [ hours, minutes, seconds, milliseconds ] = time if time[0]?
 
       zone = match.splice(0, 3)
-      [ sign, zoneHours, zoneMinutes ] = time if time[0]?
+      [ sign, zoneHours, zoneMinutes ] = zone if zone[0]?
 
       after = match.pop()
 
       remaining = (before + after).replace(/\s+/, "").length
-
       if remaining is 0
         return makeDate year, month, day, hours, minutes, seconds, milliseconds
 
-    # Parse a UNIX date.
+    # Parse a UNIX date, another common construct. No need to be fuzzy about
+    # this at all. There is only really one valid format.
    
     # Try to find something date like, interpret using locale.
    
