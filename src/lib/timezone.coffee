@@ -413,93 +413,129 @@ do -> (exports or= window) and do (exports) ->
     adjusted += offsetInMilliseconds(dst.save) if dst and dst.save isnt '0'
     new new Date(adjusted)
 
-  FIELD =
-    year:   0
-    month:  1
-    day:    2
-    hour:   3
-    minute: 4
-    second: 5
-    milli:  6
 
-  SIGN_OFFSET =
-    "-":  -1
-    "+":  +1
+  adjust = do ->
+    FIELD =
+      year:   0
+      month:  1
+      day:    2
+      hour:   3
+      minute: 4
+      second: 5
+      milli:  6
 
-  adjust = (date, adjustment, request) ->
-    record = new Date(date)
-    fields = [
-      record.getUTCFullYear()
-      record.getUTCMonth()
-      record.getUTCDate()
-      record.getUTCHours()
-      record.getUTCMinutes()
-      record.getUTCSeconds()
-      record.getUTCMilliseconds()
-    ]
-    offsets = [ 0, 0, 0, 0, 0, 0, 0 ]
-    rest = adjustment.replace(/^\s+/, "")
-    loop
-      match = ///
-        ^                 # start
-        ([+-])            # add or subtract
-        \s*               # optional space
-        (\d)+             # count
-        \s+               # manditory space
-        ( year            # unit
-        | month
-        | day
-        | hour
-        | minute
-        | second
-        | milli
-        )
-        s?                # optional plural
-        (:?               # either
-          (?:
-            \s+               # space delimiter
-            (.*)              # rest of pattern
-          )               # or 
-          |
-          (.*)            # terminal pattern or garbage
-        )
-        $                 # end
-      ///.exec rest
-      if not match
-        throw new Error "bad date math pattern"
-      [ sign, count, unit, rest, terminal ] = match.slice 1
-      if terminal?
-        if terminal isnt ""
+    SIGN_OFFSET =
+      "-":  -1
+      "+":  +1
+
+    increment = (fields, offset) ->
+      explode Date.UTC.apply(null, fields) + offset
+
+    explode = (date) ->
+      record = new Date(date)
+      fields = [
+        record.getUTCFullYear()
+        record.getUTCMonth()
+        record.getUTCDate()
+        record.getUTCHours()
+        record.getUTCMinutes()
+        record.getUTCSeconds()
+        record.getUTCMilliseconds()
+      ]
+
+    (date, adjustment, request) ->
+      record = new Date(date)
+      fields = [
+        record.getUTCFullYear()
+        record.getUTCMonth()
+        record.getUTCDate()
+        record.getUTCHours()
+        record.getUTCMinutes()
+        record.getUTCSeconds()
+        record.getUTCMilliseconds()
+      ]
+      offsets = [ 0, 0, 0, 0, 0, 0, 0 ]
+      rest = adjustment.replace(/^\s+/, "")
+      loop
+        match = ///
+          ^                 # start
+          ([+-])            # add or subtract
+          \s*               # optional space
+          (\d+)             # count
+          \s+               # manditory space
+          ( year            # unit
+          | month
+          | day
+          | hour
+          | minute
+          | second
+          | milli
+          )
+          s?                # optional plural
+          (:?               # either
+            (?:
+              \s+               # space delimiter
+              (.*)              # rest of pattern
+            )               # or 
+            |
+            (.*)            # terminal pattern or garbage
+          )
+          $                 # end
+        ///.exec rest
+        if not match
           throw new Error "bad date math pattern"
-        break
-      offsets[FIELD[unit]] += parseInt(count, 10) * SIGN_OFFSET[sign]
-      if rest is ""
-        break
+        [ sign, count, unit, rest, terminal ] = match.slice 1
+        if terminal?
+          if terminal isnt ""
+            throw new Error "bad date math pattern"
+          break
+        offsets[FIELD[unit]] += parseInt(count, 10) * SIGN_OFFSET[sign]
+        if rest is ""
+          break
 
-    # Milliesonds.
-    fields[FIELD.milli]   += offsets[FIELD.milli]
-    fields[FIELD.second]  += offsets[FIELD.second]
-    fields[FIELD.minute]  += offsets[FIELD.minute]
-    fields[FIELD.hour]    += offsets[FIELD.hour]
+      # Milliesonds.
+      if offset = offsets[FIELD.milli]
+        sum = fields[FIELD.milli] + offset
+        fields[FIELD.milli] = (1000 + sum % 1000) % 1000
+        fields[FIELD.second] = Math.floor(sum / 1000)
 
-    # Difficult carry that must account for days of month and leap years.
-    day = fields[FIELD.day] + offsets[FIELD.day]
-    while day < 1
-      if fields[FIELD.month] is 0
-        fields[FIELD.month] = 11
-        fields[FIELD.year]--
-      else
-        fields[FIELD.month]--
-      day += daysInMonth(fields[FIELD.month], fields[FIELD.year])
+      if offset = offsets[FIELD.second]
+        sum = fields[FIELD.second] + offset
+        fields[FIELD.second] = ((60 + sum) % 60) % 60
+        fields[FIELD.minute] = Math.floor(sum / 60)
 
-    fields[FIELD.day] = day
-    #else if day > daysInMonth(fields[FIELD.month])
-    #console.log [ day, fields ]
-    #process.exit 1
-    fields[FIELD.month]   += offsets[FIELD.month]
-    fields[FIELD.year]    += offsets[FIELD.year]
+      if offset = offsets[FIELD.minute]
+        sum = fields[FIELD.minute] + offset
+        fields[FIELD.minute] = ((60 + sum) % 60) % 60
+        fields[FIELD.hour] = Math.floor(sum / 60)
+    
+      if offset = offsets[FIELD.hour]
+        if request.zone is "UTC"
+          sum = fields[FIELD.hour] + offset
+          fields[FIELD.hour] = ((24 + sum) % 24) % 24
+          fields[FIELD.day] = Math.floor(sum / 24)
 
-    Date.UTC.apply null, fields
+      # Accounts for leap years and days of month.
+      if offset = offsets[FIELD.day]
+        fields = explode Date.UTC.apply(null, fields) + DAY * offset
+
+      if offset = offsets[FIELD.month]
+        increment = offset / Math.abs(offset)
+        while offset isnt 0
+          month = offset[FIELD.month]
+          if month is 0 and offset < 0
+            offset[FIELD.month] = 11
+            offset[FIELD.year]--
+          else if month is 11 and offset > 0
+            offset[FIELD.month] = 0
+            offset[FIELD.year]++
+          else
+            offset[FIELD.month] += increment
+          offset += increment
+          
+      fields[FIELD.year] += offsets[FIELD.year]
+
+      Date.UTC.apply null, fields
        
 
   # The all purpose exported function.

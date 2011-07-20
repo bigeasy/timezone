@@ -17,3 +17,11 @@ class exports.MathTest extends TwerpTest
   "test: subtract day across year": (done) ->
     @equal tz(utc(2007, 0, 1), "-1 day"), utc(2006, 11, 31)
     done 1
+
+  "test: add day": (done) ->
+    @equal tz(utc(2007, 2, 3), "+1 day"), utc(2007, 2, 4)
+    done 1
+
+  "test: add day across month": (done) ->
+    @equal tz(utc(2007, 2, 31), "+366 day"), utc(2008, 2, 31)
+    done 1
