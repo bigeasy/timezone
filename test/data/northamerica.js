@@ -4212,25 +4212,15 @@ module.exports = {
     ],
     "America/New_York": [
       {
-        "offset": "-4:56:02",
-        "format": "LMT",
-        "until": "1883-11-18T12:03:03.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
         "offset": "-5:00",
         "rules": "US",
-        "format": "E%sT",
-        "until": "1920-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "format": "E%sT"
       },
       {
         "offset": "-5:00",
         "rules": "NYC",
         "format": "E%sT",
-        "until": "1942-01-01T00:00:00.000Z",
+        "until": "1967-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4246,21 +4236,37 @@ module.exports = {
         "offset": "-5:00",
         "rules": "NYC",
         "format": "E%sT",
-        "until": "1967-01-01T00:00:00.000Z",
+        "until": "1942-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-5:00",
         "rules": "US",
-        "format": "E%sT"
+        "format": "E%sT",
+        "until": "1920-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-4:56:02",
+        "format": "LMT",
+        "until": "1883-11-18T12:03:03.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Chicago": [
       {
-        "offset": "-5:50:36",
-        "format": "LMT",
-        "until": "1883-11-18T12:09:09.000Z",
+        "offset": "-6:00",
+        "rules": "US",
+        "format": "C%sT"
+      },
+      {
+        "offset": "-6:00",
+        "rules": "Chicago",
+        "format": "C%sT",
+        "until": "1967-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4268,7 +4274,7 @@ module.exports = {
         "offset": "-6:00",
         "rules": "US",
         "format": "C%sT",
-        "until": "1920-01-01T00:00:00.000Z",
+        "until": "1946-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4276,7 +4282,7 @@ module.exports = {
         "offset": "-6:00",
         "rules": "Chicago",
         "format": "C%sT",
-        "until": "1936-03-01T02:00:00.000Z",
+        "until": "1942-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4291,7 +4297,7 @@ module.exports = {
         "offset": "-6:00",
         "rules": "Chicago",
         "format": "C%sT",
-        "until": "1942-01-01T00:00:00.000Z",
+        "until": "1936-03-01T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4299,31 +4305,23 @@ module.exports = {
         "offset": "-6:00",
         "rules": "US",
         "format": "C%sT",
-        "until": "1946-01-01T00:00:00.000Z",
+        "until": "1920-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-6:00",
-        "rules": "Chicago",
-        "format": "C%sT",
-        "until": "1967-01-01T00:00:00.000Z",
+        "offset": "-5:50:36",
+        "format": "LMT",
+        "until": "1883-11-18T12:09:09.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "US",
-        "format": "C%sT"
       }
     ],
     "America/North_Dakota/Center": [
       {
-        "offset": "-6:45:12",
-        "format": "LMT",
-        "until": "1883-11-18T12:14:14.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-6:00",
+        "rules": "US",
+        "format": "C%sT"
       },
       {
         "offset": "-7:00",
@@ -4334,18 +4332,18 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-6:00",
-        "rules": "US",
-        "format": "C%sT"
-      }
-    ],
-    "America/North_Dakota/New_Salem": [
-      {
-        "offset": "-6:45:39",
+        "offset": "-6:45:12",
         "format": "LMT",
         "until": "1883-11-18T12:14:14.000Z",
         "standard": false,
         "utc": false
+      }
+    ],
+    "America/North_Dakota/New_Salem": [
+      {
+        "offset": "-6:00",
+        "rules": "US",
+        "format": "C%sT"
       },
       {
         "offset": "-7:00",
@@ -4356,18 +4354,18 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-6:00",
-        "rules": "US",
-        "format": "C%sT"
+        "offset": "-6:45:39",
+        "format": "LMT",
+        "until": "1883-11-18T12:14:14.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/North_Dakota/Beulah": [
       {
-        "offset": "-6:47:07",
-        "format": "LMT",
-        "until": "1883-11-18T12:12:12.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-6:00",
+        "rules": "US",
+        "format": "C%sT"
       },
       {
         "offset": "-7:00",
@@ -4378,16 +4376,40 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-6:00",
-        "rules": "US",
-        "format": "C%sT"
+        "offset": "-6:47:07",
+        "format": "LMT",
+        "until": "1883-11-18T12:12:12.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Denver": [
       {
-        "offset": "-6:59:56",
-        "format": "LMT",
-        "until": "1883-11-18T12:00:00.000Z",
+        "offset": "-7:00",
+        "rules": "US",
+        "format": "M%sT"
+      },
+      {
+        "offset": "-7:00",
+        "rules": "Denver",
+        "format": "M%sT",
+        "until": "1967-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "rules": "US",
+        "format": "M%sT",
+        "until": "1946-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "rules": "Denver",
+        "format": "M%sT",
+        "until": "1942-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4400,50 +4422,18 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-7:00",
-        "rules": "Denver",
-        "format": "M%sT",
-        "until": "1942-01-01T00:00:00.000Z",
+        "offset": "-6:59:56",
+        "format": "LMT",
+        "until": "1883-11-18T12:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "rules": "US",
-        "format": "M%sT",
-        "until": "1946-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "rules": "Denver",
-        "format": "M%sT",
-        "until": "1967-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "rules": "US",
-        "format": "M%sT"
       }
     ],
     "America/Los_Angeles": [
       {
-        "offset": "-7:52:58",
-        "format": "LMT",
-        "until": "1883-11-18T12:07:07.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
         "offset": "-8:00",
         "rules": "US",
-        "format": "P%sT",
-        "until": "1946-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "format": "P%sT"
       },
       {
         "offset": "-8:00",
@@ -4456,43 +4446,30 @@ module.exports = {
       {
         "offset": "-8:00",
         "rules": "US",
-        "format": "P%sT"
-      }
-    ],
-    "America/Juneau": [
-      {
-        "offset": "15:02:19",
-        "format": "LMT",
-        "until": "1867-10-18T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:57:41",
-        "format": "LMT",
-        "until": "1900-08-20T12:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1942-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "US",
         "format": "P%sT",
         "until": "1946-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1969-01-01T00:00:00.000Z",
+        "offset": "-7:52:58",
+        "format": "LMT",
+        "until": "1883-11-18T12:07:07.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Juneau": [
+      {
+        "offset": "-9:00",
+        "rules": "US",
+        "format": "AK%sT"
+      },
+      {
+        "offset": "-9:00",
+        "rules": "US",
+        "format": "Y%sT",
+        "until": "1983-11-30T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4500,7 +4477,7 @@ module.exports = {
         "offset": "-8:00",
         "rules": "US",
         "format": "P%sT",
-        "until": "1980-04-27T02:00:00.000Z",
+        "until": "1983-10-30T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4516,9 +4493,52 @@ module.exports = {
         "offset": "-8:00",
         "rules": "US",
         "format": "P%sT",
-        "until": "1983-10-30T02:00:00.000Z",
+        "until": "1980-04-27T02:00:00.000Z",
         "standard": false,
         "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1969-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "rules": "US",
+        "format": "P%sT",
+        "until": "1946-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1942-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:57:41",
+        "format": "LMT",
+        "until": "1900-08-20T12:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "15:02:19",
+        "format": "LMT",
+        "until": "1867-10-18T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Sitka": [
+      {
+        "offset": "-9:00",
+        "rules": "US",
+        "format": "AK%sT"
       },
       {
         "offset": "-9:00",
@@ -4529,16 +4549,32 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-9:00",
+        "offset": "-8:00",
         "rules": "US",
-        "format": "AK%sT"
-      }
-    ],
-    "America/Sitka": [
+        "format": "P%sT",
+        "until": "1983-10-30T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
       {
-        "offset": "-14:58:47",
-        "format": "LMT",
-        "until": "1867-10-18T00:00:00.000Z",
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1969-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "rules": "US",
+        "format": "P%sT",
+        "until": "1946-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1942-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4550,17 +4586,24 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1942-01-01T00:00:00.000Z",
+        "offset": "-14:58:47",
+        "format": "LMT",
+        "until": "1867-10-18T00:00:00.000Z",
         "standard": false,
         "utc": false
+      }
+    ],
+    "America/Metlakatla": [
+      {
+        "offset": "-8:00",
+        "rules": "US",
+        "format": "MeST"
       },
       {
         "offset": "-8:00",
         "rules": "US",
         "format": "P%sT",
-        "until": "1946-01-01T00:00:00.000Z",
+        "until": "1983-10-30T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4575,29 +4618,14 @@ module.exports = {
         "offset": "-8:00",
         "rules": "US",
         "format": "P%sT",
-        "until": "1983-10-30T02:00:00.000Z",
+        "until": "1946-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-9:00",
-        "rules": "US",
-        "format": "Y%sT",
-        "until": "1983-11-30T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-9:00",
-        "rules": "US",
-        "format": "AK%sT"
-      }
-    ],
-    "America/Metlakatla": [
-      {
-        "offset": "15:13:42",
-        "format": "LMT",
-        "until": "1867-10-18T00:00:00.000Z",
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1942-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4609,77 +4637,18 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1942-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "US",
-        "format": "P%sT",
-        "until": "1946-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1969-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "US",
-        "format": "P%sT",
-        "until": "1983-10-30T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "US",
-        "format": "MeST"
-      }
-    ],
-    "America/Yakutat": [
-      {
-        "offset": "14:41:05",
+        "offset": "15:13:42",
         "format": "LMT",
         "until": "1867-10-18T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-9:18:55",
-        "format": "LMT",
-        "until": "1900-08-20T12:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-9:00",
-        "format": "YST",
-        "until": "1942-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
+      }
+    ],
+    "America/Yakutat": [
       {
         "offset": "-9:00",
         "rules": "US",
-        "format": "Y%sT",
-        "until": "1946-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-9:00",
-        "format": "YST",
-        "until": "1969-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "format": "AK%sT"
       },
       {
         "offset": "-9:00",
@@ -4691,29 +4660,82 @@ module.exports = {
       },
       {
         "offset": "-9:00",
-        "rules": "US",
-        "format": "AK%sT"
-      }
-    ],
-    "America/Anchorage": [
-      {
-        "offset": "14:00:24",
-        "format": "LMT",
-        "until": "1867-10-18T00:00:00.000Z",
+        "format": "YST",
+        "until": "1969-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-9:59:36",
+        "offset": "-9:00",
+        "rules": "US",
+        "format": "Y%sT",
+        "until": "1946-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-9:00",
+        "format": "YST",
+        "until": "1942-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-9:18:55",
         "format": "LMT",
         "until": "1900-08-20T12:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
+        "offset": "14:41:05",
+        "format": "LMT",
+        "until": "1867-10-18T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Anchorage": [
+      {
+        "offset": "-9:00",
+        "rules": "US",
+        "format": "AK%sT"
+      },
+      {
+        "offset": "-9:00",
+        "rules": "US",
+        "format": "Y%sT",
+        "until": "1983-11-30T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-10:00",
+        "rules": "US",
+        "format": "AH%sT",
+        "until": "1983-10-30T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-10:00",
+        "format": "AHST",
+        "until": "1969-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
         "offset": "-10:00",
         "format": "CAT",
-        "until": "1942-01-01T00:00:00.000Z",
+        "until": "1967-04-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-10:00",
+        "rules": "US",
+        "format": "CAT/CAPT",
+        "until": "1946-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4727,33 +4749,31 @@ module.exports = {
       },
       {
         "offset": "-10:00",
-        "rules": "US",
-        "format": "CAT/CAPT",
-        "until": "1946-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-10:00",
         "format": "CAT",
-        "until": "1967-04-01T00:00:00.000Z",
+        "until": "1942-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-10:00",
-        "format": "AHST",
-        "until": "1969-01-01T00:00:00.000Z",
+        "offset": "-9:59:36",
+        "format": "LMT",
+        "until": "1900-08-20T12:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-10:00",
+        "offset": "14:00:24",
+        "format": "LMT",
+        "until": "1867-10-18T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Nome": [
+      {
+        "offset": "-9:00",
         "rules": "US",
-        "format": "AH%sT",
-        "until": "1983-10-30T02:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "format": "AK%sT"
       },
       {
         "offset": "-9:00",
@@ -4764,16 +4784,39 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-9:00",
+        "offset": "-11:00",
         "rules": "US",
-        "format": "AK%sT"
-      }
-    ],
-    "America/Nome": [
+        "format": "B%sT",
+        "until": "1983-10-30T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
       {
-        "offset": "12:58:21",
-        "format": "LMT",
-        "until": "1867-10-18T00:00:00.000Z",
+        "offset": "-11:00",
+        "format": "BST",
+        "until": "1969-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-11:00",
+        "format": "NST",
+        "until": "1967-04-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-11:00",
+        "rules": "US",
+        "format": "N%sT",
+        "until": "1946-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-11:00",
+        "format": "NST",
+        "until": "1942-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4785,9 +4828,46 @@ module.exports = {
         "utc": false
       },
       {
+        "offset": "12:58:21",
+        "format": "LMT",
+        "until": "1867-10-18T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Adak": [
+      {
+        "offset": "-10:00",
+        "rules": "US",
+        "format": "HA%sT"
+      },
+      {
+        "offset": "-10:00",
+        "rules": "US",
+        "format": "AH%sT",
+        "until": "1983-11-30T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-11:00",
+        "rules": "US",
+        "format": "B%sT",
+        "until": "1983-10-30T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-11:00",
+        "format": "BST",
+        "until": "1969-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
         "offset": "-11:00",
         "format": "NST",
-        "until": "1942-01-01T00:00:00.000Z",
+        "until": "1967-04-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4802,44 +4882,7 @@ module.exports = {
       {
         "offset": "-11:00",
         "format": "NST",
-        "until": "1967-04-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-11:00",
-        "format": "BST",
-        "until": "1969-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-11:00",
-        "rules": "US",
-        "format": "B%sT",
-        "until": "1983-10-30T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-9:00",
-        "rules": "US",
-        "format": "Y%sT",
-        "until": "1983-11-30T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-9:00",
-        "rules": "US",
-        "format": "AK%sT"
-      }
-    ],
-    "America/Adak": [
-      {
-        "offset": "12:13:21",
-        "format": "LMT",
-        "until": "1867-10-18T00:00:00.000Z",
+        "until": "1942-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4851,68 +4894,23 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-11:00",
-        "format": "NST",
-        "until": "1942-01-01T00:00:00.000Z",
+        "offset": "12:13:21",
+        "format": "LMT",
+        "until": "1867-10-18T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-11:00",
-        "rules": "US",
-        "format": "N%sT",
-        "until": "1946-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-11:00",
-        "format": "NST",
-        "until": "1967-04-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-11:00",
-        "format": "BST",
-        "until": "1969-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-11:00",
-        "rules": "US",
-        "format": "B%sT",
-        "until": "1983-10-30T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-10:00",
-        "rules": "US",
-        "format": "AH%sT",
-        "until": "1983-11-30T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-10:00",
-        "rules": "US",
-        "format": "HA%sT"
       }
     ],
     "Pacific/Honolulu": [
       {
-        "offset": "-10:31:26",
-        "format": "LMT",
-        "until": "1896-01-13T12:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-10:00",
+        "format": "HST"
       },
       {
         "offset": "-10:30",
-        "format": "HST",
-        "until": "1933-04-30T02:00:00.000Z",
+        "rules": "US",
+        "format": "H%sT",
+        "until": "1947-06-08T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4920,7 +4918,7 @@ module.exports = {
         "offset": "-10:30",
         "rules": "1:00",
         "format": "HDT",
-        "until": "1933-05-21T12:00:00.000Z",
+        "until": "1945-09-30T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4935,51 +4933,40 @@ module.exports = {
         "offset": "-10:30",
         "rules": "1:00",
         "format": "HDT",
-        "until": "1945-09-30T02:00:00.000Z",
+        "until": "1933-05-21T12:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-10:30",
-        "rules": "US",
-        "format": "H%sT",
-        "until": "1947-06-08T02:00:00.000Z",
+        "format": "HST",
+        "until": "1933-04-30T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-10:00",
-        "format": "HST"
+        "offset": "-10:31:26",
+        "format": "LMT",
+        "until": "1896-01-13T12:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Phoenix": [
       {
-        "offset": "-7:28:18",
-        "format": "LMT",
-        "until": "1883-11-18T11:31:31.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "Link",
+        "rules": "America/Denver",
+        "format": "America/Shiprock"
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST"
       },
       {
         "offset": "-7:00",
         "rules": "US",
         "format": "M%sT",
-        "until": "1944-01-01T00:01:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1944-04-01T00:01:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "rules": "US",
-        "format": "M%sT",
-        "until": "1944-10-01T00:01:00.000Z",
+        "until": "1968-03-21T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -4994,33 +4981,43 @@ module.exports = {
         "offset": "-7:00",
         "rules": "US",
         "format": "M%sT",
-        "until": "1968-03-21T00:00:00.000Z",
+        "until": "1944-10-01T00:01:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-7:00",
-        "format": "MST"
-      },
-      {
-        "offset": "Link",
-        "rules": "America/Denver",
-        "format": "America/Shiprock"
-      }
-    ],
-    "America/Boise": [
-      {
-        "offset": "-7:44:49",
-        "format": "LMT",
-        "until": "1883-11-18T12:15:15.000Z",
+        "format": "MST",
+        "until": "1944-04-01T00:01:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-8:00",
+        "offset": "-7:00",
         "rules": "US",
-        "format": "P%sT",
-        "until": "1923-05-13T02:00:00.000Z",
+        "format": "M%sT",
+        "until": "1944-01-01T00:01:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:28:18",
+        "format": "LMT",
+        "until": "1883-11-18T11:31:31.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Boise": [
+      {
+        "offset": "-7:00",
+        "rules": "US",
+        "format": "M%sT"
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1974-02-03T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5033,23 +5030,68 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1974-02-03T02:00:00.000Z",
+        "offset": "-8:00",
+        "rules": "US",
+        "format": "P%sT",
+        "until": "1923-05-13T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-7:00",
-        "rules": "US",
-        "format": "M%sT"
+        "offset": "-7:44:49",
+        "format": "LMT",
+        "until": "1883-11-18T12:15:15.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Indiana/Indianapolis": [
       {
-        "offset": "-5:44:38",
-        "format": "LMT",
-        "until": "1883-11-18T12:15:15.000Z",
+        "offset": "-5:00",
+        "rules": "US",
+        "format": "E%sT"
+      },
+      {
+        "offset": "-5:00",
+        "format": "EST",
+        "until": "2006-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:00",
+        "rules": "US",
+        "format": "E%sT",
+        "until": "1971-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:00",
+        "format": "EST",
+        "until": "1969-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "format": "CST",
+        "until": "1958-04-27T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:00",
+        "format": "EST",
+        "until": "1957-09-29T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "rules": "Indianapolis",
+        "format": "C%sT",
+        "until": "1955-04-24T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5057,7 +5099,7 @@ module.exports = {
         "offset": "-6:00",
         "rules": "US",
         "format": "C%sT",
-        "until": "1920-01-01T00:00:00.000Z",
+        "until": "1946-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5073,46 +5115,23 @@ module.exports = {
         "offset": "-6:00",
         "rules": "US",
         "format": "C%sT",
-        "until": "1946-01-01T00:00:00.000Z",
+        "until": "1920-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-6:00",
-        "rules": "Indianapolis",
-        "format": "C%sT",
-        "until": "1955-04-24T02:00:00.000Z",
+        "offset": "-5:44:38",
+        "format": "LMT",
+        "until": "1883-11-18T12:15:15.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "format": "EST",
-        "until": "1957-09-29T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "1958-04-27T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "format": "EST",
-        "until": "1969-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
+      }
+    ],
+    "America/Indiana/Marengo": [
       {
         "offset": "-5:00",
         "rules": "US",
-        "format": "E%sT",
-        "until": "1971-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "format": "E%sT"
       },
       {
         "offset": "-5:00",
@@ -5124,45 +5143,8 @@ module.exports = {
       {
         "offset": "-5:00",
         "rules": "US",
-        "format": "E%sT"
-      }
-    ],
-    "America/Indiana/Marengo": [
-      {
-        "offset": "-5:45:23",
-        "format": "LMT",
-        "until": "1883-11-18T12:14:14.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "US",
-        "format": "C%sT",
-        "until": "1951-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Marengo",
-        "format": "C%sT",
-        "until": "1961-04-30T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "format": "EST",
-        "until": "1969-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "rules": "US",
         "format": "E%sT",
-        "until": "1974-01-06T02:00:00.000Z",
+        "until": "1976-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5178,28 +5160,22 @@ module.exports = {
         "offset": "-5:00",
         "rules": "US",
         "format": "E%sT",
-        "until": "1976-01-01T00:00:00.000Z",
+        "until": "1974-01-06T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-5:00",
         "format": "EST",
-        "until": "2006-01-01T00:00:00.000Z",
+        "until": "1969-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "rules": "US",
-        "format": "E%sT"
-      }
-    ],
-    "America/Indiana/Vincennes": [
-      {
-        "offset": "-5:50:07",
-        "format": "LMT",
-        "until": "1883-11-18T12:09:09.000Z",
+        "offset": "-6:00",
+        "rules": "Marengo",
+        "format": "C%sT",
+        "until": "1961-04-30T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5207,7 +5183,51 @@ module.exports = {
         "offset": "-6:00",
         "rules": "US",
         "format": "C%sT",
-        "until": "1946-01-01T00:00:00.000Z",
+        "until": "1951-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:45:23",
+        "format": "LMT",
+        "until": "1883-11-18T12:14:14.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Indiana/Vincennes": [
+      {
+        "offset": "-5:00",
+        "rules": "US",
+        "format": "E%sT"
+      },
+      {
+        "offset": "-6:00",
+        "rules": "US",
+        "format": "C%sT",
+        "until": "2007-11-04T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:00",
+        "format": "EST",
+        "until": "2006-04-02T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:00",
+        "rules": "US",
+        "format": "E%sT",
+        "until": "1971-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:00",
+        "format": "EST",
+        "until": "1969-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5220,9 +5240,31 @@ module.exports = {
         "utc": false
       },
       {
+        "offset": "-6:00",
+        "rules": "US",
+        "format": "C%sT",
+        "until": "1946-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:50:07",
+        "format": "LMT",
+        "until": "1883-11-18T12:09:09.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Indiana/Tell_City": [
+      {
+        "offset": "-6:00",
+        "rules": "US",
+        "format": "C%sT"
+      },
+      {
         "offset": "-5:00",
         "format": "EST",
-        "until": "1969-01-01T00:00:00.000Z",
+        "until": "2006-04-02T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5237,37 +5279,7 @@ module.exports = {
       {
         "offset": "-5:00",
         "format": "EST",
-        "until": "2006-04-02T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "US",
-        "format": "C%sT",
-        "until": "2007-11-04T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "rules": "US",
-        "format": "E%sT"
-      }
-    ],
-    "America/Indiana/Tell_City": [
-      {
-        "offset": "-5:47:03",
-        "format": "LMT",
-        "until": "1883-11-18T12:12:12.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "US",
-        "format": "C%sT",
-        "until": "1946-01-01T00:00:00.000Z",
+        "until": "1969-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5280,17 +5292,32 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "format": "EST",
-        "until": "1969-01-01T00:00:00.000Z",
+        "offset": "-6:00",
+        "rules": "US",
+        "format": "C%sT",
+        "until": "1946-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
+        "offset": "-5:47:03",
+        "format": "LMT",
+        "until": "1883-11-18T12:12:12.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Indiana/Petersburg": [
+      {
         "offset": "-5:00",
         "rules": "US",
-        "format": "E%sT",
-        "until": "1971-01-01T00:00:00.000Z",
+        "format": "E%sT"
+      },
+      {
+        "offset": "-6:00",
+        "rules": "US",
+        "format": "C%sT",
+        "until": "2007-11-04T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5298,43 +5325,6 @@ module.exports = {
         "offset": "-5:00",
         "format": "EST",
         "until": "2006-04-02T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "US",
-        "format": "C%sT"
-      }
-    ],
-    "America/Indiana/Petersburg": [
-      {
-        "offset": "-5:49:07",
-        "format": "LMT",
-        "until": "1883-11-18T12:10:10.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "US",
-        "format": "C%sT",
-        "until": "1955-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Pike",
-        "format": "C%sT",
-        "until": "1965-04-25T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "format": "EST",
-        "until": "1966-10-30T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5349,7 +5339,15 @@ module.exports = {
       {
         "offset": "-5:00",
         "format": "EST",
-        "until": "2006-04-02T02:00:00.000Z",
+        "until": "1966-10-30T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "rules": "Pike",
+        "format": "C%sT",
+        "until": "1965-04-25T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5357,44 +5355,28 @@ module.exports = {
         "offset": "-6:00",
         "rules": "US",
         "format": "C%sT",
-        "until": "2007-11-04T02:00:00.000Z",
+        "until": "1955-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "rules": "US",
-        "format": "E%sT"
+        "offset": "-5:49:07",
+        "format": "LMT",
+        "until": "1883-11-18T12:10:10.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Indiana/Knox": [
       {
-        "offset": "-5:46:30",
-        "format": "LMT",
-        "until": "1883-11-18T12:13:13.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
         "offset": "-6:00",
         "rules": "US",
-        "format": "C%sT",
-        "until": "1947-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Starke",
-        "format": "C%sT",
-        "until": "1962-04-29T02:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "format": "C%sT"
       },
       {
         "offset": "-5:00",
         "format": "EST",
-        "until": "1963-10-27T02:00:00.000Z",
+        "until": "2006-04-02T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5409,44 +5391,52 @@ module.exports = {
       {
         "offset": "-5:00",
         "format": "EST",
-        "until": "2006-04-02T02:00:00.000Z",
+        "until": "1963-10-27T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "rules": "Starke",
+        "format": "C%sT",
+        "until": "1962-04-29T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-6:00",
         "rules": "US",
-        "format": "C%sT"
-      }
-    ],
-    "America/Indiana/Winamac": [
+        "format": "C%sT",
+        "until": "1947-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
       {
-        "offset": "-5:46:25",
+        "offset": "-5:46:30",
         "format": "LMT",
         "until": "1883-11-18T12:13:13.000Z",
         "standard": false,
         "utc": false
+      }
+    ],
+    "America/Indiana/Winamac": [
+      {
+        "offset": "-5:00",
+        "rules": "US",
+        "format": "E%sT"
       },
       {
         "offset": "-6:00",
         "rules": "US",
         "format": "C%sT",
-        "until": "1946-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Pulaski",
-        "format": "C%sT",
-        "until": "1961-04-30T02:00:00.000Z",
+        "until": "2007-03-11T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-5:00",
         "format": "EST",
-        "until": "1969-01-01T00:00:00.000Z",
+        "until": "2006-04-02T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5461,7 +5451,15 @@ module.exports = {
       {
         "offset": "-5:00",
         "format": "EST",
-        "until": "2006-04-02T02:00:00.000Z",
+        "until": "1969-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "rules": "Pulaski",
+        "format": "C%sT",
+        "until": "1961-04-30T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5469,36 +5467,28 @@ module.exports = {
         "offset": "-6:00",
         "rules": "US",
         "format": "C%sT",
-        "until": "2007-03-11T02:00:00.000Z",
+        "until": "1946-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "rules": "US",
-        "format": "E%sT"
+        "offset": "-5:46:25",
+        "format": "LMT",
+        "until": "1883-11-18T12:13:13.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Indiana/Vevay": [
       {
-        "offset": "-5:40:16",
-        "format": "LMT",
-        "until": "1883-11-18T12:19:19.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
+        "offset": "-5:00",
         "rules": "US",
-        "format": "C%sT",
-        "until": "1954-04-25T02:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "format": "E%sT"
       },
       {
         "offset": "-5:00",
         "format": "EST",
-        "until": "1969-01-01T00:00:00.000Z",
+        "until": "2006-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5513,70 +5503,31 @@ module.exports = {
       {
         "offset": "-5:00",
         "format": "EST",
-        "until": "2006-01-01T00:00:00.000Z",
+        "until": "1969-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-5:00",
+        "offset": "-6:00",
         "rules": "US",
-        "format": "E%sT"
+        "format": "C%sT",
+        "until": "1954-04-25T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:40:16",
+        "format": "LMT",
+        "until": "1883-11-18T12:19:19.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Kentucky/Louisville": [
       {
-        "offset": "-5:43:02",
-        "format": "LMT",
-        "until": "1883-11-18T12:16:16.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "US",
-        "format": "C%sT",
-        "until": "1921-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Louisville",
-        "format": "C%sT",
-        "until": "1942-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "US",
-        "format": "C%sT",
-        "until": "1946-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Louisville",
-        "format": "C%sT",
-        "until": "1961-07-23T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "format": "EST",
-        "until": "1968-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
         "offset": "-5:00",
         "rules": "US",
-        "format": "E%sT",
-        "until": "1974-01-06T02:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "format": "E%sT"
       },
       {
         "offset": "-6:00",
@@ -5589,14 +5540,23 @@ module.exports = {
       {
         "offset": "-5:00",
         "rules": "US",
-        "format": "E%sT"
-      }
-    ],
-    "America/Kentucky/Monticello": [
+        "format": "E%sT",
+        "until": "1974-01-06T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
       {
-        "offset": "-5:39:24",
-        "format": "LMT",
-        "until": "1883-11-18T12:20:20.000Z",
+        "offset": "-5:00",
+        "format": "EST",
+        "until": "1968-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "rules": "Louisville",
+        "format": "C%sT",
+        "until": "1961-07-23T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5605,6 +5565,44 @@ module.exports = {
         "rules": "US",
         "format": "C%sT",
         "until": "1946-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "rules": "Louisville",
+        "format": "C%sT",
+        "until": "1942-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "rules": "US",
+        "format": "C%sT",
+        "until": "1921-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:43:02",
+        "format": "LMT",
+        "until": "1883-11-18T12:16:16.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Kentucky/Monticello": [
+      {
+        "offset": "-5:00",
+        "rules": "US",
+        "format": "E%sT"
+      },
+      {
+        "offset": "-6:00",
+        "rules": "US",
+        "format": "C%sT",
+        "until": "2000-10-29T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5619,35 +5617,28 @@ module.exports = {
         "offset": "-6:00",
         "rules": "US",
         "format": "C%sT",
-        "until": "2000-10-29T02:00:00.000Z",
+        "until": "1946-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "rules": "US",
-        "format": "E%sT"
+        "offset": "-5:39:24",
+        "format": "LMT",
+        "until": "1883-11-18T12:20:20.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Detroit": [
       {
-        "offset": "-5:32:11",
-        "format": "LMT",
-        "until": "1905-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "1915-05-15T02:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-5:00",
+        "rules": "US",
+        "format": "E%sT"
       },
       {
         "offset": "-5:00",
         "format": "EST",
-        "until": "1942-01-01T00:00:00.000Z",
+        "until": "1975-04-27T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5655,7 +5646,7 @@ module.exports = {
         "offset": "-5:00",
         "rules": "US",
         "format": "E%sT",
-        "until": "1946-01-01T00:00:00.000Z",
+        "until": "1975-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5671,36 +5662,42 @@ module.exports = {
         "offset": "-5:00",
         "rules": "US",
         "format": "E%sT",
-        "until": "1975-01-01T00:00:00.000Z",
+        "until": "1946-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-5:00",
         "format": "EST",
-        "until": "1975-04-27T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "rules": "US",
-        "format": "E%sT"
-      }
-    ],
-    "America/Menominee": [
-      {
-        "offset": "-5:50:27",
-        "format": "LMT",
-        "until": "1885-09-18T12:00:00.000Z",
+        "until": "1942-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-6:00",
+        "format": "CST",
+        "until": "1915-05-15T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:32:11",
+        "format": "LMT",
+        "until": "1905-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Menominee": [
+      {
+        "offset": "-6:00",
         "rules": "US",
-        "format": "C%sT",
-        "until": "1946-01-01T00:00:00.000Z",
+        "format": "C%sT"
+      },
+      {
+        "offset": "-5:00",
+        "format": "EST",
+        "until": "1973-04-29T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5713,23 +5710,40 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "format": "EST",
-        "until": "1973-04-29T02:00:00.000Z",
+        "offset": "-6:00",
+        "rules": "US",
+        "format": "C%sT",
+        "until": "1946-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-6:00",
-        "rules": "US",
-        "format": "C%sT"
+        "offset": "-5:50:27",
+        "format": "LMT",
+        "until": "1885-09-18T12:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/St_Johns": [
       {
-        "offset": "-3:30:52",
-        "format": "LMT",
-        "until": "1884-01-01T00:00:00.000Z",
+        "offset": "-3:30",
+        "rules": "StJohns",
+        "format": "N%sT"
+      },
+      {
+        "offset": "-3:30",
+        "rules": "Canada",
+        "format": "N%sT",
+        "until": "1946-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-3:30",
+        "rules": "StJohns",
+        "format": "N%sT",
+        "until": "1942-05-11T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5737,7 +5751,7 @@ module.exports = {
         "offset": "-3:30:52",
         "rules": "StJohns",
         "format": "N%sT",
-        "until": "1918-01-01T00:00:00.000Z",
+        "until": "1935-03-30T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5753,15 +5767,29 @@ module.exports = {
         "offset": "-3:30:52",
         "rules": "StJohns",
         "format": "N%sT",
-        "until": "1935-03-30T00:00:00.000Z",
+        "until": "1918-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
+      },
+      {
+        "offset": "-3:30:52",
+        "format": "LMT",
+        "until": "1884-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Goose_Bay": [
+      {
+        "offset": "-4:00",
+        "rules": "StJohns",
+        "format": "A%sT"
       },
       {
         "offset": "-3:30",
         "rules": "StJohns",
         "format": "N%sT",
-        "until": "1942-05-11T00:00:00.000Z",
+        "until": "1966-03-15T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5776,36 +5804,8 @@ module.exports = {
       {
         "offset": "-3:30",
         "rules": "StJohns",
-        "format": "N%sT"
-      }
-    ],
-    "America/Goose_Bay": [
-      {
-        "offset": "-4:01:40",
-        "format": "LMT",
-        "until": "1884-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-3:30:52",
-        "format": "NST",
-        "until": "1918-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-3:30:52",
-        "rules": "Canada",
         "format": "N%sT",
-        "until": "1919-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-3:30:52",
-        "format": "NST",
-        "until": "1935-03-30T00:00:00.000Z",
+        "until": "1942-05-11T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5817,56 +5817,54 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-3:30",
-        "rules": "StJohns",
-        "format": "N%sT",
-        "until": "1942-05-11T00:00:00.000Z",
+        "offset": "-3:30:52",
+        "format": "NST",
+        "until": "1935-03-30T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-3:30",
+        "offset": "-3:30:52",
         "rules": "Canada",
         "format": "N%sT",
-        "until": "1946-01-01T00:00:00.000Z",
+        "until": "1919-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-3:30",
-        "rules": "StJohns",
-        "format": "N%sT",
-        "until": "1966-03-15T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-4:00",
-        "rules": "StJohns",
-        "format": "A%sT"
-      }
-    ],
-    "America/Halifax": [
-      {
-        "offset": "-4:14:24",
-        "format": "LMT",
-        "until": "1902-06-15T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-4:00",
-        "rules": "Halifax",
-        "format": "A%sT",
+        "offset": "-3:30:52",
+        "format": "NST",
         "until": "1918-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
+        "offset": "-4:01:40",
+        "format": "LMT",
+        "until": "1884-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Halifax": [
+      {
+        "offset": "-4:00",
+        "rules": "Canada",
+        "format": "A%sT"
+      },
+      {
+        "offset": "-4:00",
+        "rules": "Halifax",
+        "format": "A%sT",
+        "until": "1974-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
         "offset": "-4:00",
         "rules": "Canada",
         "format": "A%sT",
-        "until": "1919-01-01T00:00:00.000Z",
+        "until": "1946-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5882,45 +5880,37 @@ module.exports = {
         "offset": "-4:00",
         "rules": "Canada",
         "format": "A%sT",
-        "until": "1946-01-01T00:00:00.000Z",
+        "until": "1919-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
+      },
+      {
+        "offset": "-4:00",
+        "rules": "Halifax",
+        "format": "A%sT",
+        "until": "1918-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-4:14:24",
+        "format": "LMT",
+        "until": "1902-06-15T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Glace_Bay": [
+      {
+        "offset": "-4:00",
+        "rules": "Canada",
+        "format": "A%sT"
       },
       {
         "offset": "-4:00",
         "rules": "Halifax",
         "format": "A%sT",
         "until": "1974-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-4:00",
-        "rules": "Canada",
-        "format": "A%sT"
-      }
-    ],
-    "America/Glace_Bay": [
-      {
-        "offset": "-3:59:48",
-        "format": "LMT",
-        "until": "1902-06-15T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-4:00",
-        "rules": "Canada",
-        "format": "A%sT",
-        "until": "1953-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-4:00",
-        "rules": "Halifax",
-        "format": "A%sT",
-        "until": "1954-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -5935,60 +5925,37 @@ module.exports = {
         "offset": "-4:00",
         "rules": "Halifax",
         "format": "A%sT",
-        "until": "1974-01-01T00:00:00.000Z",
+        "until": "1954-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-4:00",
         "rules": "Canada",
-        "format": "A%sT"
+        "format": "A%sT",
+        "until": "1953-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-3:59:48",
+        "format": "LMT",
+        "until": "1902-06-15T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Moncton": [
       {
-        "offset": "-4:19:08",
-        "format": "LMT",
-        "until": "1883-12-09T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "format": "EST",
-        "until": "1902-06-15T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
         "offset": "-4:00",
         "rules": "Canada",
-        "format": "A%sT",
-        "until": "1933-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "format": "A%sT"
       },
       {
         "offset": "-4:00",
         "rules": "Moncton",
         "format": "A%sT",
-        "until": "1942-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-4:00",
-        "rules": "Canada",
-        "format": "A%sT",
-        "until": "1946-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-4:00",
-        "rules": "Moncton",
-        "format": "A%sT",
-        "until": "1973-01-01T00:00:00.000Z",
+        "until": "2007-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6004,23 +5971,53 @@ module.exports = {
         "offset": "-4:00",
         "rules": "Moncton",
         "format": "A%sT",
-        "until": "2007-01-01T00:00:00.000Z",
+        "until": "1973-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-4:00",
         "rules": "Canada",
-        "format": "A%sT"
+        "format": "A%sT",
+        "until": "1946-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-4:00",
+        "rules": "Moncton",
+        "format": "A%sT",
+        "until": "1942-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-4:00",
+        "rules": "Canada",
+        "format": "A%sT",
+        "until": "1933-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:00",
+        "format": "EST",
+        "until": "1902-06-15T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-4:19:08",
+        "format": "LMT",
+        "until": "1883-12-09T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Blanc-Sablon": [
       {
-        "offset": "-3:48:28",
-        "format": "LMT",
-        "until": "1884-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-4:00",
+        "format": "AST"
       },
       {
         "offset": "-4:00",
@@ -6031,15 +6028,48 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-4:00",
-        "format": "AST"
+        "offset": "-3:48:28",
+        "format": "LMT",
+        "until": "1884-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Montreal": [
       {
-        "offset": "-4:54:16",
-        "format": "LMT",
-        "until": "1884-01-01T00:00:00.000Z",
+        "offset": "-5:00",
+        "rules": "Canada",
+        "format": "E%sT"
+      },
+      {
+        "offset": "-5:00",
+        "rules": "Mont",
+        "format": "E%sT",
+        "until": "1974-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:00",
+        "rules": "Canada",
+        "format": "E%sT",
+        "until": "1946-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:00",
+        "rules": "Mont",
+        "format": "E%sT",
+        "until": "1942-02-09T02:00:00.000Z",
+        "standard": true,
+        "utc": false
+      },
+      {
+        "offset": "-5:00",
+        "rules": "Canada",
+        "format": "E%sT",
+        "until": "1919-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6052,19 +6082,25 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "rules": "Canada",
-        "format": "E%sT",
-        "until": "1919-01-01T00:00:00.000Z",
+        "offset": "-4:54:16",
+        "format": "LMT",
+        "until": "1884-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
+      }
+    ],
+    "America/Toronto": [
+      {
+        "offset": "-5:00",
+        "rules": "Canada",
+        "format": "E%sT"
       },
       {
         "offset": "-5:00",
-        "rules": "Mont",
+        "rules": "Toronto",
         "format": "E%sT",
-        "until": "1942-02-09T02:00:00.000Z",
-        "standard": true,
+        "until": "1974-01-01T00:00:00.000Z",
+        "standard": false,
         "utc": false
       },
       {
@@ -6077,91 +6113,38 @@ module.exports = {
       },
       {
         "offset": "-5:00",
-        "rules": "Mont",
+        "rules": "Toronto",
         "format": "E%sT",
-        "until": "1974-01-01T00:00:00.000Z",
-        "standard": false,
+        "until": "1942-02-09T02:00:00.000Z",
+        "standard": true,
         "utc": false
       },
       {
         "offset": "-5:00",
         "rules": "Canada",
-        "format": "E%sT"
-      }
-    ],
-    "America/Toronto": [
+        "format": "E%sT",
+        "until": "1919-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
       {
         "offset": "-5:17:32",
         "format": "LMT",
         "until": "1895-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "rules": "Canada",
-        "format": "E%sT",
-        "until": "1919-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "rules": "Toronto",
-        "format": "E%sT",
-        "until": "1942-02-09T02:00:00.000Z",
-        "standard": true,
-        "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "rules": "Canada",
-        "format": "E%sT",
-        "until": "1946-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "rules": "Toronto",
-        "format": "E%sT",
-        "until": "1974-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "rules": "Canada",
-        "format": "E%sT"
       }
     ],
     "America/Thunder_Bay": [
       {
-        "offset": "-5:57:00",
-        "format": "LMT",
-        "until": "1895-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "1910-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-5:00",
+        "rules": "Canada",
+        "format": "E%sT"
       },
       {
         "offset": "-5:00",
         "format": "EST",
-        "until": "1942-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "rules": "Canada",
-        "format": "E%sT",
-        "until": "1970-01-01T00:00:00.000Z",
+        "until": "1974-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6175,32 +6158,39 @@ module.exports = {
       },
       {
         "offset": "-5:00",
-        "format": "EST",
-        "until": "1974-01-01T00:00:00.000Z",
+        "rules": "Canada",
+        "format": "E%sT",
+        "until": "1970-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-5:00",
-        "rules": "Canada",
-        "format": "E%sT"
-      }
-    ],
-    "America/Nipigon": [
+        "format": "EST",
+        "until": "1942-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
       {
-        "offset": "-5:53:04",
+        "offset": "-6:00",
+        "format": "CST",
+        "until": "1910-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:57:00",
         "format": "LMT",
         "until": "1895-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
+      }
+    ],
+    "America/Nipigon": [
       {
         "offset": "-5:00",
         "rules": "Canada",
-        "format": "E%sT",
-        "until": "1940-09-29T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "format": "E%sT"
       },
       {
         "offset": "-5:00",
@@ -6213,62 +6203,53 @@ module.exports = {
       {
         "offset": "-5:00",
         "rules": "Canada",
-        "format": "E%sT"
+        "format": "E%sT",
+        "until": "1940-09-29T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:53:04",
+        "format": "LMT",
+        "until": "1895-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Rainy_River": [
+      {
+        "offset": "-6:00",
+        "rules": "Canada",
+        "format": "C%sT"
+      },
+      {
+        "offset": "-6:00",
+        "rules": "1:00",
+        "format": "CDT",
+        "until": "1942-02-09T02:00:00.000Z",
+        "standard": true,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "rules": "Canada",
+        "format": "C%sT",
+        "until": "1940-09-29T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
       {
         "offset": "-6:18:16",
         "format": "LMT",
         "until": "1895-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Canada",
-        "format": "C%sT",
-        "until": "1940-09-29T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "1:00",
-        "format": "CDT",
-        "until": "1942-02-09T02:00:00.000Z",
-        "standard": true,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Canada",
-        "format": "C%sT"
       }
     ],
     "America/Atikokan": [
       {
-        "offset": "-6:06:28",
-        "format": "LMT",
-        "until": "1895-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Canada",
-        "format": "C%sT",
-        "until": "1940-09-29T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "1:00",
-        "format": "CDT",
-        "until": "1942-02-09T02:00:00.000Z",
-        "standard": true,
-        "utc": false
+        "offset": "-5:00",
+        "format": "EST"
       },
       {
         "offset": "-6:00",
@@ -6279,17 +6260,34 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "format": "EST"
+        "offset": "-6:00",
+        "rules": "1:00",
+        "format": "CDT",
+        "until": "1942-02-09T02:00:00.000Z",
+        "standard": true,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "rules": "Canada",
+        "format": "C%sT",
+        "until": "1940-09-29T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:06:28",
+        "format": "LMT",
+        "until": "1895-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Winnipeg": [
       {
-        "offset": "-6:28:36",
-        "format": "LMT",
-        "until": "1887-07-16T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-6:00",
+        "rules": "Canada",
+        "format": "C%sT"
       },
       {
         "offset": "-6:00",
@@ -6300,18 +6298,17 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-6:00",
-        "rules": "Canada",
-        "format": "C%sT"
+        "offset": "-6:28:36",
+        "format": "LMT",
+        "until": "1887-07-16T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Regina": [
       {
-        "offset": "-6:58:36",
-        "format": "LMT",
-        "until": "1905-09-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-6:00",
+        "format": "CST"
       },
       {
         "offset": "-7:00",
@@ -6322,23 +6319,23 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-6:00",
-        "format": "CST"
-      }
-    ],
-    "America/Swift_Current": [
-      {
-        "offset": "-7:11:20",
+        "offset": "-6:58:36",
         "format": "LMT",
         "until": "1905-09-01T00:00:00.000Z",
         "standard": false,
         "utc": false
+      }
+    ],
+    "America/Swift_Current": [
+      {
+        "offset": "-6:00",
+        "format": "CST"
       },
       {
         "offset": "-7:00",
-        "rules": "Canada",
+        "rules": "Swift",
         "format": "M%sT",
-        "until": "1946-04-28T02:00:00.000Z",
+        "until": "1972-04-30T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6352,24 +6349,25 @@ module.exports = {
       },
       {
         "offset": "-7:00",
-        "rules": "Swift",
+        "rules": "Canada",
         "format": "M%sT",
-        "until": "1972-04-30T02:00:00.000Z",
+        "until": "1946-04-28T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-6:00",
-        "format": "CST"
+        "offset": "-7:11:20",
+        "format": "LMT",
+        "until": "1905-09-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Edmonton": [
       {
-        "offset": "-7:33:52",
-        "format": "LMT",
-        "until": "1906-09-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-7:00",
+        "rules": "Canada",
+        "format": "M%sT"
       },
       {
         "offset": "-7:00",
@@ -6380,18 +6378,18 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-7:00",
-        "rules": "Canada",
-        "format": "M%sT"
+        "offset": "-7:33:52",
+        "format": "LMT",
+        "until": "1906-09-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Vancouver": [
       {
-        "offset": "-8:12:28",
-        "format": "LMT",
-        "until": "1884-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-8:00",
+        "rules": "Canada",
+        "format": "P%sT"
       },
       {
         "offset": "-8:00",
@@ -6402,16 +6400,23 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-8:00",
-        "rules": "Canada",
-        "format": "P%sT"
+        "offset": "-8:12:28",
+        "format": "LMT",
+        "until": "1884-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Dawson_Creek": [
       {
-        "offset": "-8:00:56",
-        "format": "LMT",
-        "until": "1884-01-01T00:00:00.000Z",
+        "offset": "-7:00",
+        "format": "MST"
+      },
+      {
+        "offset": "-8:00",
+        "rules": "Vanc",
+        "format": "P%sT",
+        "until": "1972-08-30T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6424,23 +6429,32 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-8:00",
-        "rules": "Vanc",
-        "format": "P%sT",
-        "until": "1972-08-30T02:00:00.000Z",
+        "offset": "-8:00:56",
+        "format": "LMT",
+        "until": "1884-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST"
       }
     ],
     "America/Pangnirtung": [
       {
-        "offset": "0",
-        "format": "zzz",
-        "until": "1921-01-01T00:00:00.000Z",
+        "offset": "-5:00",
+        "rules": "Canada",
+        "format": "E%sT"
+      },
+      {
+        "offset": "-6:00",
+        "rules": "Canada",
+        "format": "C%sT",
+        "until": "2000-10-29T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:00",
+        "rules": "Canada",
+        "format": "E%sT",
+        "until": "1999-10-31T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6453,12 +6467,18 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "rules": "Canada",
-        "format": "E%sT",
-        "until": "1999-10-31T02:00:00.000Z",
+        "offset": "0",
+        "format": "zzz",
+        "until": "1921-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
+      }
+    ],
+    "America/Iqaluit": [
+      {
+        "offset": "-5:00",
+        "rules": "Canada",
+        "format": "E%sT"
       },
       {
         "offset": "-6:00",
@@ -6470,62 +6490,25 @@ module.exports = {
       },
       {
         "offset": "-5:00",
-        "rules": "Canada",
-        "format": "E%sT"
-      }
-    ],
-    "America/Iqaluit": [
+        "rules": "NT_YK",
+        "format": "E%sT",
+        "until": "1999-10-31T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
       {
         "offset": "0",
         "format": "zzz",
         "until": "1942-08-01T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "rules": "NT_YK",
-        "format": "E%sT",
-        "until": "1999-10-31T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Canada",
-        "format": "C%sT",
-        "until": "2000-10-29T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-5:00",
-        "rules": "Canada",
-        "format": "E%sT"
       }
     ],
     "America/Resolute": [
       {
-        "offset": "0",
-        "format": "zzz",
-        "until": "1947-08-31T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "NT_YK",
-        "format": "C%sT",
-        "until": "2000-10-29T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
         "offset": "-5:00",
-        "format": "EST",
-        "until": "2001-04-01T03:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "rules": "Resolute",
+        "format": "%sT"
       },
       {
         "offset": "-6:00",
@@ -6537,15 +6520,8 @@ module.exports = {
       },
       {
         "offset": "-5:00",
-        "rules": "Resolute",
-        "format": "%sT"
-      }
-    ],
-    "America/Rankin_Inlet": [
-      {
-        "offset": "0",
-        "format": "zzz",
-        "until": "1957-01-01T00:00:00.000Z",
+        "format": "EST",
+        "until": "2001-04-01T03:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6556,6 +6532,20 @@ module.exports = {
         "until": "2000-10-29T02:00:00.000Z",
         "standard": false,
         "utc": false
+      },
+      {
+        "offset": "0",
+        "format": "zzz",
+        "until": "1947-08-31T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Rankin_Inlet": [
+      {
+        "offset": "-6:00",
+        "rules": "Canada",
+        "format": "C%sT"
       },
       {
         "offset": "-5:00",
@@ -6566,31 +6556,30 @@ module.exports = {
       },
       {
         "offset": "-6:00",
-        "rules": "Canada",
-        "format": "C%sT"
+        "rules": "NT_YK",
+        "format": "C%sT",
+        "until": "2000-10-29T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "0",
+        "format": "zzz",
+        "until": "1957-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Cambridge_Bay": [
       {
-        "offset": "0",
-        "format": "zzz",
-        "until": "1920-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
         "offset": "-7:00",
-        "rules": "NT_YK",
-        "format": "M%sT",
-        "until": "1999-10-31T02:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "rules": "Canada",
+        "format": "M%sT"
       },
       {
         "offset": "-6:00",
-        "rules": "Canada",
-        "format": "C%sT",
-        "until": "2000-10-29T02:00:00.000Z",
+        "format": "CST",
+        "until": "2001-04-01T03:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6603,24 +6592,33 @@ module.exports = {
       },
       {
         "offset": "-6:00",
-        "format": "CST",
-        "until": "2001-04-01T03:00:00.000Z",
+        "rules": "Canada",
+        "format": "C%sT",
+        "until": "2000-10-29T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-7:00",
-        "rules": "Canada",
-        "format": "M%sT"
+        "rules": "NT_YK",
+        "format": "M%sT",
+        "until": "1999-10-31T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "0",
+        "format": "zzz",
+        "until": "1920-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Yellowknife": [
       {
-        "offset": "0",
-        "format": "zzz",
-        "until": "1935-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-7:00",
+        "rules": "Canada",
+        "format": "M%sT"
       },
       {
         "offset": "-7:00",
@@ -6631,16 +6629,24 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-7:00",
-        "rules": "Canada",
-        "format": "M%sT"
+        "offset": "0",
+        "format": "zzz",
+        "until": "1935-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Inuvik": [
       {
-        "offset": "0",
-        "format": "zzz",
-        "until": "1953-01-01T00:00:00.000Z",
+        "offset": "-7:00",
+        "rules": "Canada",
+        "format": "M%sT"
+      },
+      {
+        "offset": "-7:00",
+        "rules": "NT_YK",
+        "format": "M%sT",
+        "until": "1980-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6653,24 +6659,24 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-7:00",
-        "rules": "NT_YK",
-        "format": "M%sT",
-        "until": "1980-01-01T00:00:00.000Z",
+        "offset": "0",
+        "format": "zzz",
+        "until": "1953-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "rules": "Canada",
-        "format": "M%sT"
       }
     ],
     "America/Whitehorse": [
       {
-        "offset": "-9:00:12",
-        "format": "LMT",
-        "until": "1900-08-20T00:00:00.000Z",
+        "offset": "-8:00",
+        "rules": "Canada",
+        "format": "P%sT"
+      },
+      {
+        "offset": "-8:00",
+        "rules": "NT_YK",
+        "format": "P%sT",
+        "until": "1980-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6683,24 +6689,24 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-8:00",
-        "rules": "NT_YK",
-        "format": "P%sT",
-        "until": "1980-01-01T00:00:00.000Z",
+        "offset": "-9:00:12",
+        "format": "LMT",
+        "until": "1900-08-20T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "Canada",
-        "format": "P%sT"
       }
     ],
     "America/Dawson": [
       {
-        "offset": "-9:17:40",
-        "format": "LMT",
-        "until": "1900-08-20T00:00:00.000Z",
+        "offset": "-8:00",
+        "rules": "Canada",
+        "format": "P%sT"
+      },
+      {
+        "offset": "-8:00",
+        "rules": "NT_YK",
+        "format": "P%sT",
+        "until": "1980-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6713,33 +6719,18 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-8:00",
-        "rules": "NT_YK",
-        "format": "P%sT",
-        "until": "1980-01-01T00:00:00.000Z",
+        "offset": "-9:17:40",
+        "format": "LMT",
+        "until": "1900-08-20T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "Canada",
-        "format": "P%sT"
       }
     ],
     "America/Cancun": [
       {
-        "offset": "-5:47:04",
-        "format": "LMT",
-        "until": "1922-01-01T00:12:12.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
         "offset": "-6:00",
-        "format": "CST",
-        "until": "1981-12-23T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "rules": "Mexico",
+        "format": "C%sT"
       },
       {
         "offset": "-5:00",
@@ -6751,15 +6742,29 @@ module.exports = {
       },
       {
         "offset": "-6:00",
-        "rules": "Mexico",
-        "format": "C%sT"
+        "format": "CST",
+        "until": "1981-12-23T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:47:04",
+        "format": "LMT",
+        "until": "1922-01-01T00:12:12.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Merida": [
       {
-        "offset": "-5:58:28",
-        "format": "LMT",
-        "until": "1922-01-01T00:01:01.000Z",
+        "offset": "-6:00",
+        "rules": "Mexico",
+        "format": "C%sT"
+      },
+      {
+        "offset": "-5:00",
+        "format": "EST",
+        "until": "1982-12-02T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6771,40 +6776,18 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "format": "EST",
-        "until": "1982-12-02T00:00:00.000Z",
+        "offset": "-5:58:28",
+        "format": "LMT",
+        "until": "1922-01-01T00:01:01.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Mexico",
-        "format": "C%sT"
       }
     ],
     "America/Matamoros": [
       {
-        "offset": "-6:40:00",
-        "format": "LMT",
-        "until": "1921-12-31T23:20:20.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "1988-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
         "offset": "-6:00",
         "rules": "US",
-        "format": "C%sT",
-        "until": "1989-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "format": "C%sT"
       },
       {
         "offset": "-6:00",
@@ -6817,14 +6800,8 @@ module.exports = {
       {
         "offset": "-6:00",
         "rules": "US",
-        "format": "C%sT"
-      }
-    ],
-    "America/Monterrey": [
-      {
-        "offset": "-6:41:16",
-        "format": "LMT",
-        "until": "1921-12-31T23:18:18.000Z",
+        "format": "C%sT",
+        "until": "1989-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6836,6 +6813,20 @@ module.exports = {
         "utc": false
       },
       {
+        "offset": "-6:40:00",
+        "format": "LMT",
+        "until": "1921-12-31T23:20:20.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Monterrey": [
+      {
+        "offset": "-6:00",
+        "rules": "Mexico",
+        "format": "C%sT"
+      },
+      {
         "offset": "-6:00",
         "rules": "US",
         "format": "C%sT",
@@ -6845,50 +6836,29 @@ module.exports = {
       },
       {
         "offset": "-6:00",
-        "rules": "Mexico",
-        "format": "C%sT"
+        "format": "CST",
+        "until": "1988-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:41:16",
+        "format": "LMT",
+        "until": "1921-12-31T23:18:18.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Mexico_City": [
       {
-        "offset": "-6:36:36",
-        "format": "LMT",
-        "until": "1922-01-01T00:23:23.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1927-06-10T23:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-6:00",
+        "rules": "Mexico",
+        "format": "C%sT"
       },
       {
         "offset": "-6:00",
         "format": "CST",
-        "until": "1930-11-15T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1931-05-01T23:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "1931-10-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1932-04-01T00:00:00.000Z",
+        "until": "2002-02-20T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6901,44 +6871,9 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "2002-02-20T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Mexico",
-        "format": "C%sT"
-      }
-    ],
-    "America/Ojinaga": [
-      {
-        "offset": "-6:57:40",
-        "format": "LMT",
-        "until": "1922-01-01T00:02:02.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
         "offset": "-7:00",
         "format": "MST",
-        "until": "1927-06-10T23:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "1930-11-15T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1931-05-01T23:00:00.000Z",
+        "until": "1932-04-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6952,31 +6887,37 @@ module.exports = {
       {
         "offset": "-7:00",
         "format": "MST",
-        "until": "1932-04-01T00:00:00.000Z",
+        "until": "1931-05-01T23:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-6:00",
         "format": "CST",
-        "until": "1996-01-01T00:00:00.000Z",
+        "until": "1930-11-15T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-6:00",
-        "rules": "Mexico",
-        "format": "C%sT",
-        "until": "1998-01-01T00:00:00.000Z",
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1927-06-10T23:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": null,
+        "offset": "-6:36:36",
+        "format": "LMT",
+        "until": "1922-01-01T00:23:23.000Z",
         "standard": false,
         "utc": false
+      }
+    ],
+    "America/Ojinaga": [
+      {
+        "offset": "-7:00",
+        "rules": "US",
+        "format": "M%sT"
       },
       {
         "offset": "-7:00",
@@ -6987,58 +6928,9 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-7:00",
-        "rules": "US",
-        "format": "M%sT"
-      }
-    ],
-    "America/Chihuahua": [
-      {
-        "offset": "-7:04:20",
-        "format": "LMT",
-        "until": "1921-12-31T23:55:55.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1927-06-10T23:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
         "offset": "-6:00",
         "format": "CST",
-        "until": "1930-11-15T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1931-05-01T23:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "1931-10-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1932-04-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "1996-01-01T00:00:00.000Z",
+        "until": null,
         "standard": false,
         "utc": false
       },
@@ -7053,49 +6945,7 @@ module.exports = {
       {
         "offset": "-6:00",
         "format": "CST",
-        "until": null,
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "rules": "Mexico",
-        "format": "M%sT"
-      }
-    ],
-    "America/Hermosillo": [
-      {
-        "offset": "-7:23:52",
-        "format": "LMT",
-        "until": "1921-12-31T23:36:36.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1927-06-10T23:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "1930-11-15T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1931-05-01T23:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "1931-10-01T00:00:00.000Z",
+        "until": "1996-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -7109,23 +6959,114 @@ module.exports = {
       {
         "offset": "-6:00",
         "format": "CST",
-        "until": "1942-04-24T00:00:00.000Z",
+        "until": "1931-10-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-7:00",
         "format": "MST",
-        "until": "1949-01-14T00:00:00.000Z",
+        "until": "1931-05-01T23:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1970-01-01T00:00:00.000Z",
+        "offset": "-6:00",
+        "format": "CST",
+        "until": "1930-11-15T00:00:00.000Z",
         "standard": false,
         "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1927-06-10T23:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:57:40",
+        "format": "LMT",
+        "until": "1922-01-01T00:02:02.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Chihuahua": [
+      {
+        "offset": "-7:00",
+        "rules": "Mexico",
+        "format": "M%sT"
+      },
+      {
+        "offset": "-6:00",
+        "format": "CST",
+        "until": null,
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "rules": "Mexico",
+        "format": "C%sT",
+        "until": "1998-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "format": "CST",
+        "until": "1996-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1932-04-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "format": "CST",
+        "until": "1931-10-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1931-05-01T23:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "format": "CST",
+        "until": "1930-11-15T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1927-06-10T23:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:04:20",
+        "format": "LMT",
+        "until": "1921-12-31T23:55:55.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Hermosillo": [
+      {
+        "offset": "-7:00",
+        "format": "MST"
       },
       {
         "offset": "-7:00",
@@ -7136,143 +7077,144 @@ module.exports = {
         "utc": false
       },
       {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1970-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
         "offset": "-7:00",
-        "format": "MST"
+        "format": "MST",
+        "until": "1949-01-14T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "format": "CST",
+        "until": "1942-04-24T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1932-04-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "format": "CST",
+        "until": "1931-10-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1931-05-01T23:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "format": "CST",
+        "until": "1930-11-15T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1927-06-10T23:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:23:52",
+        "format": "LMT",
+        "until": "1921-12-31T23:36:36.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Mazatlan": [
+      {
+        "offset": "-7:00",
+        "rules": "Mexico",
+        "format": "M%sT"
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1970-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1949-01-14T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "format": "CST",
+        "until": "1942-04-24T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1932-04-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "format": "CST",
+        "until": "1931-10-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1931-05-01T23:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "format": "CST",
+        "until": "1930-11-15T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1927-06-10T23:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
       {
         "offset": "-7:05:40",
         "format": "LMT",
         "until": "1921-12-31T23:54:54.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1927-06-10T23:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "1930-11-15T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1931-05-01T23:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "1931-10-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1932-04-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "1942-04-24T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1949-01-14T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1970-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "rules": "Mexico",
-        "format": "M%sT"
       }
     ],
     "America/Bahia_Banderas": [
       {
-        "offset": "-7:01:00",
-        "format": "LMT",
-        "until": "1921-12-31T23:59:59.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1927-06-10T23:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
         "offset": "-6:00",
-        "format": "CST",
-        "until": "1930-11-15T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1931-05-01T23:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "1931-10-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1932-04-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "format": "CST",
-        "until": "1942-04-24T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1949-01-14T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1970-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "rules": "Mexico",
+        "format": "C%sT"
       },
       {
         "offset": "-7:00",
@@ -7283,138 +7225,74 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-6:00",
-        "rules": "Mexico",
-        "format": "C%sT"
-      }
-    ],
-    "America/Tijuana": [
-      {
-        "offset": "-7:48:04",
-        "format": "LMT",
-        "until": "1922-01-01T00:11:11.000Z",
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1970-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-7:00",
         "format": "MST",
-        "until": "1924-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1927-06-10T23:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1930-11-15T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1931-04-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "1:00",
-        "format": "PDT",
-        "until": "1931-09-30T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1942-04-24T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "1:00",
-        "format": "PWT",
-        "until": "1945-08-14T23:00:00.000Z",
-        "standard": true,
-        "utc": true
-      },
-      {
-        "offset": "-8:00",
-        "rules": "1:00",
-        "format": "PPT",
-        "until": "1945-11-12T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1948-04-05T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "1:00",
-        "format": "PDT",
         "until": "1949-01-14T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1954-01-01T00:00:00.000Z",
+        "offset": "-6:00",
+        "format": "CST",
+        "until": "1942-04-24T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-8:00",
-        "rules": "CA",
-        "format": "P%sT",
-        "until": "1961-01-01T00:00:00.000Z",
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1932-04-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1976-01-01T00:00:00.000Z",
+        "offset": "-6:00",
+        "format": "CST",
+        "until": "1931-10-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1931-05-01T23:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-6:00",
+        "format": "CST",
+        "until": "1930-11-15T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1927-06-10T23:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:01:00",
+        "format": "LMT",
+        "until": "1921-12-31T23:59:59.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Tijuana": [
       {
         "offset": "-8:00",
         "rules": "US",
-        "format": "P%sT",
-        "until": "1996-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "Mexico",
-        "format": "P%sT",
-        "until": "2001-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "US",
-        "format": "P%sT",
-        "until": "2002-02-20T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "format": "P%sT"
       },
       {
         "offset": "-8:00",
@@ -7427,118 +7305,8 @@ module.exports = {
       {
         "offset": "-8:00",
         "rules": "US",
-        "format": "P%sT"
-      }
-    ],
-    "America/Santa_Isabel": [
-      {
-        "offset": "-7:39:28",
-        "format": "LMT",
-        "until": "1922-01-01T00:20:20.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1924-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1927-06-10T23:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-7:00",
-        "format": "MST",
-        "until": "1930-11-15T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1931-04-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "1:00",
-        "format": "PDT",
-        "until": "1931-09-30T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1942-04-24T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "1:00",
-        "format": "PWT",
-        "until": "1945-08-14T23:00:00.000Z",
-        "standard": true,
-        "utc": true
-      },
-      {
-        "offset": "-8:00",
-        "rules": "1:00",
-        "format": "PPT",
-        "until": "1945-11-12T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1948-04-05T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "1:00",
-        "format": "PDT",
-        "until": "1949-01-14T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1954-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "CA",
         "format": "P%sT",
-        "until": "1961-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "format": "PST",
-        "until": "1976-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-8:00",
-        "rules": "US",
-        "format": "P%sT",
-        "until": "1996-01-01T00:00:00.000Z",
+        "until": "2002-02-20T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -7554,6 +7322,124 @@ module.exports = {
         "offset": "-8:00",
         "rules": "US",
         "format": "P%sT",
+        "until": "1996-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1976-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "rules": "CA",
+        "format": "P%sT",
+        "until": "1961-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1954-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "rules": "1:00",
+        "format": "PDT",
+        "until": "1949-01-14T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1948-04-05T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "rules": "1:00",
+        "format": "PPT",
+        "until": "1945-11-12T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "rules": "1:00",
+        "format": "PWT",
+        "until": "1945-08-14T23:00:00.000Z",
+        "standard": true,
+        "utc": true
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1942-04-24T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "rules": "1:00",
+        "format": "PDT",
+        "until": "1931-09-30T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1931-04-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1930-11-15T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1927-06-10T23:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1924-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:48:04",
+        "format": "LMT",
+        "until": "1922-01-01T00:11:11.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
+    "America/Santa_Isabel": [
+      {
+        "offset": "-8:00",
+        "rules": "Mexico",
+        "format": "P%sT"
+      },
+      {
+        "offset": "-8:00",
+        "rules": "US",
+        "format": "P%sT",
         "until": "2002-02-20T00:00:00.000Z",
         "standard": false,
         "utc": false
@@ -7561,29 +7447,140 @@ module.exports = {
       {
         "offset": "-8:00",
         "rules": "Mexico",
-        "format": "P%sT"
+        "format": "P%sT",
+        "until": "2001-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "rules": "US",
+        "format": "P%sT",
+        "until": "1996-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1976-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "rules": "CA",
+        "format": "P%sT",
+        "until": "1961-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1954-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "rules": "1:00",
+        "format": "PDT",
+        "until": "1949-01-14T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1948-04-05T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "rules": "1:00",
+        "format": "PPT",
+        "until": "1945-11-12T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "rules": "1:00",
+        "format": "PWT",
+        "until": "1945-08-14T23:00:00.000Z",
+        "standard": true,
+        "utc": true
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1942-04-24T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "rules": "1:00",
+        "format": "PDT",
+        "until": "1931-09-30T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1931-04-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1930-11-15T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1927-06-10T23:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1924-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:39:28",
+        "format": "LMT",
+        "until": "1922-01-01T00:20:20.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Anguilla": [
+      {
+        "offset": "-4:00",
+        "format": "AST"
+      },
       {
         "offset": "-4:12:16",
         "format": "LMT",
         "until": "1912-03-02T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-4:00",
-        "format": "AST"
       }
     ],
     "America/Antigua": [
       {
-        "offset": "-4:07:12",
-        "format": "LMT",
-        "until": "1912-03-02T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-4:00",
+        "format": "AST"
       },
       {
         "offset": "-5:00",
@@ -7593,17 +7590,18 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-4:00",
-        "format": "AST"
-      }
-    ],
-    "America/Nassau": [
-      {
-        "offset": "-5:09:24",
+        "offset": "-4:07:12",
         "format": "LMT",
         "until": "1912-03-02T00:00:00.000Z",
         "standard": false,
         "utc": false
+      }
+    ],
+    "America/Nassau": [
+      {
+        "offset": "-5:00",
+        "rules": "US",
+        "format": "E%sT"
       },
       {
         "offset": "-5:00",
@@ -7614,18 +7612,18 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "rules": "US",
-        "format": "E%sT"
+        "offset": "-5:09:24",
+        "format": "LMT",
+        "until": "1912-03-02T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Barbados": [
       {
-        "offset": "-3:58:28",
-        "format": "LMT",
-        "until": "1924-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-4:00",
+        "rules": "Barb",
+        "format": "A%sT"
       },
       {
         "offset": "-3:58:28",
@@ -7635,39 +7633,32 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-4:00",
-        "rules": "Barb",
-        "format": "A%sT"
+        "offset": "-3:58:28",
+        "format": "LMT",
+        "until": "1924-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Belize": [
+      {
+        "offset": "-6:00",
+        "rules": "Belize",
+        "format": "C%sT"
+      },
       {
         "offset": "-5:52:48",
         "format": "LMT",
         "until": "1912-04-01T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Belize",
-        "format": "C%sT"
       }
     ],
     "Atlantic/Bermuda": [
       {
-        "offset": "-4:19:04",
-        "format": "LMT",
-        "until": "1930-01-01T02:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
         "offset": "-4:00",
-        "format": "AST",
-        "until": "1974-04-28T02:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "rules": "US",
+        "format": "A%sT"
       },
       {
         "offset": "-4:00",
@@ -7679,17 +7670,23 @@ module.exports = {
       },
       {
         "offset": "-4:00",
-        "rules": "US",
-        "format": "A%sT"
+        "format": "AST",
+        "until": "1974-04-28T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-4:19:04",
+        "format": "LMT",
+        "until": "1930-01-01T02:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Cayman": [
       {
-        "offset": "-5:25:32",
-        "format": "LMT",
-        "until": "1890-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-5:00",
+        "format": "EST"
       },
       {
         "offset": "-5:07:12",
@@ -7699,17 +7696,18 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "format": "EST"
-      }
-    ],
-    "America/Costa_Rica": [
-      {
-        "offset": "-5:36:20",
+        "offset": "-5:25:32",
         "format": "LMT",
         "until": "1890-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
+      }
+    ],
+    "America/Costa_Rica": [
+      {
+        "offset": "-6:00",
+        "rules": "CR",
+        "format": "C%sT"
       },
       {
         "offset": "-5:36:20",
@@ -7719,18 +7717,18 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-6:00",
-        "rules": "CR",
-        "format": "C%sT"
-      }
-    ],
-    "America/Havana": [
-      {
-        "offset": "-5:29:28",
+        "offset": "-5:36:20",
         "format": "LMT",
         "until": "1890-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
+      }
+    ],
+    "America/Havana": [
+      {
+        "offset": "-5:00",
+        "rules": "Cuba",
+        "format": "C%sT"
       },
       {
         "offset": "-5:29:36",
@@ -7740,44 +7738,36 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "rules": "Cuba",
-        "format": "C%sT"
+        "offset": "-5:29:28",
+        "format": "LMT",
+        "until": "1890-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Dominica": [
+      {
+        "offset": "-4:00",
+        "format": "AST"
+      },
       {
         "offset": "-4:05:36",
         "format": "LMT",
         "until": "1911-07-01T00:01:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-4:00",
-        "format": "AST"
       }
     ],
     "America/Santo_Domingo": [
       {
-        "offset": "-4:39:36",
-        "format": "LMT",
-        "until": "1890-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-4:40",
-        "format": "SDMT",
-        "until": "1933-04-01T12:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-4:00",
+        "format": "AST"
       },
       {
         "offset": "-5:00",
-        "rules": "DR",
+        "rules": "US",
         "format": "E%sT",
-        "until": "1974-10-27T00:00:00.000Z",
+        "until": "2000-12-03T01:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -7790,55 +7780,59 @@ module.exports = {
       },
       {
         "offset": "-5:00",
-        "rules": "US",
+        "rules": "DR",
         "format": "E%sT",
-        "until": "2000-12-03T01:00:00.000Z",
+        "until": "1974-10-27T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-4:00",
-        "format": "AST"
+        "offset": "-4:40",
+        "format": "SDMT",
+        "until": "1933-04-01T12:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-4:39:36",
+        "format": "LMT",
+        "until": "1890-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/El_Salvador": [
+      {
+        "offset": "-6:00",
+        "rules": "Salv",
+        "format": "C%sT"
+      },
       {
         "offset": "-5:56:48",
         "format": "LMT",
         "until": "1921-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Salv",
-        "format": "C%sT"
       }
     ],
     "America/Grenada": [
+      {
+        "offset": "-4:00",
+        "format": "AST"
+      },
       {
         "offset": "-4:07:00",
         "format": "LMT",
         "until": "1911-07-01T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-4:00",
-        "format": "AST"
       }
     ],
     "America/Guadeloupe": [
       {
-        "offset": "-4:06:08",
-        "format": "LMT",
-        "until": "1911-06-08T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-4:00",
-        "format": "AST"
+        "offset": "Link",
+        "rules": "America/Guadeloupe",
+        "format": "America/Marigot"
       },
       {
         "offset": "Link",
@@ -7846,32 +7840,36 @@ module.exports = {
         "format": "America/St_Barthelemy"
       },
       {
-        "offset": "Link",
-        "rules": "America/Guadeloupe",
-        "format": "America/Marigot"
+        "offset": "-4:00",
+        "format": "AST"
+      },
+      {
+        "offset": "-4:06:08",
+        "format": "LMT",
+        "until": "1911-06-08T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Guatemala": [
+      {
+        "offset": "-6:00",
+        "rules": "Guat",
+        "format": "C%sT"
+      },
       {
         "offset": "-6:02:04",
         "format": "LMT",
         "until": "1918-10-05T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Guat",
-        "format": "C%sT"
       }
     ],
     "America/Port-au-Prince": [
       {
-        "offset": "-4:49:20",
-        "format": "LMT",
-        "until": "1890-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-5:00",
+        "rules": "Haiti",
+        "format": "E%sT"
       },
       {
         "offset": "-4:49",
@@ -7881,46 +7879,31 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "rules": "Haiti",
-        "format": "E%sT"
+        "offset": "-4:49:20",
+        "format": "LMT",
+        "until": "1890-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Tegucigalpa": [
+      {
+        "offset": "-6:00",
+        "rules": "Hond",
+        "format": "C%sT"
+      },
       {
         "offset": "-5:48:52",
         "format": "LMT",
         "until": "1921-04-01T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-6:00",
-        "rules": "Hond",
-        "format": "C%sT"
       }
     ],
     "America/Jamaica": [
       {
-        "offset": "-5:07:12",
-        "format": "LMT",
-        "until": "1890-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
-        "offset": "-5:07:12",
-        "format": "KMT",
-        "until": "1912-02-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
         "offset": "-5:00",
-        "format": "EST",
-        "until": "1974-04-28T02:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "format": "EST"
       },
       {
         "offset": "-5:00",
@@ -7932,30 +7915,30 @@ module.exports = {
       },
       {
         "offset": "-5:00",
-        "format": "EST"
-      }
-    ],
-    "America/Martinique": [
+        "format": "EST",
+        "until": "1974-04-28T02:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
       {
-        "offset": "-4:04:20",
+        "offset": "-5:07:12",
+        "format": "KMT",
+        "until": "1912-02-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-5:07:12",
         "format": "LMT",
         "until": "1890-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-4:04:20",
-        "format": "FFMT",
-        "until": "1911-05-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
+      }
+    ],
+    "America/Martinique": [
       {
         "offset": "-4:00",
-        "format": "AST",
-        "until": "1980-04-06T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "format": "AST"
       },
       {
         "offset": "-4:00",
@@ -7967,48 +7950,63 @@ module.exports = {
       },
       {
         "offset": "-4:00",
-        "format": "AST"
+        "format": "AST",
+        "until": "1980-04-06T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-4:04:20",
+        "format": "FFMT",
+        "until": "1911-05-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-4:04:20",
+        "format": "LMT",
+        "until": "1890-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Montserrat": [
+      {
+        "offset": "-4:00",
+        "format": "AST"
+      },
       {
         "offset": "-4:08:52",
         "format": "LMT",
         "until": "1911-07-01T00:01:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-4:00",
-        "format": "AST"
       }
     ],
     "America/Managua": [
       {
-        "offset": "-5:45:08",
-        "format": "LMT",
-        "until": "1890-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-6:00",
+        "rules": "Nic",
+        "format": "C%sT"
       },
       {
-        "offset": "-5:45:12",
-        "format": "MMT",
-        "until": "1934-06-23T00:00:00.000Z",
+        "offset": "-5:00",
+        "format": "EST",
+        "until": "1997-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-6:00",
         "format": "CST",
-        "until": "1973-05-01T00:00:00.000Z",
+        "until": "1993-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-5:00",
         "format": "EST",
-        "until": "1975-02-16T00:00:00.000Z",
+        "until": "1992-09-24T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -8023,37 +8021,36 @@ module.exports = {
       {
         "offset": "-5:00",
         "format": "EST",
-        "until": "1992-09-24T00:00:00.000Z",
+        "until": "1975-02-16T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
         "offset": "-6:00",
         "format": "CST",
-        "until": "1993-01-01T00:00:00.000Z",
+        "until": "1973-05-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "format": "EST",
-        "until": "1997-01-01T00:00:00.000Z",
+        "offset": "-5:45:12",
+        "format": "MMT",
+        "until": "1934-06-23T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
       {
-        "offset": "-6:00",
-        "rules": "Nic",
-        "format": "C%sT"
-      }
-    ],
-    "America/Panama": [
-      {
-        "offset": "-5:18:08",
+        "offset": "-5:45:08",
         "format": "LMT",
         "until": "1890-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
+      }
+    ],
+    "America/Panama": [
+      {
+        "offset": "-5:00",
+        "format": "EST"
       },
       {
         "offset": "-5:19:36",
@@ -8063,24 +8060,17 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "format": "EST"
+        "offset": "-5:18:08",
+        "format": "LMT",
+        "until": "1890-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Puerto_Rico": [
       {
-        "offset": "-4:24:25",
-        "format": "LMT",
-        "until": "1899-03-28T12:00:00.000Z",
-        "standard": false,
-        "utc": false
-      },
-      {
         "offset": "-4:00",
-        "format": "AST",
-        "until": "1942-05-03T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "format": "AST"
       },
       {
         "offset": "-4:00",
@@ -8092,29 +8082,36 @@ module.exports = {
       },
       {
         "offset": "-4:00",
-        "format": "AST"
+        "format": "AST",
+        "until": "1942-05-03T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-4:24:25",
+        "format": "LMT",
+        "until": "1899-03-28T12:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/St_Kitts": [
+      {
+        "offset": "-4:00",
+        "format": "AST"
+      },
       {
         "offset": "-4:10:52",
         "format": "LMT",
         "until": "1912-03-02T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-4:00",
-        "format": "AST"
       }
     ],
     "America/St_Lucia": [
       {
-        "offset": "-4:04:00",
-        "format": "LMT",
-        "until": "1890-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-4:00",
+        "format": "AST"
       },
       {
         "offset": "-4:04:00",
@@ -8124,15 +8121,23 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-4:00",
-        "format": "AST"
+        "offset": "-4:04:00",
+        "format": "LMT",
+        "until": "1890-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Miquelon": [
       {
-        "offset": "-3:44:40",
-        "format": "LMT",
-        "until": "1911-05-15T00:00:00.000Z",
+        "offset": "-3:00",
+        "rules": "Canada",
+        "format": "PM%sT"
+      },
+      {
+        "offset": "-3:00",
+        "format": "PMST",
+        "until": "1987-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -8144,25 +8149,17 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-3:00",
-        "format": "PMST",
-        "until": "1987-01-01T00:00:00.000Z",
+        "offset": "-3:44:40",
+        "format": "LMT",
+        "until": "1911-05-15T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-3:00",
-        "rules": "Canada",
-        "format": "PM%sT"
       }
     ],
     "America/St_Vincent": [
       {
-        "offset": "-4:04:56",
-        "format": "LMT",
-        "until": "1890-01-01T00:00:00.000Z",
-        "standard": false,
-        "utc": false
+        "offset": "-4:00",
+        "format": "AST"
       },
       {
         "offset": "-4:04:56",
@@ -8172,17 +8169,18 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-4:00",
-        "format": "AST"
-      }
-    ],
-    "America/Grand_Turk": [
-      {
-        "offset": "-4:44:32",
+        "offset": "-4:04:56",
         "format": "LMT",
         "until": "1890-01-01T00:00:00.000Z",
         "standard": false,
         "utc": false
+      }
+    ],
+    "America/Grand_Turk": [
+      {
+        "offset": "-5:00",
+        "rules": "TC",
+        "format": "E%sT"
       },
       {
         "offset": "-5:07:12",
@@ -8192,36 +8190,38 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-5:00",
-        "rules": "TC",
-        "format": "E%sT"
+        "offset": "-4:44:32",
+        "format": "LMT",
+        "until": "1890-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       }
     ],
     "America/Tortola": [
+      {
+        "offset": "-4:00",
+        "format": "AST"
+      },
       {
         "offset": "-4:18:28",
         "format": "LMT",
         "until": "1911-07-01T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-4:00",
-        "format": "AST"
       }
     ],
     "America/St_Thomas": [
+      {
+        "offset": "-4:00",
+        "format": "AST"
+      },
       {
         "offset": "-4:19:44",
         "format": "LMT",
         "until": "1911-07-01T00:00:00.000Z",
         "standard": false,
         "utc": false
-      },
-      {
-        "offset": "-4:00",
-        "format": "AST"
       }
     ]
   }
-}
+};

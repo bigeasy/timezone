@@ -72,6 +72,7 @@ for file in process.argv.slice 2
         }
 
   for name, zone of info.zones
+    zone.reverse()
     for record in zone
       if record.rules is "-"
         delete record.rules

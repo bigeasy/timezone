@@ -2,6 +2,7 @@ fs = require "fs"
 {TwerpTest} = require "twerp"
 
 {tz} = require "../lib/timezone"
+tz.timezones require "./data/northamerica"
 
 utc = (splat...) -> Date.UTC.apply(null, splat)
 
@@ -24,4 +25,8 @@ class exports.MathTest extends TwerpTest
 
   "test: add day across month": (done) ->
     @equal tz(utc(2007, 2, 31), "+366 day"), utc(2008, 2, 31)
+    done 1
+
+  "test: subtract hours across timezone": (done) ->
+    @equal tz("2010-03-14 12:00", "America/Detroit", "-24 hour", "%c"), "Sat Mar 13 11:00:00 2010"
     done 1

@@ -34,6 +34,9 @@ date = tz(new Date(), "last January", "%c", "America/Detroit");
 // Format using a locale.
 bicentenial = tz("1989/07/14", "Europe/Paris", "fr_FR", "%c");
 
+// Convert time zones.
+bicentenial = tz(tz("1989/07/14", "Europe/Paris"), "America/Detroit", "%c");
+
 // Reduce the noise by creating custom tz functions.
 detroit = tz.curry("America/Detroit");
 detroit(y2k, "%c");
