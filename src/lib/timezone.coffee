@@ -29,7 +29,12 @@ do -> (exports or= window) and do (exports) ->
 
   monthDayOfYear = [ 1, 32, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335 ]
 
-  daysInMonth = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
+  DAYS_IN_MONTH = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
+
+  daysInMonth = (month, year)->
+    days = DAYS_IN_MONTH[month]
+    days++ if month is 1 and isLeapYear year
+    days
 
   isLeapYear = (date) ->
     year = date.getUTCFullYear()
@@ -360,8 +365,7 @@ do -> (exports or= window) and do (exports) ->
         if day is match[2]
           index = i
           break
-      day = daysInMonth[rule.month]
-      day++ if rule.month is 1 and isLeapYear year
+      day = daysInMonth(rule.month, year)
       loop
         date = new Date(Date.UTC(year, rule.month, day, hours, minutes, seconds))
         if date.getDay() is index
@@ -409,6 +413,95 @@ do -> (exports or= window) and do (exports) ->
     adjusted += offsetInMilliseconds(dst.save) if dst and dst.save isnt '0'
     new new Date(adjusted)
 
+  FIELD =
+    year:   0
+    month:  1
+    day:    2
+    hour:   3
+    minute: 4
+    second: 5
+    milli:  6
+
+  SIGN_OFFSET =
+    "-":  -1
+    "+":  +1
+
+  adjust = (date, adjustment, request) ->
+    record = new Date(date)
+    fields = [
+      record.getUTCFullYear()
+      record.getUTCMonth()
+      record.getUTCDate()
+      record.getUTCHours()
+      record.getUTCMinutes()
+      record.getUTCSeconds()
+      record.getUTCMilliseconds()
+    ]
+    offsets = [ 0, 0, 0, 0, 0, 0, 0 ]
+    rest = adjustment.replace(/^\s+/, "")
+    loop
+      match = ///
+        ^                 # start
+        ([+-])            # add or subtract
+        \s*               # optional space
+        (\d)+             # count
+        \s+               # manditory space
+        ( year            # unit
+        | month
+        | day
+        | hour
+        | minute
+        | second
+        | milli
+        )
+        s?                # optional plural
+        (:?               # either
+          (?:
+            \s+               # space delimiter
+            (.*)              # rest of pattern
+          )               # or 
+          |
+          (.*)            # terminal pattern or garbage
+        )
+        $                 # end
+      ///.exec rest
+      if not match
+        throw new Error "bad date math pattern"
+      [ sign, count, unit, rest, terminal ] = match.slice 1
+      if terminal?
+        if terminal isnt ""
+          throw new Error "bad date math pattern"
+        break
+      offsets[FIELD[unit]] += parseInt(count, 10) * SIGN_OFFSET[sign]
+      if rest is ""
+        break
+
+    # Milliesonds.
+    fields[FIELD.milli]   += offsets[FIELD.milli]
+    fields[FIELD.second]  += offsets[FIELD.second]
+    fields[FIELD.minute]  += offsets[FIELD.minute]
+    fields[FIELD.hour]    += offsets[FIELD.hour]
+
+    # Difficult carry that must account for days of month and leap years.
+    day = fields[FIELD.day] + offsets[FIELD.day]
+    while day < 1
+      if fields[FIELD.month] is 0
+        fields[FIELD.month] = 11
+        fields[FIELD.year]--
+      else
+        fields[FIELD.month]--
+      day += daysInMonth(fields[FIELD.month], fields[FIELD.year])
+
+    fields[FIELD.day] = day
+    #else if day > daysInMonth(fields[FIELD.month])
+    #console.log [ day, fields ]
+    #process.exit 1
+    fields[FIELD.month]   += offsets[FIELD.month]
+    fields[FIELD.year]    += offsets[FIELD.year]
+
+    Date.UTC.apply null, fields
+       
+
   # The all purpose exported function.
   exports.tz = tz = (date, splat...) ->
     # Assert that we've been given a date.
@@ -443,7 +536,7 @@ do -> (exports or= window) and do (exports) ->
 
     # Apply date math if any.
     for adjustment in request.adjustments
-      date = adjust adjustment, request
+      date = adjust date, adjustment, request
 
     # Apply format if any.
     if request.format
