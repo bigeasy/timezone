@@ -30,3 +30,7 @@ class exports.MathTest extends TwerpTest
   "test: subtract hours across timezone": (done) ->
     @equal tz("2010-03-14 12:00", "America/Detroit", "-24 hour", "%c"), "Sat Mar 13 11:00:00 2010"
     done 1
+
+  "test: subtract minutes across timezone": (done) ->
+    @equal tz("2010-03-14 03:00", "America/Detroit", "-1 minute", "%c"), "Sun Mar 14 01:59:00 2010"
+    done 1

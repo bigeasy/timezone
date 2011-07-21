@@ -546,7 +546,7 @@ do -> (exports or= window) and do (exports) ->
       if offset = offsets[FIELD.minute]
         sum = fields[FIELD.minute] + offset
         fields[FIELD.minute] = ((60 + sum) % 60) % 60
-        fields[FIELD.hour] = Math.floor(sum / 60)
+        offsets[FIELD.hour] = Math.floor(sum / 60)
     
       if offset = offsets[FIELD.hour]
         if request.zone is "UTC"
