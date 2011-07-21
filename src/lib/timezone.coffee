@@ -441,6 +441,8 @@ do -> (exports or= window) and do (exports) ->
 
     wall
 
+  # FIXME And what if we're already in UTC?
+  # FIXME So, we need to always have a UTC zone.
   utc = (epoch, tzdata) ->
     for maybe in tzdata
       break if convertUntil(maybe) < epoch
