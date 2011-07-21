@@ -5,7 +5,7 @@ fs = require "fs"
 
 tz.timezones require "./data/northamerica"
 
-utc = (splat...) -> new Date(Date.UTC.apply(null, splat))
+utc = (splat...) -> Date.UTC.apply(null, splat)
 
 bicentenial = utc(1976, 6, 4)
 moonwalk = utc(1969, 6, 21, 02, 36)
@@ -25,8 +25,13 @@ class exports.OffsetTest extends TwerpTest
     done 1
 
   "test: convert from UTC to America/Detroit during DST": (done) ->
-    try
-      @equal tz(utc(1976, 6, 4), "America/Detroit", "%F %T"), "1976-07-03 20:00:00"
-    catch e
-      console.log e.stack
+    @equal tz(utc(1976, 6, 4), "America/Detroit", "%F %T"), "1976-07-03 20:00:00"
+    done 1
+
+  "test: convert from America/Detroit to UTC during DST": (done) ->
+    @equal tz("2010-03-14T03:00:00", "America/Detroit"), utc(2010, 02, 14, 7)
+    done 1
+
+  "test: convert from America/Detroit to UTC": (done) ->
+    @equal tz("2010-03-14T01:00:00", "America/Detroit"), utc(2010, 02, 14, 6)
     done 1
