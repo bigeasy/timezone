@@ -19,5 +19,3 @@ Decisions:
  * In Node.js, timezone data is loaded *synchonously* as needed, or at startup. 
  * Make a magic function that does format, parse and date math based on
    parameter order, to simplify import and minimize burden on namespace.
-
-NODE_PATH=lib vows vows/*.js  --spec
