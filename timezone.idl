@@ -48,6 +48,25 @@ hamtramck(y2k, "%c");
 Thus, `tz` always returns either milliseconds since the epoch in UTC, or a
 formatted string if a format specifier is provided.
 
+## Just In Time Time
+
+Always adjust your dates just in time. Store your dates in UTC. Convert them
+when they are displayed. Record events using UTC on the server, not the client.
+You cannot trust the client time, you do not know if the clock is set correctly,
+you can't keep the user from adjusting it, even you try to account for skew.
+
+UTC timestamps will always indicate a particular second since the epoch.
+
+
+If you are doing math in hours, minutes, seconds or milliseconds, this will
+reflect the UTC time. 
+
+If you are day math, you may land on a daylight savings time shift. If this is
+the case, then the last day is treated as 24 hours. Otherwise, if are on a day
+at 6:00 PM standard time, and go back six months to the same day, different
+month, in daylight savings time, the time will still be 6:00 PM. (Use real
+Detroit, Michigan examples.)
+
 @ tz
 
 The namespace.
