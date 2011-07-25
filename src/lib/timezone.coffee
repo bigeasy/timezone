@@ -55,8 +55,9 @@ do -> (exports or= window) and do (exports) ->
   # specific fuzzy date parsing.
   TIMEZONES =
     zones:
-      UTC: [ { "offset": "0", "format": "UTC", "name": "UTC" } ]
+      UTC: [ { "offset": "0", "format": "UTC" } ]
     rules: {}
+  TIMEZONES.zones.UTC.name = "UTC"
 
   LOCALES =
     en_US:
@@ -65,15 +66,15 @@ do -> (exports or= window) and do (exports) ->
         abbrev: "Sun Mon Tue Wed Thu Fri Sat".split /\s/
         full: """
           Sunday Monday Tuesday Wednesday Thursday Friday Saturday
-        """.split /\s/
+        """.split /\s+/
       month:
-        abbrev: "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split /\s/
+        abbrev: "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split /\s+/
         full: """
           January February March
           April   May      June
           July    August   September
           October November December
-        """.split /\s/
+        """.split /\s+/
       dateFormat: "%m/%d/%y"
       timeFormat: "%H:%M:%S"
       dateTimeFormat: "%a %b %_d %H:%M:%S %Y"
@@ -204,7 +205,8 @@ do -> (exports or= window) and do (exports) ->
       Y: (date) -> date.getUTCFullYear()
       C: (date) -> Math.floor(date.getFullYear() / 100)
       D: (date) -> tz(date, "%m/%d/%y")
-      x: (date, locale, tzdata) -> tz(date, locale.dateFormat, locale.name, tzdata.name)
+      x: (date, locale, tzdata) ->
+        tz(convertToUTC(date.getTime(), tzdata), locale.dateFormat, locale.name, tzdata.name)
       F: (date) -> tz(date, "%Y-%m-%d")
       l: (date) -> dialHours(date)
       I: (date) -> dialHours(date)
@@ -219,7 +221,8 @@ do -> (exports or= window) and do (exports) ->
       r: (date) -> tz(date, "%I:%M:%S %p")
       R: (date) -> tz(date, "%H:%M")
       T: (date) -> tz(date, "%H:%M:%S")
-      X: (date, locale, tzdata) -> tz(date, locale.timeFormat, locale.name, tzdata.name)
+      X: (date, locale, tzdata) ->
+        tz(convertToUTC(date.getTime(), tzdata), locale.timeFormat, locale.name, tzdata.name)
       c: (date, locale, tzdata) ->
         tz(convertToUTC(date.getTime(), tzdata), locale.dateTimeFormat, locale.name, tzdata.name)
       z: (date, locale, tzdata) ->
@@ -287,9 +290,13 @@ do -> (exports or= window) and do (exports) ->
           ^           # start
           (.*?)       # non-specifier stuff
           %           # start specifier
-          ([-0_^]?)   # padding
-          (           # field
-            [aAcdDeFHIjklMNpPsrRSTuwXUWVmhbByYcGgCx]
+          (?:
+            %           # literal precent
+            |
+            ([-0_^]?)   # padding
+            (           # field
+              [aAcdDeFHIjklMNpPsrRSTuwXUWVmhbByYcGgCx]
+            )
           )
           (.*)        # rest
           $           # end
@@ -299,30 +306,37 @@ do -> (exports or= window) and do (exports) ->
         if match
           [ prefix, flags, specifier, rest ] = match.slice(1)
 
-          # Get out specifier field value.
-          value = specifiers[specifier](date, locale, tzdata)
+          # We have a specifier.
+          if specifier
 
-          # Apply padding, if the specifier is padded. The `k` specifier is
-          # padded with spaces, but all others are padded with zeros. We apply
-          # the user override, if any, and call the appropriate padding
-          # function.
-          if padding[specifier]
-            style = if specifier is "k" then "_" else "0"
+            # Get out specifier field value.
+            value = specifiers[specifier](date, locale, tzdata)
+
+            # Apply padding, if the specifier is padded. The `k` specifier is
+            # padded with spaces, but all others are padded with zeros. We apply
+            # the user override, if any, and call the appropriate padding
+            # function.
+            if padding[specifier]
+              style = if specifier is "k" then "_" else "0"
+              if flags.length
+                style = flags[0] if paddings[flags[0]]
+              value = paddings[style](value, padding[specifier], tzdata)
+
+            # Apply any user specified transformations. This is only upper case,
+            # and it implies that the value is not numeric, there is never more
+            # than one modifier.
+            transform = transforms.none
             if flags.length
-              style = flags[0] if paddings[flags[0]]
-            value = paddings[style](value, padding[specifier], tzdata)
+              transform = transforms[flags[0]] or transform
+            value = transform(value)
 
-          # Apply any user specified transformations. This is only upper case,
-          # and it implies that the value is not numeric, there is never more
-          # than one modifier.
-          transform = transforms.none
-          if flags.length
-            transform = transforms[flags[0]] or transform
-          value = transform(value)
+            # Add the prefix and converted value to the output.
+            output.push prefix if prefix?
+            output.push value
 
-          # Add the prefix and converted value to the output.
-          output.push prefix if prefix?
-          output.push value
+          # We have a literal percent.
+          else
+            output.push "%"
 
         # Otherwise, we're going to be done with this loop.
         else if rest.length

@@ -18,13 +18,17 @@ readDate = (date) ->
   new Date(Date.UTC(parseInt(year, 10), parseInt(month, 10) - 1, parseInt(day, 10)))
 
 class exports.FormatTest extends TwerpTest
+  testPercent: ( done ) ->
+    @equal tz(bicentenial, "%%"), "%"
+    done 1
+
   testWeekdayShort: ( done ) ->
     @equal tz(bicentenial, "%a"), "Sun"
     done 1
 
   testPercentsFrontAndBack: ( done ) ->
-    @equal tz(bicentenial, "%%a%"), "%Sun%"
-    @equal tz(bicentenial, "%%%a%%"), "%%Sun%%"
+    @equal tz(bicentenial, "%%%a%"), "%Sun%"
+    @equal tz(bicentenial, "%%%a%%"), "%Sun%"
     done 2
 
   testWeekdayLong: ( done ) ->
