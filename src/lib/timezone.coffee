@@ -352,14 +352,24 @@ do -> (exports or= window) and do (exports) ->
       # Gather up our output into a string.
       output.join ""
 
-  # Create a date, filling in the blanks.
+  ##### makeDate(year, month, day, hours, minutes, seconds, milliseconds)
+  # 
+  # Create a wallclock time record from the given units extracted from a parsed
+  # date string.
+
+  # Wrap helper methods in a function scope.
   makeDate = do ->
+    # Push a zero onto date fields if the value is undefined.
     zeroUnless = (date, value) ->
       if value?
         date.push parseInt value, 10
       else
         date.push 0
 
+    # This method will substitute for missing values. If given only a time, it
+    # will use the current date. If given only a date, it will use midnight for
+    # the time. If given a year without a month or day, it is the first of the
+    # year. If given a month with no day, it will use the first of the month.
     (year, month, day, hours, minutes, seconds, milliseconds) ->
       date = []
 
@@ -385,7 +395,7 @@ do -> (exports or= window) and do (exports) ->
       # todays date. If we have a year, then we have a date with no day, so we
       # assume the first of the month.
       if not day?
-        if not year?
+        if not month?
           date.push now.getUTCDate()
         else
           date.push 1
@@ -440,12 +450,12 @@ do -> (exports or= window) and do (exports) ->
       )?
       (?:           # optional zone 
         (?:\s+|Z)     # zone delimiter
-        (?:
-          ([+-])      # sign
-          (\d{2})     # hours
+        (
+          [+-]      # sign
+          \d{2}     # hours
           (?:         # optional minutes
             :?          # optional colon
-            (\d{2})     # minutes
+            \d{2}       # minutes
           )?
         )
       )?
@@ -468,8 +478,8 @@ do -> (exports or= window) and do (exports) ->
       [ hours, minutes, seconds, milliseconds ] = time if time[0]?
 
       # See if we matched a zone offset.
-      zone = match.splice(0, 3)
-      [ sign, zoneHours, zoneMinutes ] = zone if zone[0]?
+      zone = match.shift()
+      zoneOffset = offsetInMilliseconds(zone) if zone?
 
       # Stuff fater the matched ISO date.
       after = match.pop()
