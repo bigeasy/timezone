@@ -127,7 +127,8 @@ do -> (exports or= window) and do (exports) ->
     # Get the week of the year for the given `date`, where `startOfWeek` is the
     # week day on which our week starts.
     weekOfYear = (date, startOfWeek) ->
-      date = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()))
+      fields = [ date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate() ]
+      date = new Date(Date.UTC.apply null, fields)
       nyd = new Date(Date.UTC(date.getUTCFullYear(), 0, 1))
       diff = (date.getTime() - nyd.getTime()) / DAY
       day = date.getUTCDay()
@@ -206,25 +207,30 @@ do -> (exports or= window) and do (exports) ->
       C: (date) -> Math.floor(date.getFullYear() / 100)
       D: (date) -> tz(date, "%m/%d/%y")
       x: (date, locale, tzdata) ->
-        tz(convertToUTC(date.getTime(), tzdata), locale.dateFormat, locale.name, tzdata.name)
+        utc = convertToUTC(date.getTime(), tzdata)
+        tz(utc, locale.dateFormat, locale.name, tzdata.name)
       F: (date) -> tz(date, "%Y-%m-%d")
       l: (date) -> dialHours(date)
       I: (date) -> dialHours(date)
       k: (date) -> date.getUTCHours()
       H: (date) -> date.getUTCHours()
-      P: (date, locale) -> locale.meridiem[Math.floor(date.getUTCHours() / 12)]
-      p: (date, locale) -> locale.meridiem[Math.floor(date.getUTCHours() / 12)].toUpperCase()
+      P: (date, locale) ->
+        locale.meridiem[Math.floor(date.getUTCHours() / 12)]
+      p: (date, locale) ->
+        locale.meridiem[Math.floor(date.getUTCHours() / 12)].toUpperCase()
       M: (date) -> date.getUTCMinutes()
-      s: (date) -> Math.floor(date.getTime() / 1000) # Affeced by TZ in unix date.
+      s: (date) -> Math.floor(date.getTime() / 1000)
       S: (date) -> date.getUTCSeconds()
       N: (date) -> (date.getTime() % 1000) * 1000000
       r: (date) -> tz(date, "%I:%M:%S %p")
       R: (date) -> tz(date, "%H:%M")
       T: (date) -> tz(date, "%H:%M:%S")
       X: (date, locale, tzdata) ->
-        tz(convertToUTC(date.getTime(), tzdata), locale.timeFormat, locale.name, tzdata.name)
+        utc = convertToUTC(date.getTime(), tzdata)
+        tz utc, locale.timeFormat, locale.name, tzdata.name
       c: (date, locale, tzdata) ->
-        tz(convertToUTC(date.getTime(), tzdata), locale.dateTimeFormat, locale.name, tzdata.name)
+        utc = convertToUTC(date.getTime(), tzdata)
+        tz utc, locale.dateTimeFormat, locale.name, tzdata.name
       z: (date, locale, tzdata) ->
         offset = Math.floor(offsetInMilliseconds(tzdata.offset) / 1000 / 60)
         if offset < 0
@@ -540,7 +546,8 @@ do -> (exports or= window) and do (exports) ->
 
     # A fixed date.
     if match[1]
-      date = new Date(Date.UTC(year, rule.month, parseInt(match[1], 10), hours, minutes, seconds))
+      [ month, day ] = [ rule.month, parseInt(match[1], 10) ]
+      date = new Date(Date.UTC(year, month, day, hours, minutes, seconds))
 
     # Last of a particular day of the week in the month.
     else if match[2]
