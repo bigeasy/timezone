@@ -477,7 +477,8 @@ do -> (exports or= window) and do (exports) ->
       time = match.splice(0, 4)
       [ hours, minutes, seconds, milliseconds ] = time if time[0]?
 
-      # See if we matched a zone offset.
+      # See if we matched a zone offset. A zone offset is ISO an arbitrary
+      # offset and has no information on location or summer time rules.
       zone = match.shift()
       zoneOffset = offsetInMilliseconds(zone) if zone?
 
