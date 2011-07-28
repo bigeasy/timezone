@@ -1,6 +1,7 @@
 # Node Timezone
 
-Minimalist time library for Node.js and the browser.
+Minimalist time library for Node.js and the browser, timezone is a time zone
+aware date math, parsing, and formatting library.
 
 ## Synopsis
 
@@ -47,6 +48,14 @@ hamtramck(y2k, "%c");
 
 Thus, `tz` always returns either milliseconds since the epoch in UTC, or a
 formatted string if a format specifier is provided.
+
+## Date Math
+
+If we land on a time missing due to the start daylight savings time, we
+continue in the direction we were going, adding an additional day if we are
+doing addition, subtracting an additional day if we are doing subtraction. We
+then go back by 24 hours. This gives us the same counter intuitive times as
+Java's Calendar.
 
 ## Just In Time Time
 

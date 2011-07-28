@@ -63,5 +63,18 @@ class Zones {
         calendar.set(2010, 2, 14, 3, 00, 0);
         calendar.add(Calendar.SECOND, -1);
         System.out.println(format.format(calendar.getTime()));
+
+        // Fall back.
+        calendar.set(2010, 10, 6, 1, 30, 0);
+        calendar.add(Calendar.DATE, +1);
+        System.out.println(format.format(calendar.getTime()));
+
+        calendar.set(2010, 10, 6, 2, 30, 0);
+        calendar.add(Calendar.DATE, +1);
+        System.out.println(format.format(calendar.getTime()));
+
+        calendar.set(2010, 10, 6, 3, 30, 0);
+        calendar.add(Calendar.DATE, +1);
+        System.out.println(format.format(calendar.getTime()));
     }
 }

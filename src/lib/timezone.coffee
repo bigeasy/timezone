@@ -117,7 +117,7 @@ do -> (exports or= window) and do (exports) ->
   # contains the field values for a valid time in the user specified time zone.
   # Invalid dates would already have been caught by `parse`.
 
-  # We wrap up a great many helpers with this method.
+  # We wrap up a great many helpers using an anonymous `do` function.
   format = do ->
     # The day of the year for the first day of the month for each month.
     MONTH_DAY_OF_YEAR = [ 1, 32, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335 ]
@@ -125,7 +125,7 @@ do -> (exports or= window) and do (exports) ->
     # *weekOfYear(date, startOfWeek)*
     #
     # Get the week of the year for the given `date`, where `startOfWeek` is the
-    # week day on which our week starts.
+    # week day on which our week starts, either Sunday or Monday.
     weekOfYear = (date, startOfWeek) ->
       fields = [ date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate() ]
       date = new Date(Date.UTC.apply null, fields)
@@ -610,6 +610,20 @@ do -> (exports or= window) and do (exports) ->
         zone.until = Math.MAX_VALUE
     zone.until
       
+  summerRule = (wall, utc, zone) ->
+    if rules = TIMEZONES.rules[zone.rules]
+      year      = new Date(wall).getUTCFullYear()
+      previous  = new Date(year - 1, 11, 31).getTime()
+      for rule in rules
+        if rule.from <= year and year <= rule.to
+          start = ruleToDate(year, rule)
+          offsetWall = wall
+          if dst and utc
+            offsetWall += offsetInMilliseconds(dst.save)
+          if start <= offsetWall and previous < start
+            previous = start
+            dst = rule
+    dst
 
   # Convert the UTC epoch seconds to epoch seconds in the given time zone.
   convertToWallclock = (utc, tzdata) ->
@@ -617,30 +631,17 @@ do -> (exports or= window) and do (exports) ->
       offset = utc + offsetInMilliseconds(maybe.offset)
       break if convertUntil(maybe) < offset
       zone = maybe
-      wall = offset
+      wallclock = offset
 
-      # Now we have an adjusted time. We're going to pretend that seconds since
-      # the epoch starts from 1/1/1970 in the current timezone, instead of in
-      # UTC. We're going to use our date a structure for the field names, and
-      # treat UTC values as if the were local time. This means we can do simple
-      # compares between seconds since the epoch, but this is our little secret.
-      #
-      # FIXME We use this three times. DRY it up.
-      if rules = TIMEZONES.rules[zone.rules]
-        year = new Date(wall).getUTCFullYear()
-        previous = new Date(year - 1, 0, 1).getTime()
-        for rule in rules
-          if rule.from <= year and year <= rule.to
-            start = ruleToDate(year, rule)
-            offsetWall = wall
-            offsetWall += offsetInMilliseconds(dst.save) if dst
-            if start <= offsetWall and previous < start
-              previous = start
-              dst = rule
+    # Now we have an adjusted time. We're going to pretend that seconds since
+    # the epoch starts from 1/1/1970 in the current timezone, instead of in
+    # UTC. We're going to use our date a structure for the field names, and
+    # treat UTC values as if the were local time. This means we can do simple
+    # compares between seconds since the epoch, but this is our little secret.
+    dst = summerRule(wallclock, true, zone)
+    wallclock += offsetInMilliseconds(dst?.save or "0")
 
-    wall += offsetInMilliseconds(dst.save) if dst
-
-    wall
+    wallclock
 
   # Convert from a wallclock milliseconds since the epoch to UTC milliseconds
   # since the epoch.
@@ -649,20 +650,16 @@ do -> (exports or= window) and do (exports) ->
       break if convertUntil(maybe) < wallclock
       zone = maybe
 
-      if rules = TIMEZONES.rules[zone.rules]
-        year = new Date(wallclock).getUTCFullYear()
-        previous = new Date(year - 1, 0, 1).getTime()
-        for rule in rules
-          if rule.from <= year and year <= rule.to
-            start = ruleToDate(year, rule)
-            if start <= wallclock and previous < start
-              previous = start
-              dst = rule
-
     utc = wallclock - offsetInMilliseconds(zone.offset)
 
-    if dst and dst.save isnt '0'
-      utc -= offsetInMilliseconds(dst.save)
+    dst = summerRule(wallclock, false, zone)
+    if dst and dst.save isnt "0"
+      start = ruleToDate(new Date(wallclock).getUTCFullYear(), dst)
+      end = start + offsetInMilliseconds(dst.save)
+      if start <= wallclock and wallclock < end
+        utc = null
+      else
+        utc -= offsetInMilliseconds(dst?.save or "0")
 
     utc
 
@@ -735,7 +732,9 @@ do -> (exports or= window) and do (exports) ->
       wallclock = convertToWallclock utc, tzdata
 
       # Accounts for leap years and days of month.
-      wallclock += offsets[FIELD.day] * DAY
+      if offset = offsets[FIELD.day]
+        forward = offset / Math.abs(offset)
+        wallclock += offset * DAY
 
       # Explode into individual fields for month and year math.
       date = new Date(wallclock)
@@ -752,7 +751,7 @@ do -> (exports or= window) and do (exports) ->
       # It is easier to move through the months ourselves that it is to move by
       # milliseconds.
       if offset = offsets[FIELD.month]
-        increment = offset / Math.abs(offset)
+        forward = increment = offset / Math.abs(offset)
         while offset isnt 0
           month = offset[FIELD.month]
           if month is 0 and offset < 0
@@ -766,10 +765,23 @@ do -> (exports or= window) and do (exports) ->
           offset += increment
           
       # Adjust the year. 
-      fields[FIELD.year] += offsets[FIELD.year]
+      if offset = offsets[FIELD.year]
+        forward = offset / Math.abs(offset)
+        fields[FIELD.year] += offset
+
 
       # Create a wallclock date.
-      Date.UTC.apply null, fields
+      wallclock = Date.UTC.apply null, fields
+
+      # If we landed on a time missing due to summer time spring forward, we
+      # will move to the day using 24 hours.
+      if not convertToUTC(wallclock, tzdata)?
+        wallclock += DAY * forward
+        utc = convertToUTC wallclock, tzdata
+        utc -= DAY * forward
+        wallclock = convertToWallclock utc, tzdata
+
+      wallclock
        
 
   # The all purpose exported function.

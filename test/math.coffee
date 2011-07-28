@@ -44,3 +44,13 @@ class exports.MathTest extends TwerpTest
     @equal tz("2010-11-07 02:00", "America/Detroit", "-90 minutes", "%c"), "Sun Nov  7 01:30:00 2010"
     @equal tz("2010-11-07 02:00", "America/Detroit", "-120 minutes", "%c"), "Sun Nov  7 01:00:00 2010"
     done 2
+
+  "test: add day lands on missing dst start time": (done) ->
+    @equal tz("2010-03-13 02:30", "America/Detroit", "+1 day", "%c"), "Sun Mar 14 01:30:00 2010"
+    @equal tz("2010-03-13 03:30", "America/Detroit", "+1 day", "%c"), "Sun Mar 14 03:30:00 2010"
+    done 2
+
+  "test: subtract day to missing dst start time": (done) ->
+    @equal tz("2010-03-15 02:30", "America/Detroit", "-1 day", "%c"), "Sun Mar 14 03:30:00 2010"
+    @equal tz("2010-03-15 03:30", "America/Detroit", "-1 day", "%c"), "Sun Mar 14 03:30:00 2010"
+    done 2
