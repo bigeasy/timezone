@@ -413,8 +413,94 @@ do -> (exports or= window) and do (exports) ->
       Date.UTC.apply null, date
 
   # Parse a date, possibly fuzzy.
-  parse = (pattern) ->
-    # Best foot forward, an ISO date. An ISO date can also be YYYY, but we catch
+  parse = (pattern, locale) ->
+    # Best foot forward, an RFC 822 date.
+    if match = ///
+      ^             # start
+      (.*?)         # before
+      (
+        \w{3}         # day of week
+      )
+      ,             # comma
+      \s+           # spaces
+      (
+        \d{1,2}       # day of month
+      )
+      \s+           # spaces
+      (
+        \w{3}         # month
+      )
+      \s+           # spaces
+      (
+        \d{2,4}       # year
+      )
+      \s+           # spaces
+      (
+        \d{2}         # hour
+      )
+      :             # colon
+      (
+        \d{2}         # minutes
+      )
+      (?:
+        :             # colon
+        (
+          \d{2}         # seconds
+        )
+      )?
+      \s*
+      (?:
+        (
+          [A-IK-Z]      # military
+          |
+          UT | GMT      # UTC
+          |
+          [ECMP][SD]T   # United States
+        )
+        |
+        (
+          [-+]?
+          \d{4}
+        )
+      )?
+      (.*)
+      $
+    ///i.exec pattern
+      [ before,
+        dow, day, month, year,
+        hours, minutes, seconds,
+        zone, offset,
+        after ] = match.slice 1
+
+      dow = dow.toLowerCase()
+      for abbrev in locale.day.abbrev
+        if dow is abbrev.toLowerCase()
+          dow = null
+          break
+      if dow
+        throw new Error "bad weekday"
+      month = month.toLowerCase()
+      for abbrev, i in locale.month.abbrev
+        if month is abbrev.toLowerCase()
+          month = i
+          break
+      if typeof month is "string"
+        throw new Error "bad month"
+
+      seconds or= "0"
+      offset  or= "0"
+
+      [ day, year, hours, minutes, seconds, offset ] = (
+        parseInt num, 10 for num in [ day, year, hours, minutes, seconds, offset ]
+      )
+      
+      made = makeDate year, month + 1, day, hours, minutes, seconds, 0
+      if offset
+        made -= Math.floor(offset / 100) * HOUR
+
+      return made
+
+    # Second best foot forward, an ISO date. An ISO date can also be YYYY, but we catch
     # that case later on, so we don't pluck YYYY/MM or some such now.
     if match = ///
       ^             # start
@@ -824,7 +910,7 @@ do -> (exports or= window) and do (exports) ->
     if typeof date is "string"
 
       # Parse will apply the time zone offset.
-      wallclock = parse date, request
+      wallclock = parse date, request.locale, request.tzdata
 
     else
       # Convert from date to epoch seconds if necessary.

@@ -4,6 +4,10 @@ fs = require "fs"
 {tz} = require "../lib/timezone"
 
 class exports.ParseTest extends TwerpTest
+  "test: parse RFC 822 time": (done) ->
+    @equal tz("Sat, 13 Aug 2011 10:24:20 -0400"), Date.UTC(2011, 7, 13, 14, 24, 20)
+    done 1
+
   "test: parse ISO year and month with hyphen": (done) ->
     @equal tz("1980-01"), Date.UTC(1980, 0, 1)
     done 1
