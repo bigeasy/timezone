@@ -1,7 +1,7 @@
-# Node Timezone
+# Timezone
 
-Minimalist time library for Node.js and the browser, timezone is a time zone
-aware date math, parsing, and formatting library.
+Minimalist time library for JavaScript, for use in Node.js and the browser,
+timezone is a time zone aware library for date math, parsing, and formatting.
 
 ## Synopsis
 
@@ -48,6 +48,202 @@ hamtramck(y2k, "%c");
 
 Thus, `tz` always returns either milliseconds since the epoch in UTC, or a
 formatted string if a format specifier is provided.
+
+## Overview
+
+Outline to convey:
+
+ * JavaScript `Date` is missing formatting, parsing, math, and local time.
+ * Timezones are not time offsets.
+ * Timezones are political.
+ * POSIX time for comparison and storage.
+
+The JavaScript `Date` object offers no parsing or formatting, of course, but you
+might not be aware of that `Date` offers to real support for local time. Local
+time is important if your program runs in more than one timezone.  If your
+program runs on the public web, then it runs in more than one timezone.
+
+The JavaScript `Date` has a useless dabble of support for local time. The
+duplicate date field functions might lead you to believe that it local time
+support is in effect, but it is not. You can't set a timezone by a timezone
+name. It is unaware of any timezone rules. There is no notion of daylight
+savings time. When you create a `Date` object it will offset the field values by
+the timezone offset of the computer. You can't reset that offset. You have your
+choice either UTC or UTC with an arbitrary offset.
+
+Timezones are more than a single arbitrary offset. They are entirely political,
+and defined by arbitrary geographic boundaries. They adjust for daylight
+savings time. Consider the muddle that is [time in
+Indiana](http://en.wikipedia.org/wiki/Time_in_Indiana), and you'll see that 
+
+ Applications need to be able to set
+their timezones independent of the timezone of the local computer. Applications
+need compare dates in different timezones, think flight arrivals and departures
+or conference call scehduling. Applications need to be able to know the correct
+timezone offset for different dates.
+
+If you're going to do any sort of date parsing, formatting, or manipulatoin in
+your JavaScript application, you need an external date library.
+
+Timezone is a timezone aware date library for JavaScript that
+
+ * formats dates using UNIX date format specifiers,
+ * formats dates adjusting for timezone and daylight savings time,
+ * formats dates according to a specified locale,
+ * parses RFC 822 and ISO 8601 dates,
+ * parses some additonal common date formats,
+ * parses dates adjusting for timezone and daylight savings time,
+ * parses dates according to a specified locale,
+ * adds and substracts intervals in local time adjusting for daylight savings
+   time and leap days.
+
+Timezone does not monkey patch the JavaScript `Date` object. Timezone exports a
+single function, `tz`.
+
+Timezone works with one of two types of date value,
+
+ * POSIX time,
+ * or date strings.
+
+Timezone uses POSIX time, milliseconds since the epoch in UTC, for a univeral
+representation of a point in time. If given a JavaScript `Date` object, Timezone
+will use the POSIX time value of the `Date` object.
+
+Timezone will also parse string represntation of dates, so you can use a
+representation that includes timezone offsets, or timezone names.
+
+Timezone will return ether a POSIX time or a formatted date string if a format
+specifier is given as a parameter. It never generates JavaScript `Date` objects.
+
+Timezone is timezone aware. It uses the same timezone names found in tzdata. The
+timezone support is created from the same text database usd to create the tzdata
+timezone files found on most UNIX systems.
+
+Timezone uses local time for date math, but uses POSIX time for date
+comparisons. POSIX time is used for comparisons so we can compare points in
+time, and know that we're not comparing timestamps in different timezones.
+
+While Timezone uses local time for date math, an application should use POSIX
+time for date comparisons. POSIX time is used for comparisons so we can compare
+points in time, and know that we're not comparing timestamps in different
+timezones.
+
+When creating an application with Timezone, POSIX time is used for persistent
+storage and for date comparisons. We store our dates in POSIX time and convert
+them to local time when we format them for presentation.
+
+We convert all our dates to POSIX time
+Times should be stored
+using POSIX time, since queries against a timestamp in a database is a
+comparison.
+
+If you're using a database, and you want to use TIMESTAMP, then make sure that
+your database won't trip you up by adding the timezone offset of the server.
+MySQL is not timezone aware, so I set the timezone of my MySQL servers to UTC,
+because MySQL always adds the host machines current timezone offset, which is 
+arbitrary information that is external to and not recorded anywhere within the
+database. That is, if you export your MySQL database, it doesn't record what
+timezone it was running in when the database was created.
+
+
+Thus, if we want to allow the user to move appointments forward by
+a number of hours on their calendar, which would be presented in their local
+time, Timezone will add the hours and then adjust the time if we enter or leave
+daylight savings time.
+
+Timezone can perform date math in both POSIX time and local time. When adding or
+subtracting by hours, minutes, seconds, and milliseconds, Timezone will adjust
+for daylight savings time.
+
+An an example, let's say the you're writing a calendar application for a travel
+web site, so that frequent travelers can choose from fights that do not conflict
+with their scheduled appointments. To use the feature, the customers sync their
+calendar with the reservation system using any iCalendar compatable calendar.
+Now when they search for flights, a flight that interferes with an appointment
+is flagged, so the user can see what appointments need to be rescheduled to take
+that flight.
+
+If you are a New Yorker who wants to check to see if you're going to miss any
+conference calls if you take a particular flight from Vilinus to San Francisco,
+you need check to see if the dates in your Eastern Time calendar fit between an
+Easter Eurpoean Time departure and a Pacific Time arrival.
+
+Obviously, this query needs to adjust these different times to a common
+timezone, which is UTC for POSIX time. The application needs to display the
+appointment dates, and the arrival and departure date in their with respective
+time zones offsets. 
+
+These days should all be converted to a common timezone to check for conficts,
+then the various times should be presented according to the local time of the
+event. 
+
+It works with the strategy of using POSIX time as the persistent representation
+of a timestamp, and converting that universal time to wall clock time for
+presentation.
+
+POSIX time is the notion of the passage of
+time common to all POSIX compient
+UNIX systems. It is milliseconds since the epoch in UTC. This represents a
+specific point in time. 
+ 
+The milliseconds since the epoch in UTC value is an absolute value that is not
+affected by the politics of timezones and daylight savings time. It is
+considered a stable representation of a point in time, that is suitable for
+storage in a database.
+
+Strings are used to represent wall clock time. If a time needs to be presented
+to a user, 
+
+You can use the `tz` function to create a date format for display, one that
+cannot be in turn parsed by the `tz` function. That's fine.
+
+## Usage
+
+Timezone exports a single funtion to keep from polluting the namespace of the
+client application. This single method accepts parameters similar to UNIX date. 
+
+The first parameter is always a date, either as milliseconds since the epoch as
+UTC or a date string to parse.
+
+Other arguments can appear in any order.
+
+ * *timezone* &mdash; A timezone offset to use when parsing or foramtting such
+   as `EDT` or `America/Detroit`.
+ * *locale* &mdash; A locale to use when parsing or formatting such as `en_US`
+   or `zh_CN`.
+ * *format* &mdash; A UNIX date format specifier such as `%Y/%d/%m` to return
+   the date as a formatted date string, or else a swith to indicate a  canned
+   format specifier like `--rfc822` or `--rfc-3339=ns`.
+ * *offsets* &mdash; A set of offsets to apply to the date like `+1 day -43 minutes`.
+
+You can pass these in any order after the initial date parameter, the `tz`
+function knows what you mean.
+
+Only one *timezone*, *locale* or *format* can be applied to a date, so if a
+value is repeated for one of these parameter types, the first value is used,
+subsequent values are ignored.
+
+The *offsets* parameter can be specified multiple times. The offsets are applied
+to the date in the order in which they are passed to the `tz` function.
+
+The return value is always either milliseconds since the epoch as UTC or a date
+string if the `tz` function was passed a format specifier.
+
+## Rationale
+
+While other languages extend the JavaScript date object to 
+
+The API is really a domain specific language. The parameters can be passed in
+any order because the different parameter types have an unambiguous meaning.
+
+The `Date` object takes POSIX time and exposes the component values, which is
+somewhat useful, but not not often what you need. You don't really don't often
+need the number seconds in a timestamp as an integer value, you need to parse,
+format, offset and compare dates. The POSIX time representation is perfect for
+comparision. Formatting is easiest to express with a format pattern.
+
+Even if it were timezone aware, the `Date` object is not a particularly useful
+representation of 
 
 ## Date Math
 
