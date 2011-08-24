@@ -49,41 +49,55 @@ hamtramck(y2k, "%c");
 Thus, `tz` always returns either milliseconds since the epoch in UTC, or a
 formatted string if a format specifier is provided.
 
-## Overview
+## The Useless Dabble
 
-Outline to convey:
+The Timezone library uses the [Olson timezone
+database](http://cs.ucla.edu/~eggert/tz/tz-link.htm), to create a database of
+timezone rules, one per contenent, in a compact JSON representation, so you can,
+with some confidence, determine the correct local time of any place in the
+world, since 1970. It replaces the `Date` object with POSIX time, milliseconds
+since the epoch, for a cross-platform, durable representation of time.
 
- * JavaScript `Date` is missing formatting, parsing, math, and local time.
- * Timezones are not time offsets.
- * Timezones are political.
- * POSIX time for comparison and storage.
+The JavaScript `Date` object offers no way to parse dates, or format dates, of
+course, nor does it have any way to add or subtract durations. These limitations
+are aparent for anyone who has worked with dates in JavaScript.
 
-The JavaScript `Date` object offers no parsing or formatting, of course, but you
-might not be aware of that `Date` offers to real support for local time. Local
-time is important if your program runs in more than one timezone.  If your
+If you're going to do any sort of date parsing, formatting, or date math in your
+JavaScript application, you need an external date library.
+
+You might not be aware of that `Date` has no concept of local time. Local time
+is the time out there in the real world, the time on clock on the wall, offset
+by a timezone, adjusted for daylight savings time. It is the time according to
+the local government.
+
+Local time is important if your program runs in more than one timezone. If your
 program runs on the public web, then it runs in more than one timezone.
 
-The JavaScript `Date` has a useless dabble of support for local time. The
-duplicate date field functions might lead you to believe that it local time
-support is in effect, but it is not. You can't set a timezone by a timezone
-name. It is unaware of any timezone rules. There is no notion of daylight
-savings time. When you create a `Date` object it will offset the field values by
-the timezone offset of the computer. You can't reset that offset. You have your
-choice either UTC or UTC with an arbitrary offset.
+The JavaScript `Date` object has a dab of support for local time. The duplicate
+date field functions might lead you to believe that it local time support is in
+effect, but it is not.
 
-Timezones are more than a single arbitrary offset. They are entirely political,
-and defined by arbitrary geographic boundaries. They adjust for daylight
-savings time. Consider the muddle that is [time in
-Indiana](http://en.wikipedia.org/wiki/Time_in_Indiana), and you'll see that 
+When you create a `Date` object it will offset the field values by the timezone
+offset of the computer at the time of the `Date` object's creation. You cannot
+reset that offset.
 
- Applications need to be able to set
-their timezones independent of the timezone of the local computer. Applications
-need compare dates in different timezones, think flight arrivals and departures
-or conference call scehduling. Applications need to be able to know the correct
-timezone offset for different dates.
+The `getUTC` method of the `Date` object give you values in UTC, while the `get`
+methods give you the UTC value offset by an arbitrary number of minutes. Yes,
+aribitrary, because the preferred timezone of user of your web application
+should be dictated by your web application, not by the settings of an arbitrary
+client computer.
 
-If you're going to do any sort of date parsing, formatting, or manipulatoin in
-your JavaScript application, you need an external date library.
+Local time is more than a single arbitrary offset. Local time is entirely
+political. It is defined by borders and the whims of legislatures within those
+borders. They adjust for daylight savings time. Consider the muddle that is
+[time in Indiana](http://en.wikipedia.org/wiki/Time_in_Indiana), and you'll see
+that a timezone is in no way scientific or standardized.
+
+If your appliction works with dates in the past or the future, you need to know
+when and if daylight savings time adjusts, if the local government has chosen to
+apply daylight savings time. You need to know if the local government has
+decided to observe a different timezone all together, and when these changes
+took place.
 
 Timezone is a timezone aware date library for JavaScript that
 
