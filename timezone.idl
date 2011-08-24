@@ -1,9 +1,13 @@
 # Timezone
 
-Minimalist time library for JavaScript, for use in Node.js and the browser,
-timezone is a time zone aware library for date math, parsing, and formatting.
+Compact, complete time and date library for JavaScript, for use in Node.js and
+the browser, timezone is a database friendly, timezone aware replacement for the
+`Date` object that implements date parsing, date formatting, and date math.
 
 ## Synopsis
+
+JavaScript is missing a lot of time and date parts. Timezone adds them all with
+one function, replacing the `Date` object with POSIX time.
 
 **FIXME** &mdash; Use `assert` for examples, after you create a test from this.
 
@@ -20,6 +24,10 @@ bicentenial = tz("1976/07/04", "America/Detroit", "%c");
 
 // Date math accounting for daylight savings time.
 ago = tz("6 months ago", "America/Detroit");
+
+// Format the current time.
+tz(tz.now, "--rfc822");
+eq 1976, tz(bicentenial, tz.int, "%Y");
 
 // Accounts for leap year.
 date = tz(bicentenial, "last year"); 
@@ -49,7 +57,7 @@ hamtramck(y2k, "%c");
 Thus, `tz` always returns either milliseconds since the epoch in UTC, or a
 formatted string if a format specifier is provided.
 
-## The Useless Dabble
+## Why You Need a Timezone Library
 
 The Timezone library uses the [Olson timezone
 database](http://cs.ucla.edu/~eggert/tz/tz-link.htm), to create a database of
@@ -99,6 +107,8 @@ apply daylight savings time. You need to know if the local government has
 decided to observe a different timezone all together, and when these changes
 took place.
 
+## Overview
+
 Timezone is a timezone aware date library for JavaScript that
 
  * formats dates using UNIX date format specifiers,
@@ -111,8 +121,11 @@ Timezone is a timezone aware date library for JavaScript that
  * adds and substracts intervals in local time adjusting for daylight savings
    time and leap days.
 
-Timezone does not monkey patch the JavaScript `Date` object. Timezone exports a
-single function, `tz`.
+Timezone uses POSIX time, milliseconds since the epoch represented as a
+JavaScript `Number`. Timezone does not monkey patch the JavaScript `Date`
+object. Timezone replaces the JavaScript `Date` object with POSIX time.
+
+## Time Types
 
 Timezone works with one of two types of date value,
 
@@ -123,8 +136,33 @@ Timezone uses POSIX time, milliseconds since the epoch in UTC, for a univeral
 representation of a point in time. If given a JavaScript `Date` object, Timezone
 will use the POSIX time value of the `Date` object.
 
-Timezone will also parse string represntation of dates, so you can use a
-representation that includes timezone offsets, or timezone names.
+```JavaScript
+eq(88927498237492734927, bicentenial = tz("1976-07-04"));
+eq(98327943274923794329, tz(bicentenial, "+1 milli"));
+```
+
+You can also create a date from an array, if you've gathered fields from another
+means. Unlike the `Date` object, the first month of the year is 1, not 0.
+
+```JavaScript
+eq(tz("7/4/76"), tz([ 1976, 7, 4 ]));
+eq(tz("6/21/69 2:36"), tz([ 1969, 6, 21, 2, 36 ]));
+```
+
+If you need pass in a `Date` object, the value of `Date.getTime()` is used.
+
+```JavaScript
+// Note that the Date object is problematic. If you create a date using the
+// Date constructor, the timezone offset is applied at creation, so it is
+// aribitrary and dependent on the timezone settings of the local machine. For
+// our example here, we use Date.UTC to create a Date in a convoluted way.
+var moonwalk = new Date(Date.UTC(1969, 6, 21, 2, 36));
+
+// Now we have a Date object, let's use tz to format it.
+eq("6/21/69 2:36", tz(moonwalk, "%-m/%-d/%Y %-H:%M"));
+```
+
+## Working with POSIX Time
 
 Timezone will return ether a POSIX time or a formatted date string if a format
 specifier is given as a parameter. It never generates JavaScript `Date` objects.
