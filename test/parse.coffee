@@ -64,3 +64,10 @@ class exports.ParseTest extends TwerpTest
     @equal tz("1980-01-03T02:15:21.2"), Date.UTC(1980, 0, 3, 2, 15, 21, 2)
     @equal tz("1980-01-03 02:15:21.2"), Date.UTC(1980, 0, 3, 2, 15, 21, 2)
     done 4
+
+  "test: parse US formatted date": (done) ->
+    @equal tz("6/21/1969"), Date.UTC(1969, 5, 21)
+    @equal tz("21/6/1969"), Date.UTC(1969, 5, 21)
+    @equal tz("7/4/1976"), Date.UTC(1976, 6, 4)
+    @equal tz("4/7/1976"), Date.UTC(1976, 3, 7)
+    done 1

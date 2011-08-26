@@ -79,6 +79,7 @@ do -> (exports or= window) and do (exports) ->
       timeFormat: "%H:%M:%S"
       dateTimeFormat: "%a %b %_d %H:%M:%S %Y"
       meridiem: [ "am", "pm" ]
+      monthBeforeDate: true
 
   # Constants for units of time in milliseconds.
   SECOND  = 1000
@@ -576,17 +577,46 @@ do -> (exports or= window) and do (exports) ->
       if remaining is 0
         return makeDate year, month, day, hours, minutes, seconds, milliseconds
 
-    # Parse a UNIX date, another common construct. No need to be fuzzy about
-    # this at all. There is only really one valid format.
-   
-    # Try to find something date like, interpret using locale.
-   
+    # Try to find something date like, interpret using locale. 
+    match = ///
+      ^
+      ([^\u0000]*?)
+      (\d{1,2})
+      /
+      (\d{1,2})
+      /
+      (\d{4})
+      ([^\u0000]*)
+      $
+    ///.exec(pattern)
+    
+    if match
+      before = match.splice(0, 2).pop()
+      [ first, second, year ] = (
+        parseInt num, 10 for num in match.splice(0, 3)
+      )
+      after = match.pop()
+
       # Take the locale preference for month/day ordering.
+      if locale.monthBeforeDate
+        [ month, day ] = [ first, second ]
+      else
+        [ day, month ] = [ first, second ]
 
       # If it doesn't fit, try the other way.
+      if month > 12
+        [ day, month ] = [ month, day ]
 
-      # If that doesn't fit, see if you can find a date in the remaining bit.
+    # We have only a time, so we're going to use now to fill it in.
+    else
+      [ before, after ] = [ '', pattern ]
 
+    if after.length
+      match = ///
+      ///
+
+    return makeDate year, month, day, hours, minutes, seconds, milliseconds
+  
     # Look for a time, either in the whole pattern, or in what's left after the
     # date consumed a date-like thing.
 
