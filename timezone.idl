@@ -107,6 +107,40 @@ apply daylight savings time. You need to know if the local government has
 decided to observe a different timezone all together, and when these changes
 took place.
 
+Getting the number of minutes in a timestamp as an integer value is not terribly
+useful to an application developer.
+
+## Recording
+
+What are you going to do? Display it? It would be nicer to have a date format
+specifier to display the whole date, rather than catenating a string with
+extremely verbose object method invocations to get each part, plus the `pad`
+method that needs to be rewritten every time.
+
+What are you going to do? Increment it? If you want to move forward by minutes,
+you could add the minutes and then set the value again, but if the new value is
+greater than 60 then, you need to carry the minutes into the next hour.
+
+To my mind, I could imagine building regular expressions in JavaScript using
+object composition. Wouldn't that be a nightmare? Dates are so common that they
+deserve their own language, like regular expressions. The Timezone library
+replaces the `Date` object in applications with a domain specific language, so
+that they feel more natural, like strings or regular expressions.
+
+Dates feel unnatural because dates are represented as an object, as a box of
+parts, a set of cubbyholes with getters and setters for each component.
+
+Like regular expressions, we turn on switches, so modifiers... Good old printf.
+We came back around to printf. As an example.
+
+Make a slideshow and present. Use your silly examples there. Show a regular
+expression, then show it being bulit as an object using a factory pattern. Show
+an example of someone who is a slave to fashion, 80's fashion or some silly
+french fashion from the big crazy hair days.
+
+You can get the integer value using a date format and the int modifier, which
+will be null if you screw up, because the format is a programmer supplied value.
+
 ## Overview
 
 Timezone is a timezone aware date library for JavaScript that

@@ -969,6 +969,13 @@ do -> (exports or= window) and do (exports) ->
 
     token
 
+  tz.curry = (splat...) ->
+    self = this
+    curried = (before...) ->
+      self.apply null, before.concat splat
+    curried[k] = v for k, v of self
+    curried
+
   # Add or replace locales with the given locale data structure. If a locale in
   # the data structure already exists, the locale is overwritten.
   tz.locales = (override) ->
