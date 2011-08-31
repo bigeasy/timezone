@@ -71,3 +71,8 @@ class exports.ParseTest extends TwerpTest
     @equal tz("7/4/1976"), Date.UTC(1976, 6, 4)
     @equal tz("4/7/1976"), Date.UTC(1976, 3, 7)
     done 1
+
+  "test: parse year first date": (done) ->
+    @equal tz("1969/6/21"), Date.UTC(1969, 5, 21)
+    @equal tz("1976/7/4"), Date.UTC(1976, 6, 4)
+    done 1

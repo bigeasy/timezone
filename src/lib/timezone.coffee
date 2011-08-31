@@ -606,7 +606,22 @@ do -> (exports or= window) and do (exports) ->
       # If it doesn't fit, try the other way.
       if month > 12
         [ day, month ] = [ month, day ]
-
+    else if match = ///
+      ^
+      ([^\u0000]*?)
+      (\d{4})
+      /
+      (\d{1,2})
+      /
+      (\d{1,2})
+      ([^\u0000]*)
+      $
+    ///.exec(pattern)
+      before = match.splice(0, 2).pop()
+      [ year, month, day ] = (
+        parseInt num, 10 for num in match.splice(0, 3)
+      )
+      after = match.pop()
     # We have only a time, so we're going to use now to fill it in.
     else
       [ before, after ] = [ '', pattern ]
