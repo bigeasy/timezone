@@ -984,7 +984,7 @@ do -> (exports or= window) and do (exports) ->
 
     token
 
-  tz.curry = (splat...) ->
+  tz.specialize = (splat...) ->
     self = this
     curried = (before...) ->
       self.apply null, before.concat splat
