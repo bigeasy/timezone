@@ -1,63 +1,8 @@
 # Timezone
 
-Compact, complete time and date library for JavaScript, for use in Node.js and
-the browser, timezone is a database friendly, timezone aware replacement for the
-`Date` object that implements date parsing, date formatting, and date math.
-
-## Synopsis
-
-JavaScript is missing a lot of time and date parts. Timezone adds them all with
-one function, replacing the `Date` object with POSIX time.
-
-**FIXME** &mdash; Use `assert` for examples, after you create a test from this.
-
-```javascript
-// Import tz function and initialize.
-var tz = require("tz").tz;
-tz.timezones(require("./zones/northamerica"));
-
-// Parse a UTC date.
-y2k = tz("2000/01/01");
-
-// Parse a date offset by a time zone.
-bicentenial = tz("1976/07/04", "America/Detroit", "%c");
-
-// Date math accounting for daylight savings time.
-ago = tz("6 months ago", "America/Detroit");
-
-// Format the current time.
-tz(tz.now, "--rfc822");
-eq 1976, tz(bicentenial, tz.int, "%Y");
-
-// Accounts for leap year.
-date = tz(bicentenial, "last year"); 
-
-// Format using UNIX date formats.
-moonwalk = tz("1969/06/21 02:36", "%c", "America/Houston");
-
-// Accounts for leap year and DST.
-date = tz(bicentenial, "last January", "%c", "America/Detroit");
-date = tz("now", "last January", "%c", "America/Detroit");
-date = tz(new Date(), "last January", "%c", "America/Detroit");
-
-// Format using a locale.
-bicentenial = tz("1989/07/14", "Europe/Paris", "fr_FR", "%c");
-
-// Convert time zones.
-bicentenial = tz(tz("1989/07/14", "Europe/Paris"), "America/Detroit", "%c");
-
-// Reduce the noise by creating custom tz functions.
-detroit = tz.curry("America/Detroit");
-detroit(y2k, "%c");
-
-hamtramck = detroit.curry("pl_PL");
-hamtramck(y2k, "%c");
-```
-
-Thus, `tz` always returns either milliseconds since the epoch in UTC, or a
-formatted string if a format specifier is provided.
-
-## Why You Need a Timezone Library
+Compact, timezone aware time and date library for JavaScript, for use in Node.js
+and the browser, timezone is a database friendly, timezone aware replacement for
+the `Date` object that implements date parsing, date formatting, and date math.
 
 The Timezone library uses the [Olson timezone
 database](http://cs.ucla.edu/~eggert/tz/tz-link.htm), to create a database of
@@ -66,12 +11,12 @@ with some confidence, determine the correct local time of any place in the
 world, since 1970. It replaces the `Date` object with POSIX time, milliseconds
 since the epoch, for a cross-platform, durable representation of time.
 
-The JavaScript `Date` object offers no way to parse dates, or format dates, of
-course, nor does it have any way to add or subtract durations. These limitations
-are aparent for anyone who has worked with dates in JavaScript.
+## Why You Need a Timezone Library
 
-If you're going to do any sort of date parsing, formatting, or date math in your
-JavaScript application, you need an external date library.
+If you've worked with dates in JavaScript, you've already run up against the
+limitations of the JavaScript `Date` object. You probably already know that the
+JavaScript `Date` object offers no way to parse dates, or format dates, nor does
+it have any way to add or subtract time from dates.
 
 You might not be aware of that `Date` has no concept of local time. Local time
 is the time out there in the real world, the time on clock on the wall, offset
@@ -81,19 +26,46 @@ the local government.
 Local time is important if your program runs in more than one timezone. If your
 program runs on the public web, then it runs in more than one timezone.
 
-The JavaScript `Date` object has a dab of support for local time. The duplicate
-date field functions might lead you to believe that it local time support is in
-effect, but it is not.
+The JavaScript `Date` object has a usless dribble of support for local time. The
+duplicate date field functions, some named `getXyz`, other named `getUTCXyz`,
+might lead you to believe that it local time support is in effect, but it is
+not. If you're formatting your dates by concatenating the `Date.getXyz` methods
+string, you're making a mistake. 
+
+```javascript
+// The quick and easy and wrong way to format a JavaScript date.
+function brokenFormatDate (date) {
+  return '' + (date.getMonth() +  1) + '/' +
+               date.getDate() + '/' +
+               date.getFullYear();
+  }
+}
+```
 
 When you create a `Date` object it will offset the field values by the timezone
 offset of the computer at the time of the `Date` object's creation. You cannot
 reset that offset.
 
-The `getUTC` method of the `Date` object give you values in UTC, while the `get`
-methods give you the UTC value offset by an arbitrary number of minutes. Yes,
-aribitrary, because the preferred timezone of user of your web application
-should be dictated by your web application, not by the settings of an arbitrary
-client computer.
+Even if the `Date` value came from a server in your control, this offset is in
+effect when you create the date. If you are providing dates as strings, you
+might build a local date with the following date parser.
+
+```javascript
+function brokenParseDate (string) {
+  var parts = /(\d{2})\/\d{2}\/\d{4}/.exec(string);
+  for (var i = 1; i < 4; i++) {
+    parts[i] = parseInt(parts[i], 10);
+  }
+  parts[1]++;
+  return new Date(parts[3], parts[1], parts[2]);
+}
+```
+
+The `getUTCXyz` methods of the `Date` object give you values of the different
+date components in UTC, while the `getXyz` methods give you the UTC value offset
+by an **arbitrary** number of minutes.  Yes, **arbitrary**, because the
+preferred timezone of user of your web application should be dictated by your
+web application, not by the settings of an arbitrary client computer.
 
 Local time is more than a single arbitrary offset. Local time is entirely
 political. It is defined by borders and the whims of legislatures within those
@@ -103,12 +75,90 @@ that a timezone is in no way scientific or standardized.
 
 If your appliction works with dates in the past or the future, you need to know
 when and if daylight savings time adjusts, if the local government has chosen to
-apply daylight savings time. You need to know if the local government has
-decided to observe a different timezone all together, and when these changes
-took place.
+apply daylight savings time at all. You need to know if the local government has
+decided to move to a different timezone all together, and when this timezone
+change took place.
 
 Getting the number of minutes in a timestamp as an integer value is not terribly
 useful to an application developer.
+
+### Date as Object
+
+When JavaScript was born, objects were all the rage. They were going to fix
+everything, for everybody, forever. With your best comic book guy voice, read
+the follow: A date, you see, is a collection of attributes, including the number
+of minutes of the date, and the day in year in which the day occoured. Using
+getters and setters we are able to alter the date by adjusting its various
+properties. Also, there is a timezone offset, but timezones are nasty political
+constructs that have no place in the, as Spock would say, logical world of
+computing. 
+
+We're rarely interested in a date as a component, composed of component parts.
+The number of minutes in a date as an integer is not often useful for
+application programming. Applications are going to use dates the way people use
+dates in the real world. They are not a collection of attributes, but a point on
+a timeline, interesting only relative to other points on that timeline.
+
+Objects were all the rage, it is a wonder that we didn't have a regular
+expression factory pattern, and build regular expressions using getters and
+setters, instead of parsing regular expression patterns. That is what the date
+object is like. When you display the date on a page, you don't display as an
+exploded diagram.
+
+Today's date is:
+
+ * Year &mdash; 1969
+ * Month &mdash; 5 (Zero Indexed)
+ * Day &mdash; 21
+ * Hour &mdash; 2
+ * Minute &mdash; 36
+ * Seconds &mdash; 0
+
+By that token, which is easier to read, the following safer date constructor.
+
+```javascript
+var moonwalk = new Date(Date.UTC(1969, 5, 21, 2, 36));
+```
+
+Or a string?
+
+```javascript
+var moonwalk = tz("1969-05-21 02:36");
+```
+
+The major benefit of POSIX time over the `Date` object is that it is sortable.
+You can order POSIX time quickly, since POSIX time is simply an integer value.
+
+The benefit of Timezone over `Date` object is that is operates on a timeline. If
+what you really want to do is get the number of minutes in a particular
+timestamp as an integer, Timezone will do that. But, if what you'd rather do is
+know the number of hours between a given timestamp and lunch the following
+Friday, Timezone will do that too.
+
+Hmm... Actually, do I want durations? Would that return object? Would it return
+an array?
+
+Timezone gives you a way of working with dates that is more natural, like the
+regular expression built ins. If you have sworn allegiance to design patterns,
+and favor the date as a bag of integers model, because it is a model, try to
+think of Timezone as a domain specific language, because those words are shinny
+and a very serious computer paradigms. Timezone implements the interpreter
+pattern, so you can express dates in 
+
+For the most parts, applications use dates a timestamps, search for events
+within date ranges, or search for events before or after a certain date. We
+format dates for display, which takes timezone and locale into account. We parse
+date strings given by the user or by other systems. 
+
+The getters and setters are of dubious value:
+
+```javascript
+var moonwalk = new Date(Date.UTC(1969, 5, 21, 2, 36));
+moonwalk.setUTCMinutes(moonwalk.getUTCMinutes() + 60);
+alert(moonwalk.getUTCHours());
+```
+
+You have to carry those minutes yourself.
 
 ## Recording
 
@@ -170,7 +220,7 @@ Timezone uses POSIX time, milliseconds since the epoch in UTC, for a univeral
 representation of a point in time. If given a JavaScript `Date` object, Timezone
 will use the POSIX time value of the `Date` object.
 
-```JavaScript
+```javascript
 eq(88927498237492734927, bicentenial = tz("1976-07-04"));
 eq(98327943274923794329, tz(bicentenial, "+1 milli"));
 ```
@@ -178,14 +228,14 @@ eq(98327943274923794329, tz(bicentenial, "+1 milli"));
 You can also create a date from an array, if you've gathered fields from another
 means. Unlike the `Date` object, the first month of the year is 1, not 0.
 
-```JavaScript
-eq(tz("7/4/76"), tz([ 1976, 7, 4 ]));
-eq(tz("6/21/69 2:36"), tz([ 1969, 6, 21, 2, 36 ]));
+```javascript
+eq(tz("7/4/1976"), tz([ 1976, 7, 4 ]));
+eq(tz("6/21/1969 2:36"), tz([ 1969, 6, 21, 2, 36 ]));
 ```
 
 If you need pass in a `Date` object, the value of `Date.getTime()` is used.
 
-```JavaScript
+```javascript
 // Note that the Date object is problematic. If you create a date using the
 // Date constructor, the timezone offset is applied at creation, so it is
 // aribitrary and dependent on the timezone settings of the local machine. For
@@ -231,6 +281,14 @@ arbitrary information that is external to and not recorded anywhere within the
 database. That is, if you export your MySQL database, it doesn't record what
 timezone it was running in when the database was created.
 
+Imagine a computer programmer from New York working for a week on site in San
+Francisco. She remembers that she was supposed to send out the invites for her
+daughter's birthday party next month. She takes a break, and uses your cool web
+invite application to send invites to a hundred people, but you used JavaScript
+`Date` to parse the value from the date picker, and the time was formatted
+offset to the time of workstation she was assigned for the job, and a month from
+now, everyone will be showing up three hours late to a birthday party for a
+broken-hearted little girl.
 
 Thus, if we want to allow the user to move appointments forward by
 a number of hours on their calendar, which would be presented in their local
@@ -317,7 +375,30 @@ string if the `tz` function was passed a format specifier.
 
 ## Rationale
 
-While other languages extend the JavaScript date object to 
+Elsewhere, I've gone into detail on why you should not use the JavaScript `Date`
+object, and why it is not even worth it to monkey patch teh `Date` object to add
+the missing functionality. Read JavaScript The Good Parts, and then write like
+that. Don't apologize too much. In fact, you know you're going to get people who
+don't understand. Google is not going to be a good referral engine, but links
+from other blogs will be.
+
+Timezone was designed to provide all of the date functionality missing from
+JavaScript in a single function, to keep from polluting the namespace.
+
+Timezone models time as a point in time on a timeline. When you need to display
+time, you use the `tz` function to format the date. When you need to move
+relative to a point on the timeline, you use the `tz` function to do date math
+according to the rules of a local timezone. If you don't want to apply local
+timezone rules, then use UTC as the local timezone.  If you want to store time
+as a time as local time, store it as a string, but it can be easily compared, if
+you use the ISO 8601 format, but it will get confused when you hit daylight
+savings time. Much better to store as POSIX time.
+
+When you load timezone and locale data, it is global to the application. This is
+because timezone and locale data is, literally, global data. There shouldn't be
+a need for two different defintitions of 'de_DE' within your application. There
+had better not be two different definitions of 'America/New York' in your
+application.
 
 The API is really a domain specific language. The parameters can be passed in
 any order because the different parameter types have an unambiguous meaning.

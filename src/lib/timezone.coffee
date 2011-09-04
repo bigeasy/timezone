@@ -959,6 +959,7 @@ do -> (exports or= window) and do (exports) ->
 
     else
       # Convert from date to epoch seconds if necessary.
+      # TODO: No. Be childish about this.
       wallclock = if date.getTime then date.getTime() else date
 
       # Offset by time zone if not UTC.
