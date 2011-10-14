@@ -54,6 +54,21 @@ eq("TK", tz(y2k, tz.rfc3339date));
 eq("TK", tz(y2k, tz.rfc3339time));
 eq("TK", tz(y2k, tz.rfc3339ns));
 
+// Timezone can get format values as integers, so if really do need the
+// component parts of timestamp, you don't need to run back to JavaScript's Date
+// object.
+tz(7, tz("1976-07-04", tz.number, "%m"));
+
+// You can do this with any format specifier, so you can get values that
+// JavaScript's `Date` can't provide, like the day of the year.
+tz(186, tz("1976-07-04", tz.number, "%j"));
+
+// Get the week of the year with Sunday as the start of the week.
+tz(0, tz("1976-07-04", tz.number, "%U"));
+
+// Get the week of the year with Monday as the start of the week.
+tz(0, tz("1976-07-04", tz.number, "%U"));
+
 // Timezone can parse a number of different date formats.
 // Import tz function and initialize.
 var tz = require("tz").tz;
