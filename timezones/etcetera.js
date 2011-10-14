@@ -1,4 +1,4 @@
-{
+module.exports = {
   "rules": {},
   "zones": {
     "Etc/GMT": [
