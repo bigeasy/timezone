@@ -166,7 +166,7 @@ class exports.FormatTest extends TwerpTest
     done 1
 
   testLocaleFormat: (done) ->
-    @equal tz(bicentenial, "%x"), "07/04/76"
+    @equal tz(bicentenial, "%x"), "07/04/1976"
     done 1
 
   testLongFormat: (done) ->
@@ -252,10 +252,10 @@ class exports.FormatTest extends TwerpTest
     done 1
 
   testLocaleTimeFormat: (done) ->
-    @equal tz(moonwalk, "%X"), "02:36:00"
+    @equal tz(moonwalk, "%X"), "02:36:00 AM"
     done 1
 
   testLocaleDateTimeFormat: (done) ->
-    @equal tz(moonwalk, "%c"), "Mon Jul 21 02:36:00 1969"
-    @equal tz(y2k, "%c"), "Sat Jan  1 00:00:00 2000"
+    @equal tz(moonwalk, "%c"), "Mon 21 Jul 1969 02:36:00 AM UTC"
+    @equal tz(y2k, "%c"), "Sat 01 Jan 2000 12:00:00 AM UTC"
     done 2

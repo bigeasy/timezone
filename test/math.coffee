@@ -36,33 +36,33 @@ class exports.MathTest extends TwerpTest
     done 1
 
   "test: subtract hours spring forward": (done) ->
-    @equal tz("2010-03-14 12:00", "America/Detroit", "-24 hour", "%c"), "Sat Mar 13 11:00:00 2010"
+    @equal tz("2010-03-14 12:00", "America/Detroit", "-24 hour", "%c"), "Sat 13 Mar 2010 11:00:00 AM UTC"
     done 1
 
   "test: subtract minute across spring forward": (done) ->
-    @equal tz("2010-03-14 03:00", "America/Detroit", "-1 minute", "%c"), "Sun Mar 14 01:59:00 2010"
+    @equal tz("2010-03-14 03:00", "America/Detroit", "-1 minute", "%c"), "Sun 14 Mar 2010 01:59:00 AM UTC"
     done 1
 
   "test: subtract hours across fall back": (done) ->
-    @equal tz("2010-11-07 03:00", "America/Detroit", "-61 minute", "%c"), "Sun Nov  7 01:59:00 2010"
-    @equal tz("2010-11-07 03:00", "America/Detroit", "-121 minutes", "%c"), "Sun Nov  7 01:59:00 2010"
-    @equal tz("2010-11-07 02:00", "America/Detroit", "-2 hours", "%c"), "Sun Nov  7 01:00:00 2010"
-    @equal tz("2010-11-07 02:00", "America/Detroit", "-30 minutes", "%c"), "Sun Nov  7 01:30:00 2010"
-    @equal tz("2010-11-07 02:00", "America/Detroit", "-60 minutes", "%c"), "Sun Nov  7 01:00:00 2010"
-    @equal tz("2010-11-07 02:00", "America/Detroit", "-90 minutes", "%c"), "Sun Nov  7 01:30:00 2010"
-    @equal tz("2010-11-07 02:00", "America/Detroit", "-120 minutes", "%c"), "Sun Nov  7 01:00:00 2010"
+    @equal tz("2010-11-07 03:00", "America/Detroit", "-61 minute", "%c"), "Sun 07 Nov 2010 01:59:00 AM UTC"
+    @equal tz("2010-11-07 03:00", "America/Detroit", "-121 minutes", "%c"), "Sun 07 Nov 2010 01:59:00 AM UTC"
+    @equal tz("2010-11-07 02:00", "America/Detroit", "-2 hours", "%c"), "Sun 07 Nov 2010 01:00:00 AM UTC"
+    @equal tz("2010-11-07 02:00", "America/Detroit", "-30 minutes", "%c"), "Sun 07 Nov 2010 01:30:00 AM UTC"
+    @equal tz("2010-11-07 02:00", "America/Detroit", "-60 minutes", "%c"), "Sun 07 Nov 2010 01:00:00 AM UTC"
+    @equal tz("2010-11-07 02:00", "America/Detroit", "-90 minutes", "%c"), "Sun 07 Nov 2010 01:30:00 AM UTC"
+    @equal tz("2010-11-07 02:00", "America/Detroit", "-120 minutes", "%c"), "Sun 07 Nov 2010 01:00:00 AM UTC"
     done 2
 
   "test: add day lands on missing dst start time": (done) ->
-    @equal tz("2010-03-13 02:30", "America/Detroit", "+1 day", "%c"), "Sun Mar 14 01:30:00 2010"
-    @equal tz("2010-03-13 03:30", "America/Detroit", "+1 day", "%c"), "Sun Mar 14 03:30:00 2010"
+    @equal tz("2010-03-13 02:30", "America/Detroit", "+1 day", "%c"), "Sun 14 Mar 2010 01:30:00 AM UTC"
+    @equal tz("2010-03-13 03:30", "America/Detroit", "+1 day", "%c"), "Sun 14 Mar 2010 03:30:00 AM UTC"
     done 2
 
   "test: subtract day to missing dst start time": (done) ->
-    @equal tz("2010-03-15 02:30", "America/Detroit", "-1 day", "%c"), "Sun Mar 14 03:30:00 2010"
-    @equal tz("2010-03-15 03:30", "America/Detroit", "-1 day", "%c"), "Sun Mar 14 03:30:00 2010"
+    @equal tz("2010-03-15 02:30", "America/Detroit", "-1 day", "%c"), "Sun 14 Mar 2010 03:30:00 AM UTC"
+    @equal tz("2010-03-15 03:30", "America/Detroit", "-1 day", "%c"), "Sun 14 Mar 2010 03:30:00 AM UTC"
     done 2
 
   "test: substract by day of week": (done) ->
-    @equal tz("2011-10-01", "-1 day", "+2 saturday", "%c"), "Sat Oct  8 00:00:00 2011"
+    @equal tz("2011-10-01", "-1 day", "+2 saturday", "%c"), "Sat 08 Oct 2011 12:00:00 AM UTC"
     done 1
