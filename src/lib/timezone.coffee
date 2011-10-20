@@ -884,7 +884,7 @@ do -> (exports or= window) and do (exports) ->
       if offset = offsets[FIELD.month]
         forward = increment = offset / Math.abs(offset)
         while offset isnt 0
-          month = offset[FIELD.month]
+          month = fields[FIELD.month]
           if month is 0 and offset < 0
             fields[FIELD.month] = 11
             fields[FIELD.year]--
@@ -893,7 +893,7 @@ do -> (exports or= window) and do (exports) ->
             fields[FIELD.year]++
           else
             fields[FIELD.month] += increment
-          offset += increment
+          offset -= increment
           
       # Adjust the year. 
       if offset = offsets[FIELD.year]

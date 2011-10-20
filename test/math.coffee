@@ -27,6 +27,14 @@ class exports.MathTest extends TwerpTest
     @equal tz(utc(2007, 2, 31), "+366 day"), utc(2008, 2, 31)
     done 1
 
+  "test: add month": (done) ->
+    @equal tz(utc(2007, 2, 3), "+1 month"), utc(2007, 3, 3)
+    done 1
+
+  "test: add month across year": (done) ->
+    @equal tz(utc(2007, 11, 3), "+1 month"), utc(2008, 0, 3)
+    done 1
+
   "test: subtract hours spring forward": (done) ->
     @equal tz("2010-03-14 12:00", "America/Detroit", "-24 hour", "%c"), "Sat Mar 13 11:00:00 2010"
     done 1
