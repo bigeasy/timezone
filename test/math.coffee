@@ -62,3 +62,7 @@ class exports.MathTest extends TwerpTest
     @equal tz("2010-03-15 02:30", "America/Detroit", "-1 day", "%c"), "Sun Mar 14 03:30:00 2010"
     @equal tz("2010-03-15 03:30", "America/Detroit", "-1 day", "%c"), "Sun Mar 14 03:30:00 2010"
     done 2
+
+  "test: substract by day of week": (done) ->
+    @equal tz("2011-10-01", "-1 day", "+2 saturday", "%c"), "Sat Oct  8 00:00:00 2011"
+    done 1

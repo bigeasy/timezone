@@ -804,112 +804,184 @@ do -> (exports or= window) and do (exports) ->
       second: 5
       milli:  6
 
+    TIME =
+      milli: 1
+      second: SECOND
+      minute: MINUTE
+      hour: HOUR
+
     SIGN_OFFSET =
       "-":  -1
       "+":  +1
+
+    DAYS = [
+      "sunday"
+      "monday"
+      "tuesday"
+      "wednesday"
+      "thursday"
+      "friday"
+      "saturday"
+    ]
+
+    ASSIGNMENT =
+      year:
+        min: 0
+        max: Number.MAX_VALUE
+      month:
+        min: 1
+        max: 12
+      day:
+        min: 1
+        max: 12
 
     explode = (wallclock) ->
 
     (wallclock, adjustment, tzdata) ->
       fields = explode wallclock
-      offsets = [ 0, 0, 0, 0, 0, 0, 0 ]
-      rest = adjustment.replace(/^\s+/, "")
-      loop
-        match = ///
-          ^                 # start
-          ([+-])            # add or subtract
-          \s*               # optional space
-          (\d+)             # count
-          \s+               # manditory space
-          ( year            # unit
-          | month
-          | day
-          | hour
-          | minute
-          | second
-          | milli
-          )
-          s?                # optional plural
-          (:?               # either
-            (?:
-              \s+               # space delimiter
-              (.*)              # rest of pattern
-            )               # or 
-            |
-            (.*)            # terminal pattern or garbage
-          )
-          $                 # end
-        ///.exec rest
-        if not match
-          throw new Error "bad date math pattern #{adjustment}."
-        [ sign, count, unit, rest, terminal ] = match.slice 1
-        if terminal?
-          if terminal isnt ""
-            throw new Error "bad date math pattern #{adjustment}."
-          break
-        offsets[FIELD[unit]] += parseInt(count, 10) * SIGN_OFFSET[sign]
-        if rest is ""
-          break
+      match = ///
+        ^                 # start
+        \s*               # leading whitespace
+        ([+-]?)           # add or subtract
+        \s*               # optional space
+        (\d+)             # count
+        \s+               # manditory space
+        ( year            # unit
+        | month
+        | day
+        | hour
+        | minute
+        | second
+        | milli
+        | sunday
+        | monday
+        | tuesday
+        | wednesday
+        | thursday
+        | friday
+        | saturday
+        )
+        s?                # optional plural
+        \s*               # trailing white space
+        $                 # end
+      ///i.exec adjustment
+      if match
+        [ sign, count, unit ] = match.slice 1
 
-      # Hourly math in UTC.
-      utc = convertToUTC wallclock, tzdata
+        sign    or= "+"
+        unit      = unit.toLowerCase()
+        increment = SIGN_OFFSET[sign]
+        offset    = parseInt(count, 10)
 
-      utc += offsets[FIELD.milli]
-      utc += offsets[FIELD.second]  * SECOND
-      utc += offsets[FIELD.minute]  * MINUTE
-      utc += offsets[FIELD.hour]    * HOUR
- 
-      # Day to day math in wallclock time.
-      wallclock = convertToWallclock utc, tzdata
-
-      # Accounts for leap years and days of month.
-      if offset = offsets[FIELD.day]
-        forward = offset / Math.abs(offset)
-        wallclock += offset * DAY
-
-      # Explode into individual fields for month and year math.
-      date = new Date(wallclock)
-      fields = [
-        date.getUTCFullYear()
-        date.getUTCMonth()
-        date.getUTCDate()
-        date.getUTCHours()
-        date.getUTCMinutes()
-        date.getUTCSeconds()
-        date.getUTCMilliseconds()
-      ]
-
-      # It is easier to move through the months ourselves that it is to move by
-      # milliseconds.
-      if offset = offsets[FIELD.month]
-        forward = increment = offset / Math.abs(offset)
-        while offset isnt 0
-          month = fields[FIELD.month]
-          if month is 0 and offset < 0
-            fields[FIELD.month] = 11
-            fields[FIELD.year]--
-          else if month is 11 and offset > 0
-            fields[FIELD.month] = 0
-            fields[FIELD.year]++
+        if (index = DAYS.indexOf(unit)) isnt -1
+          while offset isnt 0
+            wallclock += increment * DAY
+            offset-- if new Date(wallclock).getDay() is index
+        else
+          if millis = TIME[unit]
+            # Hourly math in UTC.
+            utc = convertToUTC wallclock, tzdata
+            utc += offset * increment * millis
+            wallclock = convertToWallclock utc, tzdata
+          else if unit is "day"
+            # Accounts for leap years and days of month.
+            wallclock += offset * increment * DAY
           else
-            fields[FIELD.month] += increment
-          offset -= increment
-          
-      # Adjust the year. 
-      if offset = offsets[FIELD.year]
-        forward = offset / Math.abs(offset)
-        fields[FIELD.year] += offset
+            # Explode into individual fields for month and year math.
+            date = new Date(wallclock)
+            fields = [
+              date.getUTCFullYear()
+              date.getUTCMonth()
+              date.getUTCDate()
+              date.getUTCHours()
+              date.getUTCMinutes()
+              date.getUTCSeconds()
+              date.getUTCMilliseconds()
+            ]
+            # It is easier to move through the months ourselves that it is to
+            # move by milliseconds.
+            if unit is "month"
+              while offset isnt 0
+                month = fields[FIELD.month]
+                if month is 0 and offset < 0
+                  fields[FIELD.month] = 11
+                  fields[FIELD.year]--
+                else if month is 11 and offset > 0
+                  fields[FIELD.month] = 0
+                  fields[FIELD.year]++
+                else
+                  fields[FIELD.month] += increment
+                offset -= increment
+                
+            # Adjust the year. 
+            if unit is "year"
+              forward = offset / Math.abs(offset)
+              fields[FIELD.year] += offset
 
+            # Create a wallclock date.
+            wallclock = Date.UTC.apply null, fields
+      else if match = ///
+        ^                 # start
+        \s*               # leading whitespace
+        ( year            # unit
+        | month
+        | day
+        | hour
+        | minute
+        | second
+        | milli
+        | time
+        | sunday
+        | monday
+        | tuesday
+        | wednesday
+        | thursday
+        | friday
+        | saturday
+        )
+        \s+               # delimiting white space
+        (\d+)             # position
+        \s*               # trailing whitespace
+        $                 # end
+      ///.exec adjustment
+        [ unit, position ] = match.slice(1)
+        unit = unit.toLowerCase()
+        date = new Date(wallclock)
+        fields = [
+          date.getUTCFullYear()
+          date.getUTCMonth()
+          date.getUTCDate()
+          date.getUTCHours()
+          date.getUTCMinutes()
+          date.getUTCSeconds()
+          date.getUTCMilliseconds()
+        ]
+        switch unit
+          when "year"
+            fields[FIELD.year] = position
+            adjustment = "0 year"
+          when "month"
+            if position < 1
+              throw new Error "invalid month"
+            fields[FIELD.month] = 1
+            adjustment = "#{position - 1} month"
+          when "day"
+            fields[FIELD.day] = 1
+            adjustment = "#{position - 1} day"
+          else
+            fields[FIELD[unit]] = 0
+            adjustment = "#{position - 1} #{unit}"
 
-      # Create a wallclock date.
-      wallclock = Date.UTC.apply null, fields
+        # Create a wallclock date.
+        wallclock = Date.UTC.apply null, fields
+        wallclock = adjust wallclock, adjustment, tzdata
 
       # If we landed on a time missing due to summer time spring forward, we
       # will move to the day using 24 hours.
       if not convertToUTC(wallclock, tzdata)?
-        wallclock += DAY * forward
+        wallclock += DAY * increment
         utc = convertToUTC wallclock, tzdata
-        utc -= DAY * forward
+        utc -= DAY * increment
         wallclock = convertToWallclock utc, tzdata
 
       wallclock
