@@ -78,7 +78,7 @@ do -> (exports or= window) and do (exports) ->
       dateFormat: "%m/%d/%y"
       timeFormat: "%H:%M:%S"
       dateTimeFormat: "%a %b %_d %H:%M:%S %Y"
-      meridiem: [ "am", "pm" ]
+      meridiem: [ { lower: "am", upper: "AM" }, { lower: "pm", upper: "PM" } ]
       monthBeforeDate: true
 
   # Constants for units of time in milliseconds.
@@ -216,9 +216,9 @@ do -> (exports or= window) and do (exports) ->
       k: (date) -> date.getUTCHours()
       H: (date) -> date.getUTCHours()
       P: (date, locale) ->
-        locale.meridiem[Math.floor(date.getUTCHours() / 12)]
+        locale.meridiem[Math.floor(date.getUTCHours() / 12)].lower
       p: (date, locale) ->
-        locale.meridiem[Math.floor(date.getUTCHours() / 12)].toUpperCase()
+        locale.meridiem[Math.floor(date.getUTCHours() / 12)].upper
       M: (date) -> date.getUTCMinutes()
       s: (date) -> Math.floor(date.getTime() / 1000)
       S: (date) -> date.getUTCSeconds()
