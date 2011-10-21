@@ -903,6 +903,7 @@ do -> (exports or= window) and do (exports) ->
             # It is easier to move through the months ourselves that it is to
             # move by milliseconds.
             if unit is "month"
+              offset *= increment
               while offset isnt 0
                 month = fields[FIELD.month]
                 if month is 0 and offset < 0

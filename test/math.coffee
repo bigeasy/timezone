@@ -31,6 +31,10 @@ class exports.MathTest extends TwerpTest
     @equal tz(utc(2007, 2, 3), "+1 month"), utc(2007, 3, 3)
     done 1
 
+  "test: subtract month": (done) ->
+    @equal tz(utc(2011, 10), "-1 month"), utc(2011, 09)
+    done 1
+
   "test: add month across year": (done) ->
     @equal tz(utc(2007, 11, 3), "+1 month"), utc(2008, 0, 3)
     done 1
