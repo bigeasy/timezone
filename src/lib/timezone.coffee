@@ -81,6 +81,8 @@ do -> (exports or= window) and do (exports) ->
       meridiem: [ { lower: "am", upper: "AM" }, { lower: "pm", upper: "PM" } ]
       monthBeforeDate: true
 
+  CLOCK = -> +(new Date())
+
   # Constants for units of time in milliseconds.
   SECOND  = 1000
   MINUTE  = SECOND * 60
@@ -378,7 +380,7 @@ do -> (exports or= window) and do (exports) ->
 
       # No year, and we have a time with no date, so we use todays date.
       if not year?
-        now = new Date()
+        now = CLOCK()
         date.push now.getUTCFullYear()
       else
         date.push parseInt year, 10
@@ -1033,6 +1035,9 @@ do -> (exports or= window) and do (exports) ->
       wallclock = parse date, request.locale, request.tzdata
 
     else
+      # Get the current time if the date is the now flag.
+      date = CLOCK() if date is tz.now
+
       # Convert from date to epoch seconds if necessary.
       # TODO: No. Be childish about this.
       wallclock = if date.getTime then date.getTime() else date
@@ -1086,3 +1091,12 @@ do -> (exports or= window) and do (exports) ->
       for k, v of override?.rules
         TIMEZONES.rules[k] = v
     TIMEZONES
+
+  # Set the clock function which will return the current time when needed. This
+  # is useful for debugging or for providing a clock that will check a server
+  # for a client independent time.
+  tz.clock = (clock) -> CLOCK = clock
+
+  # Flag passed to tz in the place of a POSIX time or date string to  indicate
+  # that the time to use is the current time according to the clock function.
+  tz.now = {}
