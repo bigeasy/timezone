@@ -1,0 +1,19 @@
+language: node_js
+
+node_js:
+  - 0.6
+
+branches:
+  only:
+    - master
+    - travis-ci
+
+# Not using `npm install --dev` because it is recursive. It will pull in the all
+# development dependencies for CoffeeScript. Way too much spew in the Travis CI
+# build output.
+
+before_install:
+  - npm install
+  - npm install coffee-script proof
+  - git submodule init && git submodule update
+  - cake compile

@@ -46,6 +46,13 @@
 # Wrap everything in a function and pass in an exports map appropriate for node
 # or the browser, depending on where we are.
 do -> (exports or= window) and do (exports) ->
+  # Used for debugging. If you don't see them called in the code, it means the
+  # code is absolutely bug free.
+  die = (splat...) ->
+    console.log.apply console, splat if splat.length
+    process.exit 1
+  say = (splat...) -> console.log.apply console, splat
+
   # Locales and time zones are global, because they are, literally, global.
   #
   # We provide UTC.
@@ -379,8 +386,10 @@ do -> (exports or= window) and do (exports) ->
       date = []
 
       # No year, and we have a time with no date, so we use todays date.
+      # FIXME: What about timezone?
       if not year?
-        now = CLOCK()
+        # FIXME Test this branch.
+        now = new Date(CLOCK())
         date.push now.getUTCFullYear()
       else
         date.push parseInt year, 10
@@ -704,7 +713,7 @@ do -> (exports or= window) and do (exports) ->
       day = daysInMonth(rule.month, year)
       loop
         date = new Date(Date.UTC(year, rule.month, day, hours, minutes, seconds))
-        if date.getDay() is index
+        if date.getUTCDay() is index
           break
         day--
 
@@ -718,7 +727,7 @@ do -> (exports or= window) and do (exports) ->
       day = 1
       loop
         date = new Date(Date.UTC(year, rule.month, day, hours, minutes, seconds))
-        if date.getDay() is index and date.getDate() >= min
+        if date.getUTCDay() is index and date.getUTCDate() >= min
           break
         day++
 
@@ -740,7 +749,7 @@ do -> (exports or= window) and do (exports) ->
           $
         ///.exec(zone.until).slice(1))
         fields[1]--
-        zone.until = Date.UTC.apply null, fields
+        zone.until = Date.UTC.apply Date.UTC, fields
       else
         zone.until = Math.MAX_VALUE
     zone.until
@@ -770,7 +779,7 @@ do -> (exports or= window) and do (exports) ->
 
     # Now we have an adjusted time. We're going to pretend that seconds since
     # the epoch starts from 1/1/1970 in the current timezone, instead of in
-    # UTC. We're going to use our date a structure for the field names, and
+    # UTC. We're going to use our date as a a structure for the field names, and
     # treat UTC values as if the were local time. This means we can do simple
     # compares between seconds since the epoch, but this is our little secret.
     dst = summerRule(wallclock, true, zone)
@@ -877,10 +886,10 @@ do -> (exports or= window) and do (exports) ->
         increment = SIGN_OFFSET[sign]
         offset    = parseInt(count, 10)
 
-        if (index = DAYS.indexOf(unit)) isnt -1
+        if ~(index = DAYS.indexOf(unit))
           while offset isnt 0
             wallclock += increment * DAY
-            offset-- if new Date(wallclock).getDay() is index
+            offset-- if new Date(wallclock).getUTCDay() is index
         else
           if millis = TIME[unit]
             # Hourly math in UTC.
@@ -935,7 +944,7 @@ do -> (exports or= window) and do (exports) ->
         | minute
         | second
         | milli
-        | time
+        | time            # TODO Implement, zeros then moves by seconds, accepts millis as .0001.
         | sunday
         | monday
         | tuesday
