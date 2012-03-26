@@ -1,0 +1,5 @@
+# Special .travis.yml that stops Travis CI from building when I push `gh-pages`
+# to GitHub.
+branches:
+  only:
+    - master
