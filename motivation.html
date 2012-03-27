@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+<html>
+<head><title>Hello, World!</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" media="all" href="/ace/css/docco.css">
+<link rel="stylesheet" media="all" href="/ace/css/markdown.css">
+</head>
+<body>
+<div class="container"><div id="container">
+<div id="markdown">
+
+<div class="docs"><h1>Why You Need a Timezone Aware JavaScript Date Library</h1>
+
+<ul>
+<li>THEME: JavaScript <code>Date</code> Does Not Work</li>
+<li>SPO: http://www.english-for-students.com/Subject-Object-Predicate.html</li>
+</ul>
+
+<p>If you've worked with dates in JavaScript, you've already run up against the
+limitations of the JavaScript <code>Date</code> object. You probably already know that the
+JavaScript <code>Date</code> object offers no way to parse dates, or format dates, nor does
+it have any way to add or subtract time from dates.</p>
+
+<p>You might not be aware of that <code>Date</code> has no concept of local time. Local time
+is the time out there in the real world, the time on clock on the wall, offset
+by a timezone, adjusted for daylight savings time. It is the time according to
+the local government.</p>
+
+<p>Local time is important if your program runs in more than one timezone. If your
+program runs on the public web, then it runs in more than one timezone.</p>
+
+<p>If your program runs in more than one timezone and you are entrusting your
+timekeeping to the JavaScript <code>Date</code> then you are doing it wrong.</p>
+
+<p>The JavaScript <code>Date</code> object has a useless dribble of support for local time.
+The duplicate date field functions, some named <code>getXyz</code>, other named
+<code>getUTCXyz</code>, might lead you to believe that it local time support is in effect,
+but it is not.</p>
+
+<p>The <code>getUTCXyz</code> methods of the <code>Date</code> object give you values of the different
+date components in UTC, while the <code>getXyz</code> methods give you the UTC value offset
+by some <strong>arbitrary</strong> number of minutes.  Yes, <strong>arbitrary</strong>, because the
+timezone offset in JavaScript <code>Date</code> is the current timezone offset of the
+client computer. The of your web application should be dictated by your web
+application, not by the settings of an arbitrary client computer.</p>
+
+<p>Local time is more than a single arbitrary offset. Local time is entirely
+political. It is defined by borders and the whims of legislatures within those
+borders. They adjust for daylight savings time. Consider the muddle that is
+<a href="http://en.wikipedia.org/wiki/Time_in_Indiana">time in Indiana</a>, and you'll see
+that a timezone is in no way scientific or standardized.</p>
+
+<p>If your application works with dates in the past or the future, you need to know
+when and if daylight savings time adjusts, if the local government has chosen to
+apply daylight savings time at all. You need to know if the local government has
+decided to move to a different timezone all together, and when this timezone
+change took place.</p>
+
+<p>That's why we use a timezone database to determine the local time, based on user
+preferences stored in our web application.</p>
+
+<h3>The Ways in Which Date Is Broken</h3>
+
+<p>There are some common patterns that use the JavaScript <code>Date</code> object to perform
+basic date operations. They are fraught with peril.</p>
+
+<p>Getting the number of minutes in a timestamp as an integer value is not terribly
+useful to an application developer.</p>
+
+<p>If you're formatting your dates by concatenating the <code>Date.getXyz</code> methods
+string, you're making a mistake.</p></div>
+
+<div class="docs"><div class="highlight"><pre><span class="c1">// The quick and easy and wrong way to format a JavaScript date.</span>
+<span class="kd">function</span> <span class="nx">brokenFormatDate</span> <span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s1">&#39;&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span>  <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span>
+               <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span>
+               <span class="nx">date</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></div></div>
+
+<div class="docs"><p>When you create a <code>Date</code> object it will offset the field values by the timezone
+offset of the computer at the time of the <code>Date</code> object's creation. You cannot
+reset that offset.</p>
+
+<p>Even if the <code>Date</code> value came from a server in your control, this offset is in
+effect when you create the date. If you are providing dates as strings, you
+might build a local date with the following date parser.</p></div>
+
+<div class="docs"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">brokenParseDate</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">parts</span> <span class="o">=</span> <span class="sr">/(\d{2})\/\d{2}\/\d{4}/</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">string</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">parts</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">parts</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="mi">10</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">parts</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="nx">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">parts</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+<span class="p">}</span>
+
+</pre></div></div>
+
+<div class="docs"><h3>Time is Not Object-Oriented</h3>
+
+<p>When JavaScript was born, objects were all the rage. They were going to fix
+everything, for everybody, forever.</p>
+
+<p>When you model a date as an object, it is quite natural to see it as the
+components of a digital clock face, each aspect of a dates display is an object
+property. You adjust a date by adjusting its properties. You have a method to
+get the minutes property. You have one to set the minutes property.</p>
+
+<p>With your best comic book guy voice, read the following: A date, you see, is a
+collection of attributes, including the number of minutes of the date, and the
+day in year in which the day occurred. Using getters and setters we are able to
+alter the date by adjusting its various properties. Also, there is a timezone
+offset, but the end user should always have their system timzeon offset  set the
+correct local time given the location of their computing device.  I, for one,
+keep my computer set to Ketha standard time, the timezone of Ketha Provence on
+Qo'noS, the Klingon home world.</p>
+
+<p>We're rarely interested in a date as a bill of materials, an object with
+component properties. The number of minutes in a date as an integer is not often
+useful for application programming.</p>
+
+<p>We're far more interested in dates as points in time, on a timeline, in relation
+to other points on the same timeline.</p>
+
+<p>POSIX time, with it's integer representation of a point is time, is a model of
+time that reflects the way we think of time. Whereas the JavaScript <code>Date</code>
+object is an exercise in object-orientation with a contrived result.</p>
+
+<h4>Regular Expressions Are Not Object Oriented</h4>
+
+<p>In large part, the utility of regular expressions comes from the language we use
+to define them. It is easier to think of the pattern we want to match, if we
+express it as a pattern.</p></div>
+
+<div class="docs"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="sr">/$[0-9a-zA-Z]/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;$a1&quot;</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Matched!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+</pre></div></div>
+
+<div class="docs"><p>Imagine if regular expressions had received the same treatment as dates. We'd be
+assembling regular expressions through object composition, maybe through a
+regular expression factory, where each step of the regular expression is
+expressed as a function call.</p></div>
+
+<div class="docs"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">regexBuilder</span> <span class="o">=</span> <span class="nx">Regex</span><span class="p">.</span><span class="nx">getFactory</span><span class="p">().</span><span class="nx">newBuilder</span><span class="p">();</span>
+<span class="nx">regexBuilder</span><span class="p">.</span><span class="nx">addStartAnchor</span><span class="p">();</span>
+<span class="nx">regexBuilder</span><span class="p">.</span><span class="nx">addLiteralMatch</span><span class="p">(</span><span class="s2">&quot;$&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">charClassBuilder</span> <span class="o">=</span> <span class="nx">Regex</span><span class="p">.</span><span class="nx">getFactory</span><span class="p">().</span><span class="nx">newCharClassBuilder</span><span class="p">();</span>
+<span class="nx">charClassBuilder</span><span class="p">.</span><span class="nx">addRange</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;9&quot;</span><span class="p">);</span>
+<span class="nx">charClassBuilder</span><span class="p">.</span><span class="nx">addRange</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">);</span>
+<span class="nx">charClassBuilder</span><span class="p">.</span><span class="nx">addRange</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">charClass</span> <span class="o">=</span> <span class="nx">charClassBuilder</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">closure</span> <span class="o">=</span> <span class="nx">Regex</span><span class="p">.</span><span class="nx">getFacetor</span><span class="p">().</span><span class="nx">newKleeneClosure</span><span class="p">(</span><span class="nx">charClass</span><span class="p">)</span>
+<span class="nx">regexBuilder</span><span class="p">.</span><span class="nx">addClosure</span><span class="p">(</span><span class="nx">closure</span><span class="p">);</span>
+<span class="nx">regexBuilder</span><span class="p">.</span><span class="nx">endAnchor</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">regex</span> <span class="o">=</span> <span class="nx">regexBuilder</span><span class="p">.</span><span class="nx">newInstance</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">regex</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;$a1&quot;</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Matched!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+</pre></div></div>
+
+<div class="docs"><p>Fortunately, JavaScript took a different path and chose to treat regular
+expressions as expressions instead of objects.</p>
+
+<p>Timezone choses to treat dates as points in time instead of objects. Timezone
+choses to treat dates as expressions intead of objects.</p>
+
+<h4>Object Model Falling Down</h4>
+
+<p>When you display the date on a page, you don't display as an exploded diagram,
+as if a date were a bill of materials.</p>
+
+<p>Today's date is:</p>
+
+<ul>
+<li>Year &mdash; 1969</li>
+<li>Month &mdash; 5 (Zero Indexed)</li>
+<li>Day &mdash; 21</li>
+<li>Hour &mdash; 2</li>
+<li>Minute &mdash; 36</li>
+<li>Seconds &mdash; 0</li>
+</ul>
+
+<p>You display it as a string.</p>
+
+<p>Today's date is: 6/21/1969.</p>
+
+<p>But, the object-oriented <code>Date</code> forces us to treat a date as a bill of materials
+in our code, so that we're constantly typing out exploded diagrams of our dates.</p>
+
+<p>This all too common date code is as ridiculous as a regular expression factory.</p></div>
+
+<div class="docs"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nx">str</span> <span class="o">+=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getYear</span><span class="p">();</span>
+<span class="nx">str</span> <span class="o">+=</span> <span class="s2">&quot;/&quot;</span><span class="p">;</span>
+<span class="nx">str</span> <span class="o">+=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">str</span> <span class="o">+=</span> <span class="s2">&quot;/&quot;</span>
+<span class="nx">str</span> <span class="o">+=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span>
+<span class="nx">str</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getHours</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">str</span> <span class="o">+=</span> <span class="s2">&quot;0&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">str</span> <span class="o">+=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">str</span> <span class="o">+=</span> <span class="s2">&quot;0&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">str</span> <span class="o">+=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">str</span> <span class="o">+=</span> <span class="s2">&quot;0&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">str</span> <span class="o">+=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
+
+<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;The current time is: &quot;</span> <span class="o">+</span> <span class="nx">str</span><span class="p">);</span>
+
+</pre></div></div>
+
+<div class="docs"><p>The Timezone way is much easier to express and understand.</p></div>
+
+<div class="docs"><div class="highlight"><pre><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;The current time is: &quot;</span> <span class="o">+</span> <span class="nx">tz</span><span class="p">(</span><span class="nx">tz</span><span class="p">.</span><span class="nx">now</span><span class="p">,</span> <span class="s2">&quot;%Y/%-m/%-d %H:%M:%S&quot;</span><span class="p">));</span>
+
+</pre></div></div>
+
+<div class="docs"><p>By that token, which is easier to read, the following safer date constructor.</p></div>
+
+<div class="docs"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">moonwalk</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">1969</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">36</span><span class="p">));</span>
+
+</pre></div></div>
+
+<div class="docs"><p>Or a string?</p></div>
+
+<div class="docs"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">moonwalk</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1969-05-21 02:36&quot;</span><span class="p">);</span>
+
+</pre></div></div>
+
+<div class="docs"><p>The major benefit of POSIX time over the <code>Date</code> object is that it is sortable.
+You can order POSIX time quickly, since POSIX time is simply an integer value.</p>
+
+<p>The benefit of Timezone over <code>Date</code> object is that is operates on a timeline. If
+what you really want to do is get the number of minutes in a particular
+timestamp as an integer, Timezone will do that. But, if what you'd rather do is
+know the number of hours between a given timestamp and lunch the following
+Friday, Timezone will do that too.</p>
+
+<p>Hmm... Actually, do I want durations? Would that return object? Would it return
+an array?</p>
+
+<p>Timezone gives you a way of working with dates that is more natural, like the
+regular expression built ins.</p>
+
+<p>If you have sworn allegiance to design patterns, and favor the date as a bag of
+integers model, because it is a model, try to think of Timezone as a domain
+specific language, because those words are shinny and a very serious computer
+paradigms. Timezone implements the interpreter pattern, so you can express dates
+in</p>
+
+<p>For the most parts, applications use dates a timestamps, search for events
+within date ranges, or search for events before or after a certain date. We
+format dates for display, which takes timezone and locale into account. We parse
+date strings given by the user or by other systems.</p>
+
+<p>The getters and setters are of dubious value:</p></div>
+
+<div class="docs"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">moonwalk</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">1969</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">36</span><span class="p">));</span>
+<span class="nx">moonwalk</span><span class="p">.</span><span class="nx">setUTCMinutes</span><span class="p">(</span><span class="nx">moonwalk</span><span class="p">.</span><span class="nx">getUTCMinutes</span><span class="p">()</span> <span class="o">+</span> <span class="mi">60</span><span class="p">);</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">moonwalk</span><span class="p">.</span><span class="nx">getUTCHours</span><span class="p">());</span>
+
+</pre></div></div>
+
+<div class="docs"><p>You have to carry those minutes yourself.</p>
+
+<h2>Recording</h2>
+
+<p>What are you going to do? Display it? It would be nicer to have a date format
+specifier to display the whole date, rather than concatenating a string with
+extremely verbose object method invocations to get each part, plus the <code>pad</code>
+method that needs to be rewritten every time.</p>
+
+<p>What are you going to do? Increment it? If you want to move forward by minutes,
+you could add the minutes and then set the value again, but if the new value is
+greater than 60 then, you need to carry the minutes into the next hour.</p>
+
+<p>To my mind, I could imagine building regular expressions in JavaScript using
+object composition. Wouldn't that be a nightmare? Dates are so common that they
+deserve their own language, like regular expressions. The Timezone library
+replaces the <code>Date</code> object in applications with a domain specific language, so
+that they feel more natural, like strings or regular expressions.</p>
+
+<p>Dates feel unnatural because dates are represented as an object, as a box of
+parts, a set of cubbyholes with getters and setters for each component.</p>
+
+<p>Like regular expressions, we turn on switches, so modifiers... Good old printf.
+We came back around to printf. As an example.</p>
+
+<p>Make a slide show and present. Use your silly examples there. Show a regular
+expression, then show it being built as an object using a factory pattern. Show
+an example of someone who is a slave to fashion, 80's fashion or some silly
+French fashion from the big crazy hair days.</p>
+
+<p>You can get the integer value using a date format and the int modifier, which
+will be null if you screw up, because the format is a programmer supplied value.</p>
+
+<h2>Rationale</h2>
+
+<p>Elsewhere, I've gone into detail on why you should not use the JavaScript <code>Date</code>
+object, and why it is not even worth it to monkey patch the <code>Date</code> object to add
+the missing functionality. Read JavaScript The Good Parts, and then write like
+that. Don't apologize too much. In fact, you know you're going to get people who
+don't understand. Google is not going to be a good referral engine, but links
+from other blogs will be.</p>
+
+<p>Timezone was designed to provide all of the date functionality missing from
+JavaScript in a single function, to keep from polluting the namespace.</p>
+
+<p>Timezone models time as a point in time on a timeline. When you need to display
+time, you use the <code>tz</code> function to format the date. When you need to move
+relative to a point on the timeline, you use the <code>tz</code> function to do date math
+according to the rules of a local timezone. If you don't want to apply local
+timezone rules, then use UTC as the local timezone.  If you want to store time
+as a time as local time, store it as a string, but it can be easily compared, if
+you use the ISO 8601 format, but it will get confused when you hit daylight
+savings time. Much better to store as POSIX time.</p>
+
+<p>When you load timezone and locale data, it is global to the application. This is
+because timezone and locale data is, literally, global data. There shouldn't be
+a need for two different definitions of 'de_DE' within your application. There
+had better not be two different definitions of 'America/New York' in your
+application.</p>
+
+<p>The API is really a domain specific language. The parameters can be passed in
+any order because the different parameter types have an unambiguous meaning.</p>
+
+<p>The <code>Date</code> object takes POSIX time and exposes the component values, which is
+somewhat useful, but not not often what you need. You don't really don't often
+need the number seconds in a timestamp as an integer value, you need to parse,
+format, offset and compare dates. The POSIX time representation is perfect for
+comparison. Formatting is easiest to express with a format pattern.</p>
+
+<p>Even if it were timezone aware, the <code>Date</code> object is not a particularly useful
+representation of</p>
+
+<h1>Objectives</h1>
+
+<p>Development tasks:</p>
+
+<ul>
+<li>Parse Olson file.</li>
+<li>Create searchable structure for offsets and rules.</li>
+<li>Create Olson file compiler utility.</li>
+<li>Create tests with controls generated by a mature timezone library such as
+CPAN's DateTime::TimeZone or UNIX <code>date</code>.</li>
+<li>Create a timezone conversion method.</li>
+<li>Create a date offset method.</li>
+<li>Create French and German locales to seed the locale set.</li>
+</ul>
+
+<p>Decisions:</p>
+
+<ul>
+<li>Olson files are compiled into JSON, loaded as JSON.</li>
+<li>On the browser side, it is the job of the client to initialize the timezone
+data, to load it and whatnot.</li>
+<li>In Node.js, timezone data is loaded <em>synchonously</em> as needed, or at startup.</li>
+<li>Make a magic function that does format, parse and date math based on
+parameter order, to simplify import and minimize burden on namespace.</li>
+</ul>
+
+<h1>Swipe</h1>
+
+<p>Applications are going to use dates the way people use dates in the real world.
+They are not a collection of attributes, but a point on a timeline, interesting
+only relative to other points on that timeline.</p>
+
+<p>Objects were all the rage, it is a wonder that we didn't have a regular
+expression factory pattern, and build regular expressions using getters and
+setters, instead of parsing regular expression patterns. That is what the date
+object is like.</p></div>
+
+</div>
+</div>
+
+</div>
+</body>
+</html>
