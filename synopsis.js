@@ -4,14 +4,12 @@ var tz = require("./lib/timezone").tz;
 // Timezones and locales are JSON objects. You can load them however you like.
 // but I expect that you'll want to do it synchrhously, at startup.
 // Synchronous, because callbacks at startup is a bit much.
-tz.timezones(require("./test/data/northamerica"));
-tz.timezones(require("./test/data/europe"));
+tz.timezones(require("./timezones/northamerica"));
+tz.timezones(require("./timezones/europe"));
 
 // Timezones and locales are global to the application, because timezones and
 // locales are, literally, global, to the world.
-tz.locale(require("./test/data/pl_PL"));
-tz.locale(require("./test/data/fr_FR"));
-tz.locale(require("./test/data/de_DE"));
+tz.locales(require("./locales/pl_PL"));
 
 // Timezone creates dates in POSIX time, milliseconds since the epoch.  for an
 // unambiguous point in time.
@@ -19,18 +17,25 @@ var y2k = tz("2000/1/1");
 eq(946684800000, y2k);
 
 // Timezone returns POSIX time by default.
-eq(946684800001, tz(y2k, "+1 millisecond");
+eq(tz(y2k, "+1 millisecond"), 946684800001);
 
 // If you provide a format specifier, Timezone returns a string.
-eq("1/1/2000 00:00:00", tz(y2k, "%m/%d/%Y %H:%M:%S");
+eq("1/1/2000 00:00:00", tz(y2k, "%-m/%-d/%Y %H:%M:%S"));
 
 // To display local time you format a POSIX time specifing a timezone.
-tz("12/31/1999 19:00:00", tz(y2k, "%m/%d/%Y %H:%M:%S", "America/Detroit"));
+eq("12/31/1999 19:00:00", tz(y2k, "%m/%d/%Y %H:%M:%S", "America/Detroit"));
+
+// That was the last working test in this series.
+process.exit(1);
 
 // Local time can only be represented as a string, because POSIX time is always
 // UTC. But, it's easy enough to go from local time to POSIX time. Pass in your
 // local time as a date string along with the local timezone.
-tz(y2k, tz("12/31/1999 19:00:00", "America/Detroit"));
+eq(y2k, tz("12/31/1999 19:00:00", "America/Detroit"));
+
+// You can perform date math along with parsing and formatting in a single call
+// to `tz`.
+eq(y2k + 1, tz("12/31/1999 19:00:00", "America/Detroit", "+1 millisecond"));
 
 // Date formats apply a locale, so you can the names and abbreviations of the
 // display day of week and month names. 
@@ -85,7 +90,7 @@ ago = tz("6 months ago", "America/Detroit");
 
 // Format the current time.
 tz(tz.now, "--rfc822");
-eq 1976, tz(bicentenial, tz.int, "%Y");
+eq(1976, tz(bicentenial, tz.int, "%Y"));
 
 // Accounts for leap year.
 date = tz(bicentenial, "last year"); 

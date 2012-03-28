@@ -809,19 +809,21 @@ do -> (exports or= window) and do (exports) ->
 
   adjust = do ->
     FIELD =
-      year:   0
-      month:  1
-      day:    2
-      hour:   3
-      minute: 4
-      second: 5
-      milli:  6
+      year:         0
+      month:        1
+      day:          2
+      hour:         3
+      minute:       4
+      second:       5
+      milli:        6
+      millisecond:  6
 
     TIME =
-      milli: 1
-      second: SECOND
-      minute: MINUTE
-      hour: HOUR
+      milli:        1
+      millisecond:  1
+      second:       SECOND
+      minute:       MINUTE
+      hour:         HOUR
 
     SIGN_OFFSET =
       "-":  -1
@@ -865,7 +867,7 @@ do -> (exports or= window) and do (exports) ->
         | hour
         | minute
         | second
-        | milli
+        | milli(?:second)?
         | sunday
         | monday
         | tuesday
