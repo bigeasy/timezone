@@ -671,7 +671,7 @@ module.exports = {
         "day": "lastSun",
         "time": "1:00u",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1978,
@@ -681,7 +681,7 @@ module.exports = {
         "day": "1",
         "time": "1:00u",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1979,
@@ -691,7 +691,7 @@ module.exports = {
         "day": "lastSun",
         "time": "1:00u",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1981,
@@ -711,7 +711,7 @@ module.exports = {
         "day": "lastSun",
         "time": "1:00u",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "W-Eur": [
@@ -733,7 +733,7 @@ module.exports = {
         "day": "lastSun",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1978,
@@ -743,7 +743,7 @@ module.exports = {
         "day": "1",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1979,
@@ -753,7 +753,7 @@ module.exports = {
         "day": "lastSun",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1981,
@@ -773,7 +773,7 @@ module.exports = {
         "day": "lastSun",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "C-Eur": [
@@ -795,7 +795,7 @@ module.exports = {
         "day": "1",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1917,
@@ -815,7 +815,7 @@ module.exports = {
         "day": "Mon>=15",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1940,
@@ -835,7 +835,7 @@ module.exports = {
         "day": "2",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1943,
@@ -855,7 +855,7 @@ module.exports = {
         "day": "4",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1944,
@@ -875,7 +875,7 @@ module.exports = {
         "day": "2",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1945,
@@ -885,7 +885,7 @@ module.exports = {
         "day": "16",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1977,
@@ -905,7 +905,7 @@ module.exports = {
         "day": "lastSun",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1978,
@@ -915,7 +915,7 @@ module.exports = {
         "day": "1",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1979,
@@ -925,7 +925,7 @@ module.exports = {
         "day": "lastSun",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1981,
@@ -945,7 +945,7 @@ module.exports = {
         "day": "lastSun",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "E-Eur": [
@@ -967,7 +967,7 @@ module.exports = {
         "day": "lastSun",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1978,
@@ -977,7 +977,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1979,
@@ -987,7 +987,7 @@ module.exports = {
         "day": "lastSun",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1981,
@@ -1007,7 +1007,7 @@ module.exports = {
         "day": "lastSun",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Russia": [
@@ -1079,7 +1079,7 @@ module.exports = {
         "day": "16",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1921,
@@ -1119,7 +1119,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1981,
@@ -1139,7 +1139,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1984,
@@ -1149,7 +1149,7 @@ module.exports = {
         "day": "lastSun",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1985,
@@ -1179,11 +1179,11 @@ module.exports = {
         "day": "lastSat",
         "time": "23:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1993,
-        "to": 1.7976931348623157e+308,
+        "to": 2010,
         "type": "-",
         "month": 2,
         "day": "lastSun",
@@ -1199,17 +1199,17 @@ module.exports = {
         "day": "lastSun",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1996,
-        "to": 1.7976931348623157e+308,
+        "to": 2010,
         "type": "-",
         "month": 9,
         "day": "lastSun",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Albania": [
@@ -1231,7 +1231,7 @@ module.exports = {
         "day": "2",
         "time": "3:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1943,
@@ -1251,7 +1251,7 @@ module.exports = {
         "day": "10",
         "time": "3:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1974,
@@ -1271,7 +1271,7 @@ module.exports = {
         "day": "2",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1975,
@@ -1291,7 +1291,7 @@ module.exports = {
         "day": "2",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1976,
@@ -1311,7 +1311,7 @@ module.exports = {
         "day": "3",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1977,
@@ -1331,7 +1331,7 @@ module.exports = {
         "day": "2",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1978,
@@ -1351,7 +1351,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1979,
@@ -1371,7 +1371,7 @@ module.exports = {
         "day": "30",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1980,
@@ -1391,7 +1391,7 @@ module.exports = {
         "day": "4",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1981,
@@ -1411,7 +1411,7 @@ module.exports = {
         "day": "27",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1982,
@@ -1431,7 +1431,7 @@ module.exports = {
         "day": "3",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1983,
@@ -1451,7 +1451,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1984,
@@ -1483,7 +1483,7 @@ module.exports = {
         "day": "13",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1946,
@@ -1503,7 +1503,7 @@ module.exports = {
         "day": "Sun>=1",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1947,
@@ -1543,7 +1543,7 @@ module.exports = {
         "day": "28",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Belgium": [
@@ -1565,7 +1565,7 @@ module.exports = {
         "day": "Sat>=1",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1919,
@@ -1595,7 +1595,7 @@ module.exports = {
         "day": "23",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1921,
@@ -1615,7 +1615,7 @@ module.exports = {
         "day": "25",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1922,
@@ -1635,7 +1635,7 @@ module.exports = {
         "day": "Sat>=1",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1923,
@@ -1705,7 +1705,7 @@ module.exports = {
         "day": "Sun>=2",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1929,
@@ -1825,7 +1825,7 @@ module.exports = {
         "day": "19",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1940,
@@ -1845,7 +1845,7 @@ module.exports = {
         "day": "17",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1945,
@@ -1865,7 +1865,7 @@ module.exports = {
         "day": "16",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1946,
@@ -1885,7 +1885,7 @@ module.exports = {
         "day": "7",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Bulg": [
@@ -1907,7 +1907,7 @@ module.exports = {
         "day": "1",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1980,
@@ -1927,7 +1927,7 @@ module.exports = {
         "day": "29",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1981,
@@ -1937,7 +1937,7 @@ module.exports = {
         "day": "27",
         "time": "2:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Czech": [
@@ -1959,7 +1959,7 @@ module.exports = {
         "day": "18",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1946,
@@ -1979,7 +1979,7 @@ module.exports = {
         "day": "Sun>=1",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1947,
@@ -2031,7 +2031,7 @@ module.exports = {
         "day": "30",
         "time": "23:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1940,
@@ -2061,7 +2061,7 @@ module.exports = {
         "day": "15",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1946,
@@ -2081,7 +2081,7 @@ module.exports = {
         "day": "1",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1947,
@@ -2101,7 +2101,7 @@ module.exports = {
         "day": "10",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1948,
@@ -2121,7 +2121,7 @@ module.exports = {
         "day": "8",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Thule": [
@@ -2205,7 +2205,7 @@ module.exports = {
         "day": "3",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1981,
@@ -2225,7 +2225,7 @@ module.exports = {
         "day": "lastSun",
         "time": "3:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "France": [
@@ -2247,7 +2247,7 @@ module.exports = {
         "day": "Sun>=1",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1917,
@@ -2297,7 +2297,7 @@ module.exports = {
         "day": "23",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1921,
@@ -2317,7 +2317,7 @@ module.exports = {
         "day": "25",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1922,
@@ -2337,7 +2337,7 @@ module.exports = {
         "day": "Sat>=1",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1923,
@@ -2517,7 +2517,7 @@ module.exports = {
         "day": "18",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1940,
@@ -2627,7 +2627,7 @@ module.exports = {
         "day": "16",
         "time": "3:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1976,
@@ -2647,7 +2647,7 @@ module.exports = {
         "day": "26",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Germany": [
@@ -2669,7 +2669,7 @@ module.exports = {
         "day": "7",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1947,
@@ -2679,7 +2679,7 @@ module.exports = {
         "day": "Sun>=1",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1947,
@@ -2761,7 +2761,7 @@ module.exports = {
         "day": "18",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Greece": [
@@ -2783,7 +2783,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1941,
@@ -2803,7 +2803,7 @@ module.exports = {
         "day": "2",
         "time": "3:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1943,
@@ -2823,7 +2823,7 @@ module.exports = {
         "day": "4",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1952,
@@ -2843,7 +2843,7 @@ module.exports = {
         "day": "2",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1975,
@@ -2863,7 +2863,7 @@ module.exports = {
         "day": "26",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1976,
@@ -2883,7 +2883,7 @@ module.exports = {
         "day": "10",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1977,
@@ -2903,7 +2903,7 @@ module.exports = {
         "day": "26",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1978,
@@ -2913,7 +2913,7 @@ module.exports = {
         "day": "24",
         "time": "4:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1979,
@@ -2933,7 +2933,7 @@ module.exports = {
         "day": "29",
         "time": "2:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1980,
@@ -2953,7 +2953,7 @@ module.exports = {
         "day": "28",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Hungary": [
@@ -2975,7 +2975,7 @@ module.exports = {
         "day": "29",
         "time": "3:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1919,
@@ -2995,7 +2995,7 @@ module.exports = {
         "day": "15",
         "time": "3:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1920,
@@ -3015,7 +3015,7 @@ module.exports = {
         "day": "30",
         "time": "3:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1945,
@@ -3035,7 +3035,7 @@ module.exports = {
         "day": "3",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1946,
@@ -3055,7 +3055,7 @@ module.exports = {
         "day": "Sun>=1",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1947,
@@ -3085,7 +3085,7 @@ module.exports = {
         "day": "23",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1954,
@@ -3105,7 +3105,7 @@ module.exports = {
         "day": "3",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1956,
@@ -3125,7 +3125,7 @@ module.exports = {
         "day": "lastSun",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1957,
@@ -3145,7 +3145,7 @@ module.exports = {
         "day": "lastSun",
         "time": "3:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1980,
@@ -3177,7 +3177,7 @@ module.exports = {
         "day": "21",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1918,
@@ -3187,7 +3187,7 @@ module.exports = {
         "day": "16",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1939,
@@ -3207,7 +3207,7 @@ module.exports = {
         "day": "29",
         "time": "2:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1940,
@@ -3227,7 +3227,7 @@ module.exports = {
         "day": "3",
         "time": "2:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1941,
@@ -3247,7 +3247,7 @@ module.exports = {
         "day": "2",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1942,
@@ -3267,7 +3267,7 @@ module.exports = {
         "day": "25",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1943,
@@ -3287,7 +3287,7 @@ module.exports = {
         "day": "Sun>=22",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1947,
@@ -3307,7 +3307,7 @@ module.exports = {
         "day": "30",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1950,
@@ -3317,7 +3317,7 @@ module.exports = {
         "day": "Sun>=22",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1967,
@@ -3327,7 +3327,7 @@ module.exports = {
         "day": "29",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Italy": [
@@ -3349,7 +3349,7 @@ module.exports = {
         "day": "1",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1917,
@@ -3369,7 +3369,7 @@ module.exports = {
         "day": "30",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1918,
@@ -3389,7 +3389,7 @@ module.exports = {
         "day": "Sun>=1",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1919,
@@ -3419,7 +3419,7 @@ module.exports = {
         "day": "19",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1940,
@@ -3439,7 +3439,7 @@ module.exports = {
         "day": "17",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1945,
@@ -3459,7 +3459,7 @@ module.exports = {
         "day": "15",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1946,
@@ -3479,7 +3479,7 @@ module.exports = {
         "day": "6",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1947,
@@ -3499,7 +3499,7 @@ module.exports = {
         "day": "5",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1948,
@@ -3519,7 +3519,7 @@ module.exports = {
         "day": "3",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1966,
@@ -3539,7 +3539,7 @@ module.exports = {
         "day": "Sun>=22",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1969,
@@ -3569,7 +3569,7 @@ module.exports = {
         "day": "lastSun",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1971,
@@ -3589,7 +3589,7 @@ module.exports = {
         "day": "lastSun",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1972,
@@ -3599,7 +3599,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1973,
@@ -3619,7 +3619,7 @@ module.exports = {
         "day": "lastSun",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1974,
@@ -3649,7 +3649,7 @@ module.exports = {
         "day": "lastSun",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1976,
@@ -3679,7 +3679,7 @@ module.exports = {
         "day": "1",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1979,
@@ -3689,7 +3689,7 @@ module.exports = {
         "day": "30",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Latvia": [
@@ -3711,7 +3711,7 @@ module.exports = {
         "day": "lastSun",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Lux": [
@@ -3733,7 +3733,7 @@ module.exports = {
         "day": "1",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1917,
@@ -3753,7 +3753,7 @@ module.exports = {
         "day": "17",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1918,
@@ -3773,7 +3773,7 @@ module.exports = {
         "day": "Mon>=15",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1919,
@@ -3793,7 +3793,7 @@ module.exports = {
         "day": "5",
         "time": "3:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1920,
@@ -3813,7 +3813,7 @@ module.exports = {
         "day": "24",
         "time": "2:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1921,
@@ -3833,7 +3833,7 @@ module.exports = {
         "day": "26",
         "time": "2:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1922,
@@ -3853,7 +3853,7 @@ module.exports = {
         "day": "Sun>=2",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1923,
@@ -3873,7 +3873,7 @@ module.exports = {
         "day": "Sun>=2",
         "time": "2:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1924,
@@ -3893,7 +3893,7 @@ module.exports = {
         "day": "Sun>=2",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1925,
@@ -3965,7 +3965,7 @@ module.exports = {
         "day": "29",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1974,
@@ -3985,7 +3985,7 @@ module.exports = {
         "day": "16",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1975,
@@ -4005,7 +4005,7 @@ module.exports = {
         "day": "Sun>=15",
         "time": "2:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1980,
@@ -4187,7 +4187,7 @@ module.exports = {
         "day": "Sun>=2",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1938,
@@ -4217,7 +4217,7 @@ module.exports = {
         "day": "16",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Norway": [
@@ -4239,7 +4239,7 @@ module.exports = {
         "day": "30",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1945,
@@ -4259,7 +4259,7 @@ module.exports = {
         "day": "1",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1959,
@@ -4279,7 +4279,7 @@ module.exports = {
         "day": "Sun>=15",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1965,
@@ -4301,7 +4301,7 @@ module.exports = {
         "day": "16",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1919,
@@ -4331,7 +4331,7 @@ module.exports = {
         "day": "4",
         "time": "2:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1945,
@@ -4351,7 +4351,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1946,
@@ -4371,7 +4371,7 @@ module.exports = {
         "day": "7",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1947,
@@ -4391,7 +4391,7 @@ module.exports = {
         "day": "Sun>=1",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1948,
@@ -4431,7 +4431,7 @@ module.exports = {
         "day": "lastSun",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1958,
@@ -4461,7 +4461,7 @@ module.exports = {
         "day": "Sun>=1",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1960,
@@ -4491,7 +4491,7 @@ module.exports = {
         "day": "lastSun",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Port": [
@@ -4513,7 +4513,7 @@ module.exports = {
         "day": "1",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1917,
@@ -4533,7 +4533,7 @@ module.exports = {
         "day": "14",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1918,
@@ -4593,7 +4593,7 @@ module.exports = {
         "day": "14",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1926,
@@ -4613,7 +4613,7 @@ module.exports = {
         "day": "Sat>=1",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1927,
@@ -4663,7 +4663,7 @@ module.exports = {
         "day": "Sat>=1",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1932,
@@ -4693,7 +4693,7 @@ module.exports = {
         "day": "Sat>=1",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1935,
@@ -4753,7 +4753,7 @@ module.exports = {
         "day": "18",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1940,
@@ -4773,7 +4773,7 @@ module.exports = {
         "day": "5",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1941,
@@ -4823,7 +4823,7 @@ module.exports = {
         "day": "Sat>=24",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1943,
@@ -4873,7 +4873,7 @@ module.exports = {
         "day": "Sat>=1",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1947,
@@ -4893,7 +4893,7 @@ module.exports = {
         "day": "Sun>=1",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1951,
@@ -4913,7 +4913,7 @@ module.exports = {
         "day": "Sun>=1",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1977,
@@ -4933,7 +4933,7 @@ module.exports = {
         "day": "25",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1978,
@@ -4953,7 +4953,7 @@ module.exports = {
         "day": "1",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1979,
@@ -4963,7 +4963,7 @@ module.exports = {
         "day": "lastSun",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1980,
@@ -5015,7 +5015,7 @@ module.exports = {
         "day": "Sun>=1",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1933,
@@ -5045,7 +5045,7 @@ module.exports = {
         "day": "lastSun",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1980,
@@ -5065,7 +5065,7 @@ module.exports = {
         "day": "lastSun",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1991,
@@ -5085,7 +5085,7 @@ module.exports = {
         "day": "lastSun",
         "time": "0:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Spain": [
@@ -5107,7 +5107,7 @@ module.exports = {
         "day": "6",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1918,
@@ -5147,7 +5147,7 @@ module.exports = {
         "day": "4",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1926,
@@ -5167,7 +5167,7 @@ module.exports = {
         "day": "Sat>=1",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1927,
@@ -5217,7 +5217,7 @@ module.exports = {
         "day": "Sat>=1",
         "time": "23:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1938,
@@ -5317,7 +5317,7 @@ module.exports = {
         "day": "30",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1949,
@@ -5337,7 +5337,7 @@ module.exports = {
         "day": "30",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1974,
@@ -5357,7 +5357,7 @@ module.exports = {
         "day": "Sun>=1",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1976,
@@ -5377,7 +5377,7 @@ module.exports = {
         "day": "lastSun",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1977,
@@ -5397,7 +5397,7 @@ module.exports = {
         "day": "1",
         "time": "1:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "SpainAfrica": [
@@ -5419,7 +5419,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1974,
@@ -5439,7 +5439,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1976,
@@ -5459,7 +5459,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1977,
@@ -5469,7 +5469,7 @@ module.exports = {
         "day": "28",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1978,
@@ -5489,7 +5489,7 @@ module.exports = {
         "day": "4",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Swiss": [
@@ -5511,7 +5511,7 @@ module.exports = {
         "day": "Mon>=1",
         "time": "2:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ],
     "Turkey": [
@@ -5533,7 +5533,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1920,
@@ -5553,7 +5553,7 @@ module.exports = {
         "day": "25",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1921,
@@ -5573,7 +5573,7 @@ module.exports = {
         "day": "3",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1922,
@@ -5593,7 +5593,7 @@ module.exports = {
         "day": "8",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1924,
@@ -5613,7 +5613,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1925,
@@ -5643,7 +5643,7 @@ module.exports = {
         "day": "5",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1940,
@@ -5663,7 +5663,7 @@ module.exports = {
         "day": "21",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1942,
@@ -5683,7 +5683,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1945,
@@ -5703,7 +5703,7 @@ module.exports = {
         "day": "8",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1946,
@@ -5723,7 +5723,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1947,
@@ -5743,7 +5743,7 @@ module.exports = {
         "day": "Sun>=2",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1949,
@@ -5783,7 +5783,7 @@ module.exports = {
         "day": "8",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1962,
@@ -5803,7 +5803,7 @@ module.exports = {
         "day": "8",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1964,
@@ -5823,7 +5823,7 @@ module.exports = {
         "day": "1",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1970,
@@ -5843,7 +5843,7 @@ module.exports = {
         "day": "Sun>=2",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1973,
@@ -5863,7 +5863,7 @@ module.exports = {
         "day": "4",
         "time": "3:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1974,
@@ -5883,7 +5883,7 @@ module.exports = {
         "day": "3",
         "time": "5:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1975,
@@ -5903,7 +5903,7 @@ module.exports = {
         "day": "lastSun",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1976,
@@ -5933,7 +5933,7 @@ module.exports = {
         "day": "16",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1979,
@@ -5953,7 +5953,7 @@ module.exports = {
         "day": "Mon>=11",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1981,
@@ -5983,7 +5983,7 @@ module.exports = {
         "day": "2",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1985,
@@ -6003,7 +6003,7 @@ module.exports = {
         "day": "28",
         "time": "0:00",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1986,
@@ -6023,7 +6023,7 @@ module.exports = {
         "day": "lastSun",
         "time": "2:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1991,
@@ -6043,7 +6043,7 @@ module.exports = {
         "day": "lastSun",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       },
       {
         "from": 1996,
@@ -6053,7 +6053,7 @@ module.exports = {
         "day": "lastSun",
         "time": "1:00s",
         "save": "0",
-        "letter": "-"
+        "letter": ""
       }
     ]
   },
@@ -6356,9 +6356,16 @@ module.exports = {
     ],
     "Europe/Minsk": [
       {
+        "offset": "3:00",
+        "format": "FET"
+      },
+      {
         "offset": "2:00",
         "rules": "Russia",
-        "format": "EE%sT"
+        "format": "EE%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "2:00",
@@ -8029,9 +8036,16 @@ module.exports = {
     ],
     "Europe/Kaliningrad": [
       {
+        "offset": "3:00",
+        "format": "FET"
+      },
+      {
         "offset": "2:00",
         "rules": "Russia",
-        "format": "EE%sT"
+        "format": "EE%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "3:00",
@@ -8067,9 +8081,16 @@ module.exports = {
     ],
     "Europe/Moscow": [
       {
+        "offset": "4:00",
+        "format": "MSK"
+      },
+      {
         "offset": "3:00",
         "rules": "Russia",
-        "format": "MSK/MSD"
+        "format": "MSK/MSD",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "2:00",
@@ -8127,9 +8148,16 @@ module.exports = {
     ],
     "Europe/Volgograd": [
       {
+        "offset": "4:00",
+        "format": "VOLT"
+      },
+      {
         "offset": "3:00",
         "rules": "Russia",
-        "format": "VOL%sT"
+        "format": "VOL%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "4:00",
@@ -8185,9 +8213,16 @@ module.exports = {
     ],
     "Europe/Samara": [
       {
+        "offset": "4:00",
+        "format": "SAMT"
+      },
+      {
         "offset": "3:00",
         "rules": "Russia",
-        "format": "SAM%sT"
+        "format": "SAM%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "4:00",
@@ -8252,9 +8287,16 @@ module.exports = {
     ],
     "Asia/Yekaterinburg": [
       {
+        "offset": "6:00",
+        "format": "YEKT"
+      },
+      {
         "offset": "5:00",
         "rules": "Russia",
-        "format": "YEK%sT"
+        "format": "YEK%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "4:00",
@@ -8289,9 +8331,16 @@ module.exports = {
     ],
     "Asia/Omsk": [
       {
+        "offset": "7:00",
+        "format": "OMST"
+      },
+      {
         "offset": "6:00",
         "rules": "Russia",
-        "format": "OMS%sT"
+        "format": "OMS%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "5:00",
@@ -8326,9 +8375,16 @@ module.exports = {
     ],
     "Asia/Novosibirsk": [
       {
+        "offset": "7:00",
+        "format": "NOVT"
+      },
+      {
         "offset": "6:00",
         "rules": "Russia",
-        "format": "NOV%sT"
+        "format": "NOV%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "7:00",
@@ -8371,9 +8427,16 @@ module.exports = {
     ],
     "Asia/Novokuznetsk": [
       {
+        "offset": "7:00",
+        "format": "NOVT"
+      },
+      {
         "offset": "6:00",
         "rules": "Russia",
-        "format": "NOV%sT"
+        "format": "NOV%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "7:00",
@@ -8416,9 +8479,16 @@ module.exports = {
     ],
     "Asia/Krasnoyarsk": [
       {
+        "offset": "8:00",
+        "format": "KRAT"
+      },
+      {
         "offset": "7:00",
         "rules": "Russia",
-        "format": "KRA%sT"
+        "format": "KRA%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "6:00",
@@ -8453,9 +8523,16 @@ module.exports = {
     ],
     "Asia/Irkutsk": [
       {
+        "offset": "9:00",
+        "format": "IRKT"
+      },
+      {
         "offset": "8:00",
         "rules": "Russia",
-        "format": "IRK%sT"
+        "format": "IRK%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "7:00",
@@ -8497,9 +8574,16 @@ module.exports = {
     ],
     "Asia/Yakutsk": [
       {
+        "offset": "10:00",
+        "format": "YAKT"
+      },
+      {
         "offset": "9:00",
         "rules": "Russia",
-        "format": "YAK%sT"
+        "format": "YAK%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "8:00",
@@ -8534,9 +8618,16 @@ module.exports = {
     ],
     "Asia/Vladivostok": [
       {
+        "offset": "11:00",
+        "format": "VLAT"
+      },
+      {
         "offset": "10:00",
         "rules": "Russia",
-        "format": "VLA%sT"
+        "format": "VLA%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "9:00",
@@ -8571,9 +8662,16 @@ module.exports = {
     ],
     "Asia/Sakhalin": [
       {
+        "offset": "11:00",
+        "format": "SAKT"
+      },
+      {
         "offset": "10:00",
         "rules": "Russia",
-        "format": "SAK%sT"
+        "format": "SAK%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "11:00",
@@ -8623,9 +8721,16 @@ module.exports = {
     ],
     "Asia/Magadan": [
       {
+        "offset": "12:00",
+        "format": "MAGT"
+      },
+      {
         "offset": "11:00",
         "rules": "Russia",
-        "format": "MAG%sT"
+        "format": "MAG%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "10:00",
@@ -8660,9 +8765,16 @@ module.exports = {
     ],
     "Asia/Kamchatka": [
       {
+        "offset": "12:00",
+        "format": "PETT"
+      },
+      {
         "offset": "11:00",
         "rules": "Russia",
-        "format": "PET%sT"
+        "format": "PET%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "12:00",
@@ -8705,9 +8817,16 @@ module.exports = {
     ],
     "Asia/Anadyr": [
       {
+        "offset": "12:00",
+        "format": "ANAT"
+      },
+      {
         "offset": "11:00",
         "rules": "Russia",
-        "format": "ANA%sT"
+        "format": "ANA%sT",
+        "until": "2011-03-27T02:00:00.000Z",
+        "standard": true,
+        "utc": false
       },
       {
         "offset": "12:00",

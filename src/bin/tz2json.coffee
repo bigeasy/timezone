@@ -57,7 +57,7 @@ for file in process.argv.slice 2
           day
           time
           save
-          letter
+          letter: if letter is "-" then "" else letter
         }
       else
         if record[0] is "Zone"
@@ -98,4 +98,6 @@ for file in process.argv.slice 2
       else
         delete record.until
 
+  process.stdout.write "module.exports = "
   process.stdout.write JSON.stringify(info, null, 2)
+  process.stdout.write "\n"

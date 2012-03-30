@@ -916,7 +916,7 @@ module.exports = {
         "to": 1918,
         "type": "-",
         "month": 9,
-        "day": "31",
+        "day": "27",
         "time": "2:00",
         "save": "0",
         "letter": "S"
@@ -1175,7 +1175,7 @@ module.exports = {
       },
       {
         "from": 2007,
-        "to": 1.7976931348623157e+308,
+        "to": 2011,
         "type": "-",
         "month": 2,
         "day": "Sun>=8",
@@ -1185,7 +1185,7 @@ module.exports = {
       },
       {
         "from": 2007,
-        "to": 1.7976931348623157e+308,
+        "to": 2010,
         "type": "-",
         "month": 10,
         "day": "Sun>=1",
@@ -2248,7 +2248,7 @@ module.exports = {
         "to": 1918,
         "type": "-",
         "month": 9,
-        "day": "31",
+        "day": "27",
         "time": "2:00",
         "save": "0",
         "letter": "S"
@@ -2470,7 +2470,7 @@ module.exports = {
         "to": 1918,
         "type": "-",
         "month": 9,
-        "day": "31",
+        "day": "27",
         "time": "2:00",
         "save": "0",
         "letter": "S"
@@ -2694,7 +2694,7 @@ module.exports = {
         "to": 1918,
         "type": "-",
         "month": 9,
-        "day": "31",
+        "day": "27",
         "time": "2:00",
         "save": "0",
         "letter": "S"
@@ -2866,7 +2866,7 @@ module.exports = {
         "to": 1918,
         "type": "-",
         "month": 9,
-        "day": "31",
+        "day": "27",
         "time": "2:00",
         "save": "0",
         "letter": "S"
@@ -3062,28 +3062,6 @@ module.exports = {
         "time": "2:00",
         "save": "1:00",
         "letter": "D"
-      }
-    ],
-    "Resolute": [
-      {
-        "from": 2006,
-        "to": 1.7976931348623157e+308,
-        "type": "-",
-        "month": 10,
-        "day": "Sun>=1",
-        "time": "2:00",
-        "save": "0",
-        "letter": "ES"
-      },
-      {
-        "from": 2007,
-        "to": 1.7976931348623157e+308,
-        "type": "-",
-        "month": 2,
-        "day": "Sun>=8",
-        "time": "2:00",
-        "save": "0",
-        "letter": "CD"
       }
     ],
     "Mexico": [
@@ -3709,7 +3687,7 @@ module.exports = {
       },
       {
         "from": 2006,
-        "to": 1.7976931348623157e+308,
+        "to": 2010,
         "type": "-",
         "month": 9,
         "day": "lastSun",
@@ -3758,7 +3736,37 @@ module.exports = {
         "letter": "D"
       },
       {
+        "from": 2011,
+        "to": 2011,
+        "type": "-",
+        "month": 10,
+        "day": "13",
+        "time": "0:00s",
+        "save": "0",
+        "letter": "S"
+      },
+      {
         "from": 2012,
+        "to": 2012,
+        "type": "-",
+        "month": 3,
+        "day": "1",
+        "time": "0:00s",
+        "save": "1:00",
+        "letter": "D"
+      },
+      {
+        "from": 2012,
+        "to": 1.7976931348623157e+308,
+        "type": "-",
+        "month": 9,
+        "day": "lastSun",
+        "time": "0:00s",
+        "save": "0",
+        "letter": "S"
+      },
+      {
+        "from": 2013,
         "to": 1.7976931348623157e+308,
         "type": "-",
         "month": 2,
@@ -4586,7 +4594,7 @@ module.exports = {
         "utc": false
       },
       {
-        "offset": "-14:58:47",
+        "offset": "14:58:47",
         "format": "LMT",
         "until": "1867-10-18T00:00:00.000Z",
         "standard": false,
@@ -4596,7 +4604,6 @@ module.exports = {
     "America/Metlakatla": [
       {
         "offset": "-8:00",
-        "rules": "US",
         "format": "MeST"
       },
       {
@@ -4908,8 +4915,7 @@ module.exports = {
       },
       {
         "offset": "-10:30",
-        "rules": "US",
-        "format": "H%sT",
+        "format": "HST",
         "until": "1947-06-08T02:00:00.000Z",
         "standard": false,
         "utc": false
@@ -5728,8 +5734,16 @@ module.exports = {
     "America/St_Johns": [
       {
         "offset": "-3:30",
-        "rules": "StJohns",
+        "rules": "Canada",
         "format": "N%sT"
+      },
+      {
+        "offset": "-3:30",
+        "rules": "StJohns",
+        "format": "N%sT",
+        "until": "2011-11-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       },
       {
         "offset": "-3:30",
@@ -5782,8 +5796,16 @@ module.exports = {
     "America/Goose_Bay": [
       {
         "offset": "-4:00",
-        "rules": "StJohns",
+        "rules": "Canada",
         "format": "A%sT"
+      },
+      {
+        "offset": "-4:00",
+        "rules": "StJohns",
+        "format": "A%sT",
+        "until": "2011-11-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
       },
       {
         "offset": "-3:30",
@@ -6436,6 +6458,33 @@ module.exports = {
         "utc": false
       }
     ],
+    "America/Creston": [
+      {
+        "offset": "-7:00",
+        "format": "MST"
+      },
+      {
+        "offset": "-8:00",
+        "format": "PST",
+        "until": "1918-06-02T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:00",
+        "format": "MST",
+        "until": "1916-10-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      },
+      {
+        "offset": "-7:46:04",
+        "format": "LMT",
+        "until": "1884-01-01T00:00:00.000Z",
+        "standard": false,
+        "utc": false
+      }
+    ],
     "America/Pangnirtung": [
       {
         "offset": "-5:00",
@@ -6506,9 +6555,16 @@ module.exports = {
     ],
     "America/Resolute": [
       {
+        "offset": "-6:00",
+        "rules": "Canada",
+        "format": "C%sT"
+      },
+      {
         "offset": "-5:00",
-        "rules": "Resolute",
-        "format": "%sT"
+        "format": "EST",
+        "until": "2007-03-11T03:00:00.000Z",
+        "standard": false,
+        "utc": false
       },
       {
         "offset": "-6:00",
@@ -8224,4 +8280,4 @@ module.exports = {
       }
     ]
   }
-};
+}
