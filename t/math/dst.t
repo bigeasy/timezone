@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 require("../proof") 13, ({ tz, utc }) ->
-  tz.timezones require "../data/northamerica"
+  tz = tz require "../data/northamerica"
   # Across dst transitions.
   @equal tz("2010-03-14 12:00", "America/Detroit", "-24 hour", "%c"), "Sat 13 Mar 2010 11:00:00 AM UTC",
          "subtract hours across spring forward"

@@ -5,7 +5,8 @@
 #
 # The `wallclock` variable mentioned throughout the code is always a seconds
 # since the epoch offset, but it is *not* UTC seconds since the epoch. When you
-# see a `utc` variable, that is always seconds since the epoch, always in UTC.
+# see a `posix` variable, that is always POSIX time, seconds since the epoch,
+# always UTC.
 # 
 # When you see a `date` variable we're using a `Date` object for its its
 # `getUTC*` fields.  We use a `Date` object as a date/time record, and the
@@ -37,7 +38,7 @@
 # The user will only ever get either UTC seconds since the epoch, or a formatted
 # date string in the user specified time zone.
 #
-# When you see `utc` in the code, we've converted the `wallclock` to UTC to
+# When you see `posix` in the code, we've converted the `wallclock` to UTC to
 # perform math at the hours, minutes, seconds, and milliscond level. We convert
 # the time `wallclock` to UTC to perform the math, and then convert back into
 # the `wallclock` into the user specified time zone. Thus, daylight savings time
@@ -60,33 +61,28 @@ do -> (exports or= window) and do (exports) ->
   # We provide a default locale for the United States. Currently, locales are
   # simply JSON structures, but in the future they may contain logic for locale
   # specific fuzzy date parsing.
-  TIMEZONES =
-    zones:
-      UTC: [ { "offset": "0", "format": "UTC" } ]
-    rules: {}
-  TIMEZONES.zones.UTC.name = "UTC"
-
-  LOCALES =
-    en_US:
-      name: "en_US"
-      day:
-        abbrev: "Sun Mon Tue Wed Thu Fri Sat".split /\s/
-        full: """
-          Sunday Monday Tuesday Wednesday Thursday Friday Saturday
-        """.split /\s+/
-      month:
-        abbrev: "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split /\s+/
-        full: """
-          January February March
-          April   May      June
-          July    August   September
-          October November December
-        """.split /\s+/
-      dateFormat: "%m/%d/%Y"
-      timeFormat: "%I:%M:%S %p"
-      dateTimeFormat: "%a %d %b %Y %I:%M:%S %p %Z"
-      meridiem: [ { lower: "am", upper: "AM" }, { lower: "pm", upper: "PM" } ]
-      monthBeforeDate: true
+  UTC = [ { "offset": "0", "format": "UTC" } ]
+  UTC.name = "UTC"
+  en_US =
+    name: "en_US"
+    day:
+      abbrev: "Sun Mon Tue Wed Thu Fri Sat".split /\s/
+      full: """
+        Sunday Monday Tuesday Wednesday Thursday Friday Saturday
+      """.split /\s+/
+    month:
+      abbrev: "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split /\s+/
+      full: """
+        January February March
+        April   May      June
+        July    August   September
+        October November December
+      """.split /\s+/
+    dateFormat: "%m/%d/%Y"
+    timeFormat: "%I:%M:%S %p"
+    dateTimeFormat: "%a %d %b %Y %I:%M:%S %p %Z"
+    meridiem: [ { lower: "am", upper: "AM" }, { lower: "pm", upper: "PM" } ]
+    monthBeforeDate: true
 
   CLOCK = -> +(new Date())
 
@@ -182,6 +178,9 @@ do -> (exports or= window) and do (exports) ->
       hours = Math.floor(date.getUTCHours() % 12)
       if hours is 0 then 12 else hours
 
+    recurse = (request, splat...) ->
+      convert.call null, null, request, splat.concat([ request.zone, request.locale ]), 0
+
     # Map the specifiers to a function that implements the specifier. Rather
     # than document each one, please use a [Unix
     # Date](http://en.wikipedia.org/wiki/Date_%28Unix%29) pattern reference if
@@ -216,9 +215,9 @@ do -> (exports or= window) and do (exports) ->
       Y: (date) -> date.getUTCFullYear()
       C: (date) -> Math.floor(date.getFullYear() / 100)
       D: (date) -> tz(date, "%m/%d/%y")
-      x: (date, locale, tzdata) ->
-        utc = convertToUTC(date.getTime(), tzdata)
-        tz(utc, locale.dateFormat, locale.name, tzdata.name)
+      x: (date, locale, request) ->
+        posix = convertToPOSIX request, date.getTime()
+        recurse request, posix, locale.dateFormat
       F: (date) -> tz(date, "%Y-%m-%d")
       l: (date) -> dialHours(date)
       I: (date) -> dialHours(date)
@@ -235,13 +234,13 @@ do -> (exports or= window) and do (exports) ->
       r: (date) -> tz(date, "%I:%M:%S %p")
       R: (date) -> tz(date, "%H:%M")
       T: (date) -> tz(date, "%H:%M:%S")
-      X: (date, locale, tzdata) ->
-        utc = convertToUTC(date.getTime(), tzdata)
-        tz utc, locale.timeFormat, locale.name, tzdata.name
-      c: (date, locale, tzdata) ->
-        utc = convertToUTC(date.getTime(), tzdata)
-        tz utc, locale.dateTimeFormat, locale.name, tzdata.name
-      z: (date, locale, tzdata) ->
+      X: (date, locale, request) ->
+        posix = convertToPOSIX request, date.getTime()
+        recurse request, posix, locale.timeFormat
+      c: (date, locale, request) ->
+        posix = convertToPOSIX request, date.getTime()
+        recurse request, posix, locale.dateTimeFormat
+      z: (date, locale, request) ->
         offset = Math.floor(offsetInMilliseconds(tzdata.offset) / 1000 / 60)
         if offset < 0
           "-#{pad Math.abs(offset), 4, "0"}"
@@ -295,11 +294,13 @@ do -> (exports or= window) and do (exports) ->
       "^": (value) -> value.toUpperCase()
 
     # Implementation.
-    (wallclock, rest, locale, tzdata) ->
+    (request, wallclock, rest) ->
       # Convert the `wallclock` seconds since the epoch to a `Date` to get to
       # the fields. `output` will gather our formatted string.
       date    = new Date(wallclock)
       output  = []
+
+      locale = request.locales[request.locale]
 
       # While there is more string to parse.
       while rest.length
@@ -328,7 +329,7 @@ do -> (exports or= window) and do (exports) ->
           if specifier
 
             # Get out specifier field value.
-            value = specifiers[specifier](date, locale, tzdata)
+            value = specifiers[specifier](date, locale, request)
 
             # Apply padding, if the specifier is padded. The `k` specifier is
             # padded with spaces, but all others are padded with zeros. We apply
@@ -338,7 +339,7 @@ do -> (exports or= window) and do (exports) ->
               style = if specifier is "k" then "_" else "0"
               if flags.length
                 style = flags[0] if paddings[flags[0]]
-              value = paddings[style](value, padding[specifier], tzdata)
+              value = paddings[style](value, padding[specifier])
 
             # Apply any user specified transformations. This is only upper case,
             # and it implies that the value is not numeric, there is never more
@@ -427,7 +428,7 @@ do -> (exports or= window) and do (exports) ->
       Date.UTC.apply null, date
 
   # Parse a date, possibly fuzzy.
-  parse = (pattern, locale) ->
+  parse = (request, pattern) ->
     # Best foot forward, an RFC 822 date.
     if match = ///
       ^             # start
@@ -487,14 +488,14 @@ do -> (exports or= window) and do (exports) ->
         after ] = match.slice 1
 
       dow = dow.toLowerCase()
-      for abbrev in locale.day.abbrev
+      for abbrev in request.locales[request.locale].day.abbrev
         if dow is abbrev.toLowerCase()
           dow = null
           break
       if dow
         throw new Error "bad weekday"
       month = month.toLowerCase()
-      for abbrev, i in locale.month.abbrev
+      for abbrev, i in request.locales[request.locale].month.abbrev
         if month is abbrev.toLowerCase()
           month = i
           break
@@ -508,11 +509,12 @@ do -> (exports or= window) and do (exports) ->
         parseInt num, 10 for num in [ day, year, hours, minutes, seconds, offset ]
       )
       
-      made = makeDate year, month + 1, day, hours, minutes, seconds, 0
+      wallclock = makeDate year, month + 1, day, hours, minutes, seconds, 0
       if offset
-        made -= Math.floor(offset / 100) * HOUR
-
-      return made
+        posix = wallclock - Math.floor(offset / 100) * HOUR
+      else
+        posix = convertToPOSIX request, wallclock
+      return posix
 
     # Second best foot forward, an ISO date. An ISO date can also be YYYY, but we catch
     # that case later on, so we don't pluck YYYY/MM or some such now.
@@ -588,7 +590,8 @@ do -> (exports or= window) and do (exports) ->
       # If we nailed it, let's stop here.
       remaining = (before + after).replace(/\s+/, "").length
       if remaining is 0
-        return makeDate year, month, day, hours, minutes, seconds, milliseconds
+        wallclock = makeDate year, month, day, hours, minutes, seconds, milliseconds
+        return convertToPOSIX request, wallclock
 
     # Try to find something date like, interpret using locale. 
     match = ///
@@ -611,7 +614,7 @@ do -> (exports or= window) and do (exports) ->
       after = match.pop()
 
       # Take the locale preference for month/day ordering.
-      if locale.monthBeforeDate
+      if request.locales[request.locale].monthBeforeDate
         [ month, day ] = [ first, second ]
       else
         [ day, month ] = [ first, second ]
@@ -643,7 +646,8 @@ do -> (exports or= window) and do (exports) ->
       match = ///
       ///
 
-    return makeDate year, month, day, hours, minutes, seconds, milliseconds
+    wallclock = makeDate year, month, day, hours, minutes, seconds, milliseconds
+    convertToPOSIX request, wallclock
   
     # Look for a time, either in the whole pattern, or in what's left after the
     # date consumed a date-like thing.
@@ -681,7 +685,7 @@ do -> (exports or= window) and do (exports) ->
   # Convert a daylight savings time rule into miliseconds since the epoch. We
   # use `Date` because it gives us the day of the week. No error checking on
   # rule, it is assumed to be correct in the database. 
-  ruleToDate = (year, rule) ->
+  ruleToWallclock = (year, rule) ->
     # Split up the time of day.
     match = /^(\d)+:(\d)+(?::(\d+))?$/.exec(rule.time).slice(1)
     [ hours, minutes, seconds ] = (parseInt number or 0, 10 for number in match)
@@ -706,7 +710,7 @@ do -> (exports or= window) and do (exports) ->
 
     # Last of a particular day of the week in the month.
     else if match[2]
-      for day, i in LOCALES.en_US.day.abbrev
+      for day, i in en_US.day.abbrev
         if day is match[2]
           index = i
           break
@@ -720,7 +724,7 @@ do -> (exports or= window) and do (exports) ->
     # A day of the week greater than or equal to a day of the month.
     else
       min = parseInt match[4], 10
-      for day, i in LOCALES.en_US.day.abbrev
+      for day, i in en_US.day.abbrev
         if day is match[3]
           index = i
           break
@@ -754,15 +758,15 @@ do -> (exports or= window) and do (exports) ->
         zone.until = Math.MAX_VALUE
     zone.until
       
-  summerRule = (wall, utc, zone) ->
-    if rules = TIMEZONES.rules[zone.rules]
+  summerRule = (request, zone, wall, posix) ->
+    if rules = request.rules[zone.rules]
       year      = new Date(wall).getUTCFullYear()
       previous  = new Date(year - 1, 11, 31).getTime()
       for rule in rules
         if rule.from <= year and year <= rule.to
-          start = ruleToDate(year, rule)
+          start = ruleToWallclock(year, rule)
           offsetWall = wall
-          if dst and utc
+          if dst and posix
             offsetWall += offsetInMilliseconds(dst.save)
           if start <= offsetWall and previous < start
             previous = start
@@ -770,11 +774,13 @@ do -> (exports or= window) and do (exports) ->
     dst
 
   # Convert the UTC epoch seconds to epoch seconds in the given time zone.
-  convertToWallclock = (utc, tzdata) ->
-    for maybe in tzdata
-      offset = utc + offsetInMilliseconds(maybe.offset)
+  convertToWallclock = (request, posix) ->
+    return posix if request.zone is "UTC"
+    zone = request.zones[request.zone]
+    for maybe in zone
+      offset = posix + offsetInMilliseconds(maybe.offset)
       break if convertUntil(maybe) < offset
-      zone = maybe
+      entry = maybe
       wallclock = offset
 
     # Now we have an adjusted time. We're going to pretend that seconds since
@@ -782,30 +788,73 @@ do -> (exports or= window) and do (exports) ->
     # UTC. We're going to use our date as a a structure for the field names, and
     # treat UTC values as if the were local time. This means we can do simple
     # compares between seconds since the epoch, but this is our little secret.
-    dst = summerRule(wallclock, true, zone)
+    dst = summerRule(request, entry, wallclock, true)
     wallclock += offsetInMilliseconds(dst?.save or "0")
 
     wallclock
 
   # Convert from a wallclock milliseconds since the epoch to UTC milliseconds
   # since the epoch.
-  convertToUTC = (wallclock, tzdata) ->
-    for maybe in tzdata
+  convertToPOSIX = (request, wallclock) ->
+    return wallclock if request.zone is "UTC"
+    zone = request.zones[request.zone]
+    for maybe in zone
       break if convertUntil(maybe) < wallclock
-      zone = maybe
+      entry = maybe
 
-    utc = wallclock - offsetInMilliseconds(zone.offset)
+    posix = wallclock - offsetInMilliseconds(entry.offset)
 
-    dst = summerRule(wallclock, false, zone)
+    dst = summerRule(request, entry, wallclock, false)
     if dst and dst.save isnt "0"
-      start = ruleToDate(new Date(wallclock).getUTCFullYear(), dst)
+      start = ruleToWallclock(new Date(wallclock).getUTCFullYear(), dst)
       end = start + offsetInMilliseconds(dst.save)
       if start <= wallclock and wallclock < end
-        utc = null
+        posix = null
       else
-        utc -= offsetInMilliseconds(dst?.save or "0")
+        posix -= offsetInMilliseconds(dst?.save or "0")
 
-    utc
+    posix
+
+  parseAdjustment = (pattern) ->
+    if match = ///
+        ^                 # start
+        \s*               # leading whitespace
+        (?:
+          ([+-]?)         # add or subtract
+          \s*             # optional space
+          (\d+)           # count
+          \s+             # manditory space
+        )?
+        ( year            # unit
+        | month
+        | day
+        | hour
+        | minute
+        | second
+        | milli(?:second)?
+        | sunday
+        | monday
+        | tuesday
+        | wednesday
+        | thursday
+        | friday
+        | saturday
+        )
+        (s)?              # optional plural
+        (?:
+          \s+               # delimiting white space
+          (\d+)             # position
+        )?
+        \s*               # trailing whitespace
+        $                 # end
+      ///i.exec pattern
+      [ sign, count, unit, plural, position ] = match[1..]
+      if position
+        if not count and not plural
+          adjustment = { unit, position }
+      else if count
+        adjustment = { sign, count, unit }
+    adjustment
 
   adjust = do ->
     FIELD =
@@ -852,261 +901,219 @@ do -> (exports or= window) and do (exports) ->
 
     explode = (wallclock) ->
 
-    (wallclock, adjustment, tzdata) ->
-      fields = explode wallclock
-      match = ///
-        ^                 # start
-        \s*               # leading whitespace
-        ([+-]?)           # add or subtract
-        \s*               # optional space
-        (\d+)             # count
-        \s+               # manditory space
-        ( year            # unit
-        | month
-        | day
-        | hour
-        | minute
-        | second
-        | milli(?:second)?
-        | sunday
-        | monday
-        | tuesday
-        | wednesday
-        | thursday
-        | friday
-        | saturday
-        )
-        s?                # optional plural
-        \s*               # trailing white space
-        $                 # end
-      ///i.exec adjustment
-      if match
-        [ sign, count, unit ] = match.slice 1
+    (request, posix, adjustment) ->
+      { sign, count, unit } = adjustment
 
-        sign    or= "+"
-        unit      = unit.toLowerCase()
-        increment = SIGN_OFFSET[sign]
-        offset    = parseInt(count, 10)
+      sign    or= "+"
+      unit      = unit.toLowerCase()
+      increment = SIGN_OFFSET[sign]
+      offset    = parseInt(count, 10)
 
+      # Hourly math in UTC.
+      if millis = TIME[unit]
+        posix += offset * increment * millis
+      # Daily math in wallclock time.
+      else
+        wallclock = convertToWallclock request, posix
         if ~(index = DAYS.indexOf(unit))
           while offset isnt 0
             wallclock += increment * DAY
             offset-- if new Date(wallclock).getUTCDay() is index
+        else if unit is "day"
+          # Accounts for leap years and days of month.
+          wallclock += offset * increment * DAY
         else
-          if millis = TIME[unit]
-            # Hourly math in UTC.
-            utc = convertToUTC wallclock, tzdata
-            utc += offset * increment * millis
-            wallclock = convertToWallclock utc, tzdata
-          else if unit is "day"
-            # Accounts for leap years and days of month.
-            wallclock += offset * increment * DAY
-          else
-            # Explode into individual fields for month and year math.
-            date = new Date(wallclock)
-            fields = [
-              date.getUTCFullYear()
-              date.getUTCMonth()
-              date.getUTCDate()
-              date.getUTCHours()
-              date.getUTCMinutes()
-              date.getUTCSeconds()
-              date.getUTCMilliseconds()
-            ]
-            # It is easier to move through the months ourselves that it is to
-            # move by milliseconds.
-            if unit is "month"
-              offset *= increment
-              while offset isnt 0
-                month = fields[FIELD.month]
-                if month is 0 and offset < 0
-                  fields[FIELD.month] = 11
-                  fields[FIELD.year]--
-                else if month is 11 and offset > 0
-                  fields[FIELD.month] = 0
-                  fields[FIELD.year]++
-                else
-                  fields[FIELD.month] += increment
-                offset -= increment
-                
-            # Adjust the year. 
-            if unit is "year"
-              forward = offset / Math.abs(offset)
-              fields[FIELD.year] += offset
+          # Explode into individual fields for month and year math.
+          date = new Date(wallclock)
+          fields = [
+            date.getUTCFullYear()
+            date.getUTCMonth()
+            date.getUTCDate()
+            date.getUTCHours()
+            date.getUTCMinutes()
+            date.getUTCSeconds()
+            date.getUTCMilliseconds()
+          ]
+          # It is easier to move through the months ourselves that it is to
+          # move by milliseconds.
+          if unit is "month"
+            offset *= increment
+            while offset isnt 0
+              month = fields[FIELD.month]
+              if month is 0 and offset < 0
+                fields[FIELD.month] = 11
+                fields[FIELD.year]--
+              else if month is 11 and offset > 0
+                fields[FIELD.month] = 0
+                fields[FIELD.year]++
+              else
+                fields[FIELD.month] += increment
+              offset -= increment
+              
+          # Adjust the year. 
+          else if unit is "year"
+            forward = offset / Math.abs(offset)
+            fields[FIELD.year] += offset
 
-            # Create a wallclock date.
-            wallclock = Date.UTC.apply null, fields
-      else if match = ///
-        ^                 # start
-        \s*               # leading whitespace
-        ( year            # unit
-        | month
-        | day
-        | hour
-        | minute
-        | second
-        | milli
-        | time            # TODO Implement, zeros then moves by seconds, accepts millis as .0001.
-        | sunday
-        | monday
-        | tuesday
-        | wednesday
-        | thursday
-        | friday
-        | saturday
-        )
-        \s+               # delimiting white space
-        (\d+)             # position
-        \s*               # trailing whitespace
-        $                 # end
-      ///.exec adjustment
-        [ unit, position ] = match.slice(1)
-        unit = unit.toLowerCase()
-        date = new Date(wallclock)
-        fields = [
-          date.getUTCFullYear()
-          date.getUTCMonth()
-          date.getUTCDate()
-          date.getUTCHours()
-          date.getUTCMinutes()
-          date.getUTCSeconds()
-          date.getUTCMilliseconds()
-        ]
-        switch unit
-          when "year"
-            fields[FIELD.year] = position
-            adjustment = "0 year"
-          when "month"
-            if position < 1
-              throw new Error "invalid month"
-            fields[FIELD.month] = 1
-            adjustment = "#{position - 1} month"
-          when "day"
-            fields[FIELD.day] = 1
-            adjustment = "#{position - 1} day"
-          else
-            fields[FIELD[unit]] = 0
-            adjustment = "#{position - 1} #{unit}"
+          # Create a wallclock date.
+          wallclock = Date.UTC.apply Date.UTC, fields
 
-        # Create a wallclock date.
-        wallclock = Date.UTC.apply null, fields
-        wallclock = adjust wallclock, adjustment, tzdata
+        # If we landed on a time missing due to summer time spring forward, we
+        # will move to the day using 24 hours.
+        if not (posix = convertToPOSIX(request, wallclock))?
+          wallclock += DAY * increment
+          posix = convertToPOSIX request, wallclock
+          posix -= DAY * increment
 
-      # If we landed on a time missing due to summer time spring forward, we
-      # will move to the day using 24 hours.
-      if not convertToUTC(wallclock, tzdata)?
-        wallclock += DAY * increment
-        utc = convertToUTC wallclock, tzdata
-        utc -= DAY * increment
-        wallclock = convertToWallclock utc, tzdata
+      posix
 
-      wallclock
-       
+  extend = (to, from) ->
+    to[key] = value for key, value of from
+    to
 
-  # The all purpose exported function.
-  exports.tz = tz = (date, splat...) ->
-    # Assert that we've been given a date.
-    throw new Error "invalid arguments" if not date?
-
+  append = (context, request, value, key) ->
+    request[key] or= extend {}, context[key]
+    extend request[key], value
+  
+  # Creates a new function.
+  convert = (tz, context, splat, length) ->
     # Create a default request.
     request = { adjustments: [] }
 
-    # Arguments with a "%" are date formats. Arguments that match a timezone are
-    # timezones, while arguments that look like locales are locales. If nothing
-    # matches, we assume that it is date math.
-    for argument in splat
-      argument = String(argument)
-      if argument.indexOf("%") != -1
-        request.format or= argument
-      else if TIMEZONES.zones[argument]
-        request.zone or= argument
-      else if /^\w{2}_\w{2}$/.test argument
-        throw new Error "unknown locale" if not LOCALES[argument]
-        request.locale or= argument
-      else
-        request.adjustments.push argument
+    # If our first argument is anything other than a date, we are creating a new
+    # `tz` function.
+    count = 0
+    date = null
 
-    # Home of the the author is the default locale for no good reason.
-    request.locale or= "en_US"
+    # We shift our way through the parameters. We shift because when we
+    # encounter an array that is not an array of date fields, we'll flatten the
+    # array, unshifting it onto our parameter list.
 
-    # UTC is the default time zone for good reason.
-    request.zone or= "UTC"
-    
-    request.tzdata = TIMEZONES.zones[request.zone]
-    request.locale = LOCALES[request.locale]
+    #
+    index = 0
+    partial = []
+    while splat.length
+      partial.push argument = splat.shift()
+      type = typeof argument
+      # A number as the first argument is POSIX time.
+      if type is "number" and index is length
+        request.date = argument
+      # Strings come in many forms.
+      else if type is "string"
+        # Arguments with a "%" are date formats.
+        if argument.indexOf("%") != -1
+          request.format or= argument
+        # Arguments that look like locales are locales.
+        else if /^\w{2}_\w{2}$/.test argument
+          request.locale or= argument
+        # Adjustments are pretty easy to spot too.
+        else if adjustment = parseAdjustment argument
+          request.adjustments.push adjustment
+        # At this point, if it has slashes but no numbers, the only thing it
+        # could be is a timezone.
+        else if context.zones[argument]
+          request.zone or= argument
+        # It is a date or it is jibberish.
+        else if index is length
+          request.date = argument
+      # A clock is the only function we accept.
+      else if type is "function"
+        request.clock = argument
+      # An array is either an array of date fields, it it is in the first
+      # position, otherwise it is an array of parameters to flatten.
+      else if Array.isArray argument
+        if index is length and typeof argument[0] is "number"
+          request.date = argument
+        else
+          splat.unshift object for object in argument
+      # Objects come in many forms.
+      else if type is "object"
+        # We use an object as a flag to request now for date.
+        if index is length and (argument is tz.now or argument.getTime)
+          request.date = argument
+        # Timezone data has a particular flavor.
+        else if argument.zones and argument.rules
+          partial.pop()
+          append context, request, argument.zones, "zones"
+          append context, request, argument.rules, "rules"
+        # Otherwise, we look for locale definitions.
+        else if /^\w{2}_\w{2}$/.test argument.name
+          partial.pop()
+          append context, request, {}, "locales"
+          request.locales[argument.name] = argument
+      # Next, please.
+      index++
 
-    # Convert the date argument to seconds since the epoch. The seconds since
-    # the epoch is really way to have a record used to store date fields. The
-    # fields are accessed by converting the epoch into a Date object. The zone
-    # offset field values of the converted object are meaningless and the UTC
-    # offset field values represent our working time zone.
-    if typeof date is "string"
+    # Copy over any timezone or locale data that was not extended.
+    for key in [ "zones", "rules", "locales", "clock" ]
+      request[key] or= context[key]
 
-      # Parse will apply the time zone offset.
-      wallclock = parse date, request.locale, request.tzdata
+    # Add or replace locales with the given locale data structure. If a locale
+    # in the data structure already exists, the locale is overwritten.
 
-    else
+    # Add or replace time zones with the given locale data structure. If a time
+    # zone in the data structure already exists, the time zone is overwritten.
+
+    # Set the clock function which will return the current time when needed.
+    # This is useful for debugging or for providing a clock that will check a
+    # server for a client independent time.
+    if (date = request.date)?
+
+      # Land of the the author, home of the brave.
+      request.locale or= "en_US"
+
+      # UTC is the default time zone for good reason.
+      request.zone or= "UTC"
+      
+      throw new Error "unknown locale" unless request.locales[request.locale]
+
+      # Convert the date argument to seconds since the epoch. The seconds since
+      # the epoch is really way to have a record used to store date fields. The
+      # fields are accessed by converting the epoch into a Date object. The zone
+      # offset field values of the converted object are meaningless and the UTC
+      # offset field values represent our working time zone.
+      if typeof date is "string"
+
+        # Parse will apply the time zone offset.
+        posix = parse request, date
+
+      else if typeof date is "number"
+        posix = date
       # Get the current time if the date is the now flag.
-      date = CLOCK() if date is tz.now
+      else if date is tz.now
+        posix = (request.clock or context.clock)()
 
       # Convert from date to epoch seconds if necessary.
-      # TODO: No. Be childish about this.
-      wallclock = if date.getTime then date.getTime() else date
+      else if date.getTime
+        posix = request.date.getTime()
 
-      # Offset by time zone if not UTC.
-      if request.zone isnt "UTC"
-        wallclock = convertToWallclock wallclock, request.tzdata
+      # Apply date math if any.
+      for adjustment in request.adjustments
+        posix = adjust request, posix, adjustment
 
-    # Apply date math if any.
-    for adjustment in request.adjustments
-      wallclock = adjust wallclock, adjustment, request.tzdata
-
-    # Apply format if any. The record is adjusted to the current timezone for
-    # use as a date/time field record.
-    if request.format
-      token = format wallclock, request.format, request.locale, request.tzdata
-  
-    # Otherwise convert back to UTC if not already UTC.
-    else if request.zone isnt "UTC"
-      token = convertToUTC wallclock, request.tzdata
-
-    # Otherwise the seconds since the epoch are already in UTC.
+      # Apply format if any. The record is adjusted to the current timezone for
+      # use as a date/time field record.
+      if request.format
+        wallclock = convertToWallclock request, posix
+        token = format request, wallclock, request.format
+    
+      # Otherwise return POSIX time.
+      else
+        token = posix
     else
-      token = wallclock
+      token = (splat...) -> convert(token, request, partial.concat(splat), partial.length)
+      extend token, tz
 
     token
-
-  tz.specialize = (splat...) ->
-    self = this
-    curried = (before...) ->
-      self.apply null, before.concat splat
-    curried[k] = v for k, v of self
-    curried
-
-  # Add or replace locales with the given locale data structure. If a locale in
-  # the data structure already exists, the locale is overwritten.
-  tz.locales = (locales...) ->
-    for locale in locales
-      LOCALES[locale.name] = locale
-    LOCALES
-
-  # Add or replace time zones with the given locale data structure. If a time
-  # zone in the data structure already exists, the time zone is overwritten.
-  tz.timezones = (override) ->
-    if override?.zones?
-      for k, v of override.zones
-        # Set the timezone. Also record the time zone name in the time zone
-        # array object here, because can't put it in the JSON time zone files.
-        TIMEZONES.zones[k] = v
-        TIMEZONES.zones[k].name = k
-      for k, v of override?.rules
-        TIMEZONES.rules[k] = v
-    TIMEZONES
-
-  # Set the clock function which will return the current time when needed. This
-  # is useful for debugging or for providing a clock that will check a server
-  # for a client independent time.
-  tz.clock = (clock) -> CLOCK = clock
+       
+  # The all purpose exported function.
+  exports.tz = tz = do ->
+    context =
+      zones: { UTC }
+      rules: {}
+      locales: { en_US }
+      clock: CLOCK
+    (splat...) -> convert tz, context, splat, 0
 
   # Flag passed to tz in the place of a POSIX time or date string to  indicate
   # that the time to use is the current time according to the clock function.
