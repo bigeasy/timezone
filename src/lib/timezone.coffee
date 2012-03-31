@@ -953,7 +953,7 @@ do -> (exports or= window) and do (exports) ->
           # Adjust the year. 
           else if unit is "year"
             forward = offset / Math.abs(offset)
-            fields[FIELD.year] += offset
+            fields[FIELD.year] += offset * increment
 
           # Create a wallclock date.
           wallclock = Date.UTC.apply Date.UTC, fields
