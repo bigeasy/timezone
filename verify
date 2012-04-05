@@ -1,0 +1,17 @@
+#!/bin/bash
+
+while read line
+do
+  array=($line)
+  utc=$(echo ${array[2]} | tr T ' ')
+  before=$(TZ=${array[0]} date -d 'TZ="UTC" -1 second '"$utc" +"%::z")
+  after=$(TZ=${array[0]} date -d 'TZ="UTC" +1 second '"$utc" +"%::z")
+  if [ "$before" != "${array[3]}" ]
+  then
+    echo "before: $before $line"
+  fi
+  if [ "$after" != "${array[4]}" ]
+  then
+    echo "after:  $after $line"
+  fi
+done < zones.txt
