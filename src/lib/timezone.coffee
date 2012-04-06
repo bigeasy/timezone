@@ -722,7 +722,7 @@ do -> (exports or= window) and do (exports) ->
   # Convert a daylight savings time rule into miliseconds since the epoch. We
   # use `Date` because it gives us the day of the week. No error checking on
   # rule, it is assumed to be correct in the database. 
-  actualize = (request, year, rule) ->
+  actualize = (request, rule, year) ->
     # Split up the time of day.
     match = /^(\d+):(\d+)(?::(\d+))?u?$/.exec(rule.time).slice(1)
     [ hours, minutes, seconds ] = (parseInt number or 0, 10 for number in match)
@@ -781,7 +781,7 @@ do -> (exports or= window) and do (exports) ->
       fields = new Date wallclock
 
     # Sortable only works if there are no rules on the same day.
-    sortable = fields.getUTCFullYear() * 10000 + fields.getUTCMonth() * 100 + field.getUTCDate()
+    sortable = fields.getUTCFullYear() * 10000 + fields.getUTCMonth() * 100 + fields.getUTCDate()
 
     { sortable, rule, wallclock, year, posix }
 
