@@ -128,17 +128,20 @@ actualize =
       # subsequent rule's savings. Therefore, we need 
       fields = new Date date.getTime() + offset
       posix = date.getTime()
+      clock = "utc"
     else if /s$/.test rule.time
       standard = date.getTime()
       fields = new Date standard
+      clock = "standard"
     else
+      clock = "wallclock"
       wallclock = date.getTime()
       fields = new Date wallclock
 
     # Sortable only works if there are no rules on the same day.
     sortable = Date.UTC(fields.getUTCFullYear(), fields.getUTCMonth(), fields.getUTCDate())
 
-    { standard, entry, sortable, rule, wallclock, year, posix, save, ruleIndex, entryIndex, offset }
+    { clock, standard, entry, sortable, rule, wallclock, year, posix, save, ruleIndex, entryIndex, offset }
   entry: (entry, entryIndex) ->
     die entry if /u$/.test entry.until
     die entry if /s$/.test entry.until
@@ -147,7 +150,7 @@ actualize =
     fields = new Date wallclock
     sortable = Date.UTC(fields.getUTCFullYear(), fields.getUTCMonth(), fields.getUTCDate())
     year = fields.getUTCFullYear()
-    { entry, sortable, wallclock, year, save: 0, ruleIndex: -1, offset, entryIndex }
+    { clock: "wallclock", entry, sortable, wallclock, year, save: 0, ruleIndex: -1, offset, entryIndex }
     
       
 # Convert offset, read from our time zone database, or from an ISO date, into
@@ -211,13 +214,13 @@ shifts = (say, data, name) ->
   table = []
   wallclock = new Date(Date.UTC(START, 11, 31))
   startYear = wallclock.getUTCFullYear()
-  zone = data.zones[name].slice(0)
+  zone = data.zones[name]
   entryIndex = 0
   max = Number.MAX_VALUE
   while entryIndex < zone.length
     entry = zone[entryIndex]
-    offset = formatOffset entry.offset
     next = zone[entryIndex + 1]
+    offset = formatOffset entry.offset
     # Assume this is always pseudo-wallclock, but if it is UTC, I believe we can
     # simply convert it to wallclock, because the bounaries for Zones include,
     # wait, no. I've not encountered this yet. NO IDEA!
@@ -247,7 +250,6 @@ shifts = (say, data, name) ->
             subsequent.rule.from, subsequent.rule.to, subsequent.rule.month + 1
         if entry.rules
           subsequent.wallclock = actual.wallclock
-          delete subsequent.posix
           if subsequent.index is -1 or true
             extras.push subsequent
           else
@@ -257,12 +259,10 @@ shifts = (say, data, name) ->
           # and posix time of this transition.
           if subsequent.index isnt -1
             wallclock = actual.wallclock
-            #posix = wallclock - parseOffset(entry.offset)
             posix = wallclock - actual.offset
             say "rule - #{iso8601 wallclock} #{iso8601 posix}"
             table.push posix, wallclock, subsequent.entryIndex, subsequent.ruleIndex
             if actual.wallclock > subsequent.wallclock
-              say "HERE!"
               return [ startYear, actual ]
           else
             wallclock = actual.wallclock
@@ -398,7 +398,7 @@ shifts = (say, data, name) ->
           # time and posix time of this transition.
           #
           # TODO Wait? Isn't this the offset of the previous? I'm confused.
-          if actual.wallclock?
+          if actual.clock is "wallclock"
             actual.posix = actual.wallclock - parseOffset(entry.offset) - parseOffset(prev.rule.save)
           else
             actual.wallclock = actual.posix + parseOffset(entry.offset) + parseOffset(prev.rule.save)
@@ -407,7 +407,6 @@ shifts = (say, data, name) ->
           # know the wallclock time because the previous rules are not in the
           # current sent of rules.
           if min >= actual.wallclock
-            delete actual.posix
             say "too old - %s %s %s %s %s",
               iso8601(actual.wallclock), actual.entry.until or "init",
               actual.rule.from, actual.rule.to, actual.rule.month + 1
@@ -420,7 +419,6 @@ shifts = (say, data, name) ->
             say "just right? - %s %s %s %s %s",
               iso8601(actual.wallclock), actual.entry.until or "init",
               actual.rule.from, actual.rule.to, actual.rule.month + 1
-            delete actual.posix
             return [ year, actual ]
           if max < actual.wallclock and actual isnt subsequent
             say "too young - %s %s %s %s %s",
