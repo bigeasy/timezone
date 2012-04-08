@@ -59,7 +59,12 @@ convertUntil = (entry) ->
 # use `Date` because it gives us the day of the week. No error checking on
 # rule, it is assumed to be correct in the database. 
 actualize =
-  rule: (entry, rule, year, index_) ->
+  actual: (actual, year) ->
+    actualize.rule actual.entry, actual.entryIndex, actual.rule, actual.ruleIndex, year
+  rule: (entry, entryIndex, rule, ruleIndex, year) ->
+    if ruleIndex is 1919
+      say { entry, entryIndex, rule, ruleIndex, year }
+      throw new Error "borked"
     # Split up the time of day.
     match = /^(\d+):(\d+)(?::(\d+))?[us]?$/.exec(rule.time).slice(1)
     [ hours, minutes, seconds ] = (parseInt number or 0, 10 for number in match)
@@ -133,8 +138,8 @@ actualize =
     # Sortable only works if there are no rules on the same day.
     sortable = Date.UTC(fields.getUTCFullYear(), fields.getUTCMonth(), fields.getUTCDate())
 
-    { standard, entry, sortable, rule, wallclock, year, posix, save, index: index_, offset }
-  entry: (entry) ->
+    { standard, entry, sortable, rule, wallclock, year, posix, save, ruleIndex, entryIndex, offset }
+  entry: (entry, entryIndex) ->
     die entry if /u$/.test entry.until
     die entry if /s$/.test entry.until
     offset = parseOffset(entry.offset)
@@ -142,7 +147,7 @@ actualize =
     fields = new Date wallclock
     sortable = Date.UTC(fields.getUTCFullYear(), fields.getUTCMonth(), fields.getUTCDate())
     year = fields.getUTCFullYear()
-    { entry, sortable, wallclock, year, save: 0, index: -1, offset }
+    { entry, sortable, wallclock, year, save: 0, ruleIndex: -1, offset, entryIndex }
     
       
 # Convert offset, read from our time zone database, or from an ISO date, into
@@ -211,8 +216,6 @@ shifts = (say, data, name) ->
   max = Number.MAX_VALUE
   while entryIndex < zone.length
     entry = zone[entryIndex]
-    # TODO Ugh. I do not want to copy the entry index into the database.
-    entry.index = entryIndex
     offset = formatOffset entry.offset
     next = zone[entryIndex + 1]
     # Assume this is always pseudo-wallclock, but if it is UTC, I believe we can
@@ -234,8 +237,8 @@ shifts = (say, data, name) ->
       # current zone enty.
       #
       if subsequent
-        actual = actualize.entry entry
-        if subsequent.index is -1
+        actual = actualize.entry entry, entryIndex
+        if subsequent.ruleIndex is -1
           say "subsequent without rules - %s %s",
             iso8601(subsequent.wallclock), subsequent.entry.until or "init",
         else
@@ -257,7 +260,7 @@ shifts = (say, data, name) ->
             #posix = wallclock - parseOffset(entry.offset)
             posix = wallclock - actual.offset
             say "rule - #{iso8601 wallclock} #{iso8601 posix}"
-            table.push posix, wallclock, subsequent.entry.index, subsequent.index
+            table.push posix, wallclock, subsequent.entryIndex, subsequent.ruleIndex
             if actual.wallclock > subsequent.wallclock
               say "HERE!"
               return [ startYear, actual ]
@@ -265,19 +268,19 @@ shifts = (say, data, name) ->
             wallclock = actual.wallclock
             posix = wallclock - actual.offset
             say "rule - #{iso8601 wallclock} #{iso8601 posix}"
-            table.push posix, wallclock, subsequent.entry.index, subsequent.index
+            table.push posix, wallclock, subsequent.entryIndex, subsequent.ruleIndex
 
-      return [ startYear, actualize.entry entry ] if not entry.rules
+      return [ startYear, actualize.entry entry, entryIndex ] if not entry.rules
 
       # Uncomment this to get all seams.
       #extras.push actualize.entry entry
 
       # Get a copy of our rules.
       actuals = for rule, index in data.rules[entry.rules] or []
-        actualize.rule entry, rule, Math.min(MAX_YEAR, rule.to), index
+        actualize.rule entry, entryIndex, rule, index, Math.min(MAX_YEAR, rule.to)
 
-      # Now order them by the date they ended, this will make it easier to
-      # probe them, as they will be in the correct order.
+      # Now order them by the date they ended descending, this will make it
+      # easier to probe them, as they will be in the correct order.
       actuals.sort (a, b) -> b.sortable - a.sortable
 
       # We've chosen a notion of sortable that only works if no two rules
@@ -305,7 +308,7 @@ shifts = (say, data, name) ->
         while index < actuals.length
           rule = actuals[index].rule
           if rule.from <= year <= rule.to
-            adjustments.push actualize.rule entry, rule, year, actuals[index].index
+            adjustments.push actualize.actual actuals[index], year
             index++
           else if year < rule.from and index is startIndex
             index = ++startIndex
@@ -343,7 +346,7 @@ shifts = (say, data, name) ->
               # Reject this rule if it is not in the current year.
               continue unless prev.rule.from <= prev.year <= prev.rule.to
               # Reject this rule if it preceeds the current rule.
-              prev.actual = actualize.rule entry, actuals[prevIndex].rule, prev.year
+              prev.actual = actualize.actual actuals[prevIndex], prev.year
               continue if prev.actual.sortable > actual.sortable
               prev.found = true
               # Found it.
@@ -382,7 +385,7 @@ shifts = (say, data, name) ->
               for standard in actuals.slice(0).reverse()
                 if parseOffset(standard.rule.save) is 0
                   say "WE MAKE OUR OWN RULES!"
-                  prev.actual = actualize.rule standard.entry, standard.rule, year, standard.index
+                  prev.actual = actualize.actual standard, year
                   say { actual, prev: prev.actual }
                   break
               prev.rule = prev.actual.rule
@@ -427,15 +430,14 @@ shifts = (say, data, name) ->
           # Huzzah! Add an entry to our table.
           pushed++
           say "rule - #{iso8601 actual.wallclock} #{iso8601 actual.posix}"
-          table.push actual.posix, actual.wallclock, actual.entry.index, actual.index
+          table.push actual.posix, actual.wallclock, actual.entryIndex, actual.ruleIndex
         # If we had to make our own initial standard rule record, we feed that
         # to the next zone entry as the subsequent interval.
         return [ year, preceeding ] if preceeding
     max = min
-    die startYear if startYear < 1910
     entryIndex++
   table.push Number.MIN_VALUE, Number.MIN_VALUE, zone.length - 1, -1
-  for index in [4...table.length - 4] by 4
+  for index in [0...table.length - 4] by 4
     posix = table[index]
     wallclock = table[index + 1]
     from = tableFormat(table, zone, data.rules, index + 4)
