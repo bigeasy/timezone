@@ -226,7 +226,7 @@ setClocks = (interval, effective) ->
       die interval
 
 # Remember that we have pseudo-POSIX for wallclock.
-shifts = (say, data, name, startYear) ->
+shifts = (say, gather, data, name, startYear) ->
   table = []
   # Some time well in the future, for ranges.
   future = new Date(Date.UTC(new Date().getUTCFullYear() + 50, 0, 1))
@@ -300,14 +300,15 @@ shifts = (say, data, name, startYear) ->
             wallclock = actual.wallclock
             posix = wallclock - actual.offset
             say "rule - #{iso8601 wallclock} #{iso8601 posix}"
-            table.push posix, wallclock, subsequent.entryIndex, subsequent.ruleIndex
+            gather posix, wallclock, subsequent.entryIndex, subsequent.ruleIndex
+            # TODO Does this ever get called?
             if actual.wallclock > subsequent.wallclock
               return [ startYear, actual ]
           else
             wallclock = actual.wallclock
             posix = wallclock - actual.offset
             say "rule - #{iso8601 wallclock} #{iso8601 posix}"
-            table.push posix, wallclock, subsequent.entryIndex, subsequent.ruleIndex
+            gather posix, wallclock, subsequent.entryIndex, subsequent.ruleIndex
 
       # If no rules, return the entry as the subsequent interval.
       if not entry.rules
@@ -473,7 +474,7 @@ shifts = (say, data, name, startYear) ->
             continue
           # Huzzah! Add an entry to our table.
           say "rule - #{iso8601 actual.wallclock} #{iso8601 actual.posix}"
-          table.push actual.posix, actual.wallclock, actual.entryIndex, actual.ruleIndex
+          gather actual.posix, actual.wallclock, actual.entryIndex, actual.ruleIndex
         # If we had to make our own initial standard rule record, we feed that
         # to the next zone entry as the subsequent interval.
         return [ year, preceeding ] if preceeding
@@ -482,13 +483,7 @@ shifts = (say, data, name, startYear) ->
     max = min
     # Onward to the next zone record.
     entryIndex++
-  table.push Number.MIN_VALUE, Number.MIN_VALUE, zone.length - 1, -1
-  for index in [0...table.length - 4] by 4
-    posix = table[index]
-    wallclock = table[index + 1]
-    from = tableFormat(table, zone, data.rules, index + 4)
-    to = tableFormat(table, zone, data.rules, index)
-    console.log "#{name} #{iso8601 wallclock} #{iso8601 posix} #{from} #{to}"
+  gather Number.MIN_VALUE, Number.MIN_VALUE, zone.length - 1, -1
 
 tableFormat = (table, zone, rules, index) ->
   offset = formatOffset tableOffset table, zone, rules, index
@@ -508,4 +503,19 @@ tableOffset = (table, zone, rules, index) ->
     offset += parseOffset rule.save or "0"
   offset
 
-shifts(say, data, process.argv[2], START)
+do ->
+  table = []
+  gather = (posix, wallclock, entryIndex, ruleIndex) ->
+    table.push posix, wallclock, entryIndex, ruleIndex
+    true
+
+  name = process.argv[2]
+  shifts(say, gather, data, name, START)
+
+  zone = data.zones[name]
+  for index in [0...table.length - 4] by 4
+    posix = table[index]
+    wallclock = table[index + 1]
+    from = tableFormat(table, zone, data.rules, index + 4)
+    to = tableFormat(table, zone, data.rules, index)
+    console.log "#{name} #{iso8601 wallclock} #{iso8601 posix} #{from} #{to}"
