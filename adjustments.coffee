@@ -13,7 +13,13 @@ MINUTE  = SECOND * 60
 HOUR    = MINUTE * 60
 DAY     = HOUR   * 24
 
-data = require("./timezones/northamerica")
+data = { zones: {}, rules: {} }
+fs = require "fs"
+for file in fs.readdirSync "./timezones"
+  continue if file is "index.js"
+  continent = require "./timezones/#{file}", "utf8"
+  data.zones[k] = v for k, v of continent.zones
+  data.rules[k] = v for k, v of continent.rules
 
 en_US =
   day:
@@ -174,7 +180,7 @@ pad = (value) ->
 
 formatOffset = (offset) ->
   increment = offset / Math.abs(offset)
-  sign = if offset < 0 then "-" else ""
+  sign = if offset < 0 then "-" else "+"
   offset = Math.abs(offset)
   offset -= (millis = offset % 1000)
   offset /= 1000
