@@ -128,15 +128,15 @@ actualize =
       # subsequent rule's savings. Therefore, we need 
       fields = new Date date.getTime() + offset
       posix = date.getTime()
-      clock = "utc"
+      clock = "posix"
     else if /s$/.test rule.time
       standard = date.getTime()
       fields = new Date standard
       clock = "standard"
     else
-      clock = "wallclock"
       wallclock = date.getTime()
       fields = new Date wallclock
+      clock = "wallclock"
 
     # Sortable only works if there are no rules on the same day.
     sortable = Date.UTC(fields.getUTCFullYear(), fields.getUTCMonth(), fields.getUTCDate())
@@ -151,7 +151,6 @@ actualize =
     sortable = Date.UTC(fields.getUTCFullYear(), fields.getUTCMonth(), fields.getUTCDate())
     year = fields.getUTCFullYear()
     { clock: "wallclock", entry, sortable, wallclock, year, save: 0, ruleIndex: -1, offset, entryIndex }
-    
       
 # Convert offset, read from our time zone database, or from an ISO date, into
 # milliseconds so we can use it to adjust milliseconds since the epoch.
@@ -201,7 +200,6 @@ formatOffset = (offset) ->
 # Future dates would dispose of the simplicity of generating a table.
 
 # Maximum year for purpose of sorting rules is 50 years hence.
-MAX_YEAR = new Date(Date.UTC(new Date().getUTCFullYear() + 50, 0, 1)).getUTCFullYear()
 
 count = 2
 isoize = (object) ->
@@ -209,36 +207,77 @@ isoize = (object) ->
   object.iso.posix = iso8601(object.posix) if object.posix
   object.iso.wallclock = iso8601(object.wallclock) if object.wallclock
 
+# Set all the clocks for the start time of the given interval using the zone
+# offset of the given previous interval.
+setClocks = (interval, effective) ->
+  offset = parseOffset(effective.entry.offset)
+  save = parseOffset(effective.rule.save)
+  switch interval.clock
+    when "wallclock"
+      interval.posix = interval.wallclock - offset - save
+      interval.standard = interval.wallclock - offset
+    when "posix"
+      interval.wallclock = interval.posix + offset + save
+      interval.standard = interval.posix + offset
+    when "standard"
+      interval.posix = interval.standard - offset
+      interval.wallclock = interval.standard - save
+    else
+      die interval
+
 # Remember that we have pseudo-POSIX for wallclock.
-shifts = (say, data, name) ->
+shifts = (say, data, name, startYear) ->
   table = []
-  wallclock = new Date(Date.UTC(START, 11, 31))
-  startYear = wallclock.getUTCFullYear()
+  # Some time well in the future, for ranges.
+  future = new Date(Date.UTC(new Date().getUTCFullYear() + 50, 0, 1))
+  # We use a pseudo-POSIX timestamp to represent our wallclock.
+  wallclock = new Date(Date.UTC(startYear, 11, 31))
+  # Fetch the zone records.
   zone = data.zones[name]
-  entryIndex = 0
+  # Our initial maximum interval date is absurdly futuristic.
   max = Number.MAX_VALUE
+  # Loop through the zones records. They are ordered from the most recent to the
+  # start of standard time.
+  #
+  # This is a **bizarro** loop. We move backwards through time so the subsequent
+  # interval is the one we've just visited, while the previous interval is next
+  # one we'll visit. In **bizarro** low ***forward*** mean ***previous*** and
+  # ***backward*** mean ***subsequent***.
+  entryIndex = 0
   while entryIndex < zone.length
+    # Fetch the current entry and the previous entry.
     entry = zone[entryIndex]
-    next = zone[entryIndex + 1]
-    offset = formatOffset entry.offset
-    # Assume this is always pseudo-wallclock, but if it is UTC, I believe we can
-    # simply convert it to wallclock, because the bounaries for Zones include,
-    # wait, no. I've not encountered this yet. NO IDEA!
-    min = if next then convertUntil next else Number.MIN_VALUE
-    minYear = new Date(min).getUTCFullYear()
+
+    # The minimum initerval start time for a daylight savings time shift must be
+    # greater than the end of the previous zone record.
+    #
+    # TODO What do do if the previous zone until clock is posix or standard?
+    min = convertUntil zone[entryIndex + 1] or { stop: Number.MIN_VALUE }
+
+    # We wrap this in a `do` so we can break from rule record processing to
+    # proceed to the previous zone record. It returns the starting year to use
+    # with the next zone record, a year that will have been moved back in time
+    # past years that have already been calculated. It also returns a subsequent
+    # interval, the last interval processed, which cannot be fed to the callback
+    # until we obtain the previous record.
+    #
+    # We need the previous interval because intervals, for the most part, begin
+    # at a wallclock time. That is, the time of the clock on the wall tells us
+    # when the clock on the wall will be adjusted. The POSIX time to adjust the
+    # clock so that it is correct for the subsequent interval must be determined by
+    # applying the offset of the interval previous to it.
+
+    #
     [ startYear, subsequent ] = do (subsequent) ->
       say "entry - startYear: %d, until: %s, subsequent: %s, rules: %s",
-        startYear, entry.until or "init", subsequent?.entry.until or (subsequent? and "init"), subsequent?.index isnt -1
-      extras = []
-      # TODO Change prev to next where because for of we're going backward.
-      # Our entry might signify an adjustment in itself.
-      #
-      # Glarg! Glarg! Glarg! Molgar says this is unacceptable.
-      #
+        startYear, entry.until or "init",
+        subsequent?.entry.until or (subsequent? and "init"),
+        subsequent?.index isnt -1
+      # The intervals carried over from the last time we went through the loop.
+      carryover = []
       # When trying to find the seam when there are rules, the thing that starts 
       # is the subsequent zone entry, but the wallclock time is the start of the
       # current zone enty.
-      #
       if subsequent
         actual = actualize.entry entry, entryIndex
         if subsequent.ruleIndex is -1
@@ -251,9 +290,9 @@ shifts = (say, data, name) ->
         if entry.rules
           subsequent.wallclock = actual.wallclock
           if subsequent.index is -1 or true
-            extras.push subsequent
+            carryover.push subsequent
           else
-            extras.push subsequent, actual
+            carryover.push subsequent, actual
         else
           # Now we have our previous year, so we can calcuate the wallclock time
           # and posix time of this transition.
@@ -270,14 +309,17 @@ shifts = (say, data, name) ->
             say "rule - #{iso8601 wallclock} #{iso8601 posix}"
             table.push posix, wallclock, subsequent.entryIndex, subsequent.ruleIndex
 
-      return [ startYear, actualize.entry entry, entryIndex ] if not entry.rules
+      # If no rules, return the entry as the subsequent interval.
+      if not entry.rules
+        return [ startYear, actualize.entry(entry, entryIndex) ]
 
-      # Uncomment this to get all seams.
-      #extras.push actualize.entry entry
-
-      # Get a copy of our rules.
+      # Actualize our rules for the current zone entry and year.
+      #
+      # TODO Yes, yes, yes. You could make this list an already sorted list by
+      # sorting this in the Olson file preprocessor.
       actuals = for rule, index in data.rules[entry.rules] or []
-        actualize.rule entry, entryIndex, rule, index, Math.min(MAX_YEAR, rule.to)
+        ruleYear = Math.min(future.getUTCFullYear(), rule.to)
+        actualize.rule entry, entryIndex, rule, index, ruleYear
 
       # Now order them by the date they ended descending, this will make it
       # easier to probe them, as they will be in the correct order.
@@ -290,13 +332,18 @@ shifts = (say, data, name) ->
           if actuals[index].sortable is actuals[index - 1].sortable
             throw new Error "two rules occur on the same day."
 
-      # We move an index as we move through the years.
+      # We move a start index as we move through the years, so that ever time
+      # through the while loop, we can skip rule records whose ranges begin in
+      # years after the current year.
       startIndex = 0
+      # Start with out start year. TODO Superfluous. Also, `loop`.
       year = startYear
       while year >= 0
+        # Start with our carryover, emptying the carryover list.
+        adjustments = carryover.splice(0)
+
+        # Index into the list of intervals.
         index = startIndex
-        adjustments = extras.slice(0)
-        extras.length = 0
 
         # We gather up any rules applying to this year. We want all rules at
         # once so we can sort them and push them onto the table in order. They
@@ -329,7 +376,6 @@ shifts = (say, data, name) ->
         # Oldest first.
         adjustments.sort (a, b) -> b.sortable - a.sortable
 
-        pushed = 0
         # Convert our adjustments into posix and pseudo-posix wallclock.
         for actual in adjustments
           # Local namespace for the previous year.
@@ -382,11 +428,16 @@ shifts = (say, data, name) ->
             # standard time, but we are meek. We actually search for a rule
             # record who's savings is zero.
             else
+              if actual.ruleIndex is -1
+                say "before first rule - %s %s",
+                  iso8601(actual.wallclock), actual.entry.until or "init"
+              else
+                say "before first rule - %s %s %s %s %s",
+                  iso8601(actual.wallclock), actual.entry.until or "init",
+                  actual.rule.from, actual.rule.to, actual.rule.month + 1
               for standard in actuals.slice(0).reverse()
                 if parseOffset(standard.rule.save) is 0
-                  say "WE MAKE OUR OWN RULES!"
                   prev.actual = actualize.actual standard, year
-                  say { actual, prev: prev.actual }
                   break
               prev.rule = prev.actual.rule
               prev.year = year
@@ -396,12 +447,7 @@ shifts = (say, data, name) ->
               preceeding = prev.actual
           # Now we have our previous year, so we can calcuate the wallclock
           # time and posix time of this transition.
-          #
-          # TODO Wait? Isn't this the offset of the previous? I'm confused.
-          if actual.clock is "wallclock"
-            actual.posix = actual.wallclock - parseOffset(entry.offset) - parseOffset(prev.rule.save)
-          else
-            actual.wallclock = actual.posix + parseOffset(entry.offset) + parseOffset(prev.rule.save)
+          setClocks actual, prev.actual
           # Hit the end of the previous new zone entry. We have figured out
           # the rule that will apply when the new entry begins, but we don't
           # know the wallclock time because the previous rules are not in the
@@ -426,13 +472,15 @@ shifts = (say, data, name) ->
               actual.rule.from, actual.rule.to, actual.rule.month + 1
             continue
           # Huzzah! Add an entry to our table.
-          pushed++
           say "rule - #{iso8601 actual.wallclock} #{iso8601 actual.posix}"
           table.push actual.posix, actual.wallclock, actual.entryIndex, actual.ruleIndex
         # If we had to make our own initial standard rule record, we feed that
         # to the next zone entry as the subsequent interval.
         return [ year, preceeding ] if preceeding
+    # The minimum time for an interval start becomes the  maximum time for an
+    # interval end.
     max = min
+    # Onward to the next zone record.
     entryIndex++
   table.push Number.MIN_VALUE, Number.MIN_VALUE, zone.length - 1, -1
   for index in [0...table.length - 4] by 4
@@ -460,4 +508,4 @@ tableOffset = (table, zone, rules, index) ->
     offset += parseOffset rule.save or "0"
   offset
 
-shifts(say, data, process.argv[2])
+shifts(say, data, process.argv[2], START)
