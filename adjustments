@@ -431,9 +431,6 @@ shifts = (say, data, name) ->
         # If we had to make our own initial standard rule record, we feed that
         # to the next zone entry as the subsequent interval.
         return [ year, preceeding ] if preceeding
-    # Here we check for the hard seam that we first found in Detroit.
-    if table.length
-      last = tableOffset(table, zone, data.rules, table.length - 4)
     max = min
     die startYear if startYear < 1910
     entryIndex++
@@ -441,9 +438,16 @@ shifts = (say, data, name) ->
   for index in [4...table.length - 4] by 4
     posix = table[index]
     wallclock = table[index + 1]
-    from = tableOffset(table, zone, data.rules, index + 4)
-    to = tableOffset(table, zone, data.rules, index)
-    console.log "#{name} #{iso8601 wallclock} #{iso8601 posix} #{formatOffset(from)} #{formatOffset(to)}"
+    from = tableFormat(table, zone, data.rules, index + 4)
+    to = tableFormat(table, zone, data.rules, index)
+    console.log "#{name} #{iso8601 wallclock} #{iso8601 posix} #{from} #{to}"
+
+tableFormat = (table, zone, rules, index) ->
+  offset = formatOffset tableOffset table, zone, rules, index
+  entry = zone[table[index + 2]]
+  abbrev = entry.format.replace /%s/, ->
+    data.rules[entry.rules][table[index + 3]].letter
+  "#{offset}/#{abbrev}"
 
 tableOffset = (table, zone, rules, index) ->
   entry = zone[table[index + 2]]
