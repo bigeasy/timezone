@@ -145,17 +145,17 @@ var transitions = (function createTransitions() {
     };
   }
 
-  function setClocks (record, effective) {
+  function setClocks (record, effective, clock) {
     var offset = effective.offset
       , save = effective.save;
-    switch (record.clock) {
+    switch (clock || record.clock) {
     case "posix":
       record.standard = record.posix + offset;
       record.wallclock = record.posix + offset + save;
       break;
     case "wallclock":
       record.posix = record.wallclock - offset - save;
-      record.standard = record.wallclock - offset;
+      record.standard = record.wallclock + save;
       break;
     case "standard":
       record.posix = record.standard - offset;
@@ -188,7 +188,7 @@ var transitions = (function createTransitions() {
 
   function iso8601 (date) { return new Date(date).toISOString().replace(/\..*$/, "") }
 
-  function step (entry, record, table) {
+  function step (begin, end, table) {
     var match
       , actual
       , max;
@@ -197,14 +197,13 @@ var transitions = (function createTransitions() {
 
     var rule
       , year = getYear(new Date().getTime())
-      , rules = data.rules[entry.rules].slice(0)
+      , rules = data.rules[begin.rules].slice(0)
       , actualized = [];
-
     
     for (var i = 0, length = rules.length; i < length; i++) {
       rules[i].clock = ruleClock(rules[i]); // TODO Temporary.
       for (var j = rules[i].from, to = Math.min(rules[i].to, year); j <= to; j++) {
-        actualized.push(actualize(entry, rules[i], j, i));
+        actualized.push(actualize(begin, rules[i], j, i));
       }
     }
 
@@ -213,92 +212,92 @@ var transitions = (function createTransitions() {
     i = 0, length = actualized.length
 
     for (; i < length; i++) {
-      if (entry[actualized[i].clock] <= actualized[i][actualized[i].clock]) break;
+      if (begin[actualized[i].clock] <= actualized[i][actualized[i].clock]) break;
     }
    
-    var until = parseUntil(entry.until)
-      , previous = entry;
+    var previous = begin;
 
-    if (entry[actualized[i].clock] == actualized[i][actualized[i].clock]) {
+    if (begin[actualized[i].clock] == actualized[i][actualized[i].clock]) {
       table.pop(); // A rule on the seam overrides the seam.
       previous = table[table.length - 1];
     } else {
       if (i === 0) {
-        var rules = data.rules[entry.rules], offset;
+        var rules = data.rules[begin.rules], offset;
         for (var j = 0; j < rules.length; j++) {
           if (!(offset = parseOffset(rules[j].save || "0"))) {
-            entry.abbrev = entry.format.replace(/%s/, function () { return rules[j].letter });
+            begin.abbrev = begin.format.replace(/%s/, function () { return rules[j].letter });
             break;
           }
         }
       } else {
-        entry.abbrev = entry.format.replace(/%s/, function () { return actualized[i - 1].rule.letter });
-        entry.save = parseOffset(actualized[i - 1].save);
+        begin.abbrev = begin.format.replace(/%s/, function () { return actualized[i - 1].rule.letter });
+        begin.save = parseOffset(actualized[i - 1].save);
       }
     }
 
     for (; i < length; i++) {
       setClocks(actualized[i], previous);
-      if (actualized[i][entry.clock] >= until) {
+      if (actualized[i][end.clock] >= end[end.clock]) {
         break;
       }
-      pushRule(table, entry, actualized[i]);
+      pushRule(table, begin, actualized[i]);
       previous = actualized[i];
     }
   }
 
-  function walk (entry, table) { 
-    var index = table.length, record = entry;
-    step(entry, record, table);
+  function walk (begin, end, table) { 
+    step(begin, end, table);
     return table[table.length - 1];
   }
+
+  function begins (zone) {
+    var copy = [];
+    for (var i = zone.length - 2; i >= 0; --i) {
+      copy[i] = {
+        rules: zone[i].rules,
+        format: zone[i].format,
+        offset: parseOffset(zone[i].offset),
+        save: 0,
+        clock: zone[i + 1].standard ? 'standard' : (zone[i + 1].utc ? 'posix' : 'wallclock')
+      };
+      copy[i][copy[i].clock] = parseUntil(zone[i + 1].until);
+    }
+
+    copy.push({
+      offset: parseOffset(zone[zone.length - 1].offset),
+      format: zone[zone.length - 1].format,
+      save: 0
+    });
+
+    copy.reverse();
+    copy[0].posix = copy[0].wallclock = Number.MIN_VALUE;
+    return copy;
+  }
+
   return function transitions (zoneName, consumer) {
-    var table = [];
-
-    var zone = data.zones[zoneName].slice(0).reverse();
-    var entry = zone.shift()
-    var previous, offset, save = 0, wallclock, posix, rules;
-
-    entry.posix = entry.wallclock = Number.MIN_VALUE;
-    entry.offset = offset = parseOffset(entry.offset);
-    entry.clock = 'wallclock'
+    // We `concat` because someday, we'll read right out of the database and the
+    // `concat` will be our defensive copy.
+    var table = []
+      , zone = begins(data.zones[zoneName]).concat({ offset: "0" })
+      , entry = zone.shift()
+      , previous, offset, save = 0, wallclock, posix, rules;
 
     table.push(entry);
 
-    zone.push({ offset: "0" });
-    for (var i = 0, length = zone.length; i < Math.min(9, length); i++) {
+    for (var i = 0, length = zone.length; i < Math.min(21, length); i++) {
       previous = entry;
       entry = zone[i];
-      entry.save = 0;
-      entry.offset = parseOffset(entry.offset);
-      entry.clock = entry.standard ? 'standard' : (entry.utc ? 'posix' : 'wallclock');
 
       if (previous.rules) {
-        actual = walk(previous, table);
-        offset = actual.offset;
-        save = actual.save;
+        say (getYear(previous.wallclock), iso8601(previous.wallclock));
+        previous = walk(previous, entry, table);
       } else {
         previous.abbrev = previous.format;
-        offset = previous.offset;
-        save = 0;
+        previous.save = 0;
       }
-      until = parseUntil(previous.until);
-      switch (previous.clock) {
-      case "posix":
-        entry.posix = until;
-        entry.standard = until + offset;
-        entry.wallclock = until + offset + save;
-        break;
-      case "wallclock":
-        entry.posix = until - offset + save;
-        entry.standard = until + save;
-        entry.wallclock = until;
-        break;
-      case "standard":
-        entry.posix = until - offset;
-        entry.standard = until;
-        entry.wallclock = until + save;
-      }
+
+      setClocks(entry, previous);
+
       table.push(entry);
     }
     return table.reverse();
