@@ -267,7 +267,8 @@ var transitions = (function createTransitions() {
         format: zone[i].format,
         offset: parseOffset(zone[i].offset),
         save: 0,
-        clock: zone[i + 1].standard ? 'standard' : (zone[i + 1].utc ? 'posix' : 'wallclock')
+        // TODO Intermediate format is all kinds of broken.
+        clock: zone[i + 1].utc ? 'posix' : (zone[i + 1].standard ? 'standard' : 'wallclock')
       };
       copy[i][copy[i].clock] = parseUntil(zone[i + 1].until);
     }
@@ -280,6 +281,7 @@ var transitions = (function createTransitions() {
 
     copy.reverse();
     copy[0].posix = copy[0].wallclock = Number.MIN_VALUE;
+    copy.forEach(function (e) { e.begins =  iso8601(e[e.clock]) + " " + e.clock });
     return copy;
   }
 
@@ -293,7 +295,7 @@ var transitions = (function createTransitions() {
 
     table.push(entry);
 
-    for (var i = 0, length = zone.length; i < Math.min(11, length); i++) {
+    for (var i = 0, length = zone.length; i < Math.min(13, length); i++) {
       previous = entry;
       entry = zone[i];
 
