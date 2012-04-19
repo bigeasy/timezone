@@ -37,7 +37,10 @@ var transitions = (function createTransitions() {
 
     var offset = 0;
 
-    var match = /^(-?)(\d+)(?::(\d+))?(?::(\d+))?$/.exec(pattern).slice(1, 5);
+    // TODO Revert when rules becomes an offset integer.
+    var match = /^(-?)(\d+)(?::(\d+))?(?::(\d+))?$/.exec(pattern)
+    if (! match) return null;
+    match = match.slice(1, 5);
     match[0] += '1'
 
     var milliseconds = [ HOUR, MINUTE, SECOND ];
@@ -290,14 +293,17 @@ var transitions = (function createTransitions() {
 
     table.push(entry);
 
-    for (var i = 0, length = zone.length; i < Math.min(9, length); i++) {
+    for (var i = 0, length = zone.length; i < Math.min(11, length); i++) {
       previous = entry;
       entry = zone[i];
 
+      previous.abbrev = previous.format;
+
       if (previous.rules) {
-        previous = walk(previous, entry, table);
+        if (!(previous.save = parseOffset(previous.rules))) {
+          previous = walk(previous, entry, table); // previous is last rule, not last zone.
+        }
       } else {
-        previous.abbrev = previous.format;
         previous.save = 0;
       }
 
