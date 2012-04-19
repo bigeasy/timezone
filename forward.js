@@ -173,11 +173,13 @@ var transitions = (function createTransitions() {
 
   function getYear (time) { return new Date(time).getUTCFullYear() }
 
-  function pushRule (table, entry, actual) {
+  function pushRule (table, entry, actual, abbrevs) {
+    var save = parseOffset(actual.rule.save || "0")
+      , abbrev = abbrevs[save ? 1 : 0] || entry.format.replace(/%s/, function () { return actual.rule.letter });
     table.push({
       actualization: true,
       offset: entry.offset,
-      abbrev: entry.format.replace(/%s/, function () { return actual.rule.letter }),
+      abbrev: abbrev,
       clock: actual.clock,
       wallclock: actual.wallclock,
       posix: actual.posix,
@@ -196,10 +198,14 @@ var transitions = (function createTransitions() {
     // Oink. Oink. We'll be pigs.
 
     var rule
+      , abbrevs
       , year = getYear(new Date().getTime())
       , rules = data.rules[begin.rules].slice(0)
       , actualized = [];
     
+    if (abbrevs = /(\w+)\/(\w+)/.exec(begin.format)) abbrevs.shift();
+    else abbrevs = []
+
     for (var i = 0, length = rules.length; i < length; i++) {
       rules[i].clock = ruleClock(rules[i]); // TODO Temporary.
       for (var j = rules[i].from, to = Math.min(rules[i].to, year); j <= to; j++) {
@@ -225,13 +231,13 @@ var transitions = (function createTransitions() {
         var rules = data.rules[begin.rules], offset;
         for (var j = 0; j < rules.length; j++) {
           if (!(offset = parseOffset(rules[j].save || "0"))) {
-            begin.abbrev = begin.format.replace(/%s/, function () { return rules[j].letter });
+            begin.abbrev = abbrevs[0] || begin.format.replace(/%s/, function () { return rules[j].letter });
             break;
           }
         }
       } else {
-        begin.abbrev = begin.format.replace(/%s/, function () { return actualized[i - 1].rule.letter });
         begin.save = parseOffset(actualized[i - 1].save);
+        begin.abbrev = abbrevs[begin.save ? 1 : 0] || begin.format.replace(/%s/, function () { return actualized[i - 1].rule.letter });
       }
     }
 
@@ -240,7 +246,7 @@ var transitions = (function createTransitions() {
       if (actualized[i][end.clock] >= end[end.clock]) {
         break;
       }
-      pushRule(table, begin, actualized[i]);
+      pushRule(table, begin, actualized[i], abbrevs);
       previous = actualized[i];
     }
   }
@@ -284,12 +290,11 @@ var transitions = (function createTransitions() {
 
     table.push(entry);
 
-    for (var i = 0, length = zone.length; i < Math.min(21, length); i++) {
+    for (var i = 0, length = zone.length; i < Math.min(9, length); i++) {
       previous = entry;
       entry = zone[i];
 
       if (previous.rules) {
-        say (getYear(previous.wallclock), iso8601(previous.wallclock));
         previous = walk(previous, entry, table);
       } else {
         previous.abbrev = previous.format;
