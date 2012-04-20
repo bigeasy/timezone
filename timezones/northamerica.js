@@ -4960,11 +4960,6 @@ module.exports = {
     ],
     "America/Phoenix": [
       {
-        "offset": "Link",
-        "rules": "America/Denver",
-        "format": "America/Shiprock"
-      },
-      {
         "offset": "-7:00",
         "format": "MST"
       },
@@ -7885,16 +7880,6 @@ module.exports = {
       }
     ],
     "America/Guadeloupe": [
-      {
-        "offset": "Link",
-        "rules": "America/Guadeloupe",
-        "format": "America/Marigot"
-      },
-      {
-        "offset": "Link",
-        "rules": "America/Guadeloupe",
-        "format": "America/St_Barthelemy"
-      },
       {
         "offset": "-4:00",
         "format": "AST"

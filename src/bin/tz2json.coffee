@@ -55,10 +55,11 @@ for file in process.argv.slice 2
           type
           month: MONTH.indexOf(month)
           day
-          time
+          time: if time == "0" then "0:00" else time
           save
           letter: if letter is "-" then "" else letter
         }
+      when "Link"
       else
         if record[0] is "Zone"
           name = record[1]
