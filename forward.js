@@ -339,13 +339,20 @@ var transitions = (function createTransitions() {
     if (! entry.abbrev) entry.abbrev = entry.format;
     return formatOffset(entry.offset + (entry.save || 0)) + '/' + entry.abbrev;
   }
-  var zoneName = process.argv[2];
-  var table = transitions(zoneName, function (entry, posix, wallclock) {
-    entry.posix = posix;
-    entry.wallclock = wallclock;
-  });
-  for (var i = 1, stop = table.length - 1; i < stop; i++) {
-    entry = table[i];
-    say("%s %s %s %s", zoneName, iso8601(entry.wallclock), iso8601(entry.posix), format(table[i + 1]), format(table[i]));
+  var set = process.argv[2] ? [ process.argv[2] ] : Object.keys(data.zones).filter(function (e) { return /^A/.test(e) });
+  for (var i = 0, length = set.length; i < length; i++) {
+    try {
+      var table = transitions(set[i], function (entry, posix, wallclock) {
+        entry.posix = posix;
+        entry.wallclock = wallclock;
+      });
+      for (var j = 1, stop = table.length - 1; j < stop; j++) {
+        entry = table[j];
+        say("%s %s %s %s", set[i], iso8601(entry.wallclock), iso8601(entry.posix), format(table[j + 1]), format(table[j]));
+      }
+    } catch (e) {
+      say("Failed on " + set[i] + ".");
+      throw e;
+    }
   }
 })();
