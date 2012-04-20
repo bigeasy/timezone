@@ -16,7 +16,7 @@ getDate = (month, day) ->
     last
   else if match = /^first(.*)$/.exec(day)
     getDate year, month, "#{match[1]}>=1}"
-  else if match = /^(\w)>=(\d+)$/.exec(day)
+  else if match = /^(\w+)>=(\d+)$/.exec(day)
     [ date, day, least ] = [ month, DAY.indexOf(match[1]), parseInt(match[2], 10) ]
     while date.getUTCDate() < least
       date.setUTCDate(date.getUTCDate() + 1)

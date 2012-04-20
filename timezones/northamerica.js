@@ -6506,7 +6506,7 @@ module.exports = {
         "offset": "-4:00",
         "rules": "NT_YK",
         "format": "A%sT",
-        "until": null,
+        "until": "1995-04-02T02:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -6981,7 +6981,7 @@ module.exports = {
       {
         "offset": "-6:00",
         "format": "CST",
-        "until": null,
+        "until": "1998-04-05T03:00:00.000Z",
         "standard": false,
         "utc": false
       },
@@ -7052,7 +7052,7 @@ module.exports = {
       {
         "offset": "-6:00",
         "format": "CST",
-        "until": null,
+        "until": "1998-04-05T03:00:00.000Z",
         "standard": false,
         "utc": false
       },
