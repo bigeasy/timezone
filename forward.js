@@ -226,6 +226,18 @@ var transitions = (function createTransitions() {
    
     var previous = begin;
 
+    // TODO Combine with below.
+    if (i == length) {
+      var rules = data.rules[begin.rules], offset;
+      for (var j = 0; j < rules.length; j++) {
+        if (!(offset = parseOffset(rules[j].save || "0"))) {
+          begin.abbrev = abbrevs[0] || begin.format.replace(/%s/, function () { return rules[j].letter });
+          break;
+        }
+      }
+      return begin; 
+    }
+
     if (begin[actualized[i].clock] == actualized[i][actualized[i].clock]) {
       table.pop(); // A rule on the seam overrides the seam.
       previous = table[table.length - 1];
