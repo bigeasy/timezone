@@ -81,7 +81,7 @@ var transitions = (function createTransitions() {
   }
   function actualize (entry, rule, year, ruleIndex) {
     var time = /^(\d+):(\d+)(?::(\d+))?[us]?$/.exec(rule.time).slice(1, 4);
-    for (var i = 0, stop = time.length; i < stop; i++) {
+    for (var i = 0; i < 3; i++) {
       time[i] = parseInt(time[i] || 0, 10);
     }
     var hours = time[0], minutes = time[1], seconds = time[2];
