@@ -94,11 +94,12 @@ var transitions = (function createTransitions() {
       for (var i = 0, stop = days.length; i < stop; i++)
         if (days[i] === date[2]) break;
       var day = daysInMonth(rule.month, year);
-      for (;;) {
-        fields = new Date(Date.UTC(year, rule.month, day, hours, minutes, seconds))
-        if (fields.getUTCDay() === i) break;
-        day--;
-      }
+      // Asia/Amman springs forward at 24:00. We calculate the day without the
+      // hour, so the hour doesn't push the day into tomorrow. If you're tempted
+      // to create the full date in the loop, Amman says no.
+      while (new Date(year, rule.month, day).getDay() != i) day--;
+      // Now add the hours, and Amman will push this to the next day.
+      fields = new Date(Date.UTC(year, rule.month, day, hours, minutes, seconds));
     } else {
       var min = parseInt(date[4], 10);
       var days = en_US.day.abbrev;
