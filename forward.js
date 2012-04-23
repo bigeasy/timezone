@@ -21,7 +21,7 @@ data = (function () {
   }
   var file, continent, zoneFiles = require('fs').readdirSync('./timezones'), data = { zones: {}, rules: {} };
   for (var i = 0, stop = zoneFiles.length; i < stop; i++) {
-    file = zoneFiles[i]; 
+    file = zoneFiles[i];
     if (file === 'index.js' || /^\./.test(file)) continue;
     continent = require('./timezones/' + file, 'utf8');
     copy(data.zones, continent.zones);
@@ -206,7 +206,7 @@ var transitions = (function createTransitions() {
       , year = getYear(new Date().getTime())
       , rules = data.rules[begin.rules].slice(0)
       , actualized = [];
-    
+
     if (abbrevs = /(\w+)\/(\w+)/.exec(begin.format)) abbrevs.shift();
     else abbrevs = []
 
@@ -224,7 +224,7 @@ var transitions = (function createTransitions() {
     for (; i < length; i++) {
       if (begin[actualized[i].clock] <= actualized[i][actualized[i].clock]) break;
     }
-   
+
     var previous = begin;
 
     // TODO Combine with below.
@@ -236,7 +236,7 @@ var transitions = (function createTransitions() {
           break;
         }
       }
-      return begin; 
+      return begin;
     }
 
     if (begin[actualized[i].clock] == actualized[i][actualized[i].clock]) {
@@ -267,7 +267,7 @@ var transitions = (function createTransitions() {
     }
   }
 
-  function walk (begin, end, table) { 
+  function walk (begin, end, table) {
     step(begin, end, table);
     return table[table.length - 1];
   }
@@ -365,7 +365,7 @@ var transitions = (function createTransitions() {
   }
   function encodeAbbeviations (table) {
     var abbrevs = {}, index = 0, grouped = [], groups = [];
-    for (var i = 1, length = table.length; i < length; i++) abbrevs[table[i].abbrev] = true; 
+    for (var i = 1, length = table.length; i < length; i++) abbrevs[table[i].abbrev] = true;
     for (var abbrev in abbrevs) {
       if (abbrev.length < 3) die(abbrev);
       if (!grouped[abbrev.length]) grouped[abbrev.length] = []
@@ -397,7 +397,7 @@ var transitions = (function createTransitions() {
   function encode (table) {
     var zone = [ encodeAbbeviations(table) ];
     var abbrevs = decodeAbbreviations(zone[0]);
-    var encoded = []; 
+    var encoded = [];
     var maxOff = 0;
     var count = 0;
     var g = 0;
@@ -414,6 +414,20 @@ var transitions = (function createTransitions() {
     }
     encoded.push(enc(abbrevs.indexOf(table[table.length - 1].abbrev), 1));
     return zone[0] + '|' + encoded.join("");
+  }
+  function zoneinfo (table) {
+    var abbrevs = [], index;
+    if (table.length == 0) return table;
+    while (typeof table[0] != "number") abbrevs.push(table.shift());
+    for (var i = 0, I = Math.floor(table.length / 4); i < I; i++) {
+      var j = i * 4;
+      table[j + 1] = Math.round((table[j] - table[j + 1]) * 1000 * 100);
+      table[j] = Math.round(table[j] * 1000 * 100);
+      table[j + 2] = Math.round(table[j + 2] * 1000 * 60 * 10);
+      table[j + 3] = abbrevs[table[j + 3]];
+    }
+    table.push(Number.MIN_VALUE, Number.MIN_VALUE, 0, abbrevs[table.pop()]);
+    return table;
   }
   function decode (encoded) {
     var pipe = encoded.indexOf('|')
@@ -442,7 +456,7 @@ var transitions = (function createTransitions() {
         say("%s %s %s %s", set[i], iso8601(entry.wallclock), iso8601(entry.posix), format(table[j + 1]), format(table[j]));
       }
       var abbrevs = {};
-      for (var j = 1, J = table.length - 1; j < J; j++) {
+      for (var j = 1, J = table.length; j < J; j++) {
         abbrevs[table[j].abbrev] = true;
       }
       var encoded = [];
@@ -455,6 +469,7 @@ var transitions = (function createTransitions() {
         encoded.push(table[j].save / 1000 / 60 / 10);
         encoded.push(encoded.indexOf(table[j].abbrev));
       }
+      encoded.push(encoded.indexOf(table[table.length - 1].abbrev));
       var fs = require("fs");
       var parts = [ "zones" ].concat(set[i].split(/\//)), path;
       for (var j = 0, stop = parts.length - 1; j < stop; j++) {
@@ -467,16 +482,25 @@ var transitions = (function createTransitions() {
         }
       }
       fs.writeFileSync(parts.join("/") + ".js", 'exports.z=' + JSON.stringify(encoded), "utf8");
+      var decoded = zoneinfo(require("./" + parts.join("/")).z);
+      var ok = require("assert").ok;
+      var equal = require("assert").equal;
+      for (var j = 1, J = table.length; j < J; j++) {
+        var k = j - 1;
+        equal(table[j].posix,  decoded[k * 4]);
+        equal(table[j].wallclock, decoded[k * 4 + 1]);
+        equal((table[j].save || 0), decoded[k * 4 + 2]);
+        equal(table[j].abbrev, decoded[k * 4 + 3]);
+      }
       var encoded = encode(table);
       fs.writeFileSync(parts.join("/") + ".enc.js", 'exports.z="' + encoded + '"', "utf8");
       var decoded = decode(require("./" + parts.join("/") + ".enc.js").z);
-      var ok = require("assert").ok;
       for (var j = 1, J = table.length - 1; j < J; j++) {
         var k = j - 1;
-        ok(table[j].posix == decoded[k * 4]); 
-        ok(table[j].wallclock == decoded[k * 4 + 1]); 
-        ok((table[j].save || 0) == decoded[k * 4 + 2]); 
-        ok(table[j].abbrev == decoded[k * 4 + 3]); 
+        ok(table[j].posix == decoded[k * 4]);
+        ok(table[j].wallclock == decoded[k * 4 + 1]);
+        ok((table[j].save || 0) == decoded[k * 4 + 2]);
+        ok(table[j].abbrev == decoded[k * 4 + 3]);
       }
     } catch (e) {
       say("Failed on " + set[i] + ".");
