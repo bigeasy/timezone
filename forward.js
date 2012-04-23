@@ -1,9 +1,3 @@
-en_US = {
-  day: {
-    abbrev: "Sun Mon Tue Wed Thu Fri Sat".split(/\s/),
-    full: "Sunday Monday Tuesday Wednesday Thursday Friday Saturday".split(/\s+/)
-  }
-};
 function die () {
   if (arguments.length) console.log.apply(console, Array.prototype.slice.call(arguments, 0));
   process.exit(1);
@@ -13,9 +7,7 @@ function say() {
   if (arguments.length) console.log.apply(console, Array.prototype.slice.call(arguments, 0));
 }
 
-const SECOND = 1000, MINUTE = SECOND * 60, HOUR = MINUTE * 60, DAY = HOUR * 24;
-
-data = (function () {
+var _data = (function () {
   function copy(dest, source) {
     for (var key in source) if (source.hasOwnProperty(key)) dest[key] = source[key];
   }
@@ -31,6 +23,8 @@ data = (function () {
 })();
 
 var transitions = (function createTransitions() {
+  var SECOND = 1000, MINUTE = SECOND * 60, HOUR = MINUTE * 60, DAY = HOUR * 24;
+  var ABBREV = "Sun Mon Tue Wed Thu Fri Sat".split(/\s/);
 
   function parseOffset (pattern) {
     if (typeof pattern == "number") return pattern;
@@ -79,6 +73,7 @@ var transitions = (function createTransitions() {
     }
     return Number.MAX_VALUE;
   }
+
   function actualize (entry, rule, year, ruleIndex) {
     var time = /^(\d+):(\d+)(?::(\d+))?[us]?$/.exec(rule.time).slice(1, 4);
     for (var i = 0; i < 3; i++) {
@@ -90,9 +85,8 @@ var transitions = (function createTransitions() {
     if (date[1]) {
       fields = new Date(Date.UTC(year, rule.month, parseInt(date[1], 10), hours, minutes, seconds));
     } else if (date[2]) {
-      var days = en_US.day.abbrev;
-      for (var i = 0, stop = days.length; i < stop; i++)
-        if (days[i] === date[2]) break;
+      for (var i = 0, stop = ABBREV.length; i < stop; i++)
+        if (ABBREV[i] === date[2]) break;
       var day = daysInMonth(rule.month, year);
       // Asia/Amman springs forward at 24:00. We calculate the day without the
       // hour, so the hour doesn't push the day into tomorrow. If you're tempted
@@ -102,9 +96,8 @@ var transitions = (function createTransitions() {
       fields = new Date(Date.UTC(year, rule.month, day, hours, minutes, seconds));
     } else {
       var min = parseInt(date[4], 10);
-      var days = en_US.day.abbrev;
-      for (var i = 0, stop = days.length; i < stop; i++)
-        if (days[i] === date[3]) break;
+      for (var i = 0, stop = ABBREV.length; i < stop; i++)
+        if (ABBREV[i] === date[3]) break;
       day = 1;
       for (;;) {
         fields = new Date(Date.UTC(year, rule.month, day, hours, minutes, seconds))
@@ -194,7 +187,7 @@ var transitions = (function createTransitions() {
 
   function iso8601 (date) { return new Date(date).toISOString().replace(/\..*$/, "") }
 
-  function step (begin, end, table) {
+  function walk (data, begin, end, table) {
     var match
       , actual
       , max;
@@ -265,13 +258,10 @@ var transitions = (function createTransitions() {
       pushRule(table, begin, actualized[i], abbrevs);
       previous = actualized[i];
     }
-  }
-
-  function walk (begin, end, table) {
-    step(begin, end, table);
     return table[table.length - 1];
   }
 
+  // TODO Push this to tz2json.
   function begins (zone) {
     var copy = [];
     for (var i = zone.length - 2; i >= 0; --i) {
@@ -298,7 +288,7 @@ var transitions = (function createTransitions() {
     return copy;
   }
 
-  return function transitions (zoneName, consumer) {
+  return function transitions (data, zoneName) {
     // We `concat` because someday, we'll read right out of the database and the
     // `concat` will be our defensive copy.
     var table = []
@@ -316,7 +306,7 @@ var transitions = (function createTransitions() {
 
       if (previous.rules) {
         if (!(previous.save = parseOffset(previous.rules))) {
-          previous = walk(previous, entry, table); // previous is last rule, not last zone.
+          previous = walk(data, previous, entry, table); // previous is last rule, not last zone.
         }
       } else {
         previous.save = 0;
@@ -445,13 +435,10 @@ var transitions = (function createTransitions() {
     }
     return decoded;
   }
-  var set = process.argv[2] ? [ process.argv[2] ] : Object.keys(data.zones).filter(function (e) { return ! /^Etc/.test(e) });
+  var set = process.argv[2] ? [ process.argv[2] ] : Object.keys(_data.zones).filter(function (e) { return ! /^Etc/.test(e) });
   for (var i = 0, length = set.length; i < length; i++) {
     try {
-      var table = transitions(set[i], function (entry, posix, wallclock) {
-        entry.posix = posix;
-        entry.wallclock = wallclock;
-      });
+      var table = transitions(_data, set[i]);
       for (var j = 1, stop = table.length - 1; j < stop; j++) {
         entry = table[j];
         say("%s %s %s %s", set[i], iso8601(entry.wallclock), iso8601(entry.posix), format(table[j + 1]), format(table[j]));
