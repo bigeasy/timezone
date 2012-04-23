@@ -3997,16 +3997,6 @@ module.exports = {
     ],
     "America/Curacao": [
       {
-        "offset": "Link",
-        "rules": "America/Curacao",
-        "format": "America/Kralendijk"
-      },
-      {
-        "offset": "Link",
-        "rules": "America/Curacao",
-        "format": "America/Lower_Princes"
-      },
-      {
         "offset": "-4:00",
         "format": "AST"
       },

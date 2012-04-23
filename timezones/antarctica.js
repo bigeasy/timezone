@@ -953,11 +953,6 @@ module.exports = {
     ],
     "Antarctica/McMurdo": [
       {
-        "offset": "Link",
-        "rules": "Antarctica/McMurdo",
-        "format": "Antarctica/South_Pole"
-      },
-      {
         "offset": "12:00",
         "rules": "NZAQ",
         "format": "NZ%sT"

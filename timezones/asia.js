@@ -4528,11 +4528,6 @@ module.exports = {
     ],
     "Asia/Nicosia": [
       {
-        "offset": "Link",
-        "rules": "Asia/Nicosia",
-        "format": "Europe/Nicosia"
-      },
-      {
         "offset": "2:00",
         "rules": "EUAsia",
         "format": "EE%sT"

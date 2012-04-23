@@ -16,7 +16,7 @@ getDate = (month, day) ->
     last
   else if match = /^first(.*)$/.exec(day)
     getDate year, month, "#{match[1]}>=1}"
-  else if match = /^(\w)>=(\d+)$/.exec(day)
+  else if match = /^(\w+)>=(\d+)$/.exec(day)
     [ date, day, least ] = [ month, DAY.indexOf(match[1]), parseInt(match[2], 10) ]
     while date.getUTCDate() < least
       date.setUTCDate(date.getUTCDate() + 1)
@@ -55,10 +55,11 @@ for file in process.argv.slice 2
           type
           month: MONTH.indexOf(month)
           day
-          time
+          time: if time == "0" then "0:00" else time
           save
           letter: if letter is "-" then "" else letter
         }
+      when "Link"
       else
         if record[0] is "Zone"
           name = record[1]

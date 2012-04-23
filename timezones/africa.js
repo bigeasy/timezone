@@ -927,7 +927,7 @@ module.exports = {
         "type": "-",
         "month": 6,
         "day": "31",
-        "time": "0",
+        "time": "0:00",
         "save": "0",
         "letter": ""
       }

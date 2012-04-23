@@ -6060,21 +6060,6 @@ module.exports = {
   "zones": {
     "Europe/London": [
       {
-        "offset": "Link",
-        "rules": "Europe/London",
-        "format": "Europe/Isle_of_Man"
-      },
-      {
-        "offset": "Link",
-        "rules": "Europe/London",
-        "format": "Europe/Guernsey"
-      },
-      {
-        "offset": "Link",
-        "rules": "Europe/London",
-        "format": "Europe/Jersey"
-      },
-      {
         "offset": "0:00",
         "rules": "EU",
         "format": "GMT/BST"
@@ -6877,11 +6862,6 @@ module.exports = {
     ],
     "Europe/Helsinki": [
       {
-        "offset": "Link",
-        "rules": "Europe/Helsinki",
-        "format": "Europe/Mariehamn"
-      },
-      {
         "offset": "2:00",
         "rules": "EU",
         "format": "EE%sT"
@@ -7149,16 +7129,6 @@ module.exports = {
       }
     ],
     "Europe/Rome": [
-      {
-        "offset": "Link",
-        "rules": "Europe/Rome",
-        "format": "Europe/San_Marino"
-      },
-      {
-        "offset": "Link",
-        "rules": "Europe/Rome",
-        "format": "Europe/Vatican"
-      },
       {
         "offset": "1:00",
         "rules": "EU",
@@ -7720,11 +7690,6 @@ module.exports = {
       }
     ],
     "Europe/Oslo": [
-      {
-        "offset": "Link",
-        "rules": "Europe/Oslo",
-        "format": "Arctic/Longyearbyen"
-      },
       {
         "offset": "1:00",
         "rules": "EU",
@@ -8877,36 +8842,6 @@ module.exports = {
     ],
     "Europe/Belgrade": [
       {
-        "offset": "Link",
-        "rules": "Europe/Prague",
-        "format": "Europe/Bratislava"
-      },
-      {
-        "offset": "Link",
-        "rules": "Europe/Belgrade",
-        "format": "Europe/Zagreb"
-      },
-      {
-        "offset": "Link",
-        "rules": "Europe/Belgrade",
-        "format": "Europe/Skopje"
-      },
-      {
-        "offset": "Link",
-        "rules": "Europe/Belgrade",
-        "format": "Europe/Sarajevo"
-      },
-      {
-        "offset": "Link",
-        "rules": "Europe/Belgrade",
-        "format": "Europe/Podgorica"
-      },
-      {
-        "offset": "Link",
-        "rules": "Europe/Belgrade",
-        "format": "Europe/Ljubljana"
-      },
-      {
         "offset": "1:00",
         "rules": "EU",
         "format": "CE%sT"
@@ -9154,11 +9089,6 @@ module.exports = {
       }
     ],
     "Europe/Istanbul": [
-      {
-        "offset": "Link",
-        "rules": "Europe/Istanbul",
-        "format": "Asia/Istanbul"
-      },
       {
         "offset": "2:00",
         "rules": "EU",
