@@ -416,6 +416,7 @@ var transitions = (function createTransitions() {
     return zone[0] + '|' + encoded.join("");
   }
   function zoneinfo (table) {
+    table.splice(0, 2);
     var abbrevs = [], index;
     if (table.length == 0) return table;
     while (typeof table[0] != "number") abbrevs.push(table.shift());
@@ -459,7 +460,7 @@ var transitions = (function createTransitions() {
       for (var j = 1, J = table.length; j < J; j++) {
         abbrevs[table[j].abbrev] = true;
       }
-      var encoded = [];
+      var encoded = [ "", table[1].wallclock - table[1].posix ];
       for (var abbrev in abbrevs) {
         encoded.push(abbrev);
       }
@@ -467,9 +468,10 @@ var transitions = (function createTransitions() {
         encoded.push(table[j].posix / 1000 / 100);
         encoded.push(((table[j].posix / 1000) - (table[j].wallclock / 1000)) / 100);
         encoded.push(table[j].save / 1000 / 60 / 10);
-        encoded.push(encoded.indexOf(table[j].abbrev));
+        encoded.push(encoded.indexOf(table[j].abbrev) - 2);
       }
-      encoded.push(encoded.indexOf(table[table.length - 1].abbrev));
+      encoded.push(encoded.indexOf(table[table.length - 1].abbrev) -2);
+      encoded[0] = set[i];
       var fs = require("fs");
       var parts = [ "zones" ].concat(set[i].split(/\//)), path;
       for (var j = 0, stop = parts.length - 1; j < stop; j++) {
