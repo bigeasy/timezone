@@ -22,7 +22,7 @@
     var date = /^(?:(\d+)|last(\w+)|(\w+)>=(\d+))$/.exec(rule.day);
     var fields;
     if (date[1]) {
-      fields = new Date(Date.UTC(year, rule.month, parseInt(date[1], 10)) + time);
+      fields = new Date(Date.UTC(year, rule.month, parseInt(date[1], 10)));
     } else if (date[2]) {
       for (var i = 0, stop = ABBREV.length; i < stop; i++)
         if (ABBREV[i] === date[2]) break;
@@ -30,16 +30,14 @@
       // Asia/Amman springs forward at 24:00. We calculate the day without the
       // hour, so the hour doesn't push the day into tomorrow. If you're tempted
       // to create the full date in the loop, Amman says no.
-      while (new Date(year, rule.month, day).getDay() != i) day--;
-      // Now add the hours, and Amman will push this to the next day.
-      fields = new Date(Date.UTC(year, rule.month, day) + time);
+      while ((fields = new Date(Date.UTC(year, rule.month, day))).getUTCDay() != i) day--;
     } else {
       var min = parseInt(date[4], 10);
       for (var i = 0, stop = ABBREV.length; i < stop; i++)
         if (ABBREV[i] === date[3]) break;
       day = 1;
       for (;;) {
-        fields = new Date(Date.UTC(year, rule.month, day) + time);
+        fields = new Date(Date.UTC(year, rule.month, day));
         if (fields.getUTCDay() === i && fields.getUTCDate() >= min) break;
         day++;
       }
@@ -49,41 +47,28 @@
 
     var offset = entry.offset;
 
-    var sortable, wallclock, posix, standard;
-    switch (rule.clock) {
-    case "posix":
-      posix = fields.getTime();
-      fields = new Date(fields.getTime() + offset);
-      break;
-    case "standard":
-      standard = fields.getTime();
-      fields = new Date(standard);
-    default:
-      wallclock = fields.getTime();
-      fields = new Date(wallclock);
-    }
+    var sortable = fields.getTime();
 
-    sortable = Date.UTC(fields.getUTCFullYear(), fields.getUTCMonth(), fields.getUTCDate());
-
-    return {
+    var actualized =  {
       clock: rule.clock,
-      standard: standard,
       entry: entry,
       sortable: sortable,
       rule:rule,
-      wallclock: wallclock,
       year: year,
-      posix: posix,
       save: save,
       ruleIndex: ruleIndex,
       offset: offset
     };
+
+    actualized[actualized.clock] = fields.getTime() + time;
+
+    return actualized;
   }
 
-  function setClocks (record, effective, clock) {
+  function setClocks (record, effective) {
     var offset = effective.offset
       , save = effective.save;
-    switch (clock || record.clock) {
+    switch (record.clock) {
     case "posix":
       record.standard = record.posix + offset;
       record.wallclock = record.posix + offset + save;
