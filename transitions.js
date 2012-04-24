@@ -2,27 +2,6 @@
   var SECOND = 1000, MINUTE = SECOND * 60, HOUR = MINUTE * 60, DAY = HOUR * 24;
   var ABBREV = "Sun Mon Tue Wed Thu Fri Sat".split(/\s/);
 
-  function parseOffset (pattern) {
-    if (typeof pattern == "number") return pattern;
-
-    var offset = 0;
-
-    // TODO Revert when rules becomes an offset integer.
-    var match = /^(-?)(\d+)(?::(\d+))?(?::(\d+))?$/.exec(pattern)
-    if (! match) return null;
-    match = match.slice(1, 5);
-    match[0] += '1'
-
-    var milliseconds = [ HOUR, MINUTE, SECOND ];
-    for (var i = 1, stop = match.length; i < stop; i++) {
-      offset += parseInt(match[i] || '0', 10) * milliseconds[i - 1];
-    }
-
-    offset *= parseInt(match[0]);
-
-    return offset;
-  }
-
   function isLeapYear (year) {
     if (year % 400 == 0) return true;
     if (year % 100 == 0) return false
@@ -39,15 +18,11 @@
   }
 
   function actualize (entry, rule, year, ruleIndex) {
-    var time = /^(\d+):(\d+)(?::(\d+))?[us]?$/.exec(rule.time).slice(1, 4);
-    for (var i = 0; i < 3; i++) {
-      time[i] = parseInt(time[i] || 0, 10);
-    }
-    var hours = time[0], minutes = time[1], seconds = time[2];
+    time = rule.time * MINUTE
     var date = /^(?:(\d+)|last(\w+)|(\w+)>=(\d+))$/.exec(rule.day);
     var fields;
     if (date[1]) {
-      fields = new Date(Date.UTC(year, rule.month, parseInt(date[1], 10), hours, minutes, seconds));
+      fields = new Date(Date.UTC(year, rule.month, parseInt(date[1], 10)) + time);
     } else if (date[2]) {
       for (var i = 0, stop = ABBREV.length; i < stop; i++)
         if (ABBREV[i] === date[2]) break;
@@ -57,42 +32,41 @@
       // to create the full date in the loop, Amman says no.
       while (new Date(year, rule.month, day).getDay() != i) day--;
       // Now add the hours, and Amman will push this to the next day.
-      fields = new Date(Date.UTC(year, rule.month, day, hours, minutes, seconds));
+      fields = new Date(Date.UTC(year, rule.month, day) + time);
     } else {
       var min = parseInt(date[4], 10);
       for (var i = 0, stop = ABBREV.length; i < stop; i++)
         if (ABBREV[i] === date[3]) break;
       day = 1;
       for (;;) {
-        fields = new Date(Date.UTC(year, rule.month, day, hours, minutes, seconds))
+        fields = new Date(Date.UTC(year, rule.month, day) + time);
         if (fields.getUTCDay() === i && fields.getUTCDate() >= min) break;
         day++;
       }
     }
 
-    var save = parseOffset(rule.save || '0');
+    var save = rule.save * 6e4;
 
     var offset = entry.offset;
 
-    var sortable, wallclock, clock, posix, standard;
-    if (/u$/.test(rule.time)) {
+    var sortable, wallclock, posix, standard;
+    switch (rule.clock) {
+    case "posix":
       posix = fields.getTime();
       fields = new Date(fields.getTime() + offset);
-      clock = "posix";
-    } else if (/s$/.test(rule.time)) {
+      break;
+    case "standard":
       standard = fields.getTime();
       fields = new Date(standard);
-      clock = "standard";
-    } else {
+    default:
       wallclock = fields.getTime();
       fields = new Date(wallclock);
-      clock = "wallclock";
     }
 
     sortable = Date.UTC(fields.getUTCFullYear(), fields.getUTCMonth(), fields.getUTCDate());
 
     return {
-      clock: clock,
+      clock: rule.clock,
       standard: standard,
       entry: entry,
       sortable: sortable,
@@ -126,16 +100,10 @@
     return record;
   }
 
-  function ruleClock(rule) {
-    if (/[ugz]$/.exec(rule.time)) return "posix";
-    if (/s$/.exec(rule.time)) return "standard";
-    return "wallclock";
-  }
-
   function getYear (time) { return new Date(time).getUTCFullYear() }
 
   function pushRule (table, entry, actual, abbrevs) {
-    var save = parseOffset(actual.rule.save || "0")
+    var save = actual.save
       , abbrev = abbrevs[save ? 1 : 0] || entry.format.replace(/%s/, function () { return actual.rule.letter });
     table.push({
       actualization: true,
@@ -145,7 +113,7 @@
       wallclock: actual.wallclock,
       posix: actual.posix,
       standard: actual.standard,
-      save: parseOffset(actual.rule.save || "0")
+      save: actual.save
     });
   }
 
@@ -168,7 +136,6 @@
     else abbrevs = []
 
     for (var i = 0, length = rules.length; i < length; i++) {
-      rules[i].clock = ruleClock(rules[i]); // TODO Temporary.
       for (var j = rules[i].from, to = Math.min(rules[i].to, year); j <= to; j++) {
         actualized.push(actualize(begin, rules[i], j, i));
       }
@@ -188,7 +155,8 @@
     if (i == length) {
       var rules = data.rules[begin.rules], offset;
       for (var j = 0; j < rules.length; j++) {
-        if (!(offset = parseOffset(rules[j].save || "0"))) {
+        // TODO What does offset do?
+        if (!(offset = rules[j].save * 6e4)) {
           begin.abbrev = abbrevs[0] || begin.format.replace(/%s/, function () { return rules[j].letter });
           break;
         }
@@ -203,13 +171,13 @@
       if (i === 0) {
         var rules = data.rules[begin.rules], offset;
         for (var j = 0; j < rules.length; j++) {
-          if (!(offset = parseOffset(rules[j].save || "0"))) {
+          if (!(offset = rules[j].save * 6e4)) {
             begin.abbrev = abbrevs[0] || begin.format.replace(/%s/, function () { return rules[j].letter });
             break;
           }
         }
       } else {
-        begin.save = parseOffset(actualized[i - 1].save);
+        begin.save = actualized[i - 1].save;
         begin.abbrev = abbrevs[begin.save ? 1 : 0] || begin.format.replace(/%s/, function () { return actualized[i - 1].rule.letter });
       }
     }
@@ -268,7 +236,9 @@
       previous.abbrev = previous.format;
 
       if (previous.rules) {
-        if (!(previous.save = parseOffset(previous.rules))) {
+        if (typeof previous.rules == "number") {
+          previous.save = previous.rules * 6e4;
+        } else {
           previous = walk(data, previous, entry, table); // previous is last rule, not last zone.
         }
       } else {

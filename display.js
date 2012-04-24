@@ -32,7 +32,7 @@ var transitions = require("./transitions");
         console.log("%s %s %s %s", set[i], iso8601(entry.wallclock), iso8601(entry.posix), format(table[j + 1]), format(table[j]));
       }
     } catch (e) {
-      say("Failed on " + set[i] + ".");
+      console.log("Failed on " + set[i] + ".");
       throw e;
     }
   }
