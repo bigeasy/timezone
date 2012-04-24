@@ -2,9 +2,9 @@ function say() {
   if (arguments.length) console.log.apply(console, Array.prototype.slice.call(arguments, 0));
 }
 
-var _data = require("./timezones/index");
+var _data = require("../timezones/index");
 
-var transitions = require("./transitions");
+var transitions = require("../lib/transitions");
 
 (function () {
   function decodeAbbreviations (encoded) {
@@ -102,7 +102,7 @@ var transitions = require("./transitions");
       }
       var encoded = encode(table);
       fs.writeFileSync(parts.join("/") + ".enc.js", 'exports.z="' + encoded + '"', "utf8");
-      var decoded = decode(require("./" + parts.join("/") + ".enc.js").z);
+      var decoded = decode(require("../" + parts.join("/") + ".enc.js").z);
       var equal = require("assert").equal;
       for (var j = 1, J = table.length - 1; j < J; j++) {
         var k = j - 1;

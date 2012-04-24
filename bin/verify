@@ -16,4 +16,4 @@ do
   then
     echo "after:  $after $line"
   fi
-done < zones.txt
+done < $1

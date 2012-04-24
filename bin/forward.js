@@ -2,7 +2,7 @@ function say() {
   if (arguments.length) console.log.apply(console, Array.prototype.slice.call(arguments, 0));
 }
 
-var transitions = require("./transitions");
+var transitions = require("../lib/transitions");
 
 (function () {
   function zoneinfo (table) {
@@ -20,7 +20,7 @@ var transitions = require("./transitions");
     table.push(Number.MIN_VALUE, Number.MIN_VALUE, 0, abbrevs[table.pop()]);
     return table;
   }
-  var _data = require("./timezones/index");
+  var _data = require("../timezones/index");
   var set = process.argv[2] ? [ process.argv[2] ] : Object.keys(_data.zones).filter(function (e) { return ! /^Etc/.test(e) });
   for (var i = 0, length = set.length; i < length; i++) {
     try {

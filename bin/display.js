@@ -1,4 +1,4 @@
-var transitions = require("./transitions");
+var transitions = require("../lib/transitions");
 
 (function () {
   function pad (value) { return ('00' + value).slice(-2) }
@@ -22,7 +22,7 @@ var transitions = require("./transitions");
     if (! entry.abbrev) entry.abbrev = entry.format;
     return formatOffset(entry.offset + (entry.save || 0)) + '/' + entry.abbrev;
   }
-  var _data = require("./timezones/index");
+  var _data = require("../timezones/index");
   var set = process.argv[2] ? [ process.argv[2] ] : Object.keys(_data.zones).filter(function (e) { return ! /^Etc/.test(e) });
   for (var i = 0, length = set.length; i < length; i++) {
     try {
