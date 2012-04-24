@@ -38,18 +38,6 @@
     return days;
   }
 
-  function parseUntil (until) {
-    if (until) {
-      var fields = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}).000Z$/.exec(until).slice(1, 7);
-      for (var i = 0, stop = fields.length; i < stop; i++) {
-        fields[i] = parseInt(fields[i], 10);
-      }
-      --fields[1];
-      return Date.UTC.apply(Date.UTC, fields);
-    }
-    return Number.MAX_VALUE;
-  }
-
   function actualize (entry, rule, year, ruleIndex) {
     var time = /^(\d+):(\d+)(?::(\d+))?[us]?$/.exec(rule.time).slice(1, 4);
     for (var i = 0; i < 3; i++) {
@@ -244,16 +232,15 @@
       copy[i] = {
         rules: zone[i].rules,
         format: zone[i].format,
-        offset: parseOffset(zone[i].offset),
+        offset: zone[i].offset * 1000,
         save: 0,
-        // TODO Intermediate format is all kinds of broken.
-        clock: zone[i + 1].utc ? 'posix' : (zone[i + 1].standard ? 'standard' : 'wallclock')
+        clock: zone[i + 1].clock
       };
-      copy[i][copy[i].clock] = parseUntil(zone[i + 1].until);
+      copy[i][copy[i].clock] = zone[i + 1].until === false ? Number.MAX_VALUE : zone[i + 1].until * 1000;
     }
 
     copy.push({
-      offset: parseOffset(zone[zone.length - 1].offset),
+      offset: zone[zone.length - 1].offset * 1000,
       format: zone[zone.length - 1].format,
       save: 0
     });
@@ -268,7 +255,7 @@
     // We `concat` because someday, we'll read right out of the database and the
     // `concat` will be our defensive copy.
     var table = []
-      , zone = begins(data.zones[zoneName]).concat({ offset: "0" })
+      , zone = begins(data.zones[zoneName]).concat({ offset: 0 })
       , entry = zone.shift()
       , previous, offset, save = 0, wallclock, posix, rules;
 

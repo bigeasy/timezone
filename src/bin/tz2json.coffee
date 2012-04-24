@@ -6,6 +6,22 @@ DAY = "Sun Mon Tue Wed Thu Fri Sat".split /\s+/
 MINUTE = 60 * 1000
 HOUR = MINUTE * 60
 
+parseOffset = (pattern) ->
+  offset = 0
+
+  match = /^(-?)(\d+)(?::(\d+))?(?::(\d+))?$/.exec(pattern)
+  throw new Error "pattern: #{pattern}" if (! match)
+  match = match.slice(1, 5)
+  match[0] += '1'
+
+  milliseconds = [ HOUR, MINUTE, 1000 ]
+  for i in [1...match.length]
+    offset += parseInt(match[i] || '0', 10) * milliseconds[i - 1]
+
+  offset *= parseInt(match[0])
+
+  offset
+
 getDate = (month, day) ->
   if match = /^last(.*)$/.exec(day)
     [ date, day, last ] = [ month, DAY.indexOf(match[1]) ]
@@ -66,7 +82,7 @@ for file in process.argv.slice 2
           info.zones[name] = []
           record = record.slice 2
         info.zones[name].push {
-          offset: record[0]
+          offset: parseOffset(record[0]) / 1000
           rules: record[1]
           format: record[2]
           until: record.slice(3)
@@ -75,11 +91,10 @@ for file in process.argv.slice 2
   for name, zone of info.zones
     zone.reverse()
     for record in zone
+      record.clock = "wallclock"
       if record.rules is "-"
-        delete record.rules
+        record.rules = false
       if record.until.length
-        record.standard = false
-        record.utc = false
         date = new Date(Date.UTC(parseInt(record.until.shift(), 10), MONTH.indexOf(record.until.shift() or "Jan")))
         if record.until.length
           date = getDate(date, record.until.shift())
@@ -89,15 +104,13 @@ for file in process.argv.slice 2
             date.setUTCMinutes(parseInt(minute, 10))
             if second?
               date.setUTCSeconds(parseInt(minute, 10))
-            switch type
-              when "s"
-                record.standard = true
-              when "g", "u", "z"
-                record.standard = true
-                record.utc = true
-        record.until = date
+            record.clock = switch type
+              when "s" then "standard"
+              when "g", "u", "z" then "posix"
+              else "wallclock"
+        record.until = date.getTime() / 1000
       else
-        delete record.until
+        record.until = false
 
   process.stdout.write "module.exports = "
   process.stdout.write JSON.stringify(info, null, 2)
