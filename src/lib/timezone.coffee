@@ -134,7 +134,7 @@ do -> (exports = if typeof module isnt "undefined" then module.exports else wind
     # week day on which our week starts, either Sunday or Monday.
     weekOfYear = (date, startOfWeek) ->
       fields = [ date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate() ]
-      date = new Date(Date.UTC.apply null, fields)
+      date = new Date(Date.UTC.apply Date.UTC, fields)
       nyd = new Date(Date.UTC(date.getUTCFullYear(), 0, 1))
       diff = (date.getTime() - nyd.getTime()) / DAY
       day = date.getUTCDay()
@@ -456,7 +456,7 @@ do -> (exports = if typeof module isnt "undefined" then module.exports else wind
       zeroUnless date, milliseconds
 
       # Return wallclock millseconds since the epoch.
-      Date.UTC.apply null, date
+      Date.UTC.apply Date.UTC, date
 
   # Parse a date, possibly fuzzy.
   parse = (request, pattern) ->
@@ -623,62 +623,6 @@ do -> (exports = if typeof module isnt "undefined" then module.exports else wind
       if remaining is 0
         wallclock = makeDate year, month, day, hours, minutes, seconds, milliseconds
         return convertToPOSIX request, wallclock
-
-    # Try to find something date like, interpret using locale. 
-    match = ///
-      ^
-      ([^\u0000]*?)
-      (\d{1,2})
-      /
-      (\d{1,2})
-      /
-      (\d{4})
-      ([^\u0000]*)
-      $
-    ///.exec(pattern)
-    
-    if match
-      before = match.splice(0, 2).pop()
-      [ first, second, year ] = (
-        parseInt num, 10 for num in match.splice(0, 3)
-      )
-      after = match.pop()
-
-      # Take the locale preference for month/day ordering.
-      if request.locales[request.locale].monthBeforeDate
-        [ month, day ] = [ first, second ]
-      else
-        [ day, month ] = [ first, second ]
-
-      # If it doesn't fit, try the other way.
-      if month > 12
-        [ day, month ] = [ month, day ]
-    else if match = ///
-      ^
-      ([^\u0000]*?)
-      (\d{4})
-      /
-      (\d{1,2})
-      /
-      (\d{1,2})
-      ([^\u0000]*)
-      $
-    ///.exec(pattern)
-      before = match.splice(0, 2).pop()
-      [ year, month, day ] = (
-        parseInt num, 10 for num in match.splice(0, 3)
-      )
-      after = match.pop()
-    # We have only a time, so we're going to use now to fill it in.
-    else
-      [ before, after ] = [ '', pattern ]
-
-    if after.length
-      match = ///
-      ///
-
-    wallclock = makeDate year, month, day, hours, minutes, seconds, milliseconds
-    convertToPOSIX request, wallclock
   
     # Look for a time, either in the whole pattern, or in what's left after the
     # date consumed a date-like thing.
