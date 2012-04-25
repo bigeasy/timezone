@@ -46,7 +46,7 @@
 
 # Wrap everything in a function and pass in an exports map appropriate for node
 # or the browser, depending on where we are.
-do -> (exports or= window) and do (exports) ->
+do -> (exports = if typeof module isnt "undefined" then module.exports else window) and do (exports) ->
   # Used for debugging. If you don't see them called in the code, it means the
   # code is absolutely bug free.
   die = (splat...) ->
