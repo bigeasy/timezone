@@ -6,6 +6,25 @@ DAY = "Sun Mon Tue Wed Thu Fri Sat".split /\s+/
 MINUTE = 60 * 1000
 HOUR = MINUTE * 60
 
+parseOffset = (pattern, seconds) ->
+  offset = 0
+
+  pattern = "0:00" if pattern is "0"
+  match = /^(-?)(\d+)(?::(\d+))?(?::(\d+))?$/.exec(pattern)
+  throw new Error "pattern: #{pattern}" if (! match)
+  match = match.slice(1, 5)
+  match[0] += '1'
+
+  throw new Error "#{pattern} #{match[3]}" if not seconds and match[3]
+
+  milliseconds = [ HOUR, MINUTE, 1000 ]
+  for i in [1...match.length]
+    offset += parseInt(match[i] || '0', 10) * milliseconds[i - 1]
+
+  offset *= parseInt(match[0])
+
+  offset
+
 getDate = (month, day) ->
   if match = /^last(.*)$/.exec(day)
     [ date, day, last ] = [ month, DAY.indexOf(match[1]) ]
@@ -42,6 +61,17 @@ for file in process.argv.slice 2
         [ name, from, to, type, month, day, time, save, letter ] = record.slice(1)
         if type isnt "-"
           console.log type
+        time = "0:00" if time is "0"
+        clock = switch time[time.length - 1]
+          when "s" then "standard"
+          when "g", "u", "z" then "posix"
+          else "wallclock"
+        time = time.replace /[suzgw]$/, ''
+        time = /^(\d+):(\d+)(?::(\d+))?$/.exec(time)[1..]
+        throw new Error time if (time[2])
+        for i in [0..1]
+          time[i] = parseInt(time[i] || 0, 10)
+        time = time[0] * 60 + time[1]
         info.rules[name] or= []
         info.rules[name].push {
           from: parseInt(from, 10)
@@ -52,11 +82,11 @@ for file in process.argv.slice 2
               Number.MAX_VALUE
             else
               parseInt(to, 10)
-          type
           month: MONTH.indexOf(month)
           day
-          time: if time == "0" then "0:00" else time
-          save
+          time
+          clock
+          save: parseOffset(save) / 6e4
           letter: if letter is "-" then "" else letter
         }
       when "Link"
@@ -66,7 +96,7 @@ for file in process.argv.slice 2
           info.zones[name] = []
           record = record.slice 2
         info.zones[name].push {
-          offset: record[0]
+          offset: parseOffset(record[0], true) / 1000
           rules: record[1]
           format: record[2]
           until: record.slice(3)
@@ -75,11 +105,12 @@ for file in process.argv.slice 2
   for name, zone of info.zones
     zone.reverse()
     for record in zone
+      record.clock = "wallclock"
       if record.rules is "-"
-        delete record.rules
+        record.rules = false
+      else if /^\d+:\d+$/.test record.rules
+        record.rules = parseOffset(record.rules) / 6e4
       if record.until.length
-        record.standard = false
-        record.utc = false
         date = new Date(Date.UTC(parseInt(record.until.shift(), 10), MONTH.indexOf(record.until.shift() or "Jan")))
         if record.until.length
           date = getDate(date, record.until.shift())
@@ -89,15 +120,13 @@ for file in process.argv.slice 2
             date.setUTCMinutes(parseInt(minute, 10))
             if second?
               date.setUTCSeconds(parseInt(minute, 10))
-            switch type
-              when "s"
-                record.standard = true
-              when "g", "u", "z"
-                record.standard = true
-                record.utc = true
-        record.until = date
+            record.clock = switch type
+              when "s" then "standard"
+              when "g", "u", "z" then "posix"
+              else "wallclock"
+        record.until = date.getTime() / 1000
       else
-        delete record.until
+        record.until = false
 
   process.stdout.write "module.exports = "
   process.stdout.write JSON.stringify(info, null, 2)
