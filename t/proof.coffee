@@ -5,7 +5,7 @@ context.readDate = (date) ->
   new Date(Date.UTC(parseInt(year, 10), parseInt(month, 10) - 1, parseInt(day, 10)))
 context.utc = utc = (splat...) -> Date.UTC.apply Date.UTC, splat
 context.bicentennial = utc(1976, 6, 4)
-context.moonwalk = utc(1969, 6, 21, 02, 36)
+context.moonwalk = utc(1969, 6, 21, 2, 36)
 context.y2k = utc(2000, 0, 1)
 context.tz = require("../lib/timezone").tz
 module.exports = require("proof")(context)
