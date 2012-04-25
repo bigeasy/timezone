@@ -1,5 +1,7 @@
 #!/usr/bin/env coffee
-require("../proof") 24, ({ tz, utc }) ->
+require("../proof") 26, ({ tz, utc }) ->
+  @equal tz("1970-01"), 0, "parse 1970 month"
+  @equal tz("1970-01-01"), 0, "parse 1970 date"
   @equal tz("1980-01"), utc(1980, 0, 1), "month with hyphens"
   @equal tz("1980-01-02"), utc(1980, 0, 2), "day with hyphens"
   @equal tz("198001"), Date.UTC(1980, 0, 1),"month"
