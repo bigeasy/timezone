@@ -13,9 +13,9 @@ require("../proof") 13, ({ tz, moonwalk }) ->
   # Detroit did not observe DST in 1969. There is no rule in effect for 1969, so
   # we use the formatting information for the last rule change to set the
   # abbrevation variable.
-  @equal tz(moonwalk, "America/Detroit", "%Z"), "EST", "format no rule in effect"
+  @equal detroit(moonwalk, "%Z"), "EST", "format no rule in effect"
   # Detroit did observe DST for a the year 1967.
-  @equal tz(moonwalk, "-2 years", "America/Detroit", "%Z"), "EDT", "format with letter"
+  @equal detroit(moonwalk, "-2 years", "%Z"), "EDT", "format with letter"
 
   tz = tz require("../../zones/Europe/Amsterdam")
 
