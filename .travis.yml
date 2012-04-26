@@ -17,3 +17,4 @@ before_install:
   - npm install coffee-script proof
   - git submodule init && git submodule update
   - cake compile
+  - make

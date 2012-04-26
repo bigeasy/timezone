@@ -1,17 +1,17 @@
 #!/usr/bin/env coffee
 require("../proof") 18, ({ tz, utc }) ->
   str = (posix) -> new Date(posix).toString()
-  tz = tz require "./../data/northamerica"
-  detriot = tz "America/Detriot"
+  # TODO TZ shouldn't work below. Timezones somehow set in tz globally. Bad.
+  detroit = tz require("../../zones/America/Detroit"), "America/Detroit"
   @equal tz(utc(1976, 6, 4), "America/Detroit", "%F %T"), "1976-07-03 20:00:00",
          "convert from UTC to America/Detroit during DST"
-  @equal tz("2010-03-12T03:00:00", "America/Detroit"), utc(2010, 02, 12, 8),
+  @equal tz("2010-03-12T03:00:00", "America/Detroit"), utc(2010, 2, 12, 8),
          "convert from America/Detroit to UTC before first day of DST"
-  @equal tz("2010-03-15T03:00:00", "America/Detroit"), utc(2010, 02, 15, 7),
+  @equal tz("2010-03-15T03:00:00", "America/Detroit"), utc(2010, 2, 15, 7),
          "convert from America/Detroit to UTC after first day of DST"
-  @equal tz("2010-03-14T03:00:00", "America/Detroit"), utc(2010, 02, 14, 7),
+  @equal tz("2010-03-14T03:00:00", "America/Detroit"), utc(2010, 2, 14, 7),
          "convert from America/Detroit to UTC during DST"
-  @equal tz("2010-03-14T01:00:00", "America/Detroit"), utc(2010, 02, 14, 6),
+  @equal tz("2010-03-14T01:00:00", "America/Detroit"), utc(2010, 2, 14, 6),
          "convert from America/Detroit to UTC"
 
   # "test: convert to America/Detroit at end of DST": (done) ->

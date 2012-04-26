@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for name in $@
+do
+  if [ -e ~/src/timezone/iana/data/$name ]
+  then
+    node bin/tz2json.js ~/src/timezone/iana/data/$name > ./timezones/$name.js
+  fi
+done

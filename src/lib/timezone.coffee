@@ -46,7 +46,7 @@
 
 # Wrap everything in a function and pass in an exports map appropriate for node
 # or the browser, depending on where we are.
-do -> (exports or= window) and do (exports) ->
+do -> (exports = if typeof module isnt "undefined" then module.exports else window) and do (exports) ->
   # Used for debugging. If you don't see them called in the code, it means the
   # code is absolutely bug free.
   die = (splat...) ->
@@ -134,7 +134,7 @@ do -> (exports or= window) and do (exports) ->
     # week day on which our week starts, either Sunday or Monday.
     weekOfYear = (date, startOfWeek) ->
       fields = [ date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate() ]
-      date = new Date(Date.UTC.apply null, fields)
+      date = new Date(Date.UTC.apply Date.UTC, fields)
       nyd = new Date(Date.UTC(date.getUTCFullYear(), 0, 1))
       diff = (date.getTime() - nyd.getTime()) / DAY
       day = date.getUTCDay()
@@ -253,8 +253,7 @@ do -> (exports or= window) and do (exports) ->
         posix = convertToPOSIX request, date.getTime()
         recurse request, posix, locale.dateTimeFormat
       z: (date, locale, request, delimiters) ->
-        offset = offsetInMilliseconds(request.entry.offset)
-        offset += offsetInMilliseconds(request.rule?.save or "0")
+        offset = request.entry.offset
         parts = (pad(part, 2, "0") for part in splitOffset offset)
         parts[0] = "-#{parts[0]}" if offset < 0
         if delimiters
@@ -275,12 +274,7 @@ do -> (exports or= window) and do (exports) ->
       Z: (date, locale, request) ->
         # Repeats a few lines of code from `convertToPOSIX`. No real desire
         # optimize for size by wrapping it up in a function.
-        zone = request.zones[request.zone]
-        for maybe in zone
-          break if convertUntil(maybe) < date
-          entry = maybe
-        # Get to reuse `summerRule`, though.
-        request.entry.format.replace /%s/, request.rule?.letter or ""
+        request.entry?.abbrev or "UTC"
 
     # Some format specifiers have padding characters. We specify the padding
     # counts separately, instead of adding padding in the format specifier
@@ -462,7 +456,7 @@ do -> (exports or= window) and do (exports) ->
       zeroUnless date, milliseconds
 
       # Return wallclock millseconds since the epoch.
-      Date.UTC.apply null, date
+      Date.UTC.apply Date.UTC, date
 
   # Parse a date, possibly fuzzy.
   parse = (request, pattern) ->
@@ -629,62 +623,6 @@ do -> (exports or= window) and do (exports) ->
       if remaining is 0
         wallclock = makeDate year, month, day, hours, minutes, seconds, milliseconds
         return convertToPOSIX request, wallclock
-
-    # Try to find something date like, interpret using locale. 
-    match = ///
-      ^
-      ([^\u0000]*?)
-      (\d{1,2})
-      /
-      (\d{1,2})
-      /
-      (\d{4})
-      ([^\u0000]*)
-      $
-    ///.exec(pattern)
-    
-    if match
-      before = match.splice(0, 2).pop()
-      [ first, second, year ] = (
-        parseInt num, 10 for num in match.splice(0, 3)
-      )
-      after = match.pop()
-
-      # Take the locale preference for month/day ordering.
-      if request.locales[request.locale].monthBeforeDate
-        [ month, day ] = [ first, second ]
-      else
-        [ day, month ] = [ first, second ]
-
-      # If it doesn't fit, try the other way.
-      if month > 12
-        [ day, month ] = [ month, day ]
-    else if match = ///
-      ^
-      ([^\u0000]*?)
-      (\d{4})
-      /
-      (\d{1,2})
-      /
-      (\d{1,2})
-      ([^\u0000]*)
-      $
-    ///.exec(pattern)
-      before = match.splice(0, 2).pop()
-      [ year, month, day ] = (
-        parseInt num, 10 for num in match.splice(0, 3)
-      )
-      after = match.pop()
-    # We have only a time, so we're going to use now to fill it in.
-    else
-      [ before, after ] = [ '', pattern ]
-
-    if after.length
-      match = ///
-      ///
-
-    wallclock = makeDate year, month, day, hours, minutes, seconds, milliseconds
-    convertToPOSIX request, wallclock
   
     # Look for a time, either in the whole pattern, or in what's left after the
     # date consumed a date-like thing.
@@ -722,7 +660,7 @@ do -> (exports or= window) and do (exports) ->
   # Convert a daylight savings time rule into miliseconds since the epoch. We
   # use `Date` because it gives us the day of the week. No error checking on
   # rule, it is assumed to be correct in the database. 
-  actualize = (request, year, rule) ->
+  actualize = (request, rule, year) ->
     # Split up the time of day.
     match = /^(\d+):(\d+)(?::(\d+))?u?$/.exec(rule.time).slice(1)
     [ hours, minutes, seconds ] = (parseInt number or 0, 10 for number in match)
@@ -781,111 +719,33 @@ do -> (exports or= window) and do (exports) ->
       fields = new Date wallclock
 
     # Sortable only works if there are no rules on the same day.
-    sortable = fields.getUTCFullYear() * 10000 + fields.getUTCMonth() * 100 + field.getUTCDate()
+    sortable = fields.getUTCFullYear() * 10000 + fields.getUTCMonth() * 100 + fields.getUTCDate()
 
     { sortable, rule, wallclock, year, posix }
 
-  # Parse until. We store until as a string in the JSON zone files so they are
-  # easy to read. If IE 6 supports parsing ISO date stamps, we can use `new
-  # Date(zone.until)` instead of the regex.
-  convertUntil = (zone) ->
-    unless zone.stop?
-      if zone.until?
-        fields = (parseInt(field, 10) for field in ///
-          ^
-          (\d{4})-(\d{2})-(\d{2})
-          T
-          (\d{2}):(\d{2}):(\d{2})
-          .000Z
-          $
-        ///.exec(zone.until).slice(1))
-        fields[1]--
-        zone.stop = Date.UTC.apply Date.UTC, fields
-      else
-        zone.stop = Number.MAX_VALUE
-    zone.stop
-
   iso8601 = (date) -> new Date(date).toISOString().replace(/\..*$/, "")
       
-  # We will only know if something starts by looking at what came before it. We
-  # build a little table of posix times and then probe the table.
-  #
-  # We come back and narrow the table when we know that we're well within range
-  # of a particular rule.
-  #
-  # This is much simpiler if we can sort, so we sort, asserting that no rules
-  # occur in the same month.
-  summerRule = (request, posix) ->
-    if rules = request.rules[request.entry.rules]
-      wallclock = posix + offsetInMilliseconds(request.entry.offset)
-      startYear = endYear = new Date(wallclock).getUTCFullYear()
-      startYear++
-      endYear--
-      buckets = []
-      for year in [startYear..endYear]
-        for rule in rules when rule.from <= year <= rule.to
-          buckets.push actualize(request, rule, year)
-      buckets.sort (a, b) -> a.sortable - b.sortable
-      year = new Date(wallclock).getUTCFullYear()
-      if buckets[buckets.length - 1].year is year
-        prior = []
-        for rule in rules when rule.to < year
-          prior.push actualize(request, rule, rule.to)
-        prior.sort (a, b) -> a.sortable - b.sortable
-        buckets.unshift prior.pop()
-      for index in [1...buckets.length]
-        buckets[index].posix ?= buckets[index].wallclock -
-          offsetInMilliseconds(request.entry.offset) - offsetInMilliseconds(buckets[index - 1].rule.save)
-        buckets[index].when = iso8601 buckets[index].posix
-      found = buckets.shift()
-      for bucket in buckets
-        break if bucket.posix > posix
-        found = bucket
-    request.rule = found?.rule
+  search = (zone, clock, milliseconds) ->
+    low = 1
+    high = zone.length - 1
+    while low <= high
+      mid = low + ((high - low) >>> 1)
+      compare = milliseconds - zone[mid][clock]
+      if compare > 0
+        low = mid + 1
+      else if compare < 0
+        high = mid - 1
+      else
+        return mid
+    low - 1
 
   # Convert the UTC epoch seconds to epoch seconds in the given time zone.
   convertToWallclock = (request, posix) ->
     return posix if request.zone is "UTC"
     zone = request.zones[request.zone]
-    for maybe in zone
-      offset = posix + offsetInMilliseconds(maybe.offset)
-      stop = convertUntil maybe
-      # This is hard won. There are records in the database that indicate that
-      # daylight savings time started late. A zone entry, without any rules,
-      # ends at time that a set of rules it to be applied. The rules may
-      # indicate that daylight savings time has started months before, but the
-      # zone entry without any rules was in effect.
-      #
-      # That is why this comparison must be less than or *equal to*, indicating
-      # that the explicit rule terminates at this point, the new
-      if not maybe.rules
-        break if stop <= offset
-      else
-        diff = stop - offset
-        # No rule saves more than 2 hours.
-        if Math.abs(diff) < HOUR * 2
-          # Try harder to calculate the offset. Look for a rule.
-          rules = request.rules[request.entry.rules]
-          if rules
-            die "HIT RULES"
-          else
-            pastWallclock = posix + offsetInMilliseconds request.entry.offset
-            if pastWallclock is offset and stop <= offset
-              break
-        else if diff < 0
-          break
-      request.entry = maybe
-      wallclock = offset
-
-    # Now we have an adjusted time. We're going to pretend that seconds since
-    # the epoch starts from 1/1/1970 in the current timezone, instead of in
-    # UTC. We're going to use our date as a a structure for the field names, and
-    # treat UTC values as if the were local time. This means we can do simple
-    # compares between seconds since the epoch, but this is our little secret.
-    dst = summerRule request, posix
-    wallclock += offsetInMilliseconds(dst?.save or "0")
-
-    wallclock
+    index = search zone, "posix", posix
+    request.entry = zone[index]
+    return posix + request.entry.offset
 
   # Convert from a wallclock milliseconds since the epoch to UTC milliseconds
   # since the epoch.
@@ -902,75 +762,9 @@ do -> (exports or= window) and do (exports) ->
   convertToPOSIX = (request, wallclock) ->
     return wallclock if request.zone is "UTC"
     zone = request.zones[request.zone]
-    for maybe in zone
-      stop = convertUntil maybe
-      # This is hard won. There are records in the database that indicate that
-      # daylight savings time started late. A zone entry, without any rules,
-      # ends at time that a set of rules it to be applied. The rules may
-      # indicate that daylight savings time has started months before, but the
-      # zone entry without any rules was in effect.
-      #
-      # That is why this comparison must be less than or *equal to*, indicating
-      # that the explicit rule terminates at this point, the new
-      say
-        stop: iso8601 stop
-        wallclock: iso8601 wallclock
-      if not maybe.rules
-        break if stop <= wallclock
-      else
-        diff = stop - wallclock
-        # No rule saves more than 2 hours.
-        if Math.abs(stop - wallclock) < HOUR * 2
-          # Try harder to calculate the offset. Look for a rule.
-          die { maybe, diff: stop - offset, iso: iso8601(offset) }
-          break
-        else if diff < 0
-          break
-      request.entry = maybe
-
-    if rules = request.rules[request.entry.rules]
-      startYear = endYear = new Date(wallclock).getUTCFullYear()
-      endYear--
-      buckets = []
-      for year in [startYear..endYear]
-        for rule in rules when rule.from <= year <= rule.to
-          buckets.push actualize(request, rule, year)
-      buckets.sort (a, b) -> a.sortable - b.sortable
-      year = new Date(wallclock).getUTCFullYear()
-      if buckets[buckets.length - 1].year is year
-        prior = []
-        for rule in rules when rule.to < year
-          prior.push actualize(request, rule, rule.to)
-        prior.sort (a, b) -> a.sortable - b.sortable
-        buckets.unshift prior.pop()
-      for index in [1...buckets.length]
-        # TODO Rename offsetInMilliseconds.
-        buckets[index].wallclock ?= buckets[index].posix +
-          offsetInMilliseconds(request.entry.offset) +
-          offsetInMilliseconds(buckets[index - 1].rule.save)
-        buckets[index].when = iso8601 buckets[index].wallclock
-      found = buckets.shift()
-      for bucket in buckets
-        break if bucket.wallclock > wallclock
-        found = bucket
-    dst = request.rule = found?.rule
-
-    posix = wallclock - offsetInMilliseconds(request.entry.offset)
-
-    # Daylight savings time has gone into effect.
-    if dst and dst.save isnt "0"
-      start = actualize(request, dst, new Date(wallclock).getUTCFullYear()).wallclock
-      # Here is the case for Detroit in 1975, when Detroit zone rules hold onto
-      # EST until April, while the US starts EDT in February. Our missing hour
-      # is really in April, not February.
-      start = Math.max start, stop
-      end = start + offsetInMilliseconds(dst.save)
-      if start <= wallclock and wallclock < end
-        posix = null
-      else
-        posix -= offsetInMilliseconds(dst?.save or "0")
-
-    posix
+    request.entry = entry = zone[search zone, "wallclock", wallclock]
+    diff = wallclock - entry.wallclock
+    if 0 < diff < entry.save then null else wallclock - entry.offset
 
   parseAdjustment = (pattern) ->
     if match = ///
@@ -1131,6 +925,24 @@ do -> (exports or= window) and do (exports) ->
   append = (context, request, value, key) ->
     request[key] or= extend {}, context[key]
     extend request[key], value
+
+  zoneinfo = (context, table) ->
+    zone = []
+    name = table.shift()
+    offset = table.shift()
+    abbrevs = []
+    abbrevs.push(table.shift()) while typeof table[0] != "number"
+    for i in [0...Math.floor(table.length / 4)]
+      j = i * 4
+      zone.push entry =
+        posix: Math.round(table[j] * 1000 * 100)
+        wallclock: Math.round((table[j] - table[j + 1]) * 1000 * 100)
+        save: Math.round(table[j + 2] * 1000 * 60 * 10)
+        abbrev: abbrevs[table[j + 3]]
+        offset: offset
+      offset = entry.wallclock - entry.posix
+    zone.push({ posix: Number.MIN_VALUE, wallclock: Number.MIN_VALUE, save: 0, abbrev: abbrevs[table.pop()], offset })
+    context.zones[name] = zone.reverse()
   
   # Creates a new function.
   convert = (tz, context, splat, length) ->
@@ -1188,16 +1000,15 @@ do -> (exports or= window) and do (exports) ->
         # We use an object as a flag to request now for date.
         if index is length and (argument is tz.now or argument.getTime)
           request.date = argument
-        # Timezone data has a particular flavor.
-        else if argument.zones and argument.rules
-          partial.pop()
-          append context, request, argument.zones, "zones"
-          append context, request, argument.rules, "rules"
         # Otherwise, we look for locale definitions.
         else if /^\w{2}_\w{2}$/.test argument.name
           partial.pop()
           append context, request, {}, "locales"
           request.locales[argument.name] = argument
+        # Timezone data has a particular flavor.
+        else if argument.z
+          partial.pop()
+          zoneinfo context, argument.z
       # Next, please.
       index++
 
@@ -1233,7 +1044,7 @@ do -> (exports or= window) and do (exports) ->
       if typeof date is "string"
 
         # Parse will apply the time zone offset.
-        unless posix = parse request, date
+        unless (posix = parse request, date)?
           throw new Error "invalid date"
 
       else if typeof date is "number"

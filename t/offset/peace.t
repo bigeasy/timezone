@@ -1,7 +1,6 @@
 #!/usr/bin/env coffee
 require("../proof") 5, ({ tz }) ->
-  tz = tz require "./../data/northamerica"
-  detroit = tz "America/Detroit"
+  detroit = tz require("../../zones/America/Detroit"), "America/Detroit"
   @equal tz(detroit("1945-08-14 18:59:00"), "%F %T"), "1945-08-14 22:59:00", "to UTC before peace time"
   @equal tz(detroit("1945-08-14 19:00:00"), "%F %T"), "1945-08-14 23:00:00", "to UTC before peace time"
 
