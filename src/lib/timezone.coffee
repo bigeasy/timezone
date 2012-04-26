@@ -1044,7 +1044,7 @@ do -> (exports = if typeof module isnt "undefined" then module.exports else wind
       if typeof date is "string"
 
         # Parse will apply the time zone offset.
-        unless posix = parse request, date
+        unless (posix = parse request, date)?
           throw new Error "invalid date"
 
       else if typeof date is "number"
