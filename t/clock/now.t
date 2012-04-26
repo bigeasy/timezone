@@ -1,4 +1,4 @@
 #!/usr/bin/env coffee
 require("../proof") 1, ({ tz }) ->
-  tz = tz -> 0
-  @equal tz(tz.now), 0, "set"
+  tz = tz (context) -> context.clock = -> 0
+  @equal tz(), 0, "set"
