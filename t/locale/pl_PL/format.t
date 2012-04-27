@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 require("../../proof") 5, ({ tz }) ->
-  tz = tz require "../../../locales/pl_PL"
+  tz = tz require("../../../locales/pl_PL"), require("../../../date")
   @equal tz("2000-09-03", "%x", "pl_PL"), "03.09.2000", "date"
   @equal tz("2000-09-03 08:05:04", "%X", "pl_PL"), "08:05:04", "time, padding apparent"
   @equal tz("2000-09-03 23:05:04", "%X", "pl_PL"), "23:05:04", "time"

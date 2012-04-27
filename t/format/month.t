@@ -4,6 +4,8 @@ require("../proof") 29, ({ tz, y2k, moonwalk, utc }) ->
   @equal tz(moonwalk, "%m"), "07", "two digit july"
   @equal tz(y2k, "%m"), "01", "two digit january"
 
+  tz = tz require "../../date"
+
   # Abbreviated month.
   @equal tz(moonwalk, "%h"), "Jul", "abbreviation"
   @equal tz(moonwalk, "%b"), "Jul", "locale abbreviation"

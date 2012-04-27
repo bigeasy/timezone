@@ -1,5 +1,6 @@
 #!/usr/bin/env coffee
 require("../../proof") 24, ({ tz }) ->
+  tz = tz require "../../../date"
   @equal tz("2000-01-01", "%b", "en_US"), "Jan", "Jan"
   @equal tz("2000-02-01", "%b", "en_US"), "Feb", "Feb"
   @equal tz("2000-03-01", "%b", "en_US"), "Mar", "Mar"

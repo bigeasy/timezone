@@ -1,6 +1,8 @@
 #!/usr/bin/env coffee
 require("../proof") 6, ({ tz, utc }) ->
+  # TODO Use RFC 3999 instead of %c.
   detroit = tz require("../../zones/America/Detroit"), "America/Detroit"
+  tz = tz require "../../date"
   @throws /invalid date/, -> tz(detroit("1975-04-27 02:59:00"), "%c")
   @equal tz(detroit("1975-04-27 01:59:00"), "%c"), "Sun 27 Apr 1975 06:59:00 AM UTC", "start late to UTC"
   @equal tz(detroit("1975-04-27 03:00:00"), "%c"), "Sun 27 Apr 1975 07:00:00 AM UTC", "start late to UTC"
