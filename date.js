@@ -54,15 +54,15 @@
     this.y = function (date) { return date.getUTCFullYear() % 100 }
     this.C = function (date) { return Math.floor(date.getUTCFullYear() / 100) }
     this.D = function (date, posix) { return this.convert([ posix, "%m/%d/%y" ]) }
-    this.x = function (date, posix) { return this.convert([ posix, this[this.locale].dateFormat ]) }
+    this.x = function (date, posix) { return this.convert([ posix, this[this.locale].date ]) }
     this.l = function (date) { return date.getUTCHours() % 12 == 0 ? 12 : date.getUTCHours() % 12 }
     this.I = function (date) { return date.getUTCHours() % 12 == 0 ? 12 : date.getUTCHours() % 12 }
     this.k = function (date) { return date.getUTCHours() }
     this.P = function (date) { return this[this.locale].meridiem[Math.floor(date.getUTCHours() / 12)].toLowerCase() }
     this.p = function (date) { return this[this.locale].meridiem[Math.floor(date.getUTCHours() / 12)] }
-    this.r = function (date, posix) { return this.convert([ posix, "%I:%M:%S %p", "en_US" ]) }
-    this.X = function (date, posix) { return this.convert([ posix, this[this.locale].timeFormat ]) }
-    this.c = function (date, posix) { return this.convert([ posix, this[this.locale].dateTimeFormat ]) }
+    this.r = function (date, posix) { return this.convert([ posix, this[this.locale].time12 ]) }
+    this.X = function (date, posix) { return this.convert([ posix, this[this.locale].time24 ]) }
+    this.c = function (date, posix) { return this.convert([ posix, this[this.locale].dateTime ]) }
 
     this.U.pad = 2;
     this.W.pad = 2;
@@ -75,6 +75,8 @@
     this.y.pad = 2;
 
     this.k.style = "_";
+    this.l.style = "_";
+    this.e.style = "_";
 
     this.locale || (this.locale = "en_US")
     this.en_US = {
@@ -86,9 +88,10 @@
         abbrev: "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(/\s+/),
         full: "January February March April May June July August September October November December".split(/\s+/)
       },
-      dateFormat: "%m/%d/%Y",
-      timeFormat: "%I:%M:%S %p",
-      dateTimeFormat: "%a %d %b %Y %I:%M:%S %p %Z",
+      date: "%m/%d/%Y",
+      time24: "%I:%M:%S %p",
+      time12: "%I:%M:%S %p",
+      dateTime: "%a %d %b %Y %I:%M:%S %p %Z",
       meridiem: [ "AM", "PM" ]
     };
   }

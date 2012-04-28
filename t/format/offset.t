@@ -1,5 +1,5 @@
 #!/usr/bin/env coffee
-require("../proof") 13, ({ tz, moonwalk }) ->
+require("../proof") 17, ({ tz, moonwalk, utc }) ->
   detroit = tz require("../../zones/America/Detroit"), "America/Detroit"
   @equal detroit(tz("1905-01-01 05:32:11"), "%z"), "-0600", "seconds"
   @equal detroit(tz("1905-01-01 05:32:11"), "-1 millisecond", "%z"), "-0532", "seconds truncated"
@@ -16,6 +16,14 @@ require("../proof") 13, ({ tz, moonwalk }) ->
   @equal detroit(moonwalk, "%Z"), "EST", "format no rule in effect"
   # Detroit did observe DST for a the year 1967.
   @equal detroit(moonwalk, "-2 years", "%Z"), "EDT", "format with letter"
+
+  # RFC 3999 friendly offsets 
+  @equal detroit(utc(2011, 0, 1, 0, 59), "America/Detroit", "%$"), "-05:00", "RFC 3999 hours and minutes"
+  # TODO This didn't work.
+  #@equal detroit(utc(2011, 0, 1, 0, 59), "UTC", "%$"), "Z", "RFC 399 UTC"
+  @equal tz(utc(2011, 0, 1, 0, 59), "%$"), "Z", "RFC 399 UTC"
+  @equal detroit(utc(1900, 0, 1, 0, 59), "America/Detroit", "%$"), "-05:32", "RFC 3999 hours and minutes truncated"
+  @equal detroit(utc(1900, 0, 1, 0, 59), "America/Detroit", "%:$"), "-05:32:11", "RFC 3999 hours, minutes and seconds"
 
   tz = tz require("../../zones/Europe/Amsterdam")
 
