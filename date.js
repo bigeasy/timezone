@@ -2,9 +2,8 @@
 new function () {
   function weekOfYear (date, startOfWeek) {
     var diff, nyd, weekStart;
-    date = new Date(Date.UTC.call(Date.UTC, date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
     nyd = new Date(Date.UTC(date.getUTCFullYear(), 0));
-    diff = (date.getTime() - nyd.getTime()) / 864e5;
+    diff = Math.floor((date.getTime() - nyd.getTime()) / 864e5);
     if (nyd.getUTCDay() == startOfWeek) {
       weekStart = 0;
     } else {
@@ -17,18 +16,16 @@ new function () {
   }
 
   function isoWeek (date) {
-    var ny, nyd, nyy, offset, week;
+    var nyd, nyy, week;
     nyy = date.getUTCFullYear();
-    nyd = new Date(Date.UTC(nyy, 0, 1)).getUTCDay();
-    offset = nyd > 1 && nyd <= 4 ? 1 : 0;
-    week = weekOfYear(date, 1) + offset;
-    if (week === 0) {
-      ny = new Date(Date.UTC(date.getUTCFullYear() - 1, 0, 1));
-      nyd = ny.getUTCDay();
-      nyy = ny.getUTCFullYear();
-      week = nyd === 4 || (nyd === 3 && new Date(nyy, 1, 29).getDate() == 29) ? 53 : 52;
+    nyd = new Date(Date.UTC(nyy, 0)).getUTCDay();
+    week = weekOfYear(date, 1) + (nyd > 1 && nyd <= 4 ? 1 : 0);
+    if (week == 0) {
+      nyy = date.getUTCFullYear() - 1;
+      nyd = new Date(Date.UTC(nyy, 0)).getUTCDay();
+      week = nyd == 4 || (nyd == 3 && new Date(nyy, 1, 29).getDate() == 29) ? 53 : 52;
       return [week, date.getUTCFullYear() - 1];
-    } else if (week === 53 && !(nyd === 4 || (nyd === 3 && new Date(nyy, 1, 29).getDate() == 29))) {
+    } else if (week == 53 && !(nyd == 4 || (nyd == 3 && new Date(nyy, 1, 29).getDate() == 29))) {
       return [1, date.getUTCFullYear() + 1];
     } else {
       return [week, date.getUTCFullYear()];
