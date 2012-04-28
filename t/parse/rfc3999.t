@@ -1,5 +1,5 @@
 #!/usr/bin/env coffee
-require("../proof") 16, ({ tz, utc }) ->
+require("../proof") 17, ({ tz, utc }) ->
   @equal tz("1970-01-01"), 0, "1970"
   @equal tz("1980-01-02"), utc(1980, 0, 2), "date"
   @equal tz("1980-01-03 02:15"), Date.UTC(1980, 0, 3, 2, 15), "date and time with space no seconds"
@@ -17,3 +17,5 @@ require("../proof") 16, ({ tz, utc }) ->
   @equal tz("1976-07-04", "America/Detroit"), Date.UTC(1976, 6, 4) + 36e5 * 4, "Bicentennial Detroit"
   @equal tz("1970-01-01 00:00Z", "America/Detroit"), 0, "1970 Detroit with Z"
   @equal tz("1970-01-01 00:00-02:00", "America/Detroit"), -36e5 * 2, "1970 Detroit with offset"
+  tz = tz -> @clock = -> 0
+  @equal tz("12:00:00", "America/Detroit", "%F %T"), "1969-12-31 12:00:00", "Detroit without year"
