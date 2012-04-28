@@ -1,5 +1,9 @@
 // The rest of GNU date. Maybe out to be broken up into localize and days.
-new function () {
+!function (definition) {
+  if (typeof module == "object" && module.exports) module.exports = definition();
+  else if (typeof define == "function" && typeof define.amd == "object") define(definition)
+  else this.tz = this.tz(definition());
+} (function () {
   function weekOfYear (date, startOfWeek) {
     var diff, nyd, weekStart;
     nyd = new Date(Date.UTC(date.getUTCFullYear(), 0));
@@ -32,7 +36,7 @@ new function () {
     }
   }
 
-  function date () {
+  return function () {
     this.a = function (date) { return this[this.locale].day.abbrev[date.getUTCDay()] }
     this.A = function (date) { return this[this.locale].day.full[date.getUTCDay()] }
     this.j = function (date) { return Math.floor((date.getTime() - Date.UTC(date.getUTCFullYear(), 0)) / 864e5) + 1 }
@@ -88,7 +92,4 @@ new function () {
       meridiem: [ "AM", "PM" ]
     };
   }
-
-  if (typeof module == "object") module.exports = date;
-  else tz = tz(date);
-}
+});
