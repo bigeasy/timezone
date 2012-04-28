@@ -52,7 +52,7 @@
     this.b = function (date) { return this[this.locale].month.abbrev[date.getUTCMonth()] }
     this.B = function (date) { return this[this.locale].month.full[date.getUTCMonth()] }
     this.y = function (date) { return date.getUTCFullYear() % 100 }
-    this.C = function (date) { return Math.floor(date.getFullYear() / 100) }
+    this.C = function (date) { return Math.floor(date.getUTCFullYear() / 100) }
     this.D = function (date, posix) { return this.convert([ posix, "%m/%d/%y" ]) }
     this.x = function (date, posix) { return this.convert([ posix, this[this.locale].dateFormat ]) }
     this.l = function (date) { return date.getUTCHours() % 12 == 0 ? 12 : date.getUTCHours() % 12 }
