@@ -12,13 +12,15 @@ do
   let count=count+1
 done < "$IANA/zones.txt"
 
-echo "1..$(expr $count '*' 2)"
+#echo "1..$(expr $count '*' 2)"
+echo "1..10000"
 
 count=1
 while read line
 do
+  if [ $count -eq 10001 ]; then break; fi
   array=($line)
-  utc=$(echo ${array[2]} | tr T ' ')
+  utc=${array[2]/T/ }
   if [ "${utc%%-*}" -lt 1902 ]; then continue; fi
   # Date cannot do zone shifts with to the second accuracy.
   before=$(TZ=":$IANA/zoneinfo/${array[0]}" date -d 'TZ="UTC" -1 minute '"$utc" +"%::z/%Z")
