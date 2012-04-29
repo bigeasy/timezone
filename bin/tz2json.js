@@ -23,27 +23,21 @@ function parseOffset (pattern, seconds) {
   return offset * match[1];
 }
 
-getDate = function(month, day) {
-  var date, last, least, match, _ref, _ref1;
+function getDate (month, day) {
+  var date, last, least, match;
   if (match = /^last(.*)$/.exec(day)) {
-    _ref = [month, DAY.indexOf(match[1])], date = _ref[0], day = _ref[1], last = _ref[2];
-    while (date.getUTCMonth() === month.getUTCMonth()) {
-      if (date.getUTCDay() === day) {
-        last = date;
-      }
-      date = new Date(date.getTime() + 24 * HOUR);
+    date = month, day = DAY.indexOf(match[1]);
+    while (date.getUTCMonth() == month.getUTCMonth()) {
+      if (date.getUTCDay() == day) last = date;
+      date = new Date(date.getTime() + 864e5);
     }
     return last;
   } else if (match = /^first(.*)$/.exec(day)) {
-    return getDate(year, month, "" + match[1] + ">=1}");
+    return getDate(year, month, match[1] + ">=1");
   } else if (match = /^(\w+)>=(\d+)$/.exec(day)) {
-    _ref1 = [month, DAY.indexOf(match[1]), parseInt(match[2], 10)], date = _ref1[0], day = _ref1[1], least = _ref1[2];
-    while (date.getUTCDate() < least) {
-      date.setUTCDate(date.getUTCDate() + 1);
-    }
-    while (date.getUTCDay() !== day) {
-      date.setUTCDate(date.getUTCDate() + 1);
-    }
+    date = month, day = DAY.indexOf(match[1]), least = parseInt(match[2], 10);
+    while (date.getUTCDate() < least) date.setUTCDate(date.getUTCDate() + 1);
+    while (date.getUTCDay() != day) date.setUTCDate(date.getUTCDate() + 1);
     return date;
   } else {
     month.setUTCDate(parseInt(day, 10));
