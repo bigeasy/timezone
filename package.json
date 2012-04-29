@@ -10,6 +10,6 @@
     , "proof": ">=0.0.1" }
 ,   "lib" :             "lib"
 ,   "main" :            "./lib/timezone"
-,   "scripts" :         { "test": "proof t/*/*.t t/locale/*/*.t" }
+,   "scripts" :         { "test": "proof t/*/*.t t/locale/*/*.t t/zones/*/*.t" }
 ,   "engines" :         { "node": "> 0.4.0" }
 }
