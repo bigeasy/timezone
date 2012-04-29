@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-IANA="$( cd "$DIR/../../../iana" && pwd )"
+IANA="$( cd "$DIR/../iana" && pwd )"
 
 count=0
 while read line

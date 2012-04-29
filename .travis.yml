@@ -3,6 +3,11 @@ language: node_js
 node_js:
   - 0.6
 
+# One of our tests in written in Ruby and needs 1.9.3 for a GNU `date`
+# compatible implementation of `strftime`.
+rvm:
+  - 1.9.3
+
 branches:
   only:
     - master
