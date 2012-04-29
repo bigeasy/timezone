@@ -6,8 +6,6 @@ if [ "$TRAVIS" = "true" ]; then
   sudo apt-get -q install ruby rubygems ruby-switch >/dev/null 2>&1 && echo "apt-get install ruby rubygems ruby-switch"
   sudo apt-get -q install ruby1.9.3 >/dev/null 2>&1 && echo "apt-get install ruby1.9.3"
   sudo update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby1.9.3 400 \
-                    --slave   /usr/share/man/man1/ruby.1.gz ruby.1.gz \
-                                   /usr/share/man/man1/ruby.1.9.3.gz \
                     --slave   /usr/bin/ri ri /usr/bin/ri1.9.3 \
                     --slave   /usr/bin/irb irb /usr/bin/irb1.9.3
   sudo update-alternatives --set ruby /usr/bin/ruby1.9.3
