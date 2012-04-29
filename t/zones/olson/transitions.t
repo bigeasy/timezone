@@ -1,40 +1,44 @@
-#!/bin/bash
+#!/usr/bin/env ruby
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-IANA="$( cd "$DIR/../../../iana" && pwd )"
+require "time"
+require "date"
 
-count=0
-while read line
-do
-  array=($line)
-  utc=${array[2]}
-  if [ "${utc%%-*}" -lt 1902 ]; then continue; fi
-  let count=count+1
-done < "$IANA/zones.txt"
+DIR = File.expand_path(File.dirname(__FILE__))
+IANA = File.expand_path("#{DIR}/../../../iana")
 
-echo "1..$(expr $count '*' 2)"
+ENV["TZ"] = "UTC"
+counter = 0
+File.open("#{IANA}/zones.txt", "r") do |infile|
+  while (line = infile.gets)
+    name, wallclock, posix, before, after = line.split(/\s/)
+    time = Time.parse posix
+    if time.year > 1902
+      counter = counter + 2
+    end
+  end
+end
 
-count=1
-while read line
-do
-  array=($line)
-  utc=$(echo ${array[2]} | tr T ' ')
-  if [ "${utc%%-*}" -lt 1902 ]; then continue; fi
-  # Date cannot do zone shifts with to the second accuracy.
-  before=$(TZ=":$IANA/zoneinfo/${array[0]}" date -d 'TZ="UTC" -1 minute '"$utc" +"%::z/%Z")
-  after=$(TZ=":$IANA/zoneinfo/${array[0]}" date -d 'TZ="UTC" +1 minute '"$utc" +"%::z/%Z")
-  if [ "$before" = "${array[3]}" ]
-  then
-    echo "ok ${count} # before ${array[0]} ${array[1]}"
-  else
-    echo "not ok ${count} ${array[0]} ${array[1]} ${array[2]} ${array[2]} != $before"
-  fi
-  let count=count+1
-  if [ "$after" = "${array[4]}" ]
-  then
-    echo "ok ${count} # after ${array[0]} ${array[1]}"
-  else
-    echo "not ok ${count} ${array[0]} ${array[1]} ${array[2]} ${array[4]} != $after"
-  fi
-  let count=count+1
-done < "$IANA/zones.txt"
+puts "1..#{counter}"
+
+counter = 1
+File.open("#{IANA}/zones.txt", "r") do |infile|
+  while (line = infile.gets)
+    name, wallclock, posix, before, after = line.split(/\s/)
+    ENV["TZ"] = "UTC"
+    time = Time.parse posix
+    if time.year > 1902
+      ENV["TZ"] = ":#{IANA}/zoneinfo/#{name}"
+      time = Time.at(time.to_i)
+      offsetAbbrevation = (time + 60).strftime("%::z/%Z")
+      ok = after == offsetAbbrevation ? "ok" : "not ok"
+      puts "#{ok} #{counter} after #{name} #{wallclock} #{posix} #{after} #{offsetAbbrevation}"
+      counter = counter + 1
+      offsetAbbrevation = (time - 60).strftime("%::z/%Z")
+      ok = (before == offsetAbbrevation ? "ok" : "not ok")
+      puts "#{ok} #{counter} before #{name} #{wallclock} #{posix} #{before} #{offsetAbbrevation}"
+      counter = counter + 1
+    end
+  end
+end
+
+# vim: ft=ruby :
