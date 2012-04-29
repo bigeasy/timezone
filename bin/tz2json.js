@@ -10,28 +10,18 @@ MINUTE = 60 * 1000;
 
 HOUR = MINUTE * 60;
 
-parseOffset = function(pattern, seconds) {
-  var i, match, milliseconds, offset, _i, _ref;
-  offset = 0;
-  if (pattern === "0") {
-    pattern = "0:00";
-  }
+function parseOffset (pattern, seconds) {
+  var i, match, milliseconds, offset = 0;
+  if (pattern == "0") pattern = "0:00";
   match = /^(-?)(\d+)(?::(\d+))?(?::(\d+))?$/.exec(pattern);
-  if (!match) {
-    throw new Error("pattern: " + pattern);
-  }
-  match = match.slice(1, 5);
-  match[0] += '1';
-  if (!seconds && match[3]) {
-    throw new Error("" + pattern + " " + match[3]);
-  }
-  milliseconds = [HOUR, MINUTE, 1000];
-  for (i = _i = 1, _ref = match.length; 1 <= _ref ? _i < _ref : _i > _ref; i = 1 <= _ref ? ++_i : --_i) {
-    offset += parseInt(match[i] || '0', 10) * milliseconds[i - 1];
-  }
-  offset *= parseInt(match[0]);
-  return offset;
-};
+  if (!match) throw new Error("pattern: " + pattern);
+  if (!seconds && match[4]) throw new Error("" + pattern + " " + match[3]);
+  match[1] += '1';
+  for (i = 1; i < 5; i++) match[i] = parseInt(match[i] || 0, 10);
+  milliseconds = [ 36e5, 6e4, 1e3 ];
+  for (i = 0; i < 3; i++) offset += match[i + 2] * milliseconds[i];
+  return offset * match[1];
+}
 
 getDate = function(month, day) {
   var date, last, least, match, _ref, _ref1;
