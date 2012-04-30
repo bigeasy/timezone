@@ -1,14 +1,7 @@
-var DAY, HOUR, MINUTE, MONTH, base, clock, date, day, file, from, fs, getDate, hour, i, info, letter, line, minute, month, name, parseOffset, record, save, second, time, to, type, zone, _base, _i, _j, _k, _l, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4;
-
-fs = require("fs");
-
-MONTH = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(/\s+/);
-
-DAY = "Sun Mon Tue Wed Thu Fri Sat".split(/\s+/);
-
-MINUTE = 60 * 1000;
-
-HOUR = MINUTE * 60;
+var fs = require("fs")
+  , MONTH = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(/\s+/)
+  , DAY = "Sun Mon Tue Wed Thu Fri Sat".split(/\s+/)
+  ;
 
 function parseOffset (pattern, seconds) {
   var i, match, milliseconds, offset = 0;
@@ -45,63 +38,64 @@ function getDate (month, day) {
   }
 };
 
-file = process.argv[2]
-info = {
-  rules: {},
-  zones: {}
-};
-base = file.replace(/^.*\/(.*)$/, "$1");
-name = null;
-_ref1 = fs.readFileSync(file, "utf8").split(/\n/);
-for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
-  line = _ref1[_j];
-  line = line.trim();
-  if (line === "" || /^\s*#/.test(line)) {
-    continue;
+function nameOfClock (time) {
+  switch (time[time.length - 1]) {
+    case "s":
+      return "standard";
+    case "g":
+    case "u":
+    case "z":
+      return "posix";
+    default:
+      return "wallclock";
   }
+}
+
+var file = process.argv[2]
+  , info = { rules: {}, zones: {} }
+  , base = file.replace(/^.*\/(.*)$/, "$1")
+  , name = null
+  , lines = fs.readFileSync(file, "utf8").split(/\n/)
+  , k, K
+  ;
+
+for (k = 0, K = lines.length; k < K; k++) {
+  line = lines[k].trim();
+  if (line == "" || /^\s*#/.test(line)) continue;
   line = line.replace(/\s*#.*$/, "");
   record = line.split(/\s+/);
   switch (record[0]) {
     case "Rule":
-      _ref2 = record.slice(1), name = _ref2[0], from = _ref2[1], to = _ref2[2], type = _ref2[3], month = _ref2[4], day = _ref2[5], time = _ref2[6], save = _ref2[7], letter = _ref2[8];
-      if (type !== "-") {
-        console.log(type);
-      }
-      if (time === "0") {
-        time = "0:00";
-      }
-      clock = (function() {
-        switch (time[time.length - 1]) {
-          case "s":
-            return "standard";
-          case "g":
-          case "u":
-          case "z":
-            return "posix";
-          default:
-            return "wallclock";
-        }
-      })();
+      var rule = record.slice(1)
+        , name = rule[0]
+        , from = rule[1]
+        , to = rule[2]
+        , type = rule[3]
+        , month = rule[4]
+        , day = rule[5]
+        , time = rule[6]
+        , save = rule[7]
+        , letter = rule[8]
+        , clock = nameOfClock(time)
+        ;
+
+      if (type !== "-") throw Error("A type! What does it mean?");
+
+      if (time == "0") time = "0:00";
       time = time.replace(/[suzgw]$/, '');
-      time = /^(\d+):(\d+)(?::(\d+))?$/.exec(time).slice(1);
-      if (time[2]) {
-        throw new Error(time);
-      }
-      for (i = _k = 0; _k <= 1; i = ++_k) {
-        time[i] = parseInt(time[i] || 0, 10);
-      }
-      time = time[0] * 60 + time[1];
-      (_base = info.rules)[name] || (_base[name] = []);
+      time = /^(\d+):(\d+)(?::(\d+))?$/.exec(time);
+      if (time[3]) throw new Error("A rule time with seconds.");
+      time = parseInt(time[1], 10) * 60 + parseInt(time[2], 10);
+
+      if (! info.rules[name]) info.rules[name] = [];
+
       info.rules[name].push({
         from: parseInt(from, 10),
         to: (function() {
           switch (to) {
-            case "only":
-              return parseInt(from, 10);
-            case "max":
-              return Number.MAX_VALUE;
-            default:
-              return parseInt(to, 10);
+            case "only": return parseInt(from, 10);
+            case "max": return Number.MAX_VALUE;
+            default: return parseInt(to, 10);
           }
         })(),
         month: MONTH.indexOf(month),
@@ -109,13 +103,14 @@ for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
         time: time,
         clock: clock,
         save: parseOffset(save) / 6e4,
-        letter: letter === "-" ? "" : letter
+        letter: letter == "-" ? "" : letter
       });
+
       break;
     case "Link":
       break;
     default:
-      if (record[0] === "Zone") {
+      if (record[0] == "Zone") {
         name = record[1];
         info.zones[name] = [];
         record = record.slice(2);
@@ -129,14 +124,14 @@ for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
   }
 }
 
-_ref3 = info.zones;
-for (name in _ref3) {
-  zone = _ref3[name];
+var zone, match, name;
+for (name in info.zones) {
+  zone = info.zones[name];
   zone.reverse();
-  for (_l = 0, _len2 = zone.length; _l < _len2; _l++) {
-    record = zone[_l];
+  for (i = 0, I = zone.length; i < I; i++) {
+    record = zone[i];
     record.clock = "wallclock";
-    if (record.rules === "-") {
+    if (record.rules == "-") {
       record.rules = false;
     } else if (/^\d+:\d+$/.test(record.rules)) {
       record.rules = parseOffset(record.rules) / 6e4;
@@ -146,24 +141,12 @@ for (name in _ref3) {
       if (record.until.length) {
         date = getDate(date, record.until.shift());
         if (record.until.length) {
-          _ref4 = /^(\d+):(\d+)(?::(\d+))?(s|w|g|u|z)?$/.exec(record.until.shift()).slice(1), hour = _ref4[0], minute = _ref4[1], second = _ref4[2], type = _ref4[3];
-          date.setUTCHours(parseInt(hour, 10));
-          date.setUTCMinutes(parseInt(minute, 10));
-          if (second != null) {
-            date.setUTCSeconds(parseInt(minute, 10));
-          }
-          record.clock = (function() {
-            switch (type) {
-              case "s":
-                return "standard";
-              case "g":
-              case "u":
-              case "z":
-                return "posix";
-              default:
-                return "wallclock";
-            }
-          })();
+          time = record.until.shift();
+          record.clock = nameOfClock(time);
+          match = /^(\d+):(\d+)(?::(\d+))?[swguz]?$/.exec(time);
+          date.setUTCHours(parseInt(match[1], 10));
+          date.setUTCMinutes(parseInt(match[2], 10));
+          date.setUTCSeconds(parseInt(match[3] || 0, 10));
         }
       }
       record.until = date.getTime() / 1000;
