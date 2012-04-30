@@ -1,3 +1,14 @@
+// RFC 822 is legacy data. As RFC 3999 likes to point out, it was open to
+// interpretation, allowed a lot of leeway, and as such, supporting it is an
+// archival project, codifying the man interpretations, possibly offering a lot
+// of different switches to interpret the meaning of the timezone abbreviations.
+//
+// This is not a project I want to take on. I'm probably going to write a dirty
+// rfc822, that trust only the numbers, the timezone offset if it is numeric,
+// and any other timezone interpretation in up to the user.
+//
+// However, this is a no go right now. Not even going to open a ticket. Probably
+// going to shuffle this off to a branch and delete it from the main branch.
     if (match = /^(.*?)(\w{3}),\s+(\d{1,2})\s+(\w{3})\s+(\d{2,4})\s+(\d{2}):(\d{2})(?::(\d{2}))?\s*(?:([A-IK-Z]|UT|GMT|[ECMP][SD]T)|([-+]?\d{4}))?(.*)$/i.exec(pattern)) {
       _ref = match.slice(1), before = _ref[0], dow = _ref[1], day = _ref[2], month = _ref[3], year = _ref[4], hours = _ref[5], minutes = _ref[6], seconds = _ref[7], zone = _ref[8], offset = _ref[9], after = _ref[10];
       dow = dow.toLowerCase();
