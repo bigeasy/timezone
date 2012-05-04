@@ -11,15 +11,24 @@ for (var i = 0, length = set.length; i < length; i++) {
 }
 console.log("Standard: " + Object.keys(clock.standard).join(", "));
 console.log("POSIX: " + Object.keys(clock.posix).join(", "));
+var times = {}, where = {}, save = {};
 var clock = { standard: {}, posix: {}, wallclock: {} };
 for (var i = 0, length = set.length; i < length; i++) {
   for (var rule in data.rules) {
     var transitions = data.rules[rule];
     for (j = transitions.length - 1; j >= 0; --j) {
       clock[transitions[j].clock || "wallclock"][rule] = true;
+      if (transitions[j].clock == "standard") {
+        times[transitions[j].time + "/" + transitions[j].save] = true;
+        where[rule] = true;
+        save[rule + "/" + transitions[j].save] = true;
+      }
     }
   }
 }
+console.log("Times: " + Object.keys(times).sort());
+console.log("Where: " + Object.keys(where).sort());
+console.log("Save: " + Object.keys(save).sort());
 var __slice = [].slice;
 function die () {
   console.log.apply(console, __slice.call(arguments, 0));

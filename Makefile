@@ -44,3 +44,6 @@ timezones/%.js: iana/src/%
 
 timezones: timezones/africa.js timezones/antarctica.js timezones/asia.js timezones/australasia.js \
 	timezones/europe.js timezones/northamerica.js timezones/southamerica.js
+
+clean:
+	rm -rf zones timezones
