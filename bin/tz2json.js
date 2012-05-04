@@ -176,7 +176,7 @@ for (name in info.zones) {
     });
 
     copy.reverse();
-    copy[0].posix = copy[0].wallclock = Number.MIN_VALUE;
+    copy[0].posix = copy[0].wallclock = -Number.MAX_VALUE;
     copy.slice(1).forEach(function (e) { e.begins =  iso8601(e[e.clock]) + " " + e.clock });
     return copy;
   })(zone);
