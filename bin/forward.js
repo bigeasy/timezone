@@ -17,14 +17,14 @@ var transitions = require("../lib/transitions");
       table[j + 2] = Math.round(table[j + 2] * 1000 * 60 * 10);
       table[j + 3] = abbrevs[table[j + 3]];
     }
-    table.push(Number.MIN_VALUE, Number.MIN_VALUE, 0, abbrevs[table.pop()]);
+    table.push(-Number.MAX_VALUE, -Number.MAX_VALUE, 0, abbrevs[table.pop()]);
     return table;
   }
   var _data = require("../timezones/index");
   var set = process.argv[2] ? [ process.argv[2] ] : Object.keys(_data.zones).filter(function (e) { return ! /^Etc/.test(e) });
   for (var i = 0, length = set.length; i < length; i++) {
     try {
-      var table = transitions(_data, set[i]);
+      var table = transitions(_data, set[i]).table;
       var abbrevs = {};
       for (var j = 1, J = table.length; j < J; j++) {
         abbrevs[table[j].abbrev] = true;

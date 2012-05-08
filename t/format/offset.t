@@ -30,4 +30,3 @@ require("../proof") 17, ({ tz, moonwalk, utc }) ->
   @equal tz("1916-01-03", "Europe/Amsterdam", "%Z"), "AMT", "dst full abbrev change back"
   @equal tz("1916-07-03", "Europe/Amsterdam", "%Z"), "NST", "dst full abbrev change forward"
   @equal tz("1916-11-03", "Europe/Amsterdam", "%Z"), "AMT", "dst full abbrev change back"
-
