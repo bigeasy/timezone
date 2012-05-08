@@ -52,7 +52,7 @@ function nameOfClock (time) {
 }
 
 var file = process.argv[2]
-  , info = { rules: {}, zones: {} }
+  , info = { rules: {}, zones: {}, links: {} }
   , base = file.replace(/^.*\/(.*)$/, "$1")
   , name = null
   , lines = fs.readFileSync(file, "utf8").split(/\n/)
@@ -108,6 +108,7 @@ for (k = 0, K = lines.length; k < K; k++) {
 
       break;
     case "Link":
+      info.links[record[2]] = record[1];
       break;
     default:
       if (record[0] == "Zone") {
