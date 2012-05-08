@@ -24,7 +24,7 @@ var transitions = require("../lib/transitions");
   var set = process.argv[2] ? [ process.argv[2] ] : Object.keys(_data.zones).filter(function (e) { return ! /^Etc/.test(e) });
   for (var i = 0, length = set.length; i < length; i++) {
     try {
-      var table = transitions(_data, set[i]);
+      var table = transitions(_data, set[i]).table;
       var abbrevs = {};
       for (var j = 1, J = table.length; j < J; j++) {
         abbrevs[table[j].abbrev] = true;
