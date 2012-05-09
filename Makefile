@@ -1,6 +1,6 @@
 all: timezones iana/zoneinfo/America/Detroit
 	cp lib/indicies/timezones.js timezones/index.js
-	node bin/forward.js
+	node bin/zones.js
 	for dir in $$(find zones -type d); do \
 		cp lib/indicies/zones.js $$dir/index.js; \
 	done
@@ -44,3 +44,6 @@ timezones/%.js: iana/src/%
 
 timezones: timezones/africa.js timezones/antarctica.js timezones/asia.js timezones/australasia.js \
 	timezones/europe.js timezones/northamerica.js timezones/southamerica.js
+
+clean:
+	rm -rf zones timezones

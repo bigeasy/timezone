@@ -52,7 +52,7 @@ function nameOfClock (time) {
 }
 
 var file = process.argv[2]
-  , info = { rules: {}, zones: {} }
+  , info = { rules: {}, zones: {}, links: {} }
   , base = file.replace(/^.*\/(.*)$/, "$1")
   , name = null
   , lines = fs.readFileSync(file, "utf8").split(/\n/)
@@ -108,6 +108,7 @@ for (k = 0, K = lines.length; k < K; k++) {
 
       break;
     case "Link":
+      info.links[record[2]] = record[1];
       break;
     default:
       if (record[0] == "Zone") {
@@ -123,6 +124,8 @@ for (k = 0, K = lines.length; k < K; k++) {
       });
   }
 }
+
+function iso8601 (date) { return new Date(date).toISOString().replace(/\..*$/, "") }
 
 var zone, match, name;
 for (name in info.zones) {
@@ -154,6 +157,30 @@ for (name in info.zones) {
       record.until = false;
     }
   }
+  info.zones[name] = (function (zone) {
+    var copy = [];
+    for (var i = zone.length - 2; i >= 0; --i) {
+      copy[i] = {
+        rules: zone[i].rules,
+        format: zone[i].format,
+        offset: zone[i].offset * 1000,
+        save: 0,
+        clock: zone[i + 1].clock
+      };
+      copy[i][copy[i].clock] = zone[i + 1].until === false ? Number.MAX_VALUE : zone[i + 1].until * 1000;
+    }
+
+    copy.push({
+      offset: zone[zone.length - 1].offset * 1000,
+      format: zone[zone.length - 1].format,
+      save: 0
+    });
+
+    copy.reverse();
+    copy[0].posix = copy[0].wallclock = -Number.MAX_VALUE;
+    copy.slice(1).forEach(function (e) { e.begins =  iso8601(e[e.clock]) + " " + e.clock });
+    return copy;
+  })(zone);
 }
 
 process.stdout.write("module.exports = ");
