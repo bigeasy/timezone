@@ -1,5 +1,6 @@
 #!/usr/bin/env coffee
 require("../proof") 9, ({ tz, bicentennial, moonwalk, y2k }) ->
+  tz = tz require "../../date"
   @equal tz(y2k, "%j"), "001", "day of year y2k"
   @equal tz(moonwalk, "%j"), "202", "day of year moonwalk"
   @equal tz(bicentennial, "%j"), "186", "day of year bicentenial"
