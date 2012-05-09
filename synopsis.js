@@ -1,78 +1,141 @@
 // A walkthough of **Timezone**, a database friendly, timezone aware replacement
-// for the `Date` object that implements date parsing, date formatting, and date
-// math.
+// for the `Date` object that implements timezone conversions, timezone aware
+// date math, timezone and locale aware date formatting, for any date, anywhere
+// in the world, since the dawn of standardized time. 
 //
-// Timezone is a JavaScript library with no dependencies. It runs in the browser
-// and in Node.js. This walkthrough is in Node.js.  You can run this JavaScript
-// program with `node synopsis.js`.
+// **Timezone** is a JavaScript library with no dependencies. It runs in the
+// browser and in Node.js. This walkthrough is written for Node.js. You can run
+// this JavaScript program at the command line like so:
+//
+// ```
+// node synopsis.js
+// ```
+
+// ### Functional API
+
+// **Timezone** is a function. The API is a single function. When you import
+// **Timezone**, try assiging it to a terse variable name. We recommend `tz`.
 
 //
-var ok = require("assert"),
-    eq = require("assert").equal,
-    tz = require("./lib/timezone").tz;
+var ok = require("assert")
+  , tz = require("timezone");
 
 // ### POSIX Time
 //
-// Timezone replaces the `Date` object with [POSIX
-// time](http://en.wikipedia.org/wiki/Unix_time), milliseconds since the epoch,
-// for a cross-platform, internationalized, and durable representation of a
-// point in time.
+// Timezone replaces the JavaScript `Date` object with [POSIX
+// time](http://en.wikipedia.org/wiki/Unix_time) &mdash; milliseconds since the
+// epoch in UTC &mdash; for a cross-platform, internationalized, and durable
+// representation of a point in time.
+//
+// POSIX time is simple. POSIX time is always an integer. POSIX time is easy
+// store.  POSIX time is easy to sort. POSIX time is easy to compare.
+//
+// POSIX time is absolute. It always represents a time in UTC.
+//
+// Unless you provide a format specifier, the return value of a call to the
+// **Timezone** function will be POSIX time.
 
 // *Timezone returns number representing POSIX time by default.*
-var y2k = tz("2000/1/1");
+var y2k = tz("2000-01-01");
 
-// *The number is always an integer.*
-ok( y2k ===  946684800000 );
-// *The built in* `Date.UTC` *function also creates a number POSIX representing
-// posix time, so we can use it check our work.*
-ok( y2k === Date.UTC(2000, 0, 1) );
+// *The POSIX time number is always an integer, usually quite large.*
+ok( y2k ==  946684800000 );
 
-// The `tz` function returns POSIX time by default. We can use that value in
-// subsequent calls to `tz`, to perform date math for example.
+// The JavaScript `Date.UTC` function also creates a number POSIX representing
+// posix time, so we can use it check our work in our synopsis.
+
+// *Did **Timezone** give us the correct POSIX time for 2000?*
+ok( y2k == Date.UTC(2000, 0, 1) );
+
+// *The epoch is January 1st, 1970 UTC.*
+ok( tz("1970-01-01") == 0 );
+
+// We can pass POSIX time as the date argument to the **Timezone** function. The
+// date argument is always first argument to the **Timezone** function.
 
 // *Add a millisecond to Y2K.*
 ok( tz(y2k, "+1 millisecond") === y2k + 1 );
 
-// We can also parse a date and offset it with date math in one fell swoop.
-
-// *Add a millisecond to Y2K.*
-ok( tz("2000/1/1", "+1 millisecond") === y2k + 1 );
+// *Nothing to do, so it returns the same POSIX time value it got.*
+ok( tz(y2k) == y2k );
 
 // POSIX time is durable and portable. It represents and unambiguous point in
-// time, free of timezone offsets, daylight savings time, and all the other
-// whimsical maniplutations of local governments.
+// time, free of timezone offsets, daylight savings time; all the whimsical
+// maniplutations of local governments.
 
 // POSIX time is perfect for sorting and comparisons.
 
 // *An event that occured in the first full week after Y2K.*
-ok( tz("2000/01/03") < tz("2000/01/01", "+1 monday", "+7 days") );
+ok( tz("2000-01-02") < tz("2000-01-01", "-1 day", "+1 monday") );
+
+// Timezone accepts either a POSIX time integer, or else an RFC 3999 date
+// string. It always returns a POSIX time integer unless a `strftime` format
+// string is present.
+
+// *Note the extra call to `tz` that does nothing.*
+ok( tz(tz("2000-01-01")) == y2k );
+
+// When you need the time of the system clock, just call `tz()` with no
+// arguments. If you want to do date math or formatting with the current time,
+// call `tz()` and pass its return value in as the date argument to another
+// call to `tz`.
 
 // *Today is greater than yesterday.*
-ok( tz(tz.now, "-1 day") < tz(tz.now) );
-
-// *The epoch is January 1st, 1970 UTC.*
-ok( tz("1970/01/01") === 0 );
+ok( tz(tz(), "-1 day") < tz() );
 
 // *Today is greater than the epoch.*
-ok( tz(tz.now) > tz("1970/01/01") );
+ok( tz() > tz("1970-01-01") );
 
 // *Apollo 11 was before the epoch.*
 ok( tz("1969-07-21 02:39") < 0 );
 
 // ### Date Strings
 
-// Timezone uses [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) or [RFC
-// 822](http://www.ietf.org/rfc/rfc0822.txt) dates to represent wallclock time.
-// It can parse any ISO 8601 or RFC 822 date.
+// Timezone uses [RFC 3999](http://www.ietf.org/rfc/rfc3339.txt) for date
+// strings. RFC 3999 is a well-resonsed subset of the ISO 8601 standard, which
+// is larger than you might imagine. RFC 3999 is the string date format for use
+// in new Internet protocols going forward. It superceeds the RFC 2822 date
+// format you're familiar with in HTTP headers.
+//
+// You've seen us parsing RFC 3999 date strings above. Let's look at a few more
+// variations.
 
-// *Parse an ISO 8601 date.*
+// *Parse an RFC 3999 date with a time in seconds.*
 ok( tz("2000-01-01T00:00:00") === y2k );
 
-// *Parse a date that kinda looks like an ISO 8601 date.*
+// My goodness, that `T` is silly. It's part of ISO 8601, but RFC 3999 lets us
+// replace it with a space so it's easier to read. We're not going to use it
+// again.
+
+// *Parse an RFC 3999 date with a time in seconds, using the optional space to
+// replace that silly `T`.*
 ok( tz("2000-01-01 00:00:00") === y2k );
 
-// *Parse just the date.*
+// *Parse an RFC 3999 date with just the date, no time.*
 ok( tz("2000-01-01") === y2k );
+
+// *Parse an RFC 3999 date with the date and a time in minutes.*
+ok( tz("2000-01-01 00:00") === y2k );
+
+// *Parse an RFC 3999 date with a time zone offset.*
+ok( tz("1999-12-31 00:00-04:00") === y2k );
+
+// We've gone and extended RFC 3999 for two special cases. First, We've added
+// milliseconds.
+
+// *Parse an RFC 3999 looking date with the date and a time in milliseconds.*
+ok( tz("2000-01-01 00:00:00.0") === y2k );
+
+// Second, we allow timezone offsets to include seconds. You'll see seconds in
+// the offsets around the turn of the 19th century.
+
+// *Parse an RFC 3999 date with a time zone offset with seconds.*
+ok( tz("1999-12-31 00:00-04:00:00") === y2k );
+
+// We use RFC 3999 date strings for an easy to type, easy to read, unambiguous
+// date literal. When we want to type out a date in our code, or store a string
+// representation in a message header or log file, we use RFC 3999.
+
 
 var moonwalk;
 
@@ -81,14 +144,88 @@ moonwalk = tz("1969-07-21T02:39");
 // *Let's use `Date.UTC` to check our moon walk timestamp.*
 ok( moonwalk === Date.UTC(1969, 6, 21, 2, 39) );
 
+// If you need to parse some other form of date string, we've got a way to do
+// that below, but let's look at timezones first.
+
+// ### Timezones &mdash; Time O' Clock
+//
+// When timezones are play, we're no longer dealing with POSIX time. We're
+// dealing with time that has been localized so that it matches the time
+// acording to the clock on the user's wall.
+//
+// That's why we call it wall-clock time.
+//
+// Wall-clock time is determined according to the laws or rules of a government
+// or adminstrative body. Wall-clock time is determined by applying the timezone
+// offset for the locality, plus any daylight savings offsets.
+//
+// We don't venture a guess as to what these offsets might be. No. We use the
+// IANA Timezone Database to convert POSIX time to precisely the best guess of
+// what the wall-clock of a user's chosen locality might be maybe. That is, the
+// new batch of folks at the IANA, Arthur David Olson, Paul Eggert, and lots of
+// volunteers, have done their best to keep track of all the rule changes, and
+// they are going to venture a much better guess than our own.
+
+// We first need to load a timezone rule set from the IANA timezone database.
+// Let's create a `tz` function that knows about most of the US timezones.
+
+// *South American as well, also Canada and Mexico, no Hawaii.*
+var us = tz(require("zones/America"));
+
+// Our new **Timezone** function knows the rules for a lot of timezones. Not
+// only in the United States, but in Canada, Mexico and all of South America.
+// We can use these rules to work with wall-clock time.
+
+// If we don't specify a zone name, out new `us` function will behave just as
+// old `tz` function did.
+
+// *Time of the moon walk in UTC.*
+var moonwalk = us("1969-07-21 02:39");
+
+// *Does* `Date.UTC` *agree?*
+ok( us("1969-07-21 02:39") == Date.UTC(1969, 6, 21, 2, 39) );
+
+// However, if we name a zone rule set, we will parse that RFC 3999 date as
+// wall-clock time, not UTC. Here we use the `"America/Detroit"` timezone rule
+// set to parse 10:39 PM wall-clock time the day before the moon walk.
+
+// *Hope the kids got to stay up late!*
+ok( us("1969-07-20 22:39", "America/Detroit") == moonwalk );
+
+// We can parse 7:39 PM in California.
+
+// *Prime time in California.*
+ok( us("1969-07-20 19:39", "America/Los_Angeles") == moonwalk );
+
+// ### GNU/UNIX Date Formats
+//
+// **Timezone** implements `strftime`. It extends `strftime` to include all of
+// the GNU `date` extensions that you'll find when you type `info date` on your
+// Linux machine.
+//
+// The `strftime` format strings are always a single character format specifier,
+// preceeded by a `%`. 
+
+// *Happy not yet New Years!*
+ok( us("1999-12-31 20:00", "America/Detroit") == y2k );
+
+// ### Date Arrays
+
+// Sometimes your input comes not as a stamp, but from a GUI control like a date
+// picker. You can use **Timezone** to convert a time provided by a timezone
+// challenged UI control, into a time in the prefered timezone of your user.
+
+
+var picker = [ 1969, 7, 21, 2, 39 ];
+
+ok( moonwalk == tz(picker) );
+
+// Maybe your user is in a far off 
+
+// You easily parse other date formats. 
+
 // *Parse an RFC 822 date.*
 ok( tz("Sat, 01 Jan 2000 00:00:00 GMT") === y2k );
-
-// *Parse a slash delimited date.*
-ok( tz("2000/1/1") === y2k );
-
-// *Parse a US English slash delimited date.*
-ok( tz("1/1/2000") === y2k );
 
 // While Timezone can parse a handful of time looking things, it doesn't do
 // fuzzy parsing. Natural language is out of scope.
@@ -105,15 +242,17 @@ ok( tz("1/1/2000") === y2k );
 //
 // Timezone can create any date format by supporting the full compliment of [GNU
 // date](http://en.wikipedia.org/wiki/Date_%28Unix%29) format specifiers.
+//
+// The **Timezone** function is essentially an imple:wq
 
 // *Format POSIX time using a GNU date format string.*
-ok( tz(y2k, "%m/%d/%Y") === "01/01/2000" );
+ok( tz(y2k, "%m/%d/%Y") === "01/01/2000", "Date with leading zeros." );
 
-// *You can adjust the padding with padding specifiers.*
-ok( tz(y2k, "%-m/%-d/%Y") === "1/1/2000" );
+// *You can adjust the padding with padding flags.*
+ok( tz(y2k, "%-m/%-d/%Y") === "1/1/2000", "Date without leading zeros." );
 
 // *Two digit year? Yeah, that's right! I don't **learn** lessons.*
-ok( tz(y2k, "%-m/%-d/%y") === "1/1/00" );
+ok( tz(y2k, "%-m/%-d/%y") === "1/1/00", "Date with two digit year." );
 
 // *Format date and time.*
 ok( tz(moonwalk, "%m/%d/%Y %H:%M:%S") === "07/21/1969 02:39:00" );
@@ -121,20 +260,20 @@ ok( tz(moonwalk, "%m/%d/%Y %H:%M:%S") === "07/21/1969 02:39:00" );
 // Timezone has some common formats ready to use.
 
 // *Format ISO 8601 date.*
-eq( tz(moonwalk, tz.iso8601date), "12/31/1999 19:00:00" );
+//eq( tz(moonwalk, tz.iso8601date), "12/31/1999 19:00:00" );
 
 // *Format ISO 8601 date and time.*
-ok( tz(moonwalk, tz.iso8601date) === "12/31/1999 19:00:00" );
+//ok( tz(moonwalk, tz.iso8601date) === "12/31/1999 19:00:00" );
 
 // *Format ISO 8601 date, time and milliseconds.*
-ok( tz(moonwalk, tz.iso8601date) === "12/31/1999 19:00:00" );
+//ok( tz(moonwalk, tz.iso8601date) === "12/31/1999 19:00:00" );
 
 // *Format RFC 822 date.*
-ok( tz(moonwalk, tz.iso8601date) === "12/31/1999 19:00:00" );
+//ok( tz(moonwalk, tz.iso8601date) === "12/31/1999 19:00:00" );
 
 // RFC 3339, based on ISO 8601, but, like GNU coreutils, taking advantage of the
 // RFC 3339 caveat to replace the `T` with a space for readability.
-ok( tz(y2k, tz.rfc3339date) == "TK" );
+//ok( tz(y2k, tz.rfc3339date) == "TK" );
 
 // GNU date has all sorts of format variables for you to work with.
 // 
@@ -152,13 +291,19 @@ ok( tz(y2k, tz.rfc3339date) == "TK" );
 // and Europe.
 
 // *Create a* `tz` *that knows about  North American timezones.*
-tz = tz(require("./timezones/northamerica"), require("./timezones/europe"));
+tz = tz(require("timezone/zones/America"), require("timezone/zones/Europe"));
 
+console.log( "HERE" );
+console.log( tz(y2k, "%m/%d/%Y %H:%M:%S") );
+console.log( tz(y2k, "%m/%d/%Y %H:%M:%S", "America/Detroit") );
 // Now we can format our POSIX time while applying North American timezone
 // rules.
 
 // *Format POSIX time applying the timezone rules for Detroit, Michigan.*
 ok( tz(y2k, "%m/%d/%Y %H:%M:%S", "America/Detroit") === "12/31/1999 19:00:00" );
+
+console.log("It worked!");
+process.exit(0);
 
 // You can see the difference the timezone makes. With it the day of the
 // moonwalk changes.
@@ -466,3 +611,8 @@ bicentenial = tz(tz("1989/07/14", "Europe/Paris"), "America/Detroit", "%c");
 // Need a place to put maybes.
 //
 // All natural language processing is OUT OF SCOPE.
+
+// As you saw above
+
+// *Parse a date string and add millisecond.*
+ok( tz("2000-01-01", "+1 millisecond") === y2k + 1 );
