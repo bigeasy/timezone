@@ -7,7 +7,7 @@ var ABBREV = "Sun Mon Tue Wed Thu Fri Sat".split(/\s/);
 
 function write (name, skipList, data) {
   var zone = skipList.map(function (e) {
-    return {
+    e = {
       wallclock: e.wallclock
     , format: e.format
     , abbrev: e.abbrev
@@ -16,6 +16,8 @@ function write (name, skipList, data) {
     , save: e.save
     , rules: e.rules
     };
+    if (typeof e.rules != "string") delete e.rules;
+    return e;
   })
   zone.forEach(function (e) { if (e.rules == null || e.rules === false)  delete e.rules });
   var rules = {};
