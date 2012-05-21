@@ -3,10 +3,11 @@ function say() {
 }
 
 var transitions = require("../lib/transitions");
+var ABBREV = "Sun Mon Tue Wed Thu Fri Sat".split(/\s/);
 
 function write (name, skipList, data) {
   var zone = skipList.map(function (e) {
-    return {
+    e = {
       wallclock: e.wallclock
     , format: e.format
     , abbrev: e.abbrev
@@ -15,17 +16,46 @@ function write (name, skipList, data) {
     , save: e.save
     , rules: e.rules
     };
+    if (typeof e.rules != "string") delete e.rules;
+    return e;
   })
   zone.forEach(function (e) { if (e.rules == null || e.rules === false)  delete e.rules });
   var rules = {};
   zone.forEach(function (e) { if (typeof e.rules == "string") rules[e.rules] = data.rules[e.rules].slice(0) });
   for (var key in rules) rules[key].sort(function (a, b) { return b.to - a.to });
+  for (var key in rules) rules[key].forEach(function (e) {
+    switch (e.clock) {
+    case "standard":
+      if (e.saved == null) break;
+      e.clock = "wallclock"
+      e.time += (e.saved / 6e4);
+      if (e.time / 60 > 24) {
+        throw new Error("Failed: " + key + ", " + (e.time / 60));
+      }
+      break;
+    default:
+      if (!e.saved) e.saved = 0;
+      break;
+    }
+  });
   for (var key in rules) rules[key] = rules[key].map(function (e) {
+    var date = /^(?:(\d+)|last(\w+)|(\w+)>=(\d+))$/.exec(e.day), day, i, I;
+    if (date[1]) {
+      day = [ -1, parseInt(date[1], 10) ];
+    } else if (date[2]) {
+      for (i = 0, I = ABBREV.length; i < I; i++)
+        if (ABBREV[i] === date[2]) break;
+      day = [ i, -31 ];
+    } else {
+      for (i = 0, I = ABBREV.length; i < I; i++)
+        if (ABBREV[i] === date[3]) break;
+      day = [ i, parseInt(date[4], 10) ];
+    }
     return {
       from: e.from
     , to: e.to
     , month: e.month
-    , day: e.day
+    , day: day
     , time: e.time
     , clock: e.clock
     , save: e.save
