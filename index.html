@@ -14,10 +14,6 @@
 <p>Compact, timezone aware time and date library for JavaScript, for use in Node.js
 and the browser. </p>
 
-<ul>
-<li>http://www.iana.org/time-zones</li>
-</ul>
-
 <p>Timezone is a database friendly, timezone aware replacement for the <code>Date</code>
 object that implements date parsing, date formatting, and date math.</p>
 
@@ -26,79 +22,147 @@ time</a>, milliseconds since the epoch, for
 a cross-platform, internationalized, and durable representation of a point in
 time.</p>
 
-<p>The Timezone library uses the <a href="http://cs.ucla.edu/~eggert/tz/tz-link.htm">Olson timezone
-database</a>, to create a database of
-timezone rules, one per continent, in a compact JSON representation, so you can,
-with some confidence, determine the correct local time of any place in the
-world, since 1970.</p>
-
 <p>Timezone uses <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> or <a href="http://www.ietf.org/rfc/rfc0822.txt">RFC
 822</a> dates to represent wallclock time. It
 can parse any ISO 8601 or RFC 822 date. It can create any date format by
 supporting the full compliment of <a href="http://en.wikipedia.org/wiki/Date_%28Unix%29">GNU
 date</a> format specifiers.</p>
 
-<h2>Overview</h2>
+<p>The Timezone library uses the <a href="http://www.iana.org/time-zones">IANA Timezone
+Database</a>, to create a database of timezone
+rules, one per continent, in a compact JSON representation. With it, you can
+determine the correct local time, since 1970, of any place in the world.</p>
 
-<p>Timezone is a timezone aware date library for JavaScript that</p>
+<p>In addition to all this, Timezone performs timezone aware date math, accounting
+for daylight savings time, leap years and radical changes to timezone offsets.</p>
 
-<ul>
-<li>formats dates using UNIX date format specifiers,</li>
-<li>formats dates adjusting for timezone and daylight savings time,</li>
-<li>formats dates according to a specified locale,</li>
-<li>parses RFC 822 and ISO 8601 dates,</li>
-<li>parses some additional common date formats,</li>
-<li>parses dates adjusting for timezone and daylight savings time,</li>
-<li>parses dates according to a specified locale,</li>
-<li>adds and subtracts intervals in local time adjusting for daylight savings
-time and leap days.</li>
-</ul>
+<p>Timezone is a complete time library that knows all about the vagaries of time.</p>
 
-<p>Timezone uses POSIX time, milliseconds since the epoch represented as a
-JavaScript <code>Number</code>. Timezone does not monkey patch the JavaScript <code>Date</code>
-object. Timezone replaces the JavaScript <code>Date</code> object with POSIX time.</p>
+<h2>The <code>tz</code> Function and Time Types</h2>
 
-<h2>Time Types</h2>
+<p>Timezone exports a single <code>tz</code> function. This function does everything.</p>
 
-<p>Timezone works with one of two types of date value,</p>
+<h3>POSIX Time and Date Strings</h3>
 
-<ul>
-<li>POSIX time,</li>
-<li>or date strings.</li>
-</ul>
+<p>Timezone uses <strong><em>POSIX time</em></strong>, milliseconds since the epoch in UTC, for a universal
+representation of a point in time. Timezone uses <strong><em>date strings</em></strong> to represent
+wallclock time, the time of the clock on the wall, with timezone offsets
+applied.</p>
 
-<p>Timezone uses POSIX time, milliseconds since the epoch in UTC, for a universal
-representation of a point in time.</p>
+<p>When the first argument to <code>tz</code> is a date, the date is parsed, formatted, or
+offset by date math operations. Here we parse a date.</p></div>
 
-<p>Timezone uses date strings to represent local time.</p>
+<div class="docs"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">y2k</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;2000/1/1&quot;</span><span class="p">);</span>
+<span class="nx">ok</span><span class="p">(</span> <span class="nx">y2k</span> <span class="o">===</span> <span class="mi">88927498237492734927</span> <span class="p">);</span></pre></div></div>
 
-<p>The first argument to <code>tz</code> is always a date, usually POSIX time as an integer,
-or else a date string.</p></div>
+<div class="docs"><p>The <code>tz</code> function returns POSIX time by default. We can use that value in
+subsequent calls to <code>tz</code>, to perform date math for example.</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="c1">// Create a POSIX time integer from a timestamp.</span>
-<span class="kd">var</span> <span class="nx">bicentenial</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1976-07-04&quot;</span><span class="p">);</span>
-<span class="nx">eq</span><span class="p">(</span><span class="mi">88927498237492734927</span><span class="p">,</span> <span class="nx">bicentenial</span><span class="p">);</span>
+<div class="docs"><div class="highlight"><pre>
+<span class="nx">ok</span><span class="p">(</span> <span class="nx">tz</span><span class="p">(</span><span class="nx">y2k</span><span class="p">,</span> <span class="s2">&quot;+1 millisecond&quot;</span><span class="p">)</span> <span class="o">===</span> <span class="nx">y2k</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">);</span></pre></div></div>
 
-<span class="c1">// Now you can use the POSIX time as a date.</span>
-<span class="nx">eq</span><span class="p">(</span><span class="mi">98327943274923794329</span><span class="p">,</span> <span class="nx">tz</span><span class="p">(</span><span class="nx">bicentenial</span><span class="p">,</span> <span class="s2">&quot;+1 millisecond&quot;</span><span class="p">));</span>
+<div class="docs"><p>We can also parse a date and offset it with date math in one fell swoop.</p></div>
 
-<span class="c1">// You can use a date string if you prefer.</span>
-<span class="nx">eq</span><span class="p">(</span><span class="mi">98327943274923794329</span><span class="p">,</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1976-07-04&quot;</span><span class="p">,</span> <span class="s2">&quot;+1 millisecond&quot;</span><span class="p">));</span>
+<div class="docs"><div class="highlight"><pre>
+<span class="nx">ok</span><span class="p">(</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1976-07-04&quot;</span><span class="p">,</span> <span class="s2">&quot;+1 millisecond&quot;</span><span class="p">)</span> <span class="o">===</span> <span class="nx">y2k</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">);</span></pre></div></div>
 
-</pre></div></div>
+<div class="docs"><p>By default, we use <strong><em>POSIX time</em></strong> to represent a point in time. The build in
+<code>Date.UTC</code> function also returns a POSIX time, so we can use it for comparison.</p></div>
 
-<div class="docs"><p>To express dates in your source code, simply type them out as strings and pass
+<div class="docs"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">eq</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;assert&quot;</span><span class="p">).</span><span class="nx">equal</span><span class="p">,</span>
+    <span class="nx">tz</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./lib/timezone&quot;</span><span class="p">).</span><span class="nx">tz</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">y2k</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;2000/1/1&quot;</span><span class="p">);</span>
+<span class="nx">ok</span><span class="p">(</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">===</span> <span class="nx">y2k</span> <span class="p">);</span>
+
+<span class="nx">ok</span><span class="p">(</span> <span class="nx">tz</span><span class="p">(</span><span class="nx">y2k</span><span class="p">,</span> <span class="s2">&quot;+1 millisecond&quot;</span><span class="p">)</span> <span class="o">===</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">);</span></pre></div></div>
+
+<div class="docs"><p>Timezone returns <strong><em>date strings</em></strong> for local time with locales and timezones
+applied. If you provide a format specifier, Timezone returns a string instead of
+POSIX time.</p></div>
+
+<div class="docs"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">ok</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;assert&quot;</span><span class="p">),</span>
+    <span class="nx">tz</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./lib/timezone&quot;</span><span class="p">).</span><span class="nx">tz</span><span class="p">;</span>
+
+<span class="nx">ok</span><span class="p">(</span> <span class="nx">tz</span><span class="p">(</span><span class="nx">y2k</span><span class="p">,</span> <span class="s2">&quot;%-m/%-d/%Y %H:%M:%S&quot;</span><span class="p">)</span> <span class="o">===</span> <span class="s2">&quot;1/1/2000 00:00:00&quot;</span> <span class="p">);</span></pre></div></div>
+
+<div class="docs"><h2>Working With Timezones</h2>
+
+<p>We load timezones using our <code>tz</code> function to create a <code>tz</code> function that is
+aware of the timezone. We can do this in one fell swoop at initialization.</p></div>
+
+<div class="docs"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">ok</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;assert&quot;</span><span class="p">),</span>
+    <span class="nx">tz</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./lib/timezone&quot;</span><span class="p">).</span><span class="nx">tz</span><span class="p">;</span>
+
+<span class="nx">tz</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./timezones/northamerica&quot;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">y2k</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;2000/1/1&quot;</span><span class="p">);</span>
+<span class="nx">ok</span><span class="p">(</span> <span class="nx">y2k</span> <span class="o">===</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="nx">ok</span><span class="p">(</span> <span class="nx">tz</span><span class="p">(</span><span class="nx">y2k</span><span class="p">,</span> <span class="s2">&quot;%m/%d/%Y %H:%M:%S&quot;</span><span class="p">,</span> <span class="s2">&quot;America/Detroit&quot;</span><span class="p">)</span> <span class="o">===</span> <span class="s2">&quot;12/31/1999 19:00:00&quot;</span> <span class="p">);</span></pre></div></div>
+
+<div class="docs"><p>Be careful. We use timezones to both parse date strings and format date strings.
+In the above example, we first call <code>tz</code> to convert <code>"2000/1/1"</code> to POSIX time.
+This parses <code>"2000/1/1"</code> with a UTC timezone.</p>
+
+<p>We then call <code>tz</code> again with our POSIX time value, an absolute point in time,
+and convert it to the correct time for the <code>"America/Detroit"</code> timezone.</p>
+
+<p>We can specify a timezone when we parse as well.</p></div>
+
+<div class="docs"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">ok</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;assert&quot;</span><span class="p">),</span>
+    <span class="nx">tz</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./lib/timezone&quot;</span><span class="p">).</span><span class="nx">tz</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./timezones/northamerica&quot;</span><span class="p">));</span>
+
+<span class="nx">eq</span><span class="p">(</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;12/31/1999 19:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;America/Detroit&quot;</span><span class="p">)</span> <span class="o">===</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">);</span></pre></div></div>
+
+<div class="docs"><p>Remember that local time can only be represented as a string, because POSIX time
+is always UTC.</p>
+
+<p>The timezone file contains a JavaScript object defining the timezone. You can
+load it using require, or in the browser by including them with a script tag.</p>
+
+<p>Note that we can only apply one timezone at a time. If you want to convert from
+one timezone to another, you need to pass the result of </p>
+
+<p>To format a time using timezone, load a timezone file. The timezone file
+contains a JavaScript object defining the timezone. You can load it using
+require, or in the browser by including them with a script tag.</p></div>
+
+<div class="docs"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">eq</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;assert&quot;</span><span class="p">).</span><span class="nx">equal</span><span class="p">,</span>
+    <span class="nx">tz</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./lib/timezone&quot;</span><span class="p">).</span><span class="nx">tz</span><span class="p">;</span>
+
+<span class="c1">// Load a timezone, returning a new tz function.</span>
+<span class="nx">tz</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./timezones/northamerica&quot;</span><span class="p">));</span>
+
+<span class="c1">// Get the POSIX time of Y2K.</span>
+<span class="kd">var</span> <span class="nx">y2k</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;2000/1/1&quot;</span><span class="p">);</span>
+<span class="nx">eq</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nx">y2k</span><span class="p">);</span>
+
+<span class="c1">// To display local time you format a POSIX time specifing a timezone.</span>
+<span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;12/31/1999 19:00:00&quot;</span><span class="p">,</span> <span class="nx">tz</span><span class="p">(</span><span class="nx">y2k</span><span class="p">,</span> <span class="s2">&quot;%m/%d/%Y %H:%M:%S&quot;</span><span class="p">,</span> <span class="s2">&quot;America/Detroit&quot;</span><span class="p">));</span></pre></div></div>
+
+<div class="docs"><p>Timezone exports a single function <code>tz</code>, that accepts a time as its first
+argument, and performs operations according to the remaining argument. The
+position of the opertion arguments does not matter.</p>
+
+<p>There is no <code>Date</code> object in the Timezone library.</p>
+
+<p>To express dates in your source code, simply type them out as strings and pass
 them to <code>tz</code>. If you're just scripting away, it's nice to be able to specify a
 date by typing it out as a string.</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="c1">// The year end clearence sale ends at year&#39;s end.</span>
+<div class="docs"><div class="highlight"><pre>
+<span class="c1">// The year end clearence sale ends at year&#39;s end.</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">tz</span><span class="p">(</span><span class="nx">tz</span><span class="p">.</span><span class="nx">now</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;2012-01-01&quot;</span><span class="p">))</span> <span class="p">{</span>
   <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#screaming-banner&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Take advantage of our Year End Clearence Sale!&quot;</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
   <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#screaming-banner&quot;</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
-<span class="p">}</span>
-
-</pre></div></div>
+<span class="p">}</span></pre></div></div>
 
 <div class="docs"><p>Note that you can get the current time by passing <code>tz.now</code> as the first
 parameter.</p>
@@ -107,20 +171,18 @@ parameter.</p>
 fields values by another means, like drop downs in an HTML form. Unlike the
 <code>Date</code> object, the first month of the year is 1, not 0.</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="nx">eq</span><span class="p">(</span><span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1976-07-04&quot;</span><span class="p">),</span> <span class="nx">tz</span><span class="p">([</span> <span class="mi">1976</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span> <span class="p">]));</span>
-<span class="nx">eq</span><span class="p">(</span><span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1969-06-21 02:36&quot;</span><span class="p">),</span> <span class="nx">tz</span><span class="p">([</span> <span class="mi">1969</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">36</span> <span class="p">]));</span>
-
-</pre></div></div>
+<div class="docs"><div class="highlight"><pre>
+<span class="nx">eq</span><span class="p">(</span><span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1976-07-04&quot;</span><span class="p">),</span> <span class="nx">tz</span><span class="p">([</span> <span class="mi">1976</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span> <span class="p">]));</span>
+<span class="nx">eq</span><span class="p">(</span><span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1969-06-21 02:36&quot;</span><span class="p">),</span> <span class="nx">tz</span><span class="p">([</span> <span class="mi">1969</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">36</span> <span class="p">]));</span></pre></div></div>
 
 <div class="docs"><p>If you need pass in a <code>Date</code> object, the value of <code>Date.getTime()</code> is used.</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="c1">// To get a correct date from JavaScript&#39;s `Date`, use a `Date.UTC`.</span>
+<div class="docs"><div class="highlight"><pre>
+<span class="c1">// To get a correct date from JavaScript&#39;s `Date`, use a `Date.UTC`.</span>
 <span class="kd">var</span> <span class="nx">moonwalk</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">1969</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">36</span><span class="p">));</span>
 
 <span class="c1">// Now we have a Date object, let&#39;s use tz to format it.</span>
-<span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;6/21/69 2:36&quot;</span><span class="p">,</span> <span class="nx">tz</span><span class="p">(</span><span class="nx">moonwalk</span><span class="p">.</span><span class="nx">getTime</span><span class="p">(),</span> <span class="s2">&quot;%-m/%-d/%Y %-H:%M&quot;</span><span class="p">));</span>
-
-</pre></div></div>
+<span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;6/21/69 2:36&quot;</span><span class="p">,</span> <span class="nx">tz</span><span class="p">(</span><span class="nx">moonwalk</span><span class="p">.</span><span class="nx">getTime</span><span class="p">(),</span> <span class="s2">&quot;%-m/%-d/%Y %-H:%M&quot;</span><span class="p">));</span></pre></div></div>
 
 <div class="docs"><p>Using the <code>Date</code> object is problematic. If you create a date using the Date
 constructor, the timezone offset is applied at creation, so it is aribitrary and
@@ -131,23 +193,21 @@ we use Date.UTC to create a Date in a convoluted way.</p>
 
 <p>Any string containing a '%' is considered a date format.</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;07/04/1976&quot;</span><span class="p">,</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1976-07-04&quot;</span><span class="p">,</span> <span class="s2">&quot;%m/%d/%Y&quot;</span><span class="p">));</span>
-
-</pre></div></div>
+<div class="docs"><div class="highlight"><pre>
+<span class="nx">eq</span><span class="p">(</span><span class="s2">&quot;07/04/1976&quot;</span><span class="p">,</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1976-07-04&quot;</span><span class="p">,</span> <span class="s2">&quot;%m/%d/%Y&quot;</span><span class="p">));</span></pre></div></div>
 
 <div class="docs"><p>The date format specifiers are UNIX date format specifiers.</p>
 
 <p>There is no way to specify a format that does not contain a '%'.</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">format</span><span class="p">;</span>
+<div class="docs"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">format</span><span class="p">;</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">authenticated</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">format</span> <span class="o">=</span> <span class="s2">&quot;%Y/%m/%d&quot;</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
   <span class="nx">format</span> <span class="o">=</span> <span class="s2">&quot;I won&#39;t give unauthenticated users the time of day.&quot;</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nx">alert</span><span class="p">(</span><span class="nx">tz</span><span class="p">(</span><span class="nx">tz</span><span class="p">.</span><span class="nx">now</span><span class="p">,</span> <span class="nx">format</span><span class="p">));</span>
-
-</pre></div></div>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">tz</span><span class="p">(</span><span class="nx">tz</span><span class="p">.</span><span class="nx">now</span><span class="p">,</span> <span class="nx">format</span><span class="p">));</span></pre></div></div>
 
 <div class="docs"><p>Timezone comes with a few locales. If you'd like to contribute a locale, simply
 create a JSON file in the right format and open a ticket.</p>
@@ -183,23 +243,22 @@ time for a particular timezone.</p>
 <code>tz.number</code> parameter. The <code>tz.number</code> parameter will run the format specifier
 through <code>parseInt</code> and return that value.</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="c1">// Get the year as an integer.</span>
-<span class="nx">eq</span><span class="p">(</span><span class="mi">1976</span><span class="p">,</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1976-07-04&quot;</span><span class="p">,</span> <span class="nx">tz</span><span class="p">.</span><span class="kr">int</span><span class="p">,</span> <span class="s2">&quot;%Y&quot;</span><span class="p">));</span>
-
-</pre></div></div>
+<div class="docs"><div class="highlight"><pre>
+<span class="c1">// Get the year as an integer.</span>
+<span class="nx">eq</span><span class="p">(</span><span class="mi">1976</span><span class="p">,</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1976-07-04&quot;</span><span class="p">,</span> <span class="nx">tz</span><span class="p">.</span><span class="kr">int</span><span class="p">,</span> <span class="s2">&quot;%Y&quot;</span><span class="p">));</span></pre></div></div>
 
 <div class="docs"><p>If you really do need the year of a timestamp as an integer, you won't have to
 go running back to JavaScript's <code>Date</code>. Plus, you're able to use this invocation
 to get integer values that <code>Date</code> doesn't provide.</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="c1">// Get the day of the year.</span>
-<span class="nx">eq</span><span class="p">(</span><span class="mi">186</span><span class="p">,</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1976-07-04&quot;</span><span class="p">,</span> <span class="nx">tz</span><span class="p">.</span><span class="kr">int</span><span class="p">,</span> <span class="s2">&quot;%j&quot;</span><span class="p">));</span>
-
-</pre></div></div>
+<div class="docs"><div class="highlight"><pre>
+<span class="c1">// Get the day of the year.</span>
+<span class="nx">eq</span><span class="p">(</span><span class="mi">186</span><span class="p">,</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1976-07-04&quot;</span><span class="p">,</span> <span class="nx">tz</span><span class="p">.</span><span class="kr">int</span><span class="p">,</span> <span class="s2">&quot;%j&quot;</span><span class="p">));</span></pre></div></div>
 
 <div class="docs"><p>The <code>tz.array</code> parameter causes <code>tz</code> to return the field values as an array.</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="nx">eq</span><span class="p">([</span> <span class="mi">1969</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1969-06-21 02:36&quot;</span><span class="p">,</span> <span class="nx">tz</span><span class="p">.</span><span class="nx">array</span><span class="p">)).</span>
+<div class="docs"><div class="highlight"><pre>
+<span class="nx">eq</span><span class="p">([</span> <span class="mi">1969</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1969-06-21 02:36&quot;</span><span class="p">,</span> <span class="nx">tz</span><span class="p">.</span><span class="nx">array</span><span class="p">)).</span>
 
 </pre></div></div>
 
@@ -208,7 +267,9 @@ to get integer values that <code>Date</code> doesn't provide.</p></div>
 <h2>Living with POSIX Time</h2>
 
 <p>Time is confusing. Conventions help. Timezone suggests a way of working with
-time that is approrpriate for most applications.</p>
+time that is approrpriate for most applications. If you have opinions on this
+subject, they are probably strong opinions, given how rarely people give
+timezones and DST serious consideration.</p>
 
 <p>Use POSIX time. In your application use integers to store POSIX time. When
 wallclock time is needed, you use a date format to display it as a string. It is

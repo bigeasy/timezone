@@ -76,9 +76,7 @@ string, you're making a mistake.</p></div>
                <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span>
                <span class="nx">date</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span>
   <span class="p">}</span>
-<span class="p">}</span>
-
-</pre></div></div>
+<span class="p">}</span></pre></div></div>
 
 <div class="docs"><p>When you create a <code>Date</code> object it will offset the field values by the timezone
 offset of the computer at the time of the <code>Date</code> object's creation. You cannot
@@ -88,16 +86,15 @@ reset that offset.</p>
 effect when you create the date. If you are providing dates as strings, you
 might build a local date with the following date parser.</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">brokenParseDate</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+<div class="docs"><div class="highlight"><pre>
+<span class="kd">function</span> <span class="nx">brokenParseDate</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">parts</span> <span class="o">=</span> <span class="sr">/(\d{2})\/\d{2}\/\d{4}/</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">string</span><span class="p">);</span>
   <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">parts</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">parts</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="mi">10</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="nx">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
   <span class="k">return</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">parts</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="nx">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">parts</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
-<span class="p">}</span>
-
-</pre></div></div>
+<span class="p">}</span></pre></div></div>
 
 <div class="docs"><h3>Time is Not Object-Oriented</h3>
 
@@ -135,18 +132,18 @@ object is an exercise in object-orientation with a contrived result.</p>
 to define them. It is easier to think of the pattern we want to match, if we
 express it as a pattern.</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="sr">/$[0-9a-zA-Z]/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;$a1&quot;</span><span class="p">))</span> <span class="p">{</span>
+<div class="docs"><div class="highlight"><pre>
+<span class="k">if</span> <span class="p">(</span><span class="sr">/$[0-9a-zA-Z]/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;$a1&quot;</span><span class="p">))</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Matched!&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-
-</pre></div></div>
+<span class="p">}</span></pre></div></div>
 
 <div class="docs"><p>Imagine if regular expressions had received the same treatment as dates. We'd be
 assembling regular expressions through object composition, maybe through a
 regular expression factory, where each step of the regular expression is
 expressed as a function call.</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">regexBuilder</span> <span class="o">=</span> <span class="nx">Regex</span><span class="p">.</span><span class="nx">getFactory</span><span class="p">().</span><span class="nx">newBuilder</span><span class="p">();</span>
+<div class="docs"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">regexBuilder</span> <span class="o">=</span> <span class="nx">Regex</span><span class="p">.</span><span class="nx">getFactory</span><span class="p">().</span><span class="nx">newBuilder</span><span class="p">();</span>
 <span class="nx">regexBuilder</span><span class="p">.</span><span class="nx">addStartAnchor</span><span class="p">();</span>
 <span class="nx">regexBuilder</span><span class="p">.</span><span class="nx">addLiteralMatch</span><span class="p">(</span><span class="s2">&quot;$&quot;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">charClassBuilder</span> <span class="o">=</span> <span class="nx">Regex</span><span class="p">.</span><span class="nx">getFactory</span><span class="p">().</span><span class="nx">newCharClassBuilder</span><span class="p">();</span>
@@ -161,9 +158,7 @@ expressed as a function call.</p></div>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">regex</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;$a1&quot;</span><span class="p">))</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Matched!&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-
-</pre></div></div>
+<span class="p">}</span></pre></div></div>
 
 <div class="docs"><p>Fortunately, JavaScript took a different path and chose to treat regular
 expressions as expressions instead of objects.</p>
@@ -196,7 +191,8 @@ in our code, so that we're constantly typing out exploded diagrams of our dates.
 
 <p>This all too common date code is as ridiculous as a regular expression factory.</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<div class="docs"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
 <span class="nx">str</span> <span class="o">+=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getYear</span><span class="p">();</span>
 <span class="nx">str</span> <span class="o">+=</span> <span class="s2">&quot;/&quot;</span><span class="p">;</span>
@@ -217,27 +213,22 @@ in our code, so that we're constantly typing out exploded diagrams of our dates.
 <span class="p">}</span>
 <span class="nx">str</span> <span class="o">+=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
 
-<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;The current time is: &quot;</span> <span class="o">+</span> <span class="nx">str</span><span class="p">);</span>
-
-</pre></div></div>
+<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;The current time is: &quot;</span> <span class="o">+</span> <span class="nx">str</span><span class="p">);</span></pre></div></div>
 
 <div class="docs"><p>The Timezone way is much easier to express and understand.</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;The current time is: &quot;</span> <span class="o">+</span> <span class="nx">tz</span><span class="p">(</span><span class="nx">tz</span><span class="p">.</span><span class="nx">now</span><span class="p">,</span> <span class="s2">&quot;%Y/%-m/%-d %H:%M:%S&quot;</span><span class="p">));</span>
-
-</pre></div></div>
+<div class="docs"><div class="highlight"><pre>
+<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;The current time is: &quot;</span> <span class="o">+</span> <span class="nx">tz</span><span class="p">(</span><span class="nx">tz</span><span class="p">.</span><span class="nx">now</span><span class="p">,</span> <span class="s2">&quot;%Y/%-m/%-d %H:%M:%S&quot;</span><span class="p">));</span></pre></div></div>
 
 <div class="docs"><p>By that token, which is easier to read, the following safer date constructor.</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">moonwalk</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">1969</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">36</span><span class="p">));</span>
-
-</pre></div></div>
+<div class="docs"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">moonwalk</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">1969</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">36</span><span class="p">));</span></pre></div></div>
 
 <div class="docs"><p>Or a string?</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">moonwalk</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1969-05-21 02:36&quot;</span><span class="p">);</span>
-
-</pre></div></div>
+<div class="docs"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">moonwalk</span> <span class="o">=</span> <span class="nx">tz</span><span class="p">(</span><span class="s2">&quot;1969-05-21 02:36&quot;</span><span class="p">);</span></pre></div></div>
 
 <div class="docs"><p>The major benefit of POSIX time over the <code>Date</code> object is that it is sortable.
 You can order POSIX time quickly, since POSIX time is simply an integer value.</p>
@@ -267,7 +258,8 @@ date strings given by the user or by other systems.</p>
 
 <p>The getters and setters are of dubious value:</p></div>
 
-<div class="docs"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">moonwalk</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">1969</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">36</span><span class="p">));</span>
+<div class="docs"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">moonwalk</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">1969</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">36</span><span class="p">));</span>
 <span class="nx">moonwalk</span><span class="p">.</span><span class="nx">setUTCMinutes</span><span class="p">(</span><span class="nx">moonwalk</span><span class="p">.</span><span class="nx">getUTCMinutes</span><span class="p">()</span> <span class="o">+</span> <span class="mi">60</span><span class="p">);</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">moonwalk</span><span class="p">.</span><span class="nx">getUTCHours</span><span class="p">());</span>
 
@@ -380,7 +372,22 @@ only relative to other points on that timeline.</p>
 <p>Objects were all the rage, it is a wonder that we didn't have a regular
 expression factory pattern, and build regular expressions using getters and
 setters, instead of parsing regular expression patterns. That is what the date
-object is like.</p></div>
+object is like.</p>
+
+<p>Why didn't I monkey patch the <code>Date</code> object? Because its timezone support does
+not work, the API for timezone support is awful.</p>
+
+<p>Interesting support for <a href="http://keith-wood.name/calendars.html">non Georgian calendars in
+JavaScript</a>. Too thurough breakdown of
+<a href="http://joda-time.sourceforge.net/userguide.html">stuff in Joda Time</a>. Nice, but
+too thurough.</p>
+
+<p>NOTE: A timezone is not something you actually set. We don't keep a wallclock in
+a software program. That is, we don't have a little gnome in our computer, who
+checks the wallclock, and applies a timestamp based on what he sees. Setting the
+timezone of a date is bananas. Timezone will let you create specialized
+formatter that will format a date date string according to the timezone offset
+rules for a specific timezone.</p></div>
 
 </div>
 </div>
