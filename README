@@ -1,0 +1,29 @@
+TIMEZONE
+
+Timezone aware date math and formats in JavaScript for Node.js and the browser.
+
+    Read This:      http://bigeasy.github.com/timezone
+    Source:         http://github.com/bigeasy/timezone
+    Documentation:  http://github.com/bigeasy/timezone/wiki
+
+    Build Status:   http://travis-ci.org/bigeasy/timezone
+    Issues:         https://github.com/bigeasy/timezone/issues
+
+    License:        The MIT License
+
+PURPOSE
+
+Timezone is a MicroJS library in pure JavaScript with no dependencies that
+provides timezone aware date math and date formatting.
+
+Timezone uses the IANA Database to determine the correct wall clock time
+anywhere in the world for any time since the dawn of standardized time.
+
+Timezone formats dates with a full implementation of `strftime` formats,
+including the GNU `date` extensions.
+
+Timezone represents time in POSIX time and local time using RFC 3999 date
+strings.
+
+Timezone is a full featured standards based time library in pure JavaScript for
+under 3K minified and gzipped.
