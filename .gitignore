@@ -1,7 +1,7 @@
 .DS_Store
 .AppleDouble
-node_modules
+node_modules/*
 *.swp
 zones/*
-timezones
-iana
+timezones/*
+iana/*

@@ -1,3 +1,65 @@
+- Version 0.0.10
+
+ * Minor changes to save a few bytes when minified and zipped.
+ * Accept `Date` as date argument.
+ * Combine `timezone.js` with `date.js`.
+ * Draft `synopsis.js`.
+ * Correctly apply parsed timezone offset. #24.
+ * Use specified padding GNU `strftime` extension. #22.
+ * Implement linked zone files as copies. #11.
+ * Replace binary search with skip-list search. #21.
+ * Add heuristics assertions to pre-compiler. #16.
+ * Use Ruby 1.9.3 to verify `%::z` formats using `tzdata` files.
+ * Convert pre-compiler and library to CoffeeScript.
+ * Add tests against `tzdata` to `npm test`. #17.
+ * GNU `strftime` format parity. #9. #19.
+ * Fixed `%C` which was off by machine zone offset.
+ * Implemented parse RFC 3999 without year. #3. #7.
+ * Added support for RequireJS AMD.
+ * Changes to week of year functions for size savings. #20.
+ * `tz` function is now the sole export of Timezone.
+ * Accept date as an array of date fields.
+ * Split less commonly used GNU `date` formats out into `date.js`.
+ * Use `Object.create` to when creating partial `tz` functions.
+ * Limit date parsing to RFC 3999.
+ * Reject `Date` as date argument.
+
+- Version 0.0.9 - Wed Apr 25 22:07:44 UTC 2012
+
+ * Create `README.md` from `timezone.idl`. `.idl` is a document format for a
+   document generator that I'm never going to write.
+ * Move grumbling from `README.md` to `MOTIVATIONS.md`.
+ * Add `milliseconds` as a synonym for `millis` to date math.
+ * Configuration via partial functions.
+ * Fix subtraction of years as per #10.
+ * Attempt to create JSON as Olson by parsing the Olson files backwards in time.
+ * Convert intermediate interval boundaries format to start time from end time.
+ * Interpret slash delimited timezone abbreviations.
+ * Interpret zone records with a specific savings offset.
+ * Correctly convert between standard, wall-clock and POSIX time in preprocessing.
+ * Correctly interpret rules that occur at the 24th hour; 24:00.
+ * Correctly format `%Z`.
+ * Use binary search against a generated table of rules.
+ * Organize precompiler into a library and separate programs.
+ * Create experimental 7-bit encoding and push it to the sidelines.
+ * Redo intermediate zone file format, create clock property, offset in POSIX
+   time.
+ * Use `Date` to calculate last day of month.
+ * Parse Olson files going forward in time, not backwards.
+ * Remove generated timezone files from git.
+ * Automate download of Olson file source, compilation of of `zic`, and Olson as
+   JSON files.
+ * Build `zic` at Travis CI for testing.
+ * Remove locale aware date parsing. (NLP is out of scope.)
+ * Parse New Year's 1970. (Was confused over `0` and `undefined`.)
+ * Calculate timezone lookup table to 2037.
+
+- Version 0.0.8 - Sun Mar 18 00:42:46 UTC 2012 
+
+ * Add `tz.now` date parameter.
+ * Fix month subtraction.
+ * Convert tests to Proof.
+
 - Version 0.0.7 - Thu Oct 20 23:54:43 UTC 2011
 
  * Date math using day of week; i.e. move forward two Fridays.

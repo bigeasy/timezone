@@ -1,7 +1,20 @@
-sizes=$(
-printf "as is              %5.2fk %5d\n" $(echo "$(cat forward.js | wc -c) / 1024" | bc -l) $(cat forward.js | wc -c)
-printf "zipped             %5.2fk %5d\n" $(echo "$(cat forward.js | gzip -c  | wc -c) / 1024" | bc -l) $(cat forward.js | gzip -c  | wc -c)
-printf "minifed            %5.2fk %5d\n" $(echo "$(cat forward.js | uglifyjs | wc -c) / 1024" | bc -l) $(cat forward.js | uglifyjs | wc -c)
-printf "minifed and zipped %5.2fk %5d\n" $(echo "$(cat forward.js | uglifyjs | gzip -c | wc -c) / 1024" | bc -l) $(cat forward.js | uglifyjs | gzip -c | wc -c)
-)
-echo "$sizes"
+#!/bin/bash
+
+declare -A b
+declare -A k
+
+printf "    %-24s %11s %11s %11s %11s\n" File Raw Min Zip Min/Zip
+for file in $@; do
+  b[raw]=$(cat $file | wc -c)
+  b[min]=$(cat $file | uglifyjs | wc -c)
+  b[zip]=$(cat $file | gzip -c  | wc -c)
+  b[minzip]=$(cat $file | uglifyjs | gzip -c | wc -c)
+  for field in raw min zip minzip; do
+    k[$field]=$(echo "${b[$field]} / 1024" | bc -l)
+  done
+  printf "    %-24s" $file
+  for field in raw min zip minzip; do
+    printf "%6d/%05.2f" ${b[$field]} ${k[$field]}
+  done
+  printf "\n"
+done
