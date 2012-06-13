@@ -3,7 +3,6 @@
 Compact, timezone aware time and date library for JavaScript, for use in Node.js
 and the browser. 
 
-* http://www.iana.org/time-zones
 
 Timezone is a database friendly, timezone aware replacement for the `Date`
 object that implements date parsing, date formatting, and date math.
@@ -13,62 +12,142 @@ time](http://en.wikipedia.org/wiki/Unix_time), milliseconds since the epoch, for
 a cross-platform, internationalized, and durable representation of a point in
 time.
 
-The Timezone library uses the [Olson timezone
-database](http://cs.ucla.edu/~eggert/tz/tz-link.htm), to create a database of
-timezone rules, one per continent, in a compact JSON representation, so you can,
-with some confidence, determine the correct local time of any place in the
-world, since 1970.
-
 Timezone uses [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) or [RFC
 822](http://www.ietf.org/rfc/rfc0822.txt) dates to represent wallclock time. It
 can parse any ISO 8601 or RFC 822 date. It can create any date format by
 supporting the full compliment of [GNU
 date](http://en.wikipedia.org/wiki/Date_%28Unix%29) format specifiers.
 
-## Overview
+The Timezone library uses the [IANA Timezone
+Database](http://www.iana.org/time-zones), to create a database of timezone
+rules, one per continent, in a compact JSON representation. With it, you can
+determine the correct local time, since 1970, of any place in the world.
 
-Timezone is a timezone aware date library for JavaScript that
+In addition to all this, Timezone performs timezone aware date math, accounting
+for daylight savings time, leap years and radical changes to timezone offsets.
 
- * formats dates using UNIX date format specifiers,
- * formats dates adjusting for timezone and daylight savings time,
- * formats dates according to a specified locale,
- * parses RFC 822 and ISO 8601 dates,
- * parses some additional common date formats,
- * parses dates adjusting for timezone and daylight savings time,
- * parses dates according to a specified locale,
- * adds and subtracts intervals in local time adjusting for daylight savings
-   time and leap days.
+Timezone is a complete time library that knows all about the vagaries of time.
 
-Timezone uses POSIX time, milliseconds since the epoch represented as a
-JavaScript `Number`. Timezone does not monkey patch the JavaScript `Date`
-object. Timezone replaces the JavaScript `Date` object with POSIX time.
+## The `tz` Function and Time Types
 
-## Time Types
+Timezone exports a single `tz` function. This function does everything.
 
-Timezone works with one of two types of date value,
+### POSIX Time and Date Strings
 
- * POSIX time,
- * or date strings.
+Timezone uses ***POSIX time***, milliseconds since the epoch in UTC, for a universal
+representation of a point in time. Timezone uses ***date strings*** to represent
+wallclock time, the time of the clock on the wall, with timezone offsets
+applied.
 
-Timezone uses POSIX time, milliseconds since the epoch in UTC, for a universal
-representation of a point in time.
-
-Timezone uses date strings to represent local time.
-
-The first argument to `tz` is always a date, usually POSIX time as an integer,
-or else a date string.
+When the first argument to `tz` is a date, the date is parsed, formatted, or
+offset by date math operations. Here we parse a date.
 
 ```javascript
-// Create a POSIX time integer from a timestamp.
-var bicentenial = tz("1976-07-04");
-eq(88927498237492734927, bicentenial);
-
-// Now you can use the POSIX time as a date.
-eq(98327943274923794329, tz(bicentenial, "+1 millisecond"));
-
-// You can use a date string if you prefer.
-eq(98327943274923794329, tz("1976-07-04", "+1 millisecond"));
+var y2k = tz("2000/1/1");
+ok( y2k === 88927498237492734927 );
 ```
+
+The `tz` function returns POSIX time by default. We can use that value in
+subsequent calls to `tz`, to perform date math for example.
+
+```javascript
+ok( tz(y2k, "+1 millisecond") === y2k + 1 );
+```
+
+We can also parse a date and offset it with date math in one fell swoop.
+
+```javascript
+ok( tz("1976-07-04", "+1 millisecond") === y2k + 1 );
+```
+
+By default, we use ***POSIX time*** to represent a point in time. The build in
+`Date.UTC` function also returns a POSIX time, so we can use it for comparison.
+
+```javascript
+var eq = require("assert").equal,
+    tz = require("./lib/timezone").tz;
+
+var y2k = tz("2000/1/1");
+ok( Date.UTC(2000, 0, 1) === y2k );
+
+ok( tz(y2k, "+1 millisecond") === Date.UTC(2000, 0, 1) + 1 );
+```
+
+Timezone returns ***date strings*** for local time with locales and timezones
+applied. If you provide a format specifier, Timezone returns a string instead of
+POSIX time.
+
+```javascript
+var ok = require("assert"),
+    tz = require("./lib/timezone").tz;
+
+ok( tz(y2k, "%-m/%-d/%Y %H:%M:%S") === "1/1/2000 00:00:00" );
+```
+## Working With Timezones
+
+We load timezones using our `tz` function to create a `tz` function that is
+aware of the timezone. We can do this in one fell swoop at initialization.
+
+```javascript
+var ok = require("assert"),
+    tz = require("./lib/timezone").tz;
+
+tz = tz(require("./timezones/northamerica");
+
+var y2k = tz("2000/1/1");
+ok( y2k === Date.UTC(2000, 0, 1) )
+
+ok( tz(y2k, "%m/%d/%Y %H:%M:%S", "America/Detroit") === "12/31/1999 19:00:00" );
+```
+
+Be careful. We use timezones to both parse date strings and format date strings.
+In the above example, we first call `tz` to convert `"2000/1/1"` to POSIX time.
+This parses `"2000/1/1"` with a UTC timezone.
+
+We then call `tz` again with our POSIX time value, an absolute point in time,
+and convert it to the correct time for the `"America/Detroit"` timezone.
+
+We can specify a timezone when we parse as well.
+
+```javascript
+var ok = require("assert"),
+    tz = require("./lib/timezone").tz(require("./timezones/northamerica"));
+
+eq( tz("12/31/1999 19:00:00", "America/Detroit") === Date.UTC(2000, 0, 1) );
+```
+Remember that local time can only be represented as a string, because POSIX time
+is always UTC.
+
+The timezone file contains a JavaScript object defining the timezone. You can
+load it using require, or in the browser by including them with a script tag.
+
+Note that we can only apply one timezone at a time. If you want to convert from
+one timezone to another, you need to pass the result of 
+
+To format a time using timezone, load a timezone file. The timezone file
+contains a JavaScript object defining the timezone. You can load it using
+require, or in the browser by including them with a script tag.
+
+```javascript
+var eq = require("assert").equal,
+    tz = require("./lib/timezone").tz;
+
+// Load a timezone, returning a new tz function.
+tz = tz(require("./timezones/northamerica"));
+
+// Get the POSIX time of Y2K.
+var y2k = tz("2000/1/1");
+eq(Date.UTC(2000, 0, 1), y2k);
+
+// To display local time you format a POSIX time specifing a timezone.
+eq("12/31/1999 19:00:00", tz(y2k, "%m/%d/%Y %H:%M:%S", "America/Detroit"));
+```
+
+Timezone exports a single function `tz`, that accepts a time as its first
+argument, and performs operations according to the remaining argument. The
+position of the opertion arguments does not matter.
+
+There is no `Date` object in the Timezone library.
 
 To express dates in your source code, simply type them out as strings and pass
 them to `tz`. If you're just scripting away, it's nice to be able to specify a
@@ -191,7 +270,9 @@ eq([ 1969, 6, 21, 2, 36, 0, 0 ], tz("1969-06-21 02:36", tz.array)).
 ## Living with POSIX Time
 
 Time is confusing. Conventions help. Timezone suggests a way of working with
-time that is approrpriate for most applications.
+time that is approrpriate for most applications. If you have opinions on this
+subject, they are probably strong opinions, given how rarely people give
+timezones and DST serious consideration.
 
 Use POSIX time. In your application use integers to store POSIX time. When
 wallclock time is needed, you use a date format to display it as a string. It is

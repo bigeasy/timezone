@@ -363,3 +363,18 @@ Objects were all the rage, it is a wonder that we didn't have a regular
 expression factory pattern, and build regular expressions using getters and
 setters, instead of parsing regular expression patterns. That is what the date
 object is like.
+
+Why didn't I monkey patch the `Date` object? Because its timezone support does
+not work, the API for timezone support is awful.
+
+Interesting support for [non Georgian calendars in
+JavaScript](http://keith-wood.name/calendars.html). Too thurough breakdown of
+[stuff in Joda Time](http://joda-time.sourceforge.net/userguide.html). Nice, but
+too thurough.
+
+NOTE: A timezone is not something you actually set. We don't keep a wallclock in
+a software program. That is, we don't have a little gnome in our computer, who
+checks the wallclock, and applies a timestamp based on what he sees. Setting the
+timezone of a date is bananas. Timezone will let you create specialized
+formatter that will format a date date string according to the timezone offset
+rules for a specific timezone.

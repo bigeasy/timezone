@@ -177,3 +177,31 @@ continue in the direction we were going, adding an additional day if we are
 doing addition, subtracting an additional day if we are doing subtraction. We
 then go back by 24 hours. This gives us the same counter intuitive times as
 Java's Calendar.
+
+## Where Did `Date` Go?
+
+Why use Timezone instead of the JavaScript `Date` object? Because the JavaScript
+`Date` object is not timezone aware. Because unlike the JavaScript `Date`
+object, time is not object oriented.
+
+Why not monkey patch the `Date` object to try to get it to do the right thing?
+Because it is already quite the wrong thing. It exposes a point in time as a
+bill of materials, with getters and setters for minutes, years, hours, etc. Time
+is a point on line, not an assemlage of integer properties.
+
+applies the timezone offset of the local
+machine. That is an entirely ***arbitrary*** timezone setting for a web or
+mobile application that can run anywhere for multiple users.
+
+## Overview
+
+Instead of monkey patching the JavaScript `Date` object, to create a method
+chained monster, we have a single function, with a short name, `tz` that
+operates on POSIX timestamps and date strings.
+
+One function can parse, format and calculate dates. Give it a handful of human
+readable parameters, it will figure out what to do.
+
+With Timezone Why use Timezone instead of `Date`? Because `Date` is not timezone
+aware. It has timezone offset support so feeble as to be useless. It doesn't
+parse, format or perform date math, but if you have a go at it, 
