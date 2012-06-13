@@ -461,7 +461,8 @@ ok( tz(y2k, "%B %-d, %Y").replace(/\d+/, cardinalize) == "January 1st, 2000" );
 
 // *Extract a specified timezone from a date string.*
 function tzdate (date) {
-  if (var match = /^TZ="(\S+)"\s+(.*)$/.exec(date)) {
+  var match;
+  if (match = /^TZ="(\S+)"\s+(.*)$/.exec(date)) {
     return match.slice(1, 3).reverse();
   }
   return date;
