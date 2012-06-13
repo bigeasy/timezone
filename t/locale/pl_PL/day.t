@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 require("../../proof") 14, ({ tz }) ->
-  tz = tz require("../../../locales/pl_PL"), require("../../../date")
+  tz = tz require("../../../locales/pl_PL")
   @equal tz("2006-01-01", "%a", "pl_PL"), "nie", "Sun"
   @equal tz("2006-01-02", "%a", "pl_PL"), "pon", "Mon"
   @equal tz("2006-01-03", "%a", "pl_PL"), "wto", "Tue"

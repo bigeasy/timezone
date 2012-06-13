@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if [ "$TRAVIS" = "true" ]; then
+  # Install a Ruby 1.9.3 for to get a `strftime` that understands `%::z`.
   (echo -e "\n\n\n" | sudo apt-add-repository ppa:brightbox/ruby-ng-experimental) >/dev/null 2>&1 && echo "brightbox added"
   sudo apt-get -q update >/dev/null 2>&1 && echo "apt-get update" 
   sudo apt-get -q install ruby rubygems ruby-switch >/dev/null 2>&1 && echo "apt-get install ruby rubygems ruby-switch"
@@ -9,11 +10,8 @@ if [ "$TRAVIS" = "true" ]; then
                     --slave   /usr/bin/ri ri /usr/bin/ri1.9.3 \
                     --slave   /usr/bin/irb irb /usr/bin/irb1.9.3
   sudo update-alternatives --set ruby /usr/bin/ruby1.9.3
-  PATH=/usr/local/gradle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-  PATH=/usr/local/gradle/bin:/home/vagrant/.nvm/v0.6.15/bin:./node_modules/.bin:$PATH
-  PATH=/home/vagrant/builds/bigeasy/timezone/node_modules/.bin:./node_modules/.bin:$PATH
-  PATH=/home/vagrant/.nvm/v0.6.15/lib/node_modules/npm/bin/node-gyp-bin:$PATH
-  export PATH
+  # Remove the RVM manged Ruby.
+  rm -rf ~/.rvm
   ruby -v
 fi
 
