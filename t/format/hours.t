@@ -4,7 +4,6 @@ require("../proof") 16, ({ tz, utc }) ->
   @equal tz(utc(2011, 0, 1, 1), "%H"), "01", "military hours padded AM"
   @equal tz(utc(2011, 0, 1, 12), "%H"), "12", "military hours padded noon"
   @equal tz(utc(2011, 0, 1, 13), "%H"), "13", "military hours padded PM"
-  tz = tz require "../../date"
   @equal tz(utc(2011, 0, 1, 0), "%l"), "12", "dial hours midnight"
   @equal tz(utc(2011, 0, 1, 1), "%l"), "1", "dial hours AM"
   @equal tz(utc(2011, 0, 1, 12), "%l"), "12", "dial hours noon"

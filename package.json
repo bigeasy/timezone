@@ -3,7 +3,7 @@
 ,   "author":           "Alan Gutierrez"
 ,   "url" :             "http://bigeasy.github.com/timezone"
 ,   "keywords" :        ["time", "timezone", "date"]
-,   "author" :          "Alan Gutierrez <alan@blogometer.com>"
+,   "author" :          "Alan Gutierrez <alan@prettyrobots.com>"
 ,   "contributors" :    []
 ,   "devDependencies":
     { "coffee-script": ">=1.1.3"

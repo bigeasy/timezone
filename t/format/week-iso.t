@@ -1,7 +1,5 @@
 #!/usr/bin/env coffee
-fs = require "fs"
 require("../proof") 14640, ({ tz, readDate }) ->
-  tz = tz require "../../date"
   formatted = "#{__dirname}/../data/format"
   lines = require("fs").readFileSync("#{formatted}/V", "utf8").split(/\n/)
   lines.pop()
