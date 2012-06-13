@@ -38,14 +38,29 @@ function write (name, skipList, data) {
       break;
     }
   });
+  function isLeapYear (year) {
+    if (! (year % 400)) return true;
+    if (! (year % 100)) return false; 
+    if (! (year % 4)) return true;
+    return false;
+  }
+  const daysInMonth = [ 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
   for (var key in rules) rules[key] = rules[key].map(function (e) {
     var date = /^(?:(\d+)|last(\w+)|(\w+)>=(\d+))$/.exec(e.day), day, i, I;
     if (date[1]) {
-      day = [ -1, parseInt(date[1], 10) ];
+      day = [ 7, parseInt(date[1], 10) ];
     } else if (date[2]) {
       for (i = 0, I = ABBREV.length; i < I; i++)
         if (ABBREV[i] === date[2]) break;
-      day = [ i, -31 ];
+      if (e.month == 1) {
+        for (var year = e.from; year <= e.to; year++) {
+          var fields = new Date(Date.UTC(year, 1, 29));
+          if (fields.getUTCDay() == i && fields.getUTCMonth() != 1) {
+            throw new Error("Last day Februrary: " + key + ", " + i + ", " + fields.getUTCDay() + ", " + fields.getUTCMonth() + ", " + year);
+          }
+        }
+      }
+      day = [ i, -daysInMonth[e.month] ];
     } else {
       for (i = 0, I = ABBREV.length; i < I; i++)
         if (ABBREV[i] === date[3]) break;
