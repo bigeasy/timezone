@@ -14,10 +14,10 @@
 */
   function format (posix, rest) {
     var wallclock = new Date(convertToWallclock(this, posix)), self = this;
-    return rest.replace(/%([-0_^]|:{0,3})?(\d*)(.)/g, function (matched, flag, padding, specifier) {
+    return rest.replace(/%([-0_^]?)(:{0,3})(\d*)(.)/g, function (matched, flag, colons, padding, specifier) {
       var f, value = matched, fill = "0";
       if (f = self[specifier]) {
-        value = String(f.call(self, wallclock, posix, (flag || "").length));
+        value = String(f.call(self, wallclock, posix, flag, (colons || "").length));
         if ((flag || f.style) == "_") fill = " ";
         pad = parseInt(flag == "-" ? 0 : (f.pad || 0));
         while (value.length < pad) value = fill + value;
@@ -268,7 +268,7 @@
     , N: function(date) { return (date.getTime() % 1000) * 1000000 }
     , R: function(date, posix) { return this.convert([ posix, "%H:%M" ]) }
     , T: function(date, posix) { return this.convert([ posix, "%H:%M:%S" ]) }
-    , z: function(date, posix, delimiters) {
+    , z: function(date, posix, flag, delimiters) {
         var offset = this.entry.offset + this.entry.save
           , seconds = Math.abs(offset / 1000), parts = [ 60, 60, 60 ], part, i, z;
         for (i = parts.length - 1; i > -1; i--) {
@@ -286,14 +286,21 @@
         } else {
           z = parts.slice(0, 2).join("");
         }
-        return (offset < 0 ? "-" : "+") + z;
+        offset = (offset < 0 ? "-" : "+") + z;
+        // var replacement = ({ "_": " $1:$2", "-": "$1$2" })[flag];
+        if (flag == "_") {
+          offset = offset.replace(/([-+])0(\d)/, " $1$2");
+        } else if (flag == "-") {
+          offset = offset.replace(/([-+])0(\d)/, "$1$2");
+        }
+        return offset;
       }
     , Z: function(date) { return this.entry.abbrev }
     , "%": function(date) { return "%" }
     , n: function(date) { return "\n" }
     , t: function(date) { return "\t" }
-    , "$": function (date, posix, delimiters) {
-        return this.entry.offset == 0 ? "Z" : delimiters ? this.z(date, posix, 2).replace(/:00$/, "") : this.z(date, posix, 1)
+    , "$": function (date, posix, flag, delimiters) {
+        return this.entry.offset == 0 ? "Z" : delimiters ? this.z(date, posix, null, 2).replace(/:00$/, "") : this.z(date, posix, null, 1)
       }
     , a: function (date) { return this[this.locale].day.abbrev[date.getUTCDay()] }
     , A: function (date) { return this[this.locale].day.full[date.getUTCDay()] }

@@ -1,8 +1,10 @@
 - Version 0.0.10
 
+ * Correctly format `%_:z`. #40.
+ * Correctly format `%-:z`. #39.
  * Minor changes to save a few bytes when minified and zipped.
  * Accept `Date` as date argument.
- * Combine `timezone.js` with `date.js`.
+ * Combine `timezone.js` with `date.js`. #35. #25.
  * Draft `synopsis.js`.
  * Correctly apply parsed timezone offset. #24.
  * Use specified padding GNU `strftime` extension. #22.
