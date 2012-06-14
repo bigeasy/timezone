@@ -1,4 +1,5 @@
 {   "name":             "timezone"
+,   "description":      "Small and elegant, Olson educated, Timezone aware date math and formatting for Node.js and the browser."
 ,   "version":          "0.0.11"
 ,   "author":           "Alan Gutierrez"
 ,   "url" :             "http://bigeasy.github.com/timezone"
