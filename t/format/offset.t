@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 require("../proof") 20, ({ tz, moonwalk, utc }) ->
-  detroit = tz require("../../zones/America/Detroit"), "America/Detroit"
+  detroit = tz require("timezone/America/Detroit"), "America/Detroit"
   @equal detroit(tz("1905-01-01 05:32:11"), "%z"), "-0600", "seconds"
   @equal detroit(tz("1905-01-01 05:32:11"), "-1 millisecond", "%z"), "-0532", "seconds truncated"
   @equal detroit(tz("1905-01-01 05:32:11"), "%:z"), "-06:00", "minutes with colon"
@@ -26,7 +26,7 @@ require("../proof") 20, ({ tz, moonwalk, utc }) ->
   @equal detroit(utc(1900, 0, 1, 0, 59), "America/Detroit", "%$"), "-05:32", "RFC 3999 hours and minutes truncated"
   @equal detroit(utc(1900, 0, 1, 0, 59), "America/Detroit", "%:$"), "-05:32:11", "RFC 3999 hours, minutes and seconds"
 
-  tz = tz require("../../zones/Europe/Amsterdam")
+  tz = tz require("timezone/Europe/Amsterdam")
 
   @equal tz("1916-01-03", "Europe/Amsterdam", "%Z"), "AMT", "dst full abbrev change back"
   @equal tz("1916-07-03", "Europe/Amsterdam", "%Z"), "NST", "dst full abbrev change forward"
