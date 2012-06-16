@@ -1,7 +1,7 @@
 #!/usr/bin/env coffee
 require("../proof") 18, ({ tz, utc }) ->
   str = (posix) -> new Date(posix).toString()
-  tz = tz require("../../zones/America/Detroit"), "America/Detroit"
+  tz = tz require("timezone/America/Detroit"), "America/Detroit"
   @equal tz(utc(1976, 6, 4), "America/Detroit", "%F %T"), "1976-07-03 20:00:00",
          "convert from UTC to America/Detroit during DST"
   @equal tz("2010-03-12T03:00:00", "America/Detroit"), utc(2010, 2, 12, 8),

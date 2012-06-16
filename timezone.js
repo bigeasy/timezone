@@ -222,9 +222,9 @@
       } else { //if (type == "object") {
         if (/^\w{2}_\w{2}$/.test(argument.name)) {
           request[argument.name] = argument;
-        } else if (argument.z) {
-          for (var key in argument.z.zones) request[key] = argument.z.zones[key];
-          for (var key in argument.z.rules) request[key] = argument.z.rules[key];
+        } else if (argument.zones) {
+          for (var key in argument.zones) request[key] = argument.zones[key];
+          for (var key in argument.rules) request[key] = argument.rules[key];
         }
       }
     }

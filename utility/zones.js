@@ -2,7 +2,7 @@ function say() {
   if (arguments.length) console.log.apply(console, Array.prototype.slice.call(arguments, 0));
 }
 
-var transitions = require("../lib/transitions");
+var transitions = require("./transitions");
 var ABBREV = "Sun Mon Tue Wed Thu Fri Sat".split(/\s/);
 
 function write (name, skipList, data) {
@@ -85,7 +85,7 @@ function write (name, skipList, data) {
   };
   record.zones[name] = zone;
   var fs = require("fs");
-  var parts = [ "zones" ].concat(name.split(/\//)), path;
+  var parts = [ "timezone" ].concat(name.split(/\//)), path;
   for (var j = 0, stop = parts.length - 1; j < stop; j++) {
     path = parts.slice(0, j + 1).join("/");
     try {
@@ -95,11 +95,15 @@ function write (name, skipList, data) {
       fs.mkdirSync(path, 0755);
     }
   }
-  fs.writeFileSync(parts.join("/") + ".js", 'exports.z=' + JSON.stringify(record), "utf8");
+  fs.writeFileSync(parts.join("/") + ".js", 'module.exports=' + JSON.stringify(record), "utf8");
 }
 
 (function () {
-  var data = require("../timezones/index"), skipLists = {};
+  var data = { zones: {}, rules: {} }, skipLists = {};
+  require("../zones/olson/index").forEach(function (zone) {
+    for (var key in zone.zones) data.zones[key] = zone.zones[key];
+    for (var key in zone.rules) data.rules[key] = zone.rules[key];
+  });
   var set = process.argv[2] ? [ process.argv[2] ] : Object.keys(data.zones).filter(function (e) { return ! /^Etc/.test(e) });
   for (var i = 0, length = set.length; i < length; i++) { transitions(data, set[i]) }
   for (var i = 0, length = set.length; i < length; i++) {

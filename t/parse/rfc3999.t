@@ -12,7 +12,7 @@ require("../proof") 18, ({ tz, utc }) ->
   @equal tz("1980-01-03 02:15:21.2"), Date.UTC(1980, 0, 3, 2, 15, 21, 2), "milliseconds"
   @equal tz("1980-01-03 02:15:21.2Z"), Date.UTC(1980, 0, 3, 2, 15, 21, 2), "milliseconds with Z"
   @equal tz("1980-01-03 02:15:21.2+10:32:31"), Date.UTC(1980, 0, 3, 2, 15, 21, 2) - (36e5 * 10 + 6e4 * 32 + 1e3 * 31), "milliseconds with offset"
-  tz = tz require "../../zones/America/Detroit"
+  tz = tz require "timezone/America/Detroit"
   @equal tz("1970-01-01", "America/Detroit"), 36e5 * 5, "1970 Detroit"
   @equal tz("1976-07-04", "America/Detroit"), Date.UTC(1976, 6, 4) + 36e5 * 4, "Bicentennial Detroit"
   @equal tz("1970-01-01 00:00Z", "America/Detroit"), 0, "1970 Detroit with Z"
