@@ -4,11 +4,11 @@ require "time"
 require "date"
 
 DIR = File.expand_path(File.dirname(__FILE__))
-IANA = File.expand_path("#{DIR}/../../../iana")
+ZONES = File.expand_path("#{DIR}/../../../zones")
 
 ENV["TZ"] = "UTC"
 counter = 0
-File.open("#{IANA}/zones.txt", "r") do |infile|
+File.open("#{ZONES}/transitions.txt", "r") do |infile|
   while (line = infile.gets)
     name, wallclock, posix, before, after = line.split(/\s/)
     time = Time.parse posix
@@ -21,13 +21,13 @@ end
 puts "1..#{counter}"
 
 counter = 1
-File.open("#{IANA}/zones.txt", "r") do |infile|
+File.open("#{ZONES}/transitions.txt", "r") do |infile|
   while (line = infile.gets)
     name, wallclock, posix, before, after = line.split(/\s/)
     ENV["TZ"] = "UTC"
     time = Time.parse posix
     if time.year > 1902
-      ENV["TZ"] = ":#{IANA}/zoneinfo/#{name}"
+      ENV["TZ"] = ":#{ZONES}/zoneinfo/#{name}"
       time = Time.at(time.to_i)
       offsetAbbrevation = (time + 60).strftime("%::z/%Z")
       ok = after == offsetAbbrevation ? "ok" : "not ok"

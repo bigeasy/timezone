@@ -15,4 +15,4 @@ if [ "$TRAVIS" = "true" ]; then
   ruby -v
 fi
 
-proof t/*/*.t t/locale/*/*.t t/zones/*/*.t || exit 1
+(proof run t/*/*.t t/*/*/*.t | tee .proof.out | proof progress) || (proof errors < .proof.out) || exit 1

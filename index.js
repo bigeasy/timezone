@@ -1,1 +1,1 @@
-module.exports.tz = require("./lib/timezone").tz
+module.exports = require("./slurp")(/./, /^\w{2}_\w{2}$.js$/);
