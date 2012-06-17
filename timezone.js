@@ -270,38 +270,32 @@
     , T: function(date, posix) { return this.convert([ posix, "%H:%M:%S" ]) }
     , z: function(date, posix, flag, delimiters) {
         var offset = this.entry.offset + this.entry.save
-          , seconds = Math.abs(offset / 1000), parts = [ 60, 60, 60 ], part, i, z;
-        for (i = parts.length - 1; i > -1; i--) {
-          part = parts[i];
-          parts[i] = ("0" + (seconds % part)).slice(-2);
-          seconds -= seconds % part;
-          seconds /= part;
+          , seconds = Math.abs(offset / 1000), parts = [], part = 3600, i, z;
+        for (i = 0; i < 3; i++) {
+          parts.push(("0" + Math.floor(seconds / part)).slice(-2));
+          seconds %= part;
+          part /= 60;
         }
-        if (delimiters) {
-          if (delimiters == 3) {
-            z = parts.join(":").replace(/:00$/, "").replace(/:00$/, "");
-          } else {
-            z = parts.slice(0, delimiters + 1).join(":");
-          }
+        if (flag == "^" && !offset) return "Z";
+        if (flag == "^") delimiters = 3;
+        if (delimiters == 3) {
+          z = parts.join(":");
+          z = z.replace(/:00$/, "");
+          if (flag != "^") z = z.replace(/:00$/, "");
+        } else if (delimiters) {
+          z = parts.slice(0, delimiters + 1).join(":");
+          if (flag == "^") z = z.replace(/:00$/, "");
         } else {
           z = parts.slice(0, 2).join("");
         }
-        offset = (offset < 0 ? "-" : "+") + z;
-        // var replacement = ({ "_": " $1:$2", "-": "$1$2" })[flag];
-        if (flag == "_") {
-          offset = offset.replace(/([-+])0(\d)/, " $1$2");
-        } else if (flag == "-") {
-          offset = offset.replace(/([-+])0(\d)/, "$1$2");
-        }
-        return offset;
+        z = (offset < 0 ? "-" : "+") + z;
+        z = z.replace(/([-+])(0)/, { "_": " $1", "-": "$1" }[flag] || "$1$2");
+        return z;
       }
     , Z: function(date) { return this.entry.abbrev }
     , "%": function(date) { return "%" }
     , n: function(date) { return "\n" }
     , t: function(date) { return "\t" }
-    , "$": function (date, posix, flag, delimiters) {
-        return this.entry.offset == 0 ? "Z" : delimiters ? this.z(date, posix, null, 2).replace(/:00$/, "") : this.z(date, posix, null, 1)
-      }
     , a: function (date) { return this[this.locale].day.abbrev[date.getUTCDay()] }
     , A: function (date) { return this[this.locale].day.full[date.getUTCDay()] }
     , j: function (date) { return Math.floor((date.getTime() - Date.UTC(date.getUTCFullYear(), 0)) / 864e5) + 1 }
