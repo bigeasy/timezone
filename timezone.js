@@ -254,7 +254,7 @@
 
   var context =
     { zone: "UTC"
-    , entry: { abbrev: "UTC", offset: 0 }
+    , entry: { abbrev: "UTC", offset: 0, save: 0 }
     , clock: function () { return +(new Date()) }
     , convert: convert
     , d: function(date) { return date.getUTCDate() }

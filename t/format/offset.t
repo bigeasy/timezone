@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-require("../proof")(20, function (equal, tz, moonwalk, utc) {
+require("../proof")(21, function (equal, tz, moonwalk, utc) {
+  equal(tz(tz(), "%z"), "+0000", "utc");
   var detroit = tz(require("timezone/America/Detroit"), "America/Detroit");
   equal(detroit(tz("1905-01-01 05:32:11"), "%z"), "-0600", "seconds");
   equal(detroit(tz("1905-01-01 05:32:11"), "-1 millisecond", "%z"), "-0532", "seconds truncated");
