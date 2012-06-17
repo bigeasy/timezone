@@ -1,49 +1,96 @@
-all: timezones iana/zoneinfo/America/Detroit
-	cp lib/indicies/timezones.js timezones/index.js
-	node bin/zones.js
-	for dir in $$(find zones -type d); do \
-		cp lib/indicies/zones.js $$dir/index.js; \
+npm_copy_targets = timezone/rfc822.js timezone/package.json timezone/synopsis.js timezone/README
+
+copy_sources = $(npm_copy_targets:timezone/%=%) timezone.js slurp.js
+locale_sources = $(wildcard locales/*.js)
+locale_targets = $(locale_sources:locales/%=timezone/%)
+
+npm_targets = timezone/index.js $(npm_copy_targets) timezone/locales.js timezone/zones.js $(locale_targets) \
+	timezone/America/Detroit.js zones/transitions.txt
+
+olson_as_json = zones/olson/africa.js zones/olson/antarctica.js zones/olson/asia.js zones/olson/australasia.js \
+	zones/olson/europe.js zones/olson/northamerica.js zones/olson/southamerica.js
+olson = $(olson_as_json:zones/olson/%.js=zones/src/%)
+
+sources = $(locale_targets) $(copy_sources)
+
+all: zones/zoneinfo/America/Detroit $(npm_targets)
+
+watch: all
+	@inotifywait -q -m -e close_write $(sources) | while read line; do make --no-print-directory all; done;
+
+$(locale_targets): timezone/%: locales/%
+	mkdir -p timezone
+	cp $< $@
+
+timezone/zones.js: slurp.js
+	mkdir -p timezone
+	cp $< $@
+	cp $< $@
+
+timezone/locales.js: slurp.js
+	mkdir -p timezone
+	cp $< $@
+
+zones/olson/index.js: slurp.js
+	mkdir -p timezone
+	cp $< $@
+
+zones/transitions.txt: $(olson_as_json) zones/olson/index.js utility/verifiable.js
+	node utility/verifiable.js > zones/transitions.txt
+	touch $@
+
+timezone/America/Detroit.js: $(olson_as_json) zones/olson/index.js utility/zones.js
+	node utility/zones.js
+	for dir in $$(find timezone -mindepth 1 -type d); do \
+		cp slurp.js $$dir/index.js; \
 	done
-	node bin/display.js > iana/zones.txt
-
-iana/src/tzdata2012c.tar.gz:
-	mkdir -p iana/src
-	rm -f iana/src/tzdata2012c.*
-	curl -s http://www.iana.org/time-zones/repository/releases/tzdata2012c.tar.gz > iana/src/tzdata2012c.tar.gz.tmp
-	md5sum iana/src/tzdata2012c.tar.gz.tmp | cut -f1 -d' '
-	[ "$$(md5sum iana/src/tzdata2012c.tar.gz.tmp | cut -f1 -d' ')" = "cfdc2710bd05c26dbd624441d57028f6" ] && mv iana/src/tzdata2012c.tar.gz.tmp $@
-
-iana/src/tzcode2012b.tar.gz:
-	mkdir -p iana/src
-	rm -f iana/src/tzcode2012b.*
-	curl -s http://www.iana.org/time-zones/repository/releases/tzcode2012b.tar.gz > iana/src/tzcode2012b.tar.gz.tmp
-	md5sum iana/src/tzcode2012b.tar.gz.tmp | cut -f1 -d' '
-	[ "$$(md5sum iana/src/tzcode2012b.tar.gz.tmp | cut -f1 -d' ')" = "6137322ffd36e1fd5128885be1c57008" ] && mv iana/src/tzcode2012b.tar.gz.tmp $@
-
-iana/src/Makefile: iana/src/tzcode2012b.tar.gz
-	tar -C iana/src -zxf $<
 	touch $@
 
-iana/src/zone.tab: iana/src/tzdata2012c.tar.gz
-	tar -C iana/src -zxf $<
+zones/tar/tzdata2012c.tar.gz:
+	mkdir -p zones/tar
+	rm -f zones/tar/tzdata2012c.*
+	curl -s http://www.iana.org/time-zones/repository/releases/tzdata2012c.tar.gz > zones/tar/tzdata2012c.tar.gz.tmp
+	md5sum zones/tar/tzdata2012c.tar.gz.tmp | cut -f1 -d' '
+	[ "$$(md5sum zones/tar/tzdata2012c.tar.gz.tmp | cut -f1 -d' ')" = "cfdc2710bd05c26dbd624441d57028f6" ] && mv zones/tar/tzdata2012c.tar.gz.tmp $@
+
+zones/tar/tzcode2012b.tar.gz:
+	mkdir -p zones/tar
+	rm -f zones/tar/tzcode2012b.*
+	curl -s http://www.iana.org/time-zones/repository/releases/tzcode2012b.tar.gz > zones/tar/tzcode2012b.tar.gz.tmp
+	md5sum zones/tar/tzcode2012b.tar.gz.tmp | cut -f1 -d' '
+	[ "$$(md5sum zones/tar/tzcode2012b.tar.gz.tmp | cut -f1 -d' ')" = "6137322ffd36e1fd5128885be1c57008" ] && mv zones/tar/tzcode2012b.tar.gz.tmp $@
+
+zones/src/Makefile: zones/tar/tzcode2012b.tar.gz
+	mkdir -p zones/src
+	[ -e $@ ] || tar -C zones/src -zxf $<
 	touch $@
 
-iana/src/zic: iana/src/Makefile
-	make -C iana/src -f Makefile	
+zones/src/zic: zones/src/Makefile zones/src/yearistype.sh
+	make -C zones/src -f Makefile	
 	touch $@
 
-iana/zoneinfo/America/Detroit: iana/src/zic
-	(cd iana/src && ./zic -d ../zoneinfo africa antarctica asia australasia europe northamerica southamerica)
+zones/zoneinfo/America/Detroit: zones/src/zic
+	(cd zones/src && ./zic -d ../zoneinfo africa antarctica asia australasia europe northamerica southamerica)
 
-iana/src/%: iana/src/zone.tab
-	[ -e $@ ] && touch $@
+zones/src/%: zones/tar/tzdata2012c.tar.gz
+	mkdir -p zones/src
+	[ -e $@ ] || tar -C zones/src -zxf $<
+	touch $@
 
-timezones/%.js: iana/src/%
-	mkdir -p timezones
-	node bin/tz2json.js $< > $@
+zones/olson/%.js: zones/src/%
+	mkdir -p zones/olson
+	node utility/tz2json.js $< > $@
+	touch $@
 
-timezones: timezones/africa.js timezones/antarctica.js timezones/asia.js timezones/australasia.js \
-	timezones/europe.js timezones/northamerica.js timezones/southamerica.js
+$(olson): zones/tar/tzdata2012c.tar.gz
+
+timezone/index.js: timezone.js
+	mkdir -p timezone
+	cp timezone.js timezone/index.js
+
+$(npm_copy_targets): timezone/%: %
+	mkdir -p timezone
+	cp $< $@
 
 clean:
-	rm -rf zones timezones
+	rm -rf zones timezone
