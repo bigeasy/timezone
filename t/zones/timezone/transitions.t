@@ -14,15 +14,15 @@ require("../../proof")(lines.length * 2, function (equal, tz) {
     after = record[4];
     local = (partials[name]) || (partials[name] = tz(require("timezone/" + name, name)));
     equal(
-      local(tz(posix, "%F %T%$", "-1 millisecond"), name, "%::z/%Z"),
+      local(tz(posix, "%F %T%^z", "-1 millisecond"), name, "%::z/%Z"),
       before,
       [ name, wallclock, posix, before, "before",
-        local(tz(posix, "%F %T%$", "-1 millisecond"), name, "%::z/%Z"),
+        local(tz(posix, "%F %T%^z", "-1 millisecond"), name, "%::z/%Z"),
         tz(posix, "-1 millisecond") ].join(" "));
     equal(
-      local(tz(posix, "%F %T%$"), name, "%::z/%Z"),
+      local(tz(posix, "%F %T%^z"), name, "%::z/%Z"),
       after,
       [ name, wallclock, posix, after, "after",
-        local(tz(posix, "%F %T%$"), name, "%::z/%Z") ].join(" "));
+        local(tz(posix, "%F %T%^z"), name, "%::z/%Z") ].join(" "));
   }
 });
