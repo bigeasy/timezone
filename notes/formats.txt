@@ -1,0 +1,60 @@
+%A localized full weekday name.
+%a localized abbreviated weekday name.
+%B localized full month name.
+%b localized abbreviated month name.
+%C century; integer value of `year / 100` zero padded to two digits.
+%c localized time and date format.
+%D month, day, year format; `%m/%d/%y`.
+%d zero padded two digit day of the month; `01` through `31`.
+%e space padded two chracter day of the month; ` 1` through `31`.
+%F RFC 3999 style year, month, day format; `%Y-%m-%d`.
+%G four digit, zero padded year corresponding to the ISO week number. If
+   the ISO week of the date is in the previous year, then the previous
+   year is printed. Only sensible use is with `%v`.
+%g two digit, zero padded year without century corresponding to the ISO
+   week number. If the ISO week of the date is in the previous year,
+   then the previous year is printed. Only sensible use is with `%v`.
+%H zero padded, two digit hour in 24-hour clock, `00` thorugh `24`.
+%h the same as `%b`.
+%I zero padded, two digit hour in 12-hour clock, `01` through `12`.
+%j zero padded, three digit day of the year, `001` through `366`.
+%k space padded, two character hour in 24 hour clock; ` 0` through `23`.
+%l space padded, two character hour in 12 hour clcok; ` 1` through `12`.
+%M zero padded, two digit minute; `00` thorugh `59`.
+%m zero padded, two digit month of year; `01` through `12`.
+%n literal newline; `\n`.
+%p localized representation of "ante meridiem" or "post meridiem"; am or pm.
+%R hours, minutes format on 24-hour clock; `%H:%M`.
+%r hours, minutes, seconds, meridiem format on 12-hour clock; `%I:%M:%S %p`.
+%S zero padded, two digit seconds; `00` through `60`.
+%s unpadded seconds since the epoch (POSIX time).
+%T hours, minutes, seconds format on 24-hour clock; `%H:%M:%S`.
+%t literal tab; `\t`.
+%U two digit zero padded week of the year with Sunday as first day of the week.
+   `00` through `53`.
+%w day of the week index with Monday as first day of the week. `0` through `6`.
+%V ISO week number. `01` through `53`.
+%W two digit zero padded week of the year with Monday as first day of
+   the week. `00` through `53`.
+%w day of the week index with Sunday as first day of the week. `0` through `6`.
+%X localized time format.
+%x localised date format.
+%Y four digit year.
+%y two digit, zero padded year without century; `0` through `99`.
+%Z IANA time zone database derived time zone name.
+%z four digit time zone offset from UTC, sign prefixed with first two
+   digits indicating hours, second two digits indicating minutes. This
+   is the form used in RFC 822 dates.
+%% literal percent sign; `%`.
+
+GNU extensions.
+
+- No padding.
+_ Space padding.
+0 Zero padding.
+
+And then GNU also lets you specify padding.
+
+Our extensions.
+
+%^z Document it!
