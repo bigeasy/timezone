@@ -27,3 +27,8 @@ strings.
 
 Timezone is a full featured standards based time library in pure JavaScript for
 under 3K minified and gzipped.
+
+HAKCING
+
+$ git clone --quiet https://github.com/bigeasy/timezone.git
+$ cd timezone && make && npm install && npm test

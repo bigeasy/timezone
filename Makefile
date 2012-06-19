@@ -15,6 +15,8 @@ sources = $(locale_targets) $(copy_sources)
 
 all: zones/zoneinfo/America/Detroit $(npm_targets)
 
+zic: zones/src/zic
+
 watch: all
 	@inotifywait -q -m -e close_write $(sources) | while read line; do make --no-print-directory all; done;
 
@@ -50,15 +52,13 @@ zones/tar/tzdata2012c.tar.gz:
 	mkdir -p zones/tar
 	rm -f zones/tar/tzdata2012c.*
 	curl -s http://www.iana.org/time-zones/repository/releases/tzdata2012c.tar.gz > zones/tar/tzdata2012c.tar.gz.tmp
-	md5sum zones/tar/tzdata2012c.tar.gz.tmp | cut -f1 -d' '
-	[ "$$(md5sum zones/tar/tzdata2012c.tar.gz.tmp | cut -f1 -d' ')" = "cfdc2710bd05c26dbd624441d57028f6" ] && mv zones/tar/tzdata2012c.tar.gz.tmp $@
+	[ "$$(cat zones/tar/tzdata2012c.tar.gz.tmp | $$(which md5sum || which md5) | cut -f1 -d' ')" = "cfdc2710bd05c26dbd624441d57028f6" ] && mv zones/tar/tzdata2012c.tar.gz.tmp $@
 
 zones/tar/tzcode2012b.tar.gz:
 	mkdir -p zones/tar
 	rm -f zones/tar/tzcode2012b.*
 	curl -s http://www.iana.org/time-zones/repository/releases/tzcode2012b.tar.gz > zones/tar/tzcode2012b.tar.gz.tmp
-	md5sum zones/tar/tzcode2012b.tar.gz.tmp | cut -f1 -d' '
-	[ "$$(md5sum zones/tar/tzcode2012b.tar.gz.tmp | cut -f1 -d' ')" = "6137322ffd36e1fd5128885be1c57008" ] && mv zones/tar/tzcode2012b.tar.gz.tmp $@
+	[ "$$(cat zones/tar/tzcode2012b.tar.gz.tmp | $$(which md5sum || which md5) | cut -f1 -d' ')" = "6137322ffd36e1fd5128885be1c57008" ] && mv zones/tar/tzcode2012b.tar.gz.tmp $@
 
 zones/src/Makefile: zones/tar/tzcode2012b.tar.gz
 	mkdir -p zones/src
@@ -69,8 +69,8 @@ zones/src/zic: zones/src/Makefile zones/src/yearistype.sh
 	make -C zones/src -f Makefile	
 	touch $@
 
-zones/zoneinfo/America/Detroit: zones/src/zic
-	(cd zones/src && ./zic -d ../zoneinfo africa antarctica asia australasia europe northamerica southamerica)
+zones/zoneinfo/America/Detroit: zones/src/africa
+	(cd zones/src && $$(which ./zic || which zic) -d ../zoneinfo africa antarctica asia australasia europe northamerica southamerica)
 
 zones/src/%: zones/tar/tzdata2012c.tar.gz
 	mkdir -p zones/src
