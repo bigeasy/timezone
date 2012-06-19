@@ -207,6 +207,7 @@
           request.date = argument;
         } else {
           splat.unshift.apply(splat, argument);
+          i--;
         }
       } else { //if (type == "object") {
         if (/^\w{2}_\w{2}$/.test(argument.name)) {
@@ -219,7 +220,7 @@
     }
 
     if ((date = request.date) != null) {
-      if (!request[request.locale]) throw new Error("unknown locale");
+      if (!request[request.locale]) request.locale = "en_US"; //throw new Error("unknown locale");
 
       if (typeof date == "string") {
         if ((posix = parse(request, date)) == null) {
