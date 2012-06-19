@@ -47,25 +47,14 @@
   }
 
   function parse (request, pattern) {
-    var parts = pattern.split(/T|\s/), date = [], match;
-    if (0 < parts.length && parts.length < 3) {
-      if (match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(parts[0])) {
-        __push.apply(date, match.slice(1, 4));
-        parts.shift();
-      } else {
-        __push.apply(date, request.convert([ request.clock(), "%Y-%m-%d" ]).split(/-/));
-      }
-      if (parts[0]) {
-        if (match = /^(\d{2}):(\d{2})(?::(\d{2})(\.(\d+))?)?(Z|(([+-])(\d{2}(:\d{2}){0,2})))?$/.exec(parts[0])) {
-          __push.apply(date, match.slice(1, 4));
-          __push.call(date, match[5] || 0);
-          if (match[7]) {
-            __push.call(date, match[8]);
-            __push.apply(date, match[9].split(/:/));
-          } else if (match[6]) {
-            __push.call(date, "+");
-          }
-        } else return;
+    var date = [], match;
+    if (match = /^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|(([+-])(\d{2}(:\d{2}){0,2})))?)?$/.exec(pattern)) {
+      __push.apply(date, match.slice(1, 8));
+      if (match[9]) {
+        __push.apply(date, [match[10]]);
+        __push.apply(date, match[11].split(/:/));
+      } else if (match[8]) {
+        __push.apply(date, ["+"]);
       }
       return makeDate(request, date);
     }
