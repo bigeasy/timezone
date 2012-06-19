@@ -183,39 +183,40 @@
       , adjustments = []
       ;
 
-    for (i = 0; splat.length; i++) {
+    for (i = 0; splat.length; i++) { // leave the for loop alone, it works.
       argument = splat.shift();
-      type = typeof argument;
-      if (type == "number" && i == 0) {
-        request.date = argument;
-      } else if (type == "string") {
-        if (~argument.indexOf("%")) {
-          request.format = argument;
-        } else if (/^\w{2}_\w{2}$/.test(argument)) {
-          request.locale = argument;
-        } else if (adjustment = parseAdjustment(argument)) {
-          adjustments.push(adjustment);
-        } else if (request[argument]) {
-          request.zone = argument;
-        } else if (i == 0) {
-          request.date = argument;
-        }
-      } else if (type == "function") {
-        argument.call(request);
-      } else if (Array.isArray(argument)) {
-        if (i == 0 && typeof argument[0] == "number") {
+      // https://twitter.com/bigeasy/status/215112186572439552
+      if (Array.isArray(argument)) {
+        if (i == 0 && !isNaN(argument[0]) && !Array.isArray(argument[0])) {
           request.date = argument;
         } else {
           splat.unshift.apply(splat, argument);
           i--;
         }
-      } else { //if (type == "object") {
-        if (/^\w{2}_\w{2}$/.test(argument.name)) {
+      } else if (isNaN(argument)) {
+        type = typeof argument;
+        if (type == "string") {
+          if (~argument.indexOf("%")) {
+            request.format = argument;
+          } else if (/^\w{2}_\w{2}$/.test(argument)) {
+            request.locale = argument;
+          } else if (adjustment = parseAdjustment(argument)) {
+            adjustments.push(adjustment);
+          } else if (request[argument]) {
+            request.zone = argument;
+          } else if (i == 0) {
+            request.date = argument;
+          }
+        } else if (type == "function") {
+          argument.call(request);
+        } else if (/^\w{2}_\w{2}$/.test(argument.name)) {
           request[argument.name] = argument;
         } else if (argument.zones) {
           for (var key in argument.zones) request[key] = argument.zones[key];
           for (var key in argument.rules) request[key] = argument.rules[key];
         }
+      } else if (i == 0 && !isNaN(argument)) {
+        request.date = argument;
       }
     }
 
@@ -226,11 +227,11 @@
         if ((posix = parse(request, date)) == null) {
           throw new Error("invalid date");
         }
-      } /*else if (typeof date == "number") {
-        posix = date;
-      } */else if (Array.isArray(date)) {
+      } else if (Array.isArray(date)) {
         posix = makeDate(request, date);
-      } else posix = +(date);
+      } else {
+        posix = Math.floor(date);
+      }
 
       for (i = 0, I = adjustments.length; i < I; i++) {
         posix = adjustments[i](request, posix);
