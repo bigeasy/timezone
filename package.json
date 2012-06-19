@@ -8,6 +8,7 @@
 ,   "keywords" :        ["time", "timezone", "date", "tzdata", "utc", "gmt", "datetime", "tz"]
 ,   "author" :          "Alan Gutierrez <alan@prettyrobots.com>"
 ,   "contributors" :    []
+,   "dependencies" :    {}
 ,   "devDependencies":  { "proof": "0.0.5" }
 ,   "lib" :             "lib"
 ,   "main" :            "./lib/timezone"

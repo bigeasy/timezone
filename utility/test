@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if ! { ruby --version | grep -q '^ruby 1.9.3'; }
+then
+  echo "Zone verification tests fail without Ruby 1.9.3." >&2
+fi
+
 if [ "$TRAVIS" = "true" ]; then
   # Install a Ruby 1.9.3 for to get a `strftime` that understands `%::z`.
   (echo -e "\n\n\n" | sudo apt-add-repository ppa:brightbox/ruby-ng-experimental) >/dev/null 2>&1 && echo "brightbox added"
