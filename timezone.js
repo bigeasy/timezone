@@ -75,7 +75,6 @@
       offset: entry.offset
     };
 
-    // TODO Why is `saved` 0?
     actualized[actualized.clock] = fields.getTime() + rule.time * 6e4;
 
     if (actualized.clock == "posix") {
@@ -246,6 +245,7 @@
   var context =
     { zone: "UTC"
     , entry: { abbrev: "UTC", offset: 0, save: 0 }
+    , UTC: true
     , clock: function () { return +(new Date()) }
     , convert: convert
     , d: function(date) { return date.getUTCDate() }
