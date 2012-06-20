@@ -2,7 +2,6 @@
 var lines = require("fs").readFileSync(__dirname + "/../../../zones/transitions.txt", "utf8").split(/\n/);
 lines.pop()
 require("../../proof")(lines.length * 2, function (equal, tz) {
-  // TODO Not automatically applying zone.
   var partials = {}
   for (var i = 0, I = lines.length; i < I; i++) {
     line = lines[i];

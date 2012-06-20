@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 require("../proof")(13, function (equal, tz, utc) {
-  // TODO Use a different stamp, not %c.
   tz = tz(require("timezone/America/Detroit"));
   // Across dst transitions.
   equal(tz("2010-03-14 12:00", "America/Detroit", "-24 hour", "%c"), "Sat 13 Mar 2010 11:00:00 AM EST",

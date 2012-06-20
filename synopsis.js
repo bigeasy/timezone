@@ -254,8 +254,6 @@ eq( tz(moonwalk, "%W"), "29" );
 // *ISO 8601 [week date](http://en.wikipedia.org/wiki/ISO_8601#Week_dates) format.*
 eq( tz(moonwalk, "%G-%V-%wT%T"), "1969-30-1T02:56:00" );
 
-// #### TODO Zone formats.
-
 // ### Converting to Wall-Clock Time
 //
 // We only use integers to represent POSIX time.
