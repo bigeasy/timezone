@@ -188,7 +188,7 @@
       // https://twitter.com/bigeasy/status/215112186572439552
       if (Array.isArray(argument)) {
         if (i == 0 && !isNaN(argument[0]) && !Array.isArray(argument[0])) {
-          request.date = argument;
+          date = argument;
         } else {
           splat.unshift.apply(splat, argument);
           i--;
@@ -205,7 +205,7 @@
           } else if (request[argument]) {
             request.zone = argument;
           } else if (i == 0) {
-            request.date = argument;
+            date = argument;
           }
         } else if (type == "function") {
           argument.call(request);
@@ -216,11 +216,11 @@
           for (var key in argument.rules) request[key] = argument.rules[key];
         }
       } else if (i == 0 && !isNaN(argument)) {
-        request.date = argument;
+        date = argument;
       }
     }
 
-    if ((date = request.date) != null) {
+    if (date != null) {
       if (!request[request.locale]) request.locale = "en_US"; //throw new Error("unknown locale");
 
       if (typeof date == "string") {
