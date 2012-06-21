@@ -239,7 +239,7 @@
       return request.format ? format.call(request, posix, request.format) : posix;
     }
 
-    return function() { return convert.call(request, __slice.call(arguments, 0)) };
+    return function() { return request.convert(__slice.call(arguments, 0)) };
   };
 
   var context =
@@ -248,17 +248,6 @@
     , UTC: true
     , clock: function () { return +(new Date()) }
     , convert: convert
-    , d: function(date) { return date.getUTCDate() }
-    , m: function(date) { return date.getUTCMonth() + 1 }
-    , Y: function(date) { return date.getUTCFullYear() }
-    , F: function(date, posix) { return this.convert([ posix, "%Y-%m-%d" ]) }
-    , H: function(date) { return date.getUTCHours() }
-    , M: function(date) { return date.getUTCMinutes() }
-    , s: function(date) { return Math.floor(date.getTime() / 1000) }
-    , S: function(date) { return date.getUTCSeconds() }
-    , N: function(date) { return (date.getTime() % 1000) * 1000000 }
-    , R: function(date, posix) { return this.convert([ posix, "%H:%M" ]) }
-    , T: function(date, posix) { return this.convert([ posix, "%H:%M:%S" ]) }
     , z: function(date, posix, flag, delimiters) {
         var offset = this.entry.offset + this.entry.save
           , seconds = Math.abs(offset / 1000), parts = [], part = 3600, i, z;
@@ -283,51 +272,62 @@
         z = z.replace(/([-+])(0)/, { "_": " $1", "-": "$1" }[flag] || "$1$2");
         return z;
       }
-    , Z: function(date) { return this.entry.abbrev }
     , "%": function(date) { return "%" }
-    , n: function(date) { return "\n" }
-    , t: function(date) { return "\t" }
-    , a: function (date) { return this[this.locale].day.abbrev[date.getUTCDay()] }
-    , A: function (date) { return this[this.locale].day.full[date.getUTCDay()] }
-    , j: function (date) { return Math.floor((date.getTime() - Date.UTC(date.getUTCFullYear(), 0)) / 864e5) + 1 }
-    , e: function (date) { return date.getUTCDate() }
-    , u: function (date) { return date.getUTCDay() ? date.getUTCDay() : 7 }
-    , w: function (date) { return date.getUTCDay() }
+    , n: function (date) { return "\n" }
+    , t: function (date) { return "\t" }
     , U: function (date) { return weekOfYear(date, 0) }
     , W: function (date) { return weekOfYear(date, 1) }
     , V: function (date) { return isoWeek(date)[0] }
     , G: function (date) { return isoWeek(date)[1] }
     , g: function (date) { return isoWeek(date)[1] % 100 }
-    , h: function (date) { return this[this.locale].month.abbrev[date.getUTCMonth()] }
-    , b: function (date) { return this[this.locale].month.abbrev[date.getUTCMonth()] }
-    , B: function (date) { return this[this.locale].month.full[date.getUTCMonth()] }
-    , y: function (date) { return date.getUTCFullYear() % 100 }
+    , j: function (date) { return Math.floor((date.getTime() - Date.UTC(date.getUTCFullYear(), 0)) / 864e5) + 1 }
+    , s: function (date) { return Math.floor(date.getTime() / 1000) }
     , C: function (date) { return Math.floor(date.getUTCFullYear() / 100) }
-    , D: function (date, posix) { return this.convert([ posix, "%m/%d/%y" ]) }
-    , x: function (date, posix) { return this.convert([ posix, this[this.locale].date ]) }
+    , N: function (date) { return date.getTime() % 1000 * 1000000 }
+    , m: function (date) { return date.getUTCMonth() + 1 }
+    , Y: function (date) { return date.getUTCFullYear() }
+    , y: function (date) { return date.getUTCFullYear() % 100 }
+    , H: function (date) { return date.getUTCHours() }
+    , M: function (date) { return date.getUTCMinutes() }
+    , S: function (date) { return date.getUTCSeconds() }
+    , e: function (date) { return date.getUTCDate() }
+    , d: function (date) { return date.getUTCDate() }
+    , u: function (date) { return date.getUTCDay() ? date.getUTCDay() : 7 }
+    , w: function (date) { return date.getUTCDay() }
     , l: function (date) { return date.getUTCHours() % 12 ? date.getUTCHours() % 12 : 12 }
     , I: function (date) { return date.getUTCHours() % 12 ? date.getUTCHours() % 12 : 12 }
     , k: function (date) { return date.getUTCHours() }
+    , Z: function (date) { return this.entry.abbrev }
+    , a: function (date) { return this[this.locale].day.abbrev[date.getUTCDay()] }
+    , A: function (date) { return this[this.locale].day.full[date.getUTCDay()] }
+    , h: function (date) { return this[this.locale].month.abbrev[date.getUTCMonth()] }
+    , b: function (date) { return this[this.locale].month.abbrev[date.getUTCMonth()] }
+    , B: function (date) { return this[this.locale].month.full[date.getUTCMonth()] }
     , P: function (date) { return this[this.locale].meridiem[Math.floor(date.getUTCHours() / 12)].toLowerCase() }
     , p: function (date) { return this[this.locale].meridiem[Math.floor(date.getUTCHours() / 12)] }
+    , R: function (date, posix) { return this.convert([ posix, "%H:%M" ]) }
+    , T: function (date, posix) { return this.convert([ posix, "%H:%M:%S" ]) }
+    , D: function (date, posix) { return this.convert([ posix, "%m/%d/%y" ]) }
+    , F: function (date, posix) { return this.convert([ posix, "%Y-%m-%d" ]) }
+    , x: function (date, posix) { return this.convert([ posix, this[this.locale].date ]) }
     , r: function (date, posix) { return this.convert([ posix, this[this.locale].time12 ]) }
     , X: function (date, posix) { return this.convert([ posix, this[this.locale].time24 ]) }
     , c: function (date, posix) { return this.convert([ posix, this[this.locale].dateTime ]) }
     , locale: "en_US"
     , en_US: {
-        day: {
-          abbrev: "Sun|Mon|Tue|Wed|Thu|Fri|Sat".split("|"),
-          full: "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday".split("|")
-        },
-        month: {
-          abbrev: "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec".split("|"),
-          full: "January|February|March|April|May|June|July|August|September|October|November|December".split("|")
-        },
         date: "%m/%d/%Y",
         time24: "%I:%M:%S %p",
         time12: "%I:%M:%S %p",
         dateTime: "%a %d %b %Y %I:%M:%S %p %Z",
-        meridiem: [ "AM", "PM" ]
+        meridiem: [ "AM", "PM" ],
+        month: {
+          abbrev: "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec".split("|"),
+          full: "January|February|March|April|May|June|July|August|September|October|November|December".split("|")
+        },
+        day: {
+          abbrev: "Sun|Mon|Tue|Wed|Thu|Fri|Sat".split("|"),
+          full: "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday".split("|")
+        }
       }
     };
   var UNITS = "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|year|month|day|hour|minute|second|milli|millisecond"
@@ -394,5 +394,5 @@
     }
   }
 
-  return function () { return convert.call(context, __slice.call(arguments, 0)) }
+  return function () { return context.convert(__slice.call(arguments, 0)) }
 });
