@@ -116,7 +116,7 @@
     }
     if (found) {
       if (abbrevs = /^(.*)\/(.*)$/.exec(entry.format)) {
-        found.abbrev = abbrevs[found.save != 0 ? 2 : 1];
+        found.abbrev = abbrevs[found.save ? 2 : 1];
       } else {
         found.abbrev = entry.format.replace(/%s/, found.rule.letter);
       }
@@ -156,7 +156,7 @@
     } else {
       date = new Date(convertToWallclock(request, posix));
       if (index < 7) {
-        while (offset != 0) {
+        while (offset) {
           date.setUTCDate(date.getUTCDate() + increment);
           if (date.getUTCDay() == index) offset -= increment;
         }
@@ -175,7 +175,7 @@
   };
 
   function convert (splat) {
-    if (splat.length == 0) return this.clock();
+    if (!splat.length) return this.clock();
 
     var i, I, adjustment, argument, date, posix, type
       , request = Object.create(this)
@@ -186,7 +186,7 @@
       argument = splat.shift();
       // https://twitter.com/bigeasy/status/215112186572439552
       if (Array.isArray(argument)) {
-        if (i == 0 && !isNaN(argument[0]) && !Array.isArray(argument[0])) {
+        if (!i && !isNaN(argument[0]) && !Array.isArray(argument[0])) {
           date = argument;
         } else {
           splat.unshift.apply(splat, argument);
@@ -203,7 +203,7 @@
             adjustments.push(adjustment);
           } else if (request[argument]) {
             request.zone = argument;
-          } else if (i == 0) {
+          } else if (!i) {
             date = argument;
           }
         } else if (type == "function") {
@@ -214,7 +214,7 @@
           for (var key in argument.zones) request[key] = argument.zones[key];
           for (var key in argument.rules) request[key] = argument.rules[key];
         }
-      } else if (i == 0 && !isNaN(argument)) {
+      } else if (!i && !isNaN(argument)) {
         date = argument;
       }
     }
@@ -291,7 +291,7 @@
     , A: function (date) { return this[this.locale].day.full[date.getUTCDay()] }
     , j: function (date) { return Math.floor((date.getTime() - Date.UTC(date.getUTCFullYear(), 0)) / 864e5) + 1 }
     , e: function (date) { return date.getUTCDate() }
-    , u: function (date) { return date.getUTCDay() == 0 ? 7 : date.getUTCDay() }
+    , u: function (date) { return date.getUTCDay() ? date.getUTCDay() : 7 }
     , w: function (date) { return date.getUTCDay() }
     , U: function (date) { return weekOfYear(date, 0) }
     , W: function (date) { return weekOfYear(date, 1) }
@@ -305,8 +305,8 @@
     , C: function (date) { return Math.floor(date.getUTCFullYear() / 100) }
     , D: function (date, posix) { return this.convert([ posix, "%m/%d/%y" ]) }
     , x: function (date, posix) { return this.convert([ posix, this[this.locale].date ]) }
-    , l: function (date) { return date.getUTCHours() % 12 == 0 ? 12 : date.getUTCHours() % 12 }
-    , I: function (date) { return date.getUTCHours() % 12 == 0 ? 12 : date.getUTCHours() % 12 }
+    , l: function (date) { return date.getUTCHours() % 12 ? date.getUTCHours() % 12 : 12 }
+    , I: function (date) { return date.getUTCHours() % 12 ? date.getUTCHours() % 12 : 12 }
     , k: function (date) { return date.getUTCHours() }
     , P: function (date) { return this[this.locale].meridiem[Math.floor(date.getUTCHours() / 12)].toLowerCase() }
     , p: function (date) { return this[this.locale].meridiem[Math.floor(date.getUTCHours() / 12)] }
@@ -382,7 +382,7 @@
     nyy = date.getUTCFullYear();
     nyd = new Date(Date.UTC(nyy, 0)).getUTCDay();
     week = weekOfYear(date, 1) + (nyd > 1 && nyd <= 4 ? 1 : 0);
-    if (week == 0) {
+    if (!week) {
       nyy = date.getUTCFullYear() - 1;
       nyd = new Date(Date.UTC(nyy, 0)).getUTCDay();
       week = nyd == 4 || (nyd == 3 && new Date(nyy, 1, 29).getDate() == 29) ? 53 : 52;
