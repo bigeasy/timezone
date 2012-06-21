@@ -31,18 +31,10 @@
   };
 
   function makeDate (request, date) {
-    var posix, z, i, I;
-    if (~(z = date.indexOf('+')) || ~(z = date.indexOf('-'))) {
-      date[z] += 1;
-      posix = true;
-    } else {
-      date[z = date.length] = 1;
-    }
-    for (i = 0; i < 11; i++) {
-      date[i] = date[i] || 0;
-    }
+    var posix = date[7], i;
+    for (i = 0; i < 11; i++) date[i] = parseInt(date[i] || 0, 10);
     --date[1];
-    date = Date.UTC.apply(Date.UTC, date.slice(0, z)) + -date[z] * (date[z + 1] * 36e5 + date[z + 2] * 6e4 + date[z + 3] * 1e3);
+    date = Date.UTC.apply(Date.UTC, date.slice(0, 8)) + -date[7] * (date[8] * 36e5 + date[9] * 6e4 + date[10] * 1e3);
     return posix ? date : convertToPOSIX(request, date);
   }
 
@@ -51,10 +43,10 @@
     if (match = /^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|(([+-])(\d{2}(:\d{2}){0,2})))?)?$/.exec(pattern)) {
       __push.apply(date, match.slice(1, 8));
       if (match[9]) {
-        __push.apply(date, [match[10]]);
+        __push.apply(date, [match[10] + 1]);
         __push.apply(date, match[11].split(/:/));
       } else if (match[8]) {
-        __push.apply(date, ["+"]);
+        __push.apply(date, [ 1 ]);
       }
       return makeDate(request, date);
     }
