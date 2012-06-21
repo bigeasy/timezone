@@ -292,10 +292,10 @@
     , S: function (date) { return date.getUTCSeconds() }
     , e: function (date) { return date.getUTCDate() }
     , d: function (date) { return date.getUTCDate() }
-    , u: function (date) { return date.getUTCDay() ? date.getUTCDay() : 7 }
+    , u: function (date) { return date.getUTCDay() || 7 }
     , w: function (date) { return date.getUTCDay() }
-    , l: function (date) { return date.getUTCHours() % 12 ? date.getUTCHours() % 12 : 12 }
-    , I: function (date) { return date.getUTCHours() % 12 ? date.getUTCHours() % 12 : 12 }
+    , l: function (date) { return date.getUTCHours() % 12 || 12 }
+    , I: function (date) { return date.getUTCHours() % 12 || 12 }
     , k: function (date) { return date.getUTCHours() }
     , Z: function (date) { return this.entry.abbrev }
     , a: function (date) { return this[this.locale].day.abbrev[date.getUTCDay()] }
