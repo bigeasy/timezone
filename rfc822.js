@@ -21,32 +21,32 @@ function say () { return console.log.apply(console, __slice.call(arguments, 0)) 
 */
 
 function rfc822(pattern) {
-    var day
-      , date
-      , match = /^\s*(\w{3}),\s+(\d{1,2})\s+(\w{3})\s+(\d{2,4})\s+(\d{2}):(\d{2})(?::(\d{2}))?\s*(?:([-+]?\d{4})|([A-IK-Z]|UT|GMT|[ECMP][SD]T))?\s*$/i.exec(pattern);
-    if (!match) throw Error("invalid rfc822 date");
+  var day
+    , date
+    , match = /^\s*(\w{3}),\s+(\d{1,2})\s+(\w{3})\s+(\d{2,4})\s+(\d{2}):(\d{2})(?::(\d{2}))?\s*(?:([-+]?\d{4})|([A-IK-Z]|UT|GMT|[ECMP][SD]T))?\s*$/i.exec(pattern);
+  if (!match) throw Error("invalid rfc822 date");
 
-    match[1] = "sun|mon|tue|wed|thu|fri|sat".split("|").indexOf(match[1].toLowerCase());
-    match[3] = "jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec".split("|").indexOf(match[3].toLowerCase());
-    for (i = 1; i < 9; i++) {
-      match[i] = parseInt(match[i] || "0", 10);
-    }
-    match[0] = match[4];
-    match[4] = match[2];
-    match[2] = match[0];
-    
-    day = match[1];
-    offset = match[9] || match[8];
-    match = match.slice(2, 8)
+  match[1] = "sun|mon|tue|wed|thu|fri|sat".split("|").indexOf(match[1].toLowerCase());
+  match[3] = "jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec".split("|").indexOf(match[3].toLowerCase());
+  for (i = 1; i < 9; i++) {
+    match[i] = parseInt(match[i] || "0", 10);
+  }
+  match[0] = match[4];
+  match[4] = match[2];
+  match[2] = match[0];
+  
+  day = match[1];
+  offset = match[9] || match[8];
+  match = match.slice(2, 8)
 
-    date = new Date(Date.UTC.apply(Date.UTC, match));
+  date = new Date(Date.UTC.apply(Date.UTC, match));
 
-    if (date.getUTCDay() != day) throw new Error("invalid rfc822 date");
+  if (date.getUTCDay() != day) throw new Error("invalid rfc822 date");
 
-    if (offset) match.push(offset < 0 ? "-" : "+", Math.abs(Math.floor(offset / 100)), offset % 100);
-    else if (offset == "GMT") match.push("+", 0);
+  if (offset) match.push(offset < 0 ? "-" : "+", Math.abs(Math.floor(offset / 100)), offset % 100);
+  else if (offset == "GMT") match.push("+", 0);
 
-    return match;
+  return match;
 }
 
 
