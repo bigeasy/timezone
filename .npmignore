@@ -1,4 +1,7 @@
-t
-limbo
-node_modules
-iana
+t/*
+node_modules/*
+iana/*
+timezones/*
+src/*
+notes/*
+rfc822.js

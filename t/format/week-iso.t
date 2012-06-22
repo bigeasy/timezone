@@ -1,10 +1,14 @@
-#!/usr/bin/env coffee
-fs = require "fs"
-require("../proof") 14640, ({ tz, readDate }) ->
-  tz = tz require "../../date"
-  formatted = "#{__dirname}/../data/format"
-  lines = require("fs").readFileSync("#{formatted}/V", "utf8").split(/\n/)
+#!/usr/bin/env node
+require("../proof")(14640, function (equal, tz, readDate) {
+  var formatted, lines, i, I, date, dayOfYear, record;
+  formatted = __dirname + "/../data/format";
+  lines = require("fs").readFileSync(formatted + "/V", "utf8").split(/\n/);
   lines.pop()
-  for line in lines
-    [date, dayOfYear] = line.split /\s+/
-    @equal tz(readDate(date), "%V"), dayOfYear, "ISO week #{date}"
+  for (i = 0, I = lines.length; i < I; i++) {
+    line = lines[i];
+    record = line.split(/\s+/);
+    date = record[0];
+    dayOfYear = record[1];
+    equal(tz(readDate(date), "%V"), dayOfYear, "ISO week " + date);
+  }
+});
