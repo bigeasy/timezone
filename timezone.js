@@ -179,7 +179,7 @@
       argument = vargs.shift();
       // https://twitter.com/bigeasy/status/215112186572439552
       if (Array.isArray(argument)) {
-        if (!i && !isNaN(argument[0]) && !Array.isArray(argument[0])) {
+        if (!i && argument[0] == "@") {
           date = argument;
         } else {
           vargs.unshift.apply(vargs, argument);
@@ -223,7 +223,7 @@
           throw new Error("invalid date");
         }
       } else if (Array.isArray(date)) {
-        posix = makeDate(request, date);
+        posix = makeDate(request, date.slice(1));
       } else {
         posix = Math.floor(date);
       }
