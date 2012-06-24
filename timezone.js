@@ -166,22 +166,24 @@
     return posix;
   };
 
-  function convert (splat) {
-    if (!splat.length) return this.clock();
+  function convert (vargs) {
+    if (!vargs.length) return this.clock();
 
     var i, I, adjustment, argument, date, posix, type
       , request = Object.create(this)
       , adjustments = []
+      , retry = []
       ;
 
-    for (i = 0; splat.length; i++) { // leave the for loop alone, it works.
-      argument = splat.shift();
+    vargs.push(retry);
+    for (i = 0; vargs.length; i++) { // leave the for loop alone, it works.
+      argument = vargs.shift();
       // https://twitter.com/bigeasy/status/215112186572439552
       if (Array.isArray(argument)) {
         if (!i && !isNaN(argument[0]) && !Array.isArray(argument[0])) {
           date = argument;
         } else {
-          splat.unshift.apply(splat, argument);
+          vargs.unshift.apply(vargs, argument);
           i--;
         }
       } else if (isNaN(argument)) {
@@ -193,10 +195,12 @@
             request.locale = argument;
           } else if (adjustment = parseAdjustment(argument)) {
             adjustments.push(adjustment);
-          } else if (request[argument]) {
+          } else if (request[argument] && Array.isArray(request[argument])) {
             request.zone = argument;
           } else if (!i) {
             date = argument;
+          } else {
+            retry.push(argument);
           }
         } else if (type == "function") {
           argument.call(request);
@@ -237,7 +241,7 @@
   var context =
     { zone: "UTC"
     , entry: { abbrev: "UTC", offset: 0, save: 0 }
-    , UTC: true
+    , UTC: []
     , clock: function () { return +(new Date()) }
     , convert: convert
     , z: function(date, posix, flag, delimiters) {
