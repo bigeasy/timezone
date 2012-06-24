@@ -333,23 +333,7 @@
   UNITS = UNITS.toLowerCase().split("|");
 
   "dmHMSUWVgCIky".replace(/./g, function (e) { context[e].pad = 2 });
-  //"kle".replace(/./g, function (e) { context[e].style = "_" });
-  // 2945
-  /*
-  context.d.pad = 2;
-  context.m.pad = 2;
-  context.H.pad = 2;
-  context.M.pad = 2;
-  context.S.pad = 2;
-  context.U.pad = 2;
-  context.W.pad = 2;
-  context.V.pad = 2;
-  context.g.pad = 2;
-  context.C.pad = 2;
-  context.I.pad = 2;
-  context.k.pad = 2;
-  context.y.pad = 2;
-*/
+
   context.N.pad = 9;
   context.j.pad = 3;
 
