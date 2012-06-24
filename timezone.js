@@ -35,7 +35,9 @@
     for (i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
     --date[1];
     date = Date.UTC.apply(Date.UTC, date.slice(0, 8)) + -date[7] * (date[8] * 36e5 + date[9] * 6e4 + date[10] * 1e3);
-    return posix ? date : convertToPOSIX(request, date);
+    if (!posix) date = convertToPOSIX(request, date);
+    if (date == null) throw new Error("invalid wall-clock time");
+    return date;
   }
 
   function parse (request, pattern) {
@@ -220,10 +222,11 @@
         if (date == "*") {
           posix = request.clock();
         } else if ((posix = parse(request, date)) == null) {
-          throw new Error("invalid date");
+          return request.convert([[]]);
         }
       } else if (Array.isArray(date)) {
         posix = makeDate(request, date.slice(1));
+        if (isNaN(posix)) return request.convert([[]]);
       } else {
         posix = Math.floor(date);
       }
