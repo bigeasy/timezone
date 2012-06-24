@@ -12,12 +12,12 @@
 
   function say () { return console.log.apply(console, __slice.call(arguments, 0)) }
 */
-  function format (posix, rest) {
-    var wallclock = new Date(convertToWallclock(this, posix)), self = this;
+  function format (request, posix, rest) {
+    var wallclock = new Date(convertToWallclock(request, posix));
     return rest.replace(/%([-0_^]?)(:{0,3})(\d*)(.)/g, function (matched, flag, colons, padding, specifier) {
       var f, value = matched, fill = "0";
-      if (f = self[specifier]) {
-        value = String(f.call(self, wallclock, posix, flag, (colons || "").length));
+      if (f = request[specifier]) {
+        value = String(f.call(request, wallclock, posix, flag, (colons || "").length));
         if ((flag || f.style) == "_") fill = " ";
         pad = parseInt(flag == "-" ? 0 : (f.pad || 0));
         while (value.length < pad) value = fill + value;
@@ -228,7 +228,7 @@
         posix = adjustments[i](request, posix);
       }
 
-      return request.format ? format.call(request, posix, request.format) : posix;
+      return request.format ? format(request, posix, request.format) : posix;
     }
 
     return function() { return request.convert(__slice.call(arguments, 0)) };
