@@ -97,7 +97,7 @@
 
   function find (request, clock, time) {
     var i, I, entry, year = new Date(time).getUTCFullYear(), found, zone = request[request.zone], actualized = [], to, abbrevs;
-    for (i = 0, I = zone.length; i < I; i++) if (zone[i][clock] <= time) break;
+    for (i = 1, I = zone.length; i < I; i++) if (zone[i][clock] <= time) break;
     entry = zone[i];
     if (entry.rules) {
       rules = request[entry.rules];
@@ -215,7 +215,7 @@
     }
 
     if (request[locale]) request.locale = locale;
-    if (request[zone] && Array.isArray(request[zone])) request.zone = zone;
+    if (request[zone] && request[zone][0] == "z") request.zone = zone;
 
     if (date != null) {
       if (typeof date == "string") {
@@ -244,7 +244,7 @@
   var context =
     { zone: "UTC"
     , entry: { abbrev: "UTC", offset: 0, save: 0 }
-    , UTC: []
+    , UTC: [ "z" ]
     , clock: function () { return +(new Date()) }
     , convert: convert
     , z: function(date, posix, flag, delimiters) {
