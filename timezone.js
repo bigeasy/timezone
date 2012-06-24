@@ -15,7 +15,7 @@
   function format (request, posix, rest) {
     var wallclock = new Date(convertToWallclock(request, posix));
     return rest.replace(/%([-0_^]?)(:{0,3})(\d*)(.)/g, function (matched, flag, colons, padding, specifier) {
-      var f, value = matched, fill = "0";
+      var f, value = matched, fill = "0", pad;
       if (f = request[specifier]) {
         value = String(f.call(request, wallclock, posix, flag, (colons || "").length));
         if ((flag || f.style) == "_") fill = " ";
@@ -40,8 +40,8 @@
     return date;
   }
 
-  function parse (request, pattern) {
-    var date = [], match;
+  function parse (pattern) {
+    var date = [ "@" ], match;
     if (match = /^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|(([+-])(\d{2}(:\d{2}){0,2})))?)?$/.exec(pattern)) {
       __push.apply(date, match.slice(1, 8));
       if (match[9]) {
@@ -50,7 +50,7 @@
       } else if (match[8]) {
         __push.apply(date, [ 1 ]);
       }
-      return makeDate(request, date);
+      return date;
     }
   }
 
@@ -96,7 +96,7 @@
   }
 
   function find (request, clock, time) {
-    var i, I, entry, year = new Date(time).getUTCFullYear(), found, zone = request[request.zone], actualized = [], to, abbrevs;
+    var i, I, entry, year = new Date(time).getUTCFullYear(), found, zone = request[request.zone], actualized = [], to, abbrevs, rules;
     for (i = 1, I = zone.length; i < I; i++) if (zone[i][clock] <= time) break;
     entry = zone[i];
     if (entry.rules) {
@@ -171,71 +171,86 @@
   function convert (vargs) {
     if (!vargs.length) return "0.0.11";
 
-    var i, I, adjustment, argument, date, posix, type
+    var i, I, argument, date, type
       , request = Object.create(this)
-      , locale, zone
+      , zone, locale
       , adjustments = []
+      , parsed
+      , extra = []
       ;
 
     for (i = 0; vargs.length; i++) { // leave the for loop alone, it works.
       argument = vargs.shift();
       // https://twitter.com/bigeasy/status/215112186572439552
-      if (Array.isArray(argument)) {
+      if (argument == null) {
+        throw new Error("null argument");
+      } else if (Array.isArray(argument)) {
         if (!i && argument[0] == "@") {
           date = argument;
         } else {
           vargs.unshift.apply(vargs, argument);
           i--;
         }
-      } else if (isNaN(argument)) {
+      } else if (isNaN(argument) && (i || argument != "*")) {
         type = typeof argument;
         if (type == "string") {
           if (~argument.indexOf("%")) {
             request.format = argument;
-          } else if (!i && /^[\d*]/.test(argument)) {
-            date = argument;
+          } else if (!i && (parsed = parse(argument))) {
+            date = parsed;
           } else if (/^\w{2}_\w{2}$/.test(argument)) {
-            locale = argument;
-          } else if (adjustment = parseAdjustment(argument)) {
-            adjustments.push(adjustment);
+            if (locale) extra.push(argument);
+            else locale = argument;
+          } else if (parsed = parseAdjustment(argument)) {
+            adjustments.push(parsed);
+          } else if (/^[-A-Za-z\/_]+$|^\w{3}\d\w{3}$/.test(argument)) {
+            if (!zone) zone = argument;
+            else extra.push(argument);
           } else {
-            zone = argument;
+            throw new Error("invalid argument: " + argument);
           }
         } else if (type == "function") {
-          if (argument = argument.call(request)) return argument;
+          if (parsed = argument.call(request)) return parsed;
         } else if (/^\w{2}_\w{2}$/.test(argument.name)) {
           request[argument.name] = argument;
         } else if (argument.zones) {
           for (var key in argument.zones) request[key] = argument.zones[key];
           for (var key in argument.rules) request[key] = argument.rules[key];
         }
-      } else if (!i && !isNaN(argument)) {
+      } else if (!i) {
         date = argument;
+      } else {
+        throw new Error("invalid argument: " + argument);
       }
     }
 
-    if (request[locale]) request.locale = locale;
-    if (request[zone] && request[zone][0] == "z") request.zone = zone;
+    if (locale) {
+      if (!request[locale]) throw new Error("invalid locale: " + locale);
+      request.locale = locale;
+    }
+
+    if (zone) {
+      if (!request[zone] || request[zone][0] != "z") throw new Error("invalid zone: " + zone);
+      request.zone = zone;
+    }
+
+    if (extra.length) return request.convert(date == null ? extra : [ date, extra ]);
 
     if (date != null) {
-      if (typeof date == "string") {
-        if (date == "*") {
-          posix = request.clock();
-        } else if ((posix = parse(request, date)) == null) {
-          return request.convert([[]]);
-        }
+      if (date == "*") {
+        date = request.clock();
       } else if (Array.isArray(date)) {
-        posix = makeDate(request, date.slice(1));
-        if (isNaN(posix)) return request.convert([[]]);
+        if (isNaN(date = makeDate(request, date.slice(1))))
+          throw new Error("invalid date");
       } else {
-        posix = Math.floor(date);
+        date = Math.floor(date);
       }
 
       for (i = 0, I = adjustments.length; i < I; i++) {
-        posix = adjustments[i](request, posix);
+        date = adjustments[i](request, date);
       }
 
-      return request.format ? format(request, posix, request.format) : posix;
+      return request.format ? format(request, date, request.format) : date;
     }
 
     return function () { return request.convert(__slice.call(arguments, 0)) };

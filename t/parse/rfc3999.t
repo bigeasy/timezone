@@ -18,6 +18,9 @@ require("../proof")(18, function (equal, tz, utc) {
   equal(tz("1970-01-01 00:00Z", "America/Detroit"), 0, "1970 Detroit with Z");
   equal(tz("1970-01-01 00:00-02:00", "America/Detroit"), 36e5 * 2, "1970 Detroit with offset");
   equal(tz("1999-12-31 20:00:00-04:00"), utc(2000, 0, 1), "before y2k");
-  fail = tz("1999");
-  equal(typeof fail, "function", "bad date");
+  try {
+    tz("1999-");
+  } catch (e) {
+    equal(e.message, "invalid argument: 1999-", "not really a date");
+  }
 });
