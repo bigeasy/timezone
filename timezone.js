@@ -167,15 +167,14 @@
   };
 
   function convert (vargs) {
-    if (!vargs.length) return this.clock();
+    if (!vargs.length) return "0.0.11";
 
     var i, I, adjustment, argument, date, posix, type
       , request = Object.create(this)
+      , locale, zone
       , adjustments = []
-      , retry = []
       ;
 
-    vargs.push(retry);
     for (i = 0; vargs.length; i++) { // leave the for loop alone, it works.
       argument = vargs.shift();
       // https://twitter.com/bigeasy/status/215112186572439552
@@ -191,19 +190,17 @@
         if (type == "string") {
           if (~argument.indexOf("%")) {
             request.format = argument;
+          } else if (!i && /^[\d*]/.test(argument)) {
+            date = argument;
           } else if (/^\w{2}_\w{2}$/.test(argument)) {
-            request.locale = argument;
+            locale = argument;
           } else if (adjustment = parseAdjustment(argument)) {
             adjustments.push(adjustment);
-          } else if (request[argument] && Array.isArray(request[argument])) {
-            request.zone = argument;
-          } else if (!i) {
-            date = argument;
           } else {
-            retry.push(argument);
+            zone = argument;
           }
         } else if (type == "function") {
-          argument.call(request);
+          if (argument = argument.call(request)) return argument;
         } else if (/^\w{2}_\w{2}$/.test(argument.name)) {
           request[argument.name] = argument;
         } else if (argument.zones) {
@@ -215,11 +212,14 @@
       }
     }
 
-    if (date != null) {
-      if (!request[request.locale]) request.locale = "en_US"; //throw new Error("unknown locale");
+    if (request[locale]) request.locale = locale;
+    if (request[zone] && Array.isArray(request[zone])) request.zone = zone;
 
+    if (date != null) {
       if (typeof date == "string") {
-        if ((posix = parse(request, date)) == null) {
+        if (date == "*") {
+          posix = request.clock();
+        } else if ((posix = parse(request, date)) == null) {
           throw new Error("invalid date");
         }
       } else if (Array.isArray(date)) {
@@ -235,7 +235,7 @@
       return request.format ? format(request, posix, request.format) : posix;
     }
 
-    return function() { return request.convert(__slice.call(arguments, 0)) };
+    return function () { return request.convert(__slice.call(arguments, 0)) };
   };
 
   var context =
@@ -341,7 +341,6 @@
   context.l.style = "_";
   context.e.style = "_";
 
-
   function weekOfYear (date, startOfWeek) {
     var diff, nyd, weekStart;
     nyd = new Date(Date.UTC(date.getUTCFullYear(), 0));
@@ -374,5 +373,5 @@
     }
   }
 
-  return function () { return context.convert(__slice.call(arguments, 0)) }
+  return function () { return context.convert(__slice.call(arguments, 0)) };
 });
