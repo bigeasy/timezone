@@ -19,9 +19,9 @@
       if (f = request[specifier]) {
         value = String(f.call(request, wallclock, posix, flag, (colons || "").length));
         if ((flag || f.style) == "_") fill = " ";
-        pad = parseInt(flag == "-" ? 0 : (f.pad || 0));
+        pad = flag == "-" ? 0 : f.pad || 0;
         while (value.length < pad) value = fill + value;
-        pad = parseInt(flag == "-" ? 0 : (padding || f.pad));
+        pad = flag == "-" ? 0 : padding || f.pad;
         while (value.length < pad) value = fill + value;
         if (specifier == "N" && pad < value.length) value = value.slice(0, pad);
         if (flag == "^") value = value.toUpperCase();
@@ -32,7 +32,7 @@
 
   function makeDate (request, date) {
     var posix = date[7], i;
-    for (i = 0; i < 11; i++) date[i] = parseInt(date[i] || 0, 10);
+    for (i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
     --date[1];
     date = Date.UTC.apply(Date.UTC, date.slice(0, 8)) + -date[7] * (date[8] * 36e5 + date[9] * 6e4 + date[10] * 1e3);
     return posix ? date : convertToPOSIX(request, date);
@@ -138,8 +138,8 @@
   };
 
   function adjust (request, posix, match) {
-    var increment = parseInt(match[1] + 1)
-      , offset = parseInt(match[2], 10) * increment
+    var increment = +(match[1] + 1) // conversion necessary for week day addition
+      , offset = match[2] * increment
       , index = UNITS.indexOf(match[3].toLowerCase())
       , date
       ;
