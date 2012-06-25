@@ -1,3 +1,12 @@
+- Version 0.0.13 - Mon Jun 25 11:05:06 UTC 2012
+
+ * Return internal state using function argument. #57.
+ * Return library version when called with no arguments. #54.
+ * Remove `posix` local variable from `convert` to save bytes. #62.
+ * Add "@" to start of date array.
+ * Add "z" to time zone data file array to differentiate zone entries from
+   daylight savings time rules.
+
 - Version 0.0.12 - Sun Jun 24 04:40:41 UTC 2012
 
  * Clean up commented out code. #65.
