@@ -1,4 +1,4 @@
-- Version 0.0.14
+- Version 0.0.14 - Mon Jun 25 21:02:24 UTC 2012
 
  * Publish tarball of data files at GitHub. #55.
  * Created AMD, JSONP and JSON files hosted at GitHub:Pages for use in web
