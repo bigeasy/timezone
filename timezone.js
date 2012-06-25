@@ -14,10 +14,10 @@
 */
   function format (request, posix, rest) {
     var wallclock = new Date(convertToWallclock(request, posix));
-    return rest.replace(/%([-0_^]?)(:{0,3})(\d*)(.)/g, function (matched, flag, colons, padding, specifier) {
-      var f, value = matched, fill = "0", pad;
+    return rest.replace(/%([-0_^]?)(:{0,3})(\d*)(.)/g, function (value, flag, colons, padding, specifier) {
+      var f, fill = "0", pad;
       if (f = request[specifier]) {
-        value = String(f.call(request, wallclock, posix, flag, (colons || "").length));
+        value = String(f.call(request, wallclock, posix, flag, colons.length));
         if ((flag || f.style) == "_") fill = " ";
         pad = flag == "-" ? 0 : f.pad || 0;
         while (value.length < pad) value = fill + value;
@@ -92,21 +92,21 @@
   }
 
   function find (request, clock, time) {
-    var i, I, entry, year = new Date(time).getUTCFullYear(), found, zone = request[request.zone], actualized = [], to, abbrevs, rules;
+    var i, I, entry, found, zone = request[request.zone], actualized = [], foo, rules;
     for (i = 1, I = zone.length; i < I; i++) if (zone[i][clock] <= time) break;
     entry = zone[i];
     if (entry.rules) {
       rules = request[entry.rules];
-      to = applicable(entry, rules, actualized, time);
-      if (to != null) applicable(entry, rules, actualized, Date.UTC(to, 5));
+      foo = applicable(entry, rules, actualized, time);
+      if (foo != null) applicable(entry, rules, actualized, Date.UTC(foo, 5));
       actualized.sort(function (a, b) { return a.sort - b.sort });
       for (i = 0, I = actualized.length; i < I; i++) {
         if (time >= actualized[i][clock] && actualized[i][actualized[i].clock] > entry[actualized[i].clock]) found = actualized[i];
       }
     }
     if (found) {
-      if (abbrevs = /^(.*)\/(.*)$/.exec(entry.format)) {
-        found.abbrev = abbrevs[found.save ? 2 : 1];
+      if (foo = /^(.*)\/(.*)$/.exec(entry.format)) {
+        found.abbrev = foo[found.save ? 2 : 1];
       } else {
         found.abbrev = entry.format.replace(/%s/, found.rule.letter);
       }
@@ -167,10 +167,9 @@
   function convert (vargs) {
     if (!vargs.length) return "0.0.14";
 
-    var i, I, argument, date, type
-      , request = Object.create(this)
+    var request = Object.create(this)
       , adjustments = []
-      , parsed
+      , i, foo, bar, argument, date
       ;
 
     for (i = 0; vargs.length; i++) { // leave the for loop alone, it works.
@@ -184,23 +183,23 @@
           i--;
         }
       } else if (isNaN(argument)) {
-        type = typeof argument;
-        if (type == "string") {
+        foo = typeof argument;
+        if (foo == "string") {
           if (~argument.indexOf("%")) {
             request.format = argument;
           } else if (!i && argument == "*") {
             date = argument;
-          } else if (!i && (parsed = parse(argument))) {
-            date = parsed;
+          } else if (!i && (foo = parse(argument))) {
+            date = foo;
           } else if (/^\w{2}_\w{2}$/.test(argument)) {
             request.locale = argument;
-          } else if (parsed = parseAdjustment(argument)) {
-            adjustments.push(parsed);
+          } else if (foo = parseAdjustment(argument)) {
+            adjustments.push(foo);
           } else {
             request.zone = argument;
           } 
-        } else if (type == "function") {
-          if (parsed = argument.call(request)) return parsed;
+        } else if (foo == "function") {
+          if (foo = argument.call(request)) return foo;
         } else if (/^\w{2}_\w{2}$/.test(argument.name)) {
           request[argument.name] = argument;
         } else if (argument.zones) {
@@ -219,17 +218,17 @@
       if (date == "*") {
         date = request.clock();
       } else if (Array.isArray(date)) {
-        I = !date[7];
+        bar = !date[7];
         date = make(date);
       } else {
         date = Math.floor(date);
       }
       if (!isNaN(date)) {
-        if (I) date = convertToPOSIX(request, date);
+        if (bar) date = convertToPOSIX(request, date);
 
         if (date == null) return date;
 
-        for (i = 0, I = adjustments.length; i < I; i++) {
+        for (i = 0, bar = adjustments.length; i < bar; i++) {
           date = adjustments[i](request, date);
         }
 
@@ -241,11 +240,10 @@
   };
 
   var context =
-    { zone: "UTC"
+    { clock: function () { return +(new Date()) }
+    , zone: "UTC"
     , entry: { abbrev: "UTC", offset: 0, save: 0 }
     , UTC: 1
-    , clock: function () { return +(new Date()) }
-    , convert: convert
     , z: function(date, posix, flag, delimiters) {
         var offset = this.entry.offset + this.entry.save
           , seconds = Math.abs(offset / 1000), parts = [], part = 3600, i, z;
@@ -311,6 +309,7 @@
     , r: function (date, posix) { return this.convert([ posix, this[this.locale].time12 ]) }
     , X: function (date, posix) { return this.convert([ posix, this[this.locale].time24 ]) }
     , c: function (date, posix) { return this.convert([ posix, this[this.locale].dateTime ]) }
+    , convert: convert
     , locale: "en_US"
     , en_US: {
         date: "%m/%d/%Y",
