@@ -6,7 +6,7 @@ var fs = require("fs"), include, exclude;
 function glob (exports, directory, include, exclude) {
   require("fs").readdirSync(directory).forEach(function (file) {
     var skip, path, stat;
-    skip = skip || /^(index.js|rfc822.js|slurp.js|synopsis.js|timezone.js|zones.js|README)$/.test(file);
+    skip = skip || /^(index.js|rfc822.js|slurp.js|synopsis.js|timezone.js|zones.js|loaded.js|README)$/.test(file);
     skip = skip || /^[._]/.test(file);
     skip = skip || (exclude && exclude.test(file));
     skip = skip || include && ! include.test(file);
@@ -15,7 +15,7 @@ function glob (exports, directory, include, exclude) {
       stat = fs.statSync(path);
       if (stat.isDirectory()) {
         glob(exports, path);
-      } else {
+      } else if (/\.js$/.test(file)) {
         exports.push(require(path));
       }
     }

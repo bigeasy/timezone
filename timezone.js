@@ -1,9 +1,9 @@
 !function (definition) {
-  if (typeof module == "object" && module.exports) module.exports = definition();
-  else if (typeof define == "function" && typeof define.amd == "object") define(definition);
+  if (module && module.exports) module.exports = definition();
+  else if (typeof define == "function") define(definition);
   else this.tz = definition();
 } (function () {
-  var __slice = [].slice, __push = [].push;
+  var __slice = [].slice;
 /*
   function die () {
     console.log.apply(console, __slice.call(arguments, 0));
@@ -14,10 +14,10 @@
 */
   function format (request, posix, rest) {
     var wallclock = new Date(convertToWallclock(request, posix));
-    return rest.replace(/%([-0_^]?)(:{0,3})(\d*)(.)/g, function (matched, flag, colons, padding, specifier) {
-      var f, value = matched, fill = "0", pad;
+    return rest.replace(/%([-0_^]?)(:{0,3})(\d*)(.)/g, function (value, flag, colons, padding, specifier) {
+      var f, fill = "0", pad;
       if (f = request[specifier]) {
-        value = String(f.call(request, wallclock, posix, flag, (colons || "").length));
+        value = String(f.call(request, wallclock, posix, flag, colons.length));
         if ((flag || f.style) == "_") fill = " ";
         pad = flag == "-" ? 0 : f.pad || 0;
         while (value.length < pad) value = fill + value;
@@ -30,25 +30,21 @@
     });
   };
 
-  function makeDate (request, date) {
-    var posix = date[7], i;
-    for (i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
+  function make (date) {
+    for (var i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
     --date[1];
-    date = Date.UTC.apply(Date.UTC, date.slice(0, 8)) + -date[7] * (date[8] * 36e5 + date[9] * 6e4 + date[10] * 1e3);
-    if (!posix) date = convertToPOSIX(request, date);
-    if (date == null) throw new Error("invalid wall-clock time");
-    return date;
+    return Date.UTC.apply(Date.UTC, date.slice(0, 8)) + -date[7] * (date[8] * 36e5 + date[9] * 6e4 + date[10] * 1e3);
   }
 
   function parse (pattern) {
-    var date = [ "@" ], match;
+    var date = [], match;
     if (match = /^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|(([+-])(\d{2}(:\d{2}){0,2})))?)?$/.exec(pattern)) {
-      __push.apply(date, match.slice(1, 8));
+      date.push.apply(date, match.slice(1, 8));
       if (match[9]) {
-        __push.apply(date, [match[10] + 1]);
-        __push.apply(date, match[11].split(/:/));
+        date.push(match[10] + 1);
+        date.push.apply(date, match[11].split(/:/));
       } else if (match[8]) {
-        __push.apply(date, [ 1 ]);
+        date.push(1);
       }
       return date;
     }
@@ -58,23 +54,23 @@
     var actualized, fields, date = rule.day[1];
 
     do {
-      fields = new Date(Date.UTC(year, rule.month, Math.abs(date++)));
-    } while (rule.day[0] < 7 && fields.getUTCDay() != rule.day[0])
+      actualized = new Date(Date.UTC(year, rule.month, Math.abs(date++)));
+    } while (rule.day[0] < 7 && actualized.getUTCDay() != rule.day[0])
 
     actualized = {
       clock: rule.clock,
-      sortable: fields.getTime(),
+      sort: actualized.getTime(),
       rule: rule,
       save: rule.save * 6e4,
       offset: entry.offset
     };
 
-    actualized[actualized.clock] = fields.getTime() + rule.time * 6e4;
+    actualized[actualized.clock] = actualized.sort + rule.time * 6e4;
 
-    if (actualized.clock == "posix") {
-      actualized.wallclock = actualized.posix + (entry.offset + rule.saved);
+    if (actualized.posix) {
+      actualized.wallclock = actualized[actualized.clock] + (entry.offset + rule.saved);
     } else {
-      actualized.posix = actualized.wallclock - (entry.offset + rule.saved);
+      actualized.posix = actualized[actualized.clock] - (entry.offset + rule.saved);
     }
 
     return actualized;
@@ -96,21 +92,21 @@
   }
 
   function find (request, clock, time) {
-    var i, I, entry, year = new Date(time).getUTCFullYear(), found, zone = request[request.zone], actualized = [], to, abbrevs, rules;
+    var i, I, entry, found, zone = request[request.zone], actualized = [], foo, rules;
     for (i = 1, I = zone.length; i < I; i++) if (zone[i][clock] <= time) break;
     entry = zone[i];
     if (entry.rules) {
       rules = request[entry.rules];
-      to = applicable(entry, rules, actualized, time);
-      if (to != null) applicable(entry, rules, actualized, Date.UTC(to, 5));
-      actualized.sort(function (a, b) { return a.sortable - b.sortable });
+      foo = applicable(entry, rules, actualized, time);
+      if (foo != null) applicable(entry, rules, actualized, Date.UTC(foo, 5));
+      actualized.sort(function (a, b) { return a.sort - b.sort });
       for (i = 0, I = actualized.length; i < I; i++) {
         if (time >= actualized[i][clock] && actualized[i][actualized[i].clock] > entry[actualized[i].clock]) found = actualized[i];
       }
     }
     if (found) {
-      if (abbrevs = /^(.*)\/(.*)$/.exec(entry.format)) {
-        found.abbrev = abbrevs[found.save ? 2 : 1];
+      if (foo = /^(.*)\/(.*)$/.exec(entry.format)) {
+        found.abbrev = foo[found.save ? 2 : 1];
       } else {
         found.abbrev = entry.format.replace(/%s/, found.rule.letter);
       }
@@ -169,48 +165,41 @@
   };
 
   function convert (vargs) {
-    if (!vargs.length) return "0.0.11";
+    if (!vargs.length) return "0.0.14";
 
-    var i, I, argument, date, type
-      , request = Object.create(this)
-      , zone, locale
+    var request = Object.create(this)
       , adjustments = []
-      , parsed
-      , extra = []
+      , i, foo, bar, argument, date
       ;
 
     for (i = 0; vargs.length; i++) { // leave the for loop alone, it works.
       argument = vargs.shift();
       // https://twitter.com/bigeasy/status/215112186572439552
-      if (argument == null) {
-        throw new Error("null argument");
-      } else if (Array.isArray(argument)) {
-        if (!i && argument[0] == "@") {
+      if (Array.isArray(argument)) {
+        if (!i && !isNaN(argument[1])) {
           date = argument;
         } else {
           vargs.unshift.apply(vargs, argument);
           i--;
         }
-      } else if (isNaN(argument) && (i || argument != "*")) {
-        type = typeof argument;
-        if (type == "string") {
+      } else if (isNaN(argument)) {
+        foo = typeof argument;
+        if (foo == "string") {
           if (~argument.indexOf("%")) {
             request.format = argument;
-          } else if (!i && (parsed = parse(argument))) {
-            date = parsed;
+          } else if (!i && argument == "*") {
+            date = argument;
+          } else if (!i && (foo = parse(argument))) {
+            date = foo;
           } else if (/^\w{2}_\w{2}$/.test(argument)) {
-            if (locale) extra.push(argument);
-            else locale = argument;
-          } else if (parsed = parseAdjustment(argument)) {
-            adjustments.push(parsed);
-          } else if (/^[-A-Za-z\/_]+$|^\w{3}\d\w{3}$/.test(argument)) {
-            if (!zone) zone = argument;
-            else extra.push(argument);
+            request.locale = argument;
+          } else if (foo = parseAdjustment(argument)) {
+            adjustments.push(foo);
           } else {
-            throw new Error("invalid argument: " + argument);
-          }
-        } else if (type == "function") {
-          if (parsed = argument.call(request)) return parsed;
+            request.zone = argument;
+          } 
+        } else if (foo == "function") {
+          if (foo = argument.call(request)) return foo;
         } else if (/^\w{2}_\w{2}$/.test(argument.name)) {
           request[argument.name] = argument;
         } else if (argument.zones) {
@@ -219,49 +208,42 @@
         }
       } else if (!i) {
         date = argument;
-      } else {
-        throw new Error("invalid argument: " + argument);
       }
     }
 
-    if (locale) {
-      if (!request[locale]) throw new Error("invalid locale: " + locale);
-      request.locale = locale;
-    }
-
-    if (zone) {
-      if (!request[zone] || request[zone][0] != "z") throw new Error("invalid zone: " + zone);
-      request.zone = zone;
-    }
-
-    if (extra.length) return request.convert(date == null ? extra : [ date, extra ]);
+    if (!request[request.locale]) delete request.locale;
+    if (!request[request.zone]) delete request.zone;
 
     if (date != null) {
       if (date == "*") {
         date = request.clock();
       } else if (Array.isArray(date)) {
-        if (isNaN(date = makeDate(request, date.slice(1))))
-          throw new Error("invalid date");
+        bar = !date[7];
+        date = make(date);
       } else {
         date = Math.floor(date);
       }
+      if (!isNaN(date)) {
+        if (bar) date = convertToPOSIX(request, date);
 
-      for (i = 0, I = adjustments.length; i < I; i++) {
-        date = adjustments[i](request, date);
+        if (date == null) return date;
+
+        for (i = 0, bar = adjustments.length; i < bar; i++) {
+          date = adjustments[i](request, date);
+        }
+
+        return request.format ? format(request, date, request.format) : date;
       }
-
-      return request.format ? format(request, date, request.format) : date;
     }
 
     return function () { return request.convert(__slice.call(arguments, 0)) };
   };
 
   var context =
-    { zone: "UTC"
+    { clock: function () { return +(new Date()) }
+    , zone: "UTC"
     , entry: { abbrev: "UTC", offset: 0, save: 0 }
-    , UTC: [ "z" ]
-    , clock: function () { return +(new Date()) }
-    , convert: convert
+    , UTC: 1
     , z: function(date, posix, flag, delimiters) {
         var offset = this.entry.offset + this.entry.save
           , seconds = Math.abs(offset / 1000), parts = [], part = 3600, i, z;
@@ -327,6 +309,7 @@
     , r: function (date, posix) { return this.convert([ posix, this[this.locale].time12 ]) }
     , X: function (date, posix) { return this.convert([ posix, this[this.locale].time24 ]) }
     , c: function (date, posix) { return this.convert([ posix, this[this.locale].dateTime ]) }
+    , convert: convert
     , locale: "en_US"
     , en_US: {
         date: "%m/%d/%Y",
@@ -344,9 +327,9 @@
         }
       }
     };
-  var UNITS = "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|year|month|day|hour|minute|second|milli|millisecond"
+  var UNITS = "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|year|month|day|hour|minute|second|millisecond"
     , UNIT_RE = new RegExp("^\\s*([+-])(\\d+)\\s+(" + UNITS + ")s?\\s*$", "i")
-    , TIME = [ 36e5, 6e4, 1e3, 1, 1 ]
+    , TIME = [ 36e5, 6e4, 1e3, 1 ]
     ;
   UNITS = UNITS.toLowerCase().split("|");
 

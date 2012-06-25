@@ -43,8 +43,8 @@ function die () {
 function say () { return console.log.apply(console, __slice.call(arguments, 0)) }
 */
 !function (definition) {
-  if (typeof module == "object" && module.exports) module.exports = definition();
-  else if (typeof define == "function" && typeof define.amd == "object") define(definition);
+  if (module && module.exports) module.exports = definition();
+  else if (typeof define == "function") define(definition);
   else this.tz = definition();
 } (function () {
   // Our parser is case insensitive for the sake of forgiveness, even though the
@@ -196,9 +196,7 @@ function say () { return console.log.apply(console, __slice.call(arguments, 0)) 
     if (offset == "GMT") date.push(1);
     else if (offset) date.push(offset < 0 ? -1 : 1, Math.abs(Math.floor(offset / 100)), offset % 100);
 
-    date[1]++;
-
-    date.unshift("@");
+    ++date[1];
 
     return date;
   }

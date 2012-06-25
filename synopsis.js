@@ -38,14 +38,14 @@ var ok = require("assert")
 // representation of a point in time.
 //
 // POSIX time is absolute. It always represents a time in UTC. It doesn't spring
-// forward or fall back. It's not affected by changes to boundaries or
-// governments. It is a millisecond in the grand time line.
+// forward or fall back. It's not affected by the decisions of local
+// governments or administrators. It is a millisecond in the grand time line.
 //
 // POSIX time is simple. It is always an integer, making it easy to store in
 // databases and data stores, even ones little or no support for time stamps. 
 // 
 // Because POSIX is an integer, it time is easy to sort and easy to compare.
-// Sorting and searching POSIX time integers is fast.
+// Sorting and searching POSIX time is fast.
 
 // *Timezone returns number representing POSIX time by default.*
 var y2k = tz("2000-01-01");
@@ -197,7 +197,8 @@ eq( us("1969-07-20 21:56", "America/Detroit"), moonwalk );
 // *...one giant leap for mankind.*
 eq( us("1969-07-20 19:56", "America/Los_Angeles"), moonwalk );
 
-// We can't do Amsterdam, however, because we didn't load its rule set.
+// Amsterdam was an hour ahead of UTC at the time of the moon walk. We can't
+// convert Amsterdam, however, because we didn't load its zone rule set.
 
 // *Won't work, didn't load Amsterdam.*
 ok( us("1969-07-21 03:56", "Europe/Amsterdam") != moonwalk );
@@ -205,7 +206,7 @@ ok( us("1969-07-21 03:56", "Europe/Amsterdam") != moonwalk );
 // *Instead of applying Amsterdam's rules, it falls back to UTC.*
 eq( us("1969-07-21 02:56", "Europe/Amsterdam"), moonwalk );
 
-// We can load Amsterdam's rules for just this conversion. Here we bot include
+// We can load Amsterdam's rules for just this conversion. Here we both include
 // the rules for Amsterdam with `require` and select using the timezone string
 // `"Europe/Amsterdam"`.
 
@@ -242,7 +243,7 @@ eq( tz(moonwalk, "%m/%d/%Y %H:%M:%S"), "07/21/1969 02:56:00" );
 eq( tz(moonwalk, "%A, %B %-d, %Y %-I:%M:%S %p"), "Monday, July 21, 1969 2:56:00 AM" );
 
 // **Timezone** supports all of the GNU `date` extensions, including some date
-// calcuations.
+// calculations you won't find in JavaScript's `Date`.
 
 // *Day of the year.*
 eq( tz(moonwalk, "%j") , "202" );
@@ -262,31 +263,87 @@ eq( tz(moonwalk, "%G-%V-%wT%T"), "1969-30-1T02:56:00" );
 // **Timezone** is timezone aware so it can print the time zone offset or time
 // zone abbreviation.
 
+// *Get the time zone abbreviation which is * `UTC` * by default.*
+eq( tz(moonwalk, "%Z"), "UTC" );
+
+// *Get the time zone offset RFC 822 style.*
+eq( tz(moonwalk, "%z"), "+0000" );
+
+// When you format a date string and name a zone rule set, the zone format
+// specifiers show the effect of zone rule set.
+
+// *Get the timezone offset abbreviation for Detroit.*
+eq( us(moonwalk, "America/Detroit", "%Z"), "EST" );
+
 // *Timezone offset RFC 822 style.*
+eq( us(moonwalk, "America/Detroit", "%z"), "-0500" );
 
-// *Timezone offset colon separted.*
+// **Timezone** supports the GNU extensions to the time zone offset format
+// specifier `%z`.  If you put colons between the `%` and `z` colons appear in
+// the time zone offset.
 
-// *Timezone offset colon separted, down to the second.*
+// *Timezone offset colon separated.*
+eq( us(moonwalk, "America/Detroit", "%:z"), "-05:00" );
 
-// **Timezone** offers one extension to the GNU format secpifiers.
+// Some time zone rules specify the time zone offset down to the second. None of
+// the contemporary rules are that precise, but in history of standardized time,
+// there where some time zone offset sticklers, like the Dutch Railways.
 
-// *Timezone offset colon separted, down to the second, only if needed.*
+// *The time at which the end of the First World War came into effect.*
+var armistice = tz("1911-11-11 11:00");
+
+// *Timezone offset colon separated, down to the second.*
+eq( tz("1969-07-21 03:56", "Europe/Amsterdam", require("timezone/Europe/Amsterdam"), "%c")
+  , "-04:00:00" );
+
+// The **Timezone** function itself offers one extension to `strftime`, inspired
+// by the GNU `date` extensions for `%z`, to support formatting RFC 3999 date
+// strings. The format specifier `%^z` flexibly formats the time zone offset.
+
+// *Format UTC as* `Z` *instead of* `+00:00` *.*
+eq( tz(moonwalk, "%^z"), "Z" );
+
+// *Timezone offset colon separated, down to the minute.*
+eq( us(moonwalk, "America/Detroit", "%^z"), "-04:00" );
+
+// *Timezone offset colon separated, down to the second, only if needed.*
+eq( tz(armistice, "Europe/Amsterdam", require("timezone/Europe/Amsterdam"), "%^z")
+  , "-04:00:00" );
+
+// *RFC 3999 string for* `UTC` *.*
+eq( tz(moonwalk, "%F %T%^z"), "-04:00" );
+
+// *RFC 3999 string not at* `UTC` *.*
+eq( us(moonwalk, "America/Detroit", "%F %T%^z"), "-04:00" );
+
+// *Not part of the RFC 3999 standard, but **Timezone** will parse a time zone
+// offset specified in seconds.*
+eq( tz(armistice, "Europe/Amsterdam", require("timezone/Europe/Amsterdam"), "%T %F%^z")
+  , "-04:00:00" );
 
 // #### Padding 
 //
 // **Timezone** implements the GNU padding extensions to `strftime`.
 
-// *Space padded day of month.*
+// To remove padding, add a hyphen after the percent sign.
 
-// *Zero padded day of month.*
+// To pad with spaces put an underscore after the percent sign.
+
+// *Space padded day of month.*
+eq( tz(ytk, "%B %_d %Y") );
+
+// For zero padding we use `0`, but most formats are already zero padded.
+
+// *Zero padded day of month, but it is already zero padded.*
+eq( tz(ytk, "%B %0d %Y"), "" );
 
 // *Nanoseconds, silly because we only have millisecond prevision.*
+eq( tz(1, "%T %F.%N"), "" );
 
 // *Milliseconds using a with specifier.*
+eq( tz(1, "%T %F.%03N"), "" );
 
 // ### Converting to Wall-Clock Time
-//
-// TK Lost a nice draft of this. This was the gist.
 //
 // To convert to from POSIX time to wall-clock time, we format a date string
 // specifying the name of a time zone rule set. The **Timezone** function
@@ -302,6 +359,7 @@ var eu = tz(require("timezone/Europe"));
 // time of European localities.
 
 // *Convert to wall-clock time in and around Amsterdam.*
+// TK Use armistice.
 eq( eu(moonwalk, "%F %T", "Europe/Amsterdam")
   , "1969-07-21 03:56:00" );
 // *Convert to wall-clock time in and around Instanbul.*
@@ -373,7 +431,7 @@ eq( eu( us("1969-07-20 21:56", "America/Detroit"), "Europe/Amsterdam", "%F %T" )
 // *It's noon in Detroit. What time is it in Warsaw?*
 eq( eu(us("2012-04-01 12:00", "America/Detroit" ), "Europe/Warsaw", "%H:%M" ), "18:00" );
 
-// Remember that we can only represent wallclock time using date strings. POSIX
+// Remember that we can only represent wall-clock time using date strings. POSIX
 // time is an absolute point in time and has no concept of timezone.
 
 // ### Locales
@@ -438,8 +496,8 @@ eq( tz(y2k, "-1 day", "+1 saturday", "%A %d"), "Saturday 01" );
 // day of daylight savings. They still want to have dinner at six o'clock; at
 // six according to the clock on the wall.
 //
-// Moving across daylight savings time by hour, minute, second or millsecond
-// will adjust your wallclock time.
+// Moving across daylight savings time by hour, minute, second or millisecond
+// will adjust your wall-clock time.
 
 // *Moving across daylight savings time by day lands at the same time.*
 
@@ -459,25 +517,30 @@ eq( us("2010-03-13 02:30", "America/Detroit", "+1 day", "%c"), "Sun 14 Mar 2010 
 // ### Date Arrays
 
 // The **Timezone** function will also accept an array of integers as a date
-// intput. It will treat this value as wall-clock time and convert it according
-// a specified time zone rule set.
+// input. It will treat this value as wall-clock time and convert it according a
+// specified time zone rule set.
 //
 // The date array is useful when working with GUI controls like a series of drop
-// downs.
-// 
-// The date array is also a good candidate for the output of a date parsing
-// function. The date array is an easy data structure to populate
-// programatically while parsing a date string.
+// downs. It is also a good candidate for the output of a date parsing function.
+// The date array is an easy data structure to populate programatically while
+// parsing a date string.
+//
+// The elements `0` through `6` of the date array are year, month, date, hour,
+// minute, second and milliseconds. If you leave an element `undefined`, it will
+// be interpreted as zero. The date array must at contain at least a year and a
+// month, a year alone will interpreted as POSIX time.
+//
+// Unlike the JavaScript `Date`, the **Timezone** function does not use a
+// zero-based month index in an array representation of a date. It uses instead
+// the humane month number that you'd find if you formatted the date.
 
 //
 var picker = [ 1969, 7, 20, 21, 56 ];
 
 eq( us(picker, "America/Detroit"), moonwalk );
 
-// The date array format also allows you to specify a time zone offset. The
-// elements `0` through `6` of the date array are year, month, date, hour,
-// minute, second and milliseconds.
-
+// The date array format also allows you to specify a time zone offset.
+//
 // If the element at index `7` is `1` or `-1`, that is treated as the time zone
 // offset direction, `-1` for a negative time zone offset, `1` for a positive
 // time zone offset. If present, then the elements `8` through `10` of the date
@@ -584,7 +647,7 @@ eq( pl(moonwalk, "pl_PL", "%A"), "poniedziałek");
 //
 // That's not to say that date parsing is as complicated as a search engine,
 // just that it is generally application specific, requires a lot of context,
-// and it is not proptionate in complexity to date formatting, date math or time
+// and it is not proportionate in complexity to date formatting, date math or time
 // zone offset lookup. We might be able to hide a lot of the bulk in data files
 // that accompany our library, but we would so 
 //

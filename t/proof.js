@@ -11,6 +11,6 @@ module.exports = require("proof")(function () {
   context.bicentennial = utc(1976, 6, 4)
   context.moonwalk = utc(1969, 6, 21, 2, 56)
   context.y2k = utc(2000, 0, 1)
-  context.tz = require("timezone")
+  context.tz = require("timezone/index")
   return context;
 });
