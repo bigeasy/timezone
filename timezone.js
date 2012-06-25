@@ -15,7 +15,7 @@
   function format (request, posix, rest) {
     var wallclock = new Date(convertToWallclock(request, posix));
     return rest.replace(/%([-0_^]?)(:{0,3})(\d*)(.)/g, function (matched, flag, colons, padding, specifier) {
-      var f, value = matched, fill = "0";
+      var f, value = matched, fill = "0", pad;
       if (f = request[specifier]) {
         value = String(f.call(request, wallclock, posix, flag, (colons || "").length));
         if ((flag || f.style) == "_") fill = " ";
@@ -35,11 +35,13 @@
     for (i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
     --date[1];
     date = Date.UTC.apply(Date.UTC, date.slice(0, 8)) + -date[7] * (date[8] * 36e5 + date[9] * 6e4 + date[10] * 1e3);
-    return posix ? date : convertToPOSIX(request, date);
+    if (!posix) date = convertToPOSIX(request, date);
+    if (date == null) throw new Error("invalid wall-clock time");
+    return date;
   }
 
-  function parse (request, pattern) {
-    var date = [], match;
+  function parse (pattern) {
+    var date = [ "@" ], match;
     if (match = /^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|(([+-])(\d{2}(:\d{2}){0,2})))?)?$/.exec(pattern)) {
       __push.apply(date, match.slice(1, 8));
       if (match[9]) {
@@ -48,7 +50,7 @@
       } else if (match[8]) {
         __push.apply(date, [ 1 ]);
       }
-      return makeDate(request, date);
+      return date;
     }
   }
 
@@ -94,8 +96,8 @@
   }
 
   function find (request, clock, time) {
-    var i, I, entry, year = new Date(time).getUTCFullYear(), found, zone = request[request.zone], actualized = [], to, abbrevs;
-    for (i = 0, I = zone.length; i < I; i++) if (zone[i][clock] <= time) break;
+    var i, I, entry, year = new Date(time).getUTCFullYear(), found, zone = request[request.zone], actualized = [], to, abbrevs, rules;
+    for (i = 1, I = zone.length; i < I; i++) if (zone[i][clock] <= time) break;
     entry = zone[i];
     if (entry.rules) {
       rules = request[entry.rules];
@@ -167,81 +169,97 @@
   };
 
   function convert (vargs) {
-    if (!vargs.length) return this.clock();
+    if (!vargs.length) return "0.0.11";
 
-    var i, I, adjustment, argument, date, posix, type
+    var i, I, argument, date, type
       , request = Object.create(this)
+      , zone, locale
       , adjustments = []
-      , retry = []
+      , parsed
+      , extra = []
       ;
 
-    vargs.push(retry);
     for (i = 0; vargs.length; i++) { // leave the for loop alone, it works.
       argument = vargs.shift();
       // https://twitter.com/bigeasy/status/215112186572439552
-      if (Array.isArray(argument)) {
-        if (!i && !isNaN(argument[0]) && !Array.isArray(argument[0])) {
+      if (argument == null) {
+        throw new Error("null argument");
+      } else if (Array.isArray(argument)) {
+        if (!i && argument[0] == "@") {
           date = argument;
         } else {
           vargs.unshift.apply(vargs, argument);
           i--;
         }
-      } else if (isNaN(argument)) {
+      } else if (isNaN(argument) && (i || argument != "*")) {
         type = typeof argument;
         if (type == "string") {
           if (~argument.indexOf("%")) {
             request.format = argument;
+          } else if (!i && (parsed = parse(argument))) {
+            date = parsed;
           } else if (/^\w{2}_\w{2}$/.test(argument)) {
-            request.locale = argument;
-          } else if (adjustment = parseAdjustment(argument)) {
-            adjustments.push(adjustment);
-          } else if (request[argument] && Array.isArray(request[argument])) {
-            request.zone = argument;
-          } else if (!i) {
-            date = argument;
+            if (locale) extra.push(argument);
+            else locale = argument;
+          } else if (parsed = parseAdjustment(argument)) {
+            adjustments.push(parsed);
+          } else if (/^[-A-Za-z\/_]+$|^\w{3}\d\w{3}$/.test(argument)) {
+            if (!zone) zone = argument;
+            else extra.push(argument);
           } else {
-            retry.push(argument);
+            throw new Error("invalid argument: " + argument);
           }
         } else if (type == "function") {
-          argument.call(request);
+          if (parsed = argument.call(request)) return parsed;
         } else if (/^\w{2}_\w{2}$/.test(argument.name)) {
           request[argument.name] = argument;
         } else if (argument.zones) {
           for (var key in argument.zones) request[key] = argument.zones[key];
           for (var key in argument.rules) request[key] = argument.rules[key];
         }
-      } else if (!i && !isNaN(argument)) {
+      } else if (!i) {
         date = argument;
+      } else {
+        throw new Error("invalid argument: " + argument);
       }
     }
 
-    if (date != null) {
-      if (!request[request.locale]) request.locale = "en_US"; //throw new Error("unknown locale");
+    if (locale) {
+      if (!request[locale]) throw new Error("invalid locale: " + locale);
+      request.locale = locale;
+    }
 
-      if (typeof date == "string") {
-        if ((posix = parse(request, date)) == null) {
-          throw new Error("invalid date");
-        }
+    if (zone) {
+      if (!request[zone] || request[zone][0] != "z") throw new Error("invalid zone: " + zone);
+      request.zone = zone;
+    }
+
+    if (extra.length) return request.convert(date == null ? extra : [ date, extra ]);
+
+    if (date != null) {
+      if (date == "*") {
+        date = request.clock();
       } else if (Array.isArray(date)) {
-        posix = makeDate(request, date);
+        if (isNaN(date = makeDate(request, date.slice(1))))
+          throw new Error("invalid date");
       } else {
-        posix = Math.floor(date);
+        date = Math.floor(date);
       }
 
       for (i = 0, I = adjustments.length; i < I; i++) {
-        posix = adjustments[i](request, posix);
+        date = adjustments[i](request, date);
       }
 
-      return request.format ? format(request, posix, request.format) : posix;
+      return request.format ? format(request, date, request.format) : date;
     }
 
-    return function() { return request.convert(__slice.call(arguments, 0)) };
+    return function () { return request.convert(__slice.call(arguments, 0)) };
   };
 
   var context =
     { zone: "UTC"
     , entry: { abbrev: "UTC", offset: 0, save: 0 }
-    , UTC: []
+    , UTC: [ "z" ]
     , clock: function () { return +(new Date()) }
     , convert: convert
     , z: function(date, posix, flag, delimiters) {
@@ -341,7 +359,6 @@
   context.l.style = "_";
   context.e.style = "_";
 
-
   function weekOfYear (date, startOfWeek) {
     var diff, nyd, weekStart;
     nyd = new Date(Date.UTC(date.getUTCFullYear(), 0));
@@ -374,5 +391,5 @@
     }
   }
 
-  return function () { return context.convert(__slice.call(arguments, 0)) }
+  return function () { return context.convert(__slice.call(arguments, 0)) };
 });
