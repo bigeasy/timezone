@@ -1,6 +1,6 @@
 !function (definition) {
-  if (typeof module == "object" && module.exports) module.exports = definition();
-  else if (typeof define == "function" && typeof define.amd == "object") define(definition);
+  if (module && module.exports) module.exports = definition();
+  else if (typeof define == "function") define(definition);
   else this.tz = definition();
 } (function () {
   var __slice = [].slice;
