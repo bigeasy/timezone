@@ -3,7 +3,7 @@
   else if (typeof define == "function" && typeof define.amd == "object") define(definition);
   else this.tz = definition();
 } (function () {
-  var __slice = [].slice, __push = [].push;
+  var __slice = [].slice;
 /*
   function die () {
     console.log.apply(console, __slice.call(arguments, 0));
@@ -39,12 +39,12 @@
   function parse (pattern) {
     var date = [], match;
     if (match = /^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|(([+-])(\d{2}(:\d{2}){0,2})))?)?$/.exec(pattern)) {
-      __push.apply(date, match.slice(1, 8));
+      date.push.apply(date, match.slice(1, 8));
       if (match[9]) {
-        __push.apply(date, [match[10] + 1]);
-        __push.apply(date, match[11].split(/:/));
+        date.push(match[10] + 1);
+        date.push.apply(date, match[11].split(/:/));
       } else if (match[8]) {
-        __push.apply(date, [ 1 ]);
+        date.push(1);
       }
       return date;
     }
