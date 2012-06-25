@@ -168,7 +168,7 @@ function say () { return console.log.apply(console, __slice.call(arguments, 0)) 
     if ($[2] < 50) $[2] += 2000;
     else if ($[2] < 1000) $[2] += 1900;
 
-    date = $.slice(2, 8)
+    date = $.slice(2, 8);
 
     // If it comes to bite you that someone has specified the wrong day of week
     // for a particular date, you probably cannot trust those dates, but if you
@@ -197,6 +197,8 @@ function say () { return console.log.apply(console, __slice.call(arguments, 0)) 
     else if (offset) date.push(offset < 0 ? -1 : 1, Math.abs(Math.floor(offset / 100)), offset % 100);
 
     date[1]++;
+
+    date.unshift("@");
 
     return date;
   }

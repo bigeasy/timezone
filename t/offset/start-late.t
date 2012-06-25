@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 require("../proof")(6, function (equal, throws, tz, utc) {
   var detroit = tz(require("timezone/America/Detroit"), "America/Detroit");
-  throws(/invalid date/, function () { tz(detroit("1975-04-27 02:59:00"), "%c") });
+  throws(/invalid wall-clock time/, function () { tz(detroit("1975-04-27 02:59:00"), "%c") });
   equal(tz(detroit("1975-04-27 01:59:00"), "%c"), "Sun 27 Apr 1975 06:59:00 AM UTC", "start late to UTC");
   equal(tz(detroit("1975-04-27 03:00:00"), "%c"), "Sun 27 Apr 1975 07:00:00 AM UTC", "start late to UTC");
 
