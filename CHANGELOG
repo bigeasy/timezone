@@ -1,3 +1,23 @@
+- Version 0.0.12 - Sun Jun 24 04:40:41 UTC 2012
+
+ * Clean up commented out code. #65.
+ * Retry unknown string arguments after all data sets are loaded. #59.
+ * Remove `parseInt` to save bytes. #58.
+ * Make `format` a non-member function to save bytes. #60.
+ * Implement external RFC 822 parser function. #56.
+ * Date arrays now fixed length. #52.
+ * Replace ternary operator with short circuit or to save bytes. #53.
+ * Reorder lexically similar code for better minification. #44.
+ * Remove comparisons to zero to save bytes. #45.
+ * UTC with partial didn't work if partial specified time zone name. #51.
+ * Removed TODOs. #46.
+ * Removed `require.date` property to save bytes. #47.
+ * Accept numeric object for POSIX time. #48.
+ * Build on OS X. #31.
+ * Deleted defunct `index.js`. #49.
+ * No longer parsing time only date strings. #30.
+ * Updates and revisions to `synopsis.js`.
+
 - Version 0.0.11 - Thu Jun 14 18:04:39 UTC 2012
 
  * Correctly format `%_:z`. #40.
