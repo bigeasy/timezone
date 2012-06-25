@@ -45,8 +45,10 @@
       type: "rule"
     };
 
-    // TODO Why is `saved` 0?
     actualized[actualized.clock] = fields.getTime() + time;
+
+    // We call this function both before and after the `saved` is caclulated.
+    // After `saved` is calculated, we can calculate all clocks here.
     if (saved) {
       switch (actualized.clock) {
       case "standard":
@@ -140,12 +142,10 @@
 
     var previous = begin;
 
-    // TODO Combine with below.
     if (i == length) {
       var rules = data.rules[begin.rules], offset;
       for (var j = 0; j < rules.length; j++) {
-        // TODO What does offset do?
-        if (!(offset = rules[j].save * 6e4)) {
+        if (!rules[j].save) {
           begin.abbrev = abbrevs[0] || begin.format.replace(/%s/, function () { return rules[j].letter });
           break;
         }
@@ -164,7 +164,7 @@
       if (i === 0) {
         var rules = data.rules[begin.rules], offset;
         for (var j = 0; j < rules.length; j++) {
-          if (!(offset = rules[j].save * 6e4)) {
+          if (!rules[j].save) {
             begin.abbrev = abbrevs[0] || begin.format.replace(/%s/, function () { return rules[j].letter });
             break;
           }
@@ -254,7 +254,6 @@
     return last;
   }
 
-  // TODO Skip list sentry?
   function find (data, skipList, time, clock) {
     var i, I, entry, year = getYear(time), found;
     for (i = 0, I = skipList.length; i < I; i++) {

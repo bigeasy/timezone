@@ -9,7 +9,7 @@ module.exports = require("proof")(function () {
     return Date.UTC.apply(Date.UTC, splat);
   }
   context.bicentennial = utc(1976, 6, 4)
-  context.moonwalk = utc(1969, 6, 21, 2, 36)
+  context.moonwalk = utc(1969, 6, 21, 2, 56)
   context.y2k = utc(2000, 0, 1)
   context.tz = require("timezone")
   return context;

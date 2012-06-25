@@ -20,12 +20,10 @@ require("../proof")(21, function (equal, tz, moonwalk, utc) {
   equal(detroit(moonwalk, "-2 years", "%Z"), "EDT", "format with letter");
 
   // RFC 3999 friendly offsets 
-  equal(detroit(utc(2011, 0, 1, 0, 59), "America/Detroit", "%$"), "-05:00", "RFC 3999 hours and minutes");
-  // TODO This didn't work.
-  // equal(detroit(utc(2011, 0, 1, 0, 59), "UTC", "%$"), "Z", "RFC 399 UTC");
-  equal(tz(utc(2011, 0, 1, 0, 59), "%$"), "Z", "RFC 399 UTC");
-  equal(detroit(utc(1900, 0, 1, 0, 59), "America/Detroit", "%$"), "-05:32", "RFC 3999 hours and minutes truncated");
-  equal(detroit(utc(1900, 0, 1, 0, 59), "America/Detroit", "%:$"), "-05:32:11", "RFC 3999 hours, minutes and seconds");
+  equal(detroit(utc(2011, 0, 1, 0, 59), "America/Detroit", "%^z"), "-05:00", "RFC 3999 hours and minutes");
+  equal(detroit(utc(2011, 0, 1, 0, 59), "UTC", "%^z"), "Z", "RFC 399 UTC");
+  equal(tz(utc(2011, 0, 1, 0, 59), "%^z"), "Z", "RFC 399 UTC");
+  equal(detroit(utc(1900, 0, 1, 0, 59), "America/Detroit", "%^z"), "-05:32:11", "RFC 3999 hours, minutes and seconds");
 
   tz = tz(require("timezone/Europe/Amsterdam"));
 
