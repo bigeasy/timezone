@@ -196,6 +196,8 @@ function say () { return console.log.apply(console, __slice.call(arguments, 0)) 
     if (offset == "GMT") date.push(1);
     else if (offset) date.push(offset < 0 ? -1 : 1, Math.abs(Math.floor(offset / 100)), offset % 100);
 
+    ++date[1];
+
     return date;
   }
 });
