@@ -5,7 +5,7 @@
    applications. #23.
  * Spell check `README`. #61.
  * Remove used data file from test directories. #67.
- * Make `zic` at Travis CI.
+ * Make `zic` at Travis CI. #82.
  * Minify with lifted variables. #79.
  * Test minified code at Travis CI. #78.
  * Create `loaded.js` module to create a pre-loaded Timezone function. #42.
