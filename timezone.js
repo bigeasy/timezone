@@ -328,9 +328,9 @@
         }
       }
     };
-  var UNITS = "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|year|month|day|hour|minute|second|milli|millisecond"
+  var UNITS = "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|year|month|day|hour|minute|second|millisecond"
     , UNIT_RE = new RegExp("^\\s*([+-])(\\d+)\\s+(" + UNITS + ")s?\\s*$", "i")
-    , TIME = [ 36e5, 6e4, 1e3, 1, 1 ]
+    , TIME = [ 36e5, 6e4, 1e3, 1 ]
     ;
   UNITS = UNITS.toLowerCase().split("|");
 
