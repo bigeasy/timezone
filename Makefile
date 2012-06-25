@@ -71,6 +71,7 @@ zones/src/zic: zones/src/Makefile zones/src/yearistype.sh
 	touch $@
 
 zones/zoneinfo/America/Detroit: zones/src/africa
+	@(cd zones/src && echo "Using zic: $$(which ./zic || which zic)")
 	(cd zones/src && $$(which ./zic || which zic) -d ../zoneinfo africa antarctica asia australasia europe northamerica southamerica)
 
 zones/src/%: zones/tar/tzdata2012c.tar.gz
