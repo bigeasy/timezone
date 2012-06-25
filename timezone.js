@@ -12,16 +12,16 @@
 
   function say () { return console.log.apply(console, __slice.call(arguments, 0)) }
 */
-  function format (posix, rest) {
-    var wallclock = new Date(convertToWallclock(this, posix)), self = this;
+  function format (request, posix, rest) {
+    var wallclock = new Date(convertToWallclock(request, posix));
     return rest.replace(/%([-0_^]?)(:{0,3})(\d*)(.)/g, function (matched, flag, colons, padding, specifier) {
-      var f, value = matched, fill = "0";
-      if (f = self[specifier]) {
-        value = String(f.call(self, wallclock, posix, flag, (colons || "").length));
+      var f, value = matched, fill = "0", pad;
+      if (f = request[specifier]) {
+        value = String(f.call(request, wallclock, posix, flag, (colons || "").length));
         if ((flag || f.style) == "_") fill = " ";
-        pad = parseInt(flag == "-" ? 0 : (f.pad || 0));
+        pad = flag == "-" ? 0 : f.pad || 0;
         while (value.length < pad) value = fill + value;
-        pad = parseInt(flag == "-" ? 0 : (padding || f.pad));
+        pad = flag == "-" ? 0 : padding || f.pad;
         while (value.length < pad) value = fill + value;
         if (specifier == "N" && pad < value.length) value = value.slice(0, pad);
         if (flag == "^") value = value.toUpperCase();
@@ -30,15 +30,15 @@
     });
   };
 
-  function makeDate (request, date) {
+  function make (request, date) {
     var posix = date[7], i;
-    for (i = 0; i < 11; i++) date[i] = parseInt(date[i] || 0, 10);
-    --date[1];
+    for (i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
     date = Date.UTC.apply(Date.UTC, date.slice(0, 8)) + -date[7] * (date[8] * 36e5 + date[9] * 6e4 + date[10] * 1e3);
-    return posix ? date : convertToPOSIX(request, date);
+    return isNaN(date) ? null : posix ? date : convertToPOSIX(request, date);
   }
 
-  function parse (request, pattern) {
+  function parse (pattern) {
+    //if (pattern == "*") return pattern;
     var date = [], match;
     if (match = /^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|(([+-])(\d{2}(:\d{2}){0,2})))?)?$/.exec(pattern)) {
       __push.apply(date, match.slice(1, 8));
@@ -48,7 +48,8 @@
       } else if (match[8]) {
         __push.apply(date, [ 1 ]);
       }
-      return makeDate(request, date);
+      --date[1];
+      return date;
     }
   }
 
@@ -94,8 +95,8 @@
   }
 
   function find (request, clock, time) {
-    var i, I, entry, year = new Date(time).getUTCFullYear(), found, zone = request[request.zone], actualized = [], to, abbrevs;
-    for (i = 0, I = zone.length; i < I; i++) if (zone[i][clock] <= time) break;
+    var i, I, entry, year = new Date(time).getUTCFullYear(), found, zone = request[request.zone], actualized = [], to, abbrevs, rules;
+    for (i = 1, I = zone.length; i < I; i++) if (zone[i][clock] <= time) break;
     entry = zone[i];
     if (entry.rules) {
       rules = request[entry.rules];
@@ -138,8 +139,8 @@
   };
 
   function adjust (request, posix, match) {
-    var increment = parseInt(match[1] + 1)
-      , offset = parseInt(match[2], 10) * increment
+    var increment = +(match[1] + 1) // conversion necessary for week day addition
+      , offset = match[2] * increment
       , index = UNITS.indexOf(match[3].toLowerCase())
       , date
       ;
@@ -166,22 +167,23 @@
     return posix;
   };
 
-  function convert (splat) {
-    if (!splat.length) return this.clock();
+  function convert (vargs) {
+    if (!vargs.length) return "0.0.11";
 
-    var i, I, adjustment, argument, date, posix, type
+    var i, I, argument, date, type
       , request = Object.create(this)
       , adjustments = []
+      , parsed
       ;
 
-    for (i = 0; splat.length; i++) { // leave the for loop alone, it works.
-      argument = splat.shift();
+    for (i = 0; vargs.length; i++) { // leave the for loop alone, it works.
+      argument = vargs.shift();
       // https://twitter.com/bigeasy/status/215112186572439552
       if (Array.isArray(argument)) {
-        if (!i && !isNaN(argument[0]) && !Array.isArray(argument[0])) {
+        if (!i && !isNaN(argument[0])) {
           date = argument;
         } else {
-          splat.unshift.apply(splat, argument);
+          vargs.unshift.apply(vargs, argument);
           i--;
         }
       } else if (isNaN(argument)) {
@@ -189,55 +191,56 @@
         if (type == "string") {
           if (~argument.indexOf("%")) {
             request.format = argument;
+          } else if (!i && argument == "*") {
+            date = argument;
+          } else if (!i && (parsed = parse(argument))) {
+            date = parsed;
           } else if (/^\w{2}_\w{2}$/.test(argument)) {
             request.locale = argument;
-          } else if (adjustment = parseAdjustment(argument)) {
-            adjustments.push(adjustment);
-          } else if (request[argument]) {
+          } else if (parsed = parseAdjustment(argument)) {
+            adjustments.push(parsed);
+          } else {
             request.zone = argument;
-          } else if (!i) {
-            date = argument;
-          }
+          } 
         } else if (type == "function") {
-          argument.call(request);
+          if (parsed = argument.call(request)) return parsed;
         } else if (/^\w{2}_\w{2}$/.test(argument.name)) {
           request[argument.name] = argument;
         } else if (argument.zones) {
           for (var key in argument.zones) request[key] = argument.zones[key];
           for (var key in argument.rules) request[key] = argument.rules[key];
         }
-      } else if (!i && !isNaN(argument)) {
+      } else if (!i) {
         date = argument;
       }
     }
 
-    if (date != null) {
-      if (!request[request.locale]) request.locale = "en_US"; //throw new Error("unknown locale");
+    if (!request[request.locale]) delete request.locale;
+    if (!request[request.zone]) delete request.zone;
 
-      if (typeof date == "string") {
-        if ((posix = parse(request, date)) == null) {
-          throw new Error("invalid date");
-        }
-      } else if (Array.isArray(date)) {
-        posix = makeDate(request, date);
+    if (date != null) {
+      if (date == "*") {
+        date = request.clock();
+      } else if (Array.isArray(date) && date.length > 1) {
+        date = make(request, date);
       } else {
-        posix = Math.floor(date);
+        date = Math.floor(date);
       }
 
       for (i = 0, I = adjustments.length; i < I; i++) {
-        posix = adjustments[i](request, posix);
+        date = adjustments[i](request, date);
       }
 
-      return request.format ? format.call(request, posix, request.format) : posix;
+      return request.format ? format(request, date, request.format) : date;
     }
 
-    return function() { return request.convert(__slice.call(arguments, 0)) };
+    return function () { return request.convert(__slice.call(arguments, 0)) };
   };
 
   var context =
     { zone: "UTC"
     , entry: { abbrev: "UTC", offset: 0, save: 0 }
-    , UTC: true
+    , UTC: 1
     , clock: function () { return +(new Date()) }
     , convert: convert
     , z: function(date, posix, flag, delimiters) {
@@ -329,30 +332,13 @@
   UNITS = UNITS.toLowerCase().split("|");
 
   "dmHMSUWVgCIky".replace(/./g, function (e) { context[e].pad = 2 });
-  //"kle".replace(/./g, function (e) { context[e].style = "_" });
-  // 2945
-  /*
-  context.d.pad = 2;
-  context.m.pad = 2;
-  context.H.pad = 2;
-  context.M.pad = 2;
-  context.S.pad = 2;
-  context.U.pad = 2;
-  context.W.pad = 2;
-  context.V.pad = 2;
-  context.g.pad = 2;
-  context.C.pad = 2;
-  context.I.pad = 2;
-  context.k.pad = 2;
-  context.y.pad = 2;
-*/
+
   context.N.pad = 9;
   context.j.pad = 3;
 
   context.k.style = "_";
   context.l.style = "_";
   context.e.style = "_";
-
 
   function weekOfYear (date, startOfWeek) {
     var diff, nyd, weekStart;
@@ -386,5 +372,5 @@
     }
   }
 
-  return function () { return context.convert(__slice.call(arguments, 0)) }
+  return function () { return context.convert(__slice.call(arguments, 0)) };
 });

@@ -83,6 +83,7 @@ function write (name, skipList, data) {
     zones: {},
     rules: rules
   };
+  zone.unshift("z");
   record.zones[name] = zone;
   var fs = require("fs");
   var parts = [ "timezone" ].concat(name.split(/\//)), path;
