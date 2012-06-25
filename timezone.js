@@ -54,23 +54,23 @@
     var actualized, fields, date = rule.day[1];
 
     do {
-      fields = new Date(Date.UTC(year, rule.month, Math.abs(date++)));
-    } while (rule.day[0] < 7 && fields.getUTCDay() != rule.day[0])
+      actualized = new Date(Date.UTC(year, rule.month, Math.abs(date++)));
+    } while (rule.day[0] < 7 && actualized.getUTCDay() != rule.day[0])
 
     actualized = {
       clock: rule.clock,
-      sortable: fields.getTime(),
+      sort: actualized.getTime(),
       rule: rule,
       save: rule.save * 6e4,
       offset: entry.offset
     };
 
-    actualized[actualized.clock] = fields.getTime() + rule.time * 6e4;
+    actualized[actualized.clock] = actualized.sort + rule.time * 6e4;
 
-    if (actualized.clock == "posix") {
-      actualized.wallclock = actualized.posix + (entry.offset + rule.saved);
+    if (actualized.posix) {
+      actualized.wallclock = actualized[actualized.clock] + (entry.offset + rule.saved);
     } else {
-      actualized.posix = actualized.wallclock - (entry.offset + rule.saved);
+      actualized.posix = actualized[actualized.clock] - (entry.offset + rule.saved);
     }
 
     return actualized;
@@ -99,7 +99,7 @@
       rules = request[entry.rules];
       to = applicable(entry, rules, actualized, time);
       if (to != null) applicable(entry, rules, actualized, Date.UTC(to, 5));
-      actualized.sort(function (a, b) { return a.sortable - b.sortable });
+      actualized.sort(function (a, b) { return a.sort - b.sort });
       for (i = 0, I = actualized.length; i < I; i++) {
         if (time >= actualized[i][clock] && actualized[i][actualized[i].clock] > entry[actualized[i].clock]) found = actualized[i];
       }
