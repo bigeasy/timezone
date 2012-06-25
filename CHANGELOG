@@ -1,3 +1,18 @@
+- Version 0.0.14
+
+ * Minify with lifted variables. #79.
+ * Test minified code at Travis CI. #78.
+ * Create `loaded.js` module to create a pre-loaded Timezone function. #42.
+ * Simplify module loading boilerplate. #76.
+ * Document date array and time zone format specifiers in `synopsis.js`. #50.
+ * Remove `milli` synonym for `millisecond` math unit. #66.
+ * Remove cached `Array.push` variable. #75.
+ * Bump version string returned by Timezone function. #77. #72.
+ * Reorganize `actualize` for byte savings. #63.
+ * Revert to one based month in date array. #74.
+ * Exclude non-JavaScript files, crufy files, from `slurp.js` indices. #71.
+ * Remove over-zealous, bloaty argument verification. #70.
+
 - Version 0.0.13 - Mon Jun 25 11:05:06 UTC 2012
 
  * Return internal state using function argument. #57.
