@@ -3,10 +3,10 @@
 ,   "author":           "Alan Gutierrez"
 ,   "url" :             "http://bigeasy.github.com/timezone"
 ,   "keywords" :        ["time", "timezone", "date"]
-,   "author" :          "Alan Gutierrez <alan@blogometer.com>"
+,   "author" :          "Alan Gutierrez <alan@prettyrobots.com>"
 ,   "contributors" :    []
-,   "dependencies":       { "edify": ">=0.0.1" }
+,   "dependencies":     { "connect": "~2" }
 ,   "lib" :             "lib"
 ,   "main" :            "./lib/timezone"
-,   "engines" :         { "node": "> 0.4.0" }
+,   "engines" :         { "node": "> 0.6.0" }
 }
