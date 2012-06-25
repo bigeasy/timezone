@@ -30,18 +30,16 @@
     });
   };
 
-  function makeDate (request, date) {
+  function make (request, date) {
     var posix = date[7], i;
     for (i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
-    --date[1];
     date = Date.UTC.apply(Date.UTC, date.slice(0, 8)) + -date[7] * (date[8] * 36e5 + date[9] * 6e4 + date[10] * 1e3);
-    if (!posix) date = convertToPOSIX(request, date);
-    if (date == null) throw new Error("invalid wall-clock time");
-    return date;
+    return isNaN(date) ? null : posix ? date : convertToPOSIX(request, date);
   }
 
   function parse (pattern) {
-    var date = [ "@" ], match;
+    //if (pattern == "*") return pattern;
+    var date = [], match;
     if (match = /^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|(([+-])(\d{2}(:\d{2}){0,2})))?)?$/.exec(pattern)) {
       __push.apply(date, match.slice(1, 8));
       if (match[9]) {
@@ -50,6 +48,7 @@
       } else if (match[8]) {
         __push.apply(date, [ 1 ]);
       }
+      --date[1];
       return date;
     }
   }
@@ -173,42 +172,36 @@
 
     var i, I, argument, date, type
       , request = Object.create(this)
-      , zone, locale
       , adjustments = []
       , parsed
-      , extra = []
       ;
 
     for (i = 0; vargs.length; i++) { // leave the for loop alone, it works.
       argument = vargs.shift();
       // https://twitter.com/bigeasy/status/215112186572439552
-      if (argument == null) {
-        throw new Error("null argument");
-      } else if (Array.isArray(argument)) {
-        if (!i && argument[0] == "@") {
+      if (Array.isArray(argument)) {
+        if (!i && !isNaN(argument[0])) {
           date = argument;
         } else {
           vargs.unshift.apply(vargs, argument);
           i--;
         }
-      } else if (isNaN(argument) && (i || argument != "*")) {
+      } else if (isNaN(argument)) {
         type = typeof argument;
         if (type == "string") {
           if (~argument.indexOf("%")) {
             request.format = argument;
+          } else if (!i && argument == "*") {
+            date = argument;
           } else if (!i && (parsed = parse(argument))) {
             date = parsed;
           } else if (/^\w{2}_\w{2}$/.test(argument)) {
-            if (locale) extra.push(argument);
-            else locale = argument;
+            request.locale = argument;
           } else if (parsed = parseAdjustment(argument)) {
             adjustments.push(parsed);
-          } else if (/^[-A-Za-z\/_]+$|^\w{3}\d\w{3}$/.test(argument)) {
-            if (!zone) zone = argument;
-            else extra.push(argument);
           } else {
-            throw new Error("invalid argument: " + argument);
-          }
+            request.zone = argument;
+          } 
         } else if (type == "function") {
           if (parsed = argument.call(request)) return parsed;
         } else if (/^\w{2}_\w{2}$/.test(argument.name)) {
@@ -219,29 +212,17 @@
         }
       } else if (!i) {
         date = argument;
-      } else {
-        throw new Error("invalid argument: " + argument);
       }
     }
 
-    if (locale) {
-      if (!request[locale]) throw new Error("invalid locale: " + locale);
-      request.locale = locale;
-    }
-
-    if (zone) {
-      if (!request[zone] || request[zone][0] != "z") throw new Error("invalid zone: " + zone);
-      request.zone = zone;
-    }
-
-    if (extra.length) return request.convert(date == null ? extra : [ date, extra ]);
+    if (!request[request.locale]) delete request.locale;
+    if (!request[request.zone]) delete request.zone;
 
     if (date != null) {
       if (date == "*") {
         date = request.clock();
-      } else if (Array.isArray(date)) {
-        if (isNaN(date = makeDate(request, date.slice(1))))
-          throw new Error("invalid date");
+      } else if (Array.isArray(date) && date.length > 1) {
+        date = make(request, date);
       } else {
         date = Math.floor(date);
       }
@@ -259,7 +240,7 @@
   var context =
     { zone: "UTC"
     , entry: { abbrev: "UTC", offset: 0, save: 0 }
-    , UTC: [ "z" ]
+    , UTC: 1
     , clock: function () { return +(new Date()) }
     , convert: convert
     , z: function(date, posix, flag, delimiters) {
