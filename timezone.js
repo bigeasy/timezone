@@ -3,7 +3,7 @@
   else if (typeof define == "function" && typeof define.amd == "object") define(definition);
   else this.tz = definition();
 } (function () {
-  var __slice = [].slice, __push = [].push;
+  var __slice = [].slice;
 /*
   function die () {
     console.log.apply(console, __slice.call(arguments, 0));
@@ -30,25 +30,22 @@
     });
   };
 
-  function make (request, date) {
-    var posix = date[7], i;
-    for (i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
-    date = Date.UTC.apply(Date.UTC, date.slice(0, 8)) + -date[7] * (date[8] * 36e5 + date[9] * 6e4 + date[10] * 1e3);
-    return isNaN(date) ? null : posix ? date : convertToPOSIX(request, date);
+  function make (date) {
+    for (var i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
+    --date[1];
+    return Date.UTC.apply(Date.UTC, date.slice(0, 8)) + -date[7] * (date[8] * 36e5 + date[9] * 6e4 + date[10] * 1e3);
   }
 
   function parse (pattern) {
-    //if (pattern == "*") return pattern;
     var date = [], match;
     if (match = /^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|(([+-])(\d{2}(:\d{2}){0,2})))?)?$/.exec(pattern)) {
-      __push.apply(date, match.slice(1, 8));
+      date.push.apply(date, match.slice(1, 8));
       if (match[9]) {
-        __push.apply(date, [match[10] + 1]);
-        __push.apply(date, match[11].split(/:/));
+        date.push(match[10] + 1);
+        date.push.apply(date, match[11].split(/:/));
       } else if (match[8]) {
-        __push.apply(date, [ 1 ]);
+        date.push(1);
       }
-      --date[1];
       return date;
     }
   }
@@ -57,23 +54,23 @@
     var actualized, fields, date = rule.day[1];
 
     do {
-      fields = new Date(Date.UTC(year, rule.month, Math.abs(date++)));
-    } while (rule.day[0] < 7 && fields.getUTCDay() != rule.day[0])
+      actualized = new Date(Date.UTC(year, rule.month, Math.abs(date++)));
+    } while (rule.day[0] < 7 && actualized.getUTCDay() != rule.day[0])
 
     actualized = {
       clock: rule.clock,
-      sortable: fields.getTime(),
+      sort: actualized.getTime(),
       rule: rule,
       save: rule.save * 6e4,
       offset: entry.offset
     };
 
-    actualized[actualized.clock] = fields.getTime() + rule.time * 6e4;
+    actualized[actualized.clock] = actualized.sort + rule.time * 6e4;
 
-    if (actualized.clock == "posix") {
-      actualized.wallclock = actualized.posix + (entry.offset + rule.saved);
+    if (actualized.posix) {
+      actualized.wallclock = actualized[actualized.clock] + (entry.offset + rule.saved);
     } else {
-      actualized.posix = actualized.wallclock - (entry.offset + rule.saved);
+      actualized.posix = actualized[actualized.clock] - (entry.offset + rule.saved);
     }
 
     return actualized;
@@ -102,7 +99,7 @@
       rules = request[entry.rules];
       to = applicable(entry, rules, actualized, time);
       if (to != null) applicable(entry, rules, actualized, Date.UTC(to, 5));
-      actualized.sort(function (a, b) { return a.sortable - b.sortable });
+      actualized.sort(function (a, b) { return a.sort - b.sort });
       for (i = 0, I = actualized.length; i < I; i++) {
         if (time >= actualized[i][clock] && actualized[i][actualized[i].clock] > entry[actualized[i].clock]) found = actualized[i];
       }
@@ -168,7 +165,7 @@
   };
 
   function convert (vargs) {
-    if (!vargs.length) return "0.0.11";
+    if (!vargs.length) return "0.0.14";
 
     var i, I, argument, date, type
       , request = Object.create(this)
@@ -180,7 +177,7 @@
       argument = vargs.shift();
       // https://twitter.com/bigeasy/status/215112186572439552
       if (Array.isArray(argument)) {
-        if (!i && !isNaN(argument[0])) {
+        if (!i && !isNaN(argument[1])) {
           date = argument;
         } else {
           vargs.unshift.apply(vargs, argument);
@@ -221,17 +218,23 @@
     if (date != null) {
       if (date == "*") {
         date = request.clock();
-      } else if (Array.isArray(date) && date.length > 1) {
-        date = make(request, date);
+      } else if (Array.isArray(date)) {
+        I = !date[7];
+        date = make(date);
       } else {
         date = Math.floor(date);
       }
+      if (!isNaN(date)) {
+        if (I) date = convertToPOSIX(request, date);
 
-      for (i = 0, I = adjustments.length; i < I; i++) {
-        date = adjustments[i](request, date);
+        if (date == null) return date;
+
+        for (i = 0, I = adjustments.length; i < I; i++) {
+          date = adjustments[i](request, date);
+        }
+
+        return request.format ? format(request, date, request.format) : date;
       }
-
-      return request.format ? format(request, date, request.format) : date;
     }
 
     return function () { return request.convert(__slice.call(arguments, 0)) };
