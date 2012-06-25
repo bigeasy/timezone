@@ -16,6 +16,11 @@
  * Build on OS X. #31.
  * Deleted defunct `index.js`. #49.
  * No longer parsing time only date strings. #30.
+ * Implement `%^z`. #28.
+ * Correctly format `%z` in UTC. #43.
+ * Implement UK English, French and German locales. #26.
+ * Convert Proof tests to JavaScript. #36.
+ * Timezone zones and locales in package root. #34. #33.
  * Updates and revisions to `synopsis.js`.
 
 - Version 0.0.11 - Thu Jun 14 18:04:39 UTC 2012
