@@ -11,24 +11,6 @@
 
   function say () { return console.log.apply(console, __slice.call(arguments, 0)) }
 */
-  function format (request, posix, rest) {
-    var wallclock = new Date(convertToWallclock(request, posix));
-    return rest.replace(/%([-0_^]?)(:{0,3})(\d*)(.)/g, function (value, flag, colons, padding, specifier) {
-      var f, fill = "0", pad;
-      if (f = request[specifier]) {
-        value = String(f.call(request, wallclock, posix, flag, colons.length));
-        if ((flag || f.style) == "_") fill = " ";
-        pad = flag == "-" ? 0 : f.pad || 0;
-        while (value.length < pad) value = fill + value;
-        pad = flag == "-" ? 0 : padding || f.pad;
-        while (value.length < pad) value = fill + value;
-        if (specifier == "N" && pad < value.length) value = value.slice(0, pad);
-        if (flag == "^") value = value.toUpperCase();
-      }
-      return value;
-    });
-  };
-
   function actualize (entry, rule, year) {
     var actualized, date = rule.day[1];
 
@@ -207,7 +189,24 @@
           date = adjust(request, date, adjustments[i]);
         }
 
-        return request.format ? format(request, date, request.format) : date;
+        if (!request.format) return date;
+
+        $ = new Date(convertToWallclock(request, date));
+        return request.format.replace(/%([-0_^]?)(:{0,3})(\d*)(.)/g,
+        function (value, flag, colons, padding, specifier) {
+          var f, fill = "0", pad;
+          if (f = request[specifier]) {
+            value = String(f.call(request, $, date, flag, colons.length));
+            if ((flag || f.style) == "_") fill = " ";
+            pad = flag == "-" ? 0 : f.pad || 0;
+            while (value.length < pad) value = fill + value;
+            pad = flag == "-" ? 0 : padding || f.pad;
+            while (value.length < pad) value = fill + value;
+            if (specifier == "N" && pad < value.length) value = value.slice(0, pad);
+            if (flag == "^") value = value.toUpperCase();
+          }
+          return value;
+        });
       }
     }
 
