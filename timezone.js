@@ -29,20 +29,6 @@
     });
   };
 
-  function parse (pattern) {
-    var date = [], match;
-    if (match = /^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|(([+-])(\d{2}(:\d{2}){0,2})))?)?$/.exec(pattern)) {
-      date.push.apply(date, match.slice(1, 8));
-      if (match[9]) {
-        date.push(match[10] + 1);
-        date.push.apply(date, match[11].split(/:/));
-      } else if (match[8]) {
-        date.push(1);
-      }
-      return date;
-    }
-  }
-
   function actualize (entry, rule, year) {
     var actualized, date = rule.day[1];
 
@@ -176,8 +162,15 @@
             request.format = argument;
           } else if (!i && argument == "*") {
             date = argument;
-          } else if (!i && ($ = parse(argument))) {
-            date = $;
+          } else if (!i && ($ = /^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|(([+-])(\d{2}(:\d{2}){0,2})))?)?$/.exec(argument))) {
+            date = [];
+            date.push.apply(date, $.slice(1, 8));
+            if ($[9]) {
+              date.push($[10] + 1);
+              date.push.apply(date, $[11].split(/:/));
+            } else if ($[8]) {
+              date.push(1);
+            }
           } else if (/^\w{2}_\w{2}$/.test(argument)) {
             request.locale = argument;
           } else if ($ = UNIT_RE.exec(argument)) {
