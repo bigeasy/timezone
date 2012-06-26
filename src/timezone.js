@@ -11,6 +11,46 @@
 
   function say () { return console.log.apply(console, __slice.call(arguments, 0)) }
 */
+      var fills = { "_": " ", "0": "0", "-": "" }
+  function format (request, string, posix, wallclock) {
+    var out = ""
+      , flag = "0"
+      , colons = 0
+      , padding = ""
+      , $1
+      , $2
+      , $3
+      , I = string.length
+      , i = 0
+      , flags = "0123456789-:_^"
+      ;
+    for (i = 0; i < I; i++) {
+      if (($2 = string[$1 = i]) == "%") {
+        for (i++;~($2 = flags.indexOf(string[i]));i++) {
+          if ($2 < 10) padding += $1
+          else if ($2 == 10 && !(flag || padding || colons == 3) && ++colons) {}
+          else if (flag || padding || colons) break;
+          else flag = flags[$2];
+        }
+        if ($2 = request[string[i]]) {
+          $1 = String($2.call(request, wallclock, posix, flag, colons));
+          if ((pad = +(padding) || $2.pad || 0) && (fill = fills[flag || $2.style])) {
+            while ($1.length < pad) $1 = fill + $1;
+            if (pad < $1.length && string[i] == "N") $1 = $1.slice(0, pad);
+          } else if (flag == "^") {
+            $1 = $1.toUpperCase();
+          }
+          out += $1;
+        } else {
+          out += rest.slice($1, i + 1);
+        }
+      } else {
+        out += $2;
+      }
+    }
+    return out;
+  }
+ 
   function actualize (entry, rule, year) {
     var actualized, date = rule.day[1];
 
@@ -116,6 +156,8 @@
       , i, I, $, argument, date
       ;
 
+        return format(request, vargs[1], vargs[0], new Date(convertToWallclock(request, vargs[0])));
+
     for (i = 0; i < vargs.length; i++) { // leave the for loop alone, it works.
       argument = vargs[i];
       // https://twitter.com/bigeasy/status/215112186572439552
@@ -130,8 +172,6 @@
         if ($ == "string") {
           if (~argument.indexOf("%")) {
             request.format = argument;
-          } else if (!i && argument == "*") {
-            date = argument;
           } else if (!i && ($ = /^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|(([+-])(\d{2}(:\d{2}){0,2})))?)?$/.exec(argument))) {
             date = [];
             date.push.apply(date, $.slice(1, 8));
@@ -165,9 +205,7 @@
     if (!request[request.zone]) delete request.zone;
 
     if (date != null) {
-      if (date == "*") {
-        date = request.clock();
-      } else if (Array.isArray(date)) {
+      if (Array.isArray(date)) {
         I = !date[7];
         for (i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
         --date[1]; // Grr..
@@ -187,22 +225,7 @@
 
         if (!request.format) return date;
 
-        $ = new Date(convertToWallclock(request, date));
-        return request.format.replace(/%([-0_^]?)(:{0,3})(\d*)(.)/g,
-        function (value, flag, colons, padding, specifier) {
-          var f, fill = "0", pad;
-          if (f = request[specifier]) {
-            value = String(f.call(request, $, date, flag, colons.length));
-            if ((flag || f.style) == "_") fill = " ";
-            pad = flag == "-" ? 0 : f.pad || 0;
-            while (value.length < pad) value = fill + value;
-            pad = flag == "-" ? 0 : padding || f.pad;
-            while (value.length < pad) value = fill + value;
-            if (specifier == "N" && pad < value.length) value = value.slice(0, pad);
-            if (flag == "^") value = value.toUpperCase();
-          }
-          return value;
-        });
+        return format(request, request.format, date, new Date(convertToWallclock(request, date)));
       }
     }
 
@@ -311,38 +334,6 @@
   context.k.style = "_";
   context.l.style = "_";
   context.e.style = "_";
-
-  function weekOfYear (date, startOfWeek) {
-    var diff, nyd, weekStart;
-    nyd = new Date(Date.UTC(date.getUTCFullYear(), 0));
-    diff = Math.floor((date.getTime() - nyd.getTime()) / 864e5);
-    if (nyd.getUTCDay() == startOfWeek) {
-      weekStart = 0;
-    } else {
-      weekStart = 7 - nyd.getUTCDay() + startOfWeek;
-      if (weekStart == 8) {
-        weekStart = 1;
-      }
-    }
-    return diff >= weekStart ? Math.floor((diff - weekStart) / 7) + 1 : 0;
-  }
-
-  function isoWeek (date) {
-    var nyd, nyy, week;
-    nyy = date.getUTCFullYear();
-    nyd = new Date(Date.UTC(nyy, 0)).getUTCDay();
-    week = weekOfYear(date, 1) + (nyd > 1 && nyd <= 4 ? 1 : 0);
-    if (!week) {
-      nyy = date.getUTCFullYear() - 1;
-      nyd = new Date(Date.UTC(nyy, 0)).getUTCDay();
-      week = nyd == 4 || (nyd == 3 && new Date(nyy, 1, 29).getDate() == 29) ? 53 : 52;
-      return [week, date.getUTCFullYear() - 1];
-    } else if (week == 53 && !(nyd == 4 || (nyd == 3 && new Date(nyy, 1, 29).getDate() == 29))) {
-      return [1, date.getUTCFullYear() + 1];
-    } else {
-      return [week, date.getUTCFullYear()];
-    }
-  }
 
   return function () { return context.convert(arguments) };
 });
