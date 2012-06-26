@@ -208,10 +208,8 @@
     if (!request[request.zone]) delete request.zone;
 
     if (date != null) {
-      if (date == "*") {
-        date = request.clock();
-      } else if (Array.isArray(date)) {
-        I = !date[7];
+      if (false && isNaN(date)) {
+        bar = !date[7];
         for (i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
         --date[1]; // Grr..
         date = Date.UTC.apply(Date.UTC, date.slice(0, 8)) +
@@ -224,8 +222,9 @@
 
         if (date == null) return date;
 
-        for (i = 0, I = adjustments.length; i < I; i++) {
-          date = adjust(request, date, adjustments[i]);
+        if (adjustments.length)
+        for (i = 0, bar = adjustments.length; i < bar; i++) {
+          date = adjustments[i](request, date);
         }
 
         if (!request.format) return date;
@@ -355,37 +354,6 @@
   context.l.style = "_";
   context.e.style = "_";
 
-  function weekOfYear (date, startOfWeek) {
-    var diff, nyd, weekStart;
-    nyd = new Date(Date.UTC(date.getUTCFullYear(), 0));
-    diff = Math.floor((date.getTime() - nyd.getTime()) / 864e5);
-    if (nyd.getUTCDay() == startOfWeek) {
-      weekStart = 0;
-    } else {
-      weekStart = 7 - nyd.getUTCDay() + startOfWeek;
-      if (weekStart == 8) {
-        weekStart = 1;
-      }
-    }
-    return diff >= weekStart ? Math.floor((diff - weekStart) / 7) + 1 : 0;
-  }
-
-  function isoWeek (date) {
-    var nyd, nyy, week;
-    nyy = date.getUTCFullYear();
-    nyd = new Date(Date.UTC(nyy, 0)).getUTCDay();
-    week = weekOfYear(date, 1) + (nyd > 1 && nyd <= 4 ? 1 : 0);
-    if (!week) {
-      nyy = date.getUTCFullYear() - 1;
-      nyd = new Date(Date.UTC(nyy, 0)).getUTCDay();
-      week = nyd == 4 || (nyd == 3 && new Date(nyy, 1, 29).getDate() == 29) ? 53 : 52;
-      return [week, date.getUTCFullYear() - 1];
-    } else if (week == 53 && !(nyd == 4 || (nyd == 3 && new Date(nyy, 1, 29).getDate() == 29))) {
-      return [1, date.getUTCFullYear() + 1];
-    } else {
-      return [week, date.getUTCFullYear()];
-    }
-  }
 
   return function () { return context.convert(arguments) };
 });
