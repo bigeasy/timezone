@@ -30,12 +30,6 @@
     });
   };
 
-  function make (date) {
-    for (var i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
-    --date[1];
-    return Date.UTC.apply(Date.UTC, date.slice(0, 8)) + -date[7] * (date[8] * 36e5 + date[9] * 6e4 + date[10] * 1e3);
-  }
-
   function parse (pattern) {
     var date = [], match;
     if (match = /^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|(([+-])(\d{2}(:\d{2}){0,2})))?)?$/.exec(pattern)) {
@@ -219,7 +213,10 @@
         date = request.clock();
       } else if (Array.isArray(date)) {
         bar = !date[7];
-        date = make(date);
+        for (i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
+        --date[1]; // Grr..
+        date = Date.UTC.apply(Date.UTC, date.slice(0, 8)) +
+          -date[7] * (date[8] * 36e5 + date[9] * 6e4 + date[10] * 1e3);
       } else {
         date = Math.floor(date);
       }
