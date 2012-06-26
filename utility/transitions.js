@@ -186,7 +186,7 @@
     return table[table.length - 1];
   }
 
-  function iso8601 (date) { return new Date(date).toISOString().replace(/\..*$/, "") }
+  function iso8601 (date) { try { return new Date(date).toISOString().replace(/\..*$/, "") } catch (e) { return "-" } }
 
   function skipList (data, name, table) {
     var i, I, rules, rule, skip = [], year;
