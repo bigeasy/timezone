@@ -123,11 +123,6 @@
     return 0 < diff && diff < entry.save ? null : wallclock - entry.offset - entry.save;
   };
 
-  function parseAdjustment (pattern) {
-    var match = UNIT_RE.exec(pattern);
-    return match && function (request, posix) { return adjust(request, posix, match) }
-  };
-
   function adjust (request, posix, match) {
     var increment = +(match[1] + 1) // conversion necessary for week day addition
       , offset = match[2] * increment
@@ -162,7 +157,7 @@
 
     var request = Object.create(this)
       , adjustments = []
-      , i, foo, bar, argument, date
+      , i, I, $, argument, date
       ;
 
     for (i = 0; i < vargs.length; i++) { // leave the for loop alone, it works.
@@ -175,28 +170,28 @@
           argument.splice.apply(vargs, [ i--, 1 ].concat(argument));
         }
       } else if (isNaN(argument)) {
-        foo = typeof argument;
-        if (foo == "string") {
+        $ = typeof argument;
+        if ($ == "string") {
           if (~argument.indexOf("%")) {
             request.format = argument;
           } else if (!i && argument == "*") {
             date = argument;
-          } else if (!i && (foo = parse(argument))) {
-            date = foo;
+          } else if (!i && ($ = parse(argument))) {
+            date = $;
           } else if (/^\w{2}_\w{2}$/.test(argument)) {
             request.locale = argument;
-          } else if (foo = parseAdjustment(argument)) {
-            adjustments.push(foo);
+          } else if ($ = UNIT_RE.exec(argument)) {
+            adjustments.push($);
           } else {
             request.zone = argument;
           } 
-        } else if (foo == "function") {
-          if (foo = argument.call(request)) return foo;
+        } else if ($ == "function") {
+          if ($ = argument.call(request)) return $;
         } else if (/^\w{2}_\w{2}$/.test(argument.name)) {
           request[argument.name] = argument;
         } else if (argument.zones) {
-          for (var key in argument.zones) request[key] = argument.zones[key];
-          for (var key in argument.rules) request[key] = argument.rules[key];
+          for ($ in argument.zones) request[$] = argument.zones[$];
+          for ($ in argument.rules) request[$] = argument.rules[$];
         }
       } else if (!i) {
         date = argument;
@@ -210,7 +205,7 @@
       if (date == "*") {
         date = request.clock();
       } else if (Array.isArray(date)) {
-        bar = !date[7];
+        I = !date[7];
         for (i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
         --date[1]; // Grr..
         date = Date.UTC.apply(Date.UTC, date.slice(0, 8)) +
@@ -219,12 +214,12 @@
         date = Math.floor(date);
       }
       if (!isNaN(date)) {
-        if (bar) date = convertToPOSIX(request, date);
+        if (I) date = convertToPOSIX(request, date);
 
         if (date == null) return date;
 
-        for (i = 0, bar = adjustments.length; i < bar; i++) {
-          date = adjustments[i](request, date);
+        for (i = 0, I = adjustments.length; i < I; i++) {
+          date = adjust(request, date, adjustments[i]);
         }
 
         return request.format ? format(request, date, request.format) : date;
