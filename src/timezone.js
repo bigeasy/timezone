@@ -11,6 +11,36 @@
 
   function say () { return console.log.apply(console, __slice.call(arguments, 0)) }
 */
+      var fills = { "_": " ", "0": "0", "-": "" }
+  function format (request, string, posix, wallclock) {
+    var out = ""
+      , _ = []
+      , flag = "0"
+      , $
+      , pad
+      , fill
+      , f
+      , v
+      ;
+    _ [6] = string;
+    while ($ = /^([^%]*)%([-0_^]?)(:{0,3})(\d*)(.)(.*)$/.exec(_[6])) {
+      v = $[0];
+      if (f = request[$[5]]) {
+        v = String(f.call(request, wallclock, posix, $[2], $[3].length));
+        if ((pad = +($[4]) || f.pad || 0) && (fill = fills[flag || f.style])) {
+          while (v.length < pad) v = fill + v;
+          if (pad < v.length && $[5] == "N") v = v.slice(0, pad);
+        } else if (flag == "^") {
+          v = v.toUpperCase();
+        }
+        out += $[1];
+      }
+      out += v;
+      _ = $;
+    }
+    return out;
+  }
+ 
   function actualize (entry, rule, year) {
     var actualized, date = rule.day[1];
 
