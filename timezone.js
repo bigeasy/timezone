@@ -3,7 +3,6 @@
   else if (typeof define == "function") define(definition);
   else this.tz = definition();
 } (function () {
-  var __slice = [].slice;
 /*
   function die () {
     console.log.apply(console, __slice.call(arguments, 0));
@@ -166,15 +165,14 @@
       , i, foo, bar, argument, date
       ;
 
-    for (i = 0; vargs.length; i++) { // leave the for loop alone, it works.
-      argument = vargs.shift();
+    for (i = 0; i < vargs.length; i++) { // leave the for loop alone, it works.
+      argument = vargs[i];
       // https://twitter.com/bigeasy/status/215112186572439552
       if (Array.isArray(argument)) {
         if (!i && !isNaN(argument[1])) {
           date = argument;
         } else {
-          vargs.unshift.apply(vargs, argument);
-          i--;
+          argument.splice.apply(vargs, [ i--, 1 ].concat(argument));
         }
       } else if (isNaN(argument)) {
         foo = typeof argument;
@@ -233,7 +231,7 @@
       }
     }
 
-    return function () { return request.convert(__slice.call(arguments, 0)) };
+    return function () { return request.convert(arguments) };
   };
 
   var context =
@@ -371,5 +369,5 @@
     }
   }
 
-  return function () { return context.convert(__slice.call(arguments, 0)) };
+  return function () { return context.convert(arguments) };
 });
