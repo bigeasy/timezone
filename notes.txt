@@ -1,0 +1,3 @@
+http://jsperf.com/date-formatting
+http://jsperf.com/enclosed-versus-local
+http://jsperf.com/cached-slice-versus-constructed

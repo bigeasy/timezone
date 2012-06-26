@@ -11,6 +11,49 @@
 
   function say () { return console.log.apply(console, __slice.call(arguments, 0)) }
 */
+  function format (request, posix, rest) {
+    var wallclock = new Date(convertToWallclock(request, posix)), i, I = rest.length;
+    var f, out = "", flag = "0", colons = 0, fills = { "_": " ", "0": "0", "-": "" }, ch = "", padding = "", k,
+     foo = [];
+    for (i = 0; i < I; i++) {
+      if (rest[i] == "%") {
+        k = i;
+        if (~"-0123456789:_^".indexOf(rest[++i])) flag = rest[i++];
+        //while (rest[i] == ":" && ++i && ++colons);
+        //while (!isNaN(rest[i])) padding += rest[i++];
+        if (f = request[rest[i]]) {
+          ch = String(f.call(request, wallclock, posix, flag, colons));
+          if ((pad = +(padding) || f.pad || 0) && (fill = fills[flag || f.style])) {
+            while (ch.length < pad) ch = fill + ch;
+            if (pad < ch.length && rest[i] == "N") ch = ch.slice(0, pad);
+          } else if (flag == "^") {
+            ch = ch.toUpperCase();
+          }
+          foo.push(ch);
+        } else {
+          out += rest.slice(k, i + 1);
+        }
+      } else {
+        foo.push(rest[i]);
+      }
+    }
+    return foo.join("");
+  };
+
+  function parse (pattern) {
+    var date = [], match;
+    if (match = /^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|(([+-])(\d{2}(:\d{2}){0,2})))?)?$/.exec(pattern)) {
+      date.push.apply(date, match.slice(1, 8));
+      if (match[9]) {
+        date.push(match[10] + 1);
+        date.push.apply(date, match[11].split(/:/));
+      } else if (match[8]) {
+        date.push(1);
+      }
+      return date;
+    }
+  }
+
   function actualize (entry, rule, year) {
     var actualized, date = rule.day[1];
 
