@@ -293,8 +293,8 @@ eq( us(moonwalk, "America/Detroit", "%:z"), "-05:00" );
 var armistice = tz("1911-11-11 11:00");
 
 // *Timezone offset colon separated, down to the second.*
-eq( tz("1969-07-21 03:56", "Europe/Amsterdam", require("timezone/Europe/Amsterdam"), "%c")
-  , "-04:00:00" );
+eq( tz("1969-07-21 03:56", "Europe/Amsterdam", require("timezone/Europe/Amsterdam"), "%::z")
+  , "+01:00:00" );
 
 // The **Timezone** function itself offers one extension to `strftime`, inspired
 // by the GNU `date` extensions for `%z`, to support formatting RFC 3999 date
@@ -304,44 +304,53 @@ eq( tz("1969-07-21 03:56", "Europe/Amsterdam", require("timezone/Europe/Amsterda
 eq( tz(moonwalk, "%^z"), "Z" );
 
 // *Timezone offset colon separated, down to the minute.*
-eq( us(moonwalk, "America/Detroit", "%^z"), "-04:00" );
+eq( us(moonwalk, "America/Detroit", "%^z"), "-05:00" );
 
 // *Timezone offset colon separated, down to the second, only if needed.*
 eq( tz(armistice, "Europe/Amsterdam", require("timezone/Europe/Amsterdam"), "%^z")
-  , "-04:00:00" );
+  , "+00:19:32" );
 
 // *RFC 3999 string for* `UTC` *.*
-eq( tz(moonwalk, "%F %T%^z"), "-04:00" );
+eq( tz(moonwalk, "%F %T%^z"), "1969-07-21 02:56:00Z" );
 
 // *RFC 3999 string not at* `UTC` *.*
-eq( us(moonwalk, "America/Detroit", "%F %T%^z"), "-04:00" );
+eq( us(moonwalk, "America/Detroit", "%F %T%^z"), "1969-07-20 21:56:00-05:00" );
 
 // *Not part of the RFC 3999 standard, but **Timezone** will parse a time zone
 // offset specified in seconds.*
 eq( tz(armistice, "Europe/Amsterdam", require("timezone/Europe/Amsterdam"), "%T %F%^z")
-  , "-04:00:00" );
+  , "11:19:32 1911-11-11+00:19:32" );
 
 // #### Padding 
 //
 // **Timezone** implements the GNU padding extensions to `strftime`.
 
+// For zero padding we use `0`, but most formats are already zero padded.
+
+// *Zero padded day of month, but it is already zero padded.*
+eq( tz(y2k, "%B %0d %Y"), "January 01 2000" );
+
+// *Same as above.*/
+eq( tz(y2k, "%B %d %Y"), "January 01 2000" );
+
 // To remove padding, add a hyphen after the percent sign.
+
+// *With padding.*
+eq( tz(y2k, "%m/%d/%Y"), "01/01/2000" );
+
+// *Padding stripped.*
+eq( tz(y2k, "%-m/%-d/%Y"), "1/1/2000" );
 
 // To pad with spaces put an underscore after the percent sign.
 
 // *Space padded day of month.*
-eq( tz(ytk, "%B %_d %Y") );
-
-// For zero padding we use `0`, but most formats are already zero padded.
-
-// *Zero padded day of month, but it is already zero padded.*
-eq( tz(ytk, "%B %0d %Y"), "" );
+eq( tz(y2k, "%B %_d %Y"), "January  1 2000" );
 
 // *Nanoseconds, silly because we only have millisecond prevision.*
-eq( tz(1, "%T %F.%N"), "" );
+eq( tz(1, "%F %T.%N"), "1970-01-01 00:00:00.001000000" );
 
-// *Milliseconds using a with specifier.*
-eq( tz(1, "%T %F.%03N"), "" );
+// *Milliseconds using a with padding width specifier.*
+eq( tz(1, "%F %T.%3N"), "1970-01-01 00:00:00.001" );
 
 // ### Converting to Wall-Clock Time
 //
