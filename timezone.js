@@ -56,36 +56,28 @@
   }
 
   function applicable (entry, rules, actualized, time) {
-    var last, i, I, j, year = new Date(time).getUTCFullYear();
-    for (j = year + 1; j >= year - 1; --j) {
-      for (i = 0, I = rules.length; i < I; i++) {
-          if (rules[i].from <= j && j <= rules[i].to) {
-            actualized.push(actualize(entry, rules[i], j));
-          } else if (rules[i].to < j) {
-            last = rules[i].to;
-            break;
-        }
-      }
-    }
-    return last;
+    var i, I, j, year = new Date(time).getUTCFullYear(), off = 1;
+    for (j = year + 1; j >= year - off; --j)
+      for (i = 0, I = rules.length; i < I; i++) 
+        if (rules[i].from <= j && j <= rules[i].to) actualized.push(actualize(entry, rules[i], j));
+        else if (rules[i].to < j && off == 1) off = j - rules[i].to;
   }
 
   function find (request, clock, time) {
-    var i, I, entry, found, zone = request[request.zone], actualized = [], foo, rules;
+    var i, I, entry, found, zone = request[request.zone], actualized = [], abbrev, rules;
     for (i = 1, I = zone.length; i < I; i++) if (zone[i][clock] <= time) break;
     entry = zone[i];
     if (entry.rules) {
       rules = request[entry.rules];
-      foo = applicable(entry, rules, actualized, time);
-      if (foo != null) applicable(entry, rules, actualized, Date.UTC(foo, 5));
+      applicable(entry, rules, actualized, time);
       actualized.sort(function (a, b) { return a.sort - b.sort });
       for (i = 0, I = actualized.length; i < I; i++) {
         if (time >= actualized[i][clock] && actualized[i][actualized[i].clock] > entry[actualized[i].clock]) found = actualized[i];
       }
     }
     if (found) {
-      if (foo = /^(.*)\/(.*)$/.exec(entry.format)) {
-        found.abbrev = foo[found.save ? 2 : 1];
+      if (abbrev = /^(.*)\/(.*)$/.exec(entry.format)) {
+        found.abbrev = abbrev[found.save ? 2 : 1];
       } else {
         found.abbrev = entry.format.replace(/%s/, found.rule.letter);
       }
