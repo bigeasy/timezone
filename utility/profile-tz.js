@@ -1,4 +1,4 @@
-var tz = require("./timezone");
+var tz = require("timezone/index");
 
 
 (function () {
