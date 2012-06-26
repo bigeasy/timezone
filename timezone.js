@@ -45,7 +45,7 @@
   }
 
   function actualize (entry, rule, year) {
-    var actualized, fields, date = rule.day[1];
+    var actualized, date = rule.day[1];
 
     do {
       actualized = new Date(Date.UTC(year, rule.month, Math.abs(date++)));
