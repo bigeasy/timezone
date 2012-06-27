@@ -12,6 +12,11 @@
   function say () { return console.log.apply(console, __slice.call(arguments, 0)) }
 */
       var fills = { "_": " ", "0": "0", "-": "" }
+        var chars = "%ntUWVGgjsCNmYyHMSeduwlIkZaAhbBPpRTDFxrXc";
+  var OFFSET = {};
+  for (var i = 0; i < chars.length; i++) {
+    OFFSET[chars[i]] = i;
+  }
   function format (request, string, posix, date) {
     var out = ""
       , flag = "0"
@@ -36,53 +41,54 @@
         }
         pad = 0
         style = "0"
-        switch (string[i]) {
-        case "%": ch = "%"; break; 
-        case "n": ch = "\n"; break; 
-        case "t": ch = "\t"; break; 
-        case "U": ch = weekOfYear(date, 0); break; 
-        case "W": ch = weekOfYear(date, 1); break; 
-        case "V": ch = isoWeek(date)[0]; break; 
-        case "G": ch = isoWeek(date)[1]; break; 
-        case "g": ch = isoWeek(date)[1] % 100; break; 
-        case "j": ch = Math.floor((date.getTime() - Date.UTC(date.getUTCFullYear(), 0)) / 864e5) + 1; break; 
-        case "s": ch = Math.floor(date.getTime() / 1000); break; 
-        case "C": ch = Math.floor(date.getUTCFullYear() / 100); break; 
-        case "N": ch = date.getTime() % 1000 * 1000000; break; 
-        case "m": ch = date.getUTCMonth() + 1; pad = 2; break; 
-        case "Y": ch = date.getUTCFullYear(); pad = 2; break; 
-        case "y": ch = date.getUTCFullYear() % 100; break; 
-        case "H": ch = date.getUTCHours(); pad = 2; break; 
-        case "M": ch = date.getUTCMinutes(); pad = 2; break; 
-        case "S": ch = date.getUTCSeconds(); pad = 2; break; 
-        case "e": ch = date.getUTCDate(); break; 
-        case "d": ch = date.getUTCDate(); pad = 2; break; 
-        case "u": ch = date.getUTCDay() || 7; break; 
-        case "w": ch = date.getUTCDay(); break; 
-        case "l": ch = date.getUTCHours() % 12 || 12; break; 
-        case "I": ch = date.getUTCHours() % 12 || 12; pad = 2; break; 
-        case "k": ch = date.getUTCHours(); break; 
-        case "Z": ch = request.entry.abbrev; break; 
-        case "a": ch = request[request.locale].day.abbrev[date.getUTCDay()]; break; 
-        case "A": ch = request[request.locale].day.full[date.getUTCDay()]; break; 
-        case "h": ch = request[request.locale].month.abbrev[date.getUTCMonth()]; break; 
-        case "b": ch = request[request.locale].month.abbrev[date.getUTCMonth()]; break; 
-        case "B": ch = request[request.locale].month.full[date.getUTCMonth()]; break; 
-        case "P": ch = request[request.locale].meridiem[Math.floor(date.getUTCHours() / 12)].toLowerCase(); break; 
-        case "p": ch = request[request.locale].meridiem[Math.floor(date.getUTCHours() / 12)]; break; 
-        case "R": ch = request.convert([ posix, "%H:%M" ]); break; 
-        case "T": ch = request.convert([ posix, "%H:%M:%S" ]); break; 
-        case "D": ch = request.convert([ posix, "%m/%d/%y" ]); break; 
-        case "F": ch = request.convert([ posix, "%Y-%m-%d" ]); break; 
-        case "x": ch = request.convert([ posix, request[request.locale].date ]); break; 
-        case "r": ch = request.convert([ posix, request[request.locale].time12 ]); break; 
-        case "X": ch = request.convert([ posix, request[request.locale].time24 ]); break; 
-        case "c": ch = request.convert([ posix, request[request.locale].dateTime ]); break; 
+        switch (OFFSET[string[i]]) {
+        case 0: ch = "%"; break; 
+        case 1: ch = "\n"; break; 
+        case 2: ch = "\t"; break; 
+        case 3: ch = weekOfYear(date, 0); break; 
+        case 4: ch = weekOfYear(date, 1); break; 
+        case 5: ch = isoWeek(date)[0]; break; 
+        case 6: ch = isoWeek(date)[1]; break; 
+        case 7: ch = isoWeek(date)[1] % 100; break; 
+        case 8: ch = Math.floor((date.getTime() - Date.UTC(date.getUTCFullYear(), 0)) / 864e5) + 1; break; 
+        case 9: ch = Math.floor(date.getTime() / 1000); break; 
+        case 10: ch = Math.floor(date.getUTCFullYear() / 100); break; 
+        case 11: ch = date.getTime() % 1000 * 1000000; break; 
+        case 12: ch = date.getUTCMonth() + 1; pad = 2; break; 
+        case 13: ch = date.getUTCFullYear(); pad = 2; break; 
+        case 14: ch = date.getUTCFullYear() % 100; break; 
+        case 15: ch = date.getUTCHours(); pad = 2; break; 
+        case 16: ch = date.getUTCMinutes(); pad = 2; break; 
+        case 17: ch = date.getUTCSeconds(); pad = 2; break; 
+        case 18: ch = date.getUTCDate(); break; 
+        case 19: ch = date.getUTCDate(); pad = 2; break; 
+        case 20: ch = date.getUTCDay() || 7; break; 
+        case 21: ch = date.getUTCDay(); break; 
+        case 22: ch = date.getUTCHours() % 12 || 12; break; 
+        case 23: ch = date.getUTCHours() % 12 || 12; pad = 2; break; 
+        case 24: ch = date.getUTCHours(); break; 
+        case 25: ch = request.entry.abbrev; break; 
+        case 26: ch = request[request.locale].day.abbrev[date.getUTCDay()]; break; 
+        case 27: ch = request[request.locale].day.full[date.getUTCDay()]; break; 
+        case 28: ch = request[request.locale].month.abbrev[date.getUTCMonth()]; break; 
+        case 29: ch = request[request.locale].month.abbrev[date.getUTCMonth()]; break; 
+        case 30: ch = request[request.locale].month.full[date.getUTCMonth()]; break; 
+        case 31: ch = request[request.locale].meridiem[Math.floor(date.getUTCHours() / 12)].toLowerCase(); break; 
+        case 32: ch = request[request.locale].meridiem[Math.floor(date.getUTCHours() / 12)]; break; 
+        case 33: ch = request.convert([ posix, "%H:%M" ]); break; 
+        case 34: ch = request.convert([ posix, "%H:%M:%S" ]); break; 
+        case 35: ch = request.convert([ posix, "%m/%d/%y" ]); break; 
+        case 36: ch = request.convert([ posix, "%Y-%m-%d" ]); break; 
+        case 37: ch = request.convert([ posix, request[request.locale].date ]); break; 
+        case 38: ch = request.convert([ posix, request[request.locale].time12 ]); break; 
+        case 39: ch = request.convert([ posix, request[request.locale].time24 ]); break; 
+        case 41: ch = request.convert([ posix, request[request.locale].dateTime ]); break; 
         default:
           out += string.slice(k, i + 1);
           continue;
         }
         if ((pad = +(padding) || pad) && (fill = fills[flag || style])) {
+          ch = String(ch);
           while (ch.length < pad) ch = fill + ch;
           if (pad < ch.length && string[i] == "N") ch = ch.slice(0, pad);
         } else if (flag == "^") {
