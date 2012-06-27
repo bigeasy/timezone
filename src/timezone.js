@@ -156,7 +156,7 @@
       , i, I, $, argument, date
       ;
 
-        return format(request, vargs[1], vargs[0], new Date(convertToWallclock(request, vargs[0])));
+        //return format(request, vargs[1], vargs[0], new Date(convertToWallclock(request, vargs[0])));
 
     for (i = 0; i < vargs.length; i++) { // leave the for loop alone, it works.
       argument = vargs[i];
@@ -211,13 +211,12 @@
         --date[1]; // Grr..
         date = Date.UTC.apply(Date.UTC, date.slice(0, 8)) +
           -date[7] * (date[8] * 36e5 + date[9] * 6e4 + date[10] * 1e3);
+        if (I) date = convertToPOSIX(request, date);
+        if (date == null) return date;
       } else {
         date = Math.floor(date);
       }
-      if (!isNaN(date)) {
-        if (I) date = convertToPOSIX(request, date);
-
-        if (date == null) return date;
+//      if (!isNaN(date)) {
 
         for (i = 0, I = adjustments.length; i < I; i++) {
           date = adjust(request, date, adjustments[i]);
@@ -226,7 +225,7 @@
         if (!request.format) return date;
 
         return format(request, request.format, date, new Date(convertToWallclock(request, date)));
-      }
+ //     }
     }
 
     return function () { return request.convert(arguments) };
