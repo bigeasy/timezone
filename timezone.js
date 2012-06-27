@@ -37,21 +37,17 @@
     return actualized;
   }
 
-  function applicable (entry, rules, actualized, time) {
-    var i, I, j, year = new Date(time).getUTCFullYear(), off = 1;
-    for (j = year + 1; j >= year - off; --j)
-      for (i = 0, I = rules.length; i < I; i++) 
-        if (rules[i].from <= j && j <= rules[i].to) actualized.push(actualize(entry, rules[i], j));
-        else if (rules[i].to < j && off == 1) off = j - rules[i].to;
-  }
-
   function find (request, clock, time) {
-    var i, I, entry, found, zone = request[request.zone], actualized = [], abbrev, rules;
+    var i, I, entry, found, zone = request[request.zone], actualized = [], abbrev, rules
+      , j, year = new Date(time).getUTCFullYear(), off = 1;
     for (i = 1, I = zone.length; i < I; i++) if (zone[i][clock] <= time) break;
     entry = zone[i];
     if (entry.rules) {
       rules = request[entry.rules];
-      applicable(entry, rules, actualized, time);
+      for (j = year + 1; j >= year - off; --j)
+        for (i = 0, I = rules.length; i < I; i++)
+          if (rules[i].from <= j && j <= rules[i].to) actualized.push(actualize(entry, rules[i], j));
+          else if (rules[i].to < j && off == 1) off = j - rules[i].to;
       actualized.sort(function (a, b) { return a.sort - b.sort });
       for (i = 0, I = actualized.length; i < I; i++) {
         if (time >= actualized[i][clock] && actualized[i][actualized[i].clock] > entry[actualized[i].clock]) found = actualized[i];
