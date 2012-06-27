@@ -12,40 +12,85 @@
   function say () { return console.log.apply(console, __slice.call(arguments, 0)) }
 */
       var fills = { "_": " ", "0": "0", "-": "" }
-  function format (request, string, posix, wallclock) {
+  function format (request, string, posix, date) {
     var out = ""
       , flag = "0"
       , colons = 0
       , padding = ""
-      , $1
-      , $2
-      , $3
       , I = string.length
       , i = 0
+      , pad = 0
+      , j
       , flags = "0123456789-:_^"
+      , style
+      , ch
+      , k
       ;
     for (i = 0; i < I; i++) {
-      if (($2 = string[$1 = i]) == "%") {
-        for (i++;~($2 = flags.indexOf(string[i]));i++) {
-          if ($2 < 10) padding += $1
-          else if ($2 == 10 && !(flag || padding || colons == 3) && ++colons) {}
+      if ((ch = string[k = i]) == "%") {
+        for (i++;~(j = flags.indexOf(string[i]));i++) {
+          if (j < 10) padding += $1
+          else if (j == 10 && !(flag || padding || colons == 3) && ++colons) {}
           else if (flag || padding || colons) break;
-          else flag = flags[$2];
+          else flag = flags[j];
         }
-        if ($2 = request[string[i]]) {
-          $1 = String($2.call(request, wallclock, posix, flag, colons));
-          if ((pad = +(padding) || $2.pad || 0) && (fill = fills[flag || $2.style])) {
-            while ($1.length < pad) $1 = fill + $1;
-            if (pad < $1.length && string[i] == "N") $1 = $1.slice(0, pad);
-          } else if (flag == "^") {
-            $1 = $1.toUpperCase();
-          }
-          out += $1;
-        } else {
-          out += rest.slice($1, i + 1);
+        pad = 0
+        style = "0"
+        switch (string[i]) {
+        case "%": ch = "%"; break; 
+        case "n": ch = "\n"; break; 
+        case "t": ch = "\t"; break; 
+        case "U": ch = weekOfYear(date, 0); break; 
+        case "W": ch = weekOfYear(date, 1); break; 
+        case "V": ch = isoWeek(date)[0]; break; 
+        case "G": ch = isoWeek(date)[1]; break; 
+        case "g": ch = isoWeek(date)[1] % 100; break; 
+        case "j": ch = Math.floor((date.getTime() - Date.UTC(date.getUTCFullYear(), 0)) / 864e5) + 1; break; 
+        case "s": ch = Math.floor(date.getTime() / 1000); break; 
+        case "C": ch = Math.floor(date.getUTCFullYear() / 100); break; 
+        case "N": ch = date.getTime() % 1000 * 1000000; break; 
+        case "m": ch = date.getUTCMonth() + 1; pad = 2; break; 
+        case "Y": ch = date.getUTCFullYear(); pad = 2; break; 
+        case "y": ch = date.getUTCFullYear() % 100; break; 
+        case "H": ch = date.getUTCHours(); pad = 2; break; 
+        case "M": ch = date.getUTCMinutes(); pad = 2; break; 
+        case "S": ch = date.getUTCSeconds(); pad = 2; break; 
+        case "e": ch = date.getUTCDate(); break; 
+        case "d": ch = date.getUTCDate(); pad = 2; break; 
+        case "u": ch = date.getUTCDay() || 7; break; 
+        case "w": ch = date.getUTCDay(); break; 
+        case "l": ch = date.getUTCHours() % 12 || 12; break; 
+        case "I": ch = date.getUTCHours() % 12 || 12; pad = 2; break; 
+        case "k": ch = date.getUTCHours(); break; 
+        case "Z": ch = request.entry.abbrev; break; 
+        case "a": ch = request[request.locale].day.abbrev[date.getUTCDay()]; break; 
+        case "A": ch = request[request.locale].day.full[date.getUTCDay()]; break; 
+        case "h": ch = request[request.locale].month.abbrev[date.getUTCMonth()]; break; 
+        case "b": ch = request[request.locale].month.abbrev[date.getUTCMonth()]; break; 
+        case "B": ch = request[request.locale].month.full[date.getUTCMonth()]; break; 
+        case "P": ch = request[request.locale].meridiem[Math.floor(date.getUTCHours() / 12)].toLowerCase(); break; 
+        case "p": ch = request[request.locale].meridiem[Math.floor(date.getUTCHours() / 12)]; break; 
+        case "R": ch = request.convert([ posix, "%H:%M" ]); break; 
+        case "T": ch = request.convert([ posix, "%H:%M:%S" ]); break; 
+        case "D": ch = request.convert([ posix, "%m/%d/%y" ]); break; 
+        case "F": ch = request.convert([ posix, "%Y-%m-%d" ]); break; 
+        case "x": ch = request.convert([ posix, request[request.locale].date ]); break; 
+        case "r": ch = request.convert([ posix, request[request.locale].time12 ]); break; 
+        case "X": ch = request.convert([ posix, request[request.locale].time24 ]); break; 
+        case "c": ch = request.convert([ posix, request[request.locale].dateTime ]); break; 
+        default:
+          out += string.slice(k, i + 1);
+          continue;
         }
+        if ((pad = +(padding) || pad) && (fill = fills[flag || style])) {
+          while (ch.length < pad) ch = fill + ch;
+          if (pad < ch.length && string[i] == "N") ch = ch.slice(0, pad);
+        } else if (flag == "^") {
+          ch = ch.toUpperCase();
+        }
+        out += ch;
       } else {
-        out += $2;
+        out += ch;
       }
     }
     return out;
@@ -260,47 +305,6 @@
         z = z.replace(/([-+])(0)/, { "_": " $1", "-": "$1" }[flag] || "$1$2");
         return z;
       }
-    , "%": function(date) { return "%" }
-    , n: function (date) { return "\n" }
-    , t: function (date) { return "\t" }
-    , U: function (date) { return weekOfYear(date, 0) }
-    , W: function (date) { return weekOfYear(date, 1) }
-    , V: function (date) { return isoWeek(date)[0] }
-    , G: function (date) { return isoWeek(date)[1] }
-    , g: function (date) { return isoWeek(date)[1] % 100 }
-    , j: function (date) { return Math.floor((date.getTime() - Date.UTC(date.getUTCFullYear(), 0)) / 864e5) + 1 }
-    , s: function (date) { return Math.floor(date.getTime() / 1000) }
-    , C: function (date) { return Math.floor(date.getUTCFullYear() / 100) }
-    , N: function (date) { return date.getTime() % 1000 * 1000000 }
-    , m: function (date) { return date.getUTCMonth() + 1 }
-    , Y: function (date) { return date.getUTCFullYear() }
-    , y: function (date) { return date.getUTCFullYear() % 100 }
-    , H: function (date) { return date.getUTCHours() }
-    , M: function (date) { return date.getUTCMinutes() }
-    , S: function (date) { return date.getUTCSeconds() }
-    , e: function (date) { return date.getUTCDate() }
-    , d: function (date) { return date.getUTCDate() }
-    , u: function (date) { return date.getUTCDay() || 7 }
-    , w: function (date) { return date.getUTCDay() }
-    , l: function (date) { return date.getUTCHours() % 12 || 12 }
-    , I: function (date) { return date.getUTCHours() % 12 || 12 }
-    , k: function (date) { return date.getUTCHours() }
-    , Z: function (date) { return this.entry.abbrev }
-    , a: function (date) { return this[this.locale].day.abbrev[date.getUTCDay()] }
-    , A: function (date) { return this[this.locale].day.full[date.getUTCDay()] }
-    , h: function (date) { return this[this.locale].month.abbrev[date.getUTCMonth()] }
-    , b: function (date) { return this[this.locale].month.abbrev[date.getUTCMonth()] }
-    , B: function (date) { return this[this.locale].month.full[date.getUTCMonth()] }
-    , P: function (date) { return this[this.locale].meridiem[Math.floor(date.getUTCHours() / 12)].toLowerCase() }
-    , p: function (date) { return this[this.locale].meridiem[Math.floor(date.getUTCHours() / 12)] }
-    , R: function (date, posix) { return this.convert([ posix, "%H:%M" ]) }
-    , T: function (date, posix) { return this.convert([ posix, "%H:%M:%S" ]) }
-    , D: function (date, posix) { return this.convert([ posix, "%m/%d/%y" ]) }
-    , F: function (date, posix) { return this.convert([ posix, "%Y-%m-%d" ]) }
-    , x: function (date, posix) { return this.convert([ posix, this[this.locale].date ]) }
-    , r: function (date, posix) { return this.convert([ posix, this[this.locale].time12 || '%I:%M:%S' ]) }
-    , X: function (date, posix) { return this.convert([ posix, this[this.locale].time24 ]) }
-    , c: function (date, posix) { return this.convert([ posix, this[this.locale].dateTime ]) }
     , convert: convert
     , locale: "en_US"
     , en_US: {
@@ -324,15 +328,6 @@
     , TIME = [ 36e5, 6e4, 1e3, 1 ]
     ;
   UNITS = UNITS.toLowerCase().split("|");
-
-  "delmHMSUWVgCIky".replace(/./g, function (e) { context[e].pad = 2 });
-
-  context.N.pad = 9;
-  context.j.pad = 3;
-
-  context.k.style = "_";
-  context.l.style = "_";
-  context.e.style = "_";
 
   return function () { return context.convert(arguments) };
 });
