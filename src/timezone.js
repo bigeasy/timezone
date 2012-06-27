@@ -26,13 +26,15 @@
       ;
     for (i = 0; i < I; i++) {
       if (($2 = string[$1 = i]) == "%") {
-        for (i++;~($2 = flags.indexOf(string[i]));i++) {
+/*        
+ * assme we can short circuit because we found it.
+ *        for (i++;~($2 = flags.indexOf(string[i]));i++) {
           if ($2 < 10) padding += $1
           else if ($2 == 10 && !(flag || padding || colons == 3) && ++colons) {}
           else if (flag || padding || colons) break;
           else flag = flags[$2];
-        }
-        if ($2 = request[string[i]]) {
+        }*/
+        if ($2 = request[string[++i]]) {
           $1 = String($2.call(request, wallclock, posix, flag, colons));
           if ((pad = +(padding) || $2.pad || 0) && (fill = fills[flag || $2.style])) {
             while ($1.length < pad) $1 = fill + $1;
@@ -156,7 +158,7 @@
       , i, I, $, argument, date
       ;
 
-        //return format(request, vargs[1], vargs[0], new Date(convertToWallclock(request, vargs[0])));
+        return format(request, vargs[1], vargs[0], new Date(vargs[0]));
 
     for (i = 0; i < vargs.length; i++) { // leave the for loop alone, it works.
       argument = vargs[i];
