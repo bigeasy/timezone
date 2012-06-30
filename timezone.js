@@ -7,7 +7,7 @@
   function die () {
     console.log.apply(console, __slice.call(arguments, 0));
     return process.exit(1);
-  };
+  }
 
   function say () { return console.log.apply(console, __slice.call(arguments, 0)) }
 */
@@ -67,7 +67,7 @@
     if (request.zone == "UTC") return posix;
     request.entry = find(request, "posix", posix);
     return posix + request.entry.offset + request.entry.save;
-  };
+  }
 
   function convertToPOSIX (request, wallclock) {
     if (request.zone == "UTC") return wallclock;
@@ -77,7 +77,7 @@
     diff = wallclock - entry.wallclock;
 
     return 0 < diff && diff < entry.save ? null : wallclock - entry.offset - entry.save;
-  };
+  }
 
   function adjust (request, posix, match) {
     var increment = +(match[1] + 1) // conversion necessary for week day addition
@@ -106,7 +106,7 @@
       }
     }
     return posix;
-  };
+  }
 
   function convert (vargs) {
     if (!vargs.length) return "0.0.15";
@@ -147,7 +147,7 @@
             adjustments.push($);
           } else {
             request.zone = argument;
-          } 
+          }
         } else if ($ == "function") {
           if ($ = argument.call(request)) return $;
         } else if (/^\w{2}_\w{2}$/.test(argument.name)) {
@@ -207,7 +207,7 @@
     }
 
     return function () { return request.convert(arguments) };
-  };
+  }
 
   var context =
     { clock: function () { return +(new Date()) }
