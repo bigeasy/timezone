@@ -9,7 +9,8 @@ if [ "$TRAVIS" = "true" ]; then
   # Install a Ruby 1.9.3 for to get a `strftime` that understands `%::z`.
   (echo -e "\n\n\n" | sudo apt-add-repository ppa:brightbox/ruby-ng-experimental) >/dev/null 2>&1 && echo "brightbox added"
   sudo apt-get -q update >/dev/null 2>&1 && echo "apt-get update" 
-  sudo apt-get -q install ruby rubygems ruby-switch >/dev/null 2>&1 && echo "apt-get install ruby rubygems ruby-switch"
+  sudo apt-get -q install bc ruby rubygems ruby-switch >/dev/null 2>&1 && \
+    echo "apt-get install bc ruby rubygems ruby-switch"
   sudo apt-get -q install ruby1.9.3 >/dev/null 2>&1 && echo "apt-get install ruby1.9.3"
   sudo update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby1.9.3 400 \
                     --slave   /usr/bin/ri ri /usr/bin/ri1.9.3 \
@@ -18,6 +19,9 @@ if [ "$TRAVIS" = "true" ]; then
   # Remove the RVM manged Ruby.
   rm -rf ~/.rvm
   ruby -v
+  echo ""
+  utility/sizes timezone.js rfc822.js
+  echo ""
 fi
 
 ls -la timezone/index.js
