@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 require("../proof")(14640, function (equal, tz, readDate) {
-  var formatted, lines, i, I, date, dayOfYear, record;
+  var formatted, lines, line, i, I, date, dayOfYear, record;
   formatted = __dirname + "/../data/format";
   lines = require("fs").readFileSync(formatted + "/W", "utf8").split(/\n/);
   lines.pop()

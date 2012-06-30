@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 require("../proof")(11, function (tz, utc, equal) {
-  rfc822 = require("timezone/rfc822");
+  var rfc822 = require("timezone/rfc822");
   equal(tz(rfc822("Sat, 13 Aug 2011 10:24:20 -0400"), "%c"), tz(Date.UTC(2011, 7, 13, 14, 24, 20), "%c"), "rfc822");
   equal(tz(rfc822("Sat, 13 Aug 2011 10:24:20 -0000"), "%c"), tz(Date.UTC(2011, 7, 13, 10, 24, 20), "%c"), "rfc822");
   try {
