@@ -1,5 +1,5 @@
 module.exports = require("proof")(function () {
-  var context = {}, __slice = [].slice;
+  var context = {}, __slice = [].slice, utc;
   context.readDate = function (date) {
     var match = /^(\d{4})(\d{2})(\d{2})$/.exec(date).slice(1), year = match[0], month = match[1], day = match[2];
     return new Date(Date.UTC(parseInt(year, 10), parseInt(month, 10) - 1, parseInt(day, 10))).getTime()

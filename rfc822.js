@@ -130,6 +130,8 @@ function say () { return console.log.apply(console, __slice.call(arguments, 0)) 
 
   //
   function rfc822(date, abbrev) {
+    var offset;
+
     abbrev = abbrev || {};
 
     // The full RFC 2822 specification includes support for features of legacy
