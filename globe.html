@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>d3.js Spinny Globe from Mike Bostock's SVG Open 2011 keynote</title>
+    <script src="http://mbostock.github.com/d3/d3.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://mbostock.github.com/d3/talk/20111018/style.css"/>
+    <link type="text/css" rel="stylesheet" href="http://mbostock.github.com/d3/talk/20111018/colorbrewer/colorbrewer.css"/>
+    <style type="text/css">
+
+svg {
+  margin-top: -200px;
+  width:  1200px;
+  height: 500px;
+  overflow: clip;
+  border: 1px solid red;
+  pointer-events: all;
+}
+
+circle {
+  fill: #dbe4f0;
+}
+
+path {
+  fill: #aaa;
+  stroke: #fff;
+}
+
+#header {
+  top: 7px;
+  left: 685px;
+  text-align: right;
+  width: auto;
+}
+
+#header div {
+  font-size: 12px;
+}
+
+.tip { color: #999; }
+    </style>
+  </head>
+  <body>
+    <div id="body">
+      <div id="header">
+        Timezone (for JavaScript)
+        <div class="tip">drag to rotate the origin</div>
+        <div><label for="animate">animate:</label>
+          <input id="animate" type="checkbox" checked>
+        </div>
+      </div>
+    </div>
+    <div id="positional"></div>
+    <script src="vis.js"></script>
+  </body>
+</html>
