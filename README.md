@@ -30,8 +30,10 @@ A full-featured time zone aware date formatter for JavaScript.
 
 ## Hacking
 
+```console
 $ git clone --quiet https://github.com/bigeasy/timezone.git
 $ cd timezone && make && npm install && npm test
+```
 
 ## License
 
