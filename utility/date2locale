@@ -64,19 +64,21 @@ bash.on "exit", (code) ->
     if output is "locale"
       for line in stdout
         process.stdout.write "// #{line}\n"
-      locale = { name, day: {}, month: {}, meridiem: [ {}, {} ] }
+      locale = { name, day: {}, month: {}, meridiem: [ "", "" ] }
       locale.day.abbrev = stdout.shift().split(/\s+/)
       locale.day.full = stdout.shift().split(/\s+/)
       locale.month.abbrev = stdout.shift().split(/\s+/)
       locale.month.full = stdout.shift().split(/\s+/)
       [ am, pm ] = stdout.splice(0, 2)
       if am and pm
-        locale.meridiem[0].upper = am
-        locale.meridiem[1].upper = pm
+        locale.meridiem[0] = am
+        locale.meridiem[1] = pm
       [ am, pm ] = stdout.splice(0, 2)
       if am and pm
-        locale.meridiem[0].lower = am
-        locale.meridiem[1].lower = pm
+        if locale.meridiem[0].toLowerCase() isnt am
+          throw new Error('nope')
+        if locale.meridiem[1].toLowerCase() isnt pm
+          throw new Error('nope')
       [ am, pm ] = stdout.splice(0, 2)
       locale.date = createPattern locale, am, pm
       [ am, pm ] = stdout.splice(0, 2)
@@ -91,7 +93,7 @@ bash.on "exit", (code) ->
       days = stdout.shift().split(/\s+/)
       shortMonths = stdout.shift().split(/\s+/)
       months = stdout.shift().split(/\s+/)
-      [ am, AM, pm, PM ] = stdout.splice(0, 4)
+      [ AM, PM, am, pm ] = stdout.splice(0, 4)
       [ dateFormat ] = stdout.splice(0, 2)
       [ morningTimeFormat, eveningTimeFormat ] = stdout.splice(0, 2)
       [ morningDateTimeFormat, eveningDateTimeFormat ] = stdout.splice(0, 2)
@@ -180,25 +182,45 @@ bash.on "exit", (code) ->
       """, "utf8"
       fs.chmodSync "t/locale/#{name}/formats.t", 0o755
 
+      if am or AM or pm or PM
+        fs.writeFileSync "t/locale/#{name}/meridiem.t", """
+        #!/usr/bin/env node
+        require("../../proof")(4, function (tz, equal) {
+          var tz = tz(require("timezone/#{name}"));
+          // #{name} meridiem upper case
+          equal(tz("2000-09-03 08:05:04", "%P", "#{name}"), "#{am}", "ante meridiem lower case");
+          equal(tz("2000-09-03 23:05:04", "%P", "#{name}"), "#{pm}", "post meridiem lower case");
+
+          // #{name} meridiem lower case
+          equal(tz("2000-09-03 08:05:04", "%p", "#{name}"), "#{AM}", "ante meridiem upper case");
+          equal(tz("2000-09-03 23:05:04", "%p", "#{name}"), "#{PM}", "post meridiem upper case");
+        });
+
+        """, "utf8"
+        fs.chmodSync "t/locale/#{name}/meridiem.t", 0o755
+
+count=0
 createPattern = (locale, am, pm) ->
   am = am.replace("04", "%S")
   am = am.replace("05", "%M")
-  console.error(pm);
-  clock = if /11/.test pm then "i" else "H"
+  console.error(pm)
+  clock = if /11/.test pm then "I" else "H"
   am = am.replace("08", "%#{clock}")
-  am = am.replace("8", "%-#{clock}")
+  am = am.replace(/^ 8/, "%_#{clock}")
+  am = am.replace("  8", " %_#{clock}")
+  am = am.replace(" 8", " %-#{clock}")
   am = am.replace("03", "%d")
-  am = am.replace("3", "%-d")
+  am = am.replace("  3", " %_d")
+  am = am.replace(" 3", " %-d")
   am = am.replace("09", "%m")
   am = am.replace("9", "%-m")
   am = am.replace("2000", "%Y")
   am = am.replace("00", "%y")
   am = am.replace("UTC", "%Z")
-  am = am.replace(locale.meridiem[0].upper, "%p")
-  am = am.replace(locale.meridiem[0].lower, "%P")
+  am = am.replace(locale.meridiem[0], "%p")
+  am = am.replace(locale.meridiem[0].toLowerCase(), "%P")
   am = am.replace(locale.day.abbrev[0], "%a")
   am = am.replace(locale.day.full[0], "%A")
   am = am.replace(locale.month.abbrev[8], "%b")
   am = am.replace(locale.month.full[8], "%B")
-  am = am.replace(/\s+/g, " ")
   am

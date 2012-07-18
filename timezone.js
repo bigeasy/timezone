@@ -141,7 +141,7 @@
             } else if ($[8]) {
               date.push(1);
             }
-          } else if (/^\w{2}_\w{2}$/.test(argument)) {
+          } else if (/^\w{2,3}_\w{2}$/.test(argument)) {
             request.locale = argument;
           } else if ($ = UNIT_RE.exec(argument)) {
             adjustments.push($);
@@ -150,7 +150,7 @@
           }
         } else if ($ == "function") {
           if ($ = argument.call(request)) return $;
-        } else if (/^\w{2}_\w{2}$/.test(argument.name)) {
+        } else if (/^\w{2,3}_\w{2}$/.test(argument.name)) {
           request[argument.name] = argument;
         } else if (argument.zones) {
           for ($ in argument.zones) request[$] = argument.zones[$];

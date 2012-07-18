@@ -23,7 +23,8 @@
 %M zero padded, two digit minute; `00` thorugh `59`.
 %m zero padded, two digit month of year; `01` through `12`.
 %n literal newline; `\n`.
-%p localized representation of "ante meridiem" or "post meridiem"; am or pm.
+%p localized representation of "ante meridiem" or "post meridiem"; AM or PM.
+%P localized representation of "ante meridiem" or "post meridiem" in lower case (GNU extension); am or pm.
 %R hours, minutes format on 24-hour clock; `%H:%M`.
 %r hours, minutes, seconds, meridiem format on 12-hour clock; `%I:%M:%S %p`.
 %S zero padded, two digit seconds; `00` through `60`.
