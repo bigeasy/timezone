@@ -1,0 +1,11 @@
+
+langs=()
+for locale in $(ls /usr/share/locale | grep '_' | sort | grep -v '\.' | grep -v '@'); do
+  if [ "$(LANG=$locale.UTF-8 date -d '2012-01-01' +%B)" != 'January' ] || { echo "$locale" | grep '^en'; }; then
+    if [ ! -e locales/$locale.js ]; then
+      echo $locale
+      utility/date2locale $locale locale > locales/$locale.js
+      utility/date2locale $locale tests
+    fi
+  fi
+done

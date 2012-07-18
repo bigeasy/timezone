@@ -65,16 +65,7 @@ module.exports = {
       "December"
     ]
   },
-  "meridiem": [
-    {
-      "upper": "AM",
-      "lower": "am"
-    },
-    {
-      "upper": "PM",
-      "lower": "pm"
-    }
-  ],
+  "meridiem": [ "AM", "PM" ],
   "date": "%d/%m/%y",
   "time24": "%H:%M:%S",
   "dateTime": "%a %d %b %Y %H:%M:%S %Z"
