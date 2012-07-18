@@ -1,4 +1,4 @@
-npm_copy_targets = timezone/rfc822.js timezone/package.json timezone/synopsis.js timezone/README \
+npm_copy_targets = timezone/rfc822.js timezone/package.json timezone/synopsis.js timezone/README.md \
 	timezone/CHANGELOG timezone/loaded.js
 
 copy_sources = $(npm_copy_targets:timezone/%=%) timezone.js slurp.js
