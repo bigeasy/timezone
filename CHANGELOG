@@ -1,3 +1,25 @@
+- Version 0.0.15 -
+
+ * Added many locales. #116.
+ * Upgraded to Proof 0.0.15. #117. #113. #105. #102. #101.
+ * Removed `main` property from `package.json`. #104.
+ * Tidy whitespace and semi-colons. #97.
+ * Plug all leaks of names into the global namespace. #107.
+ * Run `utility/sizes` at Travis CI as part of continuous intgration build.
+   #103.
+ * Added `typeof` test against `module` in module loader preamble to
+   `timezones.js` and `rfc822.js`. #94.
+ * Merge `applicable` function into `find`. #95.
+ * Merge `format` function into `convert`. #91.
+ * Call `applicable` once. #88.
+ * Merge `parse` function into `convert`. #87.
+ * Merge `parseAdjustment` function into `convert`. #86.
+ * Remove `slice` of arguments in `convert`. #93.
+ * Delete `fields` variable from `actualize`. #92.
+ * Merge `make` function into `convert`. #85.
+ * Build on Node.js 0.8, add 0.8 to Travis CI. #90.
+ * ixed `sysnopsis.js` assertions. #89.
+
 - Version 0.0.14 - Mon Jun 25 21:02:24 UTC 2012
 
  * Publish tarball of data files at GitHub. #55.
