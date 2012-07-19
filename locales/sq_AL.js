@@ -1,45 +1,23 @@
-// Die Hën Mar Mër Enj Pre Sht
-// e diel e hënë e martë e mërkurë e enjte e premte e shtunë
-// Jan Shk Mar Pri Maj Qer Kor Gsh Sht Tet Nën Dhj
-// janar shkurt mars prill maj qershor korrik gusht shtator tetor nëntor dhjetor
-// PD
-// MD
-// pd
-// md
-// 2000-Sht-03
-// 2000-Sht-03
-// 08.05.04. UTC
-// 11.05.04. UTC
-// 2000-Sht-03 08.05.04.PD UTC
-// 2000-Sht-03 11.05.04.MD UTC
-// 
 module.exports = {
   "name": "sq_AL",
   "day": {
     "abbrev": [
-      "Die",
-      "Hën",
-      "Mar",
-      "Mër",
-      "Enj",
-      "Pre",
-      "Sht"
+      "Die ",
+      "Hën ",
+      "Mar ",
+      "Mër ",
+      "Enj ",
+      "Pre ",
+      "Sht "
     ],
     "full": [
-      "e",
-      "diel",
-      "e",
-      "hënë",
-      "e",
-      "martë",
-      "e",
-      "mërkurë",
-      "e",
-      "enjte",
-      "e",
-      "premte",
-      "e",
-      "shtunë"
+      "e diel ",
+      "e hënë ",
+      "e martë ",
+      "e mërkurë ",
+      "e enjte ",
+      "e premte ",
+      "e shtunë "
     ]
   },
   "month": {
@@ -78,5 +56,7 @@ module.exports = {
   ],
   "date": "%Y-%b-%d",
   "time24": "%I.%M.%S. %Z",
-  "dateTime": "%Y-%b-%d %I.%M.%S.%p %Z"
-};
+  "dateTime": "%Y-%b-%d %I.%M.%S.%p %Z",
+  "time12": "%I.%M.%S.%p %Z",
+  "full": "%a %b %e %H:%M:%S %Z %Y"
+}

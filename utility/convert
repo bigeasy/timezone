@@ -1,11 +1,5 @@
-
+trap "exit" SIGINT SIGTERM
 langs=()
-for locale in $(ls /usr/share/locale | grep '_' | sort | grep -v '\.' | grep -v '@'); do
-  if [ "$(LANG=$locale.UTF-8 date -d '2012-01-01' +%B)" != 'January' ] || { echo "$locale" | grep '^en'; }; then
-    if [ ! -e locales/$locale.js ]; then
-      echo $locale
-      utility/date2locale $locale locale > locales/$locale.js
-      utility/date2locale $locale tests
-    fi
-  fi
+for locale in $(find locales -name \*.js | cut -d'/' -f2 | cut -d'.' -f1); do
+  node utility/localizer ~/src/glibc-2.14.1/localedata/locales/$locale > locales/$locale.js
 done

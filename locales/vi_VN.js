@@ -1,18 +1,3 @@
-// CN T2 T3 T4 T5 T6 T7
-// Chủ nhật Thứ hai Thứ ba Thứ tư Thứ năm Thứ sáu Thứ bảy
-// Th01 Th02 Th03 Th04 Th05 Th06 Th07 Th08 Th09 Th10 Th11 Th12
-// Tháng một Tháng hai Tháng ba Tháng tư Tháng năm Tháng sáu Tháng bảy Tháng tám Tháng chín Tháng mười Tháng mười một Tháng mười hai
-// AM
-// PM
-// am
-// pm
-// 03/09/2000
-// 03/09/2000
-// 08:05:04
-// 23:05:04
-// Chủ nhật, 03 Tháng chín Năm 2000 08:05:04 UTC
-// Chủ nhật, 03 Tháng chín Năm 2000 23:05:04 UTC
-// 
 module.exports = {
   "name": "vi_VN",
   "day": {
@@ -26,20 +11,13 @@ module.exports = {
       "T7"
     ],
     "full": [
-      "Chủ",
-      "nhật",
-      "Thứ",
-      "hai",
-      "Thứ",
-      "ba",
-      "Thứ",
-      "tư",
-      "Thứ",
-      "năm",
-      "Thứ",
-      "sáu",
-      "Thứ",
-      "bảy"
+      "Chủ nhật",
+      "Thứ hai",
+      "Thứ ba",
+      "Thứ tư",
+      "Thứ năm",
+      "Thứ sáu",
+      "Thứ bảy"
     ]
   },
   "month": {
@@ -58,32 +36,18 @@ module.exports = {
       "Th12"
     ],
     "full": [
-      "Tháng",
-      "một",
-      "Tháng",
-      "hai",
-      "Tháng",
-      "ba",
-      "Tháng",
-      "tư",
-      "Tháng",
-      "năm",
-      "Tháng",
-      "sáu",
-      "Tháng",
-      "bảy",
-      "Tháng",
-      "tám",
-      "Tháng",
-      "chín",
-      "Tháng",
-      "mười",
-      "Tháng",
-      "mười",
-      "một",
-      "Tháng",
-      "mười",
-      "hai"
+      "Tháng một",
+      "Tháng hai",
+      "Tháng ba",
+      "Tháng tư",
+      "Tháng năm",
+      "Tháng sáu",
+      "Tháng bảy",
+      "Tháng tám",
+      "Tháng chín",
+      "Tháng mười",
+      "Tháng mười một",
+      "Tháng mười hai"
     ]
   },
   "meridiem": [
@@ -91,6 +55,8 @@ module.exports = {
     "PM"
   ],
   "date": "%d/%m/%Y",
-  "time24": "%H:%M:%S",
-  "dateTime": "%A nhật, %d %B chín Năm %Y %H:%M:%S %Z"
-};
+  "time24": "%T",
+  "dateTime": "%A, %d %B Năm %Y %T %Z",
+  "time12": "%I:%M %p",
+  "full": "%A, %d %B năm %Y %T %Z"
+}
