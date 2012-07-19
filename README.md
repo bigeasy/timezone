@@ -1,6 +1,10 @@
+<a href="http://www.flickr.com/photos/wolfgangstaudt/3553572933/" title="Sundial by Wolfgang Staudt, on Flickr"><img src="http://farm4.staticflickr.com/3605/3553572933_5d30ced3e7_b.jpg"
+width="850" height="635" alt="Sundial"></a>
+
 # Timezone [![Build Status](https://secure.travis-ci.org/bigeasy/timezone.png?branch=master)](http://travis-ci.org/bigeasy/timezone)
 
-Format time in JavaScript using the IANA time zone database.
+Format time in JavaScript using the IANA time zone database. (Photo: Sundial by
+[Wolfgang Staudt](http://www.flickr.com/people/wolfgangstaudt/).)
 
 ```javascript
 var tz = require('timezone/loaded'),
