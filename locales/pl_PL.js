@@ -1,18 +1,3 @@
-// nie pon wto śro czw pią sob
-// niedziela poniedziałek wtorek środa czwartek piątek sobota
-// sty lut mar kwi maj cze lip sie wrz paź lis gru
-// styczeń luty marzec kwiecień maj czerwiec lipiec sierpień wrzesień październik listopad grudzień
-// 
-// 
-// 
-// 
-// 09.03.2000
-// 09.03.2000
-// 08:05:04
-// 23:05:04
-// nie, 3 wrz 2000, 08:05:04
-// nie, 3 wrz 2000, 23:05:04
-// 
 module.exports = {
   "name": "pl_PL",
   "day": {
@@ -65,8 +50,13 @@ module.exports = {
       "grudzień"
     ]
   },
-  "meridiem": [ "", "" ],
+  "meridiem": [
+    "",
+    ""
+  ],
   "date": "%d.%m.%Y",
-  "time24": "%H:%M:%S",
-  "dateTime": "%a, %-d %b %Y, %H:%M:%S %Z"
-};
+  "time24": "%T",
+  "dateTime": "%a, %-d %b %Y, %T",
+  "time12": "",
+  "full": "%a, %-d %b %Y, %T %Z"
+}

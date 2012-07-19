@@ -1,18 +1,3 @@
-// dom lun mar mié jue vie sáb
-// domingo lunes martes miércoles jueves viernes sábado
-// ene feb mar abr may jun jul ago sep oct nov dic
-// enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre
-// a.m.
-// p.m.
-// a.m.
-// p.m.
-// 03/09/2000
-// 03/09/2000
-// 08:05:04
-// 23:05:04
-// dom 03 sep 2000 08:05:04 UTC
-// dom 03 sep 2000 23:05:04 UTC
-// 
 module.exports = {
   "name": "es_CR",
   "day": {
@@ -70,6 +55,8 @@ module.exports = {
     "p.m."
   ],
   "date": "%d/%m/%Y",
-  "time24": "%H:%M:%S",
-  "dateTime": "%a %d %b %Y %H:%M:%S %Z"
-};
+  "time24": "%T",
+  "dateTime": "%a %d %b %Y %T %Z",
+  "time12": "%I:%M:%S %p",
+  "full": "%a %e %b %H:%M:%S %Z %Y"
+}

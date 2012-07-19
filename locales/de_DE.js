@@ -1,18 +1,3 @@
-// So Mo Di Mi Do Fr Sa
-// Sonntag Montag Dienstag Mittwoch Donnerstag Freitag Samstag
-// Jan Feb Mär Apr Mai Jun Jul Aug Sep Okt Nov Dez
-// Januar Februar März April Mai Juni Juli August September Oktober November Dezember
-// 
-// 
-// 
-// 
-// 03.09.2000
-// 03.09.2000
-// 08:05:04
-// 23:05:04
-// So 03 Sep 2000 08:05:04 UTC
-// So 03 Sep 2000 23:05:04 UTC
-// 
 module.exports = {
   "name": "de_DE",
   "day": {
@@ -65,8 +50,13 @@ module.exports = {
       "Dezember"
     ]
   },
-  "meridiem": [ "", "" ],
+  "meridiem": [
+    "",
+    ""
+  ],
   "date": "%d.%m.%Y",
-  "time24": "%H:%M:%S",
-  "dateTime": "%a %d %b %Y %H:%M:%S %Z"
-};
+  "time24": "%T",
+  "dateTime": "%a %d %b %Y %T %Z",
+  "time12": "",
+  "full": "%a %-d. %b %H:%M:%S %Z %Y"
+}
