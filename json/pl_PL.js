@@ -55,6 +55,8 @@
     ""
   ],
   "date": "%d.%m.%Y",
-  "time24": "%H:%M:%S",
-  "dateTime": "%a, %-d %b %Y, %H:%M:%S %Z"
+  "time24": "%T",
+  "dateTime": "%a, %-d %b %Y, %T",
+  "time12": "",
+  "full": "%a, %-d %b %Y, %T %Z"
 }

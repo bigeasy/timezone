@@ -51,16 +51,12 @@
     ]
   },
   "meridiem": [
-    {
-      "upper": "AM",
-      "lower": "am"
-    },
-    {
-      "upper": "PM",
-      "lower": "pm"
-    }
+    "AM",
+    "PM"
   ],
   "date": "%d/%m/%y",
-  "time24": "%H:%M:%S",
-  "dateTime": "%a %d %b %Y %H:%M:%S %Z"
+  "time24": "%T",
+  "dateTime": "%a %d %b %Y %T %Z",
+  "time12": "",
+  "full": "%a %b %e %H:%M:%S %Z %Y"
 }
