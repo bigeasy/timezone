@@ -1,5 +1,6 @@
-- Version 0.0.15 -
+- Version 0.0.15 - Wed Jul 18 20:40:46 UTC 2012
 
+ * Created a Markdown `README.md`. #118. #115.
  * Added many locales. #116.
  * Upgraded to Proof 0.0.15. #117. #113. #105. #102. #101.
  * Removed `main` property from `package.json`. #104.

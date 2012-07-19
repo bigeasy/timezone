@@ -1,18 +1,3 @@
-// ig. al. ar. az. og. or. lr.
-// igandea astelehena asteartea asteazkena osteguna ostirala larunbata
-// urt ots mar api mai eka uzt abu ira urr aza abe
-// urtarrila otsaila martxoa apirila maiatza ekaina uztaila abuztua iraila urria azaroa abendua
-// 
-// 
-// 
-// 
-// ig., 2000.eko iraren 03a
-// ig., 2000.eko iraren 03a
-// 08:05:04
-// 23:05:04
-// 00-09-03 08:05:04 UTC
-// 00-09-03 23:05:04 UTC
-// 
 module.exports = {
   "name": "eu_ES",
   "day": {
@@ -69,7 +54,9 @@ module.exports = {
     "",
     ""
   ],
-  "date": "%P%p%a, %Y.eko %bren %da",
-  "time24": "%P%p%H:%M:%S",
-  "dateTime": "%P%p%y-%m-%d %H:%M:%S %Z"
-};
+  "date": "%a, %Y.eko %bren %da",
+  "time24": "%T",
+  "dateTime": "%y-%m-%d %T %Z",
+  "time12": "",
+  "full": "%a %b %e %H:%M:%S %Z %Y"
+}

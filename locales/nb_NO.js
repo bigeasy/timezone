@@ -1,18 +1,3 @@
-// sø. ma. ti. on. to. fr. lø.
-// søndag mandag tirsdag onsdag torsdag fredag lørdag
-// jan. feb. mars april mai juni juli aug. sep. okt. nov. des.
-// januar februar mars april mai juni juli august september oktober november desember
-// 
-// 
-// 
-// 
-// 03. sep. 2000
-// 03. sep. 2000
-// kl. 08.05 +0000
-// kl. 23.05 +0000
-// sø. 03. sep. 2000 kl. 08.05 +0000
-// sø. 03. sep. 2000 kl. 23.05 +0000
-// 
 module.exports = {
   "name": "nb_NO",
   "day": {
@@ -69,7 +54,9 @@ module.exports = {
     "",
     ""
   ],
-  "date": "%P%p%d. %b %Y",
-  "time24": "%P%pkl. %H.%M +%y00",
-  "dateTime": "%P%p%a %d. %b %Y kl. %H.%M +%y00"
-};
+  "date": "%d. %b %Y",
+  "time24": "kl. %H.%M %z",
+  "dateTime": "%a %d. %b %Y kl. %H.%M %z",
+  "time12": "",
+  "full": "%a %d. %b %H:%M:%S %z %Y"
+}

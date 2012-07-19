@@ -276,7 +276,7 @@
     , D: function (date, posix) { return this.convert([ posix, "%m/%d/%y" ]) }
     , F: function (date, posix) { return this.convert([ posix, "%Y-%m-%d" ]) }
     , x: function (date, posix) { return this.convert([ posix, this[this.locale].date ]) }
-    , r: function (date, posix) { return this.convert([ posix, this[this.locale].time12 ]) }
+    , r: function (date, posix) { return this.convert([ posix, this[this.locale].time12 || '%I:%M:%S' ]) }
     , X: function (date, posix) { return this.convert([ posix, this[this.locale].time24 ]) }
     , c: function (date, posix) { return this.convert([ posix, this[this.locale].dateTime ]) }
     , convert: convert
@@ -303,7 +303,7 @@
     ;
   UNITS = UNITS.toLowerCase().split("|");
 
-  "dmHMSUWVgCIky".replace(/./g, function (e) { context[e].pad = 2 });
+  "delmHMSUWVgCIky".replace(/./g, function (e) { context[e].pad = 2 });
 
   context.N.pad = 9;
   context.j.pad = 3;
