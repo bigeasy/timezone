@@ -1,0 +1,3 @@
+[submodule "vendor/tz"]
+	path = vendor/tz
+	url = git://github.com/eggert/tz.git
