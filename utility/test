@@ -28,7 +28,7 @@ ls -la timezone/index.js
 
 echo ""
 
-(proof run t/*/*.t t/*/*/*.t | tee .proof.out | proof progress) || (proof errors < .proof.out) || exit 1
+(proof run t/*/*.t.* t/*/*/*.t.* | tee .proof.out | proof progress) || (proof errors < .proof.out) || exit 1
 
 if [ "$TRAVIS" = "true" ] || [ "$MINIFY" = "true" ]; then
   default=$(cat timezone.js | uglifyjs | gzip -c | wc -c)
@@ -44,5 +44,5 @@ if [ "$TRAVIS" = "true" ] || [ "$MINIFY" = "true" ]; then
 
   echo ""
 
-  (proof run t/*/*.t t/locale/*/*.t t/zones/timezone/*.t | tee .proof.out | proof progress) || (proof errors < .proof.out) || exit 1
+  (proof run t/*/*.t.* t/locale/*/*.t.* t/zones/timezone/*.t.* | tee .proof.out | proof progress) || (proof errors < .proof.out) || exit 1
 fi
