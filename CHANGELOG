@@ -1,3 +1,9 @@
+- Version 0.0.16
+
+ * Added `.js` suffix to unit tests.
+ * Use `eggert/tz` GitHub repo as database source. #134.
+ * Added a picture to the `README.md`. #121.
+
 - Version 0.0.15 - Wed Jul 18 20:40:46 UTC 2012
 
  * Created a Markdown `README.md`. #118. #115.
