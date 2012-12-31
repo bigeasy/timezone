@@ -1,6 +1,6 @@
 root_copy_targets = timezone/package.json timezone/README.md timezone/CHANGELOG
 
-src_copy_targets = timezone/synopsis.js timezone/rfc822.js timezone/loaded.js
+src_copy_targets = timezone/synopsis.js timezone/rfc822.js timezone/loaded.js timezone/.npmignore
 
 copy_sources = $(src_copy_targets:timezone/%=src/%) $(root_copy_targets:timezone/%=%) timezone.js src/common_index.js
 locale_sources = $(wildcard src/locales/*.js)
