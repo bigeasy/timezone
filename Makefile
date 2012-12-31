@@ -10,13 +10,13 @@ npm_targets = timezone/index.js $(npm_copy_targets) timezone/locales.js timezone
 
 olson_as_json = zones/olson/africa.js zones/olson/antarctica.js zones/olson/asia.js zones/olson/australasia.js \
 	zones/olson/europe.js zones/olson/northamerica.js zones/olson/southamerica.js
-olson = $(olson_as_json:zones/olson/%.js=vendor/tz/%)
+olson = $(olson_as_json:zones/olson/%.js=eggert/tz/%)
 
 sources = $(locale_targets) $(copy_sources)
 
 all: zones/zoneinfo/America/Detroit $(npm_targets)
 
-zic: vendor/tz/zic
+zic: eggert/tz/zic
 
 watch: all
 	@inotifywait -q -m -e close_write $(sources) | while read line; do make --no-print-directory all; done;
@@ -49,15 +49,15 @@ timezone/America/Detroit.js: $(olson_as_json) zones/olson/index.js utility/zones
 	done
 	touch $@
 
-vendor/tz/zic: 
-	make -C vendor/tz -f Makefile	
+eggert/tz/zic: 
+	make -C eggert/tz -f Makefile	
 
-zones/zoneinfo/America/Detroit: vendor/tz/africa
+zones/zoneinfo/America/Detroit: eggert/tz/africa
 	mkdir -p zones
-	@(cd vendor/tz && echo "Using zic: $$(which ./zic || which zic)")
-	(cd vendor/tz && $$(which ./zic || which zic) -d ../../zones/zoneinfo africa antarctica asia australasia europe northamerica southamerica)
+	@(cd eggert/tz && echo "Using zic: $$(which ./zic || which zic)")
+	(cd eggert/tz && $$(which ./zic || which zic) -d ../../zones/zoneinfo africa antarctica asia australasia europe northamerica southamerica)
 
-zones/olson/%.js: vendor/tz/%
+zones/olson/%.js: eggert/tz/%
 	mkdir -p zones/olson
 	node utility/tz2json.js $< > $@
 	touch $@
@@ -72,4 +72,4 @@ $(npm_copy_targets): timezone/%: %
 
 clean:
 	rm -rf zones timezone
-	make -C vendor/tz -f Makefile clean
+	make -C eggert/tz -f Makefile clean
