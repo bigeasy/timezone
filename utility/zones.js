@@ -101,7 +101,7 @@ function write (name, skipList, data) {
 
 (function () {
   var data = { zones: {}, rules: {} }, skipLists = {};
-  require("../zones/olson/index").forEach(function (zone) {
+  require("../build/olson/index").forEach(function (zone) {
     for (var key in zone.zones) data.zones[key] = zone.zones[key];
     for (var key in zone.rules) data.rules[key] = zone.rules[key];
   });

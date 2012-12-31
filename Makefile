@@ -8,15 +8,15 @@ locale_targets = $(locale_sources:src/locales/%=timezone/%)
 
 npm_targets = timezone/index.js $(root_copy_targets) $(src_copy_targets) \
 	timezone/locales.js timezone/zones.js $(locale_targets) \
-	timezone/America/Detroit.js zones/transitions.txt
+	timezone/America/Detroit.js build/transitions.txt
 
-olson_as_json = zones/olson/africa.js zones/olson/antarctica.js zones/olson/asia.js zones/olson/australasia.js \
-	zones/olson/europe.js zones/olson/northamerica.js zones/olson/southamerica.js
-olson = $(olson_as_json:zones/olson/%.js=eggert/tz/%)
+olson_as_json = build/olson/africa.js build/olson/antarctica.js build/olson/asia.js build/olson/australasia.js \
+	build/olson/europe.js build/olson/northamerica.js build/olson/southamerica.js
+olson = $(olson_as_json:build/olson/%.js=eggert/tz/%)
 
 sources = $(locale_targets) $(copy_sources)
 
-all: zones/zoneinfo/America/Detroit $(npm_targets)
+all: build/zoneinfo/America/Detroit $(npm_targets)
 
 zic: eggert/tz/zic
 
@@ -36,15 +36,15 @@ timezone/locales.js: src/common_index.js
 	mkdir -p timezone
 	cp $< $@
 
-zones/olson/index.js: src/common_index.js
+build/olson/index.js: src/common_index.js
 	mkdir -p timezone
 	cp $< $@
 
-zones/transitions.txt: $(olson_as_json) zones/olson/index.js utility/verifiable.js
-	node utility/verifiable.js > zones/transitions.txt
+build/transitions.txt: $(olson_as_json) build/olson/index.js utility/verifiable.js
+	node utility/verifiable.js > build/transitions.txt
 	touch $@
 
-timezone/America/Detroit.js: $(olson_as_json) zones/olson/index.js utility/zones.js
+timezone/America/Detroit.js: $(olson_as_json) build/olson/index.js utility/zones.js
 	node utility/zones.js
 	for dir in $$(find timezone -mindepth 1 -type d); do \
 		cp src/common_index.js $$dir/index.js; \
@@ -54,13 +54,13 @@ timezone/America/Detroit.js: $(olson_as_json) zones/olson/index.js utility/zones
 eggert/tz/zic: 
 	make -C eggert/tz -f Makefile	
 
-zones/zoneinfo/America/Detroit: eggert/tz/africa
+build/zoneinfo/America/Detroit: eggert/tz/africa
 	mkdir -p zones
 	@(cd eggert/tz && echo "Using zic: $$(which ./zic || which zic)")
-	(cd eggert/tz && $$(which ./zic || which zic) -d ../../zones/zoneinfo africa antarctica asia australasia europe northamerica southamerica)
+	(cd eggert/tz && $$(which ./zic || which zic) -d ../../build/zoneinfo africa antarctica asia australasia europe northamerica southamerica)
 
-zones/olson/%.js: eggert/tz/%
-	mkdir -p zones/olson
+build/olson/%.js: eggert/tz/%
+	mkdir -p build/olson
 	node utility/tz2json.js $< > $@
 	touch $@
 
@@ -77,5 +77,5 @@ $(root_copy_targets): timezone/%: %
 	cp $< $@
 
 clean:
-	rm -rf zones timezone
+	rm -rf build timezone
 	make -C eggert/tz -f Makefile clean

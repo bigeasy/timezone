@@ -4,7 +4,7 @@ require "time"
 require "date"
 
 DIR = File.expand_path(File.dirname(__FILE__))
-ZONES = File.expand_path("#{DIR}/../../../zones")
+ZONES = File.expand_path("#{DIR}/../../../build")
 
 ENV["TZ"] = "UTC"
 counter = 0
