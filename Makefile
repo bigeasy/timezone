@@ -1,27 +1,34 @@
-root_copy_targets = build/timezone/package.json build/timezone/README.md build/timezone/CHANGELOG
+contients = africa antarctica asia australasia europe northamerica southamerica
 
-src_copy_targets = build/timezone/synopsis.js build/timezone/rfc822.js build/timezone/loaded.js build/timezone/.npmignore
-
-copy_sources = $(src_copy_targets:build/timezone/%=src/%) $(root_copy_targets:build/timezone/%=%) timezone.js src/common_index.js
+zone_sources = $(contients:%=eggert/tz/%)
+root_sources = package.json README.md CHANGELOG
+src_sources = synopsis.js rfc822.js loaded.js .npmignore 
 locale_sources = $(wildcard src/locales/*.js)
+
+root_targets = $(root_sources:%=build/timezone/%)
+src_targets = $(src_sources:%=build/timezone/%)
 locale_targets = $(locale_sources:src/locales/%=build/timezone/%)
 
-npm_targets = build/timezone/index.js $(root_copy_targets) $(src_copy_targets) \
-	build/timezone/locales.js build/timezone/zones.js $(locale_targets) \
-	build/timezone/America/Detroit.js build/transitions.txt
+# GNU `make` will build and rebuild `build/Makefile.deps` when it is out of
+# date. See the **The GNU `make include` Directive** section of [Advanced
+# Auto-Dependency Generation](http://make.paulandlesley.org/autodep.html) for
+# details.
+-include build/Makefile.deps
+
+zoneinfo_files = $(timezones:%=build/zoneinfo/%)
 
 olson_as_json = build/olson/africa.js build/olson/antarctica.js build/olson/asia.js build/olson/australasia.js \
 	build/olson/europe.js build/olson/northamerica.js build/olson/southamerica.js
 olson = $(olson_as_json:build/olson/%.js=eggert/tz/%)
 
-sources = $(locale_targets) $(copy_sources)
-
-all: build/zoneinfo/America/Detroit $(npm_targets)
+all: $(root_targets) $(src_targets) $(locale_targets) \
+	build/timezone/index.js \
+	build/timezone/locales.js build/timezone/zones.js \
+	build/timezone/America/Detroit.js \
+	$(zoneinfo_files) \
+	build/transitions.txt
 
 zic: eggert/tz/zic
-
-watch: all
-	@inotifywait -q -m -e close_write $(sources) | while read line; do make --no-print-directory all; done;
 
 $(locale_targets): build/timezone/%: src/locales/%
 	mkdir -p build/timezone
@@ -54,10 +61,10 @@ build/timezone/America/Detroit.js: $(olson_as_json) build/olson/index.js util/zo
 eggert/tz/zic: 
 	make -C eggert/tz -f Makefile	
 
-build/zoneinfo/America/Detroit: eggert/tz/africa
-	mkdir -p zones
+$(zoneinfo_files): $(zone_sources)
+	mkdir -p build
 	@(cd eggert/tz && echo "Using zic: $$(which ./zic || which zic)")
-	(cd eggert/tz && $$(which ./zic || which zic) -d ../../build/zoneinfo africa antarctica asia australasia europe northamerica southamerica)
+	(cd eggert/tz && $$(which ./zic || which zic) -d ../../build/zoneinfo $(contients))
 
 build/olson/%.js: eggert/tz/%
 	mkdir -p build/olson
@@ -68,14 +75,18 @@ build/timezone/index.js: src/timezone.js
 	mkdir -p build/timezone
 	cp $< $@
 
-$(src_copy_targets): build/timezone/%: src/%
+$(src_targets): build/timezone/%: src/%
 	mkdir -p build/timezone
 	cp $< $@
 
-$(root_copy_targets): build/timezone/%: %
+$(root_targets): build/timezone/%: %
 	mkdir -p build/timezone
 	cp $< $@
 
 clean:
 	rm -rf build
 	make -C eggert/tz -f Makefile clean
+
+build/Makefile.deps: $(zone_sources)
+	mkdir -p build
+	node util/tz2deps.js $^ > $@
