@@ -1,6 +1,3 @@
-.DS_Store
-.AppleDouble
-*.swp
 .proof.out
 node_modules/*
 build/*
