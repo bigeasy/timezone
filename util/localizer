@@ -65,7 +65,7 @@ process.stdout.write("module.exports = ");
 process.stdout.write(JSON.stringify(locale, null, 2));
 process.stdout.write("\n");
 
-require('child_process').exec('utility/rigamorale ' + locale.name, function (error, stdout) {
+require('child_process').exec('util/rigamorale ' + locale.name, function (error, stdout) {
   stdout = stdout.split(/\n/);
   var shortDays = stdout.shift().split('|');
   var days = stdout.shift().split('|');

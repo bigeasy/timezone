@@ -40,12 +40,12 @@ build/olson/index.js: src/common_index.js
 	mkdir -p timezone
 	cp $< $@
 
-build/transitions.txt: $(olson_as_json) build/olson/index.js utility/verifiable.js
-	node utility/verifiable.js > build/transitions.txt
+build/transitions.txt: $(olson_as_json) build/olson/index.js util/verifiable.js
+	node util/verifiable.js > build/transitions.txt
 	touch $@
 
-timezone/America/Detroit.js: $(olson_as_json) build/olson/index.js utility/zones.js
-	node utility/zones.js
+timezone/America/Detroit.js: $(olson_as_json) build/olson/index.js util/zones.js
+	node util/zones.js
 	for dir in $$(find timezone -mindepth 1 -type d); do \
 		cp src/common_index.js $$dir/index.js; \
 	done
@@ -61,7 +61,7 @@ build/zoneinfo/America/Detroit: eggert/tz/africa
 
 build/olson/%.js: eggert/tz/%
 	mkdir -p build/olson
-	node utility/tz2json.js $< > $@
+	node util/tz2json.js $< > $@
 	touch $@
 
 timezone/index.js: src/timezone.js

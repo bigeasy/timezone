@@ -20,7 +20,7 @@ if [ "$TRAVIS" = "true" ]; then
   rm -rf ~/.rvm
   ruby -v
   echo ""
-  utility/sizes timezone.js rfc822.js
+  util/sizes timezone.js rfc822.js
   echo ""
 fi
 
