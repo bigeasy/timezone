@@ -24,7 +24,7 @@ if [ "$TRAVIS" = "true" ]; then
   echo ""
 fi
 
-ls -la timezone/index.js
+ls -la build/timezone/index.js
 
 echo ""
 
@@ -35,12 +35,12 @@ if [ "$TRAVIS" = "true" ] || [ "$MINIFY" = "true" ]; then
   lift=$(cat timezone.js | uglifyjs --lift-vars | gzip -c | wc -c)
 
   if [ $default -lt $lift ]; then
-    cat timezone.js | uglifyjs > timezone/index.js
+    cat timezone.js | uglifyjs > build/timezone/index.js
   else
-    cat timezone.js | uglifyjs --lift-vars > timezone/index.js
+    cat timezone.js | uglifyjs --lift-vars > build/timezone/index.js
   fi 
  
-  ls -la timezone/index.js
+  ls -la build/timezone/index.js
 
   echo ""
 

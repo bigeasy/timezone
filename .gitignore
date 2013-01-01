@@ -1,4 +1,3 @@
 .proof.out
 node_modules/*
 build/*
-timezone/*

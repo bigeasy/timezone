@@ -1,14 +1,14 @@
-root_copy_targets = timezone/package.json timezone/README.md timezone/CHANGELOG
+root_copy_targets = build/timezone/package.json build/timezone/README.md build/timezone/CHANGELOG
 
-src_copy_targets = timezone/synopsis.js timezone/rfc822.js timezone/loaded.js timezone/.npmignore
+src_copy_targets = build/timezone/synopsis.js build/timezone/rfc822.js build/timezone/loaded.js build/timezone/.npmignore
 
-copy_sources = $(src_copy_targets:timezone/%=src/%) $(root_copy_targets:timezone/%=%) timezone.js src/common_index.js
+copy_sources = $(src_copy_targets:build/timezone/%=src/%) $(root_copy_targets:build/timezone/%=%) timezone.js src/common_index.js
 locale_sources = $(wildcard src/locales/*.js)
-locale_targets = $(locale_sources:src/locales/%=timezone/%)
+locale_targets = $(locale_sources:src/locales/%=build/timezone/%)
 
-npm_targets = timezone/index.js $(root_copy_targets) $(src_copy_targets) \
-	timezone/locales.js timezone/zones.js $(locale_targets) \
-	timezone/America/Detroit.js build/transitions.txt
+npm_targets = build/timezone/index.js $(root_copy_targets) $(src_copy_targets) \
+	build/timezone/locales.js build/timezone/zones.js $(locale_targets) \
+	build/timezone/America/Detroit.js build/transitions.txt
 
 olson_as_json = build/olson/africa.js build/olson/antarctica.js build/olson/asia.js build/olson/australasia.js \
 	build/olson/europe.js build/olson/northamerica.js build/olson/southamerica.js
@@ -23,30 +23,30 @@ zic: eggert/tz/zic
 watch: all
 	@inotifywait -q -m -e close_write $(sources) | while read line; do make --no-print-directory all; done;
 
-$(locale_targets): timezone/%: src/locales/%
-	mkdir -p timezone
+$(locale_targets): build/timezone/%: src/locales/%
+	mkdir -p build/timezone
 	cp $< $@
 
-timezone/zones.js: src/common_index.js
-	mkdir -p timezone
+build/timezone/zones.js: src/common_index.js
+	mkdir -p build/timezone
 	cp $< $@
 	cp $< $@
 
-timezone/locales.js: src/common_index.js
-	mkdir -p timezone
+build/timezone/locales.js: src/common_index.js
+	mkdir -p build/timezone
 	cp $< $@
 
 build/olson/index.js: src/common_index.js
-	mkdir -p timezone
+	mkdir -p build/timezone
 	cp $< $@
 
 build/transitions.txt: $(olson_as_json) build/olson/index.js util/verifiable.js
 	node util/verifiable.js > build/transitions.txt
 	touch $@
 
-timezone/America/Detroit.js: $(olson_as_json) build/olson/index.js util/zones.js
+build/timezone/America/Detroit.js: $(olson_as_json) build/olson/index.js util/zones.js
 	node util/zones.js
-	for dir in $$(find timezone -mindepth 1 -type d); do \
+	for dir in $$(find build/timezone -mindepth 1 -type d); do \
 		cp src/common_index.js $$dir/index.js; \
 	done
 	touch $@
@@ -64,18 +64,18 @@ build/olson/%.js: eggert/tz/%
 	node util/tz2json.js $< > $@
 	touch $@
 
-timezone/index.js: src/timezone.js
-	mkdir -p timezone
+build/timezone/index.js: src/timezone.js
+	mkdir -p build/timezone
 	cp $< $@
 
-$(src_copy_targets): timezone/%: src/%
-	mkdir -p timezone
+$(src_copy_targets): build/timezone/%: src/%
+	mkdir -p build/timezone
 	cp $< $@
 
-$(root_copy_targets): timezone/%: %
-	mkdir -p timezone
+$(root_copy_targets): build/timezone/%: %
+	mkdir -p build/timezone
 	cp $< $@
 
 clean:
-	rm -rf build timezone
+	rm -rf build
 	make -C eggert/tz -f Makefile clean
