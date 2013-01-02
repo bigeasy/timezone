@@ -5,22 +5,19 @@ then
   echo "Zone verification tests fail without Ruby 1.9.3." >&2
 fi
 
+# On Travis CI we need to run a little setup, print a few diagnostics.
 if [ "$TRAVIS" = "true" ]; then
-  # Install a Ruby 1.9.3 for to get a `strftime` that understands `%::z`.
-  (echo -e "\n\n\n" | sudo apt-add-repository ppa:brightbox/ruby-ng-experimental) >/dev/null 2>&1 && echo "brightbox added"
-  sudo apt-get -q update >/dev/null 2>&1 && echo "apt-get update" 
-  sudo apt-get -q install bc ruby rubygems ruby-switch >/dev/null 2>&1 && \
-    echo "apt-get install bc ruby rubygems ruby-switch"
-  sudo apt-get -q install ruby1.9.3 >/dev/null 2>&1 && echo "apt-get install ruby1.9.3"
-  sudo update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby1.9.3 400 \
-                    --slave   /usr/bin/ri ri /usr/bin/ri1.9.3 \
-                    --slave   /usr/bin/irb irb /usr/bin/irb1.9.3
-  sudo update-alternatives --set ruby /usr/bin/ruby1.9.3
-  # Remove the RVM manged Ruby.
-  rm -rf ~/.rvm
+  # We need a Ruby 1.9.3 for to get a `strftime` that understands `%::z`. Print
+  # out the Ruby version so we can quickly see if we have a bad ruby.
   ruby -v
+  which ruby
+
+  # Install `bc` so we can get our minification report.
+  sudo apt-get -q install bc >/dev/null 2>&1 && echo "apt-get install bc"
+
+  # Run the minification report.
   echo ""
-  util/sizes timezone.js rfc822.js
+  (cd src && ../util/sizes timezone.js rfc822.js)
   echo ""
 fi
 
@@ -30,9 +27,10 @@ echo ""
 
 (proof run t/*/*.t.* t/*/*/*.t.* | tee .proof.out | proof progress) || (proof errors < .proof.out) || exit 1
 
+# On Travis CI we rerun all the tests against the minified source just in case.
 if [ "$TRAVIS" = "true" ] || [ "$MINIFY" = "true" ]; then
-  default=$(cat timezone.js | uglifyjs | gzip -c | wc -c)
-  lift=$(cat timezone.js | uglifyjs --lift-vars | gzip -c | wc -c)
+  default=$(cat src/timezone.js | uglifyjs | gzip -c | wc -c)
+  lift=$(cat src/timezone.js | uglifyjs --lift-vars | gzip -c | wc -c)
 
   if [ $default -lt $lift ]; then
     cat src/timezone.js | uglifyjs > build/timezone/index.js
@@ -44,5 +42,5 @@ if [ "$TRAVIS" = "true" ] || [ "$MINIFY" = "true" ]; then
 
   echo ""
 
-  (proof run t/*/*.t.* t/locale/*/*.t.* t/zones/timezone/*.t.* | tee .proof.out | proof progress) || (proof errors < .proof.out) || exit 1
+  (proof run t/*/*.t.* t/locale/*/*.t.* t/zones/*/*.t.js | tee .proof.out | proof progress) || (proof errors < .proof.out) || exit 1
 fi
