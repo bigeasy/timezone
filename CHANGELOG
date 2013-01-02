@@ -1,6 +1,13 @@
 - Version 0.0.16
 
- * Added `.js` suffix to unit tests.
+Wed Jan  2 03:38:44 UTC 2013
+
+ * Fix typo in `README.md` example. #128.
+ * Fix `synopsis.js` Polish format example. #122.
+ * Set `eggert/tz` to `tzdata2012j` release. #132.
+ * Organize project directory as a compiled project. #135.
+ * Multiple targets to simplify Makefile. #130.
+ * Added `.js` suffix to unit tests. #133.
  * Use `eggert/tz` GitHub repo as database source. #134.
  * Added a picture to the `README.md`. #121.
 
