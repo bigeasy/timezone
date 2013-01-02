@@ -3,6 +3,15 @@
     "America/Araguaina": [
       "z",
       {
+        "wallclock": 1350777600000,
+        "format": "BR%sT",
+        "abbrev": "BRST",
+        "offset": -10800000,
+        "posix": 1350788400000,
+        "save": 3600000,
+        "rules": "Brazil"
+      },
+      {
         "wallclock": 1064361600000,
         "format": "BRT",
         "abbrev": "BRT",

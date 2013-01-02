@@ -3,6 +3,15 @@
     "Africa/Tripoli": [
       "z",
       {
+        "wallclock": 1352512800000,
+        "format": "CE%sT",
+        "abbrev": "CET",
+        "offset": 3600000,
+        "posix": 1352505600000,
+        "save": 0,
+        "rules": "Libya"
+      },
+      {
         "wallclock": 875923200000,
         "format": "EET",
         "abbrev": "EET",
@@ -11,20 +20,13 @@
         "save": 0
       },
       {
-        "wallclock": 860112000000,
-        "format": "CEST",
-        "abbrev": "CEST",
-        "offset": 3600000,
-        "posix": 860108400000,
-        "save": 3600000
-      },
-      {
         "wallclock": 844041600000,
-        "format": "CET",
+        "format": "CE%sT",
         "abbrev": "CET",
         "offset": 3600000,
         "posix": 844034400000,
-        "save": 0
+        "save": 0,
+        "rules": "Libya"
       },
       {
         "wallclock": 641779200000,
@@ -72,6 +74,62 @@
   },
   "rules": {
     "Libya": [
+      {
+        "from": 2013,
+        "to": 1.7976931348623157e+308,
+        "month": 9,
+        "day": [
+          5,
+          -31
+        ],
+        "time": 120,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      },
+      {
+        "from": 2013,
+        "to": 1.7976931348623157e+308,
+        "month": 2,
+        "day": [
+          5,
+          -31
+        ],
+        "time": 60,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      },
+      {
+        "from": 1997,
+        "to": 1997,
+        "month": 9,
+        "day": [
+          7,
+          4
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 0
+      },
+      {
+        "from": 1997,
+        "to": 1997,
+        "month": 3,
+        "day": [
+          7,
+          4
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      },
       {
         "from": 1987,
         "to": 1989,

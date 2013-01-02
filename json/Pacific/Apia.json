@@ -4,11 +4,12 @@
       "z",
       {
         "wallclock": 1333252800000,
-        "format": "WST",
+        "format": "WS%sT",
         "abbrev": "WST",
         "offset": 46800000,
         "posix": 1333202400000,
-        "save": 0
+        "save": 0,
+        "rules": "WS"
       },
       {
         "wallclock": 1325203200000,
@@ -76,5 +77,36 @@
       }
     ]
   },
-  "rules": {}
+  "rules": {
+    "WS": [
+      {
+        "from": 2012,
+        "to": 1.7976931348623157e+308,
+        "month": 8,
+        "day": [
+          0,
+          -30
+        ],
+        "time": 180,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "D",
+        "saved": 0
+      },
+      {
+        "from": 2012,
+        "to": 1.7976931348623157e+308,
+        "month": 3,
+        "day": [
+          0,
+          1
+        ],
+        "time": 240,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      }
+    ]
+  }
 }

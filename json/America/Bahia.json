@@ -3,6 +3,14 @@
     "America/Bahia": [
       "z",
       {
+        "wallclock": 1350777600000,
+        "format": "BRT",
+        "abbrev": "BRT",
+        "offset": -10800000,
+        "posix": 1350788400000,
+        "save": 0
+      },
+      {
         "wallclock": 1318723200000,
         "format": "BR%sT",
         "abbrev": "BRST",
