@@ -23,7 +23,7 @@ var transitions = require("./transitions");
     return formatOffset(entry.offset + (entry.save || 0)) + '/' + entry.abbrev;
   }
   var _data = { zones: {}, rules: {} };
-  require("../zones/olson/index").forEach(function (zone) {
+  require("../build/olson/index").forEach(function (zone) {
     for (var key in zone.zones) _data.zones[key] = zone.zones[key];
     for (var key in zone.rules) _data.rules[key] = zone.rules[key];
   });

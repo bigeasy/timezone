@@ -86,7 +86,7 @@ function write (name, skipList, data) {
   zone.unshift("z");
   record.zones[name] = zone;
   var fs = require("fs");
-  var parts = [ "timezone" ].concat(name.split(/\//)), path;
+  var parts = [ "build", "timezone" ].concat(name.split(/\//)), path;
   for (var j = 0, stop = parts.length - 1; j < stop; j++) {
     path = parts.slice(0, j + 1).join("/");
     try {
@@ -101,7 +101,7 @@ function write (name, skipList, data) {
 
 (function () {
   var data = { zones: {}, rules: {} }, skipLists = {};
-  require("../zones/olson/index").forEach(function (zone) {
+  require("../build/olson/index").forEach(function (zone) {
     for (var key in zone.zones) data.zones[key] = zone.zones[key];
     for (var key in zone.rules) data.rules[key] = zone.rules[key];
   });
