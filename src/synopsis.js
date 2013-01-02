@@ -456,7 +456,7 @@ us = us(require("timezone/pl_PL"));
 
 // *Time of moonwalk in the default Polish date format.*
 eq( us( moonwalk, "pl_PL", "%c", "America/Detroit" )
-  , "nie, 20 lip 1969, 21:56:00 EST" );
+  , "nie, 20 lip 1969, 21:56:00" );
 
 // *Add a UK, French and German locales.*
 var eu = tz( require("timezone/en_GB")
