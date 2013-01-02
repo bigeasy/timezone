@@ -15,7 +15,7 @@ var tz = require('timezone/loaded'),
 utc = tz('2012-01-01');
 
 // Convert UTC time to local time in a localize language.
-equal(tz(utc, '%c', 'fr_FR', 'America/Montreal'),i
+equal(tz(utc, '%c', 'fr_FR', 'America/Montreal'),
       'sam. 31 déc. 2011 19:00:00 EST');
 ```
 
