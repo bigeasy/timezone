@@ -86,12 +86,14 @@ function traverse (base, source, destination, visitor, callback) {
   }
 }
 
-function writeFormat (formatter) {
+function writeFormat (formatter, suffix) {
   return function (src, dest, callback) {
     var data = /\.js$/.test(src) && require(src), amd;
     if (Array.isArray(data) || (typeof data == "object" && (data.name || data.zones))) {
       if (path.basename(dest) == "index.js") {
-        dest = dest.replace(/\/index\.js$/, ".js");
+        dest = dest.replace(/\/index\.js$/, suffix);
+      } else {
+        dest = dest.replace(/\.js$/, suffix);
       }
       fs.writeFile(dest, formatter(data), "utf8", callback);
     } else {
@@ -114,15 +116,15 @@ function jsonp (data) {
 
 function formatify (dest, func, done) {
   mkdirp(path.resolve(process.cwd(), dest).split("/"), 1, check(done, function () {
-    traverse(process.cwd(), "code/timezone", dest, func, done);
+    traverse(process.cwd(), "code/build/timezone", dest, func, done);
   }));
 }
 
 function datify () {
   var version = "v" + tz() + "/", count = 0;
-  formatify(version + "amd", writeFormat(amd), check(done, function () {
-    formatify(version + "jsonp", writeFormat(jsonp), check(done, function() {
-      formatify(version + "json", writeFormat(json), done);
+  formatify(version + "amd", writeFormat(amd, ".js"), check(done, function () {
+    formatify(version + "jsonp", writeFormat(jsonp, ".js"), check(done, function() {
+      formatify(version + "json", writeFormat(json, ".json"), done);
     }));
   }));
   function done (error) {
