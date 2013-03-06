@@ -1,5 +1,8 @@
 - Version 0.0.18.
 
+Wed Mar  6 19:39:06 UTC 2013
+
+ * Added `make publish` target to `Makefile`. #141.
  * Release to fix broken NPM publish. #140.
 
 - Version 0.0.17.
