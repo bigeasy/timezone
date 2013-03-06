@@ -90,3 +90,11 @@ clean:
 build/Makefile.deps: $(zone_sources)
 	mkdir -p build
 	node util/tz2deps.js $^ > $@
+
+publish:
+	make zic && make
+	find . -depth \( -name .AppleDouble -o -name .DS_Store \) -exec rm -rf {} \;
+	find . \( -name .AppleDouble -o -name .DS_Store \) ;
+	(cd build/timezone && npm publish)
+
+.PHONEY: publish
