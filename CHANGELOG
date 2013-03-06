@@ -1,3 +1,7 @@
+- Version 0.0.18.
+
+ * Release to fix broken NPM publish. #140.
+
 - Version 0.0.17.
 
 Wed Mar  6 07:21:33 UTC 2013
