@@ -16,7 +16,7 @@
         "format": "C%sT",
         "abbrev": "CST",
         "offset": 28800000,
-        "posix": -1325491552000,
+        "posix": -1325491557000,
         "save": 0,
         "rules": "Shang"
       },
@@ -24,7 +24,7 @@
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 29152000,
+        "offset": 29157000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

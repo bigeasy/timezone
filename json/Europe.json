@@ -5065,7 +5065,7 @@
           "format": "CE%sT",
           "abbrev": "CET",
           "offset": 3600000,
-          "posix": -2422055120000,
+          "posix": -2422055121000,
           "save": 0,
           "rules": "C-Eur"
         },
@@ -5073,7 +5073,7 @@
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 3920000,
+          "offset": 3921000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }

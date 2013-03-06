@@ -7,7 +7,7 @@
         "format": "EE%sT",
         "abbrev": "EET",
         "offset": 7200000,
-        "posix": -2185409100000,
+        "posix": -2185409109000,
         "save": 0,
         "rules": "Egypt"
       },
@@ -15,7 +15,7 @@
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 7500000,
+        "offset": 7509000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

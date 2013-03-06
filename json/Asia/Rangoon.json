@@ -23,14 +23,14 @@
         "format": "BURT",
         "abbrev": "BURT",
         "offset": 23400000,
-        "posix": -1577946276000,
+        "posix": -1577946280000,
         "save": 0
       },
       {
         "wallclock": -2840140800000,
         "format": "RMT",
         "abbrev": "RMT",
-        "offset": 23076000,
+        "offset": 23080000,
         "posix": -2840163880000,
         "save": 0
       },

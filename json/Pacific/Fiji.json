@@ -7,7 +7,7 @@
         "format": "FJ%sT",
         "abbrev": "FJT",
         "offset": 43200000,
-        "posix": -1709985220000,
+        "posix": -1709985344000,
         "save": 0,
         "rules": "Fiji"
       },
@@ -15,7 +15,7 @@
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 42820000,
+        "offset": 42944000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

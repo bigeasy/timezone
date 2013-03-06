@@ -19,10 +19,18 @@
         "save": 3600000
       },
       {
-        "wallclock": -2682288000000,
+        "wallclock": -2109283200000,
         "format": "CAT",
         "abbrev": "CAT",
         "offset": 7200000,
+        "posix": -2109288600000,
+        "save": 0
+      },
+      {
+        "wallclock": -2682288000000,
+        "format": "SAST",
+        "abbrev": "SAST",
+        "offset": 5400000,
         "posix": -2682294220000,
         "save": 0
       },

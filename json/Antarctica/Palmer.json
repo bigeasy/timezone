@@ -42,36 +42,8 @@
   "rules": {
     "ChileAQ": [
       {
-        "from": 2013,
-        "to": 1.7976931348623157e+308,
-        "month": 9,
-        "day": [
-          0,
-          9
-        ],
-        "time": 240,
-        "clock": "posix",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
-      },
-      {
-        "from": 2013,
-        "to": 1.7976931348623157e+308,
-        "month": 2,
-        "day": [
-          0,
-          9
-        ],
-        "time": 180,
-        "clock": "posix",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
         "from": 2012,
-        "to": 2012,
+        "to": 1.7976931348623157e+308,
         "month": 8,
         "day": [
           0,
@@ -85,7 +57,7 @@
       },
       {
         "from": 2012,
-        "to": 2012,
+        "to": 1.7976931348623157e+308,
         "month": 3,
         "day": [
           0,
@@ -212,20 +184,6 @@
       {
         "from": 1998,
         "to": 1998,
-        "month": 8,
-        "day": [
-          7,
-          27
-        ],
-        "time": 240,
-        "clock": "posix",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
-      },
-      {
-        "from": 1998,
-        "to": 1998,
         "month": 2,
         "day": [
           0,
@@ -236,6 +194,20 @@
         "save": 0,
         "letter": "",
         "saved": 3600000
+      },
+      {
+        "from": 1998,
+        "to": 1998,
+        "month": 8,
+        "day": [
+          7,
+          27
+        ],
+        "time": 240,
+        "clock": "posix",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
       },
       {
         "from": 1991,

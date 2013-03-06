@@ -3469,7 +3469,7 @@
           "format": "EE%sT",
           "abbrev": "EET",
           "offset": 7200000,
-          "posix": -2185409100000,
+          "posix": -2185409109000,
           "save": 0,
           "rules": "Egypt"
         },
@@ -3477,7 +3477,7 @@
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 7500000,
+          "offset": 7509000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -4309,10 +4309,18 @@
           "save": 3600000
         },
         {
-          "wallclock": -2682288000000,
+          "wallclock": -2109283200000,
           "format": "CAT",
           "abbrev": "CAT",
           "offset": 7200000,
+          "posix": -2109288600000,
+          "save": 0
+        },
+        {
+          "wallclock": -2682288000000,
+          "format": "SAST",
+          "abbrev": "SAST",
+          "offset": 5400000,
           "posix": -2682294220000,
           "save": 0
         },

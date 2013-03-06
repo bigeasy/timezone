@@ -7,7 +7,7 @@
         "format": "A%sT",
         "abbrev": "AST",
         "offset": -14400000,
-        "posix": -1199217692000,
+        "posix": -1199217691000,
         "save": 0,
         "rules": "Barb"
       },
@@ -15,15 +15,15 @@
         "wallclock": -1451692800000,
         "format": "BMT",
         "abbrev": "BMT",
-        "offset": -14308000,
-        "posix": -1451678492000,
+        "offset": -14309000,
+        "posix": -1451678491000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": -14308000,
+        "offset": -14309000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

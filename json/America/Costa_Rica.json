@@ -7,7 +7,7 @@
         "format": "C%sT",
         "abbrev": "CST",
         "offset": -21600000,
-        "posix": -1545071020000,
+        "posix": -1545071027000,
         "save": 0,
         "rules": "CR"
       },
@@ -15,15 +15,15 @@
         "wallclock": -2524521600000,
         "format": "SJMT",
         "abbrev": "SJMT",
-        "offset": -20180000,
-        "posix": -2524501420000,
+        "offset": -20173000,
+        "posix": -2524501427000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": -20180000,
+        "offset": -20173000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

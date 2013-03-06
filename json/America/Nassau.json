@@ -16,7 +16,7 @@
         "format": "E%sT",
         "abbrev": "EST",
         "offset": -18000000,
-        "posix": -1825095036000,
+        "posix": -1825095030000,
         "save": 0,
         "rules": "Bahamas"
       },
@@ -24,7 +24,7 @@
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": -18564000,
+        "offset": -18570000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

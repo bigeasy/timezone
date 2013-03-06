@@ -10516,36 +10516,8 @@
     "rules": {
       "Chile": [
         {
-          "from": 2013,
-          "to": 1.7976931348623157e+308,
-          "month": 9,
-          "day": [
-            0,
-            9
-          ],
-          "time": 240,
-          "clock": "posix",
-          "save": 60,
-          "letter": "S",
-          "saved": 0
-        },
-        {
-          "from": 2013,
-          "to": 1.7976931348623157e+308,
-          "month": 2,
-          "day": [
-            0,
-            9
-          ],
-          "time": 180,
-          "clock": "posix",
-          "save": 0,
-          "letter": "",
-          "saved": 3600000
-        },
-        {
           "from": 2012,
-          "to": 2012,
+          "to": 1.7976931348623157e+308,
           "month": 8,
           "day": [
             0,
@@ -10559,7 +10531,7 @@
         },
         {
           "from": 2012,
-          "to": 2012,
+          "to": 1.7976931348623157e+308,
           "month": 3,
           "day": [
             0,
@@ -10824,20 +10796,6 @@
           "saved": 0
         },
         {
-          "from": 1974,
-          "to": 1987,
-          "month": 9,
-          "day": [
-            0,
-            9
-          ],
-          "time": 240,
-          "clock": "posix",
-          "save": 60,
-          "letter": "S",
-          "saved": 0
-        },
-        {
           "from": 1987,
           "to": 1987,
           "month": 3,
@@ -10850,6 +10808,20 @@
           "save": 0,
           "letter": "",
           "saved": 3600000
+        },
+        {
+          "from": 1974,
+          "to": 1987,
+          "month": 9,
+          "day": [
+            0,
+            9
+          ],
+          "time": 240,
+          "clock": "posix",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
         },
         {
           "from": 1972,
@@ -17990,7 +17962,7 @@
           "format": "A%sT",
           "abbrev": "AST",
           "offset": -14400000,
-          "posix": -1199217692000,
+          "posix": -1199217691000,
           "save": 0,
           "rules": "Barb"
         },
@@ -17998,15 +17970,15 @@
           "wallclock": -1451692800000,
           "format": "BMT",
           "abbrev": "BMT",
-          "offset": -14308000,
-          "posix": -1451678492000,
+          "offset": -14309000,
+          "posix": -1451678491000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -14308000,
+          "offset": -14309000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -18445,7 +18417,7 @@
           "format": "C%sT",
           "abbrev": "CST",
           "offset": -21600000,
-          "posix": -1545071020000,
+          "posix": -1545071027000,
           "save": 0,
           "rules": "CR"
         },
@@ -18453,15 +18425,15 @@
           "wallclock": -2524521600000,
           "format": "SJMT",
           "abbrev": "SJMT",
-          "offset": -20180000,
-          "posix": -2524501420000,
+          "offset": -20173000,
+          "posix": -2524501427000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -20180000,
+          "offset": -20173000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -25943,14 +25915,14 @@
           "format": "ANT",
           "abbrev": "ANT",
           "offset": -16200000,
-          "posix": -1826738656000,
+          "posix": -1826738653000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -16544000,
+          "offset": -16547000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -33217,7 +33189,7 @@
           "format": "CO%sT",
           "abbrev": "COT",
           "offset": -18000000,
-          "posix": -1739041420000,
+          "posix": -1739041424000,
           "save": 0,
           "rules": "CO"
         },
@@ -33225,15 +33197,15 @@
           "wallclock": -2707689600000,
           "format": "BMT",
           "abbrev": "BMT",
-          "offset": -17780000,
-          "posix": -2707671820000,
+          "offset": -17776000,
+          "posix": -2707671824000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -17780000,
+          "offset": -17776000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -47354,7 +47326,7 @@
           "format": "E%sT",
           "abbrev": "EST",
           "offset": -18000000,
-          "posix": -1825095036000,
+          "posix": -1825095030000,
           "save": 0,
           "rules": "Bahamas"
         },
@@ -47362,7 +47334,7 @@
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -18564000,
+          "offset": -18570000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }

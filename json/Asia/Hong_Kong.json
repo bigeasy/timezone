@@ -24,7 +24,7 @@
         "format": "HK%sT",
         "abbrev": "HKT",
         "offset": 28800000,
-        "posix": -2056692996000,
+        "posix": -2056693002000,
         "save": 0,
         "rules": "HK"
       },
@@ -32,7 +32,7 @@
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 27396000,
+        "offset": 27402000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }
