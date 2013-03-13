@@ -1,3 +1,7 @@
+- Version 0.0.19.
+
+ * Update timezone database to `tz2013b`. #142.
+
 - Version 0.0.18.
 
 Wed Mar  6 19:48:32 UTC 2013
