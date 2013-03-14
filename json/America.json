@@ -19316,7 +19316,7 @@
     "rules": {
       "Para": [
         {
-          "from": 2010,
+          "from": 2014,
           "to": 1.7976931348623157e+308,
           "month": 3,
           "day": [
@@ -19342,6 +19342,48 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 2013,
+          "to": 2013,
+          "month": 3,
+          "day": [
+            0,
+            8
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 0
+        },
+        {
+          "from": 2013,
+          "to": 2013,
+          "month": 2,
+          "day": [
+            7,
+            24
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 2010,
+          "to": 2012,
+          "month": 3,
+          "day": [
+            0,
+            8
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 2005,
@@ -19500,20 +19542,6 @@
         {
           "from": 1992,
           "to": 1992,
-          "month": 9,
-          "day": [
-            7,
-            5
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 60,
-          "letter": "S",
-          "saved": 0
-        },
-        {
-          "from": 1992,
-          "to": 1992,
           "month": 2,
           "day": [
             7,
@@ -19524,6 +19552,20 @@
           "save": 0,
           "letter": "",
           "saved": 3600000
+        },
+        {
+          "from": 1992,
+          "to": 1992,
+          "month": 9,
+          "day": [
+            7,
+            5
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
         },
         {
           "from": 1991,
@@ -46482,7 +46524,7 @@
       "Haiti": [
         {
           "from": 2012,
-          "to": 2012,
+          "to": 1.7976931348623157e+308,
           "month": 2,
           "day": [
             0,
@@ -46496,7 +46538,7 @@
         },
         {
           "from": 2012,
-          "to": 2012,
+          "to": 1.7976931348623157e+308,
           "month": 10,
           "day": [
             0,
