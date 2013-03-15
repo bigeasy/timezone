@@ -112,7 +112,7 @@ function write (name, skipList, data) {
       }
     }
   });
-  var set = process.argv[2] ? [ process.argv[2] ] : Object.keys(data.zones).filter(function (e) { return ! /^Etc/.test(e) });
+  var set = process.argv[2] ? [ process.argv[2] ] : Object.keys(data.zones);
   for (var i = 0, length = set.length; i < length; i++) { transitions(data, set[i]) }
   for (var i = 0, length = set.length; i < length; i++) {
     try {
