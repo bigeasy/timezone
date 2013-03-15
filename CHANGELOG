@@ -172,7 +172,7 @@ Wed Jan  2 04:12:59 UTC 2013
  * Parse New Year's 1970. (Was confused over `0` and `undefined`.)
  * Calculate timezone lookup table to 2037.
 
-- Version 0.0.8 - Sun Mar 18 00:42:46 UTC 2012 
+- Version 0.0.8 - Sun Mar 18 00:42:46 UTC 2012
 
  * Add `tz.now` date parameter.
  * Fix month subtraction.

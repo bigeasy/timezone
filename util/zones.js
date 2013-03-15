@@ -40,7 +40,7 @@ function write (name, skipList, data) {
   });
   function isLeapYear (year) {
     if (! (year % 400)) return true;
-    if (! (year % 100)) return false; 
+    if (! (year % 100)) return false;
     if (! (year % 4)) return true;
     return false;
   }

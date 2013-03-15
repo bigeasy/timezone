@@ -1,7 +1,7 @@
 // A walk-though of **Timezone**, a database friendly, timezone aware replacement
 // for the `Date` object that implements timezone conversions, timezone aware
 // date math, timezone and locale aware date formatting, for any date, anywhere
-// in the world, since the dawn of standardized time. 
+// in the world, since the dawn of standardized time.
 //
 // **Timezone** is a JavaScript library with no dependencies. It runs in the
 // browser and in Node.js.
@@ -42,8 +42,8 @@ var ok = require("assert")
 // governments or administrators. It is a millisecond in the grand time line.
 //
 // POSIX time is simple. It is always an integer, making it easy to store in
-// databases and data stores, even ones little or no support for time stamps. 
-// 
+// databases and data stores, even ones little or no support for time stamps.
+//
 // Because POSIX is an integer, it time is easy to sort and easy to compare.
 // Sorting and searching POSIX time is fast.
 
@@ -152,7 +152,7 @@ eq( tz("1999-12-31 20:00-04:00:00"), y2k );
 //
 // We don't venture a guess as to what these offsets might be. No. We use the
 // IANA Timezone Database to convert POSIX time to obtain the best guess
-// available. 
+// available.
 //
 // Yes, it's still a guess, because the IANA Database is a product of a lot of
 // research; leafing through newspapers and government records for talk of clock
@@ -321,7 +321,7 @@ eq( us(moonwalk, "America/Detroit", "%F %T%^z"), "1969-07-20 21:56:00-05:00" );
 eq( tz(armistice, "Europe/Amsterdam", require("timezone/Europe/Amsterdam"), "%T %F%^z")
   , "11:19:32 1911-11-11+00:19:32" );
 
-// #### Padding 
+// #### Padding
 //
 // **Timezone** implements the GNU padding extensions to `strftime`.
 
@@ -380,7 +380,7 @@ eq( eu(moonwalk, "%F %T", "Europe/Istanbul")
 // time.
 //
 // This allows the **Timezone** to interpret an integer date value unambiguously
-// as POSIX time, seconds since the epoch in UTC. 
+// as POSIX time, seconds since the epoch in UTC.
 //
 // We use a string to represent wall-clock time because the time zone offset is
 // really a display property, because wall-clock time is a display of time.
@@ -629,7 +629,7 @@ eq( tz(moonwalk, require("timezone/Asia"), "Asia/Tashkent", "%F %T%^z"), "1969-0
 // It is generally preferable to create a partial function that loads the data
 // you need, however.
 
-// Locales are loaded in the same fashion. 
+// Locales are loaded in the same fashion.
 
 // *Knows nothing of Polish, defaults to `en_US`.*
 eq( tz(moonwalk, "pl_PL", "%A"), "Monday");
@@ -648,7 +648,7 @@ eq( pl(moonwalk, "pl_PL", "%A"), "poniedziałek");
 // date string. With all the unit tests in place, there is little reason for
 // **Timezone** to add new features, so you can count on its size to be small,
 // under 3k, for the foreseeable future.
-// 
+//
 // Most importantly, **Timezone** avoids the mistake of treating a date
 // formatting and date parsing as two sides of the same coin. Much in the same
 // way that generating web pages from a database, like a blog, is not as simple
@@ -658,7 +658,7 @@ eq( pl(moonwalk, "pl_PL", "%A"), "poniedziałek");
 // just that it is generally application specific, requires a lot of context,
 // and it is not proportionate in complexity to date formatting, date math or time
 // zone offset lookup. We might be able to hide a lot of the bulk in data files
-// that accompany our library, but we would so 
+// that accompany our library, but we would so
 //
 // Rather than opening up **Timezone** to extend it, we build on top of it,
 // through functional composition. **Timezone** is a function in a functional
@@ -699,12 +699,12 @@ ok( +(tz(y2k, "%-d")) === new Date(y2k).getUTCDate() );
 // *January is one.*/
 ok( +(tz(y2k, "%-m")) === new Date(y2k).getUTCMonth() + 1 );
 
-// *Here's your date of week.* 
+// *Here's your date of week.*
 ok( parseInt(tz(y2k, "%-w")) === new Date(y2k).getUTCDay() );
 
 // Plus there are a few properties you can get that are not available to date.
 
-// *Here's your date of week starting Monday.* 
+// *Here's your date of week starting Monday.*
 ok( +(tz(moonwalk, "%-V")) === 30 );
 
 // *Day of the year.*

@@ -4,7 +4,7 @@ continents = africa antarctica asia australasia europe \
 zone_sources = $(continents:%=eggert/tz/%)
 olson_as_json = $(continents:%=build/olson/%.js)
 root_sources = package.json README.md CHANGELOG
-src_sources = synopsis.js rfc822.js loaded.js .npmignore 
+src_sources = synopsis.js rfc822.js loaded.js .npmignore
 locale_sources = $(wildcard src/locales/*.js)
 
 root_targets = $(root_sources:%=build/timezone/%)
@@ -58,7 +58,7 @@ build/timezone/America/Detroit.js: $(olson_as_json) build/olson/index.js util/zo
 	done
 	touch $@
 
-eggert/tz/zic: 
+eggert/tz/zic:
 	make -C eggert/tz -f Makefile	
 
 $(zoneinfo_files): $(zone_sources)

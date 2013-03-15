@@ -23,7 +23,7 @@
 // Localization is a general problem. Developers will create a format string for
 // an RFC 822 date using day of week and month names that their [date formatting
 // library will then localize](//
-// http://rel.me/2008/07/22/date-format-rfc82285010361123asctimeiso8601unicode35tr35-6/). 
+// http://rel.me/2008/07/22/date-format-rfc82285010361123asctimeiso8601unicode35tr35-6/).
 //
 // While `So 01 Mär 1992 00:00:00 UTC` is not uncommon, it is still not an RFC
 // 822 date. RFC 822 dates are not localized. They are always English according
@@ -31,7 +31,7 @@
 // support localization.
 //
 // If enough examples of accidentally localized RFC 822 dates are encountered in
-// the wild, we can change that. Let me know. 
+// the wild, we can change that. Let me know.
 
 /*
 var __slice = [].slice

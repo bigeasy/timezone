@@ -36,14 +36,14 @@ require("../proof")(11, function (tz, utc, equal) {
     military.nato[ch] = "+" + offset;
     military.rfc822[ch] = "-" + offset;
   });
- 
+
   index = 0;
   "NOPQRSTUVWXY".replace(/./g, function (ch) {
     var offset = ("0" + (++index) + "00").slice(-4);
      military.nato[ch] = "-" + offset;
     military.rfc822[ch] = "+" + offset;
   });
- 
+
   equal(tz(rfc822("Sun, 20 Jul 1969 21:56:00 E", military.rfc822)), moonwalk, "RFC 822 military");
   equal(tz(rfc822("Sun, 20 Jul 1969 21:56:00 R", military.nato)), moonwalk, "NATO");
 });

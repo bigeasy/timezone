@@ -198,9 +198,9 @@
         //if (false && getYear(table[i].posix) != getYear(table[i].wallclock)) {
          // say("Whoa boy: " + name + ", " + skip[skip.length - 1].rules,  getYear(table[i].posix), getYear(table[i].wallclock), table[i].clock);
         //}
-        if (table[i].rule.saved == null) { 
+        if (table[i].rule.saved == null) {
           table[i].rule.saved = table[i - 1].save;
-        } else if (table[i].rule.saved != table[i - 1].save) { 
+        } else if (table[i].rule.saved != table[i - 1].save) {
           rules = data.rules[skip[skip.length - 1].rules];
           year = getYear(table[i].posix)
           var rule = rules[table[i].rule.index], copy = {};
@@ -209,7 +209,7 @@
             for (var key in rule) copy[key] = rule[key];
             copy.to = year - 1;
             copy.split = true;
-            rule.from = year; 
+            rule.from = year;
             rules.push(copy);
           }
           if (year < rule.to) {
@@ -217,7 +217,7 @@
             for (var key in rule) copy[key] = rule[key];
             copy.from = year + 1;
             copy.split = true;
-            rule.to = year; 
+            rule.to = year;
             rules.push(copy);
           }
           rules.sort(function (a, b) { return a.from - b.from });
@@ -337,11 +337,11 @@
       }
 
       setClocks(entry, previous);
-      
+
       table.push(entry);
     }
 
-    table.forEach(function (e) { 
+    table.forEach(function (e) {
       e.clocks =
       { wallclock: iso8601(e.wallclock)
       , posix: iso8601(e.posix)
