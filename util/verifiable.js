@@ -22,22 +22,22 @@ var transitions = require("./transitions");
     if (! entry.abbrev) entry.abbrev = entry.format;
     return formatOffset(entry.offset + (entry.save || 0)) + '/' + entry.abbrev;
   }
-  var _data = { zones: {}, rules: {} };
+  var data = { zones: {}, rules: {} };
   require("../build/olson/index").forEach(function (zone) {
-    for (var key in zone.zones) _data.zones[key] = zone.zones[key];
-    for (var key in zone.rules) _data.rules[key] = zone.rules[key];
+    for (var key in zone.zones) data.zones[key] = zone.zones[key];
+    for (var key in zone.rules) data.rules[key] = zone.rules[key];
   });
   require("../build/olson/index").forEach(function (zone) {
     for (var key in zone.links) {
       if (~key.indexOf('/')) {
-        _data.zones[key] = _data.zones[zone.links[key]];
+        data.zones[key] = data.zones[zone.links[key]];
       }
     }
   });
-  var set = process.argv[2] ? [ process.argv[2] ] : Object.keys(_data.zones).filter(function (e) { return ! /^Etc/.test(e) });
+  var set = process.argv[2] ? [ process.argv[2] ] : Object.keys(data.zones).filter(function (e) { return ! /^Etc/.test(e) });
   for (var i = 0, length = set.length; i < length; i++) {
     try {
-      var table = transitions(_data, set[i]).table;
+      var table = transitions(data, set[i]).table;
       for (var j = 1, stop = table.length - 1; j < stop; j++) {
         entry = table[j];
         console.log("%s %s %s %s", set[i], iso8601(entry.wallclock), iso8601(entry.posix), format(table[j + 1]), format(table[j]));
