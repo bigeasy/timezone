@@ -27,6 +27,13 @@ var transitions = require("./transitions");
     for (var key in zone.zones) _data.zones[key] = zone.zones[key];
     for (var key in zone.rules) _data.rules[key] = zone.rules[key];
   });
+  require("../build/olson/index").forEach(function (zone) {
+    for (var key in zone.links) {
+      if (~key.indexOf('/')) {
+        _data.zones[key] = _data.zones[zone.links[key]];
+      }
+    }
+  });
   var set = process.argv[2] ? [ process.argv[2] ] : Object.keys(_data.zones).filter(function (e) { return ! /^Etc/.test(e) });
   for (var i = 0, length = set.length; i < length; i++) {
     try {

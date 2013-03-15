@@ -105,6 +105,13 @@ function write (name, skipList, data) {
     for (var key in zone.zones) data.zones[key] = zone.zones[key];
     for (var key in zone.rules) data.rules[key] = zone.rules[key];
   });
+  require("../build/olson/index").forEach(function (zone) {
+    for (var key in zone.links) {
+      if (~key.indexOf('/')) {
+        data.zones[key] = data.zones[zone.links[key]];
+      }
+    }
+  });
   var set = process.argv[2] ? [ process.argv[2] ] : Object.keys(data.zones).filter(function (e) { return ! /^Etc/.test(e) });
   for (var i = 0, length = set.length; i < length; i++) { transitions(data, set[i]) }
   for (var i = 0, length = set.length; i < length; i++) {

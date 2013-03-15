@@ -1,6 +1,8 @@
-continents = africa antarctica asia australasia europe northamerica southamerica
+continents = africa antarctica asia australasia europe \
+	northamerica southamerica etcetera backward
 
 zone_sources = $(continents:%=eggert/tz/%)
+olson_as_json = $(continents:%=build/olson/%.js)
 root_sources = package.json README.md CHANGELOG
 src_sources = synopsis.js rfc822.js loaded.js .npmignore 
 locale_sources = $(wildcard src/locales/*.js)
@@ -17,8 +19,6 @@ locale_targets = $(locale_sources:src/locales/%=build/timezone/%)
 
 zoneinfo_files = $(timezones:%=build/zoneinfo/%)
 
-olson_as_json = build/olson/africa.js build/olson/antarctica.js build/olson/asia.js build/olson/australasia.js \
-	build/olson/europe.js build/olson/northamerica.js build/olson/southamerica.js
 olson = $(olson_as_json:build/olson/%.js=eggert/tz/%)
 
 all: $(root_targets) $(src_targets) $(locale_targets) \

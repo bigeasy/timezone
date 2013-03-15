@@ -12,16 +12,21 @@ require("../../proof")(lines.length * 2, function (equal, tz) {
     before = record[3];
     after = record[4];
     local = (partials[name]) || (partials[name] = tz(require("timezone/" + name, name)));
-    equal(
-      local(tz(posix, "%F %T%^z", "-1 millisecond"), name, "%::z/%Z"),
-      before,
-      [ name, wallclock, posix, before, "before",
+    try {
+      equal(
         local(tz(posix, "%F %T%^z", "-1 millisecond"), name, "%::z/%Z"),
-        tz(posix, "-1 millisecond") ].join(" "));
+        before,
+        [ name, wallclock, posix, before, "before",
+          local(tz(posix, "%F %T%^z", "-1 millisecond"), name, "%::z/%Z"),
+          tz(posix, "-1 millisecond") ].join(" "));
     equal(
       local(tz(posix, "%F %T%^z"), name, "%::z/%Z"),
       after,
       [ name, wallclock, posix, after, "after",
         local(tz(posix, "%F %T%^z"), name, "%::z/%Z") ].join(" "));
+    } catch (e) {
+      console.log(name);
+      throw e;
+    }
   }
 });
