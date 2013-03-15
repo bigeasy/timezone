@@ -1,6 +1,6 @@
-contients = africa antarctica asia australasia europe northamerica southamerica
+continents = africa antarctica asia australasia europe northamerica southamerica
 
-zone_sources = $(contients:%=eggert/tz/%)
+zone_sources = $(continents:%=eggert/tz/%)
 root_sources = package.json README.md CHANGELOG
 src_sources = synopsis.js rfc822.js loaded.js .npmignore 
 locale_sources = $(wildcard src/locales/*.js)
@@ -64,7 +64,7 @@ eggert/tz/zic:
 $(zoneinfo_files): $(zone_sources)
 	mkdir -p build
 	@(cd eggert/tz && echo "Using zic: $$(which ./zic || which zic)")
-	(cd eggert/tz && $$(which ./zic || which zic) -d ../../build/zoneinfo $(contients))
+	(cd eggert/tz && $$(which ./zic || which zic) -d ../../build/zoneinfo $(continents))
 
 build/olson/%.js: eggert/tz/%
 	mkdir -p build/olson
