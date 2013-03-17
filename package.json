@@ -9,7 +9,7 @@
 ,   "author" :          "Alan Gutierrez <alan@prettyrobots.com>"
 ,   "contributors" :    []
 ,   "dependencies" :    {}
-,   "devDependencies":  { "proof": "0.0.22", "uglify-js": "~1.3" }
+,   "devDependencies":  { "proof": "0.0.24", "uglify-js": "~1.3" }
 ,   "scripts" :         { "test": "NODE_PATH=build util/test" }
 ,   "engines" :         { "node": "> 0.4.0" }
 }
