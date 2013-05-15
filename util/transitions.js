@@ -320,7 +320,7 @@
 
     table.push(entry);
 
-    for (var i = 0, length = zone.length; i < Math.min(13, length); i++) {
+    for (var i = 0, length = zone.length; i < length; i++) {
       previous = entry;
       entry = zone[i];
 
