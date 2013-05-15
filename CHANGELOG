@@ -1,3 +1,10 @@
+- Version 0.0.20.
+
+ * Add Eero Ränik to contributors.
+ * Include time zone links wish slashes in their names.
+ * Fix bogus limit on TZ rules. #158.
+ * Build `Etc` zones. #147.
+
 - Version 0.0.19.
 
 Thu Mar 14 00:03:08 UTC 2013
