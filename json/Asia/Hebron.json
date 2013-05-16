@@ -3,6 +3,14 @@
     "Asia/Hebron": [
       "z",
       {
+        "wallclock": 1348189200000,
+        "format": "EET",
+        "abbrev": "EET",
+        "offset": 7200000,
+        "posix": 1348178400000,
+        "save": 0
+      },
+      {
         "wallclock": 1333065600000,
         "format": "EEST",
         "abbrev": "EEST",

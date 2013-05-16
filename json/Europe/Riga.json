@@ -3,6 +3,23 @@
     "Europe/Riga": [
       "z",
       {
+        "wallclock": 978393600000,
+        "format": "EE%sT",
+        "abbrev": "EET",
+        "offset": 7200000,
+        "posix": 978386400000,
+        "save": 0,
+        "rules": "EU"
+      },
+      {
+        "wallclock": 951782400000,
+        "format": "EET",
+        "abbrev": "EET",
+        "offset": 7200000,
+        "posix": 951775200000,
+        "save": 0
+      },
+      {
         "wallclock": 853804800000,
         "format": "EE%sT",
         "abbrev": "EET",

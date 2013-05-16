@@ -1,19 +1,19 @@
 [
   {
     "zones": {
-      "America/North_Dakota/Center": [
+      "America/North_Dakota/Beulah": [
         "z",
         {
-          "wallclock": 719978400000,
+          "wallclock": 1289095200000,
           "format": "C%sT",
           "abbrev": "CST",
           "offset": -21600000,
-          "posix": 720000000000,
+          "posix": 1289116800000,
           "save": 0,
           "rules": "US"
         },
         {
-          "wallclock": -2717667912000,
+          "wallclock": -2717668027000,
           "format": "M%sT",
           "abbrev": "MST",
           "offset": -25200000,
@@ -25,7 +25,7 @@
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -24312000,
+          "offset": -24427000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -220,19 +220,19 @@
   },
   {
     "zones": {
-      "America/North_Dakota/Beulah": [
+      "America/North_Dakota/Center": [
         "z",
         {
-          "wallclock": 1289095200000,
+          "wallclock": 719978400000,
           "format": "C%sT",
           "abbrev": "CST",
           "offset": -21600000,
-          "posix": 1289116800000,
+          "posix": 720000000000,
           "save": 0,
           "rules": "US"
         },
         {
-          "wallclock": -2717668027000,
+          "wallclock": -2717667912000,
           "format": "M%sT",
           "abbrev": "MST",
           "offset": -25200000,
@@ -244,7 +244,7 @@
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -24427000,
+          "offset": -24312000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }

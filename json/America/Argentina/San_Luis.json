@@ -3,6 +3,24 @@
     "America/Argentina/San_Luis": [
       "z",
       {
+        "wallclock": 1200873600000,
+        "format": "WAR%sT",
+        "abbrev": "WARST",
+        "offset": -14400000,
+        "posix": 1200880800000,
+        "save": 3600000,
+        "rules": "SanLuis"
+      },
+      {
+        "wallclock": 1090713600000,
+        "format": "AR%sT",
+        "abbrev": "ART",
+        "offset": -10800000,
+        "posix": 1090728000000,
+        "save": 0,
+        "rules": "Arg"
+      },
+      {
         "wallclock": 1085961600000,
         "format": "WART",
         "abbrev": "WART",
@@ -111,6 +129,36 @@
     ]
   },
   "rules": {
+    "SanLuis": [
+      {
+        "from": 2008,
+        "to": 2009,
+        "month": 2,
+        "day": [
+          0,
+          8
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      },
+      {
+        "from": 2007,
+        "to": 2009,
+        "month": 9,
+        "day": [
+          0,
+          8
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      }
+    ],
     "Arg": [
       {
         "from": 2008,

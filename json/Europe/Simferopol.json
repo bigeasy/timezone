@@ -3,6 +3,15 @@
     "Europe/Simferopol": [
       "z",
       {
+        "wallclock": 859694400000,
+        "format": "EE%sT",
+        "abbrev": "EEST",
+        "offset": 7200000,
+        "posix": 859683600000,
+        "save": 3600000,
+        "rules": "EU"
+      },
+      {
         "wallclock": 852076800000,
         "format": "MSK",
         "abbrev": "MSK",
@@ -114,6 +123,92 @@
     ]
   },
   "rules": {
+    "EU": [
+      {
+        "from": 1981,
+        "to": 1.7976931348623157e+308,
+        "month": 2,
+        "day": [
+          0,
+          -31
+        ],
+        "time": 60,
+        "clock": "posix",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      },
+      {
+        "from": 1996,
+        "to": 1.7976931348623157e+308,
+        "month": 9,
+        "day": [
+          0,
+          -31
+        ],
+        "time": 60,
+        "clock": "posix",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      },
+      {
+        "from": 1979,
+        "to": 1995,
+        "month": 8,
+        "day": [
+          0,
+          -30
+        ],
+        "time": 60,
+        "clock": "posix",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      },
+      {
+        "from": 1977,
+        "to": 1980,
+        "month": 3,
+        "day": [
+          0,
+          1
+        ],
+        "time": 60,
+        "clock": "posix",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      },
+      {
+        "from": 1978,
+        "to": 1978,
+        "month": 9,
+        "day": [
+          7,
+          1
+        ],
+        "time": 60,
+        "clock": "posix",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      },
+      {
+        "from": 1977,
+        "to": 1977,
+        "month": 8,
+        "day": [
+          0,
+          -30
+        ],
+        "time": 60,
+        "clock": "posix",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      }
+    ],
     "Russia": [
       {
         "from": 1996,

@@ -3,6 +3,31 @@
     "America/Argentina/Mendoza": [
       "z",
       {
+        "wallclock": 1224288000000,
+        "format": "ART",
+        "abbrev": "ART",
+        "offset": -10800000,
+        "posix": 1224298800000,
+        "save": 0
+      },
+      {
+        "wallclock": 1096156800000,
+        "format": "AR%sT",
+        "abbrev": "ART",
+        "offset": -10800000,
+        "posix": 1096171200000,
+        "save": 0,
+        "rules": "Arg"
+      },
+      {
+        "wallclock": 1085270400000,
+        "format": "WART",
+        "abbrev": "WART",
+        "offset": -14400000,
+        "posix": 1085281200000,
+        "save": 0
+      },
+      {
         "wallclock": 952041600000,
         "format": "ART",
         "abbrev": "ART",
