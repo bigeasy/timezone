@@ -12,7 +12,7 @@ File.open("#{ZONES}/transitions.txt", "r") do |infile|
   while (line = infile.gets)
     name, wallclock, posix, before, after = line.split(/\s/)
     time = Time.parse posix
-    if time.year > 1902
+    if (time.year > 1902 && name != "Antarctica/Macquarie") || time.year > 1916
       counter = counter + 2
     end
   end
@@ -26,7 +26,7 @@ File.open("#{ZONES}/transitions.txt", "r") do |infile|
     name, wallclock, posix, before, after = line.split(/\s/)
     ENV["TZ"] = "UTC"
     time = Time.parse posix
-    if time.year > 1902
+    if (time.year > 1902 && name != "Antarctica/Macquarie") || time.year > 1916
       ENV["TZ"] = ":#{ZONES}/zoneinfo/#{name}"
       time = Time.at(time.to_i)
       offsetAbbrevation = (time + 60).strftime("%::z/%Z")
