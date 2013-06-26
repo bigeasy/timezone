@@ -17,7 +17,7 @@
 // ```
 //
 // You can find a copy where **Timezone** is installed or [download a
-// copy](https://raw.github.com/bigeasy/timezone/master/synopsis.js) from
+// copy](https://raw.github.com/bigeasy/timezone/master/src/synopsis.js) from
 // GitHub.
 
 // ### Functional API
@@ -42,9 +42,10 @@ var ok = require("assert")
 // governments or administrators. It is a millisecond in the grand time line.
 //
 // POSIX time is simple. It is always an integer, making it easy to store in
-// databases and data stores, even ones little or no support for time stamps.
+// databases and data stores, even ones with little or no support for time
+// stamps.
 //
-// Because POSIX is an integer, it time is easy to sort and easy to compare.
+// Because POSIX time is an integer, it is easy to sort and easy to compare.
 // Sorting and searching POSIX time is fast.
 
 // *Timezone returns number representing POSIX time by default.*
@@ -79,7 +80,7 @@ ok( tz("1975-07-17 16:19:09") > 0 );
 // have date facilities that convert POSIX time into that language's date
 // representation.
 //
-// We use POSIX time to represents and unambiguous point in time, free of
+// We use POSIX time to represent an unambiguous point in time, free of
 // timezone offsets, daylight savings time; all the whimsical manipulations of
 // local governments. POSIX time is simply an integer, an efficient data type
 // that easily sorts and compares.
@@ -330,7 +331,7 @@ eq( tz(armistice, "Europe/Amsterdam", require("timezone/Europe/Amsterdam"), "%T 
 // *Zero padded day of month, but it is already zero padded.*
 eq( tz(y2k, "%B %0d %Y"), "January 01 2000" );
 
-// *Same as above.*/
+// *Same as above.*
 eq( tz(y2k, "%B %d %Y"), "January 01 2000" );
 
 // To remove padding, add a hyphen after the percent sign.
@@ -696,7 +697,7 @@ ok( +(tz(y2k, "%Y")) === new Date(y2k).getUTCFullYear() );
 // *Careful to strip leading zeros so it doesn't become octal.*
 ok( +(tz(y2k, "%-d")) === new Date(y2k).getUTCDate() );
 
-// *January is one.*/
+// *January is one.*
 ok( +(tz(y2k, "%-m")) === new Date(y2k).getUTCMonth() + 1 );
 
 // *Here's your date of week.*
