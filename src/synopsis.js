@@ -6,8 +6,9 @@
 // **Timezone** is a JavaScript library with no dependencies. It runs in the
 // browser and in Node.js.
 //
-// **Timezone** is a micro JavaScript library weight only 3.5k.It is is feature
-// complete. **Timezone*** is unlikely to get any larger as time goes by.
+// **Timezone** is a micro JavaScript library weighing only 2.7k.It is is
+// feature complete. **Timezone*** is unlikely to get any larger as time goes
+// by.
 //
 // This walk-through is written for Node.js. You can run this JavaScript program
 // at the command line like so:
