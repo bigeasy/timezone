@@ -298,7 +298,7 @@
         "month": 7,
         "day": [
           7,
-          8
+          10
         ],
         "time": 120,
         "clock": "wallclock",
@@ -312,7 +312,7 @@
         "month": 6,
         "day": [
           7,
-          9
+          7
         ],
         "time": 180,
         "clock": "wallclock",
