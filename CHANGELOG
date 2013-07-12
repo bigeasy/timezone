@@ -1,5 +1,7 @@
 - Version 0.0.22.
 
+Fri Jul 12 04:36:22 UTC 2013
+
  * Update timezone database to `tz2013d`. #166.
  * Upgrade Proof to 0.0.32. #168.
 
