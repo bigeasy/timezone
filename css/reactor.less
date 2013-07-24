@@ -1,0 +1,135 @@
+@import "response";
+
+@colorish: #6495ed;
+@logo-text: #000000;
+@body-text: lighten(#000000, 10%);
+@welcome-font: "ABeeZee";
+@heading-font: "Inconsolata";
+@body-font: "Karla";
+@code-font: "Oxygen Mono";
+
+html {
+    background: darken(#ffffff, 3%);
+    font-size: 100%;
+    color: @body-text;
+}
+
+body {
+    font-family: Helvetica;
+    margin: 0 auto;
+    padding: 0 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    /* Whatever you want. They’re your oats. */
+    max-width: 60em;
+    margin: 0 auto;
+    padding: 0 0;
+}
+
+.unit.welcome {
+    .span-grid;
+    h1 {
+        font-family: @welcome-font,  "Georgia", sans-serif;
+        /*font-size: 48pt;*/
+        font-weight: normal;
+        font-size: 72pt;
+        margin-top: 0.5em;
+        margin-bottom: 0.25em;
+    }
+}
+
+.unit {
+    padding: 0 36px;
+}
+
+.unit.value-proposition {
+    .span-grid;
+    p {
+        margin: 1em 0;
+    }
+}
+
+.unit.description {
+    font-family: @body-font, "Raleway", "Merriweather", "Maven Pro", "Helvetica", serif;
+    p {
+        font-size: 1.45em;
+        margin: 1em 0;
+        /* todo: not working in chrome */
+        font-weight: 100;
+        strong {
+            font-weight: 700;
+        }
+    }
+    ul {
+        font-size: 1.45em;
+        margin: 1em 0;
+        padding-left: 2em;
+    }
+    h2 {
+        font-family: @heading-font;
+        font-weight: normal;
+        font-size: 2em;
+        font-style: italic;
+        margin: 1em 0;
+    }
+    h3 {
+        font-family: @heading-font;
+        font-weight: normal;
+        font-size: 1.5em;
+    }
+    a {
+        color: #4682b4;
+    }
+    a:visited {
+        color: #9370db;
+    }
+    p code {
+        font-family: @code-font;
+        font-size: 0.85em;
+        background: white;
+        padding: 0 0.25em;
+        border: 1px dotted #ccc;
+    }
+}
+
+.unit.benefit {
+    padding: 1em;
+    .one-of-three;
+    h2 {
+        text-align: center;
+        font-size: 1em;
+        margin-bottom: 1em;
+    }
+}
+
+.unit.verbiage {
+    .span-grid;
+    h2 {
+        font-size: 1em;
+        margin-bottom: 1em;
+    }
+    p {
+        margin-bottom: 1em;
+    }
+}
+
+.unit.description {
+    .span-grid;
+    .highlight > pre {
+        margin: 2em 0;
+        padding: 1em;
+        font-size: 1.15em;
+        font-family: @code-font, 'Monaco', 'Cutive Mono', 'Oxygen Mono', monospace;
+    }
+}
+
+.unit.sidebar {
+    .one-of-four;
+}
+
+/* vim: set ts=4 sw=4: */

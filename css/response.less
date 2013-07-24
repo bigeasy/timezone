@@ -1,0 +1,45 @@
+  /*-----------------------------------*\
+    $GRID
+  \*-----------------------------------*/
+  * {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    -webkit-box-sizing: border-box; /* border-box is new to me, AG */
+       -moz-box-sizing: border-box; /* https://pinboard.in/u:alan/t:border/t:box */
+            box-sizing: border-box;
+  }
+
+.container {
+}
+
+.grid {
+    max-width: 100%;
+}
+
+.unit {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  /* Clearfix */
+  overflow: hidden;
+  *overflow: visible;
+}
+
+.span-grid { width: 100%; }
+
+.one-of-two { width: 50%; }
+
+.one-of-three { width: 33.333333333%; }
+.two-of-three { width: 66.666666666%; }
+
+.one-of-four { width: 25%; }
+.three-of-four { width: 75%; }
+
+.one-of-five { width: 20%; }
+.two-of-five { width: 40%; }
+.three-of-five { width: 60%; }
+.four-of-five { width: 80%; }
+
+/* vim: set ts=4 sw=4: */
