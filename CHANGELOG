@@ -1,5 +1,7 @@
 - Version 0.0.23.
 
+Fri Aug  2 00:17:59 UTC 2013
+
  * Upgrade Proof to 0.0.33. #177.
  * Fix mass resource loading for Node.js on Windows. #176.
 
