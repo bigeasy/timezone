@@ -1,0 +1,54 @@
+#!/bin/sh
+
+version=$1
+
+sed -e 's/$version/'$version'/g' <<"EOF"
+Once again; here is the release checklist mentioned in #140.
+
+- [ ] Ensure that all the features, including updated TZ databases have already been committed to master before performing a release. Do not add new code in a release commit.
+- [ ] Ensure that your change log is up to date with all the changes prior to `$version`. Do not edit the change log a bunch in a release commit.
+- [ ] Create a `git checkout -b release-$version` branch.
+- [ ] Checkout your `release-$version` branch.
+- [ ] Update the version number in `src/timezone.js` to `$version`.
+- [ ] Update the version number in `t/version/get.t.js`.
+- [ ] Update the version number in `package.json`.
+- [ ] Ensure that the `CHANGELOG` looks reasonable.
+- [ ] Run `make clean && make zic && make && npm test`.
+- [ ] Run `git commit -m 'Release $version.' -a`.
+- [ ] Get the date of the commit and add it to change log.
+- [ ] Run `git commit --amend -a`.
+- [ ] Add a reference to this issue in the commit message.
+- [ ] Run `git tag v$version`.
+- [ ] Run `git push origin v$version`.
+- [ ] Merge `release-$version` into `master` with `git checkout master && git splice release-$version`.
+- [ ] Push `master`.
+- [ ] Wait on [Travis CI build](https://travis-ci.org/bigeasy/timezone) to pass.
+- [ ] Run `make publish` which will clear out `.AppleDouble` and `.DS_Store` before publishing and publish the *build* directory.
+
+Publish data files to `gh-pages`.
+
+- [ ] Go to your checkout of the `gh-pages`.
+- [ ] In the `code` submodule run `git fetch`.
+- [ ] In the `code` submodule run `git checkout v$version`.
+- [ ] In the `code` submodule run `git submodule update`.
+- [ ] In the `code` submodule `make clean && make zic && make && npm test`.
+- [ ] In the root directory run `NODE_PATH=code/build node data.js`.
+- [ ] Run `git add v$version`.
+- [ ] Run `git commit -m 'Data files for v$version.' -a`.
+- [ ] Amend commit message to include `See #170`.
+- [ ] Push commit.
+
+Publish data files as zip. (This is specific to my checkouts.)
+
+- [ ] **Disable** Travis CI for Timezone.
+- [ ] Go to your checkout of the data files.
+- [ ] Add an entry in the `README.md` for v$version.
+- [ ] Run `rm -rf amd json jsonp`.
+- [ ] Run `rsync -av ~/git/pages/timezone/v$version/ ./`.
+- [ ] Run `git add .`.
+- [ ] Run `git commit -m 'Release $version' -a`.
+- [ ] Run `git tag data-v$version`.
+- [ ] Push commit.
+- [ ] Push tag.
+- [ ] **Enable** Travis CI for Timezone.
+EOF
