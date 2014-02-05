@@ -8,7 +8,10 @@
                             "events", "calendar", "strftime"
                         ],
     "homepage":             "http://bigeasy.github.com/timezone",
-    "repository":           "git://github.com/bigeasy/timezone.git",
+    "repository":       {
+                            "type": "git",
+                            "url": "git://github.com/bigeasy/timezone.git"
+                        },
     "url":                  "http://bigeasy.github.com/timezone",
     "contributors" :    [
                             "Eero Ränik <eeror@eeror.com> (http://www.eeror.com/)"
