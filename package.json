@@ -8,6 +8,7 @@
                             "events", "calendar", "strftime"
                         ],
     "homepage":             "http://bigeasy.github.com/timezone",
+    "bugs":                 "https://github.com/bigeasy/timezone/issues",
     "repository":       {
                             "type": "git",
                             "url": "git://github.com/bigeasy/timezone.git"
