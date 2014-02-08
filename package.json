@@ -7,7 +7,7 @@
                             "tzdata", "utc", "gmt", "datetime", "tz", "format",
                             "events", "calendar", "strftime"
                         ],
-    "homepage":             "http://bigeasy.github.com/timezone",
+    "homepage":             "http://bigeasy.github.io/timezone",
     "bugs":                 "https://github.com/bigeasy/timezone/issues",
     "repository":       {
                             "type": "git",
