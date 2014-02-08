@@ -1,5 +1,6 @@
 ### Issue by Issue
 
+ * Remove "url" property from `package.json`. #188.
  * Upgrade Proof to 0.0.42. #187.
  * Upgrade Proof to 0.0.42. #187.
  * Fix `homepage` in `package.json`. #186.

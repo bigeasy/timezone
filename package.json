@@ -13,7 +13,6 @@
                             "type": "git",
                             "url": "git://github.com/bigeasy/timezone.git"
                         },
-    "url":                  "http://bigeasy.github.com/timezone",
     "contributors" :    [
                             "Eero Ränik <eeror@eeror.com> (http://www.eeror.com/)"
                         ],
