@@ -20,7 +20,7 @@
     "dependencies" :    {
                         },
     "devDependencies":  {
-                            "proof": "0.0.33",
+                            "proof": "0.0.42",
                             "uglify-js": "~1.3"
                         },
     "scripts" :         {
