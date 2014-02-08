@@ -33,7 +33,7 @@ Publish data files to `gh-pages`.
 - [ ] Run `git add v$version`.
 - [ ] Run `git commit -m 'Data files for v$version.' -a`.
 - [ ] Amend commit message to include `See #170`.
-- [ ] Push commit.
+- [ ] Push commit with `git push origin HEAD`.
 
 Publish data files as zip. (This is specific to my checkouts.)
 
@@ -45,8 +45,7 @@ Publish data files as zip. (This is specific to my checkouts.)
 - [ ] Run `git add .`.
 - [ ] Run `git commit -m 'Release $version' -a`.
 - [ ] Add a reference to this issue in the commit message.
-- [ ] Run `git tag data-v$version`.
-- [ ] Push commit.
-- [ ] Push tag.
+- [ ] Run `git tag data-v$version && git push origin data-v$version`.
+- [ ] Push commit with `git push origin HEAD`.
 - [ ] **Enable** Travis CI for Timezone.
 EOF
