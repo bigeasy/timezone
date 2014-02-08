@@ -1,3 +1,16 @@
+- Version 0.0.24.
+
+ * Upgrade TZ database to `tz2013e`. #189.
+ * Remove "url" property from `package.json`. #188.
+ * Upgrade Proof to 0.0.42. #187.
+ * Fix `homepage` in `package.json`. #186.
+ * Add `license` property to `package.json`. #185.
+ * Remove Node 0.6 target from Travis CI. #184.
+ * Add repository type to `package.json`. #183.
+ * Tidy `package.json`. #182.
+ * Create a checklist utility. #181.
+ * Add `bugs` property to `package.json`. #179.
+
 - Version 0.0.23.
 
 Fri Aug  2 00:17:59 UTC 2013
