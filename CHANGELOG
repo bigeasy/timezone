@@ -1,5 +1,7 @@
 - Version 0.0.24.
 
+Sat Feb  8 08:44:49 UTC 2014
+
  * Upgrade TZ database to `tz2013e`. #189.
  * Remove "url" property from `package.json`. #188.
  * Upgrade Proof to 0.0.42. #187.
