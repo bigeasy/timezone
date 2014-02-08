@@ -12,8 +12,8 @@
       },
       {
         "wallclock": 199929600000,
-        "format": "CIT",
-        "abbrev": "CIT",
+        "format": "WITA",
+        "abbrev": "WITA",
         "offset": 28800000,
         "posix": 199897200000,
         "save": 0

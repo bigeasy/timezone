@@ -4,32 +4,32 @@
       "z",
       {
         "wallclock": -189388800000,
-        "format": "WIT",
-        "abbrev": "WIT",
+        "format": "WIB",
+        "abbrev": "WIB",
         "offset": 25200000,
         "posix": -189415800000,
         "save": 0
       },
       {
         "wallclock": -620784000000,
-        "format": "WIT",
-        "abbrev": "WIT",
+        "format": "WIB",
+        "abbrev": "WIB",
         "offset": 27000000,
         "posix": -620812800000,
         "save": 0
       },
       {
         "wallclock": -683856000000,
-        "format": "WIT",
-        "abbrev": "WIT",
+        "format": "WIB",
+        "abbrev": "WIB",
         "offset": 28800000,
         "posix": -683883000000,
         "save": 0
       },
       {
         "wallclock": -766022400000,
-        "format": "WIT",
-        "abbrev": "WIT",
+        "format": "WIB",
+        "abbrev": "WIB",
         "offset": 27000000,
         "posix": -766054800000,
         "save": 0
@@ -44,8 +44,8 @@
       },
       {
         "wallclock": -1172880000000,
-        "format": "WIT",
-        "abbrev": "WIT",
+        "format": "WIB",
+        "abbrev": "WIB",
         "offset": 27000000,
         "posix": -1172906400000,
         "save": 0
@@ -60,8 +60,8 @@
       },
       {
         "wallclock": -3231273600000,
-        "format": "JMT",
-        "abbrev": "JMT",
+        "format": "BMT",
+        "abbrev": "BMT",
         "offset": 25632000,
         "posix": -3231299232000,
         "save": 0

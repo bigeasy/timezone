@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -766022400000,
-        "format": "CIT",
-        "abbrev": "CIT",
+        "format": "WITA",
+        "abbrev": "WITA",
         "offset": 28800000,
         "posix": -766054800000,
         "save": 0
@@ -20,8 +20,8 @@
       },
       {
         "wallclock": -1172880000000,
-        "format": "CIT",
-        "abbrev": "CIT",
+        "format": "WITA",
+        "abbrev": "WITA",
         "offset": 28800000,
         "posix": -1172908656000,
         "save": 0
