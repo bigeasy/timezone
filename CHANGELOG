@@ -1,5 +1,7 @@
 - Version 0.0.27.
 
+Wed Feb 12 16:49:07 UTC 2014
+
  * Upgrade TZ database to `2013h`. #198.
  * Add punctuation to checklist. #197.
 
