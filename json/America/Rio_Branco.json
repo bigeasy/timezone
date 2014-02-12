@@ -3,6 +3,14 @@
     "America/Rio_Branco": [
       "z",
       {
+        "wallclock": 1384041600000,
+        "format": "ACT",
+        "abbrev": "ACT",
+        "offset": -18000000,
+        "posix": 1384056000000,
+        "save": 0
+      },
+      {
         "wallclock": 1214265600000,
         "format": "AMT",
         "abbrev": "AMT",

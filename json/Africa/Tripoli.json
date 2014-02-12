@@ -3,6 +3,14 @@
     "Africa/Tripoli": [
       "z",
       {
+        "wallclock": 1382666400000,
+        "format": "EET",
+        "abbrev": "EET",
+        "offset": 7200000,
+        "posix": 1382659200000,
+        "save": 0
+      },
+      {
         "wallclock": 1352512800000,
         "format": "CE%sT",
         "abbrev": "CET",
@@ -76,7 +84,7 @@
     "Libya": [
       {
         "from": 2013,
-        "to": 1.7976931348623157e+308,
+        "to": 2013,
         "month": 9,
         "day": [
           5,
@@ -86,11 +94,11 @@
         "clock": "wallclock",
         "save": 0,
         "letter": "",
-        "saved": 3600000
+        "saved": 0
       },
       {
         "from": 2013,
-        "to": 1.7976931348623157e+308,
+        "to": 2013,
         "month": 2,
         "day": [
           5,
