@@ -158,8 +158,22 @@
         "saved": 0
       },
       {
-        "from": 2000,
+        "from": 2004,
         "to": 2004,
+        "month": 2,
+        "day": [
+          0,
+          -31
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "D",
+        "saved": 0
+      },
+      {
+        "from": 2000,
+        "to": 2003,
         "month": 3,
         "day": [
           0,

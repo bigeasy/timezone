@@ -3,14 +3,6 @@
     "Asia/Amman": [
       "z",
       {
-        "wallclock": 1351213200000,
-        "format": "AST",
-        "abbrev": "AST",
-        "offset": 10800000,
-        "posix": 1351202400000,
-        "save": 0
-      },
-      {
         "wallclock": -1230768000000,
         "format": "EE%sT",
         "abbrev": "EET",
@@ -32,14 +24,42 @@
   "rules": {
     "Jordan": [
       {
-        "from": 2006,
-        "to": 2012,
+        "from": 2014,
+        "to": 1.7976931348623157e+308,
         "month": 9,
         "day": [
           5,
           -31
         ],
         "time": 60,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      },
+      {
+        "from": 2014,
+        "to": 1.7976931348623157e+308,
+        "month": 2,
+        "day": [
+          4,
+          -31
+        ],
+        "time": 1440,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      },
+      {
+        "from": 2013,
+        "to": 2013,
+        "month": 11,
+        "day": [
+          7,
+          20
+        ],
+        "time": 0,
         "clock": "wallclock",
         "save": 0,
         "letter": "",
@@ -58,6 +78,20 @@
         "save": 60,
         "letter": "S",
         "saved": 0
+      },
+      {
+        "from": 2006,
+        "to": 2011,
+        "month": 9,
+        "day": [
+          5,
+          -31
+        ],
+        "time": 60,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
       },
       {
         "from": 2005,
@@ -216,20 +250,6 @@
       {
         "from": 1991,
         "to": 1991,
-        "month": 3,
-        "day": [
-          7,
-          17
-        ],
-        "time": 0,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
-      },
-      {
-        "from": 1991,
-        "to": 1991,
         "month": 8,
         "day": [
           7,
@@ -240,6 +260,20 @@
         "save": 0,
         "letter": "",
         "saved": 3600000
+      },
+      {
+        "from": 1991,
+        "to": 1991,
+        "month": 3,
+        "day": [
+          7,
+          17
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
       },
       {
         "from": 1990,
