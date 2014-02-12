@@ -43,7 +43,7 @@ Publish data files as zip. (This is specific to my checkouts.)
 - [ ] Run `rm -rf amd json jsonp`.
 - [ ] Run `rsync -av ~/git/pages/timezone/v$version/ ./`.
 - [ ] Run `git add .`.
-- [ ] Run `git commit -m 'Release $version' -a`.
+- [ ] Run `git commit -m 'Release $version.' -a`.
 - [ ] Add a reference to this issue in the commit message.
 - [ ] Run `git tag data-v$version && git push origin data-v$version`.
 - [ ] Push commit with `git push origin HEAD`.
