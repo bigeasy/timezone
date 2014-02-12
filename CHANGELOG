@@ -1,3 +1,7 @@
+- Version 0.0.28.
+
+ * Upgrade TZ library to `2013i`. #200.
+
 - Version 0.0.27.
 
 Wed Feb 12 16:49:07 UTC 2014
