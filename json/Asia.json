@@ -5956,7 +5956,7 @@
           "month": 3,
           "day": [
             7,
-            9
+            10
           ],
           "time": 0,
           "clock": "wallclock",
@@ -5970,7 +5970,7 @@
           "month": 8,
           "day": [
             7,
-            3
+            4
           ],
           "time": 0,
           "clock": "wallclock",
@@ -8116,7 +8116,7 @@
           "month": 3,
           "day": [
             7,
-            9
+            10
           ],
           "time": 0,
           "clock": "wallclock",
@@ -8130,7 +8130,7 @@
           "month": 8,
           "day": [
             7,
-            3
+            4
           ],
           "time": 0,
           "clock": "wallclock",
@@ -9634,6 +9634,23 @@
     "zones": {
       "Asia/Istanbul": [
         "z",
+        {
+          "wallclock": 1396234800000,
+          "format": "EE%sT",
+          "abbrev": "EEST",
+          "offset": 7200000,
+          "posix": 1396227600000,
+          "save": 3600000,
+          "rules": "EU"
+        },
+        {
+          "wallclock": 1396148400000,
+          "format": "EET",
+          "abbrev": "EET",
+          "offset": 7200000,
+          "posix": 1396141200000,
+          "save": 0
+        },
         {
           "wallclock": 1301281200000,
           "format": "EE%sT",
@@ -11369,7 +11386,7 @@
           "month": 3,
           "day": [
             7,
-            9
+            10
           ],
           "time": 0,
           "clock": "wallclock",
@@ -11383,7 +11400,7 @@
           "month": 8,
           "day": [
             7,
-            3
+            4
           ],
           "time": 0,
           "clock": "wallclock",
@@ -19672,7 +19689,7 @@
           "month": 3,
           "day": [
             7,
-            9
+            10
           ],
           "time": 0,
           "clock": "wallclock",
@@ -19686,7 +19703,7 @@
           "month": 8,
           "day": [
             7,
-            3
+            4
           ],
           "time": 0,
           "clock": "wallclock",

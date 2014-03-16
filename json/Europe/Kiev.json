@@ -12,29 +12,21 @@
         "rules": "EU"
       },
       {
-        "wallclock": 694224000000,
+        "wallclock": 686113200000,
         "format": "EE%sT",
         "abbrev": "EET",
         "offset": 7200000,
-        "posix": 694216800000,
+        "posix": 686102400000,
         "save": 0,
         "rules": "E-Eur"
       },
       {
         "wallclock": 646797600000,
-        "format": "EET",
-        "abbrev": "EET",
+        "format": "EEST",
+        "abbrev": "EEST",
         "offset": 7200000,
-        "posix": 646786800000,
-        "save": 0
-      },
-      {
-        "wallclock": 631152000000,
-        "format": "MSK",
-        "abbrev": "MSK",
-        "offset": 10800000,
-        "posix": 631141200000,
-        "save": 0
+        "posix": 646783200000,
+        "save": 3600000
       },
       {
         "wallclock": -825379200000,
