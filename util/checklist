@@ -17,7 +17,7 @@ Once again; here is the release checklist mentioned in #140.
 - [ ] Run `git commit -m 'Release $version.' -a`.
 - [ ] Get the date of the commit and add it to change log.
 - [ ] Run `git commit --amend -a`.
-- [ ] Add a reference to this issue in the commit message.
+- [ ] Close this issue with that commit message.
 - [ ] Run `git tag v$version && git push origin v$version`.
 - [ ] Merge `release-$version` into `master` with `git checkout master && git splice release-$version`.
 - [ ] Push `master`.
