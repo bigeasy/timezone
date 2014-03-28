@@ -1,3 +1,8 @@
+- Verison 0.0.30.
+
+ * Upgrade TZ database to `2014b`. #206.
+ * Upgrade Proof to 0.0.44. #205.
+
 - Version 0.0.29.
 
 Sun Mar 16 04:47:13 UTC 2014
