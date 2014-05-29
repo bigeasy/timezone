@@ -1,3 +1,7 @@
+- Verison 0.0.31.
+
+ * Upgrade TZ database to `2014b`. #209.
+
 - Verison 0.0.30.
 
 Fri Mar 28 02:32:38 UTC 2014
