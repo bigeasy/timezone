@@ -1,6 +1,7 @@
 - Verison 0.0.31.
 
  * Upgrade TZ database to `2014b`. #209.
+ * Upgrade Proof to 0.0.45. #208.
 
 - Verison 0.0.30.
 
