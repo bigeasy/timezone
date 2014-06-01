@@ -1,5 +1,7 @@
 - Verison 0.0.31.
 
+Sun Jun  1 21:14:47 UTC 2014
+
  * Upgrade TZ database to `2014b`. #209.
  * Upgrade Proof to 0.0.45. #208.
 
