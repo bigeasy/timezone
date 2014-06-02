@@ -109,7 +109,7 @@
   }
 
   function convert (vargs) {
-    if (!vargs.length) return "0.0.31";
+    if (!vargs.length) return "0.0.32";
 
     var request = Object.create(this)
       , adjustments = []
