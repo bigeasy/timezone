@@ -56,12 +56,13 @@
         "month": 4,
         "day": [
           7,
-          3
+          5
         ],
-        "time": 0,
-        "clock": "standard",
+        "time": 1440,
+        "clock": "wallclock",
         "save": 60,
-        "letter": "S"
+        "letter": "S",
+        "saved": 0
       },
       {
         "from": 2021,
@@ -71,10 +72,11 @@
           7,
           13
         ],
-        "time": 0,
-        "clock": "standard",
+        "time": 1440,
+        "clock": "wallclock",
         "save": 60,
-        "letter": "S"
+        "letter": "S",
+        "saved": 0
       },
       {
         "from": 2020,
@@ -82,12 +84,13 @@
         "month": 4,
         "day": [
           7,
-          24
+          28
         ],
-        "time": 0,
-        "clock": "standard",
+        "time": 1440,
+        "clock": "wallclock",
         "save": 60,
-        "letter": "S"
+        "letter": "S",
+        "saved": 0
       },
       {
         "from": 2019,
@@ -95,12 +98,13 @@
         "month": 4,
         "day": [
           7,
-          6
+          2
         ],
-        "time": 0,
-        "clock": "standard",
+        "time": 1440,
+        "clock": "wallclock",
         "save": 0,
-        "letter": ""
+        "letter": "",
+        "saved": 0
       },
       {
         "from": 2019,
@@ -108,12 +112,13 @@
         "month": 5,
         "day": [
           7,
-          5
+          6
         ],
-        "time": 0,
-        "clock": "standard",
+        "time": 1440,
+        "clock": "wallclock",
         "save": 60,
-        "letter": "S"
+        "letter": "S",
+        "saved": 0
       },
       {
         "from": 2015,
@@ -135,12 +140,13 @@
         "month": 5,
         "day": [
           7,
-          15
+          14
         ],
-        "time": 0,
-        "clock": "standard",
+        "time": 1440,
+        "clock": "wallclock",
         "save": 60,
-        "letter": "S"
+        "letter": "S",
+        "saved": 0
       },
       {
         "from": 2018,
@@ -148,12 +154,13 @@
         "month": 4,
         "day": [
           7,
-          16
+          10
         ],
-        "time": 0,
-        "clock": "standard",
+        "time": 1440,
+        "clock": "wallclock",
         "save": 0,
-        "letter": ""
+        "letter": "",
+        "saved": 0
       },
       {
         "from": 2017,
@@ -161,12 +168,13 @@
         "month": 5,
         "day": [
           7,
-          26
+          29
         ],
-        "time": 0,
-        "clock": "standard",
+        "time": 1440,
+        "clock": "wallclock",
         "save": 60,
-        "letter": "S"
+        "letter": "S",
+        "saved": 0
       },
       {
         "from": 2017,
@@ -174,12 +182,13 @@
         "month": 4,
         "day": [
           7,
-          27
+          25
         ],
-        "time": 0,
-        "clock": "standard",
+        "time": 1440,
+        "clock": "wallclock",
         "save": 0,
-        "letter": ""
+        "letter": "",
+        "saved": 0
       },
       {
         "from": 2016,
@@ -187,12 +196,13 @@
         "month": 5,
         "day": [
           7,
-          7
+          2
         ],
-        "time": 0,
-        "clock": "standard",
+        "time": 1440,
+        "clock": "wallclock",
         "save": 0,
-        "letter": ""
+        "letter": "",
+        "saved": 0
       },
       {
         "from": 2016,
@@ -202,10 +212,11 @@
           7,
           7
         ],
-        "time": 0,
-        "clock": "standard",
+        "time": 1440,
+        "clock": "wallclock",
         "save": 60,
-        "letter": "S"
+        "letter": "S",
+        "saved": 0
       },
       {
         "from": 2015,
@@ -213,9 +224,9 @@
         "month": 6,
         "day": [
           7,
-          18
+          23
         ],
-        "time": 0,
+        "time": 1440,
         "clock": "wallclock",
         "save": 60,
         "letter": "S",
@@ -227,9 +238,9 @@
         "month": 5,
         "day": [
           7,
-          18
+          11
         ],
-        "time": 60,
+        "time": 1440,
         "clock": "wallclock",
         "save": 0,
         "letter": "",
@@ -241,9 +252,9 @@
         "month": 6,
         "day": [
           7,
-          29
+          31
         ],
-        "time": 0,
+        "time": 1440,
         "clock": "wallclock",
         "save": 60,
         "letter": "S",
@@ -255,9 +266,9 @@
         "month": 5,
         "day": [
           7,
-          29
+          26
         ],
-        "time": 60,
+        "time": 1440,
         "clock": "wallclock",
         "save": 0,
         "letter": "",
@@ -311,9 +322,9 @@
         "month": 8,
         "day": [
           7,
-          10
+          9
         ],
-        "time": 0,
+        "time": 1440,
         "clock": "wallclock",
         "save": 60,
         "letter": "S",
@@ -325,9 +336,9 @@
         "month": 7,
         "day": [
           7,
-          11
+          10
         ],
-        "time": 0,
+        "time": 1440,
         "clock": "wallclock",
         "save": 0,
         "letter": "",

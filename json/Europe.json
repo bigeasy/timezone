@@ -6388,7 +6388,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 7200000
         },
         {
@@ -6403,7 +6403,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1921,
@@ -6416,7 +6416,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -6430,7 +6430,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "M",
+          "letter": "MSM",
           "saved": 3600000
         },
         {
@@ -6444,7 +6444,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "MSK",
           "saved": 3600000
         },
         {
@@ -6458,7 +6458,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -14080,7 +14080,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 7200000
         },
         {
@@ -14095,7 +14095,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1921,
@@ -14108,7 +14108,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -14122,7 +14122,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "M",
+          "letter": "MSM",
           "saved": 3600000
         },
         {
@@ -14136,7 +14136,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "MSK",
           "saved": 3600000
         },
         {
@@ -14150,7 +14150,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -15136,7 +15136,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 7200000
         },
         {
@@ -15151,7 +15151,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1921,
@@ -15164,7 +15164,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -15178,7 +15178,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "M",
+          "letter": "MSM",
           "saved": 3600000
         },
         {
@@ -15192,7 +15192,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "MSK",
           "saved": 3600000
         },
         {
@@ -15206,7 +15206,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -21088,7 +21088,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 7200000
         },
         {
@@ -21103,7 +21103,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1921,
@@ -21116,7 +21116,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -21130,7 +21130,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "M",
+          "letter": "MSM",
           "saved": 3600000
         },
         {
@@ -21144,7 +21144,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "MSK",
           "saved": 3600000
         },
         {
@@ -21158,7 +21158,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -22246,8 +22246,17 @@
           "save": 0
         },
         {
-          "wallclock": -1593813600000,
+          "wallclock": -1522713600000,
           "format": "MSK/MSD",
+          "abbrev": "MSK",
+          "offset": 10800000,
+          "posix": -1522728000000,
+          "save": 0,
+          "rules": "Russia"
+        },
+        {
+          "wallclock": -1593813600000,
+          "format": "%s",
           "abbrev": "MSD",
           "offset": 10800000,
           "posix": -1593829848000,
@@ -22420,7 +22429,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 7200000
         },
         {
@@ -22435,7 +22444,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1921,
@@ -22448,7 +22457,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -22462,7 +22471,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "M",
+          "letter": "MSM",
           "saved": 3600000
         },
         {
@@ -22476,7 +22485,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "MSK",
           "saved": 3600000
         },
         {
@@ -22490,7 +22499,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -25478,7 +25487,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 7200000
         },
         {
@@ -25493,7 +25502,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1921,
@@ -25506,7 +25515,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -25520,7 +25529,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "M",
+          "letter": "MSM",
           "saved": 3600000
         },
         {
@@ -25534,7 +25543,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "MSK",
           "saved": 3600000
         },
         {
@@ -25548,7 +25557,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -26979,7 +26988,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 7200000
         },
         {
@@ -26994,7 +27003,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1921,
@@ -27007,7 +27016,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -27021,7 +27030,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "M",
+          "letter": "MSM",
           "saved": 3600000
         },
         {
@@ -27035,7 +27044,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "MSK",
           "saved": 3600000
         },
         {
@@ -27049,7 +27058,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -28760,7 +28769,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 7200000
         },
         {
@@ -28775,7 +28784,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1921,
@@ -28788,7 +28797,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -28802,7 +28811,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "M",
+          "letter": "MSM",
           "saved": 3600000
         },
         {
@@ -28816,7 +28825,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "MSK",
           "saved": 3600000
         },
         {
@@ -28830,7 +28839,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -30912,7 +30921,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 7200000
         },
         {
@@ -30927,7 +30936,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1921,
@@ -30940,7 +30949,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -30954,7 +30963,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "M",
+          "letter": "MSM",
           "saved": 3600000
         },
         {
@@ -30968,7 +30977,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "MSK",
           "saved": 3600000
         },
         {
@@ -30982,7 +30991,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -31958,7 +31967,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 7200000
         },
         {
@@ -31973,7 +31982,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1921,
@@ -31986,7 +31995,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -32000,7 +32009,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "M",
+          "letter": "MSM",
           "saved": 3600000
         },
         {
@@ -32014,7 +32023,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "MSK",
           "saved": 3600000
         },
         {
@@ -32028,7 +32037,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -32877,7 +32886,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 7200000
         },
         {
@@ -32892,7 +32901,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1921,
@@ -32905,7 +32914,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -32919,7 +32928,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "M",
+          "letter": "MSM",
           "saved": 3600000
         },
         {
@@ -32933,7 +32942,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "MSK",
           "saved": 3600000
         },
         {
@@ -32947,7 +32956,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -35413,7 +35422,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 7200000
         },
         {
@@ -35428,7 +35437,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1921,
@@ -35441,7 +35450,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -35455,7 +35464,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "M",
+          "letter": "MSM",
           "saved": 3600000
         },
         {
@@ -35469,7 +35478,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "MSK",
           "saved": 3600000
         },
         {
@@ -35483,7 +35492,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -35779,7 +35788,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 7200000
         },
         {
@@ -35794,7 +35803,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1921,
@@ -35807,7 +35816,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -35821,7 +35830,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "M",
+          "letter": "MSM",
           "saved": 3600000
         },
         {
@@ -35835,7 +35844,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "MSK",
           "saved": 3600000
         },
         {
@@ -35849,7 +35858,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -37475,7 +37484,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 7200000
         },
         {
@@ -37490,7 +37499,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1921,
@@ -37503,7 +37512,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
@@ -37517,7 +37526,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "M",
+          "letter": "MSM",
           "saved": 3600000
         },
         {
@@ -37531,7 +37540,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "MSK",
           "saved": 3600000
         },
         {
@@ -37545,7 +37554,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "MSD",
           "saved": 0
         },
         {
