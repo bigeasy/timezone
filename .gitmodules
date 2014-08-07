@@ -1,3 +1,0 @@
-[submodule "code"]
-	path = code
-	url = git://github.com/bigeasy/timezone.git
