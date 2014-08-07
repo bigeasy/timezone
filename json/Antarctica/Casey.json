@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": 1329883200000,
-        "format": "WST",
-        "abbrev": "WST",
+        "format": "AWST",
+        "abbrev": "AWST",
         "offset": 28800000,
         "posix": 1329843600000,
         "save": 0
@@ -20,8 +20,8 @@
       },
       {
         "wallclock": 1267754400000,
-        "format": "WST",
-        "abbrev": "WST",
+        "format": "AWST",
+        "abbrev": "AWST",
         "offset": 28800000,
         "posix": 1267714800000,
         "save": 0
@@ -36,8 +36,8 @@
       },
       {
         "wallclock": -31536000000,
-        "format": "WST",
-        "abbrev": "WST",
+        "format": "AWST",
+        "abbrev": "AWST",
         "offset": 28800000,
         "posix": -31536000000,
         "save": 0

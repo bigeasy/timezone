@@ -3,6 +3,14 @@
     "Asia/Irkutsk": [
       "z",
       {
+        "wallclock": 1414288800000,
+        "format": "IRKT",
+        "abbrev": "IRKT",
+        "offset": 28800000,
+        "posix": 1414256400000,
+        "save": 0
+      },
+      {
         "wallclock": 1301191200000,
         "format": "IRKT",
         "abbrev": "IRKT",
@@ -42,22 +50,22 @@
         "format": "IRKT",
         "abbrev": "IRKT",
         "offset": 25200000,
-        "posix": -1575874640000,
+        "posix": -1575874635000,
         "save": 0
       },
       {
         "wallclock": -2840140800000,
         "format": "IMT",
         "abbrev": "IMT",
-        "offset": 25040000,
-        "posix": -2840165840000,
+        "offset": 25035000,
+        "posix": -2840165835000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 25040000,
+        "offset": 25035000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

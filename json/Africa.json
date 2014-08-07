@@ -49,7 +49,7 @@
     "rules": {
       "Ghana": [
         {
-          "from": 1936,
+          "from": 1920,
           "to": 1942,
           "month": 8,
           "day": [
@@ -63,7 +63,7 @@
           "saved": 0
         },
         {
-          "from": 1936,
+          "from": 1920,
           "to": 1942,
           "month": 11,
           "day": [
@@ -600,34 +600,18 @@
       "Africa/Bamako": [
         "z",
         {
-          "wallclock": -300844800000,
-          "format": "GMT",
-          "abbrev": "GMT",
-          "offset": 0,
-          "posix": -300841200000,
-          "save": 0
-        },
-        {
-          "wallclock": -1131235200000,
-          "format": "WAT",
-          "abbrev": "WAT",
-          "offset": -3600000,
-          "posix": -1131235200000,
-          "save": 0
-        },
-        {
           "wallclock": -1830384000000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -1830382080000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -1920000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -664,34 +648,18 @@
       "Africa/Banjul": [
         "z",
         {
-          "wallclock": -189388800000,
+          "wallclock": -1830384000000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -189385200000,
-          "save": 0
-        },
-        {
-          "wallclock": -1104537600000,
-          "format": "WAT",
-          "abbrev": "WAT",
-          "offset": -3600000,
-          "posix": -1104533604000,
-          "save": 0
-        },
-        {
-          "wallclock": -1830384000000,
-          "format": "BMT",
-          "abbrev": "BMT",
-          "offset": -3996000,
-          "posix": -1830380004000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -3996000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -3048,34 +3016,18 @@
       "Africa/Conakry": [
         "z",
         {
-          "wallclock": -315619200000,
-          "format": "GMT",
-          "abbrev": "GMT",
-          "offset": 0,
-          "posix": -315615600000,
-          "save": 0
-        },
-        {
-          "wallclock": -1131235200000,
-          "format": "WAT",
-          "abbrev": "WAT",
-          "offset": -3600000,
-          "posix": -1131235200000,
-          "save": 0
-        },
-        {
           "wallclock": -1830384000000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -1830380708000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -3292000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -3088,26 +3040,18 @@
       "Africa/Dakar": [
         "z",
         {
-          "wallclock": -902102400000,
+          "wallclock": -1830384000000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -902098800000,
-          "save": 0
-        },
-        {
-          "wallclock": -1830384000000,
-          "format": "WAT",
-          "abbrev": "WAT",
-          "offset": -3600000,
-          "posix": -1830379816000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -4184000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -4028,101 +3972,24 @@
       "Africa/Freetown": [
         "z",
         {
-          "wallclock": -410227200000,
-          "format": "%s",
-          "abbrev": "WAT",
+          "wallclock": -1830384000000,
+          "format": "GMT",
+          "abbrev": "GMT",
           "offset": 0,
-          "posix": -410223600000,
-          "save": 0,
-          "rules": "SL"
-        },
-        {
-          "wallclock": -1785715200000,
-          "format": "%s",
-          "abbrev": "WAT",
-          "offset": -3600000,
-          "posix": -1785712020000,
-          "save": 0,
-          "rules": "SL"
-        },
-        {
-          "wallclock": -2776982400000,
-          "format": "FMT",
-          "abbrev": "FMT",
-          "offset": -3180000,
-          "posix": -2776979220000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -3180000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
       ]
     },
-    "rules": {
-      "SL": [
-        {
-          "from": 1957,
-          "to": 1962,
-          "month": 5,
-          "day": [
-            7,
-            1
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 60,
-          "letter": "SLST",
-          "saved": 0
-        },
-        {
-          "from": 1957,
-          "to": 1962,
-          "month": 8,
-          "day": [
-            7,
-            1
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 0,
-          "letter": "GMT",
-          "saved": 3600000
-        },
-        {
-          "from": 1935,
-          "to": 1942,
-          "month": 5,
-          "day": [
-            7,
-            1
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 40,
-          "letter": "SLST",
-          "saved": 0
-        },
-        {
-          "from": 1935,
-          "to": 1942,
-          "month": 9,
-          "day": [
-            7,
-            1
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 0,
-          "letter": "WAT",
-          "saved": 2400000
-        }
-      ]
-    }
+    "rules": {}
   },
   {
     "zones": {
@@ -4593,18 +4460,18 @@
       "Africa/Lome": [
         "z",
         {
-          "wallclock": -2429827200000,
+          "wallclock": -1830384000000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -2429827492000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 292000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -5025,34 +4892,18 @@
       "Africa/Nouakchott": [
         "z",
         {
-          "wallclock": -286934400000,
-          "format": "GMT",
-          "abbrev": "GMT",
-          "offset": 0,
-          "posix": -286930800000,
-          "save": 0
-        },
-        {
-          "wallclock": -1131235200000,
-          "format": "WAT",
-          "abbrev": "WAT",
-          "offset": -3600000,
-          "posix": -1131235200000,
-          "save": 0
-        },
-        {
           "wallclock": -1830384000000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -1830380172000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -3828000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -5069,14 +4920,14 @@
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -1830383636000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -364000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -5125,22 +4976,14 @@
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -1830381808000,
-          "save": 0
-        },
-        {
-          "wallclock": -2713910400000,
-          "format": "LMT",
-          "abbrev": "LMT",
-          "offset": -2192000,
-          "posix": -2713912016000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 1616000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -5153,34 +4996,18 @@
       "Africa/Timbuktu": [
         "z",
         {
-          "wallclock": -300844800000,
-          "format": "GMT",
-          "abbrev": "GMT",
-          "offset": 0,
-          "posix": -300841200000,
-          "save": 0
-        },
-        {
-          "wallclock": -1131235200000,
-          "format": "WAT",
-          "abbrev": "WAT",
-          "offset": -3600000,
-          "posix": -1131235200000,
-          "save": 0
-        },
-        {
           "wallclock": -1830384000000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -1830382080000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -1920000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }

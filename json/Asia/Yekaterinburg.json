@@ -3,6 +3,14 @@
     "Asia/Yekaterinburg": [
       "z",
       {
+        "wallclock": 1414288800000,
+        "format": "YEKT",
+        "abbrev": "YEKT",
+        "offset": 18000000,
+        "posix": 1414267200000,
+        "save": 0
+      },
+      {
         "wallclock": 1301191200000,
         "format": "YEKT",
         "abbrev": "YEKT",
@@ -42,14 +50,14 @@
         "format": "SVET",
         "abbrev": "SVET",
         "offset": 14400000,
-        "posix": -1592611344000,
+        "posix": -1592611353000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 14544000,
+        "offset": 14553000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

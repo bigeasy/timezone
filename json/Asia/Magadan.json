@@ -3,6 +3,14 @@
     "Asia/Magadan": [
       "z",
       {
+        "wallclock": 1414288800000,
+        "format": "MAGT",
+        "abbrev": "MAGT",
+        "offset": 36000000,
+        "posix": 1414245600000,
+        "save": 0
+      },
+      {
         "wallclock": 1301191200000,
         "format": "MAGT",
         "abbrev": "MAGT",

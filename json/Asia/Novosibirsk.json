@@ -3,6 +3,14 @@
     "Asia/Novosibirsk": [
       "z",
       {
+        "wallclock": 1414288800000,
+        "format": "NOVT",
+        "abbrev": "NOVT",
+        "offset": 21600000,
+        "posix": 1414263600000,
+        "save": 0
+      },
+      {
         "wallclock": 1301191200000,
         "format": "NOVT",
         "abbrev": "NOVT",

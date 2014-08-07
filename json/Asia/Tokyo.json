@@ -3,18 +3,18 @@
     "Asia/Tokyo": [
       "z",
       {
-        "wallclock": -1009843200000,
+        "wallclock": -1017792000000,
         "format": "J%sT",
         "abbrev": "JST",
         "offset": 32400000,
-        "posix": -1009875600000,
+        "posix": -1017824400000,
         "save": 0,
         "rules": "Japan"
       },
       {
         "wallclock": -2335219200000,
-        "format": "CJT",
-        "abbrev": "CJT",
+        "format": "JCST",
+        "abbrev": "JCST",
         "offset": 32400000,
         "posix": -2335251600000,
         "save": 0

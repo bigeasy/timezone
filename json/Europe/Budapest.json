@@ -21,11 +21,11 @@
         "rules": "Hungary"
       },
       {
-        "wallclock": -906933600000,
+        "wallclock": -906768000000,
         "format": "CE%sT",
         "abbrev": "CEST",
         "offset": 3600000,
-        "posix": -906937200000,
+        "posix": -906771600000,
         "save": 3600000,
         "rules": "C-Eur"
       },
@@ -246,20 +246,6 @@
       {
         "from": 1950,
         "to": 1950,
-        "month": 9,
-        "day": [
-          7,
-          23
-        ],
-        "time": 180,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
-        "from": 1950,
-        "to": 1950,
         "month": 3,
         "day": [
           7,
@@ -272,12 +258,12 @@
         "saved": 0
       },
       {
-        "from": 1946,
-        "to": 1949,
+        "from": 1950,
+        "to": 1950,
         "month": 9,
         "day": [
-          0,
-          1
+          7,
+          23
         ],
         "time": 180,
         "clock": "wallclock",
@@ -301,6 +287,20 @@
       },
       {
         "from": 1946,
+        "to": 1949,
+        "month": 9,
+        "day": [
+          0,
+          1
+        ],
+        "time": 180,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      },
+      {
+        "from": 1946,
         "to": 1946,
         "month": 2,
         "day": [
@@ -319,7 +319,7 @@
         "month": 10,
         "day": [
           7,
-          3
+          1
         ],
         "time": 0,
         "clock": "wallclock",
@@ -342,40 +342,12 @@
         "saved": 0
       },
       {
-        "from": 1920,
-        "to": 1920,
-        "month": 8,
-        "day": [
-          7,
-          30
-        ],
-        "time": 180,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
-        "from": 1920,
-        "to": 1920,
-        "month": 3,
-        "day": [
-          7,
-          5
-        ],
-        "time": 180,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
-      },
-      {
         "from": 1919,
         "to": 1919,
-        "month": 8,
+        "month": 10,
         "day": [
           7,
-          15
+          24
         ],
         "time": 180,
         "clock": "wallclock",
@@ -403,7 +375,7 @@
         "month": 8,
         "day": [
           7,
-          29
+          16
         ],
         "time": 180,
         "clock": "wallclock",

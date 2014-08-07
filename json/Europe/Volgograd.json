@@ -3,17 +3,25 @@
     "Europe/Volgograd": [
       "z",
       {
+        "wallclock": 1414288800000,
+        "format": "MSK",
+        "abbrev": "MSK",
+        "offset": 10800000,
+        "posix": 1414274400000,
+        "save": 0
+      },
+      {
         "wallclock": 1301191200000,
-        "format": "VOLT",
-        "abbrev": "VOLT",
+        "format": "MSK",
+        "abbrev": "MSK",
         "offset": 14400000,
         "posix": 1301180400000,
         "save": 0
       },
       {
         "wallclock": 701834400000,
-        "format": "VOL%sT",
-        "abbrev": "VOLST",
+        "format": "MSK",
+        "abbrev": "MSK",
         "offset": 10800000,
         "posix": 701820000000,
         "save": 3600000,

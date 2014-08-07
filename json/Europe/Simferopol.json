@@ -3,6 +3,14 @@
     "Europe/Simferopol": [
       "z",
       {
+        "wallclock": 1414288800000,
+        "format": "MSK",
+        "abbrev": "MSK",
+        "offset": 10800000,
+        "posix": 1414274400000,
+        "save": 0
+      },
+      {
         "wallclock": 1396144800000,
         "format": "MSK",
         "abbrev": "MSK",

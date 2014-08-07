@@ -3,6 +3,14 @@
     "Europe/Kaliningrad": [
       "z",
       {
+        "wallclock": 1414288800000,
+        "format": "EET",
+        "abbrev": "EET",
+        "offset": 7200000,
+        "posix": 1414278000000,
+        "save": 0
+      },
+      {
         "wallclock": 1301191200000,
         "format": "FET",
         "abbrev": "FET",

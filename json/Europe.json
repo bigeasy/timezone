@@ -5167,11 +5167,11 @@
           "rules": "Hungary"
         },
         {
-          "wallclock": -906933600000,
+          "wallclock": -906768000000,
           "format": "CE%sT",
           "abbrev": "CEST",
           "offset": 3600000,
-          "posix": -906937200000,
+          "posix": -906771600000,
           "save": 3600000,
           "rules": "C-Eur"
         },
@@ -5392,20 +5392,6 @@
         {
           "from": 1950,
           "to": 1950,
-          "month": 9,
-          "day": [
-            7,
-            23
-          ],
-          "time": 180,
-          "clock": "wallclock",
-          "save": 0,
-          "letter": "",
-          "saved": 3600000
-        },
-        {
-          "from": 1950,
-          "to": 1950,
           "month": 3,
           "day": [
             7,
@@ -5418,12 +5404,12 @@
           "saved": 0
         },
         {
-          "from": 1946,
-          "to": 1949,
+          "from": 1950,
+          "to": 1950,
           "month": 9,
           "day": [
-            0,
-            1
+            7,
+            23
           ],
           "time": 180,
           "clock": "wallclock",
@@ -5447,6 +5433,20 @@
         },
         {
           "from": 1946,
+          "to": 1949,
+          "month": 9,
+          "day": [
+            0,
+            1
+          ],
+          "time": 180,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1946,
           "to": 1946,
           "month": 2,
           "day": [
@@ -5465,7 +5465,7 @@
           "month": 10,
           "day": [
             7,
-            3
+            1
           ],
           "time": 0,
           "clock": "wallclock",
@@ -5488,40 +5488,12 @@
           "saved": 0
         },
         {
-          "from": 1920,
-          "to": 1920,
-          "month": 8,
-          "day": [
-            7,
-            30
-          ],
-          "time": 180,
-          "clock": "wallclock",
-          "save": 0,
-          "letter": "",
-          "saved": 3600000
-        },
-        {
-          "from": 1920,
-          "to": 1920,
-          "month": 3,
-          "day": [
-            7,
-            5
-          ],
-          "time": 180,
-          "clock": "wallclock",
-          "save": 60,
-          "letter": "S",
-          "saved": 0
-        },
-        {
           "from": 1919,
           "to": 1919,
-          "month": 8,
+          "month": 10,
           "day": [
             7,
-            15
+            24
           ],
           "time": 180,
           "clock": "wallclock",
@@ -5549,7 +5521,7 @@
           "month": 8,
           "day": [
             7,
-            29
+            16
           ],
           "time": 180,
           "clock": "wallclock",
@@ -10661,7 +10633,7 @@
           "format": "EE%sT",
           "abbrev": "EET",
           "offset": 7200000,
-          "posix": -1535938792000,
+          "posix": -1535938789000,
           "save": 0,
           "rules": "Finland"
         },
@@ -10669,15 +10641,15 @@
           "wallclock": -2890252800000,
           "format": "HMT",
           "abbrev": "HMT",
-          "offset": 5992000,
-          "posix": -2890258792000,
+          "offset": 5989000,
+          "posix": -2890258789000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 5992000,
+          "offset": 5989000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -10805,9 +10777,9 @@
           "month": 3,
           "day": [
             7,
-            3
+            2
           ],
-          "time": 0,
+          "time": 1440,
           "clock": "wallclock",
           "save": 60,
           "letter": "S",
@@ -10819,9 +10791,9 @@
           "month": 9,
           "day": [
             7,
-            3
+            4
           ],
-          "time": 0,
+          "time": 60,
           "clock": "wallclock",
           "save": 0,
           "letter": "",
@@ -13887,6 +13859,14 @@
     "zones": {
       "Europe/Kaliningrad": [
         "z",
+        {
+          "wallclock": 1414288800000,
+          "format": "EET",
+          "abbrev": "EET",
+          "offset": 7200000,
+          "posix": 1414278000000,
+          "save": 0
+        },
         {
           "wallclock": 1301191200000,
           "format": "FET",
@@ -20675,7 +20655,7 @@
           "format": "EE%sT",
           "abbrev": "EET",
           "offset": 7200000,
-          "posix": -1535938792000,
+          "posix": -1535938789000,
           "save": 0,
           "rules": "Finland"
         },
@@ -20683,15 +20663,15 @@
           "wallclock": -2890252800000,
           "format": "HMT",
           "abbrev": "HMT",
-          "offset": 5992000,
-          "posix": -2890258792000,
+          "offset": 5989000,
+          "posix": -2890258789000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 5992000,
+          "offset": 5989000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -20819,9 +20799,9 @@
           "month": 3,
           "day": [
             7,
-            3
+            2
           ],
-          "time": 0,
+          "time": 1440,
           "clock": "wallclock",
           "save": 60,
           "letter": "S",
@@ -20833,9 +20813,9 @@
           "month": 9,
           "day": [
             7,
-            3
+            4
           ],
-          "time": 0,
+          "time": 60,
           "clock": "wallclock",
           "save": 0,
           "letter": "",
@@ -22203,6 +22183,14 @@
       "Europe/Moscow": [
         "z",
         {
+          "wallclock": 1414288800000,
+          "format": "MSK",
+          "abbrev": "MSK",
+          "offset": 10800000,
+          "posix": 1414274400000,
+          "save": 0
+        },
+        {
           "wallclock": 1301191200000,
           "format": "MSK",
           "abbrev": "MSK",
@@ -22259,7 +22247,7 @@
           "format": "%s",
           "abbrev": "MSD",
           "offset": 10800000,
-          "posix": -1593829848000,
+          "posix": -1593829879000,
           "save": 3600000,
           "rules": "Russia"
         },
@@ -22267,8 +22255,8 @@
           "wallclock": -1688256000000,
           "format": "%s",
           "abbrev": "MMT",
-          "offset": 9048000,
-          "posix": -1688265000000,
+          "offset": 9079000,
+          "posix": -1688265017000,
           "save": 0,
           "rules": "Russia"
         },
@@ -22276,15 +22264,15 @@
           "wallclock": -2840140800000,
           "format": "MMT",
           "abbrev": "MMT",
-          "offset": 9000000,
-          "posix": -2840149820000,
+          "offset": 9017000,
+          "posix": -2840149817000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 9020000,
+          "offset": 9017000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -25179,54 +25167,54 @@
           "format": "EET",
           "abbrev": "EET",
           "offset": 7200000,
-          "posix": -1377308184000,
+          "posix": -1377308188000,
           "save": 0
         },
         {
           "wallclock": -1597266000000,
           "format": "RMT",
           "abbrev": "RMT",
-          "offset": 5784000,
-          "posix": -1597275384000,
+          "offset": 5788000,
+          "posix": -1597275388000,
           "save": 0
         },
         {
           "wallclock": -1601676000000,
           "format": "LST",
           "abbrev": "LST",
-          "offset": 5784000,
-          "posix": -1601681784000,
+          "offset": 5788000,
+          "posix": -1601681788000,
           "save": 3600000
         },
         {
           "wallclock": -1618693200000,
           "format": "RMT",
           "abbrev": "RMT",
-          "offset": 5784000,
-          "posix": -1618702584000,
+          "offset": 5788000,
+          "posix": -1618702588000,
           "save": 0
         },
         {
           "wallclock": -1632002400000,
           "format": "LST",
           "abbrev": "LST",
-          "offset": 5784000,
-          "posix": -1632008184000,
+          "offset": 5788000,
+          "posix": -1632008188000,
           "save": 3600000
         },
         {
           "wallclock": -2840140800000,
           "format": "RMT",
           "abbrev": "RMT",
-          "offset": 5784000,
-          "posix": -2840146584000,
+          "offset": 5788000,
+          "posix": -2840146588000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 5784000,
+          "offset": 5788000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -26798,8 +26786,8 @@
         },
         {
           "wallclock": 670384800000,
-          "format": "KUY%sT",
-          "abbrev": "KUYST",
+          "format": "EE%sT",
+          "abbrev": "EEST",
           "offset": 7200000,
           "posix": 670374000000,
           "save": 3600000,
@@ -26807,8 +26795,8 @@
         },
         {
           "wallclock": 606880800000,
-          "format": "KUY%sT",
-          "abbrev": "KUYST",
+          "format": "MSK/MSD",
+          "abbrev": "MSD",
           "offset": 10800000,
           "posix": 606866400000,
           "save": 3600000,
@@ -28416,6 +28404,14 @@
     "zones": {
       "Europe/Simferopol": [
         "z",
+        {
+          "wallclock": 1414288800000,
+          "format": "MSK",
+          "abbrev": "MSK",
+          "offset": 10800000,
+          "posix": 1414274400000,
+          "save": 0
+        },
         {
           "wallclock": 1396144800000,
           "format": "MSK",
@@ -35573,17 +35569,25 @@
       "Europe/Volgograd": [
         "z",
         {
+          "wallclock": 1414288800000,
+          "format": "MSK",
+          "abbrev": "MSK",
+          "offset": 10800000,
+          "posix": 1414274400000,
+          "save": 0
+        },
+        {
           "wallclock": 1301191200000,
-          "format": "VOLT",
-          "abbrev": "VOLT",
+          "format": "MSK",
+          "abbrev": "MSK",
           "offset": 14400000,
           "posix": 1301180400000,
           "save": 0
         },
         {
           "wallclock": 701834400000,
-          "format": "VOL%sT",
-          "abbrev": "VOLST",
+          "format": "MSK",
+          "abbrev": "MSK",
           "offset": 10800000,
           "posix": 701820000000,
           "save": 3600000,

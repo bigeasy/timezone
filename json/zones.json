@@ -49,7 +49,7 @@
     "rules": {
       "Ghana": [
         {
-          "from": 1936,
+          "from": 1920,
           "to": 1942,
           "month": 8,
           "day": [
@@ -63,7 +63,7 @@
           "saved": 0
         },
         {
-          "from": 1936,
+          "from": 1920,
           "to": 1942,
           "month": 11,
           "day": [
@@ -600,34 +600,18 @@
       "Africa/Bamako": [
         "z",
         {
-          "wallclock": -300844800000,
-          "format": "GMT",
-          "abbrev": "GMT",
-          "offset": 0,
-          "posix": -300841200000,
-          "save": 0
-        },
-        {
-          "wallclock": -1131235200000,
-          "format": "WAT",
-          "abbrev": "WAT",
-          "offset": -3600000,
-          "posix": -1131235200000,
-          "save": 0
-        },
-        {
           "wallclock": -1830384000000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -1830382080000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -1920000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -664,34 +648,18 @@
       "Africa/Banjul": [
         "z",
         {
-          "wallclock": -189388800000,
+          "wallclock": -1830384000000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -189385200000,
-          "save": 0
-        },
-        {
-          "wallclock": -1104537600000,
-          "format": "WAT",
-          "abbrev": "WAT",
-          "offset": -3600000,
-          "posix": -1104533604000,
-          "save": 0
-        },
-        {
-          "wallclock": -1830384000000,
-          "format": "BMT",
-          "abbrev": "BMT",
-          "offset": -3996000,
-          "posix": -1830380004000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -3996000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -3048,34 +3016,18 @@
       "Africa/Conakry": [
         "z",
         {
-          "wallclock": -315619200000,
-          "format": "GMT",
-          "abbrev": "GMT",
-          "offset": 0,
-          "posix": -315615600000,
-          "save": 0
-        },
-        {
-          "wallclock": -1131235200000,
-          "format": "WAT",
-          "abbrev": "WAT",
-          "offset": -3600000,
-          "posix": -1131235200000,
-          "save": 0
-        },
-        {
           "wallclock": -1830384000000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -1830380708000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -3292000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -3088,26 +3040,18 @@
       "Africa/Dakar": [
         "z",
         {
-          "wallclock": -902102400000,
+          "wallclock": -1830384000000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -902098800000,
-          "save": 0
-        },
-        {
-          "wallclock": -1830384000000,
-          "format": "WAT",
-          "abbrev": "WAT",
-          "offset": -3600000,
-          "posix": -1830379816000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -4184000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -4028,101 +3972,24 @@
       "Africa/Freetown": [
         "z",
         {
-          "wallclock": -410227200000,
-          "format": "%s",
-          "abbrev": "WAT",
+          "wallclock": -1830384000000,
+          "format": "GMT",
+          "abbrev": "GMT",
           "offset": 0,
-          "posix": -410223600000,
-          "save": 0,
-          "rules": "SL"
-        },
-        {
-          "wallclock": -1785715200000,
-          "format": "%s",
-          "abbrev": "WAT",
-          "offset": -3600000,
-          "posix": -1785712020000,
-          "save": 0,
-          "rules": "SL"
-        },
-        {
-          "wallclock": -2776982400000,
-          "format": "FMT",
-          "abbrev": "FMT",
-          "offset": -3180000,
-          "posix": -2776979220000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -3180000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
       ]
     },
-    "rules": {
-      "SL": [
-        {
-          "from": 1957,
-          "to": 1962,
-          "month": 5,
-          "day": [
-            7,
-            1
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 60,
-          "letter": "SLST",
-          "saved": 0
-        },
-        {
-          "from": 1957,
-          "to": 1962,
-          "month": 8,
-          "day": [
-            7,
-            1
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 0,
-          "letter": "GMT",
-          "saved": 3600000
-        },
-        {
-          "from": 1935,
-          "to": 1942,
-          "month": 5,
-          "day": [
-            7,
-            1
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 40,
-          "letter": "SLST",
-          "saved": 0
-        },
-        {
-          "from": 1935,
-          "to": 1942,
-          "month": 9,
-          "day": [
-            7,
-            1
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 0,
-          "letter": "WAT",
-          "saved": 2400000
-        }
-      ]
-    }
+    "rules": {}
   },
   {
     "zones": {
@@ -4593,18 +4460,18 @@
       "Africa/Lome": [
         "z",
         {
-          "wallclock": -2429827200000,
+          "wallclock": -1830384000000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -2429827492000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 292000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -5025,34 +4892,18 @@
       "Africa/Nouakchott": [
         "z",
         {
-          "wallclock": -286934400000,
-          "format": "GMT",
-          "abbrev": "GMT",
-          "offset": 0,
-          "posix": -286930800000,
-          "save": 0
-        },
-        {
-          "wallclock": -1131235200000,
-          "format": "WAT",
-          "abbrev": "WAT",
-          "offset": -3600000,
-          "posix": -1131235200000,
-          "save": 0
-        },
-        {
           "wallclock": -1830384000000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -1830380172000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -3828000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -5069,14 +4920,14 @@
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -1830383636000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -364000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -5125,22 +4976,14 @@
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -1830381808000,
-          "save": 0
-        },
-        {
-          "wallclock": -2713910400000,
-          "format": "LMT",
-          "abbrev": "LMT",
-          "offset": -2192000,
-          "posix": -2713912016000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 1616000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -5153,34 +4996,18 @@
       "Africa/Timbuktu": [
         "z",
         {
-          "wallclock": -300844800000,
-          "format": "GMT",
-          "abbrev": "GMT",
-          "offset": 0,
-          "posix": -300841200000,
-          "save": 0
-        },
-        {
-          "wallclock": -1131235200000,
-          "format": "WAT",
-          "abbrev": "WAT",
-          "offset": -3600000,
-          "posix": -1131235200000,
-          "save": 0
-        },
-        {
           "wallclock": -1830384000000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -1830382080000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -1920000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -43111,8 +42938,8 @@
         "z",
         {
           "wallclock": 436327200000,
-          "format": "MeST",
-          "abbrev": "MeST",
+          "format": "PST",
+          "abbrev": "PST",
           "offset": -28800000,
           "posix": 436352400000,
           "save": 0
@@ -64854,8 +64681,8 @@
         "z",
         {
           "wallclock": 1329883200000,
-          "format": "WST",
-          "abbrev": "WST",
+          "format": "AWST",
+          "abbrev": "AWST",
           "offset": 28800000,
           "posix": 1329843600000,
           "save": 0
@@ -64870,8 +64697,8 @@
         },
         {
           "wallclock": 1267754400000,
-          "format": "WST",
-          "abbrev": "WST",
+          "format": "AWST",
+          "abbrev": "AWST",
           "offset": 28800000,
           "posix": 1267714800000,
           "save": 0
@@ -64886,8 +64713,8 @@
         },
         {
           "wallclock": -31536000000,
-          "format": "WST",
-          "abbrev": "WST",
+          "format": "AWST",
+          "abbrev": "AWST",
           "offset": 28800000,
           "posix": -31536000000,
           "save": 0
@@ -65030,8 +64857,8 @@
         },
         {
           "wallclock": -94694400000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -94730400000,
           "save": 0,
@@ -65039,8 +64866,8 @@
         },
         {
           "wallclock": -687052800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -687052800000,
           "save": 0,
@@ -65056,8 +64883,8 @@
         },
         {
           "wallclock": -1669852800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEDT",
           "offset": 36000000,
           "posix": -1669892400000,
           "save": 3600000,
@@ -65065,16 +64892,16 @@
         },
         {
           "wallclock": -1680472800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AEDT",
+          "abbrev": "AEDT",
           "offset": 36000000,
           "posix": -1680508800000,
           "save": 3600000
         },
         {
           "wallclock": -2214259200000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AEST",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2214259200000,
           "save": 0
@@ -65102,7 +64929,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -65116,7 +64943,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -65130,7 +64957,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -65144,7 +64971,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -65158,7 +64985,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -65172,7 +64999,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -65186,7 +65013,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -65200,7 +65027,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -65214,7 +65041,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -65228,7 +65055,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -65242,7 +65069,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -65256,7 +65083,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -65270,7 +65097,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -65284,7 +65111,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -65298,7 +65125,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -65312,7 +65139,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -65326,7 +65153,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -65340,7 +65167,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -65354,7 +65181,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         }
       ],
@@ -65370,7 +65197,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -65384,7 +65211,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -65398,7 +65225,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -65412,7 +65239,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -65426,7 +65253,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -65440,7 +65267,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -65454,7 +65281,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -70122,6 +69949,356 @@
   },
   {
     "zones": {
+      "Asia/Chita": [
+        "z",
+        {
+          "wallclock": 1414288800000,
+          "format": "IRKT",
+          "abbrev": "IRKT",
+          "offset": 28800000,
+          "posix": 1414252800000,
+          "save": 0
+        },
+        {
+          "wallclock": 1301191200000,
+          "format": "YAKT",
+          "abbrev": "YAKT",
+          "offset": 36000000,
+          "posix": 1301158800000,
+          "save": 0
+        },
+        {
+          "wallclock": 695786400000,
+          "format": "YAK%sT",
+          "abbrev": "YAKT",
+          "offset": 32400000,
+          "posix": 695757600000,
+          "save": 0,
+          "rules": "Russia"
+        },
+        {
+          "wallclock": 670384800000,
+          "format": "YAK%sT",
+          "abbrev": "YAKST",
+          "offset": 28800000,
+          "posix": 670352400000,
+          "save": 3600000,
+          "rules": "Russia"
+        },
+        {
+          "wallclock": -1247529600000,
+          "format": "YAK%sT",
+          "abbrev": "YAKT",
+          "offset": 32400000,
+          "posix": -1247558400000,
+          "save": 0,
+          "rules": "Russia"
+        },
+        {
+          "wallclock": -1579392000000,
+          "format": "YAKT",
+          "abbrev": "YAKT",
+          "offset": 28800000,
+          "posix": -1579419232000,
+          "save": 0
+        },
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "LMT",
+          "abbrev": "LMT",
+          "offset": 27232000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {
+      "Russia": [
+        {
+          "from": 1996,
+          "to": 2010,
+          "month": 9,
+          "day": [
+            0,
+            -31
+          ],
+          "time": 180,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1993,
+          "to": 2010,
+          "month": 2,
+          "day": [
+            0,
+            -31
+          ],
+          "time": 120,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
+        },
+        {
+          "from": 1993,
+          "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 180,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1992,
+          "to": 1992,
+          "month": 8,
+          "day": [
+            6,
+            -30
+          ],
+          "time": 1380,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1992,
+          "to": 1992,
+          "month": 2,
+          "day": [
+            6,
+            -31
+          ],
+          "time": 1380,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
+        },
+        {
+          "from": 1985,
+          "to": 1991,
+          "month": 2,
+          "day": [
+            0,
+            -31
+          ],
+          "time": 120,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
+        },
+        {
+          "from": 1984,
+          "to": 1991,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 180,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1984,
+          "month": 3,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
+        },
+        {
+          "from": 1981,
+          "to": 1983,
+          "month": 9,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1921,
+          "to": 1921,
+          "month": 8,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "MSD",
+          "saved": 7200000
+        },
+        {
+          "from": 1921,
+          "to": 1921,
+          "month": 9,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 0
+        },
+        {
+          "from": 1921,
+          "to": 1921,
+          "month": 1,
+          "day": [
+            7,
+            14
+          ],
+          "time": 1380,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "MSD",
+          "saved": 0
+        },
+        {
+          "from": 1921,
+          "to": 1921,
+          "month": 2,
+          "day": [
+            7,
+            20
+          ],
+          "time": 1380,
+          "clock": "wallclock",
+          "save": 120,
+          "letter": "MSM",
+          "saved": 3600000
+        },
+        {
+          "from": 1919,
+          "to": 1919,
+          "month": 7,
+          "day": [
+            7,
+            16
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "MSK",
+          "saved": 3600000
+        },
+        {
+          "from": 1919,
+          "to": 1919,
+          "month": 6,
+          "day": [
+            7,
+            1
+          ],
+          "time": 120,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "MSD",
+          "saved": 0
+        },
+        {
+          "from": 1919,
+          "to": 1919,
+          "month": 4,
+          "day": [
+            7,
+            31
+          ],
+          "time": 1380,
+          "clock": "wallclock",
+          "save": 120,
+          "letter": "MDST",
+          "saved": 3600000
+        },
+        {
+          "from": 1918,
+          "to": 1918,
+          "month": 8,
+          "day": [
+            7,
+            16
+          ],
+          "time": 60,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "MST",
+          "saved": 7200000
+        },
+        {
+          "from": 1918,
+          "to": 1918,
+          "month": 4,
+          "day": [
+            7,
+            31
+          ],
+          "time": 1320,
+          "clock": "wallclock",
+          "save": 120,
+          "letter": "MDST",
+          "saved": 0
+        },
+        {
+          "from": 1917,
+          "to": 1917,
+          "month": 11,
+          "day": [
+            7,
+            28
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "MMT",
+          "saved": 3600000
+        },
+        {
+          "from": 1917,
+          "to": 1917,
+          "month": 6,
+          "day": [
+            7,
+            1
+          ],
+          "time": 1380,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "MST",
+          "saved": 0
+        }
+      ]
+    }
+  },
+  {
+    "zones": {
       "Asia/Choibalsan": [
         "z",
         {
@@ -70276,27 +70453,28 @@
       "Asia/Chongqing": [
         "z",
         {
-          "wallclock": 325987200000,
+          "wallclock": -662688000000,
           "format": "C%sT",
           "abbrev": "CST",
           "offset": 28800000,
-          "posix": 325962000000,
+          "posix": -662716800000,
           "save": 0,
           "rules": "PRC"
         },
         {
-          "wallclock": -1325462400000,
-          "format": "LONT",
-          "abbrev": "LONT",
-          "offset": 25200000,
-          "posix": -1325487980000,
-          "save": 0
+          "wallclock": -2177452800000,
+          "format": "C%sT",
+          "abbrev": "CST",
+          "offset": 28800000,
+          "posix": -2177481943000,
+          "save": 0,
+          "rules": "Shang"
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 25580000,
+          "offset": 29143000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -70339,6 +70517,50 @@
           "day": [
             7,
             4
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
+        }
+      ],
+      "Shang": [
+        {
+          "from": 1940,
+          "to": 1941,
+          "month": 9,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "S",
+          "saved": 3600000
+        },
+        {
+          "from": 1941,
+          "to": 1941,
+          "month": 2,
+          "day": [
+            7,
+            16
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
+        },
+        {
+          "from": 1940,
+          "to": 1940,
+          "month": 5,
+          "day": [
+            7,
+            3
           ],
           "time": 0,
           "clock": "wallclock",
@@ -70354,27 +70576,28 @@
       "Asia/Chungking": [
         "z",
         {
-          "wallclock": 325987200000,
+          "wallclock": -662688000000,
           "format": "C%sT",
           "abbrev": "CST",
           "offset": 28800000,
-          "posix": 325962000000,
+          "posix": -662716800000,
           "save": 0,
           "rules": "PRC"
         },
         {
-          "wallclock": -1325462400000,
-          "format": "LONT",
-          "abbrev": "LONT",
-          "offset": 25200000,
-          "posix": -1325487980000,
-          "save": 0
+          "wallclock": -2177452800000,
+          "format": "C%sT",
+          "abbrev": "CST",
+          "offset": 28800000,
+          "posix": -2177481943000,
+          "save": 0,
+          "rules": "Shang"
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 25580000,
+          "offset": 29143000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -70417,6 +70640,50 @@
           "day": [
             7,
             4
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
+        }
+      ],
+      "Shang": [
+        {
+          "from": 1940,
+          "to": 1941,
+          "month": 9,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "S",
+          "saved": 3600000
+        },
+        {
+          "from": 1941,
+          "to": 1941,
+          "month": 2,
+          "day": [
+            7,
+            16
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
+        },
+        {
+          "from": 1940,
+          "to": 1940,
+          "month": 5,
+          "day": [
+            7,
+            3
           ],
           "time": 0,
           "clock": "wallclock",
@@ -73689,51 +73956,28 @@
       "Asia/Harbin": [
         "z",
         {
-          "wallclock": 325987200000,
+          "wallclock": -662688000000,
           "format": "C%sT",
           "abbrev": "CST",
           "offset": 28800000,
-          "posix": 325956600000,
+          "posix": -662716800000,
           "save": 0,
           "rules": "PRC"
         },
         {
-          "wallclock": -115862400000,
-          "format": "CHAT",
-          "abbrev": "CHAT",
-          "offset": 30600000,
-          "posix": -115894800000,
-          "save": 0
-        },
-        {
-          "wallclock": -946771200000,
-          "format": "CHAT",
-          "abbrev": "CHAT",
-          "offset": 32400000,
-          "posix": -946800000000,
-          "save": 0
-        },
-        {
-          "wallclock": -1194048000000,
-          "format": "CST",
+          "wallclock": -2177452800000,
+          "format": "C%sT",
           "abbrev": "CST",
           "offset": 28800000,
-          "posix": -1194078600000,
-          "save": 0
-        },
-        {
-          "wallclock": -1325462400000,
-          "format": "CHAT",
-          "abbrev": "CHAT",
-          "offset": 30600000,
-          "posix": -1325492804000,
-          "save": 0
+          "posix": -2177481943000,
+          "save": 0,
+          "rules": "Shang"
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 30404000,
+          "offset": 29143000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -73776,6 +74020,50 @@
           "day": [
             7,
             4
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
+        }
+      ],
+      "Shang": [
+        {
+          "from": 1940,
+          "to": 1941,
+          "month": 9,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "S",
+          "saved": 3600000
+        },
+        {
+          "from": 1941,
+          "to": 1941,
+          "month": 2,
+          "day": [
+            7,
+            16
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
+        },
+        {
+          "from": 1940,
+          "to": 1940,
+          "month": 5,
+          "day": [
+            7,
+            3
           ],
           "time": 0,
           "clock": "wallclock",
@@ -76370,6 +76658,14 @@
       "Asia/Irkutsk": [
         "z",
         {
+          "wallclock": 1414288800000,
+          "format": "IRKT",
+          "abbrev": "IRKT",
+          "offset": 28800000,
+          "posix": 1414256400000,
+          "save": 0
+        },
+        {
           "wallclock": 1301191200000,
           "format": "IRKT",
           "abbrev": "IRKT",
@@ -76409,22 +76705,22 @@
           "format": "IRKT",
           "abbrev": "IRKT",
           "offset": 25200000,
-          "posix": -1575874640000,
+          "posix": -1575874635000,
           "save": 0
         },
         {
           "wallclock": -2840140800000,
           "format": "IMT",
           "abbrev": "IMT",
-          "offset": 25040000,
-          "posix": -2840165840000,
+          "offset": 25035000,
+          "posix": -2840165835000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 25040000,
+          "offset": 25035000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -77762,8 +78058,8 @@
         },
         {
           "wallclock": -799459200000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "ACST",
+          "abbrev": "ACST",
           "offset": 34200000,
           "posix": -799491600000,
           "save": 0
@@ -79560,86 +79856,24 @@
       "Asia/Kashgar": [
         "z",
         {
-          "wallclock": 325987200000,
-          "format": "C%sT",
-          "abbrev": "CST",
-          "offset": 28800000,
-          "posix": 325969200000,
-          "save": 0,
-          "rules": "PRC"
-        },
-        {
-          "wallclock": -946771200000,
-          "format": "KAST",
-          "abbrev": "KAST",
-          "offset": 18000000,
-          "posix": -946791000000,
-          "save": 0
-        },
-        {
           "wallclock": -1325462400000,
-          "format": "KAST",
-          "abbrev": "KAST",
-          "offset": 19800000,
-          "posix": -1325480636000,
+          "format": "XJT",
+          "abbrev": "XJT",
+          "offset": 21600000,
+          "posix": -1325483420000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 18236000,
+          "offset": 21020000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
       ]
     },
-    "rules": {
-      "PRC": [
-        {
-          "from": 1986,
-          "to": 1991,
-          "month": 8,
-          "day": [
-            0,
-            11
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 0,
-          "letter": "S",
-          "saved": 3600000
-        },
-        {
-          "from": 1987,
-          "to": 1991,
-          "month": 3,
-          "day": [
-            0,
-            10
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 60,
-          "letter": "D",
-          "saved": 0
-        },
-        {
-          "from": 1986,
-          "to": 1986,
-          "month": 4,
-          "day": [
-            7,
-            4
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 60,
-          "letter": "D",
-          "saved": 0
-        }
-      ]
-    }
+    "rules": {}
   },
   {
     "zones": {
@@ -79709,6 +79943,14 @@
     "zones": {
       "Asia/Khandyga": [
         "z",
+        {
+          "wallclock": 1414288800000,
+          "format": "YAKT",
+          "abbrev": "YAKT",
+          "offset": 32400000,
+          "posix": 1414252800000,
+          "save": 0
+        },
         {
           "wallclock": 1315872000000,
           "format": "YAKT",
@@ -80124,6 +80366,14 @@
     "zones": {
       "Asia/Krasnoyarsk": [
         "z",
+        {
+          "wallclock": 1414288800000,
+          "format": "KRAT",
+          "abbrev": "KRAT",
+          "offset": 25200000,
+          "posix": 1414260000000,
+          "save": 0
+        },
         {
           "wallclock": 1301191200000,
           "format": "KRAT",
@@ -81213,6 +81463,14 @@
       "Asia/Magadan": [
         "z",
         {
+          "wallclock": 1414288800000,
+          "format": "MAGT",
+          "abbrev": "MAGT",
+          "offset": 36000000,
+          "posix": 1414245600000,
+          "save": 0
+        },
+        {
           "wallclock": 1301191200000,
           "format": "MAGT",
           "abbrev": "MAGT",
@@ -81971,6 +82229,14 @@
       "Asia/Novokuznetsk": [
         "z",
         {
+          "wallclock": 1414288800000,
+          "format": "KRAT",
+          "abbrev": "KRAT",
+          "offset": 25200000,
+          "posix": 1414263600000,
+          "save": 0
+        },
+        {
           "wallclock": 1301191200000,
           "format": "NOVT",
           "abbrev": "NOVT",
@@ -82322,6 +82588,14 @@
       "Asia/Novosibirsk": [
         "z",
         {
+          "wallclock": 1414288800000,
+          "format": "NOVT",
+          "abbrev": "NOVT",
+          "offset": 21600000,
+          "posix": 1414263600000,
+          "save": 0
+        },
+        {
           "wallclock": 1301191200000,
           "format": "NOVT",
           "abbrev": "NOVT",
@@ -82672,6 +82946,14 @@
     "zones": {
       "Asia/Omsk": [
         "z",
+        {
+          "wallclock": 1414288800000,
+          "format": "OMST",
+          "abbrev": "OMST",
+          "offset": 21600000,
+          "posix": 1414263600000,
+          "save": 0
+        },
         {
           "wallclock": 1301191200000,
           "format": "OMST",
@@ -83379,9 +83661,25 @@
           "save": 0
         },
         {
-          "wallclock": -1199232000000,
+          "wallclock": -768614400000,
           "format": "KST",
           "abbrev": "KST",
+          "offset": 32400000,
+          "posix": -768646800000,
+          "save": 0
+        },
+        {
+          "wallclock": -1017792000000,
+          "format": "JST",
+          "abbrev": "JST",
+          "offset": 32400000,
+          "posix": -1017824400000,
+          "save": 0
+        },
+        {
+          "wallclock": -1199232000000,
+          "format": "JCST",
+          "abbrev": "JCST",
           "offset": 32400000,
           "posix": -1199262600000,
           "save": 0
@@ -83396,8 +83694,8 @@
         },
         {
           "wallclock": -2053900800000,
-          "format": "KST",
-          "abbrev": "KST",
+          "format": "JCST",
+          "abbrev": "JCST",
           "offset": 32400000,
           "posix": -2053931400000,
           "save": 0
@@ -83726,11 +84024,11 @@
       "Asia/Riyadh": [
         "z",
         {
-          "wallclock": -631152000000,
+          "wallclock": -719625600000,
           "format": "AST",
           "abbrev": "AST",
           "offset": 10800000,
-          "posix": -631163212000,
+          "posix": -719636812000,
           "save": 0
         },
         {
@@ -83798,6 +84096,14 @@
       "Asia/Sakhalin": [
         "z",
         {
+          "wallclock": 1414288800000,
+          "format": "SAKT",
+          "abbrev": "SAKT",
+          "offset": 36000000,
+          "posix": 1414249200000,
+          "save": 0
+        },
+        {
           "wallclock": 1301191200000,
           "format": "SAKT",
           "abbrev": "SAKT",
@@ -83842,17 +84148,17 @@
           "rules": "Russia"
         },
         {
-          "wallclock": -1009843200000,
+          "wallclock": -1017792000000,
           "format": "JST",
           "abbrev": "JST",
           "offset": 32400000,
-          "posix": -1009875600000,
+          "posix": -1017824400000,
           "save": 0
         },
         {
           "wallclock": -2031004800000,
-          "format": "CJT",
-          "abbrev": "CJT",
+          "format": "JCST",
+          "abbrev": "JCST",
           "offset": 32400000,
           "posix": -2031039048000,
           "save": 0
@@ -84386,9 +84692,25 @@
           "rules": "ROK"
         },
         {
-          "wallclock": -1199232000000,
+          "wallclock": -767318400000,
           "format": "KST",
           "abbrev": "KST",
+          "offset": 32400000,
+          "posix": -767350800000,
+          "save": 0
+        },
+        {
+          "wallclock": -1017792000000,
+          "format": "JST",
+          "abbrev": "JST",
+          "offset": 32400000,
+          "posix": -1017824400000,
+          "save": 0
+        },
+        {
+          "wallclock": -1199232000000,
+          "format": "JCST",
+          "abbrev": "JCST",
           "offset": 32400000,
           "posix": -1199262600000,
           "save": 0
@@ -84403,8 +84725,8 @@
         },
         {
           "wallclock": -2053900800000,
-          "format": "KST",
-          "abbrev": "KST",
+          "format": "JCST",
+          "abbrev": "JCST",
           "offset": 32400000,
           "posix": -2053931400000,
           "save": 0
@@ -84502,11 +84824,11 @@
           "rules": "PRC"
         },
         {
-          "wallclock": -1325462400000,
+          "wallclock": -2177452800000,
           "format": "C%sT",
           "abbrev": "CST",
           "offset": 28800000,
-          "posix": -1325491557000,
+          "posix": -2177481943000,
           "save": 0,
           "rules": "Shang"
         },
@@ -84514,7 +84836,7 @@
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 29157000,
+          "offset": 29143000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -84701,16 +85023,382 @@
   },
   {
     "zones": {
+      "Asia/Srednekolymsk": [
+        "z",
+        {
+          "wallclock": 1414288800000,
+          "format": "SRET",
+          "abbrev": "SRET",
+          "offset": 39600000,
+          "posix": 1414245600000,
+          "save": 0
+        },
+        {
+          "wallclock": 1301191200000,
+          "format": "MAGT",
+          "abbrev": "MAGT",
+          "offset": 43200000,
+          "posix": 1301151600000,
+          "save": 0
+        },
+        {
+          "wallclock": 695786400000,
+          "format": "MAG%sT",
+          "abbrev": "MAGT",
+          "offset": 39600000,
+          "posix": 695750400000,
+          "save": 0,
+          "rules": "Russia"
+        },
+        {
+          "wallclock": 670384800000,
+          "format": "MAG%sT",
+          "abbrev": "MAGST",
+          "offset": 36000000,
+          "posix": 670345200000,
+          "save": 3600000,
+          "rules": "Russia"
+        },
+        {
+          "wallclock": -1247529600000,
+          "format": "MAG%sT",
+          "abbrev": "MAGT",
+          "offset": 39600000,
+          "posix": -1247565600000,
+          "save": 0,
+          "rules": "Russia"
+        },
+        {
+          "wallclock": -1441152000000,
+          "format": "MAGT",
+          "abbrev": "MAGT",
+          "offset": 36000000,
+          "posix": -1441188892000,
+          "save": 0
+        },
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "LMT",
+          "abbrev": "LMT",
+          "offset": 36892000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {
+      "Russia": [
+        {
+          "from": 1996,
+          "to": 2010,
+          "month": 9,
+          "day": [
+            0,
+            -31
+          ],
+          "time": 180,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1993,
+          "to": 2010,
+          "month": 2,
+          "day": [
+            0,
+            -31
+          ],
+          "time": 120,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
+        },
+        {
+          "from": 1993,
+          "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 180,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1992,
+          "to": 1992,
+          "month": 8,
+          "day": [
+            6,
+            -30
+          ],
+          "time": 1380,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1992,
+          "to": 1992,
+          "month": 2,
+          "day": [
+            6,
+            -31
+          ],
+          "time": 1380,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
+        },
+        {
+          "from": 1985,
+          "to": 1991,
+          "month": 2,
+          "day": [
+            0,
+            -31
+          ],
+          "time": 120,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
+        },
+        {
+          "from": 1984,
+          "to": 1991,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 180,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1984,
+          "month": 3,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
+        },
+        {
+          "from": 1981,
+          "to": 1983,
+          "month": 9,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1921,
+          "to": 1921,
+          "month": 8,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "MSD",
+          "saved": 7200000
+        },
+        {
+          "from": 1921,
+          "to": 1921,
+          "month": 9,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 0
+        },
+        {
+          "from": 1921,
+          "to": 1921,
+          "month": 1,
+          "day": [
+            7,
+            14
+          ],
+          "time": 1380,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "MSD",
+          "saved": 0
+        },
+        {
+          "from": 1921,
+          "to": 1921,
+          "month": 2,
+          "day": [
+            7,
+            20
+          ],
+          "time": 1380,
+          "clock": "wallclock",
+          "save": 120,
+          "letter": "MSM",
+          "saved": 3600000
+        },
+        {
+          "from": 1919,
+          "to": 1919,
+          "month": 7,
+          "day": [
+            7,
+            16
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "MSK",
+          "saved": 3600000
+        },
+        {
+          "from": 1919,
+          "to": 1919,
+          "month": 6,
+          "day": [
+            7,
+            1
+          ],
+          "time": 120,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "MSD",
+          "saved": 0
+        },
+        {
+          "from": 1919,
+          "to": 1919,
+          "month": 4,
+          "day": [
+            7,
+            31
+          ],
+          "time": 1380,
+          "clock": "wallclock",
+          "save": 120,
+          "letter": "MDST",
+          "saved": 3600000
+        },
+        {
+          "from": 1918,
+          "to": 1918,
+          "month": 8,
+          "day": [
+            7,
+            16
+          ],
+          "time": 60,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "MST",
+          "saved": 7200000
+        },
+        {
+          "from": 1918,
+          "to": 1918,
+          "month": 4,
+          "day": [
+            7,
+            31
+          ],
+          "time": 1320,
+          "clock": "wallclock",
+          "save": 120,
+          "letter": "MDST",
+          "saved": 0
+        },
+        {
+          "from": 1917,
+          "to": 1917,
+          "month": 11,
+          "day": [
+            7,
+            28
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "MMT",
+          "saved": 3600000
+        },
+        {
+          "from": 1917,
+          "to": 1917,
+          "month": 6,
+          "day": [
+            7,
+            1
+          ],
+          "time": 1380,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "MST",
+          "saved": 0
+        }
+      ]
+    }
+  },
+  {
+    "zones": {
       "Asia/Taipei": [
         "z",
         {
-          "wallclock": -2335219200000,
+          "wallclock": -766191600000,
           "format": "C%sT",
           "abbrev": "CST",
           "offset": 28800000,
-          "posix": -2335248360000,
+          "posix": -766224000000,
           "save": 0,
           "rules": "Taiwan"
+        },
+        {
+          "wallclock": -1017792000000,
+          "format": "JST",
+          "abbrev": "JST",
+          "offset": 32400000,
+          "posix": -1017820800000,
+          "save": 0
+        },
+        {
+          "wallclock": -2335219200000,
+          "format": "JWST",
+          "abbrev": "JWST",
+          "offset": 28800000,
+          "posix": -2335248360000,
+          "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
@@ -84727,10 +85415,10 @@
         {
           "from": 1979,
           "to": 1979,
-          "month": 8,
+          "month": 9,
           "day": [
             7,
-            30
+            1
           ],
           "time": 0,
           "clock": "wallclock",
@@ -84741,10 +85429,10 @@
         {
           "from": 1979,
           "to": 1979,
-          "month": 5,
+          "month": 6,
           "day": [
             7,
-            30
+            1
           ],
           "time": 0,
           "clock": "wallclock",
@@ -84781,20 +85469,6 @@
           "saved": 0
         },
         {
-          "from": 1955,
-          "to": 1961,
-          "month": 9,
-          "day": [
-            7,
-            1
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 0,
-          "letter": "S",
-          "saved": 3600000
-        },
-        {
           "from": 1960,
           "to": 1961,
           "month": 5,
@@ -84807,6 +85481,20 @@
           "save": 60,
           "letter": "D",
           "saved": 0
+        },
+        {
+          "from": 1955,
+          "to": 1961,
+          "month": 9,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "S",
+          "saved": 3600000
         },
         {
           "from": 1953,
@@ -84851,7 +85539,7 @@
           "saved": 0
         },
         {
-          "from": 1945,
+          "from": 1948,
           "to": 1951,
           "month": 9,
           "day": [
@@ -84865,12 +85553,68 @@
           "saved": 3600000
         },
         {
-          "from": 1945,
+          "from": 1948,
           "to": 1951,
           "month": 4,
           "day": [
             7,
             1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
+        },
+        {
+          "from": 1947,
+          "to": 1947,
+          "month": 10,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "S",
+          "saved": 3600000
+        },
+        {
+          "from": 1947,
+          "to": 1947,
+          "month": 3,
+          "day": [
+            7,
+            15
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
+        },
+        {
+          "from": 1946,
+          "to": 1946,
+          "month": 9,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "S",
+          "saved": 3600000
+        },
+        {
+          "from": 1946,
+          "to": 1946,
+          "month": 4,
+          "day": [
+            7,
+            15
           ],
           "time": 0,
           "clock": "wallclock",
@@ -84925,14 +85669,14 @@
           "format": "TAST",
           "abbrev": "TAST",
           "offset": 18000000,
-          "posix": -1441168632000,
+          "posix": -1441168631000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 16632000,
+          "offset": 16631000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -85156,22 +85900,22 @@
           "format": "TBIT",
           "abbrev": "TBIT",
           "offset": 10800000,
-          "posix": -1441162756000,
+          "posix": -1441162746000,
           "save": 0
         },
         {
           "wallclock": -2840140800000,
           "format": "TBMT",
           "abbrev": "TBMT",
-          "offset": 10756000,
-          "posix": -2840151556000,
+          "offset": 10746000,
+          "posix": -2840151546000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 10756000,
+          "offset": 10746000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -87400,18 +88144,18 @@
       "Asia/Tokyo": [
         "z",
         {
-          "wallclock": -1009843200000,
+          "wallclock": -1017792000000,
           "format": "J%sT",
           "abbrev": "JST",
           "offset": 32400000,
-          "posix": -1009875600000,
+          "posix": -1017824400000,
           "save": 0,
           "rules": "Japan"
         },
         {
           "wallclock": -2335219200000,
-          "format": "CJT",
-          "abbrev": "CJT",
+          "format": "JCST",
+          "abbrev": "JCST",
           "offset": 32400000,
           "posix": -2335251600000,
           "save": 0
@@ -87816,18 +88560,9 @@
       "Asia/Urumqi": [
         "z",
         {
-          "wallclock": 325987200000,
-          "format": "C%sT",
-          "abbrev": "CST",
-          "offset": 28800000,
-          "posix": 325965600000,
-          "save": 0,
-          "rules": "PRC"
-        },
-        {
           "wallclock": -1325462400000,
-          "format": "URUT",
-          "abbrev": "URUT",
+          "format": "XJT",
+          "abbrev": "XJT",
           "offset": 21600000,
           "posix": -1325483420000,
           "save": 0
@@ -87842,57 +88577,20 @@
         }
       ]
     },
-    "rules": {
-      "PRC": [
-        {
-          "from": 1986,
-          "to": 1991,
-          "month": 8,
-          "day": [
-            0,
-            11
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 0,
-          "letter": "S",
-          "saved": 3600000
-        },
-        {
-          "from": 1987,
-          "to": 1991,
-          "month": 3,
-          "day": [
-            0,
-            10
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 60,
-          "letter": "D",
-          "saved": 0
-        },
-        {
-          "from": 1986,
-          "to": 1986,
-          "month": 4,
-          "day": [
-            7,
-            4
-          ],
-          "time": 0,
-          "clock": "wallclock",
-          "save": 60,
-          "letter": "D",
-          "saved": 0
-        }
-      ]
-    }
+    "rules": {}
   },
   {
     "zones": {
       "Asia/Ust-Nera": [
         "z",
+        {
+          "wallclock": 1414288800000,
+          "format": "VLAT",
+          "abbrev": "VLAT",
+          "offset": 36000000,
+          "posix": 1414249200000,
+          "save": 0
+        },
         {
           "wallclock": 1315872000000,
           "format": "VLAT",
@@ -88301,6 +88999,14 @@
       "Asia/Vladivostok": [
         "z",
         {
+          "wallclock": 1414288800000,
+          "format": "VLAT",
+          "abbrev": "VLAT",
+          "offset": 36000000,
+          "posix": 1414249200000,
+          "save": 0
+        },
+        {
           "wallclock": 1301191200000,
           "format": "VLAT",
           "abbrev": "VLAT",
@@ -88340,14 +89046,14 @@
           "format": "VLAT",
           "abbrev": "VLAT",
           "offset": 32400000,
-          "posix": -1487321264000,
+          "posix": -1487321254000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 31664000,
+          "offset": 31654000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -88642,6 +89348,14 @@
     "zones": {
       "Asia/Yakutsk": [
         "z",
+        {
+          "wallclock": 1414288800000,
+          "format": "YAKT",
+          "abbrev": "YAKT",
+          "offset": 32400000,
+          "posix": 1414252800000,
+          "save": 0
+        },
         {
           "wallclock": 1301191200000,
           "format": "YAKT",
@@ -88985,6 +89699,14 @@
       "Asia/Yekaterinburg": [
         "z",
         {
+          "wallclock": 1414288800000,
+          "format": "YEKT",
+          "abbrev": "YEKT",
+          "offset": 18000000,
+          "posix": 1414267200000,
+          "save": 0
+        },
+        {
           "wallclock": 1301191200000,
           "format": "YEKT",
           "abbrev": "YEKT",
@@ -89024,14 +89746,14 @@
           "format": "SVET",
           "abbrev": "SVET",
           "offset": 14400000,
-          "posix": -1592611344000,
+          "posix": -1592611353000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 14544000,
+          "offset": 14553000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -92887,26 +93609,18 @@
       "Atlantic/St_Helena": [
         "z",
         {
-          "wallclock": -599616000000,
+          "wallclock": -1830384000000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -599614632000,
-          "save": 0
-        },
-        {
-          "wallclock": -2524521600000,
-          "format": "JMT",
-          "abbrev": "JMT",
-          "offset": -1368000,
-          "posix": -2524520232000,
+          "posix": -1830383032000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -1368000,
+          "offset": -968000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -93150,8 +93864,8 @@
         "z",
         {
           "wallclock": 31536000000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": 31500000000,
           "save": 0,
@@ -93159,8 +93873,8 @@
         },
         {
           "wallclock": -2364076800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2364113092000,
           "save": 0,
@@ -93189,7 +93903,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93203,7 +93917,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93217,7 +93931,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93231,7 +93945,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93245,7 +93959,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93259,7 +93973,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93273,7 +93987,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93287,7 +94001,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93301,7 +94015,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93315,7 +94029,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93329,7 +94043,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93343,7 +94057,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93357,7 +94071,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93371,7 +94085,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93385,7 +94099,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93399,7 +94113,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ],
@@ -93415,7 +94129,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93429,7 +94143,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93443,7 +94157,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93457,7 +94171,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93471,7 +94185,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93485,7 +94199,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93499,7 +94213,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -93511,8 +94225,8 @@
         "z",
         {
           "wallclock": 31536000000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "AC%sT",
+          "abbrev": "ACST",
           "offset": 34200000,
           "posix": 31501800000,
           "save": 0,
@@ -93520,8 +94234,8 @@
         },
         {
           "wallclock": -2230156800000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "AC%sT",
+          "abbrev": "ACST",
           "offset": 34200000,
           "posix": -2230189200000,
           "save": 0,
@@ -93529,8 +94243,8 @@
         },
         {
           "wallclock": -2364076800000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "ACST",
+          "abbrev": "ACST",
           "offset": 32400000,
           "posix": -2364110060000,
           "save": 0
@@ -93558,7 +94272,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93572,7 +94286,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93586,7 +94300,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93600,7 +94314,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93614,7 +94328,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93628,7 +94342,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93642,7 +94356,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93656,7 +94370,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93670,7 +94384,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93684,7 +94398,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93698,7 +94412,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93712,7 +94426,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93726,7 +94440,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93740,7 +94454,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93754,7 +94468,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ],
@@ -93770,7 +94484,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93784,7 +94498,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93798,7 +94512,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93812,7 +94526,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93826,7 +94540,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93840,7 +94554,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93854,7 +94568,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -93866,8 +94580,8 @@
         "z",
         {
           "wallclock": 31536000000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": 31500000000,
           "save": 0,
@@ -93875,8 +94589,8 @@
         },
         {
           "wallclock": -2366755200000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2366791928000,
           "save": 0,
@@ -93905,7 +94619,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93919,7 +94633,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93933,7 +94647,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93947,7 +94661,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         }
       ],
@@ -93963,7 +94677,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -93977,7 +94691,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -93991,7 +94705,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94005,7 +94719,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94019,7 +94733,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94033,7 +94747,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94047,7 +94761,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -94059,8 +94773,8 @@
         "z",
         {
           "wallclock": 946684800000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "AC%sT",
+          "abbrev": "ACDT",
           "offset": 34200000,
           "posix": 946647000000,
           "save": 3600000,
@@ -94068,8 +94782,8 @@
         },
         {
           "wallclock": 31536000000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "AC%sT",
+          "abbrev": "ACST",
           "offset": 34200000,
           "posix": 31501800000,
           "save": 0,
@@ -94077,8 +94791,8 @@
         },
         {
           "wallclock": -2230156800000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "AC%sT",
+          "abbrev": "ACST",
           "offset": 34200000,
           "posix": -2230189200000,
           "save": 0,
@@ -94086,16 +94800,16 @@
         },
         {
           "wallclock": -2314915200000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "ACST",
+          "abbrev": "ACST",
           "offset": 32400000,
           "posix": -2314951200000,
           "save": 0
         },
         {
           "wallclock": -2364076800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AEST",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2364110748000,
           "save": 0
@@ -94123,7 +94837,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94137,7 +94851,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94151,7 +94865,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94165,7 +94879,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94179,7 +94893,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94193,7 +94907,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94207,7 +94921,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94221,7 +94935,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94235,7 +94949,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94249,7 +94963,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94263,7 +94977,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94277,7 +94991,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94291,7 +95005,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94305,7 +95019,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94319,7 +95033,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ],
@@ -94335,7 +95049,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94349,7 +95063,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94363,7 +95077,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94377,7 +95091,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94391,7 +95105,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94405,7 +95119,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94419,7 +95133,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94433,7 +95147,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94447,7 +95161,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94461,7 +95175,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94475,7 +95189,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94489,7 +95203,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94503,7 +95217,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94517,7 +95231,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94531,7 +95245,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94545,7 +95259,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ],
@@ -94561,7 +95275,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94575,7 +95289,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94589,7 +95303,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94603,7 +95317,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94617,7 +95331,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94631,7 +95345,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94645,7 +95359,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -94657,8 +95371,8 @@
         "z",
         {
           "wallclock": 31536000000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": 31500000000,
           "save": 0,
@@ -94666,8 +95380,8 @@
         },
         {
           "wallclock": -2364076800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2364113092000,
           "save": 0,
@@ -94696,7 +95410,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94710,7 +95424,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94724,7 +95438,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94738,7 +95452,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94752,7 +95466,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94766,7 +95480,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94780,7 +95494,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94794,7 +95508,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94808,7 +95522,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94822,7 +95536,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94836,7 +95550,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94850,7 +95564,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94864,7 +95578,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94878,7 +95592,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94892,7 +95606,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94906,7 +95620,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ],
@@ -94922,7 +95636,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94936,7 +95650,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94950,7 +95664,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94964,7 +95678,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -94978,7 +95692,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -94992,7 +95706,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95006,7 +95720,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -95018,8 +95732,8 @@
         "z",
         {
           "wallclock": 47174400000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": 47138400000,
           "save": 0,
@@ -95027,8 +95741,8 @@
         },
         {
           "wallclock": -1669852800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEDT",
           "offset": 36000000,
           "posix": -1669892400000,
           "save": 3600000,
@@ -95036,16 +95750,16 @@
         },
         {
           "wallclock": -1680472800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AEDT",
+          "abbrev": "AEDT",
           "offset": 36000000,
           "posix": -1680508800000,
           "save": 3600000
         },
         {
           "wallclock": -2345760000000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AEST",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2345794528000,
           "save": 0
@@ -95073,7 +95787,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95087,7 +95801,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95101,7 +95815,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95115,7 +95829,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95129,7 +95843,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95143,7 +95857,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95157,7 +95871,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95171,7 +95885,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95185,7 +95899,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95199,7 +95913,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95213,7 +95927,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95227,7 +95941,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95241,7 +95955,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95255,7 +95969,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95269,7 +95983,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95283,7 +95997,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95297,7 +96011,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95311,7 +96025,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95325,7 +96039,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         }
       ],
@@ -95341,7 +96055,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95355,7 +96069,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95369,7 +96083,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95383,7 +96097,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95397,7 +96111,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95411,7 +96125,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95425,7 +96139,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -95437,8 +96151,8 @@
         "z",
         {
           "wallclock": -2230156800000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "AC%sT",
+          "abbrev": "ACST",
           "offset": 34200000,
           "posix": -2230189200000,
           "save": 0,
@@ -95446,8 +96160,8 @@
         },
         {
           "wallclock": -2364076800000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "ACST",
+          "abbrev": "ACST",
           "offset": 32400000,
           "posix": -2364108200000,
           "save": 0
@@ -95475,7 +96189,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95489,7 +96203,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95503,7 +96217,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95517,7 +96231,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95531,7 +96245,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95545,7 +96259,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95559,7 +96273,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -95571,8 +96285,8 @@
         "z",
         {
           "wallclock": -836438400000,
-          "format": "CWST",
-          "abbrev": "CWST",
+          "format": "ACW%sT",
+          "abbrev": "ACWST",
           "offset": 31500000,
           "posix": -836469900000,
           "save": 0,
@@ -95580,8 +96294,8 @@
         },
         {
           "wallclock": -2337897600000,
-          "format": "CWST",
-          "abbrev": "CWST",
+          "format": "ACW%sT",
+          "abbrev": "ACWST",
           "offset": 31500000,
           "posix": -2337928528000,
           "save": 0,
@@ -95610,7 +96324,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95624,7 +96338,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95638,7 +96352,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95652,7 +96366,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95666,7 +96380,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95680,7 +96394,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95694,7 +96408,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95708,7 +96422,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95722,7 +96436,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         }
       ],
@@ -95738,7 +96452,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95752,7 +96466,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95766,7 +96480,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95780,7 +96494,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95794,7 +96508,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95808,7 +96522,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95822,7 +96536,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -95834,8 +96548,8 @@
         "z",
         {
           "wallclock": -94694400000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -94730400000,
           "save": 0,
@@ -95843,8 +96557,8 @@
         },
         {
           "wallclock": -1669852800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEDT",
           "offset": 36000000,
           "posix": -1669892400000,
           "save": 3600000,
@@ -95852,16 +96566,16 @@
         },
         {
           "wallclock": -1680472800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AEDT",
+          "abbrev": "AEDT",
           "offset": 36000000,
           "posix": -1680508800000,
           "save": 3600000
         },
         {
           "wallclock": -2345760000000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AEST",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2345795356000,
           "save": 0
@@ -95889,7 +96603,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95903,7 +96617,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95917,7 +96631,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95931,7 +96645,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95945,7 +96659,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -95959,7 +96673,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95973,7 +96687,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -95987,7 +96701,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96001,7 +96715,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96015,7 +96729,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96029,7 +96743,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96043,7 +96757,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96057,7 +96771,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96071,7 +96785,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96085,7 +96799,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96099,7 +96813,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96113,7 +96827,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96127,7 +96841,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96141,7 +96855,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         }
       ],
@@ -96157,7 +96871,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96171,7 +96885,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96185,7 +96899,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96199,7 +96913,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96213,7 +96927,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96227,7 +96941,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96241,7 +96955,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -96253,7 +96967,7 @@
         "z",
         {
           "wallclock": 352252800000,
-          "format": "LHST",
+          "format": "LH%sT",
           "abbrev": "LHST",
           "offset": 37800000,
           "posix": 352216800000,
@@ -96262,8 +96976,8 @@
         },
         {
           "wallclock": -2364076800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AEST",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2364114980000,
           "save": 0
@@ -96291,7 +97005,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 30,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96305,7 +97019,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 1800000
         },
         {
@@ -96319,7 +97033,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 1800000
         },
         {
@@ -96333,7 +97047,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 30,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96347,7 +97061,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 1800000
         },
         {
@@ -96361,7 +97075,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 1800000
         },
         {
@@ -96375,7 +97089,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 30,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96389,7 +97103,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 30,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96403,7 +97117,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 1800000
         },
         {
@@ -96417,7 +97131,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 1800000
         },
         {
@@ -96431,7 +97145,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 30,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96445,7 +97159,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96459,7 +97173,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 30,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96473,7 +97187,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         }
       ]
@@ -96485,8 +97199,8 @@
         "z",
         {
           "wallclock": 709948800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": 709912800000,
           "save": 0,
@@ -96494,8 +97208,8 @@
         },
         {
           "wallclock": 31536000000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": 31500000000,
           "save": 0,
@@ -96503,8 +97217,8 @@
         },
         {
           "wallclock": -2366755200000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2366790956000,
           "save": 0,
@@ -96533,7 +97247,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96547,7 +97261,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         }
       ],
@@ -96563,7 +97277,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96577,7 +97291,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96591,7 +97305,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96605,7 +97319,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         }
       ],
@@ -96621,7 +97335,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96635,7 +97349,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96649,7 +97363,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96663,7 +97377,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96677,7 +97391,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96691,7 +97405,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96705,7 +97419,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -96717,7 +97431,7 @@
         "z",
         {
           "wallclock": 352252800000,
-          "format": "LHST",
+          "format": "LH%sT",
           "abbrev": "LHST",
           "offset": 37800000,
           "posix": 352216800000,
@@ -96726,8 +97440,8 @@
         },
         {
           "wallclock": -2364076800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AEST",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2364114980000,
           "save": 0
@@ -96755,7 +97469,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 30,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96769,7 +97483,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 1800000
         },
         {
@@ -96783,7 +97497,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 1800000
         },
         {
@@ -96797,7 +97511,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 30,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96811,7 +97525,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 1800000
         },
         {
@@ -96825,7 +97539,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 1800000
         },
         {
@@ -96839,7 +97553,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 30,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96853,7 +97567,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 30,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96867,7 +97581,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 1800000
         },
         {
@@ -96881,7 +97595,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 1800000
         },
         {
@@ -96895,7 +97609,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 30,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96909,7 +97623,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -96923,7 +97637,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 30,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -96937,7 +97651,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         }
       ]
@@ -96949,8 +97663,8 @@
         "z",
         {
           "wallclock": 31536000000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": 31500000000,
           "save": 0,
@@ -96958,8 +97672,8 @@
         },
         {
           "wallclock": -2364076800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2364111592000,
           "save": 0,
@@ -96988,7 +97702,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97002,7 +97716,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97016,7 +97730,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97030,7 +97744,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97044,7 +97758,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97058,7 +97772,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97072,7 +97786,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97086,7 +97800,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97100,7 +97814,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97114,7 +97828,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97128,7 +97842,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97142,7 +97856,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97156,7 +97870,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97170,7 +97884,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ],
@@ -97186,7 +97900,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97200,7 +97914,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97214,7 +97928,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97228,7 +97942,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97242,7 +97956,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97256,7 +97970,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97270,7 +97984,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -97282,8 +97996,8 @@
         "z",
         {
           "wallclock": 31536000000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": 31500000000,
           "save": 0,
@@ -97291,8 +98005,8 @@
         },
         {
           "wallclock": -2364076800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2364113092000,
           "save": 0,
@@ -97321,7 +98035,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97335,7 +98049,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97349,7 +98063,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97363,7 +98077,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97377,7 +98091,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97391,7 +98105,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97405,7 +98119,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97419,7 +98133,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97433,7 +98147,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97447,7 +98161,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97461,7 +98175,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97475,7 +98189,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97489,7 +98203,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97503,7 +98217,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97517,7 +98231,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97531,7 +98245,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ],
@@ -97547,7 +98261,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97561,7 +98275,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97575,7 +98289,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97589,7 +98303,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97603,7 +98317,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97617,7 +98331,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97631,7 +98345,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -97643,8 +98357,8 @@
         "z",
         {
           "wallclock": -2230156800000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "AC%sT",
+          "abbrev": "ACST",
           "offset": 34200000,
           "posix": -2230189200000,
           "save": 0,
@@ -97652,8 +98366,8 @@
         },
         {
           "wallclock": -2364076800000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "ACST",
+          "abbrev": "ACST",
           "offset": 32400000,
           "posix": -2364108200000,
           "save": 0
@@ -97681,7 +98395,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97695,7 +98409,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97709,7 +98423,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97723,7 +98437,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97737,7 +98451,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97751,7 +98465,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97765,7 +98479,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -97777,8 +98491,8 @@
         "z",
         {
           "wallclock": -836438400000,
-          "format": "WST",
-          "abbrev": "WST",
+          "format": "AW%sT",
+          "abbrev": "AWST",
           "offset": 28800000,
           "posix": -836467200000,
           "save": 0,
@@ -97786,8 +98500,8 @@
         },
         {
           "wallclock": -2337897600000,
-          "format": "WST",
-          "abbrev": "WST",
+          "format": "AW%sT",
+          "abbrev": "AWST",
           "offset": 28800000,
           "posix": -2337925404000,
           "save": 0,
@@ -97816,7 +98530,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97830,7 +98544,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97844,7 +98558,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97858,7 +98572,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97872,7 +98586,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97886,7 +98600,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97900,7 +98614,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97914,7 +98628,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97928,7 +98642,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         }
       ],
@@ -97944,7 +98658,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -97958,7 +98672,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97972,7 +98686,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -97986,7 +98700,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98000,7 +98714,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98014,7 +98728,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98028,7 +98742,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -98040,8 +98754,8 @@
         "z",
         {
           "wallclock": 31536000000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": 31500000000,
           "save": 0,
@@ -98049,8 +98763,8 @@
         },
         {
           "wallclock": -2366755200000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2366791928000,
           "save": 0,
@@ -98079,7 +98793,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98093,7 +98807,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98107,7 +98821,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98121,7 +98835,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         }
       ],
@@ -98137,7 +98851,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98151,7 +98865,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98165,7 +98879,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98179,7 +98893,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98193,7 +98907,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98207,7 +98921,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98221,7 +98935,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -98233,8 +98947,8 @@
         "z",
         {
           "wallclock": 31536000000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "AC%sT",
+          "abbrev": "ACST",
           "offset": 34200000,
           "posix": 31501800000,
           "save": 0,
@@ -98242,8 +98956,8 @@
         },
         {
           "wallclock": -2230156800000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "AC%sT",
+          "abbrev": "ACST",
           "offset": 34200000,
           "posix": -2230189200000,
           "save": 0,
@@ -98251,8 +98965,8 @@
         },
         {
           "wallclock": -2364076800000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "ACST",
+          "abbrev": "ACST",
           "offset": 32400000,
           "posix": -2364110060000,
           "save": 0
@@ -98280,7 +98994,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98294,7 +99008,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98308,7 +99022,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98322,7 +99036,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98336,7 +99050,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98350,7 +99064,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98364,7 +99078,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98378,7 +99092,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98392,7 +99106,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98406,7 +99120,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98420,7 +99134,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98434,7 +99148,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98448,7 +99162,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98462,7 +99176,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98476,7 +99190,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ],
@@ -98492,7 +99206,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98506,7 +99220,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98520,7 +99234,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98534,7 +99248,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98548,7 +99262,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98562,7 +99276,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98576,7 +99290,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -98588,8 +99302,8 @@
         "z",
         {
           "wallclock": 31536000000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": 31500000000,
           "save": 0,
@@ -98597,8 +99311,8 @@
         },
         {
           "wallclock": -2364076800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2364113092000,
           "save": 0,
@@ -98627,7 +99341,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98641,7 +99355,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98655,7 +99369,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98669,7 +99383,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98683,7 +99397,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98697,7 +99411,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98711,7 +99425,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98725,7 +99439,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98739,7 +99453,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98753,7 +99467,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98767,7 +99481,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98781,7 +99495,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98795,7 +99509,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98809,7 +99523,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98823,7 +99537,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98837,7 +99551,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ],
@@ -98853,7 +99567,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98867,7 +99581,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98881,7 +99595,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98895,7 +99609,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -98909,7 +99623,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98923,7 +99637,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -98937,7 +99651,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -98949,8 +99663,8 @@
         "z",
         {
           "wallclock": -94694400000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -94730400000,
           "save": 0,
@@ -98958,8 +99672,8 @@
         },
         {
           "wallclock": -1669852800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEDT",
           "offset": 36000000,
           "posix": -1669892400000,
           "save": 3600000,
@@ -98967,16 +99681,16 @@
         },
         {
           "wallclock": -1680472800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AEDT",
+          "abbrev": "AEDT",
           "offset": 36000000,
           "posix": -1680508800000,
           "save": 3600000
         },
         {
           "wallclock": -2345760000000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AEST",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2345795356000,
           "save": 0
@@ -99004,7 +99718,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99018,7 +99732,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99032,7 +99746,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99046,7 +99760,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99060,7 +99774,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99074,7 +99788,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99088,7 +99802,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99102,7 +99816,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99116,7 +99830,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99130,7 +99844,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99144,7 +99858,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99158,7 +99872,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99172,7 +99886,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99186,7 +99900,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99200,7 +99914,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99214,7 +99928,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99228,7 +99942,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99242,7 +99956,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99256,7 +99970,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         }
       ],
@@ -99272,7 +99986,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99286,7 +100000,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99300,7 +100014,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99314,7 +100028,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99328,7 +100042,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99342,7 +100056,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99356,7 +100070,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -99368,8 +100082,8 @@
         "z",
         {
           "wallclock": 31536000000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": 31500000000,
           "save": 0,
@@ -99377,8 +100091,8 @@
         },
         {
           "wallclock": -2364076800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AE%sT",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2364111592000,
           "save": 0,
@@ -99407,7 +100121,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99421,7 +100135,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99435,7 +100149,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99449,7 +100163,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99463,7 +100177,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99477,7 +100191,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99491,7 +100205,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99505,7 +100219,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99519,7 +100233,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99533,7 +100247,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99547,7 +100261,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99561,7 +100275,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99575,7 +100289,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99589,7 +100303,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ],
@@ -99605,7 +100319,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99619,7 +100333,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99633,7 +100347,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99647,7 +100361,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99661,7 +100375,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99675,7 +100389,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99689,7 +100403,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -99701,8 +100415,8 @@
         "z",
         {
           "wallclock": -836438400000,
-          "format": "WST",
-          "abbrev": "WST",
+          "format": "AW%sT",
+          "abbrev": "AWST",
           "offset": 28800000,
           "posix": -836467200000,
           "save": 0,
@@ -99710,8 +100424,8 @@
         },
         {
           "wallclock": -2337897600000,
-          "format": "WST",
-          "abbrev": "WST",
+          "format": "AW%sT",
+          "abbrev": "AWST",
           "offset": 28800000,
           "posix": -2337925404000,
           "save": 0,
@@ -99740,7 +100454,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99754,7 +100468,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99768,7 +100482,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99782,7 +100496,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99796,7 +100510,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99810,7 +100524,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99824,7 +100538,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99838,7 +100552,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99852,7 +100566,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         }
       ],
@@ -99868,7 +100582,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99882,7 +100596,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99896,7 +100610,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99910,7 +100624,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -99924,7 +100638,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99938,7 +100652,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -99952,7 +100666,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -99964,8 +100678,8 @@
         "z",
         {
           "wallclock": 946684800000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "AC%sT",
+          "abbrev": "ACDT",
           "offset": 34200000,
           "posix": 946647000000,
           "save": 3600000,
@@ -99973,8 +100687,8 @@
         },
         {
           "wallclock": 31536000000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "AC%sT",
+          "abbrev": "ACST",
           "offset": 34200000,
           "posix": 31501800000,
           "save": 0,
@@ -99982,8 +100696,8 @@
         },
         {
           "wallclock": -2230156800000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "AC%sT",
+          "abbrev": "ACST",
           "offset": 34200000,
           "posix": -2230189200000,
           "save": 0,
@@ -99991,16 +100705,16 @@
         },
         {
           "wallclock": -2314915200000,
-          "format": "CST",
-          "abbrev": "CST",
+          "format": "ACST",
+          "abbrev": "ACST",
           "offset": 32400000,
           "posix": -2314951200000,
           "save": 0
         },
         {
           "wallclock": -2364076800000,
-          "format": "EST",
-          "abbrev": "EST",
+          "format": "AEST",
+          "abbrev": "AEST",
           "offset": 36000000,
           "posix": -2364110748000,
           "save": 0
@@ -100028,7 +100742,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -100042,7 +100756,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100056,7 +100770,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -100070,7 +100784,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100084,7 +100798,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100098,7 +100812,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100112,7 +100826,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100126,7 +100840,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100140,7 +100854,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100154,7 +100868,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100168,7 +100882,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100182,7 +100896,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -100196,7 +100910,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100210,7 +100924,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -100224,7 +100938,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ],
@@ -100240,7 +100954,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -100254,7 +100968,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100268,7 +100982,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100282,7 +100996,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -100296,7 +101010,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100310,7 +101024,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100324,7 +101038,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -100338,7 +101052,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -100352,7 +101066,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100366,7 +101080,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100380,7 +101094,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -100394,7 +101108,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100408,7 +101122,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -100422,7 +101136,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100436,7 +101150,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100450,7 +101164,7 @@
           "time": 180,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ],
@@ -100466,7 +101180,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100480,7 +101194,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -100494,7 +101208,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -100508,7 +101222,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         },
         {
@@ -100522,7 +101236,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -100536,7 +101250,7 @@
           "time": 1,
           "clock": "wallclock",
           "save": 60,
-          "letter": "",
+          "letter": "D",
           "saved": 0
         },
         {
@@ -100550,7 +101264,7 @@
           "time": 120,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
         }
       ]
@@ -115316,11 +116030,11 @@
           "rules": "Hungary"
         },
         {
-          "wallclock": -906933600000,
+          "wallclock": -906768000000,
           "format": "CE%sT",
           "abbrev": "CEST",
           "offset": 3600000,
-          "posix": -906937200000,
+          "posix": -906771600000,
           "save": 3600000,
           "rules": "C-Eur"
         },
@@ -115541,20 +116255,6 @@
         {
           "from": 1950,
           "to": 1950,
-          "month": 9,
-          "day": [
-            7,
-            23
-          ],
-          "time": 180,
-          "clock": "wallclock",
-          "save": 0,
-          "letter": "",
-          "saved": 3600000
-        },
-        {
-          "from": 1950,
-          "to": 1950,
           "month": 3,
           "day": [
             7,
@@ -115567,12 +116267,12 @@
           "saved": 0
         },
         {
-          "from": 1946,
-          "to": 1949,
+          "from": 1950,
+          "to": 1950,
           "month": 9,
           "day": [
-            0,
-            1
+            7,
+            23
           ],
           "time": 180,
           "clock": "wallclock",
@@ -115596,6 +116296,20 @@
         },
         {
           "from": 1946,
+          "to": 1949,
+          "month": 9,
+          "day": [
+            0,
+            1
+          ],
+          "time": 180,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1946,
           "to": 1946,
           "month": 2,
           "day": [
@@ -115614,7 +116328,7 @@
           "month": 10,
           "day": [
             7,
-            3
+            1
           ],
           "time": 0,
           "clock": "wallclock",
@@ -115637,40 +116351,12 @@
           "saved": 0
         },
         {
-          "from": 1920,
-          "to": 1920,
-          "month": 8,
-          "day": [
-            7,
-            30
-          ],
-          "time": 180,
-          "clock": "wallclock",
-          "save": 0,
-          "letter": "",
-          "saved": 3600000
-        },
-        {
-          "from": 1920,
-          "to": 1920,
-          "month": 3,
-          "day": [
-            7,
-            5
-          ],
-          "time": 180,
-          "clock": "wallclock",
-          "save": 60,
-          "letter": "S",
-          "saved": 0
-        },
-        {
           "from": 1919,
           "to": 1919,
-          "month": 8,
+          "month": 10,
           "day": [
             7,
-            15
+            24
           ],
           "time": 180,
           "clock": "wallclock",
@@ -115698,7 +116384,7 @@
           "month": 8,
           "day": [
             7,
-            29
+            16
           ],
           "time": 180,
           "clock": "wallclock",
@@ -120810,7 +121496,7 @@
           "format": "EE%sT",
           "abbrev": "EET",
           "offset": 7200000,
-          "posix": -1535938792000,
+          "posix": -1535938789000,
           "save": 0,
           "rules": "Finland"
         },
@@ -120818,15 +121504,15 @@
           "wallclock": -2890252800000,
           "format": "HMT",
           "abbrev": "HMT",
-          "offset": 5992000,
-          "posix": -2890258792000,
+          "offset": 5989000,
+          "posix": -2890258789000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 5992000,
+          "offset": 5989000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -120954,9 +121640,9 @@
           "month": 3,
           "day": [
             7,
-            3
+            2
           ],
-          "time": 0,
+          "time": 1440,
           "clock": "wallclock",
           "save": 60,
           "letter": "S",
@@ -120968,9 +121654,9 @@
           "month": 9,
           "day": [
             7,
-            3
+            4
           ],
-          "time": 0,
+          "time": 60,
           "clock": "wallclock",
           "save": 0,
           "letter": "",
@@ -124036,6 +124722,14 @@
     "zones": {
       "Europe/Kaliningrad": [
         "z",
+        {
+          "wallclock": 1414288800000,
+          "format": "EET",
+          "abbrev": "EET",
+          "offset": 7200000,
+          "posix": 1414278000000,
+          "save": 0
+        },
         {
           "wallclock": 1301191200000,
           "format": "FET",
@@ -130824,7 +131518,7 @@
           "format": "EE%sT",
           "abbrev": "EET",
           "offset": 7200000,
-          "posix": -1535938792000,
+          "posix": -1535938789000,
           "save": 0,
           "rules": "Finland"
         },
@@ -130832,15 +131526,15 @@
           "wallclock": -2890252800000,
           "format": "HMT",
           "abbrev": "HMT",
-          "offset": 5992000,
-          "posix": -2890258792000,
+          "offset": 5989000,
+          "posix": -2890258789000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 5992000,
+          "offset": 5989000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -130968,9 +131662,9 @@
           "month": 3,
           "day": [
             7,
-            3
+            2
           ],
-          "time": 0,
+          "time": 1440,
           "clock": "wallclock",
           "save": 60,
           "letter": "S",
@@ -130982,9 +131676,9 @@
           "month": 9,
           "day": [
             7,
-            3
+            4
           ],
-          "time": 0,
+          "time": 60,
           "clock": "wallclock",
           "save": 0,
           "letter": "",
@@ -132352,6 +133046,14 @@
       "Europe/Moscow": [
         "z",
         {
+          "wallclock": 1414288800000,
+          "format": "MSK",
+          "abbrev": "MSK",
+          "offset": 10800000,
+          "posix": 1414274400000,
+          "save": 0
+        },
+        {
           "wallclock": 1301191200000,
           "format": "MSK",
           "abbrev": "MSK",
@@ -132408,7 +133110,7 @@
           "format": "%s",
           "abbrev": "MSD",
           "offset": 10800000,
-          "posix": -1593829848000,
+          "posix": -1593829879000,
           "save": 3600000,
           "rules": "Russia"
         },
@@ -132416,8 +133118,8 @@
           "wallclock": -1688256000000,
           "format": "%s",
           "abbrev": "MMT",
-          "offset": 9048000,
-          "posix": -1688265000000,
+          "offset": 9079000,
+          "posix": -1688265017000,
           "save": 0,
           "rules": "Russia"
         },
@@ -132425,15 +133127,15 @@
           "wallclock": -2840140800000,
           "format": "MMT",
           "abbrev": "MMT",
-          "offset": 9000000,
-          "posix": -2840149820000,
+          "offset": 9017000,
+          "posix": -2840149817000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 9020000,
+          "offset": 9017000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -135328,54 +136030,54 @@
           "format": "EET",
           "abbrev": "EET",
           "offset": 7200000,
-          "posix": -1377308184000,
+          "posix": -1377308188000,
           "save": 0
         },
         {
           "wallclock": -1597266000000,
           "format": "RMT",
           "abbrev": "RMT",
-          "offset": 5784000,
-          "posix": -1597275384000,
+          "offset": 5788000,
+          "posix": -1597275388000,
           "save": 0
         },
         {
           "wallclock": -1601676000000,
           "format": "LST",
           "abbrev": "LST",
-          "offset": 5784000,
-          "posix": -1601681784000,
+          "offset": 5788000,
+          "posix": -1601681788000,
           "save": 3600000
         },
         {
           "wallclock": -1618693200000,
           "format": "RMT",
           "abbrev": "RMT",
-          "offset": 5784000,
-          "posix": -1618702584000,
+          "offset": 5788000,
+          "posix": -1618702588000,
           "save": 0
         },
         {
           "wallclock": -1632002400000,
           "format": "LST",
           "abbrev": "LST",
-          "offset": 5784000,
-          "posix": -1632008184000,
+          "offset": 5788000,
+          "posix": -1632008188000,
           "save": 3600000
         },
         {
           "wallclock": -2840140800000,
           "format": "RMT",
           "abbrev": "RMT",
-          "offset": 5784000,
-          "posix": -2840146584000,
+          "offset": 5788000,
+          "posix": -2840146588000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 5784000,
+          "offset": 5788000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -136947,8 +137649,8 @@
         },
         {
           "wallclock": 670384800000,
-          "format": "KUY%sT",
-          "abbrev": "KUYST",
+          "format": "EE%sT",
+          "abbrev": "EEST",
           "offset": 7200000,
           "posix": 670374000000,
           "save": 3600000,
@@ -136956,8 +137658,8 @@
         },
         {
           "wallclock": 606880800000,
-          "format": "KUY%sT",
-          "abbrev": "KUYST",
+          "format": "MSK/MSD",
+          "abbrev": "MSD",
           "offset": 10800000,
           "posix": 606866400000,
           "save": 3600000,
@@ -138565,6 +139267,14 @@
     "zones": {
       "Europe/Simferopol": [
         "z",
+        {
+          "wallclock": 1414288800000,
+          "format": "MSK",
+          "abbrev": "MSK",
+          "offset": 10800000,
+          "posix": 1414274400000,
+          "save": 0
+        },
         {
           "wallclock": 1396144800000,
           "format": "MSK",
@@ -145722,17 +146432,25 @@
       "Europe/Volgograd": [
         "z",
         {
+          "wallclock": 1414288800000,
+          "format": "MSK",
+          "abbrev": "MSK",
+          "offset": 10800000,
+          "posix": 1414274400000,
+          "save": 0
+        },
+        {
           "wallclock": 1301191200000,
-          "format": "VOLT",
-          "abbrev": "VOLT",
+          "format": "MSK",
+          "abbrev": "MSK",
           "offset": 14400000,
           "posix": 1301180400000,
           "save": 0
         },
         {
           "wallclock": 701834400000,
-          "format": "VOL%sT",
-          "abbrev": "VOLST",
+          "format": "MSK",
+          "abbrev": "MSK",
           "offset": 10800000,
           "posix": 701820000000,
           "save": 3600000,
@@ -149805,58 +150523,27 @@
       "Pacific/Apia": [
         "z",
         {
-          "wallclock": 1333252800000,
+          "wallclock": 1325203200000,
           "format": "WS%sT",
-          "abbrev": "WST",
+          "abbrev": "WSDT",
           "offset": 46800000,
-          "posix": 1333202400000,
+          "posix": 1325239200000,
+          "save": 3600000,
+          "rules": "WS"
+        },
+        {
+          "wallclock": -631152000000,
+          "format": "S%sT",
+          "abbrev": "SST",
+          "offset": -39600000,
+          "posix": -631110600000,
           "save": 0,
           "rules": "WS"
         },
         {
-          "wallclock": 1325203200000,
-          "format": "WSDT",
-          "abbrev": "WSDT",
-          "offset": 46800000,
-          "posix": 1325239200000,
-          "save": 3600000
-        },
-        {
-          "wallclock": 1316833200000,
-          "format": "WSDT",
-          "abbrev": "WSDT",
-          "offset": -39600000,
-          "posix": 1316872800000,
-          "save": 3600000
-        },
-        {
-          "wallclock": 1301716800000,
-          "format": "WST",
-          "abbrev": "WST",
-          "offset": -39600000,
-          "posix": 1301752800000,
-          "save": 0
-        },
-        {
-          "wallclock": 1285459200000,
-          "format": "WSDT",
-          "abbrev": "WSDT",
-          "offset": -39600000,
-          "posix": 1285498800000,
-          "save": 3600000
-        },
-        {
-          "wallclock": -631152000000,
-          "format": "WST",
-          "abbrev": "WST",
-          "offset": -39600000,
-          "posix": -631110600000,
-          "save": 0
-        },
-        {
           "wallclock": -1861920000000,
-          "format": "SAMT",
-          "abbrev": "SAMT",
+          "format": "WSST",
+          "abbrev": "WSST",
           "offset": -41400000,
           "posix": -1861878784000,
           "save": 0
@@ -149884,6 +150571,20 @@
         {
           "from": 2012,
           "to": 1.7976931348623157e+308,
+          "month": 3,
+          "day": [
+            0,
+            1
+          ],
+          "time": 240,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "S",
+          "saved": 3600000
+        },
+        {
+          "from": 2012,
+          "to": 1.7976931348623157e+308,
           "month": 8,
           "day": [
             0,
@@ -149896,18 +150597,46 @@
           "saved": 0
         },
         {
-          "from": 2012,
-          "to": 1.7976931348623157e+308,
+          "from": 2011,
+          "to": 2011,
           "month": 3,
           "day": [
-            0,
+            6,
             1
           ],
           "time": 240,
           "clock": "wallclock",
           "save": 0,
-          "letter": "",
+          "letter": "S",
           "saved": 3600000
+        },
+        {
+          "from": 2011,
+          "to": 2011,
+          "month": 8,
+          "day": [
+            6,
+            -30
+          ],
+          "time": 180,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
+        },
+        {
+          "from": 2010,
+          "to": 2010,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
         }
       ]
     }
@@ -150178,13 +150907,21 @@
       "Pacific/Chatham": [
         "z",
         {
-          "wallclock": -410227200000,
+          "wallclock": -757382400000,
           "format": "CHA%sT",
           "abbrev": "CHAST",
           "offset": 45900000,
-          "posix": -410271228000,
+          "posix": -757426500000,
           "save": 0,
           "rules": "Chatham"
+        },
+        {
+          "wallclock": -3192393600000,
+          "format": "CHAST",
+          "abbrev": "CHAST",
+          "offset": 44100000,
+          "posix": -3192437628000,
+          "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
@@ -151967,18 +152704,10 @@
           "save": 0
         },
         {
-          "wallclock": -631152000000,
+          "wallclock": -1861920000000,
           "format": "NST",
           "abbrev": "NST",
           "offset": -39600000,
-          "posix": -631110600000,
-          "save": 0
-        },
-        {
-          "wallclock": -1861920000000,
-          "format": "SAMT",
-          "abbrev": "SAMT",
-          "offset": -41400000,
           "posix": -1861879032000,
           "save": 0
         },
@@ -152285,18 +153014,10 @@
           "save": 0
         },
         {
-          "wallclock": -631152000000,
+          "wallclock": -1861920000000,
           "format": "NST",
           "abbrev": "NST",
           "offset": -39600000,
-          "posix": -631110600000,
-          "save": 0
-        },
-        {
-          "wallclock": -1861920000000,
-          "format": "SAMT",
-          "abbrev": "SAMT",
-          "offset": -41400000,
           "posix": -1861879032000,
           "save": 0
         },
@@ -155708,18 +156429,10 @@
           "save": 0
         },
         {
-          "wallclock": -631152000000,
+          "wallclock": -1861920000000,
           "format": "NST",
           "abbrev": "NST",
           "offset": -39600000,
-          "posix": -631110600000,
-          "save": 0
-        },
-        {
-          "wallclock": -1861920000000,
-          "format": "SAMT",
-          "abbrev": "SAMT",
-          "offset": -41400000,
           "posix": -1861879032000,
           "save": 0
         },

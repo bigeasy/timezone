@@ -29,9 +29,25 @@
         "rules": "ROK"
       },
       {
-        "wallclock": -1199232000000,
+        "wallclock": -767318400000,
         "format": "KST",
         "abbrev": "KST",
+        "offset": 32400000,
+        "posix": -767350800000,
+        "save": 0
+      },
+      {
+        "wallclock": -1017792000000,
+        "format": "JST",
+        "abbrev": "JST",
+        "offset": 32400000,
+        "posix": -1017824400000,
+        "save": 0
+      },
+      {
+        "wallclock": -1199232000000,
+        "format": "JCST",
+        "abbrev": "JCST",
         "offset": 32400000,
         "posix": -1199262600000,
         "save": 0
@@ -46,8 +62,8 @@
       },
       {
         "wallclock": -2053900800000,
-        "format": "KST",
-        "abbrev": "KST",
+        "format": "JCST",
+        "abbrev": "JCST",
         "offset": 32400000,
         "posix": -2053931400000,
         "save": 0

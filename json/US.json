@@ -3143,18 +3143,10 @@
           "save": 0
         },
         {
-          "wallclock": -631152000000,
+          "wallclock": -1861920000000,
           "format": "NST",
           "abbrev": "NST",
           "offset": -39600000,
-          "posix": -631110600000,
-          "save": 0
-        },
-        {
-          "wallclock": -1861920000000,
-          "format": "SAMT",
-          "abbrev": "SAMT",
-          "offset": -41400000,
           "posix": -1861879032000,
           "save": 0
         },

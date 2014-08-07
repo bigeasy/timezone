@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": 31536000000,
-        "format": "CST",
-        "abbrev": "CST",
+        "format": "AC%sT",
+        "abbrev": "ACST",
         "offset": 34200000,
         "posix": 31501800000,
         "save": 0,
@@ -13,8 +13,8 @@
       },
       {
         "wallclock": -2230156800000,
-        "format": "CST",
-        "abbrev": "CST",
+        "format": "AC%sT",
+        "abbrev": "ACST",
         "offset": 34200000,
         "posix": -2230189200000,
         "save": 0,
@@ -22,8 +22,8 @@
       },
       {
         "wallclock": -2364076800000,
-        "format": "CST",
-        "abbrev": "CST",
+        "format": "ACST",
+        "abbrev": "ACST",
         "offset": 32400000,
         "posix": -2364110060000,
         "save": 0
@@ -51,7 +51,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -65,7 +65,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -79,7 +79,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -93,7 +93,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -107,7 +107,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -121,7 +121,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -135,7 +135,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -149,7 +149,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -163,7 +163,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -177,7 +177,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -191,7 +191,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -205,7 +205,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -219,7 +219,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -233,7 +233,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -247,7 +247,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       }
     ],
@@ -263,7 +263,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -277,7 +277,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -291,7 +291,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -305,7 +305,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -319,7 +319,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -333,7 +333,7 @@
         "time": 1,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -347,7 +347,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       }
     ]

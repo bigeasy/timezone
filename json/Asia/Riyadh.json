@@ -3,11 +3,11 @@
     "Asia/Riyadh": [
       "z",
       {
-        "wallclock": -631152000000,
+        "wallclock": -719625600000,
         "format": "AST",
         "abbrev": "AST",
         "offset": 10800000,
-        "posix": -631163212000,
+        "posix": -719636812000,
         "save": 0
       },
       {

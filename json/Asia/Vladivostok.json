@@ -3,6 +3,14 @@
     "Asia/Vladivostok": [
       "z",
       {
+        "wallclock": 1414288800000,
+        "format": "VLAT",
+        "abbrev": "VLAT",
+        "offset": 36000000,
+        "posix": 1414249200000,
+        "save": 0
+      },
+      {
         "wallclock": 1301191200000,
         "format": "VLAT",
         "abbrev": "VLAT",
@@ -42,14 +50,14 @@
         "format": "VLAT",
         "abbrev": "VLAT",
         "offset": 32400000,
-        "posix": -1487321264000,
+        "posix": -1487321254000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 31664000,
+        "offset": 31654000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

@@ -3,6 +3,14 @@
     "Asia/Sakhalin": [
       "z",
       {
+        "wallclock": 1414288800000,
+        "format": "SAKT",
+        "abbrev": "SAKT",
+        "offset": 36000000,
+        "posix": 1414249200000,
+        "save": 0
+      },
+      {
         "wallclock": 1301191200000,
         "format": "SAKT",
         "abbrev": "SAKT",
@@ -47,17 +55,17 @@
         "rules": "Russia"
       },
       {
-        "wallclock": -1009843200000,
+        "wallclock": -1017792000000,
         "format": "JST",
         "abbrev": "JST",
         "offset": 32400000,
-        "posix": -1009875600000,
+        "posix": -1017824400000,
         "save": 0
       },
       {
         "wallclock": -2031004800000,
-        "format": "CJT",
-        "abbrev": "CJT",
+        "format": "JCST",
+        "abbrev": "JCST",
         "offset": 32400000,
         "posix": -2031039048000,
         "save": 0

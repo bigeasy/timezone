@@ -12,11 +12,11 @@
         "rules": "PRC"
       },
       {
-        "wallclock": -1325462400000,
+        "wallclock": -2177452800000,
         "format": "C%sT",
         "abbrev": "CST",
         "offset": 28800000,
-        "posix": -1325491557000,
+        "posix": -2177481943000,
         "save": 0,
         "rules": "Shang"
       },
@@ -24,7 +24,7 @@
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 29157000,
+        "offset": 29143000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

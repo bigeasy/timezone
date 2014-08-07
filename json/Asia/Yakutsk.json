@@ -3,6 +3,14 @@
     "Asia/Yakutsk": [
       "z",
       {
+        "wallclock": 1414288800000,
+        "format": "YAKT",
+        "abbrev": "YAKT",
+        "offset": 32400000,
+        "posix": 1414252800000,
+        "save": 0
+      },
+      {
         "wallclock": 1301191200000,
         "format": "YAKT",
         "abbrev": "YAKT",

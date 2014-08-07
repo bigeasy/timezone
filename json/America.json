@@ -37115,8 +37115,8 @@
         "z",
         {
           "wallclock": 436327200000,
-          "format": "MeST",
-          "abbrev": "MeST",
+          "format": "PST",
+          "abbrev": "PST",
           "offset": -28800000,
           "posix": 436352400000,
           "save": 0

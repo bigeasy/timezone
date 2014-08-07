@@ -3,6 +3,14 @@
     "Asia/Ust-Nera": [
       "z",
       {
+        "wallclock": 1414288800000,
+        "format": "VLAT",
+        "abbrev": "VLAT",
+        "offset": 36000000,
+        "posix": 1414249200000,
+        "save": 0
+      },
+      {
         "wallclock": 1315872000000,
         "format": "VLAT",
         "abbrev": "VLAT",

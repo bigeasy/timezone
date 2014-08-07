@@ -3,13 +3,21 @@
     "Pacific/Chatham": [
       "z",
       {
-        "wallclock": -410227200000,
+        "wallclock": -757382400000,
         "format": "CHA%sT",
         "abbrev": "CHAST",
         "offset": 45900000,
-        "posix": -410271228000,
+        "posix": -757426500000,
         "save": 0,
         "rules": "Chatham"
+      },
+      {
+        "wallclock": -3192393600000,
+        "format": "CHAST",
+        "abbrev": "CHAST",
+        "offset": 44100000,
+        "posix": -3192437628000,
+        "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,

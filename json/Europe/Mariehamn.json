@@ -16,7 +16,7 @@
         "format": "EE%sT",
         "abbrev": "EET",
         "offset": 7200000,
-        "posix": -1535938792000,
+        "posix": -1535938789000,
         "save": 0,
         "rules": "Finland"
       },
@@ -24,15 +24,15 @@
         "wallclock": -2890252800000,
         "format": "HMT",
         "abbrev": "HMT",
-        "offset": 5992000,
-        "posix": -2890258792000,
+        "offset": 5989000,
+        "posix": -2890258789000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 5992000,
+        "offset": 5989000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }
@@ -160,9 +160,9 @@
         "month": 3,
         "day": [
           7,
-          3
+          2
         ],
-        "time": 0,
+        "time": 1440,
         "clock": "wallclock",
         "save": 60,
         "letter": "S",
@@ -174,9 +174,9 @@
         "month": 9,
         "day": [
           7,
-          3
+          4
         ],
-        "time": 0,
+        "time": 60,
         "clock": "wallclock",
         "save": 0,
         "letter": "",

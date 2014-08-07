@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": 47174400000,
-        "format": "EST",
-        "abbrev": "EST",
+        "format": "AE%sT",
+        "abbrev": "AEST",
         "offset": 36000000,
         "posix": 47138400000,
         "save": 0,
@@ -13,8 +13,8 @@
       },
       {
         "wallclock": -1669852800000,
-        "format": "EST",
-        "abbrev": "EST",
+        "format": "AE%sT",
+        "abbrev": "AEDT",
         "offset": 36000000,
         "posix": -1669892400000,
         "save": 3600000,
@@ -22,16 +22,16 @@
       },
       {
         "wallclock": -1680472800000,
-        "format": "EST",
-        "abbrev": "EST",
+        "format": "AEDT",
+        "abbrev": "AEDT",
         "offset": 36000000,
         "posix": -1680508800000,
         "save": 3600000
       },
       {
         "wallclock": -2345760000000,
-        "format": "EST",
-        "abbrev": "EST",
+        "format": "AEST",
+        "abbrev": "AEST",
         "offset": 36000000,
         "posix": -2345794528000,
         "save": 0
@@ -59,7 +59,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -73,7 +73,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -87,7 +87,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -101,7 +101,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -115,7 +115,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -129,7 +129,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -143,7 +143,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -157,7 +157,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -171,7 +171,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -185,7 +185,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -199,7 +199,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -213,7 +213,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -227,7 +227,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -241,7 +241,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -255,7 +255,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -269,7 +269,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -283,7 +283,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -297,7 +297,7 @@
         "time": 180,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -311,7 +311,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       }
     ],
@@ -327,7 +327,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -341,7 +341,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -355,7 +355,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -369,7 +369,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -383,7 +383,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -397,7 +397,7 @@
         "time": 1,
         "clock": "wallclock",
         "save": 60,
-        "letter": "",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -411,7 +411,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       }
     ]
