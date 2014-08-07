@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 require("../proof")(1, function (equal, tz) {
-  equal(tz(), "0.0.33", "get");
+  equal(tz(), "0.0.34", "get");
 });
