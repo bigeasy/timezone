@@ -40,11 +40,11 @@
           "rules": "Port"
         },
         {
-          "wallclock": -1849564800000,
+          "wallclock": -1830384000000,
           "format": "AZO%sT",
           "abbrev": "AZOT",
           "offset": -7200000,
-          "posix": -1849557928000,
+          "posix": -1830377128000,
           "save": 0,
           "rules": "Port"
         },
@@ -2232,11 +2232,11 @@
           "rules": "Port"
         },
         {
-          "wallclock": -1849564800000,
+          "wallclock": -1830384000000,
           "format": "MAD%sT",
           "abbrev": "MADT",
           "offset": -3600000,
-          "posix": -1849560744000,
+          "posix": -1830379944000,
           "save": 0,
           "rules": "Port"
         },

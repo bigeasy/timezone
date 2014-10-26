@@ -76,54 +76,54 @@
         "format": "EET",
         "abbrev": "EET",
         "offset": 7200000,
-        "posix": -1377308188000,
+        "posix": -1377308194000,
         "save": 0
       },
       {
         "wallclock": -1597266000000,
         "format": "RMT",
         "abbrev": "RMT",
-        "offset": 5788000,
-        "posix": -1597275388000,
+        "offset": 5794000,
+        "posix": -1597275394000,
         "save": 0
       },
       {
         "wallclock": -1601676000000,
         "format": "LST",
         "abbrev": "LST",
-        "offset": 5788000,
-        "posix": -1601681788000,
+        "offset": 5794000,
+        "posix": -1601681794000,
         "save": 3600000
       },
       {
         "wallclock": -1618693200000,
         "format": "RMT",
         "abbrev": "RMT",
-        "offset": 5788000,
-        "posix": -1618702588000,
+        "offset": 5794000,
+        "posix": -1618702594000,
         "save": 0
       },
       {
         "wallclock": -1632002400000,
         "format": "LST",
         "abbrev": "LST",
-        "offset": 5788000,
-        "posix": -1632008188000,
+        "offset": 5794000,
+        "posix": -1632008194000,
         "save": 3600000
       },
       {
         "wallclock": -2840140800000,
         "format": "RMT",
         "abbrev": "RMT",
-        "offset": 5788000,
-        "posix": -2840146588000,
+        "offset": 5794000,
+        "posix": -2840146594000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 5788000,
+        "offset": 5794000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

@@ -624,18 +624,18 @@
       "Africa/Bangui": [
         "z",
         {
-          "wallclock": -1830384000000,
+          "wallclock": -1588464000000,
           "format": "WAT",
           "abbrev": "WAT",
           "offset": 3600000,
-          "posix": -1830388460000,
+          "posix": -1588464816000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 4460000,
+          "offset": 816000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -680,11 +680,11 @@
           "save": 0
         },
         {
-          "wallclock": -1849392000000,
+          "wallclock": -1830384000000,
           "format": "WAT",
           "abbrev": "WAT",
           "offset": -3600000,
-          "posix": -1849388260000,
+          "posix": -1830380260000,
           "save": 0
         },
         {
@@ -728,18 +728,18 @@
       "Africa/Brazzaville": [
         "z",
         {
-          "wallclock": -1830384000000,
+          "wallclock": -1588464000000,
           "format": "WAT",
           "abbrev": "WAT",
           "offset": 3600000,
-          "posix": -1830387668000,
+          "posix": -1588464816000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 3668000,
+          "offset": 816000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -3128,18 +3128,18 @@
       "Africa/Douala": [
         "z",
         {
-          "wallclock": -1830384000000,
+          "wallclock": -1588464000000,
           "format": "WAT",
           "abbrev": "WAT",
           "offset": 3600000,
-          "posix": -1830386328000,
+          "posix": -1588464816000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 2328000,
+          "offset": 816000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -4388,18 +4388,18 @@
       "Africa/Kinshasa": [
         "z",
         {
-          "wallclock": -2276640000000,
+          "wallclock": -1588464000000,
           "format": "WAT",
           "abbrev": "WAT",
           "offset": 3600000,
-          "posix": -2276643672000,
+          "posix": -1588464816000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 3672000,
+          "offset": 816000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -4436,18 +4436,18 @@
       "Africa/Libreville": [
         "z",
         {
-          "wallclock": -1830384000000,
+          "wallclock": -1588464000000,
           "format": "WAT",
           "abbrev": "WAT",
           "offset": 3600000,
-          "posix": -1830386268000,
+          "posix": -1588464816000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 2268000,
+          "offset": 816000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -4484,26 +4484,18 @@
       "Africa/Luanda": [
         "z",
         {
-          "wallclock": -1849392000000,
+          "wallclock": -1588464000000,
           "format": "WAT",
           "abbrev": "WAT",
           "offset": 3600000,
-          "posix": -1849395124000,
-          "save": 0
-        },
-        {
-          "wallclock": -2461449600000,
-          "format": "AOT",
-          "abbrev": "AOT",
-          "offset": 3124000,
-          "posix": -2461452776000,
+          "posix": -1588464816000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 3176000,
+          "offset": 816000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -4564,26 +4556,18 @@
       "Africa/Malabo": [
         "z",
         {
-          "wallclock": -190857600000,
+          "wallclock": -1588464000000,
           "format": "WAT",
           "abbrev": "WAT",
           "offset": 3600000,
-          "posix": -190857600000,
-          "save": 0
-        },
-        {
-          "wallclock": -1830384000000,
-          "format": "GMT",
-          "abbrev": "GMT",
-          "offset": 0,
-          "posix": -1830386108000,
+          "posix": -1588464816000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 2108000,
+          "offset": 816000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -4852,34 +4836,18 @@
       "Africa/Niamey": [
         "z",
         {
-          "wallclock": -315619200000,
+          "wallclock": -1588464000000,
           "format": "WAT",
           "abbrev": "WAT",
           "offset": 3600000,
-          "posix": -315619200000,
-          "save": 0
-        },
-        {
-          "wallclock": -1131235200000,
-          "format": "GMT",
-          "abbrev": "GMT",
-          "offset": 0,
-          "posix": -1131231600000,
-          "save": 0
-        },
-        {
-          "wallclock": -1830384000000,
-          "format": "WAT",
-          "abbrev": "WAT",
-          "offset": -3600000,
-          "posix": -1830384508000,
+          "posix": -1588464816000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 508000,
+          "offset": 816000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -4940,26 +4908,18 @@
       "Africa/Porto-Novo": [
         "z",
         {
-          "wallclock": -1131235200000,
+          "wallclock": -1588464000000,
           "format": "WAT",
           "abbrev": "WAT",
           "offset": 3600000,
-          "posix": -1131235200000,
-          "save": 0
-        },
-        {
-          "wallclock": -1830384000000,
-          "format": "GMT",
-          "abbrev": "GMT",
-          "offset": 0,
-          "posix": -1830384628000,
+          "posix": -1588464816000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 628000,
+          "offset": 816000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }

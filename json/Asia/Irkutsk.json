@@ -50,22 +50,22 @@
         "format": "IRKT",
         "abbrev": "IRKT",
         "offset": 25200000,
-        "posix": -1575874635000,
+        "posix": -1575874625000,
         "save": 0
       },
       {
         "wallclock": -2840140800000,
         "format": "IMT",
         "abbrev": "IMT",
-        "offset": 25035000,
-        "posix": -2840165835000,
+        "offset": 25025000,
+        "posix": -2840165825000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 25035000,
+        "offset": 25025000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

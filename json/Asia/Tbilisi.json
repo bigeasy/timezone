@@ -85,22 +85,22 @@
         "format": "TBIT",
         "abbrev": "TBIT",
         "offset": 10800000,
-        "posix": -1441162746000,
+        "posix": -1441162751000,
         "save": 0
       },
       {
         "wallclock": -2840140800000,
         "format": "TBMT",
         "abbrev": "TBMT",
-        "offset": 10746000,
-        "posix": -2840151546000,
+        "offset": 10751000,
+        "posix": -2840151551000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 10746000,
+        "offset": 10751000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

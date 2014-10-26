@@ -51,7 +51,7 @@
         "format": "WE%sT",
         "abbrev": "WET",
         "offset": 0,
-        "posix": -1830381808000,
+        "posix": -1830381795000,
         "save": 0,
         "rules": "Port"
       },
@@ -59,15 +59,15 @@
         "wallclock": -2713910400000,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": -2192000,
-        "posix": -2713908208000,
+        "offset": -2205000,
+        "posix": -2713908195000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": -2192000,
+        "offset": -2205000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

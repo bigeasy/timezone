@@ -76,14 +76,14 @@
         "format": "SAMT",
         "abbrev": "SAMT",
         "offset": 10800000,
-        "posix": -1593825636000,
+        "posix": -1593825620000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 12036000,
+        "offset": 12020000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

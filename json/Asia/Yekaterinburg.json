@@ -50,7 +50,15 @@
         "format": "SVET",
         "abbrev": "SVET",
         "offset": 14400000,
-        "posix": -1592611353000,
+        "posix": -1592610305000,
+        "save": 0
+      },
+      {
+        "wallclock": -1688256000000,
+        "format": "PMT",
+        "abbrev": "PMT",
+        "offset": 13505000,
+        "posix": -1688270553000,
         "save": 0
       },
       {

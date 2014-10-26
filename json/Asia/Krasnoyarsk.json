@@ -50,14 +50,14 @@
         "format": "KRAT",
         "abbrev": "KRAT",
         "offset": 21600000,
-        "posix": -1577513480000,
+        "posix": -1577513486000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 22280000,
+        "offset": 22286000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

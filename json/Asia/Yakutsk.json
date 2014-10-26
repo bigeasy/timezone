@@ -50,14 +50,14 @@
         "format": "YAKT",
         "abbrev": "YAKT",
         "offset": 28800000,
-        "posix": -1579423120000,
+        "posix": -1579423138000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 31120000,
+        "offset": 31138000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

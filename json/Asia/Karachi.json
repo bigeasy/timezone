@@ -56,6 +56,20 @@
   "rules": {
     "Pakistan": [
       {
+        "from": 2008,
+        "to": 2009,
+        "month": 10,
+        "day": [
+          7,
+          1
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      },
+      {
         "from": 2009,
         "to": 2009,
         "month": 3,
@@ -70,20 +84,6 @@
         "saved": 0
       },
       {
-        "from": 2009,
-        "to": 2009,
-        "month": 10,
-        "day": [
-          7,
-          1
-        ],
-        "time": 0,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
         "from": 2008,
         "to": 2008,
         "month": 5,
@@ -96,20 +96,6 @@
         "save": 60,
         "letter": "S",
         "saved": 0
-      },
-      {
-        "from": 2008,
-        "to": 2008,
-        "month": 10,
-        "day": [
-          7,
-          1
-        ],
-        "time": 0,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
       },
       {
         "from": 2002,
