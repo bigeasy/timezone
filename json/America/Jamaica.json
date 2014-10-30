@@ -11,12 +11,12 @@
         "save": 0
       },
       {
-        "wallclock": 136346400000,
+        "wallclock": 126230400000,
         "format": "E%sT",
-        "abbrev": "EDT",
+        "abbrev": "EST",
         "offset": -18000000,
-        "posix": 136364400000,
-        "save": 3600000,
+        "posix": 126248400000,
+        "save": 0,
         "rules": "US"
       },
       {

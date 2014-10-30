@@ -55,17 +55,17 @@
         "rules": "Russia"
       },
       {
-        "wallclock": -1577491200000,
+        "wallclock": -1441238400000,
         "format": "KRAT",
         "abbrev": "KRAT",
         "offset": 21600000,
-        "posix": -1577512128000,
+        "posix": -1441259328000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
-        "format": "NMT",
-        "abbrev": "NMT",
+        "format": "LMT",
+        "abbrev": "LMT",
         "offset": 20928000,
         "posix": -1.7976931348623157e+308,
         "save": 0
