@@ -1,4 +1,8 @@
-- Verson 0.0.35.
+- Version 0.0.36.
+
+ * Upgrade TZ Database to `tz2014h`. #218.
+
+- Version 0.0.35.
 
 Sun Oct 26 03:17:59 UTC 2014
 
