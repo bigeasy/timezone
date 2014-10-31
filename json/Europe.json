@@ -20829,6 +20829,14 @@
       "Europe/Minsk": [
         "z",
         {
+          "wallclock": 1414285200000,
+          "format": "MSK",
+          "abbrev": "MSK",
+          "offset": 10800000,
+          "posix": 1414274400000,
+          "save": 0
+        },
+        {
           "wallclock": 1301191200000,
           "format": "FET",
           "abbrev": "FET",
