@@ -1,3 +1,7 @@
+- Version 0.0.39.
+
+ * Upgrade TZ Database to `tz2014j`. #227.
+
 - Version 0.0.38.
 
 Mon Nov  3 13:40:31 UTC 2014
