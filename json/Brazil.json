@@ -186,7 +186,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -1152,7 +1152,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -2093,7 +2093,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -3042,7 +3042,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,

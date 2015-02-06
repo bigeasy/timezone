@@ -807,7 +807,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -9350,7 +9350,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -10685,7 +10685,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -11922,7 +11922,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -13995,7 +13995,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -17278,7 +17278,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -20150,7 +20150,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -22124,7 +22124,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -24322,11 +24322,11 @@
       "America/Grand_Turk": [
         "z",
         {
-          "wallclock": 1414893600000,
+          "wallclock": 1446343200000,
           "format": "AST",
           "abbrev": "AST",
           "offset": -14400000,
-          "posix": 1414908000000,
+          "posix": 1446357600000,
           "save": 0
         },
         {
@@ -33480,7 +33480,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -34598,7 +34598,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -41212,7 +41212,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -44190,7 +44190,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -45122,7 +45122,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -46854,7 +46854,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -48448,7 +48448,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -50494,7 +50494,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -52359,7 +52359,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,

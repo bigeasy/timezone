@@ -84,26 +84,42 @@
       "Africa/Addis_Ababa": [
         "z",
         {
-          "wallclock": -1062201600000,
+          "wallclock": -315619200000,
           "format": "EAT",
           "abbrev": "EAT",
           "offset": 10800000,
-          "posix": -1062210920000,
+          "posix": -315629100000,
           "save": 0
         },
         {
-          "wallclock": -3155673600000,
-          "format": "ADMT",
-          "abbrev": "ADMT",
-          "offset": 9320000,
-          "posix": -3155682888000,
+          "wallclock": -946771200000,
+          "format": "BEAUT",
+          "abbrev": "BEAUT",
+          "offset": 9900000,
+          "posix": -946780200000,
+          "save": 0
+        },
+        {
+          "wallclock": -1262304000000,
+          "format": "BEAT",
+          "abbrev": "BEAT",
+          "offset": 9000000,
+          "posix": -1262314800000,
+          "save": 0
+        },
+        {
+          "wallclock": -1309737600000,
+          "format": "EAT",
+          "abbrev": "EAT",
+          "offset": 10800000,
+          "posix": -1309746436000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 9288000,
+          "offset": 8836000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -520,34 +536,42 @@
       "Africa/Asmara": [
         "z",
         {
-          "wallclock": -1062201600000,
+          "wallclock": -315619200000,
           "format": "EAT",
           "abbrev": "EAT",
           "offset": 10800000,
-          "posix": -1062210920000,
+          "posix": -315629100000,
           "save": 0
         },
         {
-          "wallclock": -2524521600000,
-          "format": "ADMT",
-          "abbrev": "ADMT",
-          "offset": 9320000,
-          "posix": -2524530932000,
+          "wallclock": -946771200000,
+          "format": "BEAUT",
+          "abbrev": "BEAUT",
+          "offset": 9900000,
+          "posix": -946780200000,
           "save": 0
         },
         {
-          "wallclock": -3155673600000,
-          "format": "AMT",
-          "abbrev": "AMT",
-          "offset": 9332000,
-          "posix": -3155682932000,
+          "wallclock": -1262304000000,
+          "format": "BEAT",
+          "abbrev": "BEAT",
+          "offset": 9000000,
+          "posix": -1262314800000,
+          "save": 0
+        },
+        {
+          "wallclock": -1309737600000,
+          "format": "EAT",
+          "abbrev": "EAT",
+          "offset": 10800000,
+          "posix": -1309746436000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 9332000,
+          "offset": 8836000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -560,34 +584,42 @@
       "Africa/Asmera": [
         "z",
         {
-          "wallclock": -1062201600000,
+          "wallclock": -315619200000,
           "format": "EAT",
           "abbrev": "EAT",
           "offset": 10800000,
-          "posix": -1062210920000,
+          "posix": -315629100000,
           "save": 0
         },
         {
-          "wallclock": -2524521600000,
-          "format": "ADMT",
-          "abbrev": "ADMT",
-          "offset": 9320000,
-          "posix": -2524530932000,
+          "wallclock": -946771200000,
+          "format": "BEAUT",
+          "abbrev": "BEAUT",
+          "offset": 9900000,
+          "posix": -946780200000,
           "save": 0
         },
         {
-          "wallclock": -3155673600000,
-          "format": "AMT",
-          "abbrev": "AMT",
-          "offset": 9332000,
-          "posix": -3155682932000,
+          "wallclock": -1262304000000,
+          "format": "BEAT",
+          "abbrev": "BEAT",
+          "offset": 9000000,
+          "posix": -1262314800000,
+          "save": 0
+        },
+        {
+          "wallclock": -1309737600000,
+          "format": "EAT",
+          "abbrev": "EAT",
+          "offset": 10800000,
+          "posix": -1309746436000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 9332000,
+          "offset": 8836000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -975,7 +1007,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2016,
@@ -1818,7 +1850,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -3064,34 +3096,42 @@
       "Africa/Dar_es_Salaam": [
         "z",
         {
-          "wallclock": -283996800000,
+          "wallclock": -315619200000,
           "format": "EAT",
           "abbrev": "EAT",
           "offset": 10800000,
-          "posix": -284006700000,
+          "posix": -315629100000,
           "save": 0
         },
         {
-          "wallclock": -694310400000,
+          "wallclock": -946771200000,
           "format": "BEAUT",
           "abbrev": "BEAUT",
           "offset": 9900000,
-          "posix": -694321200000,
+          "posix": -946780200000,
           "save": 0
         },
         {
-          "wallclock": -1230768000000,
+          "wallclock": -1262304000000,
+          "format": "BEAT",
+          "abbrev": "BEAT",
+          "offset": 9000000,
+          "posix": -1262314800000,
+          "save": 0
+        },
+        {
+          "wallclock": -1309737600000,
           "format": "EAT",
           "abbrev": "EAT",
           "offset": 10800000,
-          "posix": -1230777428000,
+          "posix": -1309746436000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 9428000,
+          "offset": 8836000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -3104,18 +3144,42 @@
       "Africa/Djibouti": [
         "z",
         {
-          "wallclock": -1846281600000,
+          "wallclock": -315619200000,
           "format": "EAT",
           "abbrev": "EAT",
           "offset": 10800000,
-          "posix": -1846291956000,
+          "posix": -315629100000,
+          "save": 0
+        },
+        {
+          "wallclock": -946771200000,
+          "format": "BEAUT",
+          "abbrev": "BEAUT",
+          "offset": 9900000,
+          "posix": -946780200000,
+          "save": 0
+        },
+        {
+          "wallclock": -1262304000000,
+          "format": "BEAT",
+          "abbrev": "BEAT",
+          "offset": 9000000,
+          "posix": -1262314800000,
+          "save": 0
+        },
+        {
+          "wallclock": -1309737600000,
+          "format": "EAT",
+          "abbrev": "EAT",
+          "offset": 10800000,
+          "posix": -1309746436000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 10356000,
+          "offset": 8836000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -3500,7 +3564,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -4200,19 +4264,19 @@
       "Africa/Kampala": [
         "z",
         {
-          "wallclock": -410227200000,
+          "wallclock": -315619200000,
           "format": "EAT",
           "abbrev": "EAT",
           "offset": 10800000,
-          "posix": -410237100000,
+          "posix": -315629100000,
           "save": 0
         },
         {
-          "wallclock": -694310400000,
+          "wallclock": -946771200000,
           "format": "BEAUT",
           "abbrev": "BEAUT",
           "offset": 9900000,
-          "posix": -694319400000,
+          "posix": -946780200000,
           "save": 0
         },
         {
@@ -4228,14 +4292,14 @@
           "format": "EAT",
           "abbrev": "EAT",
           "offset": 10800000,
-          "posix": -1309745380000,
+          "posix": -1309746436000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 7780000,
+          "offset": 8836000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -4708,34 +4772,42 @@
       "Africa/Mogadishu": [
         "z",
         {
-          "wallclock": -410227200000,
+          "wallclock": -315619200000,
           "format": "EAT",
           "abbrev": "EAT",
           "offset": 10800000,
-          "posix": -410236200000,
+          "posix": -315629100000,
           "save": 0
         },
         {
-          "wallclock": -1230768000000,
+          "wallclock": -946771200000,
+          "format": "BEAUT",
+          "abbrev": "BEAUT",
+          "offset": 9900000,
+          "posix": -946780200000,
+          "save": 0
+        },
+        {
+          "wallclock": -1262304000000,
           "format": "BEAT",
           "abbrev": "BEAT",
           "offset": 9000000,
-          "posix": -1230778800000,
+          "posix": -1262314800000,
           "save": 0
         },
         {
-          "wallclock": -2403561600000,
+          "wallclock": -1309737600000,
           "format": "EAT",
           "abbrev": "EAT",
           "offset": 10800000,
-          "posix": -2403572488000,
+          "posix": -1309746436000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 10888000,
+          "offset": 8836000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -6630,7 +6702,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -15173,7 +15245,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -16508,7 +16580,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -17745,7 +17817,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -19818,7 +19890,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -23101,7 +23173,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -25973,7 +26045,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -27947,7 +28019,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -30145,11 +30217,11 @@
       "America/Grand_Turk": [
         "z",
         {
-          "wallclock": 1414893600000,
+          "wallclock": 1446343200000,
           "format": "AST",
           "abbrev": "AST",
           "offset": -14400000,
-          "posix": 1414908000000,
+          "posix": 1446357600000,
           "save": 0
         },
         {
@@ -39303,7 +39375,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -40421,7 +40493,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -47035,7 +47107,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -50013,7 +50085,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -50945,7 +51017,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -52677,7 +52749,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -54271,7 +54343,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -56317,7 +56389,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -58182,7 +58254,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -83741,22 +83813,6 @@
       "Asia/Pyongyang": [
         "z",
         {
-          "wallclock": -264902400000,
-          "format": "KST",
-          "abbrev": "KST",
-          "offset": 32400000,
-          "posix": -264931200000,
-          "save": 0
-        },
-        {
-          "wallclock": -498096000000,
-          "format": "KST",
-          "abbrev": "KST",
-          "offset": 28800000,
-          "posix": -498128400000,
-          "save": 0
-        },
-        {
           "wallclock": -768614400000,
           "format": "KST",
           "abbrev": "KST",
@@ -83773,35 +83829,19 @@
           "save": 0
         },
         {
-          "wallclock": -1199232000000,
+          "wallclock": -1830384000000,
           "format": "JCST",
           "abbrev": "JCST",
           "offset": 32400000,
-          "posix": -1199262600000,
+          "posix": -1830414600000,
           "save": 0
         },
         {
-          "wallclock": -1325462400000,
+          "wallclock": -1948752000000,
           "format": "KST",
           "abbrev": "KST",
           "offset": 30600000,
-          "posix": -1325494800000,
-          "save": 0
-        },
-        {
-          "wallclock": -2053900800000,
-          "format": "JCST",
-          "abbrev": "JCST",
-          "offset": 32400000,
-          "posix": -2053931400000,
-          "save": 0
-        },
-        {
-          "wallclock": -2524521600000,
-          "format": "KST",
-          "abbrev": "KST",
-          "offset": 30600000,
-          "posix": -2524551780000,
+          "posix": -1948782180000,
           "save": 0
         },
         {
@@ -84802,27 +84842,19 @@
       "Asia/Seoul": [
         "z",
         {
-          "wallclock": -39484800000,
+          "wallclock": -264902400000,
           "format": "K%sT",
           "abbrev": "KST",
           "offset": 32400000,
-          "posix": -39515400000,
+          "posix": -264933000000,
           "save": 0,
           "rules": "ROK"
-        },
-        {
-          "wallclock": -264902400000,
-          "format": "KST",
-          "abbrev": "KST",
-          "offset": 30600000,
-          "posix": -264931200000,
-          "save": 0
         },
         {
           "wallclock": -498096000000,
           "format": "K%sT",
           "abbrev": "KST",
-          "offset": 28800000,
+          "offset": 30600000,
           "posix": -498128400000,
           "save": 0,
           "rules": "ROK"
@@ -84844,35 +84876,19 @@
           "save": 0
         },
         {
-          "wallclock": -1199232000000,
+          "wallclock": -1830384000000,
           "format": "JCST",
           "abbrev": "JCST",
           "offset": 32400000,
-          "posix": -1199262600000,
+          "posix": -1830414600000,
           "save": 0
         },
         {
-          "wallclock": -1325462400000,
+          "wallclock": -1948752000000,
           "format": "KST",
           "abbrev": "KST",
           "offset": 30600000,
-          "posix": -1325494800000,
-          "save": 0
-        },
-        {
-          "wallclock": -2053900800000,
-          "format": "JCST",
-          "abbrev": "JCST",
-          "offset": 32400000,
-          "posix": -2053931400000,
-          "save": 0
-        },
-        {
-          "wallclock": -2524521600000,
-          "format": "KST",
-          "abbrev": "KST",
-          "offset": 30600000,
-          "posix": -2524552072000,
+          "posix": -1948782472000,
           "save": 0
         },
         {
@@ -84890,24 +84906,38 @@
         {
           "from": 1987,
           "to": 1988,
+          "month": 9,
+          "day": [
+            0,
+            8
+          ],
+          "time": 180,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "S",
+          "saved": 3600000
+        },
+        {
+          "from": 1987,
+          "to": 1988,
           "month": 4,
           "day": [
             0,
             8
           ],
-          "time": 0,
+          "time": 120,
           "clock": "wallclock",
           "save": 60,
           "letter": "D",
           "saved": 0
         },
         {
-          "from": 1987,
-          "to": 1988,
-          "month": 9,
+          "from": 1957,
+          "to": 1960,
+          "month": 8,
           "day": [
             0,
-            8
+            18
           ],
           "time": 0,
           "clock": "wallclock",
@@ -84916,12 +84946,12 @@
           "saved": 3600000
         },
         {
-          "from": 1960,
+          "from": 1957,
           "to": 1960,
           "month": 4,
           "day": [
-            7,
-            15
+            0,
+            1
           ],
           "time": 0,
           "clock": "wallclock",
@@ -84930,8 +84960,120 @@
           "saved": 0
         },
         {
-          "from": 1960,
-          "to": 1960,
+          "from": 1956,
+          "to": 1956,
+          "month": 8,
+          "day": [
+            7,
+            30
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "S",
+          "saved": 3600000
+        },
+        {
+          "from": 1956,
+          "to": 1956,
+          "month": 4,
+          "day": [
+            7,
+            20
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
+        },
+        {
+          "from": 1955,
+          "to": 1955,
+          "month": 4,
+          "day": [
+            7,
+            5
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
+        },
+        {
+          "from": 1955,
+          "to": 1955,
+          "month": 8,
+          "day": [
+            7,
+            9
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "S",
+          "saved": 3600000
+        },
+        {
+          "from": 1951,
+          "to": 1951,
+          "month": 4,
+          "day": [
+            7,
+            6
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
+        },
+        {
+          "from": 1949,
+          "to": 1951,
+          "month": 8,
+          "day": [
+            0,
+            8
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "S",
+          "saved": 0
+        },
+        {
+          "from": 1950,
+          "to": 1950,
+          "month": 3,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
+        },
+        {
+          "from": 1949,
+          "to": 1949,
+          "month": 3,
+          "day": [
+            7,
+            3
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
+        },
+        {
+          "from": 1948,
+          "to": 1948,
           "month": 8,
           "day": [
             7,
@@ -84941,7 +85083,21 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "S",
-          "saved": 3600000
+          "saved": 0
+        },
+        {
+          "from": 1948,
+          "to": 1948,
+          "month": 5,
+          "day": [
+            7,
+            1
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
         }
       ]
     }
@@ -86574,7 +86730,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "S",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2016,
@@ -101585,7 +101741,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -102551,7 +102707,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -103492,7 +103648,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -104441,7 +104597,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 0
+          "saved": 3600000
         },
         {
           "from": 2015,
@@ -149049,34 +149205,42 @@
       "Indian/Antananarivo": [
         "z",
         {
-          "wallclock": -492048000000,
+          "wallclock": -315619200000,
           "format": "EAT",
           "abbrev": "EAT",
           "offset": 10800000,
-          "posix": -492062400000,
+          "posix": -315629100000,
           "save": 0
         },
         {
-          "wallclock": -499914000000,
-          "format": "EAST",
-          "abbrev": "EAST",
-          "offset": 10800000,
-          "posix": -499924800000,
-          "save": 3600000
+          "wallclock": -946771200000,
+          "format": "BEAUT",
+          "abbrev": "BEAUT",
+          "offset": 9900000,
+          "posix": -946780200000,
+          "save": 0
         },
         {
-          "wallclock": -1846281600000,
+          "wallclock": -1262304000000,
+          "format": "BEAT",
+          "abbrev": "BEAT",
+          "offset": 9000000,
+          "posix": -1262314800000,
+          "save": 0
+        },
+        {
+          "wallclock": -1309737600000,
           "format": "EAT",
           "abbrev": "EAT",
           "offset": 10800000,
-          "posix": -1846293004000,
+          "posix": -1309746436000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 11404000,
+          "offset": 8836000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -149169,18 +149333,42 @@
       "Indian/Comoro": [
         "z",
         {
-          "wallclock": -1846281600000,
+          "wallclock": -315619200000,
           "format": "EAT",
           "abbrev": "EAT",
           "offset": 10800000,
-          "posix": -1846291984000,
+          "posix": -315629100000,
+          "save": 0
+        },
+        {
+          "wallclock": -946771200000,
+          "format": "BEAUT",
+          "abbrev": "BEAUT",
+          "offset": 9900000,
+          "posix": -946780200000,
+          "save": 0
+        },
+        {
+          "wallclock": -1262304000000,
+          "format": "BEAT",
+          "abbrev": "BEAT",
+          "offset": 9000000,
+          "posix": -1262314800000,
+          "save": 0
+        },
+        {
+          "wallclock": -1309737600000,
+          "format": "EAT",
+          "abbrev": "EAT",
+          "offset": 10800000,
+          "posix": -1309746436000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 10384000,
+          "offset": 8836000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -149357,18 +149545,42 @@
       "Indian/Mayotte": [
         "z",
         {
-          "wallclock": -1846281600000,
+          "wallclock": -315619200000,
           "format": "EAT",
           "abbrev": "EAT",
           "offset": 10800000,
-          "posix": -1846292456000,
+          "posix": -315629100000,
+          "save": 0
+        },
+        {
+          "wallclock": -946771200000,
+          "format": "BEAUT",
+          "abbrev": "BEAUT",
+          "offset": 9900000,
+          "posix": -946780200000,
+          "save": 0
+        },
+        {
+          "wallclock": -1262304000000,
+          "format": "BEAT",
+          "abbrev": "BEAT",
+          "offset": 9000000,
+          "posix": -1262314800000,
+          "save": 0
+        },
+        {
+          "wallclock": -1309737600000,
+          "format": "EAT",
+          "abbrev": "EAT",
+          "offset": 10800000,
+          "posix": -1309746436000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 10856000,
+          "offset": 8836000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }

@@ -3,11 +3,11 @@
     "America/Grand_Turk": [
       "z",
       {
-        "wallclock": 1414893600000,
+        "wallclock": 1446343200000,
         "format": "AST",
         "abbrev": "AST",
         "offset": -14400000,
-        "posix": 1414908000000,
+        "posix": 1446357600000,
         "save": 0
       },
       {

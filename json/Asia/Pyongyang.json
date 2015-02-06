@@ -3,22 +3,6 @@
     "Asia/Pyongyang": [
       "z",
       {
-        "wallclock": -264902400000,
-        "format": "KST",
-        "abbrev": "KST",
-        "offset": 32400000,
-        "posix": -264931200000,
-        "save": 0
-      },
-      {
-        "wallclock": -498096000000,
-        "format": "KST",
-        "abbrev": "KST",
-        "offset": 28800000,
-        "posix": -498128400000,
-        "save": 0
-      },
-      {
         "wallclock": -768614400000,
         "format": "KST",
         "abbrev": "KST",
@@ -35,35 +19,19 @@
         "save": 0
       },
       {
-        "wallclock": -1199232000000,
+        "wallclock": -1830384000000,
         "format": "JCST",
         "abbrev": "JCST",
         "offset": 32400000,
-        "posix": -1199262600000,
+        "posix": -1830414600000,
         "save": 0
       },
       {
-        "wallclock": -1325462400000,
+        "wallclock": -1948752000000,
         "format": "KST",
         "abbrev": "KST",
         "offset": 30600000,
-        "posix": -1325494800000,
-        "save": 0
-      },
-      {
-        "wallclock": -2053900800000,
-        "format": "JCST",
-        "abbrev": "JCST",
-        "offset": 32400000,
-        "posix": -2053931400000,
-        "save": 0
-      },
-      {
-        "wallclock": -2524521600000,
-        "format": "KST",
-        "abbrev": "KST",
-        "offset": 30600000,
-        "posix": -2524551780000,
+        "posix": -1948782180000,
         "save": 0
       },
       {
