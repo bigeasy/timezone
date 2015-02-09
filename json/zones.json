@@ -6095,8 +6095,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -6373,8 +6373,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -14989,8 +14989,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -18810,8 +18810,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -20656,6 +20656,14 @@
       "America/Cancun": [
         "z",
         {
+          "wallclock": 1422756000000,
+          "format": "EST",
+          "abbrev": "EST",
+          "offset": -18000000,
+          "posix": 1422777600000,
+          "save": 0
+        },
+        {
           "wallclock": 902023200000,
           "format": "C%sT",
           "abbrev": "CDT",
@@ -21717,8 +21725,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -24941,8 +24949,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -25274,8 +25282,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -27145,8 +27153,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -27702,8 +27710,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -30378,8 +30386,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -32600,8 +32608,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -32897,8 +32905,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -33239,8 +33247,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -33559,8 +33567,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -33870,8 +33878,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -34242,8 +34250,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -34504,8 +34512,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -34894,8 +34902,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -35239,8 +35247,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -36229,8 +36237,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -37034,8 +37042,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -37305,8 +37313,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -37725,8 +37733,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -37978,8 +37986,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -38526,8 +38534,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -38869,8 +38877,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -41494,8 +41502,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -42766,8 +42774,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -43315,8 +43323,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -44619,8 +44627,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -46032,8 +46040,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -46308,8 +46316,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -46834,8 +46842,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -48019,8 +48027,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -48238,8 +48246,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -48457,8 +48465,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -48741,8 +48749,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -49644,8 +49652,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -51936,8 +51944,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -56070,8 +56078,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -57155,6 +57163,14 @@
       "America/Santiago": [
         "z",
         {
+          "wallclock": 1430006400000,
+          "format": "CLT",
+          "abbrev": "CLT",
+          "offset": -10800000,
+          "posix": 1430017200000,
+          "save": 0
+        },
+        {
           "wallclock": -713664000000,
           "format": "CL%sT",
           "abbrev": "CLT",
@@ -57226,21 +57242,7 @@
       "Chile": [
         {
           "from": 2012,
-          "to": 1.7976931348623157e+308,
-          "month": 8,
-          "day": [
-            0,
-            2
-          ],
-          "time": 240,
-          "clock": "posix",
-          "save": 60,
-          "letter": "S",
-          "saved": 0
-        },
-        {
-          "from": 2012,
-          "to": 1.7976931348623157e+308,
+          "to": 2015,
           "month": 3,
           "day": [
             0,
@@ -57251,6 +57253,20 @@
           "save": 0,
           "letter": "",
           "saved": 3600000
+        },
+        {
+          "from": 2012,
+          "to": 2014,
+          "month": 8,
+          "day": [
+            0,
+            2
+          ],
+          "time": 240,
+          "clock": "posix",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
         },
         {
           "from": 2011,
@@ -57920,8 +57936,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -59558,8 +59574,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -59891,8 +59907,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -62130,8 +62146,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -64418,8 +64434,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -65743,6 +65759,14 @@
       "Antarctica/Palmer": [
         "z",
         {
+          "wallclock": 1430006400000,
+          "format": "CLT",
+          "abbrev": "CLT",
+          "offset": -10800000,
+          "posix": 1430017200000,
+          "save": 0
+        },
+        {
           "wallclock": 389059200000,
           "format": "CL%sT",
           "abbrev": "CLT",
@@ -65783,21 +65807,7 @@
       "ChileAQ": [
         {
           "from": 2012,
-          "to": 1.7976931348623157e+308,
-          "month": 8,
-          "day": [
-            0,
-            2
-          ],
-          "time": 240,
-          "clock": "posix",
-          "save": 60,
-          "letter": "S",
-          "saved": 0
-        },
-        {
-          "from": 2012,
-          "to": 1.7976931348623157e+308,
+          "to": 2015,
           "month": 3,
           "day": [
             0,
@@ -65808,6 +65818,20 @@
           "save": 0,
           "letter": "",
           "saved": 3600000
+        },
+        {
+          "from": 2012,
+          "to": 2014,
+          "month": 8,
+          "day": [
+            0,
+            2
+          ],
+          "time": 240,
+          "clock": "posix",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
         },
         {
           "from": 2011,
@@ -67074,18 +67098,18 @@
       "Asia/Aden": [
         "z",
         {
-          "wallclock": -631152000000,
+          "wallclock": -719625600000,
           "format": "AST",
           "abbrev": "AST",
           "offset": 10800000,
-          "posix": -631162794000,
+          "posix": -719636812000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 10794000,
+          "offset": 11212000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -69082,14 +69106,14 @@
           "format": "GST",
           "abbrev": "GST",
           "offset": 14400000,
-          "posix": -1577935340000,
+          "posix": -1577935568000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 12140000,
+          "offset": 12368000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -81069,18 +81093,18 @@
       "Asia/Kuwait": [
         "z",
         {
-          "wallclock": -631152000000,
+          "wallclock": -719625600000,
           "format": "AST",
           "abbrev": "AST",
           "offset": 10800000,
-          "posix": -631163516000,
+          "posix": -719636812000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 11516000,
+          "offset": 11212000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -82186,14 +82210,14 @@
           "format": "GST",
           "abbrev": "GST",
           "offset": 14400000,
-          "posix": -1577937264000,
+          "posix": -1577936472000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 14064000,
+          "offset": 13272000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -91634,8 +91658,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -93599,23 +93623,15 @@
           "format": "IS%sT",
           "abbrev": "IST",
           "offset": -3600000,
-          "posix": -1956609132000,
+          "posix": -1956609120000,
           "save": 0,
           "rules": "Iceland"
-        },
-        {
-          "wallclock": -4197052800000,
-          "format": "RMT",
-          "abbrev": "RMT",
-          "offset": -5268000,
-          "posix": -4197047556000,
-          "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -5244000,
+          "offset": -5280000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -93680,7 +93696,7 @@
           "saved": 3600000
         },
         {
-          "from": 1943,
+          "from": 1942,
           "to": 1948,
           "month": 9,
           "day": [
@@ -93708,53 +93724,11 @@
           "saved": 0
         },
         {
-          "from": 1942,
-          "to": 1942,
-          "month": 9,
-          "day": [
-            7,
-            25
-          ],
-          "time": 120,
-          "clock": "wallclock",
-          "save": 0,
-          "letter": "",
-          "saved": 3600000
-        },
-        {
-          "from": 1942,
+          "from": 1941,
           "to": 1942,
           "month": 2,
           "day": [
-            7,
-            8
-          ],
-          "time": 60,
-          "clock": "wallclock",
-          "save": 60,
-          "letter": "S",
-          "saved": 0
-        },
-        {
-          "from": 1941,
-          "to": 1941,
-          "month": 10,
-          "day": [
-            7,
-            2
-          ],
-          "time": 120,
-          "clock": "wallclock",
-          "save": 0,
-          "letter": "",
-          "saved": 3600000
-        },
-        {
-          "from": 1941,
-          "to": 1941,
-          "month": 2,
-          "day": [
-            7,
+            0,
             2
           ],
           "time": 60,
@@ -93765,11 +93739,11 @@
         },
         {
           "from": 1940,
-          "to": 1940,
+          "to": 1941,
           "month": 10,
           "day": [
-            7,
-            3
+            0,
+            2
           ],
           "time": 120,
           "clock": "wallclock",
@@ -93794,7 +93768,7 @@
         {
           "from": 1939,
           "to": 1939,
-          "month": 10,
+          "month": 9,
           "day": [
             7,
             29
@@ -93820,8 +93794,36 @@
           "saved": 0
         },
         {
+          "from": 1921,
+          "to": 1921,
+          "month": 5,
+          "day": [
+            7,
+            23
+          ],
+          "time": 60,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1921,
+          "to": 1921,
+          "month": 2,
+          "day": [
+            7,
+            19
+          ],
+          "time": 1380,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
+        },
+        {
           "from": 1918,
-          "to": 1918,
+          "to": 1919,
           "month": 10,
           "day": [
             7,
@@ -93835,7 +93837,7 @@
         },
         {
           "from": 1917,
-          "to": 1918,
+          "to": 1919,
           "month": 1,
           "day": [
             7,
@@ -109385,6 +109387,14 @@
       "Chile/Continental": [
         "z",
         {
+          "wallclock": 1430006400000,
+          "format": "CLT",
+          "abbrev": "CLT",
+          "offset": -10800000,
+          "posix": 1430017200000,
+          "save": 0
+        },
+        {
           "wallclock": -713664000000,
           "format": "CL%sT",
           "abbrev": "CLT",
@@ -109456,21 +109466,7 @@
       "Chile": [
         {
           "from": 2012,
-          "to": 1.7976931348623157e+308,
-          "month": 8,
-          "day": [
-            0,
-            2
-          ],
-          "time": 240,
-          "clock": "posix",
-          "save": 60,
-          "letter": "S",
-          "saved": 0
-        },
-        {
-          "from": 2012,
-          "to": 1.7976931348623157e+308,
+          "to": 2015,
           "month": 3,
           "day": [
             0,
@@ -109481,6 +109477,20 @@
           "save": 0,
           "letter": "",
           "saved": 3600000
+        },
+        {
+          "from": 2012,
+          "to": 2014,
+          "month": 8,
+          "day": [
+            0,
+            2
+          ],
+          "time": 240,
+          "clock": "posix",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
         },
         {
           "from": 2011,
@@ -109980,12 +109990,20 @@
       "Chile/EasterIsland": [
         "z",
         {
-          "wallclock": 384901200000,
-          "format": "EAS%sT",
+          "wallclock": 1429999200000,
+          "format": "EAST",
           "abbrev": "EAST",
+          "offset": -18000000,
+          "posix": 1430017200000,
+          "save": 0
+        },
+        {
+          "wallclock": 384814800000,
+          "format": "EAS%sT",
+          "abbrev": "EASST",
           "offset": -21600000,
-          "posix": 384922800000,
-          "save": 0,
+          "posix": 384836400000,
+          "save": 3600000,
           "rules": "Chile"
         },
         {
@@ -110019,21 +110037,7 @@
       "Chile": [
         {
           "from": 2012,
-          "to": 1.7976931348623157e+308,
-          "month": 8,
-          "day": [
-            0,
-            2
-          ],
-          "time": 240,
-          "clock": "posix",
-          "save": 60,
-          "letter": "S",
-          "saved": 0
-        },
-        {
-          "from": 2012,
-          "to": 1.7976931348623157e+308,
+          "to": 2015,
           "month": 3,
           "day": [
             0,
@@ -110044,6 +110048,20 @@
           "save": 0,
           "letter": "",
           "saved": 3600000
+        },
+        {
+          "from": 2012,
+          "to": 2014,
+          "month": 8,
+          "day": [
+            0,
+            2
+          ],
+          "time": 240,
+          "clock": "posix",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
         },
         {
           "from": 2011,
@@ -149943,8 +149961,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -151497,12 +151515,20 @@
       "Pacific/Easter": [
         "z",
         {
-          "wallclock": 384901200000,
-          "format": "EAS%sT",
+          "wallclock": 1429999200000,
+          "format": "EAST",
           "abbrev": "EAST",
+          "offset": -18000000,
+          "posix": 1430017200000,
+          "save": 0
+        },
+        {
+          "wallclock": 384814800000,
+          "format": "EAS%sT",
+          "abbrev": "EASST",
           "offset": -21600000,
-          "posix": 384922800000,
-          "save": 0,
+          "posix": 384836400000,
+          "save": 3600000,
           "rules": "Chile"
         },
         {
@@ -151536,21 +151562,7 @@
       "Chile": [
         {
           "from": 2012,
-          "to": 1.7976931348623157e+308,
-          "month": 8,
-          "day": [
-            0,
-            2
-          ],
-          "time": 240,
-          "clock": "posix",
-          "save": 60,
-          "letter": "S",
-          "saved": 0
-        },
-        {
-          "from": 2012,
-          "to": 1.7976931348623157e+308,
+          "to": 2015,
           "month": 3,
           "day": [
             0,
@@ -151561,6 +151573,20 @@
           "save": 0,
           "letter": "",
           "saved": 3600000
+        },
+        {
+          "from": 2012,
+          "to": 2014,
+          "month": 8,
+          "day": [
+            0,
+            2
+          ],
+          "time": 240,
+          "clock": "posix",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
         },
         {
           "from": 2011,
@@ -153927,8 +153953,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -154196,8 +154222,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -154448,8 +154474,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -154711,8 +154737,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -155084,8 +155110,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -155374,8 +155400,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -155763,8 +155789,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -156096,8 +156122,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -156400,8 +156426,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -156700,8 +156726,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",

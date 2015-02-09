@@ -3,6 +3,14 @@
     "Antarctica/Palmer": [
       "z",
       {
+        "wallclock": 1430006400000,
+        "format": "CLT",
+        "abbrev": "CLT",
+        "offset": -10800000,
+        "posix": 1430017200000,
+        "save": 0
+      },
+      {
         "wallclock": 389059200000,
         "format": "CL%sT",
         "abbrev": "CLT",
@@ -43,21 +51,7 @@
     "ChileAQ": [
       {
         "from": 2012,
-        "to": 1.7976931348623157e+308,
-        "month": 8,
-        "day": [
-          0,
-          2
-        ],
-        "time": 240,
-        "clock": "posix",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
-      },
-      {
-        "from": 2012,
-        "to": 1.7976931348623157e+308,
+        "to": 2015,
         "month": 3,
         "day": [
           0,
@@ -68,6 +62,20 @@
         "save": 0,
         "letter": "",
         "saved": 3600000
+      },
+      {
+        "from": 2012,
+        "to": 2014,
+        "month": 8,
+        "day": [
+          0,
+          2
+        ],
+        "time": 240,
+        "clock": "posix",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
       },
       {
         "from": 2011,

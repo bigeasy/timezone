@@ -15,23 +15,15 @@
         "format": "IS%sT",
         "abbrev": "IST",
         "offset": -3600000,
-        "posix": -1956609132000,
+        "posix": -1956609120000,
         "save": 0,
         "rules": "Iceland"
-      },
-      {
-        "wallclock": -4197052800000,
-        "format": "RMT",
-        "abbrev": "RMT",
-        "offset": -5268000,
-        "posix": -4197047556000,
-        "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": -5244000,
+        "offset": -5280000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }
@@ -96,7 +88,7 @@
         "saved": 3600000
       },
       {
-        "from": 1943,
+        "from": 1942,
         "to": 1948,
         "month": 9,
         "day": [
@@ -124,53 +116,11 @@
         "saved": 0
       },
       {
-        "from": 1942,
-        "to": 1942,
-        "month": 9,
-        "day": [
-          7,
-          25
-        ],
-        "time": 120,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
-        "from": 1942,
+        "from": 1941,
         "to": 1942,
         "month": 2,
         "day": [
-          7,
-          8
-        ],
-        "time": 60,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
-      },
-      {
-        "from": 1941,
-        "to": 1941,
-        "month": 10,
-        "day": [
-          7,
-          2
-        ],
-        "time": 120,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
-        "from": 1941,
-        "to": 1941,
-        "month": 2,
-        "day": [
-          7,
+          0,
           2
         ],
         "time": 60,
@@ -181,11 +131,11 @@
       },
       {
         "from": 1940,
-        "to": 1940,
+        "to": 1941,
         "month": 10,
         "day": [
-          7,
-          3
+          0,
+          2
         ],
         "time": 120,
         "clock": "wallclock",
@@ -210,7 +160,7 @@
       {
         "from": 1939,
         "to": 1939,
-        "month": 10,
+        "month": 9,
         "day": [
           7,
           29
@@ -236,8 +186,36 @@
         "saved": 0
       },
       {
+        "from": 1921,
+        "to": 1921,
+        "month": 5,
+        "day": [
+          7,
+          23
+        ],
+        "time": 60,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      },
+      {
+        "from": 1921,
+        "to": 1921,
+        "month": 2,
+        "day": [
+          7,
+          19
+        ],
+        "time": 1380,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      },
+      {
         "from": 1918,
-        "to": 1918,
+        "to": 1919,
         "month": 10,
         "day": [
           7,
@@ -251,7 +229,7 @@
       },
       {
         "from": 1917,
-        "to": 1918,
+        "to": 1919,
         "month": 1,
         "day": [
           7,

@@ -150,8 +150,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -369,8 +369,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",
@@ -588,8 +588,8 @@
           "to": 1945,
           "month": 8,
           "day": [
-            7,
-            30
+            0,
+            -30
           ],
           "time": 120,
           "clock": "wallclock",

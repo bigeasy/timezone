@@ -3,6 +3,14 @@
     "America/Cancun": [
       "z",
       {
+        "wallclock": 1422756000000,
+        "format": "EST",
+        "abbrev": "EST",
+        "offset": -18000000,
+        "posix": 1422777600000,
+        "save": 0
+      },
+      {
         "wallclock": 902023200000,
         "format": "C%sT",
         "abbrev": "CDT",
