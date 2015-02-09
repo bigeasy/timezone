@@ -37,7 +37,8 @@ Publish data files to `gh-pages`.
 
 Publish data files as zip. (This is specific to my checkouts.)
 
-- [ ] **Disable** Travis CI for Timezone.
+- [ ] You no longer need to disable Travis CI, there is a `.travis.yml` in the
+  data branch.
 - [ ] Go to your checkout of the data files.
 - [ ] Add an entry in the `README.md` for v$version.
 - [ ] Run `rm -rf amd json jsonp`.
@@ -47,5 +48,4 @@ Publish data files as zip. (This is specific to my checkouts.)
 - [ ] Add a reference to this issue in the commit message.
 - [ ] Run `git tag data-v$version && git push origin data-v$version`.
 - [ ] Push commit with `git push origin HEAD`.
-- [ ] **Enable** Travis CI for Timezone.
 EOF
