@@ -32,6 +32,34 @@
   "rules": {
     "Mongol": [
       {
+        "from": 2015,
+        "to": 1.7976931348623157e+308,
+        "month": 2,
+        "day": [
+          6,
+          -31
+        ],
+        "time": 120,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      },
+      {
+        "from": 2015,
+        "to": 1.7976931348623157e+308,
+        "month": 8,
+        "day": [
+          6,
+          -30
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      },
+      {
         "from": 2001,
         "to": 2006,
         "month": 8,

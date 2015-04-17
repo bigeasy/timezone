@@ -111,9 +111,23 @@
   "rules": {
     "Palestine": [
       {
-        "from": 2013,
+        "from": 2015,
         "to": 1.7976931348623157e+308,
-        "month": 8,
+        "month": 2,
+        "day": [
+          5,
+          -31
+        ],
+        "time": 1440,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      },
+      {
+        "from": 2014,
+        "to": 1.7976931348623157e+308,
+        "month": 9,
         "day": [
           5,
           21
@@ -126,7 +140,7 @@
       },
       {
         "from": 2012,
-        "to": 1.7976931348623157e+308,
+        "to": 2014,
         "month": 2,
         "day": [
           4,
@@ -137,6 +151,20 @@
         "save": 60,
         "letter": "S",
         "saved": 0
+      },
+      {
+        "from": 2013,
+        "to": 2013,
+        "month": 8,
+        "day": [
+          5,
+          21
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
       },
       {
         "from": 2012,
@@ -211,20 +239,6 @@
       {
         "from": 2010,
         "to": 2010,
-        "month": 7,
-        "day": [
-          7,
-          11
-        ],
-        "time": 0,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
-        "from": 2010,
-        "to": 2010,
         "month": 2,
         "day": [
           7,
@@ -237,18 +251,18 @@
         "saved": 0
       },
       {
-        "from": 2008,
-        "to": 2009,
-        "month": 2,
+        "from": 2010,
+        "to": 2010,
+        "month": 7,
         "day": [
-          5,
-          -31
+          7,
+          11
         ],
         "time": 0,
         "clock": "wallclock",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
       },
       {
         "from": 2009,
@@ -263,6 +277,20 @@
         "save": 0,
         "letter": "",
         "saved": 3600000
+      },
+      {
+        "from": 2008,
+        "to": 2009,
+        "month": 2,
+        "day": [
+          5,
+          -31
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
       },
       {
         "from": 2008,

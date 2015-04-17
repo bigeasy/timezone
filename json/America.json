@@ -575,26 +575,18 @@
       "America/Antigua": [
         "z",
         {
-          "wallclock": -599616000000,
+          "wallclock": -1825113600000,
           "format": "AST",
           "abbrev": "AST",
           "offset": -14400000,
-          "posix": -599598000000,
-          "save": 0
-        },
-        {
-          "wallclock": -1825113600000,
-          "format": "EST",
-          "abbrev": "EST",
-          "offset": -18000000,
-          "posix": -1825098768000,
+          "posix": -1825098836000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -14832000,
+          "offset": -14764000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -15608,26 +15600,26 @@
       "America/Cayman": [
         "z",
         {
-          "wallclock": -1827705600000,
+          "wallclock": -1946937600000,
           "format": "EST",
           "abbrev": "EST",
           "offset": -18000000,
-          "posix": -1827687169000,
+          "posix": -1946918424000,
           "save": 0
         },
         {
           "wallclock": -2524521600000,
-          "format": "KMT",
-          "abbrev": "KMT",
-          "offset": -18431000,
-          "posix": -2524502068000,
+          "format": "CMT",
+          "abbrev": "CMT",
+          "offset": -19176000,
+          "posix": -2524502512000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": -19532000,
+          "offset": -19088000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
