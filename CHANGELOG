@@ -1,3 +1,7 @@
+- Version 0.0.42.
+
+ * Upgrade TZ Database to `tz2015c`. #234.
+
 - Version 0.0.41.
 
  * Upgrade TZ Database to `tz2015b`. #232.
