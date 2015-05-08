@@ -571,7 +571,7 @@ eq( tz([ 1969, 7, 20, 21, 56, 0, 0, -1, 5 ]), moonwalk );
 // `tz` parameters. This can help use reduce noise in our code, if we are
 // invoking `tz` with the same set of parameters over and over again.
 
-// *We've been using parital functions to load time zones and locales.*
+// *We've been using partial functions to load time zones and locales.*
 us = us( require("timezone/pl_PL") );
 
 // *Format a week of days after Y2K.*
