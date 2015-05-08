@@ -19,7 +19,8 @@
                             "url": "git://github.com/bigeasy/timezone.git"
                         },
     "contributors" :    [
-                            "Eero Ränik <eeror@eeror.com> (http://www.eeror.com/)"
+                            "Eero Ränik <eeror@eeror.com> (http://www.eeror.com/)",
+                            "Bruins Zachtgoed <niek@fambruins.nl> (https://github.com/pheew)"
                         ],
     "dependencies" :    {
                         },
