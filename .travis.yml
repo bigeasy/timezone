@@ -6,10 +6,11 @@ node_js:
   - '0.10'
   - '0.8'
 
-branches:
-  only:
-    - master
-    - travis-ci
+# in my repo, test all branches
+# branches:
+#  only:
+#    - master
+#    - travis-ci
 
 # Not using `npm install --dev` because it is recursive. It will pull in the all
 # development dependencies for CoffeeScript. Way too much spew in the Travis CI
