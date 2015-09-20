@@ -42,32 +42,32 @@ Sun Oct 26 03:17:59 UTC 2014
 
  * Upgrade TZ Database to `tz2014g`. #217.
 
-- Verison 0.0.34.
+- Version 0.0.34.
 
 Thu Aug  7 01:55:45 UTC 2014
 
  * Upgrade TZ Database to `tz2014f`. #215.
 
-- Verison 0.0.33.
+- Version 0.0.33.
 
 Fri Jun 27 16:21:08 UTC 2014
 
  * Upgrade TZ Database to `tz2014e`. #213.
 
-- Verison 0.0.32.
+- Version 0.0.32.
 
 Mon Jun  2 06:34:24 UTC 2014
 
  * Upgrade TZ Database to `tz2014d`. #211.
 
-- Verison 0.0.31.
+- Version 0.0.31.
 
 Sun Jun  1 21:14:47 UTC 2014
 
  * Upgrade TZ database to `2014b`. #209.
  * Upgrade Proof to 0.0.45. #208.
 
-- Verison 0.0.30.
+- Version 0.0.30.
 
 Fri Mar 28 02:32:38 UTC 2014
 
@@ -204,7 +204,7 @@ Wed Jan  2 04:12:59 UTC 2013
  * Delete `fields` variable from `actualize`. #92.
  * Merge `make` function into `convert`. #85.
  * Build on Node.js 0.8, add 0.8 to Travis CI. #90.
- * ixed `sysnopsis.js` assertions. #89.
+ * Fixed `synopsis.js` assertions. #89.
 
 - Version 0.0.14 - Mon Jun 25 21:02:24 UTC 2012
 
@@ -224,7 +224,7 @@ Wed Jan  2 04:12:59 UTC 2013
  * Bump version string returned by Timezone function. #77. #72.
  * Reorganize `actualize` for byte savings. #63.
  * Revert to one based month in date array. #74.
- * Exclude non-JavaScript files, crufy files, from `slurp.js` indices. #71.
+ * Exclude non-JavaScript files, crufty files, from `slurp.js` indices. #71.
  * Remove over-zealous, bloaty argument verification. #70.
 
 - Version 0.0.13 - Mon Jun 25 11:05:06 UTC 2012
