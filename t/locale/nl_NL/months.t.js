@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-require("../../proof")(24, function (tz, equal) {
-  var tz = tz(require("timezone/nl_NL"));
+require("proof")(24, function (equal) {
+  var tz = require("timezone")(require("timezone/nl_NL"));
   //nl_NL abbreviated months
   equal(tz("2000-01-01", "%b", "nl_NL"), "jan", "Jan");
   equal(tz("2000-02-01", "%b", "nl_NL"), "feb", "Feb");

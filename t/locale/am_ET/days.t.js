@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-require("../../proof")(14, function (tz, equal) {
-  var tz = tz(require("timezone/am_ET"));
+require("proof")(14, function (equal) {
+  var tz = require("timezone")(require("timezone/am_ET"));
   // am_ET abbreviated days of week
   equal(tz("2006-01-01", "%a", "am_ET"), "እሑድ", "Sun");
-  equal(tz("2006-01-02", "%a", "am_ET"), "ሰኞ ", "Mon");
+  equal(tz("2006-01-02", "%a", "am_ET"), "ሰኞ", "Mon");
   equal(tz("2006-01-03", "%a", "am_ET"), "ማክሰ", "Tue");
   equal(tz("2006-01-04", "%a", "am_ET"), "ረቡዕ", "Wed");
   equal(tz("2006-01-05", "%a", "am_ET"), "ሐሙስ", "Thu");

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-require("../../proof")(5, function (tz, equal) {
-  var tz = tz(require("timezone/en_CA"));
+require("proof")(5, function (equal) {
+  var tz = require("timezone")(require("timezone/en_CA"));
   // en_CA date representation
-  equal(tz("2000-09-03", "%x", "en_CA"), "03/09/00", "date format");
+  equal(tz("2000-09-03", "%x", "en_CA"), "00-09-03", "date format");
 
   // en_CA time representation
   equal(tz("2000-09-03 08:05:04", "%X", "en_CA"), "08:05:04 AM", "long time format morning");

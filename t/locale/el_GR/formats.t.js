@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-require("../../proof")(5, function (tz, equal) {
-  var tz = tz(require("timezone/el_GR"));
+require("proof")(5, function (equal) {
+  var tz = require("timezone")(require("timezone/el_GR"));
   // el_GR date representation
   equal(tz("2000-09-03", "%x", "el_GR"), "03/09/2000", "date format");
 

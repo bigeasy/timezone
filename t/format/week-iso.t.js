@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-require("../proof")(14640, function (equal, tz, readDate) {
+require("proof")(14640, function (equal, tz, readDate) {
+    var tz = require('timezone'), util = require('../util')
   var formatted, lines, line, i, I, date, dayOfYear, record;
   formatted = __dirname + "/../data/format";
   lines = require("fs").readFileSync(formatted + "/V", "utf8").split(/\n/);
@@ -9,6 +10,6 @@ require("../proof")(14640, function (equal, tz, readDate) {
     record = line.split(/\s+/);
     date = record[0];
     dayOfYear = record[1];
-    equal(tz(readDate(date), "%V"), dayOfYear, "ISO week " + date);
+    equal(tz(util.readDate(date), "%V"), dayOfYear, "ISO week " + date);
   }
 });
