@@ -18,7 +18,7 @@ for file in $@; do
     b[minzip]=$alt
   fi
   for field in raw min zip minzip; do
-    k[$field]=$(echo "${b[$field]} / 1024" | bc -l)
+    k[$field]=$(echo "${b[$field]} 1024" | awk '{printf "%.2f \n", $1/$2}')
   done
   printf "    %-24s" $file
   for field in raw min zip minzip; do

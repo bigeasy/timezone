@@ -12,9 +12,6 @@ if [ "$TRAVIS" = "true" ]; then
   ruby -v
   which ruby
 
-  # Install `bc` so we can get our minification report.
-  sudo apt-get -q install bc >/dev/null 2>&1 && echo "apt-get install bc"
-
   # Run the minification report.
   echo ""
   (cd src && ../util/sizes timezone.js rfc822.js)
