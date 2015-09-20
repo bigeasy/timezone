@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-require("../../proof")(24, function (tz, equal) {
-  var tz = tz(require("timezone/am_ET"));
+require("proof")(24, function (equal) {
+  var tz = require("timezone")(require("timezone/am_ET"));
   //am_ET abbreviated months
   equal(tz("2000-01-01", "%b", "am_ET"), "ጃንዩ", "Jan");
   equal(tz("2000-02-01", "%b", "am_ET"), "ፌብሩ", "Feb");
   equal(tz("2000-03-01", "%b", "am_ET"), "ማርች", "Mar");
   equal(tz("2000-04-01", "%b", "am_ET"), "ኤፕረ", "Apr");
-  equal(tz("2000-05-01", "%b", "am_ET"), "ሜይ ", "May");
-  equal(tz("2000-06-01", "%b", "am_ET"), "ጁን ", "Jun");
+  equal(tz("2000-05-01", "%b", "am_ET"), "ሜይ", "May");
+  equal(tz("2000-06-01", "%b", "am_ET"), "ጁን", "Jun");
   equal(tz("2000-07-01", "%b", "am_ET"), "ጁላይ", "Jul");
   equal(tz("2000-08-01", "%b", "am_ET"), "ኦገስ", "Aug");
   equal(tz("2000-09-01", "%b", "am_ET"), "ሴፕቴ", "Sep");

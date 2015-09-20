@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-require("../../proof")(14, function (tz, equal) {
-  var tz = tz(require("timezone/ta_IN"));
+require("proof")(14, function (equal) {
+  var tz = require("timezone")(require("timezone/ta_IN"));
   // ta_IN abbreviated days of week
   equal(tz("2006-01-01", "%a", "ta_IN"), "ஞா", "Sun");
   equal(tz("2006-01-02", "%a", "ta_IN"), "தி", "Mon");

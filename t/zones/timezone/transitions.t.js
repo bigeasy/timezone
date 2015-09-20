@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 var lines = require("fs").readFileSync(__dirname + "/../../../build/transitions.txt", "utf8").split(/\n/);
 lines.pop()
-require("../../proof")(lines.length * 2, function (equal, tz) {
+require("proof")(lines.length * 2, function (equal) {
+    var tz = require('timezone')
   var partials = {}, line, name, wallclock, posix, before, after, local;
   for (var i = 0, I = lines.length; i < I; i++) {
     line = lines[i];

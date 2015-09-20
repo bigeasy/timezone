@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-require("../../proof")(4, function (tz, equal) {
-  var tz = tz(require("timezone/am_ET"));
+require("proof")(4, function (equal) {
+  var tz = require("timezone")(require("timezone/am_ET"));
   // am_ET meridiem upper case
   equal(tz("2000-09-03 08:05:04", "%P", "am_ET"), "ጡዋት", "ante meridiem lower case");
   equal(tz("2000-09-03 23:05:04", "%P", "am_ET"), "ከሰዓት", "post meridiem lower case");

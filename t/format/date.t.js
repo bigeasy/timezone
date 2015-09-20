@@ -1,7 +1,11 @@
 #!/usr/bin/env node
-require("../proof")(4, function (equal, tz, bicentennial) {
-  equal(tz(bicentennial, "%d"), "04", "date");
-  equal(tz(bicentennial, "%-d"), "4", "date unpadded");
-  equal(tz(bicentennial, "%_d"), " 4", "date space padded");
-  equal(tz(bicentennial, "%e"), " 4", "date single digit");
-});
+
+require('proof')(4, prove)
+
+function prove (assert) {
+    var util = require('../util'), tz = require('timezone')
+    assert(tz(util.bicentennial, '%d'), '04', 'date')
+    assert(tz(util.bicentennial, '%-d'), '4', 'date unpadded')
+    assert(tz(util.bicentennial, '%_d'), ' 4', 'date space padded')
+    assert(tz(util.bicentennial, '%e'), ' 4', 'date single digit')
+}

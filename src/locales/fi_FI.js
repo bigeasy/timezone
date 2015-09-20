@@ -1,3 +1,18 @@
+// su ma ti ke to pe la
+// sunnuntai maanantai tiistai keskiviikko torstai perjantai lauantai
+// tammi helmi maalis huhti touko kesä heinä elo syys loka marras joulu
+// tammikuu helmikuu maaliskuu huhtikuu toukokuu kesäkuu heinäkuu elokuu syyskuu lokakuu marraskuu joulukuu
+//
+//
+//
+//
+// 03.09.2000
+// 03.09.2000
+// 08.05.04
+// 23.05.04
+// su  3. syyskuuta 2000 08.05.04
+// su  3. syyskuuta 2000 23.05.04
+//
 module.exports = {
   "name": "fi_FI",
   "day": {
@@ -22,18 +37,18 @@ module.exports = {
   },
   "month": {
     "abbrev": [
-      "tammi ",
-      "helmi ",
+      "tammi",
+      "helmi",
       "maalis",
-      "huhti ",
-      "touko ",
-      "kesä  ",
-      "heinä ",
-      "elo   ",
-      "syys  ",
-      "loka  ",
+      "huhti",
+      "touko",
+      "kesä",
+      "heinä",
+      "elo",
+      "syys",
+      "loka",
       "marras",
-      "joulu "
+      "joulu"
     ],
     "full": [
       "tammikuu",
@@ -54,9 +69,7 @@ module.exports = {
     "",
     ""
   ],
-  "date": "%d.%m.%Y",
-  "time24": "%H.%M.%S",
-  "dateTime": "%a %e. %Bta %Y %H.%M.%S",
-  "time12": "",
-  "full": "%a %-d.%-m.%Y %H.%M.%S %z"
-}
+  "date": "%P%p%d.%m.%Y",
+  "time24": "%P%p%H.%M.%S",
+  "dateTime": "%P%p%a %_d. %bkuuta %Y %H.%M.%S"
+};

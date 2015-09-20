@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-require("../../proof")(24, function (tz, equal) {
-  var tz = tz(require("timezone/vi_VN"));
+require("proof")(24, function (equal) {
+  var tz = require("timezone")(require("timezone/vi_VN"));
   //vi_VN abbreviated months
   equal(tz("2000-01-01", "%b", "vi_VN"), "Th01", "Jan");
   equal(tz("2000-02-01", "%b", "vi_VN"), "Th02", "Feb");
@@ -16,16 +16,16 @@ require("../../proof")(24, function (tz, equal) {
   equal(tz("2000-12-01", "%b", "vi_VN"), "Th12", "Dec");
 
   // vi_VN months
-  equal(tz("2000-01-01", "%B", "vi_VN"), "Tháng một", "January");
-  equal(tz("2000-02-01", "%B", "vi_VN"), "Tháng hai", "February");
-  equal(tz("2000-03-01", "%B", "vi_VN"), "Tháng ba", "March");
-  equal(tz("2000-04-01", "%B", "vi_VN"), "Tháng tư", "April");
-  equal(tz("2000-05-01", "%B", "vi_VN"), "Tháng năm", "May");
-  equal(tz("2000-06-01", "%B", "vi_VN"), "Tháng sáu", "June");
-  equal(tz("2000-07-01", "%B", "vi_VN"), "Tháng bảy", "July");
-  equal(tz("2000-08-01", "%B", "vi_VN"), "Tháng tám", "August");
-  equal(tz("2000-09-01", "%B", "vi_VN"), "Tháng chín", "September");
-  equal(tz("2000-10-01", "%B", "vi_VN"), "Tháng mười", "October");
-  equal(tz("2000-11-01", "%B", "vi_VN"), "Tháng mười một", "November");
-  equal(tz("2000-12-01", "%B", "vi_VN"), "Tháng mười hai", "December");
+  equal(tz("2000-01-01", "%B", "vi_VN"), "Tháng", "January");
+  equal(tz("2000-02-01", "%B", "vi_VN"), "một", "February");
+  equal(tz("2000-03-01", "%B", "vi_VN"), "Tháng", "March");
+  equal(tz("2000-04-01", "%B", "vi_VN"), "hai", "April");
+  equal(tz("2000-05-01", "%B", "vi_VN"), "Tháng", "May");
+  equal(tz("2000-06-01", "%B", "vi_VN"), "ba", "June");
+  equal(tz("2000-07-01", "%B", "vi_VN"), "Tháng", "July");
+  equal(tz("2000-08-01", "%B", "vi_VN"), "tư", "August");
+  equal(tz("2000-09-01", "%B", "vi_VN"), "Tháng", "September");
+  equal(tz("2000-10-01", "%B", "vi_VN"), "năm", "October");
+  equal(tz("2000-11-01", "%B", "vi_VN"), "Tháng", "November");
+  equal(tz("2000-12-01", "%B", "vi_VN"), "sáu", "December");
 });

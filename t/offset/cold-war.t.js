@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-require("../proof")(5, function (equal, tz) {
+require("proof")(5, function (equal, tz) {
+    var tz = require('timezone'), util = require('../util')
   var detroit = tz(require("timezone/America/Detroit"), "America/Detroit");
   equal(tz(detroit("1945-09-30 01:59:00"), "%F %T"), "1945-09-30 05:59:00", "to UTC before peace time");
   equal(tz(detroit("1945-09-30 02:00:00"), "%F %T"), "1945-09-30 07:00:00", "to UTC before peace time");
