@@ -3,12 +3,13 @@
   "day": {
     "abbrev": [
       "Sv",
-      "P ",
-      "O ",
-      "T ",
-      "C ",
+      "P",
+      "O",
+      "T",
+      "C",
       "Pk",
-      "S "
+      "S",
+      ""
     ],
     "full": [
       "svētdiena",
@@ -54,9 +55,7 @@
     "",
     ""
   ],
-  "date": "%Y.%m.%d.",
-  "time24": "%T",
-  "dateTime": "%A, %Y. gada %e. %B, plkst. %H un %M",
-  "time12": "",
-  "full": "%a %b %e %H:%M:%S %Z %Y"
+  "date": "%P%p%Y.%m.%d.",
+  "time24": "%P%p%H:%M:%S",
+  "dateTime": "%P%p%A, %Y. gada %_d. %btembris, plkst. %H un %M"
 }

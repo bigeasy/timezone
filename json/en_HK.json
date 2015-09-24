@@ -1,5 +1,5 @@
 {
-  "name": "en_CA",
+  "name": "en_HK",
   "day": {
     "abbrev": [
       "Sun",
@@ -54,7 +54,7 @@
     "AM",
     "PM"
   ],
-  "date": "%y-%m-%d",
-  "time24": "%I:%M:%S %p",
-  "dateTime": "%a %d %b %Y %I:%M:%S %p %Z"
+  "date": "%aday, %btember %d, %Y",
+  "time24": "%I:%M:%S %Z",
+  "dateTime": "%aday, %btember %d, %Y %p%I:%M:%S %Z"
 }

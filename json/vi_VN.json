@@ -11,13 +11,20 @@
       "T7"
     ],
     "full": [
-      "Chủ nhật",
-      "Thứ hai",
-      "Thứ ba",
-      "Thứ tư",
-      "Thứ năm",
-      "Thứ sáu",
-      "Thứ bảy"
+      "Chủ",
+      "nhật",
+      "Thứ",
+      "hai",
+      "Thứ",
+      "ba",
+      "Thứ",
+      "tư",
+      "Thứ",
+      "năm",
+      "Thứ",
+      "sáu",
+      "Thứ",
+      "bảy"
     ]
   },
   "month": {
@@ -36,18 +43,32 @@
       "Th12"
     ],
     "full": [
-      "Tháng một",
-      "Tháng hai",
-      "Tháng ba",
-      "Tháng tư",
-      "Tháng năm",
-      "Tháng sáu",
-      "Tháng bảy",
-      "Tháng tám",
-      "Tháng chín",
-      "Tháng mười",
-      "Tháng mười một",
-      "Tháng mười hai"
+      "Tháng",
+      "một",
+      "Tháng",
+      "hai",
+      "Tháng",
+      "ba",
+      "Tháng",
+      "tư",
+      "Tháng",
+      "năm",
+      "Tháng",
+      "sáu",
+      "Tháng",
+      "bảy",
+      "Tháng",
+      "tám",
+      "Tháng",
+      "chín",
+      "Tháng",
+      "mười",
+      "Tháng",
+      "mười",
+      "một",
+      "Tháng",
+      "mười",
+      "hai"
     ]
   },
   "meridiem": [
@@ -55,8 +76,6 @@
     "PM"
   ],
   "date": "%d/%m/%Y",
-  "time24": "%T",
-  "dateTime": "%A, %d %B Năm %Y %T %Z",
-  "time12": "%I:%M %p",
-  "full": "%A, %d %B năm %Y %T %Z"
+  "time24": "%H:%M:%S",
+  "dateTime": "%A nhật, %d %B chín Năm %Y %H:%M:%S %Z"
 }

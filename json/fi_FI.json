@@ -22,18 +22,18 @@
   },
   "month": {
     "abbrev": [
-      "tammi ",
-      "helmi ",
+      "tammi",
+      "helmi",
       "maalis",
-      "huhti ",
-      "touko ",
-      "kesä  ",
-      "heinä ",
-      "elo   ",
-      "syys  ",
-      "loka  ",
+      "huhti",
+      "touko",
+      "kesä",
+      "heinä",
+      "elo",
+      "syys",
+      "loka",
       "marras",
-      "joulu "
+      "joulu"
     ],
     "full": [
       "tammikuu",
@@ -54,9 +54,7 @@
     "",
     ""
   ],
-  "date": "%d.%m.%Y",
-  "time24": "%H.%M.%S",
-  "dateTime": "%a %e. %Bta %Y %H.%M.%S",
-  "time12": "",
-  "full": "%a %-d.%-m.%Y %H.%M.%S %z"
+  "date": "%P%p%d.%m.%Y",
+  "time24": "%P%p%H.%M.%S",
+  "dateTime": "%P%p%a %_d. %bkuuta %Y %H.%M.%S"
 }
