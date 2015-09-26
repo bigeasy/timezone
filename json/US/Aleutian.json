@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": 438998400000,
-        "format": "HA%sT",
-        "abbrev": "HAST",
+        "format": "H%sT",
+        "abbrev": "HST",
         "offset": -36000000,
         "posix": 439034400000,
         "save": 0,

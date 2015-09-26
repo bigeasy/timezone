@@ -3647,11 +3647,11 @@
           "rules": "Canada"
         },
         {
-          "wallclock": -110584800000,
+          "wallclock": -81993600000,
           "format": "P%sT",
           "abbrev": "PST",
           "offset": -28800000,
-          "posix": -110552400000,
+          "posix": -81961200000,
           "save": 0,
           "rules": "NT_YK"
         },

@@ -5,8 +5,8 @@
         "z",
         {
           "wallclock": 438998400000,
-          "format": "HA%sT",
-          "abbrev": "HAST",
+          "format": "H%sT",
+          "abbrev": "HST",
           "offset": -36000000,
           "posix": 439034400000,
           "save": 0,
@@ -8891,8 +8891,8 @@
         "z",
         {
           "wallclock": 438998400000,
-          "format": "HA%sT",
-          "abbrev": "HAST",
+          "format": "H%sT",
+          "abbrev": "HST",
           "offset": -36000000,
           "posix": 439034400000,
           "save": 0,
@@ -57487,11 +57487,11 @@
           "rules": "Canada"
         },
         {
-          "wallclock": -110584800000,
+          "wallclock": -81993600000,
           "format": "P%sT",
           "abbrev": "PST",
           "offset": -28800000,
-          "posix": -110552400000,
+          "posix": -81961200000,
           "save": 0,
           "rules": "NT_YK"
         },
