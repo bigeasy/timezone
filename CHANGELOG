@@ -1,3 +1,7 @@
+- Version 0.0.45.
+
+ * Upgrade TZ Database to `tz2015e`. #253.
+
 - Version 0.0.44.
 
 Sat Sep 26 04:58:12 UTC 2015
