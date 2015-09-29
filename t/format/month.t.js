@@ -1,6 +1,6 @@
-#!/usr/bin/env node
+require('proof')(29, prove)
 
-require('proof')(29, function (assert) {
+function prove (assert) {
     var tz = require('timezone'), util = require('../util')
     // Month digits.
     assert(tz(util.moonwalk, '%m'), '07', 'two digit july')
@@ -36,4 +36,4 @@ require('proof')(29, function (assert) {
     assert(tz(util.utc(1980, 9, 1), '%B'), 'October', 'locale full October')
     assert(tz(util.utc(1980, 10, 1), '%B'), 'November', 'locale full November')
     assert(tz(util.utc(1980, 11, 1), '%B'), 'December', 'locale full December')
-})
+}

@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 require('proof')(14640, prove)
 
 function prove (equal, tz, readDate) {

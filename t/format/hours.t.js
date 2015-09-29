@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 require('proof')(16, prove)
 
 function prove (assert) {
