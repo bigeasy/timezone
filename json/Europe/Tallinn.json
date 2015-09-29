@@ -12,11 +12,11 @@
         "rules": "EU"
       },
       {
-        "wallclock": 941414400000,
+        "wallclock": 941342400000,
         "format": "EET",
         "abbrev": "EET",
         "offset": 7200000,
-        "posix": 941407200000,
+        "posix": 941331600000,
         "save": 0
       },
       {

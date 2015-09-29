@@ -44660,7 +44660,7 @@
       "Uruguay": [
         {
           "from": 2007,
-          "to": 1.7976931348623157e+308,
+          "to": 2015,
           "month": 2,
           "day": [
             0,
@@ -44674,7 +44674,7 @@
         },
         {
           "from": 2006,
-          "to": 1.7976931348623157e+308,
+          "to": 2014,
           "month": 9,
           "day": [
             0,
@@ -84273,6 +84273,14 @@
       "Asia/Pyongyang": [
         "z",
         {
+          "wallclock": 1439596800000,
+          "format": "KST",
+          "abbrev": "KST",
+          "offset": 30600000,
+          "posix": 1439564400000,
+          "save": 0
+        },
+        {
           "wallclock": -768614400000,
           "format": "KST",
           "abbrev": "KST",
@@ -92365,12 +92373,12 @@
       "Atlantic/Canary": [
         "z",
         {
-          "wallclock": 338950800000,
+          "wallclock": 338954400000,
           "format": "WE%sT",
-          "abbrev": "WEST",
+          "abbrev": "WET",
           "offset": 0,
-          "posix": 338947200000,
-          "save": 3600000,
+          "posix": 338950800000,
+          "save": 0,
           "rules": "EU"
         },
         {
@@ -117461,7 +117469,7 @@
           "offset": 7200000,
           "posix": 852069600000,
           "save": 0,
-          "rules": "EU"
+          "rules": "Moldova"
         },
         {
           "wallclock": 694224000000,
@@ -117559,87 +117567,31 @@
       ]
     },
     "rules": {
-      "EU": [
+      "Moldova": [
         {
-          "from": 1981,
+          "from": 1997,
           "to": 1.7976931348623157e+308,
           "month": 2,
           "day": [
             0,
             -31
           ],
-          "time": 60,
-          "clock": "posix",
+          "time": 120,
+          "clock": "wallclock",
           "save": 60,
           "letter": "S",
           "saved": 0
         },
         {
-          "from": 1996,
+          "from": 1997,
           "to": 1.7976931348623157e+308,
           "month": 9,
           "day": [
             0,
             -31
           ],
-          "time": 60,
-          "clock": "posix",
-          "save": 0,
-          "letter": "",
-          "saved": 3600000
-        },
-        {
-          "from": 1979,
-          "to": 1995,
-          "month": 8,
-          "day": [
-            0,
-            -30
-          ],
-          "time": 60,
-          "clock": "posix",
-          "save": 0,
-          "letter": "",
-          "saved": 3600000
-        },
-        {
-          "from": 1977,
-          "to": 1980,
-          "month": 3,
-          "day": [
-            0,
-            1
-          ],
-          "time": 60,
-          "clock": "posix",
-          "save": 60,
-          "letter": "S",
-          "saved": 0
-        },
-        {
-          "from": 1978,
-          "to": 1978,
-          "month": 9,
-          "day": [
-            7,
-            1
-          ],
-          "time": 60,
-          "clock": "posix",
-          "save": 0,
-          "letter": "",
-          "saved": 3600000
-        },
-        {
-          "from": 1977,
-          "to": 1977,
-          "month": 8,
-          "day": [
-            0,
-            -30
-          ],
-          "time": 60,
-          "clock": "posix",
+          "time": 180,
+          "clock": "wallclock",
           "save": 0,
           "letter": "",
           "saved": 3600000
@@ -139964,11 +139916,11 @@
           "rules": "Russia"
         },
         {
-          "wallclock": 828244800000,
+          "wallclock": 828230400000,
           "format": "MSD",
           "abbrev": "MSD",
           "offset": 10800000,
-          "posix": 828230400000,
+          "posix": 828219600000,
           "save": 3600000
         },
         {
@@ -141162,12 +141114,12 @@
           "rules": "E-Eur"
         },
         {
-          "wallclock": 401853600000,
+          "wallclock": 401857200000,
           "format": "EE%sT",
-          "abbrev": "EEST",
+          "abbrev": "EET",
           "offset": 7200000,
-          "posix": 401842800000,
-          "save": 3600000,
+          "posix": 401846400000,
+          "save": 0,
           "rules": "C-Eur"
         },
         {
@@ -141871,11 +141823,11 @@
           "rules": "EU"
         },
         {
-          "wallclock": 941414400000,
+          "wallclock": 941342400000,
           "format": "EET",
           "abbrev": "EET",
           "offset": 7200000,
-          "posix": 941407200000,
+          "posix": 941331600000,
           "save": 0
         },
         {
@@ -143072,7 +143024,7 @@
           "offset": 7200000,
           "posix": 852069600000,
           "save": 0,
-          "rules": "EU"
+          "rules": "Moldova"
         },
         {
           "wallclock": 694224000000,
@@ -143170,87 +143122,31 @@
       ]
     },
     "rules": {
-      "EU": [
+      "Moldova": [
         {
-          "from": 1981,
+          "from": 1997,
           "to": 1.7976931348623157e+308,
           "month": 2,
           "day": [
             0,
             -31
           ],
-          "time": 60,
-          "clock": "posix",
+          "time": 120,
+          "clock": "wallclock",
           "save": 60,
           "letter": "S",
           "saved": 0
         },
         {
-          "from": 1996,
+          "from": 1997,
           "to": 1.7976931348623157e+308,
           "month": 9,
           "day": [
             0,
             -31
           ],
-          "time": 60,
-          "clock": "posix",
-          "save": 0,
-          "letter": "",
-          "saved": 3600000
-        },
-        {
-          "from": 1979,
-          "to": 1995,
-          "month": 8,
-          "day": [
-            0,
-            -30
-          ],
-          "time": 60,
-          "clock": "posix",
-          "save": 0,
-          "letter": "",
-          "saved": 3600000
-        },
-        {
-          "from": 1977,
-          "to": 1980,
-          "month": 3,
-          "day": [
-            0,
-            1
-          ],
-          "time": 60,
-          "clock": "posix",
-          "save": 60,
-          "letter": "S",
-          "saved": 0
-        },
-        {
-          "from": 1978,
-          "to": 1978,
-          "month": 9,
-          "day": [
-            7,
-            1
-          ],
-          "time": 60,
-          "clock": "posix",
-          "save": 0,
-          "letter": "",
-          "saved": 3600000
-        },
-        {
-          "from": 1977,
-          "to": 1977,
-          "month": 8,
-          "day": [
-            0,
-            -30
-          ],
-          "time": 60,
-          "clock": "posix",
+          "time": 180,
+          "clock": "wallclock",
           "save": 0,
           "letter": "",
           "saved": 3600000

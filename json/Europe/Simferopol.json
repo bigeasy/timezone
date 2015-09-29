@@ -45,11 +45,11 @@
         "rules": "Russia"
       },
       {
-        "wallclock": 828244800000,
+        "wallclock": 828230400000,
         "format": "MSD",
         "abbrev": "MSD",
         "offset": 10800000,
-        "posix": 828230400000,
+        "posix": 828219600000,
         "save": 3600000
       },
       {

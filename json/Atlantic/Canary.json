@@ -3,12 +3,12 @@
     "Atlantic/Canary": [
       "z",
       {
-        "wallclock": 338950800000,
+        "wallclock": 338954400000,
         "format": "WE%sT",
-        "abbrev": "WEST",
+        "abbrev": "WET",
         "offset": 0,
-        "posix": 338947200000,
-        "save": 3600000,
+        "posix": 338950800000,
+        "save": 0,
         "rules": "EU"
       },
       {
