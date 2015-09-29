@@ -3,7 +3,7 @@
 require('proof')(9, prove)
 
 function prove (assert) {
-    var util = require('../util'), tz = require('timezone')
+    var tz = require('timezone'), util = require('../util')
     assert(tz(util.y2k, '%j'), '001', 'day of year y2k')
     assert(tz(util.moonwalk, '%j'), '202', 'day of year moonwalk')
     assert(tz(util.bicentennial, '%j'), '186', 'day of year bicentenial')
