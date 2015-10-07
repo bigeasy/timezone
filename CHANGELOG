@@ -1,3 +1,8 @@
+- Version 0.0.47.
+
+ * Upgrade IANA TZ Database to `2015g`. Closes #257.
+ * More testing tidy.
+
 - Version 0.0.46.
 
 Tue Sep 29 02:29:26 UTC 2015
