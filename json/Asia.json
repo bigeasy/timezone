@@ -10256,6 +10256,23 @@
       "Asia/Istanbul": [
         "z",
         {
+          "wallclock": 1446955200000,
+          "format": "EE%sT",
+          "abbrev": "EET",
+          "offset": 7200000,
+          "posix": 1446944400000,
+          "save": 0,
+          "rules": "EU"
+        },
+        {
+          "wallclock": 1445745600000,
+          "format": "EEST",
+          "abbrev": "EEST",
+          "offset": 7200000,
+          "posix": 1445734800000,
+          "save": 3600000
+        },
+        {
           "wallclock": 1396234800000,
           "format": "EE%sT",
           "abbrev": "EEST",
