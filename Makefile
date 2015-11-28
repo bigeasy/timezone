@@ -34,18 +34,14 @@ $(locale_targets): build/timezone/%: src/locales/%
 	mkdir -p build/timezone
 	cp $< $@
 
-build/timezone/zones.js: src/common_index.js
-	mkdir -p build/timezone
-	cp $< $@
-	cp $< $@
+build/timezone/zones.js: util/indexer.js
+	node util/indexer.js $@ > $@
 
-build/timezone/locales.js: src/common_index.js
-	mkdir -p build/timezone
-	cp $< $@
+build/timezone/locales.js: util/indexer.js
+	node util/indexer.js $@ > $@
 
-build/olson/index.js: src/common_index.js
-	mkdir -p build/timezone
-	cp $< $@
+build/olson/index.js: util/indexer.js
+	node util/indexer.js $@ > $@
 
 build/transitions.txt: $(olson_as_json) build/olson/index.js util/verifiable.js
 	node util/verifiable.js > build/transitions.txt
@@ -54,7 +50,7 @@ build/transitions.txt: $(olson_as_json) build/olson/index.js util/verifiable.js
 build/timezone/America/Detroit.js: $(olson_as_json) build/olson/index.js util/zones.js
 	node util/zones.js
 	for dir in $$(find build/timezone -mindepth 1 -type d); do \
-		cp src/common_index.js $$dir/index.js; \
+		node util/indexer.js $$dir/index.js > $$dir/index.js; \
 	done
 	touch $@
 
