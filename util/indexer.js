@@ -23,10 +23,7 @@ function glob (exports, directory, include, exclude) {
       }
     }
   });
-  process.stdout.write('module.exports = []\n');
-  requires.forEach(function (required) {
-    process.stdout.write('module.exports.push.apply(module.exports, ' + requires.join(',') + ')\n');
-  })
+  process.stdout.write('module.exports = [' + requires.join(',') + ']\n');
 }
 
 var $;
