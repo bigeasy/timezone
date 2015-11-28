@@ -34,13 +34,13 @@ $(locale_targets): build/timezone/%: src/locales/%
 	mkdir -p build/timezone
 	cp $< $@
 
-build/timezone/zones.js: util/indexer.js
+build/timezone/zones.js: util/indexer.js build/timezone/America/Detroit.js
 	node util/indexer.js $@ > $@
 
-build/timezone/locales.js: util/indexer.js
+build/timezone/locales.js: util/indexer.js build/timezone/America/Detroit.js
 	node util/indexer.js $@ > $@
 
-build/olson/index.js: util/indexer.js
+build/olson/index.js: util/indexer.js $(olson_as_json)
 	node util/indexer.js $@ > $@
 
 build/transitions.txt: $(olson_as_json) build/olson/index.js util/verifiable.js
