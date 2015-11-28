@@ -18,9 +18,7 @@ function glob (exports, directory, include, exclude) {
     if (! skip) {
       path = _path.join(directory, file);
       stat = fs.statSync(path);
-      if (stat.isDirectory()) {
-        glob(exports, path);
-      } else if (/\.js$/.test(file)) {
+      if (stat.isDirectory() || /\.js$/.test(file)) {
         requires.push('require(' + JSON.stringify('./' + file) + ')')
       }
     }
