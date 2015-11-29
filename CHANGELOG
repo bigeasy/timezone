@@ -1,5 +1,7 @@
 - Version 0.0.48.
 
+Sun Nov 29 20:29:46 UTC 2015
+
  * Test with Node.js 5.1 on Travis CI. f5d44667b81356e3f8ea43e2cd682add7d8b39b2.
  * Test with Node.js 4.2 on Travis CI. c56d3e2fc43eb1d2475187de103de7aa4f4042b0.
  * Use require for resource indexes. #259.
