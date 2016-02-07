@@ -9,11 +9,7 @@
                         ],
     "homepage":             "http://bigeasy.github.io/timezone",
     "bugs":                 "https://github.com/bigeasy/timezone/issues",
-    "licenses":
-                        [{
-                            "type": "MIT",
-                            "url": "http://github.com/bigeasy/skip/raw/master/LICENSE"
-                        }],
+    "license":          "MIT",
     "repository":       {
                             "type": "git",
                             "url": "git://github.com/bigeasy/timezone.git"
