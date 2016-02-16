@@ -105,7 +105,7 @@
           0,
           2
         ],
-        "time": 1,
+        "time": 0,
         "clock": "wallclock",
         "save": 60,
         "letter": "S",
@@ -119,7 +119,7 @@
           0,
           2
         ],
-        "time": 1,
+        "time": 0,
         "clock": "wallclock",
         "save": 0,
         "letter": "",

@@ -3,6 +3,14 @@
     "Asia/Chita": [
       "z",
       {
+        "wallclock": 1459044000000,
+        "format": "YAKT",
+        "abbrev": "YAKT",
+        "offset": 32400000,
+        "posix": 1459015200000,
+        "save": 0
+      },
+      {
         "wallclock": 1414288800000,
         "format": "IRKT",
         "abbrev": "IRKT",

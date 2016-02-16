@@ -3,6 +3,15 @@
     "America/Metlakatla": [
       "z",
       {
+        "wallclock": 1446343200000,
+        "format": "AK%sT",
+        "abbrev": "AKST",
+        "offset": -32400000,
+        "posix": 1446372000000,
+        "save": 0,
+        "rules": "US"
+      },
+      {
         "wallclock": 436327200000,
         "format": "PST",
         "abbrev": "PST",
