@@ -1,5 +1,7 @@
 - Version 1.0.1.
 
+Tue Feb 16 16:13:47 UTC 2016
+
  * Upgrade IANA TZ Database to `2016a`. #264.
 
 - Version 1.0.0.
