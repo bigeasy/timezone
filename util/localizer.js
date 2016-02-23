@@ -4,7 +4,7 @@ var path = require('path'), fs = require('fs')
 var argv = process.argv.slice(2), file = argv[0], locale = path.basename(file)
 
 function esc (string) {
-    return string.replace(/'/, '\\\'')
+    return string.replace(/'/g, '\\\'')
 }
 
 // To use with Ubuntu you must `sudo apt-get install 'language-pack-*'`.
@@ -159,15 +159,15 @@ require('proof')(5, function (assert) {\n\
     var tz = require('timezone')(require('timezone/" + name + "'))\n\
 \n\
     // " + name + " date representation\n\
-    assert(tz('2000-09-03', '%x', '" + name + "'), '" + dateFormat + "', 'date format')\n\
+    assert(tz('2000-09-03', '%x', '" + name + "'), '" + esc(dateFormat) + "', 'date format')\n\
 \n\
     // " + name + " time representation\n\
-    assert(tz('2000-09-03 08:05:04', '%X', '" + name + "'), '" + morningTimeFormat + "', 'long time format morning')\n\
-    assert(tz('2000-09-03 23:05:04', '%X', '" + name + "'), '" + eveningTimeFormat + "', 'long time format evening')\n\
+    assert(tz('2000-09-03 08:05:04', '%X', '" + name + "'), '" + esc(morningTimeFormat) + "', 'long time format morning')\n\
+    assert(tz('2000-09-03 23:05:04', '%X', '" + name + "'), '" + esc(eveningTimeFormat) + "', 'long time format evening')\n\
 \n\
     // " + name + " date time representation\n\
-    assert(tz('2000-09-03 08:05:04', '%c', '" + name + "'), '" + morningDateTimeFormat + "', 'long date format morning')\n\
-    assert(tz('2000-09-03 23:05:04', '%c', '" + name + "'), '" + eveningDateTimeFormat + "', 'long date format evening')\n\
+    assert(tz('2000-09-03 08:05:04', '%c', '" + name + "'), '" + esc(morningDateTimeFormat) + "', 'long date format morning')\n\
+    assert(tz('2000-09-03 23:05:04', '%c', '" + name + "'), '" + esc(eveningDateTimeFormat) + "', 'long date format evening')\n\
 })\n\
 ")
     if (am || AM || pm || PM) {
