@@ -1,14 +1,14 @@
-#!/usr/bin/env node
-require("proof")(5, function (equal) {
-  var tz = require("timezone")(require("timezone/id_ID"));
-  // id_ID date representation
-  equal(tz("2000-09-03", "%x", "id_ID"), "03/09/00", "date format");
+require('proof')(5, function (assert) {
+    var tz = require('timezone')(require('timezone/id_ID'))
 
-  // id_ID time representation
-  equal(tz("2000-09-03 08:05:04", "%X", "id_ID"), "08:05:04", "long time format morning");
-  equal(tz("2000-09-03 23:05:04", "%X", "id_ID"), "23:05:04", "long time format evening");
+    // id_ID date representation
+    assert(tz('2000-09-03', '%x', 'id_ID'), '03/09/00', 'date format')
 
-  // id_ID date time representation
-  equal(tz("2000-09-03 08:05:04", "%c", "id_ID"), "Min 03 Sep 2000 08:05:04  UTC", "long date format morning");
-  equal(tz("2000-09-03 23:05:04", "%c", "id_ID"), "Min 03 Sep 2000 11:05:04  UTC", "long date format evening");
-});
+    // id_ID time representation
+    assert(tz('2000-09-03 08:05:04', '%X', 'id_ID'), '08:05:04', 'long time format morning')
+    assert(tz('2000-09-03 23:05:04', '%X', 'id_ID'), '23:05:04', 'long time format evening')
+
+    // id_ID date time representation
+    assert(tz('2000-09-03 08:05:04', '%c', 'id_ID'), 'Min 03 Sep 2000 08:05:04 UTC', 'long date format morning')
+    assert(tz('2000-09-03 23:05:04', '%c', 'id_ID'), 'Min 03 Sep 2000 11:05:04 UTC', 'long date format evening')
+})

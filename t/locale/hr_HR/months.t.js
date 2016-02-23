@@ -1,31 +1,31 @@
-#!/usr/bin/env node
-require("proof")(24, function (equal) {
-  var tz = require("timezone")(require("timezone/hr_HR"));
-  //hr_HR abbreviated months
-  equal(tz("2000-01-01", "%b", "hr_HR"), "Sij", "Jan");
-  equal(tz("2000-02-01", "%b", "hr_HR"), "Vel", "Feb");
-  equal(tz("2000-03-01", "%b", "hr_HR"), "Ožu", "Mar");
-  equal(tz("2000-04-01", "%b", "hr_HR"), "Tra", "Apr");
-  equal(tz("2000-05-01", "%b", "hr_HR"), "Svi", "May");
-  equal(tz("2000-06-01", "%b", "hr_HR"), "Lip", "Jun");
-  equal(tz("2000-07-01", "%b", "hr_HR"), "Srp", "Jul");
-  equal(tz("2000-08-01", "%b", "hr_HR"), "Kol", "Aug");
-  equal(tz("2000-09-01", "%b", "hr_HR"), "Ruj", "Sep");
-  equal(tz("2000-10-01", "%b", "hr_HR"), "Lis", "Oct");
-  equal(tz("2000-11-01", "%b", "hr_HR"), "Stu", "Nov");
-  equal(tz("2000-12-01", "%b", "hr_HR"), "Pro", "Dec");
+require('proof')(24, function (assert) {
+    var tz = require('timezone')(require('timezone/hr_HR'))
 
-  // hr_HR months
-  equal(tz("2000-01-01", "%B", "hr_HR"), "Siječanj", "January");
-  equal(tz("2000-02-01", "%B", "hr_HR"), "Veljača", "February");
-  equal(tz("2000-03-01", "%B", "hr_HR"), "Ožujak", "March");
-  equal(tz("2000-04-01", "%B", "hr_HR"), "Travanj", "April");
-  equal(tz("2000-05-01", "%B", "hr_HR"), "Svibanj", "May");
-  equal(tz("2000-06-01", "%B", "hr_HR"), "Lipanj", "June");
-  equal(tz("2000-07-01", "%B", "hr_HR"), "Srpanj", "July");
-  equal(tz("2000-08-01", "%B", "hr_HR"), "Kolovoz", "August");
-  equal(tz("2000-09-01", "%B", "hr_HR"), "Rujan", "September");
-  equal(tz("2000-10-01", "%B", "hr_HR"), "Listopad", "October");
-  equal(tz("2000-11-01", "%B", "hr_HR"), "Studeni", "November");
-  equal(tz("2000-12-01", "%B", "hr_HR"), "Prosinac", "December");
-});
+    // hr_HR abbreviated months
+    assert(tz('2000-01-01', '%b', 'hr_HR'), 'Sij', 'Jan')
+    assert(tz('2000-02-01', '%b', 'hr_HR'), 'Vel', 'Feb')
+    assert(tz('2000-03-01', '%b', 'hr_HR'), 'Ožu', 'Mar')
+    assert(tz('2000-04-01', '%b', 'hr_HR'), 'Tra', 'Apr')
+    assert(tz('2000-05-01', '%b', 'hr_HR'), 'Svi', 'May')
+    assert(tz('2000-06-01', '%b', 'hr_HR'), 'Lip', 'Jun')
+    assert(tz('2000-07-01', '%b', 'hr_HR'), 'Srp', 'Jul')
+    assert(tz('2000-08-01', '%b', 'hr_HR'), 'Kol', 'Aug')
+    assert(tz('2000-09-01', '%b', 'hr_HR'), 'Ruj', 'Sep')
+    assert(tz('2000-10-01', '%b', 'hr_HR'), 'Lis', 'Oct')
+    assert(tz('2000-11-01', '%b', 'hr_HR'), 'Stu', 'Nov')
+    assert(tz('2000-12-01', '%b', 'hr_HR'), 'Pro', 'Dec')
+
+    // ' + name + ' months
+    assert(tz('2000-01-01', '%B', 'hr_HR'), 'Siječanj', 'January')
+    assert(tz('2000-02-01', '%B', 'hr_HR'), 'Veljača', 'February')
+    assert(tz('2000-03-01', '%B', 'hr_HR'), 'Ožujak', 'March')
+    assert(tz('2000-04-01', '%B', 'hr_HR'), 'Travanj', 'April')
+    assert(tz('2000-05-01', '%B', 'hr_HR'), 'Svibanj', 'May')
+    assert(tz('2000-06-01', '%B', 'hr_HR'), 'Lipanj', 'June')
+    assert(tz('2000-07-01', '%B', 'hr_HR'), 'Srpanj', 'July')
+    assert(tz('2000-08-01', '%B', 'hr_HR'), 'Kolovoz', 'August')
+    assert(tz('2000-09-01', '%B', 'hr_HR'), 'Rujan', 'September')
+    assert(tz('2000-10-01', '%B', 'hr_HR'), 'Listopad', 'October')
+    assert(tz('2000-11-01', '%B', 'hr_HR'), 'Studeni', 'November')
+    assert(tz('2000-12-01', '%B', 'hr_HR'), 'Prosinac', 'December')
+})

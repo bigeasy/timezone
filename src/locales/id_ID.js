@@ -56,7 +56,7 @@ module.exports = {
   ],
   "date": "%d/%m/%y",
   "time24": "%T",
-  "dateTime": "%a %d %b %Y %r  %Z",
+  "dateTime": "%a %d %b %Y %r %Z",
   "time12": "",
   "full": "%a %b %e %H:%M:%S %Z %Y"
 }

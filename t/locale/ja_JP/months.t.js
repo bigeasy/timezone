@@ -1,31 +1,31 @@
-#!/usr/bin/env node
-require("proof")(24, function (equal) {
-  var tz = require("timezone")(require("timezone/ja_JP"));
-  //ja_JP abbreviated months
-  equal(tz("2000-01-01", "%b", "ja_JP"), "1月", "Jan");
-  equal(tz("2000-02-01", "%b", "ja_JP"), "2月", "Feb");
-  equal(tz("2000-03-01", "%b", "ja_JP"), "3月", "Mar");
-  equal(tz("2000-04-01", "%b", "ja_JP"), "4月", "Apr");
-  equal(tz("2000-05-01", "%b", "ja_JP"), "5月", "May");
-  equal(tz("2000-06-01", "%b", "ja_JP"), "6月", "Jun");
-  equal(tz("2000-07-01", "%b", "ja_JP"), "7月", "Jul");
-  equal(tz("2000-08-01", "%b", "ja_JP"), "8月", "Aug");
-  equal(tz("2000-09-01", "%b", "ja_JP"), "9月", "Sep");
-  equal(tz("2000-10-01", "%b", "ja_JP"), "10月", "Oct");
-  equal(tz("2000-11-01", "%b", "ja_JP"), "11月", "Nov");
-  equal(tz("2000-12-01", "%b", "ja_JP"), "12月", "Dec");
+require('proof')(24, function (assert) {
+    var tz = require('timezone')(require('timezone/ja_JP'))
 
-  // ja_JP months
-  equal(tz("2000-01-01", "%B", "ja_JP"), "1月", "January");
-  equal(tz("2000-02-01", "%B", "ja_JP"), "2月", "February");
-  equal(tz("2000-03-01", "%B", "ja_JP"), "3月", "March");
-  equal(tz("2000-04-01", "%B", "ja_JP"), "4月", "April");
-  equal(tz("2000-05-01", "%B", "ja_JP"), "5月", "May");
-  equal(tz("2000-06-01", "%B", "ja_JP"), "6月", "June");
-  equal(tz("2000-07-01", "%B", "ja_JP"), "7月", "July");
-  equal(tz("2000-08-01", "%B", "ja_JP"), "8月", "August");
-  equal(tz("2000-09-01", "%B", "ja_JP"), "9月", "September");
-  equal(tz("2000-10-01", "%B", "ja_JP"), "10月", "October");
-  equal(tz("2000-11-01", "%B", "ja_JP"), "11月", "November");
-  equal(tz("2000-12-01", "%B", "ja_JP"), "12月", "December");
-});
+    // ja_JP abbreviated months
+    assert(tz('2000-01-01', '%b', 'ja_JP'), ' 1月', 'Jan')
+    assert(tz('2000-02-01', '%b', 'ja_JP'), ' 2月', 'Feb')
+    assert(tz('2000-03-01', '%b', 'ja_JP'), ' 3月', 'Mar')
+    assert(tz('2000-04-01', '%b', 'ja_JP'), ' 4月', 'Apr')
+    assert(tz('2000-05-01', '%b', 'ja_JP'), ' 5月', 'May')
+    assert(tz('2000-06-01', '%b', 'ja_JP'), ' 6月', 'Jun')
+    assert(tz('2000-07-01', '%b', 'ja_JP'), ' 7月', 'Jul')
+    assert(tz('2000-08-01', '%b', 'ja_JP'), ' 8月', 'Aug')
+    assert(tz('2000-09-01', '%b', 'ja_JP'), ' 9月', 'Sep')
+    assert(tz('2000-10-01', '%b', 'ja_JP'), '10月', 'Oct')
+    assert(tz('2000-11-01', '%b', 'ja_JP'), '11月', 'Nov')
+    assert(tz('2000-12-01', '%b', 'ja_JP'), '12月', 'Dec')
+
+    // ' + name + ' months
+    assert(tz('2000-01-01', '%B', 'ja_JP'), '1月', 'January')
+    assert(tz('2000-02-01', '%B', 'ja_JP'), '2月', 'February')
+    assert(tz('2000-03-01', '%B', 'ja_JP'), '3月', 'March')
+    assert(tz('2000-04-01', '%B', 'ja_JP'), '4月', 'April')
+    assert(tz('2000-05-01', '%B', 'ja_JP'), '5月', 'May')
+    assert(tz('2000-06-01', '%B', 'ja_JP'), '6月', 'June')
+    assert(tz('2000-07-01', '%B', 'ja_JP'), '7月', 'July')
+    assert(tz('2000-08-01', '%B', 'ja_JP'), '8月', 'August')
+    assert(tz('2000-09-01', '%B', 'ja_JP'), '9月', 'September')
+    assert(tz('2000-10-01', '%B', 'ja_JP'), '10月', 'October')
+    assert(tz('2000-11-01', '%B', 'ja_JP'), '11月', 'November')
+    assert(tz('2000-12-01', '%B', 'ja_JP'), '12月', 'December')
+})

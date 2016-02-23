@@ -1,31 +1,31 @@
-#!/usr/bin/env node
-require("proof")(24, function (equal) {
-  var tz = require("timezone")(require("timezone/it_IT"));
-  //it_IT abbreviated months
-  equal(tz("2000-01-01", "%b", "it_IT"), "gen", "Jan");
-  equal(tz("2000-02-01", "%b", "it_IT"), "feb", "Feb");
-  equal(tz("2000-03-01", "%b", "it_IT"), "mar", "Mar");
-  equal(tz("2000-04-01", "%b", "it_IT"), "apr", "Apr");
-  equal(tz("2000-05-01", "%b", "it_IT"), "mag", "May");
-  equal(tz("2000-06-01", "%b", "it_IT"), "giu", "Jun");
-  equal(tz("2000-07-01", "%b", "it_IT"), "lug", "Jul");
-  equal(tz("2000-08-01", "%b", "it_IT"), "ago", "Aug");
-  equal(tz("2000-09-01", "%b", "it_IT"), "set", "Sep");
-  equal(tz("2000-10-01", "%b", "it_IT"), "ott", "Oct");
-  equal(tz("2000-11-01", "%b", "it_IT"), "nov", "Nov");
-  equal(tz("2000-12-01", "%b", "it_IT"), "dic", "Dec");
+require('proof')(24, function (assert) {
+    var tz = require('timezone')(require('timezone/it_IT'))
 
-  // it_IT months
-  equal(tz("2000-01-01", "%B", "it_IT"), "gennaio", "January");
-  equal(tz("2000-02-01", "%B", "it_IT"), "febbraio", "February");
-  equal(tz("2000-03-01", "%B", "it_IT"), "marzo", "March");
-  equal(tz("2000-04-01", "%B", "it_IT"), "aprile", "April");
-  equal(tz("2000-05-01", "%B", "it_IT"), "maggio", "May");
-  equal(tz("2000-06-01", "%B", "it_IT"), "giugno", "June");
-  equal(tz("2000-07-01", "%B", "it_IT"), "luglio", "July");
-  equal(tz("2000-08-01", "%B", "it_IT"), "agosto", "August");
-  equal(tz("2000-09-01", "%B", "it_IT"), "settembre", "September");
-  equal(tz("2000-10-01", "%B", "it_IT"), "ottobre", "October");
-  equal(tz("2000-11-01", "%B", "it_IT"), "novembre", "November");
-  equal(tz("2000-12-01", "%B", "it_IT"), "dicembre", "December");
-});
+    // it_IT abbreviated months
+    assert(tz('2000-01-01', '%b', 'it_IT'), 'gen', 'Jan')
+    assert(tz('2000-02-01', '%b', 'it_IT'), 'feb', 'Feb')
+    assert(tz('2000-03-01', '%b', 'it_IT'), 'mar', 'Mar')
+    assert(tz('2000-04-01', '%b', 'it_IT'), 'apr', 'Apr')
+    assert(tz('2000-05-01', '%b', 'it_IT'), 'mag', 'May')
+    assert(tz('2000-06-01', '%b', 'it_IT'), 'giu', 'Jun')
+    assert(tz('2000-07-01', '%b', 'it_IT'), 'lug', 'Jul')
+    assert(tz('2000-08-01', '%b', 'it_IT'), 'ago', 'Aug')
+    assert(tz('2000-09-01', '%b', 'it_IT'), 'set', 'Sep')
+    assert(tz('2000-10-01', '%b', 'it_IT'), 'ott', 'Oct')
+    assert(tz('2000-11-01', '%b', 'it_IT'), 'nov', 'Nov')
+    assert(tz('2000-12-01', '%b', 'it_IT'), 'dic', 'Dec')
+
+    // ' + name + ' months
+    assert(tz('2000-01-01', '%B', 'it_IT'), 'gennaio', 'January')
+    assert(tz('2000-02-01', '%B', 'it_IT'), 'febbraio', 'February')
+    assert(tz('2000-03-01', '%B', 'it_IT'), 'marzo', 'March')
+    assert(tz('2000-04-01', '%B', 'it_IT'), 'aprile', 'April')
+    assert(tz('2000-05-01', '%B', 'it_IT'), 'maggio', 'May')
+    assert(tz('2000-06-01', '%B', 'it_IT'), 'giugno', 'June')
+    assert(tz('2000-07-01', '%B', 'it_IT'), 'luglio', 'July')
+    assert(tz('2000-08-01', '%B', 'it_IT'), 'agosto', 'August')
+    assert(tz('2000-09-01', '%B', 'it_IT'), 'settembre', 'September')
+    assert(tz('2000-10-01', '%B', 'it_IT'), 'ottobre', 'October')
+    assert(tz('2000-11-01', '%B', 'it_IT'), 'novembre', 'November')
+    assert(tz('2000-12-01', '%B', 'it_IT'), 'dicembre', 'December')
+})

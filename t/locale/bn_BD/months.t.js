@@ -1,31 +1,31 @@
-#!/usr/bin/env node
-require("proof")(24, function (equal) {
-  var tz = require("timezone")(require("timezone/bn_BD"));
-  //bn_BD abbreviated months
-  equal(tz("2000-01-01", "%b", "bn_BD"), "জানু", "Jan");
-  equal(tz("2000-02-01", "%b", "bn_BD"), "ফেব্রু", "Feb");
-  equal(tz("2000-03-01", "%b", "bn_BD"), "মার্চ", "Mar");
-  equal(tz("2000-04-01", "%b", "bn_BD"), "এপ্রি", "Apr");
-  equal(tz("2000-05-01", "%b", "bn_BD"), "মে", "May");
-  equal(tz("2000-06-01", "%b", "bn_BD"), "জুন", "Jun");
-  equal(tz("2000-07-01", "%b", "bn_BD"), "জুল", "Jul");
-  equal(tz("2000-08-01", "%b", "bn_BD"), "আগ", "Aug");
-  equal(tz("2000-09-01", "%b", "bn_BD"), "সেপ্টে", "Sep");
-  equal(tz("2000-10-01", "%b", "bn_BD"), "অক্টো", "Oct");
-  equal(tz("2000-11-01", "%b", "bn_BD"), "নভে", "Nov");
-  equal(tz("2000-12-01", "%b", "bn_BD"), "ডিসে", "Dec");
+require('proof')(24, function (assert) {
+    var tz = require('timezone')(require('timezone/bn_BD'))
 
-  // bn_BD months
-  equal(tz("2000-01-01", "%B", "bn_BD"), "জানুয়ারি", "January");
-  equal(tz("2000-02-01", "%B", "bn_BD"), "ফেব্রুয়ারি", "February");
-  equal(tz("2000-03-01", "%B", "bn_BD"), "মার্চ", "March");
-  equal(tz("2000-04-01", "%B", "bn_BD"), "এপ্রিল", "April");
-  equal(tz("2000-05-01", "%B", "bn_BD"), "মে", "May");
-  equal(tz("2000-06-01", "%B", "bn_BD"), "জুন", "June");
-  equal(tz("2000-07-01", "%B", "bn_BD"), "জুলাই", "July");
-  equal(tz("2000-08-01", "%B", "bn_BD"), "আগস্ট", "August");
-  equal(tz("2000-09-01", "%B", "bn_BD"), "সেপ্টেম্বর", "September");
-  equal(tz("2000-10-01", "%B", "bn_BD"), "অক্টোবর", "October");
-  equal(tz("2000-11-01", "%B", "bn_BD"), "নভেম্বর", "November");
-  equal(tz("2000-12-01", "%B", "bn_BD"), "ডিসেম্বর", "December");
-});
+    // bn_BD abbreviated months
+    assert(tz('2000-01-01', '%b', 'bn_BD'), 'জানু', 'Jan')
+    assert(tz('2000-02-01', '%b', 'bn_BD'), 'ফেব্রু', 'Feb')
+    assert(tz('2000-03-01', '%b', 'bn_BD'), 'মার্চ', 'Mar')
+    assert(tz('2000-04-01', '%b', 'bn_BD'), 'এপ্রি', 'Apr')
+    assert(tz('2000-05-01', '%b', 'bn_BD'), 'মে', 'May')
+    assert(tz('2000-06-01', '%b', 'bn_BD'), 'জুন', 'Jun')
+    assert(tz('2000-07-01', '%b', 'bn_BD'), 'জুল', 'Jul')
+    assert(tz('2000-08-01', '%b', 'bn_BD'), 'আগ', 'Aug')
+    assert(tz('2000-09-01', '%b', 'bn_BD'), 'সেপ্টে', 'Sep')
+    assert(tz('2000-10-01', '%b', 'bn_BD'), 'অক্টো', 'Oct')
+    assert(tz('2000-11-01', '%b', 'bn_BD'), 'নভে', 'Nov')
+    assert(tz('2000-12-01', '%b', 'bn_BD'), 'ডিসে', 'Dec')
+
+    // ' + name + ' months
+    assert(tz('2000-01-01', '%B', 'bn_BD'), 'জানুয়ারি', 'January')
+    assert(tz('2000-02-01', '%B', 'bn_BD'), 'ফেব্রুয়ারি', 'February')
+    assert(tz('2000-03-01', '%B', 'bn_BD'), 'মার্চ', 'March')
+    assert(tz('2000-04-01', '%B', 'bn_BD'), 'এপ্রিল', 'April')
+    assert(tz('2000-05-01', '%B', 'bn_BD'), 'মে', 'May')
+    assert(tz('2000-06-01', '%B', 'bn_BD'), 'জুন', 'June')
+    assert(tz('2000-07-01', '%B', 'bn_BD'), 'জুলাই', 'July')
+    assert(tz('2000-08-01', '%B', 'bn_BD'), 'আগস্ট', 'August')
+    assert(tz('2000-09-01', '%B', 'bn_BD'), 'সেপ্টেম্বর', 'September')
+    assert(tz('2000-10-01', '%B', 'bn_BD'), 'অক্টোবর', 'October')
+    assert(tz('2000-11-01', '%B', 'bn_BD'), 'নভেম্বর', 'November')
+    assert(tz('2000-12-01', '%B', 'bn_BD'), 'ডিসেম্বর', 'December')
+})

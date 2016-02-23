@@ -1,31 +1,31 @@
-#!/usr/bin/env node
-require("proof")(24, function (equal) {
-  var tz = require("timezone")(require("timezone/ur_PK"));
-  //ur_PK abbreviated months
-  equal(tz("2000-01-01", "%b", "ur_PK"), "جنوري", "Jan");
-  equal(tz("2000-02-01", "%b", "ur_PK"), "فروري", "Feb");
-  equal(tz("2000-03-01", "%b", "ur_PK"), "مارچ", "Mar");
-  equal(tz("2000-04-01", "%b", "ur_PK"), "اپريل", "Apr");
-  equal(tz("2000-05-01", "%b", "ur_PK"), "مٓی", "May");
-  equal(tz("2000-06-01", "%b", "ur_PK"), "جون", "Jun");
-  equal(tz("2000-07-01", "%b", "ur_PK"), "جولاي", "Jul");
-  equal(tz("2000-08-01", "%b", "ur_PK"), "اگست", "Aug");
-  equal(tz("2000-09-01", "%b", "ur_PK"), "ستمبر", "Sep");
-  equal(tz("2000-10-01", "%b", "ur_PK"), "اكتوبر", "Oct");
-  equal(tz("2000-11-01", "%b", "ur_PK"), "نومبر", "Nov");
-  equal(tz("2000-12-01", "%b", "ur_PK"), "دسمبر", "Dec");
+require('proof')(24, function (assert) {
+    var tz = require('timezone')(require('timezone/ur_PK'))
 
-  // ur_PK months
-  equal(tz("2000-01-01", "%B", "ur_PK"), "جنوري", "January");
-  equal(tz("2000-02-01", "%B", "ur_PK"), "فروري", "February");
-  equal(tz("2000-03-01", "%B", "ur_PK"), "مارچ", "March");
-  equal(tz("2000-04-01", "%B", "ur_PK"), "اپريل", "April");
-  equal(tz("2000-05-01", "%B", "ur_PK"), "مٓی", "May");
-  equal(tz("2000-06-01", "%B", "ur_PK"), "جون", "June");
-  equal(tz("2000-07-01", "%B", "ur_PK"), "جولاي", "July");
-  equal(tz("2000-08-01", "%B", "ur_PK"), "اگست", "August");
-  equal(tz("2000-09-01", "%B", "ur_PK"), "ستمبر", "September");
-  equal(tz("2000-10-01", "%B", "ur_PK"), "اكتوبر", "October");
-  equal(tz("2000-11-01", "%B", "ur_PK"), "نومبر", "November");
-  equal(tz("2000-12-01", "%B", "ur_PK"), "دسمبر", "December");
-});
+    // ur_PK abbreviated months
+    assert(tz('2000-01-01', '%b', 'ur_PK'), 'جنوري', 'Jan')
+    assert(tz('2000-02-01', '%b', 'ur_PK'), 'فروري', 'Feb')
+    assert(tz('2000-03-01', '%b', 'ur_PK'), 'مارچ', 'Mar')
+    assert(tz('2000-04-01', '%b', 'ur_PK'), 'اپريل', 'Apr')
+    assert(tz('2000-05-01', '%b', 'ur_PK'), 'مٓی', 'May')
+    assert(tz('2000-06-01', '%b', 'ur_PK'), 'جون', 'Jun')
+    assert(tz('2000-07-01', '%b', 'ur_PK'), 'جولاي', 'Jul')
+    assert(tz('2000-08-01', '%b', 'ur_PK'), 'اگست', 'Aug')
+    assert(tz('2000-09-01', '%b', 'ur_PK'), 'ستمبر', 'Sep')
+    assert(tz('2000-10-01', '%b', 'ur_PK'), 'اكتوبر', 'Oct')
+    assert(tz('2000-11-01', '%b', 'ur_PK'), 'نومبر', 'Nov')
+    assert(tz('2000-12-01', '%b', 'ur_PK'), 'دسمبر', 'Dec')
+
+    // ' + name + ' months
+    assert(tz('2000-01-01', '%B', 'ur_PK'), 'جنوري', 'January')
+    assert(tz('2000-02-01', '%B', 'ur_PK'), 'فروري', 'February')
+    assert(tz('2000-03-01', '%B', 'ur_PK'), 'مارچ', 'March')
+    assert(tz('2000-04-01', '%B', 'ur_PK'), 'اپريل', 'April')
+    assert(tz('2000-05-01', '%B', 'ur_PK'), 'مٓی', 'May')
+    assert(tz('2000-06-01', '%B', 'ur_PK'), 'جون', 'June')
+    assert(tz('2000-07-01', '%B', 'ur_PK'), 'جولاي', 'July')
+    assert(tz('2000-08-01', '%B', 'ur_PK'), 'اگست', 'August')
+    assert(tz('2000-09-01', '%B', 'ur_PK'), 'ستمبر', 'September')
+    assert(tz('2000-10-01', '%B', 'ur_PK'), 'اكتوبر', 'October')
+    assert(tz('2000-11-01', '%B', 'ur_PK'), 'نومبر', 'November')
+    assert(tz('2000-12-01', '%B', 'ur_PK'), 'دسمبر', 'December')
+})

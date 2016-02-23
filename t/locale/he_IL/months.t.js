@@ -1,31 +1,31 @@
-#!/usr/bin/env node
-require("proof")(24, function (equal) {
-  var tz = require("timezone")(require("timezone/he_IL"));
-  //he_IL abbreviated months
-  equal(tz("2000-01-01", "%b", "he_IL"), "ינו", "Jan");
-  equal(tz("2000-02-01", "%b", "he_IL"), "פבר", "Feb");
-  equal(tz("2000-03-01", "%b", "he_IL"), "מרץ", "Mar");
-  equal(tz("2000-04-01", "%b", "he_IL"), "אפר", "Apr");
-  equal(tz("2000-05-01", "%b", "he_IL"), "מאי", "May");
-  equal(tz("2000-06-01", "%b", "he_IL"), "יונ", "Jun");
-  equal(tz("2000-07-01", "%b", "he_IL"), "יול", "Jul");
-  equal(tz("2000-08-01", "%b", "he_IL"), "אוג", "Aug");
-  equal(tz("2000-09-01", "%b", "he_IL"), "ספט", "Sep");
-  equal(tz("2000-10-01", "%b", "he_IL"), "אוק", "Oct");
-  equal(tz("2000-11-01", "%b", "he_IL"), "נוב", "Nov");
-  equal(tz("2000-12-01", "%b", "he_IL"), "דצמ", "Dec");
+require('proof')(24, function (assert) {
+    var tz = require('timezone')(require('timezone/he_IL'))
 
-  // he_IL months
-  equal(tz("2000-01-01", "%B", "he_IL"), "ינואר", "January");
-  equal(tz("2000-02-01", "%B", "he_IL"), "פברואר", "February");
-  equal(tz("2000-03-01", "%B", "he_IL"), "מרץ", "March");
-  equal(tz("2000-04-01", "%B", "he_IL"), "אפריל", "April");
-  equal(tz("2000-05-01", "%B", "he_IL"), "מאי", "May");
-  equal(tz("2000-06-01", "%B", "he_IL"), "יוני", "June");
-  equal(tz("2000-07-01", "%B", "he_IL"), "יולי", "July");
-  equal(tz("2000-08-01", "%B", "he_IL"), "אוגוסט", "August");
-  equal(tz("2000-09-01", "%B", "he_IL"), "ספטמבר", "September");
-  equal(tz("2000-10-01", "%B", "he_IL"), "אוקטובר", "October");
-  equal(tz("2000-11-01", "%B", "he_IL"), "נובמבר", "November");
-  equal(tz("2000-12-01", "%B", "he_IL"), "דצמבר", "December");
-});
+    // he_IL abbreviated months
+    assert(tz('2000-01-01', '%b', 'he_IL'), 'ינו', 'Jan')
+    assert(tz('2000-02-01', '%b', 'he_IL'), 'פבר', 'Feb')
+    assert(tz('2000-03-01', '%b', 'he_IL'), 'מרץ', 'Mar')
+    assert(tz('2000-04-01', '%b', 'he_IL'), 'אפר', 'Apr')
+    assert(tz('2000-05-01', '%b', 'he_IL'), 'מאי', 'May')
+    assert(tz('2000-06-01', '%b', 'he_IL'), 'יונ', 'Jun')
+    assert(tz('2000-07-01', '%b', 'he_IL'), 'יול', 'Jul')
+    assert(tz('2000-08-01', '%b', 'he_IL'), 'אוג', 'Aug')
+    assert(tz('2000-09-01', '%b', 'he_IL'), 'ספט', 'Sep')
+    assert(tz('2000-10-01', '%b', 'he_IL'), 'אוק', 'Oct')
+    assert(tz('2000-11-01', '%b', 'he_IL'), 'נוב', 'Nov')
+    assert(tz('2000-12-01', '%b', 'he_IL'), 'דצמ', 'Dec')
+
+    // ' + name + ' months
+    assert(tz('2000-01-01', '%B', 'he_IL'), 'ינואר', 'January')
+    assert(tz('2000-02-01', '%B', 'he_IL'), 'פברואר', 'February')
+    assert(tz('2000-03-01', '%B', 'he_IL'), 'מרץ', 'March')
+    assert(tz('2000-04-01', '%B', 'he_IL'), 'אפריל', 'April')
+    assert(tz('2000-05-01', '%B', 'he_IL'), 'מאי', 'May')
+    assert(tz('2000-06-01', '%B', 'he_IL'), 'יוני', 'June')
+    assert(tz('2000-07-01', '%B', 'he_IL'), 'יולי', 'July')
+    assert(tz('2000-08-01', '%B', 'he_IL'), 'אוגוסט', 'August')
+    assert(tz('2000-09-01', '%B', 'he_IL'), 'ספטמבר', 'September')
+    assert(tz('2000-10-01', '%B', 'he_IL'), 'אוקטובר', 'October')
+    assert(tz('2000-11-01', '%B', 'he_IL'), 'נובמבר', 'November')
+    assert(tz('2000-12-01', '%B', 'he_IL'), 'דצמבר', 'December')
+})

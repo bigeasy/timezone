@@ -1,31 +1,31 @@
-#!/usr/bin/env node
-require("proof")(24, function (equal) {
-  var tz = require("timezone")(require("timezone/si_LK"));
-  //si_LK abbreviated months
-  equal(tz("2000-01-01", "%b", "si_LK"), "ජන", "Jan");
-  equal(tz("2000-02-01", "%b", "si_LK"), "පෙබ", "Feb");
-  equal(tz("2000-03-01", "%b", "si_LK"), "මාර්", "Mar");
-  equal(tz("2000-04-01", "%b", "si_LK"), "අප්‍රි", "Apr");
-  equal(tz("2000-05-01", "%b", "si_LK"), "මැයි", "May");
-  equal(tz("2000-06-01", "%b", "si_LK"), "ජූනි", "Jun");
-  equal(tz("2000-07-01", "%b", "si_LK"), "ජූලි", "Jul");
-  equal(tz("2000-08-01", "%b", "si_LK"), "අගෝ", "Aug");
-  equal(tz("2000-09-01", "%b", "si_LK"), "සැප්", "Sep");
-  equal(tz("2000-10-01", "%b", "si_LK"), "ඔක්", "Oct");
-  equal(tz("2000-11-01", "%b", "si_LK"), "නෙවැ", "Nov");
-  equal(tz("2000-12-01", "%b", "si_LK"), "දෙසැ", "Dec");
+require('proof')(24, function (assert) {
+    var tz = require('timezone')(require('timezone/si_LK'))
 
-  // si_LK months
-  equal(tz("2000-01-01", "%B", "si_LK"), "ජනවාරි", "January");
-  equal(tz("2000-02-01", "%B", "si_LK"), "පෙබරවාරි", "February");
-  equal(tz("2000-03-01", "%B", "si_LK"), "මාර්තු", "March");
-  equal(tz("2000-04-01", "%B", "si_LK"), "අප්‍රියෙල්", "April");
-  equal(tz("2000-05-01", "%B", "si_LK"), "මැයි", "May");
-  equal(tz("2000-06-01", "%B", "si_LK"), "ජූනි", "June");
-  equal(tz("2000-07-01", "%B", "si_LK"), "ජූලි", "July");
-  equal(tz("2000-08-01", "%B", "si_LK"), "අගෝස්තු", "August");
-  equal(tz("2000-09-01", "%B", "si_LK"), "සැප්තැම්බර්", "September");
-  equal(tz("2000-10-01", "%B", "si_LK"), "ඔක්තෝබර්", "October");
-  equal(tz("2000-11-01", "%B", "si_LK"), "නොවැම්බර්", "November");
-  equal(tz("2000-12-01", "%B", "si_LK"), "දෙසැම්බර්", "December");
-});
+    // si_LK abbreviated months
+    assert(tz('2000-01-01', '%b', 'si_LK'), 'ජන', 'Jan')
+    assert(tz('2000-02-01', '%b', 'si_LK'), 'පෙබ', 'Feb')
+    assert(tz('2000-03-01', '%b', 'si_LK'), 'මාර්', 'Mar')
+    assert(tz('2000-04-01', '%b', 'si_LK'), 'අප්‍රි', 'Apr')
+    assert(tz('2000-05-01', '%b', 'si_LK'), 'මැයි', 'May')
+    assert(tz('2000-06-01', '%b', 'si_LK'), 'ජූනි', 'Jun')
+    assert(tz('2000-07-01', '%b', 'si_LK'), 'ජූලි', 'Jul')
+    assert(tz('2000-08-01', '%b', 'si_LK'), 'අගෝ', 'Aug')
+    assert(tz('2000-09-01', '%b', 'si_LK'), 'සැප්', 'Sep')
+    assert(tz('2000-10-01', '%b', 'si_LK'), 'ඔක්', 'Oct')
+    assert(tz('2000-11-01', '%b', 'si_LK'), 'නෙවැ', 'Nov')
+    assert(tz('2000-12-01', '%b', 'si_LK'), 'දෙසැ', 'Dec')
+
+    // ' + name + ' months
+    assert(tz('2000-01-01', '%B', 'si_LK'), 'ජනවාරි', 'January')
+    assert(tz('2000-02-01', '%B', 'si_LK'), 'පෙබරවාරි', 'February')
+    assert(tz('2000-03-01', '%B', 'si_LK'), 'මාර්තු', 'March')
+    assert(tz('2000-04-01', '%B', 'si_LK'), 'අප්‍රියෙල්', 'April')
+    assert(tz('2000-05-01', '%B', 'si_LK'), 'මැයි', 'May')
+    assert(tz('2000-06-01', '%B', 'si_LK'), 'ජූනි', 'June')
+    assert(tz('2000-07-01', '%B', 'si_LK'), 'ජූලි', 'July')
+    assert(tz('2000-08-01', '%B', 'si_LK'), 'අගෝස්තු', 'August')
+    assert(tz('2000-09-01', '%B', 'si_LK'), 'සැප්තැම්බර්', 'September')
+    assert(tz('2000-10-01', '%B', 'si_LK'), 'ඔක්තෝබර්', 'October')
+    assert(tz('2000-11-01', '%B', 'si_LK'), 'නොවැම්බර්', 'November')
+    assert(tz('2000-12-01', '%B', 'si_LK'), 'දෙසැම්බර්', 'December')
+})
