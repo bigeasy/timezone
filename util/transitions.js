@@ -122,7 +122,7 @@
       , rules = data.rules[begin.rules]
       , actualized = [];
 
-    if (abbrevs = /(\w+)\/(\w+)/.exec(begin.format)) abbrevs.shift();
+    if (abbrevs = /^([^\/]+)\/(.+)$/.exec(begin.format)) abbrevs.shift();
     else abbrevs = []
 
     for (var i = 0, length = rules.length; i < length; i++) {
