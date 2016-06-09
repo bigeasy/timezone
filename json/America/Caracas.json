@@ -3,6 +3,14 @@
     "America/Caracas": [
       "z",
       {
+        "wallclock": 1462069800000,
+        "format": "VET",
+        "abbrev": "VET",
+        "offset": -14400000,
+        "posix": 1462086000000,
+        "save": 0
+      },
+      {
         "wallclock": 1197169200000,
         "format": "VET",
         "abbrev": "VET",

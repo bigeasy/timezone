@@ -3,6 +3,14 @@
     "Asia/Magadan": [
       "z",
       {
+        "wallclock": 1461463200000,
+        "format": "MAGT",
+        "abbrev": "MAGT",
+        "offset": 39600000,
+        "posix": 1461427200000,
+        "save": 0
+      },
+      {
         "wallclock": 1414288800000,
         "format": "MAGT",
         "abbrev": "MAGT",
@@ -80,7 +88,7 @@
         "saved": 3600000
       },
       {
-        "from": 1993,
+        "from": 1985,
         "to": 2010,
         "month": 2,
         "day": [
@@ -94,64 +102,8 @@
         "saved": 0
       },
       {
-        "from": 1993,
-        "to": 1995,
-        "month": 8,
-        "day": [
-          0,
-          -30
-        ],
-        "time": 180,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
-        "from": 1992,
-        "to": 1992,
-        "month": 8,
-        "day": [
-          6,
-          -30
-        ],
-        "time": 1380,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
-        "from": 1992,
-        "to": 1992,
-        "month": 2,
-        "day": [
-          6,
-          -31
-        ],
-        "time": 1380,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
-      },
-      {
-        "from": 1985,
-        "to": 1991,
-        "month": 2,
-        "day": [
-          0,
-          -31
-        ],
-        "time": 120,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
-      },
-      {
         "from": 1984,
-        "to": 1991,
+        "to": 1995,
         "month": 8,
         "day": [
           0,
@@ -194,16 +146,16 @@
       {
         "from": 1921,
         "to": 1921,
-        "month": 8,
+        "month": 2,
         "day": [
           7,
-          1
+          20
         ],
-        "time": 0,
+        "time": 1380,
         "clock": "wallclock",
-        "save": 60,
-        "letter": "MSD",
-        "saved": 7200000
+        "save": 120,
+        "letter": "MSM",
+        "saved": 3600000
       },
       {
         "from": 1921,
@@ -236,16 +188,16 @@
       {
         "from": 1921,
         "to": 1921,
-        "month": 2,
+        "month": 8,
         "day": [
           7,
-          20
+          1
         ],
-        "time": 1380,
+        "time": 0,
         "clock": "wallclock",
-        "save": 120,
-        "letter": "MSM",
-        "saved": 3600000
+        "save": 60,
+        "letter": "MSD",
+        "saved": 7200000
       },
       {
         "from": 1919,

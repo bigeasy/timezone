@@ -3,11 +3,11 @@
     "Asia/Yerevan": [
       "z",
       {
-        "wallclock": 1332640800000,
+        "wallclock": 1328745600000,
         "format": "AMT",
         "abbrev": "AMT",
         "offset": 14400000,
-        "posix": 1332626400000,
+        "posix": 1328731200000,
         "save": 0
       },
       {
@@ -74,8 +74,8 @@
   "rules": {
     "RussiaAsia": [
       {
-        "from": 1993,
-        "to": 1.7976931348623157e+308,
+        "from": 1985,
+        "to": 2011,
         "month": 2,
         "day": [
           0,
@@ -89,7 +89,7 @@
       },
       {
         "from": 1996,
-        "to": 1.7976931348623157e+308,
+        "to": 2011,
         "month": 9,
         "day": [
           0,
@@ -102,7 +102,7 @@
         "saved": 3600000
       },
       {
-        "from": 1993,
+        "from": 1984,
         "to": 1995,
         "month": 8,
         "day": [
@@ -114,62 +114,6 @@
         "save": 0,
         "letter": "",
         "saved": 3600000
-      },
-      {
-        "from": 1992,
-        "to": 1992,
-        "month": 2,
-        "day": [
-          6,
-          -31
-        ],
-        "time": 1380,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
-      },
-      {
-        "from": 1992,
-        "to": 1992,
-        "month": 8,
-        "day": [
-          6,
-          -30
-        ],
-        "time": 1380,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
-        "from": 1984,
-        "to": 1991,
-        "month": 8,
-        "day": [
-          0,
-          -30
-        ],
-        "time": 180,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
-        "from": 1985,
-        "to": 1991,
-        "month": 2,
-        "day": [
-          0,
-          -31
-        ],
-        "time": 120,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
       },
       {
         "from": 1981,

@@ -1,63 +1,71 @@
 {
   "zones": {
-    "Asia/Yakutsk": [
+    "Europe/Kirov": [
       "z",
       {
         "wallclock": 1414288800000,
-        "format": "YAKT",
-        "abbrev": "YAKT",
-        "offset": 32400000,
-        "posix": 1414252800000,
+        "format": "+03",
+        "abbrev": "+03",
+        "offset": 10800000,
+        "posix": 1414274400000,
         "save": 0
       },
       {
         "wallclock": 1301191200000,
-        "format": "YAKT",
-        "abbrev": "YAKT",
-        "offset": 36000000,
-        "posix": 1301158800000,
+        "format": "+04",
+        "abbrev": "+04",
+        "offset": 14400000,
+        "posix": 1301180400000,
         "save": 0
       },
       {
-        "wallclock": 695786400000,
-        "format": "YAK%sT",
-        "abbrev": "YAKT",
-        "offset": 32400000,
-        "posix": 695757600000,
-        "save": 0,
+        "wallclock": 701834400000,
+        "format": "+03/+04",
+        "abbrev": "+04",
+        "offset": 10800000,
+        "posix": 701820000000,
+        "save": 3600000,
         "rules": "Russia"
       },
       {
         "wallclock": 670384800000,
-        "format": "YAK%sT",
-        "abbrev": "YAKST",
-        "offset": 28800000,
-        "posix": 670352400000,
+        "format": "+04",
+        "abbrev": "+04",
+        "offset": 14400000,
+        "posix": 670374000000,
+        "save": 0
+      },
+      {
+        "wallclock": 606880800000,
+        "format": "+03/+04",
+        "abbrev": "+04",
+        "offset": 10800000,
+        "posix": 606866400000,
         "save": 3600000,
         "rules": "Russia"
       },
       {
         "wallclock": -1247529600000,
-        "format": "YAK%sT",
-        "abbrev": "YAKT",
-        "offset": 32400000,
-        "posix": -1247558400000,
+        "format": "+04/+05",
+        "abbrev": "+04",
+        "offset": 14400000,
+        "posix": -1247540400000,
         "save": 0,
         "rules": "Russia"
       },
       {
-        "wallclock": -1579392000000,
-        "format": "YAKT",
-        "abbrev": "YAKT",
-        "offset": 28800000,
-        "posix": -1579423138000,
+        "wallclock": -1593813600000,
+        "format": "+03",
+        "abbrev": "+03",
+        "offset": 10800000,
+        "posix": -1593825528000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 31138000,
+        "offset": 11928000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }
