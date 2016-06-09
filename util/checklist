@@ -15,7 +15,7 @@ Once again; here is the release checklist mentioned in #140.
 - [ ] Update the version number in `package.json`.
 - [ ] Ensure that the `CHANGELOG` looks reasonable.
 - [ ] Run `make clean && make zic && make && npm test`.
-- [ ] Run `git commit -m 'Release $version.\n\nCloses #$issue.' -a`.
+- [ ] Run `git commit -m $'Release $version.\n\nCloses #$issue.' -a`.
 - [ ] Get the date of the commit and add it to change log.
 - [ ] Run `git commit --amend -a`.
 - [ ] Close this issue with that commit message.
@@ -32,8 +32,7 @@ Publish data files to `gh-pages`.
 - [ ] In the `code` submodule `make clean && make zic && make && npm test`.
 - [ ] In the root directory run `NODE_PATH=code/build node data.js`.
 - [ ] Run `git add v$version`.
-- [ ] Run `git commit -m 'Data files for v$version.\n\nSee #$issue.' -a`.
-- [ ] Amend commit message to include `See #170`.
+- [ ] Run `git commit -m $'Data files for v$version.\n\nSee #$issue.' -a`.
 - [ ] Push commit with `git push origin HEAD`.
 
 Publish data files as zip. (This is specific to my checkouts.)
@@ -45,8 +44,7 @@ Publish data files as zip. (This is specific to my checkouts.)
 - [ ] Run `rm -rf amd json jsonp`.
 - [ ] Run `rsync -av ~/git/pages/timezone/v$version/ ./`.
 - [ ] Run `git add .`.
-- [ ] Run `git commit -m 'Release $version.\n\nSee #$issue.' -a`.
-- [ ] Add a reference to this issue in the commit message.
+- [ ] Run `git commit -m $'Release $version.\n\nSee #$issue.' -a`.
 - [ ] Run `git tag data-v$version && git push origin data-v$version`.
 - [ ] Push commit with `git push origin HEAD`.
 EOF
