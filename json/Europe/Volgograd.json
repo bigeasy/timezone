@@ -36,11 +36,11 @@
         "save": 0
       },
       {
-        "wallclock": 606880800000,
+        "wallclock": 575431200000,
         "format": "VOL%sT",
         "abbrev": "VOLST",
         "offset": 10800000,
-        "posix": 606866400000,
+        "posix": 575416800000,
         "save": 3600000,
         "rules": "Russia"
       },

@@ -57296,14 +57296,6 @@
         "America/Santiago": [
           "z",
           {
-            "wallclock": 1430006400000,
-            "format": "CLT",
-            "abbrev": "CLT",
-            "offset": -10800000,
-            "posix": 1430017200000,
-            "save": 0
-          },
-          {
             "wallclock": -713667600000,
             "format": "CL%sT",
             "abbrev": "CLT",
@@ -57422,12 +57414,26 @@
       "rules": {
         "Chile": [
           {
-            "from": 2012,
-            "to": 2015,
-            "month": 3,
+            "from": 2016,
+            "to": 1.7976931348623157e+308,
+            "month": 7,
             "day": [
               0,
-              23
+              9
+            ],
+            "time": 240,
+            "clock": "posix",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
+            "from": 2016,
+            "to": 1.7976931348623157e+308,
+            "month": 4,
+            "day": [
+              0,
+              9
             ],
             "time": 180,
             "clock": "posix",
@@ -57448,6 +57454,20 @@
             "save": 60,
             "letter": "S",
             "saved": 0
+          },
+          {
+            "from": 2012,
+            "to": 2014,
+            "month": 3,
+            "day": [
+              0,
+              23
+            ],
+            "time": 180,
+            "clock": "posix",
+            "save": 0,
+            "letter": "",
+            "saved": 3600000
           },
           {
             "from": 2011,
@@ -57590,6 +57610,20 @@
             "saved": 3600000
           },
           {
+            "from": 1991,
+            "to": 1997,
+            "month": 9,
+            "day": [
+              0,
+              9
+            ],
+            "time": 240,
+            "clock": "posix",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 1997,
             "to": 1997,
             "month": 2,
@@ -57605,21 +57639,21 @@
           },
           {
             "from": 1991,
-            "to": 1997,
-            "month": 9,
+            "to": 1996,
+            "month": 2,
             "day": [
               0,
               9
             ],
-            "time": 240,
+            "time": 180,
             "clock": "posix",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
+            "save": 0,
+            "letter": "",
+            "saved": 3600000
           },
           {
-            "from": 1991,
-            "to": 1996,
+            "from": 1988,
+            "to": 1990,
             "month": 2,
             "day": [
               0,
@@ -57644,20 +57678,6 @@
             "save": 60,
             "letter": "S",
             "saved": 0
-          },
-          {
-            "from": 1988,
-            "to": 1990,
-            "month": 2,
-            "day": [
-              0,
-              9
-            ],
-            "time": 180,
-            "clock": "posix",
-            "save": 0,
-            "letter": "",
-            "saved": 3600000
           },
           {
             "from": 1988,
@@ -65844,14 +65864,6 @@
         "Antarctica/Palmer": [
           "z",
           {
-            "wallclock": 1430006400000,
-            "format": "CLT",
-            "abbrev": "CLT",
-            "offset": -10800000,
-            "posix": 1430017200000,
-            "save": 0
-          },
-          {
             "wallclock": 389059200000,
             "format": "CL%sT",
             "abbrev": "CLT",
@@ -65891,12 +65903,26 @@
       "rules": {
         "Chile": [
           {
-            "from": 2012,
-            "to": 2015,
-            "month": 3,
+            "from": 2016,
+            "to": 1.7976931348623157e+308,
+            "month": 7,
             "day": [
               0,
-              23
+              9
+            ],
+            "time": 240,
+            "clock": "posix",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
+            "from": 2016,
+            "to": 1.7976931348623157e+308,
+            "month": 4,
+            "day": [
+              0,
+              9
             ],
             "time": 180,
             "clock": "posix",
@@ -65917,6 +65943,20 @@
             "save": 60,
             "letter": "S",
             "saved": 0
+          },
+          {
+            "from": 2012,
+            "to": 2014,
+            "month": 3,
+            "day": [
+              0,
+              23
+            ],
+            "time": 180,
+            "clock": "posix",
+            "save": 0,
+            "letter": "",
+            "saved": 3600000
           },
           {
             "from": 2011,
@@ -66059,6 +66099,20 @@
             "saved": 3600000
           },
           {
+            "from": 1991,
+            "to": 1997,
+            "month": 9,
+            "day": [
+              0,
+              9
+            ],
+            "time": 240,
+            "clock": "posix",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 1997,
             "to": 1997,
             "month": 2,
@@ -66074,21 +66128,21 @@
           },
           {
             "from": 1991,
-            "to": 1997,
-            "month": 9,
+            "to": 1996,
+            "month": 2,
             "day": [
               0,
               9
             ],
-            "time": 240,
+            "time": 180,
             "clock": "posix",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
+            "save": 0,
+            "letter": "",
+            "saved": 3600000
           },
           {
-            "from": 1991,
-            "to": 1996,
+            "from": 1988,
+            "to": 1990,
             "month": 2,
             "day": [
               0,
@@ -66113,20 +66167,6 @@
             "save": 60,
             "letter": "S",
             "saved": 0
-          },
-          {
-            "from": 1988,
-            "to": 1990,
-            "month": 2,
-            "day": [
-              0,
-              9
-            ],
-            "time": 180,
-            "clock": "posix",
-            "save": 0,
-            "letter": "",
-            "saved": 3600000
           },
           {
             "from": 1988,
@@ -69694,7 +69734,7 @@
         "Azer": [
           {
             "from": 1997,
-            "to": 1.7976931348623157e+308,
+            "to": 2015,
             "month": 2,
             "day": [
               0,
@@ -69708,7 +69748,7 @@
           },
           {
             "from": 1997,
-            "to": 1.7976931348623157e+308,
+            "to": 2015,
             "month": 9,
             "day": [
               0,
@@ -69961,6 +70001,24 @@
             "abbrev": "+07",
             "offset": 21600000,
             "posix": 801590400000,
+            "save": 3600000,
+            "rules": "Russia"
+          },
+          {
+            "wallclock": 695786400000,
+            "format": "+07/+08",
+            "abbrev": "+07",
+            "offset": 25200000,
+            "posix": 695764800000,
+            "save": 0,
+            "rules": "Russia"
+          },
+          {
+            "wallclock": 670384800000,
+            "format": "+06/+07",
+            "abbrev": "+07",
+            "offset": 21600000,
+            "posix": 670359600000,
             "save": 3600000,
             "rules": "Russia"
           },
@@ -110478,14 +110536,6 @@
         "Chile/Continental": [
           "z",
           {
-            "wallclock": 1430006400000,
-            "format": "CLT",
-            "abbrev": "CLT",
-            "offset": -10800000,
-            "posix": 1430017200000,
-            "save": 0
-          },
-          {
             "wallclock": -713667600000,
             "format": "CL%sT",
             "abbrev": "CLT",
@@ -110604,12 +110654,26 @@
       "rules": {
         "Chile": [
           {
-            "from": 2012,
-            "to": 2015,
-            "month": 3,
+            "from": 2016,
+            "to": 1.7976931348623157e+308,
+            "month": 7,
             "day": [
               0,
-              23
+              9
+            ],
+            "time": 240,
+            "clock": "posix",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
+            "from": 2016,
+            "to": 1.7976931348623157e+308,
+            "month": 4,
+            "day": [
+              0,
+              9
             ],
             "time": 180,
             "clock": "posix",
@@ -110630,6 +110694,20 @@
             "save": 60,
             "letter": "S",
             "saved": 0
+          },
+          {
+            "from": 2012,
+            "to": 2014,
+            "month": 3,
+            "day": [
+              0,
+              23
+            ],
+            "time": 180,
+            "clock": "posix",
+            "save": 0,
+            "letter": "",
+            "saved": 3600000
           },
           {
             "from": 2011,
@@ -110772,6 +110850,20 @@
             "saved": 3600000
           },
           {
+            "from": 1991,
+            "to": 1997,
+            "month": 9,
+            "day": [
+              0,
+              9
+            ],
+            "time": 240,
+            "clock": "posix",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 1997,
             "to": 1997,
             "month": 2,
@@ -110787,21 +110879,21 @@
           },
           {
             "from": 1991,
-            "to": 1997,
-            "month": 9,
+            "to": 1996,
+            "month": 2,
             "day": [
               0,
               9
             ],
-            "time": 240,
+            "time": 180,
             "clock": "posix",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
+            "save": 0,
+            "letter": "",
+            "saved": 3600000
           },
           {
-            "from": 1991,
-            "to": 1996,
+            "from": 1988,
+            "to": 1990,
             "month": 2,
             "day": [
               0,
@@ -110826,20 +110918,6 @@
             "save": 60,
             "letter": "S",
             "saved": 0
-          },
-          {
-            "from": 1988,
-            "to": 1990,
-            "month": 2,
-            "day": [
-              0,
-              9
-            ],
-            "time": 180,
-            "clock": "posix",
-            "save": 0,
-            "letter": "",
-            "saved": 3600000
           },
           {
             "from": 1988,
@@ -111031,14 +111109,6 @@
         "Chile/EasterIsland": [
           "z",
           {
-            "wallclock": 1429999200000,
-            "format": "EAST",
-            "abbrev": "EAST",
-            "offset": -18000000,
-            "posix": 1430017200000,
-            "save": 0
-          },
-          {
             "wallclock": 384901200000,
             "format": "EAS%sT",
             "abbrev": "EAST",
@@ -111077,12 +111147,26 @@
       "rules": {
         "Chile": [
           {
-            "from": 2012,
-            "to": 2015,
-            "month": 3,
+            "from": 2016,
+            "to": 1.7976931348623157e+308,
+            "month": 7,
             "day": [
               0,
-              23
+              9
+            ],
+            "time": 240,
+            "clock": "posix",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
+            "from": 2016,
+            "to": 1.7976931348623157e+308,
+            "month": 4,
+            "day": [
+              0,
+              9
             ],
             "time": 180,
             "clock": "posix",
@@ -111103,6 +111187,20 @@
             "save": 60,
             "letter": "S",
             "saved": 0
+          },
+          {
+            "from": 2012,
+            "to": 2014,
+            "month": 3,
+            "day": [
+              0,
+              23
+            ],
+            "time": 180,
+            "clock": "posix",
+            "save": 0,
+            "letter": "",
+            "saved": 3600000
           },
           {
             "from": 2011,
@@ -111245,6 +111343,20 @@
             "saved": 3600000
           },
           {
+            "from": 1991,
+            "to": 1997,
+            "month": 9,
+            "day": [
+              0,
+              9
+            ],
+            "time": 240,
+            "clock": "posix",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 1997,
             "to": 1997,
             "month": 2,
@@ -111260,21 +111372,21 @@
           },
           {
             "from": 1991,
-            "to": 1997,
-            "month": 9,
+            "to": 1996,
+            "month": 2,
             "day": [
               0,
               9
             ],
-            "time": 240,
+            "time": 180,
             "clock": "posix",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
+            "save": 0,
+            "letter": "",
+            "saved": 3600000
           },
           {
-            "from": 1991,
-            "to": 1996,
+            "from": 1988,
+            "to": 1990,
             "month": 2,
             "day": [
               0,
@@ -111299,20 +111411,6 @@
             "save": 60,
             "letter": "S",
             "saved": 0
-          },
-          {
-            "from": 1988,
-            "to": 1990,
-            "month": 2,
-            "day": [
-              0,
-              9
-            ],
-            "time": 180,
-            "clock": "posix",
-            "save": 0,
-            "letter": "",
-            "saved": 3600000
           },
           {
             "from": 1988,
@@ -126299,11 +126397,11 @@
             "save": 0
           },
           {
-            "wallclock": 670384800000,
+            "wallclock": 606880800000,
             "format": "EE%sT",
             "abbrev": "EEST",
             "offset": 7200000,
-            "posix": 670374000000,
+            "posix": 606870000000,
             "save": 3600000,
             "rules": "Russia"
           },
@@ -147600,12 +147698,13 @@
             "rules": "C-Eur"
           },
           {
-            "wallclock": 670384800000,
-            "format": "EEST",
+            "wallclock": 606880800000,
+            "format": "EE%sT",
             "abbrev": "EEST",
             "offset": 7200000,
-            "posix": 670374000000,
-            "save": 3600000
+            "posix": 606870000000,
+            "save": 3600000,
+            "rules": "Russia"
           },
           {
             "wallclock": -802137600000,
@@ -148328,11 +148427,11 @@
             "save": 0
           },
           {
-            "wallclock": 606880800000,
+            "wallclock": 575431200000,
             "format": "VOL%sT",
             "abbrev": "VOLST",
             "offset": 10800000,
-            "posix": 606866400000,
+            "posix": 575416800000,
             "save": 3600000,
             "rules": "Russia"
           },
@@ -153074,14 +153173,6 @@
         "Pacific/Easter": [
           "z",
           {
-            "wallclock": 1429999200000,
-            "format": "EAST",
-            "abbrev": "EAST",
-            "offset": -18000000,
-            "posix": 1430017200000,
-            "save": 0
-          },
-          {
             "wallclock": 384901200000,
             "format": "EAS%sT",
             "abbrev": "EAST",
@@ -153120,12 +153211,26 @@
       "rules": {
         "Chile": [
           {
-            "from": 2012,
-            "to": 2015,
-            "month": 3,
+            "from": 2016,
+            "to": 1.7976931348623157e+308,
+            "month": 7,
             "day": [
               0,
-              23
+              9
+            ],
+            "time": 240,
+            "clock": "posix",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
+            "from": 2016,
+            "to": 1.7976931348623157e+308,
+            "month": 4,
+            "day": [
+              0,
+              9
             ],
             "time": 180,
             "clock": "posix",
@@ -153146,6 +153251,20 @@
             "save": 60,
             "letter": "S",
             "saved": 0
+          },
+          {
+            "from": 2012,
+            "to": 2014,
+            "month": 3,
+            "day": [
+              0,
+              23
+            ],
+            "time": 180,
+            "clock": "posix",
+            "save": 0,
+            "letter": "",
+            "saved": 3600000
           },
           {
             "from": 2011,
@@ -153288,6 +153407,20 @@
             "saved": 3600000
           },
           {
+            "from": 1991,
+            "to": 1997,
+            "month": 9,
+            "day": [
+              0,
+              9
+            ],
+            "time": 240,
+            "clock": "posix",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 1997,
             "to": 1997,
             "month": 2,
@@ -153303,21 +153436,21 @@
           },
           {
             "from": 1991,
-            "to": 1997,
-            "month": 9,
+            "to": 1996,
+            "month": 2,
             "day": [
               0,
               9
             ],
-            "time": 240,
+            "time": 180,
             "clock": "posix",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
+            "save": 0,
+            "letter": "",
+            "saved": 3600000
           },
           {
-            "from": 1991,
-            "to": 1996,
+            "from": 1988,
+            "to": 1990,
             "month": 2,
             "day": [
               0,
@@ -153342,20 +153475,6 @@
             "save": 60,
             "letter": "S",
             "saved": 0
-          },
-          {
-            "from": 1988,
-            "to": 1990,
-            "month": 2,
-            "day": [
-              0,
-              9
-            ],
-            "time": 180,
-            "clock": "posix",
-            "save": 0,
-            "letter": "",
-            "saved": 3600000
           },
           {
             "from": 1988,

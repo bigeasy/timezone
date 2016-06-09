@@ -19,11 +19,11 @@
         "save": 0
       },
       {
-        "wallclock": 670384800000,
+        "wallclock": 606880800000,
         "format": "EE%sT",
         "abbrev": "EEST",
         "offset": 7200000,
-        "posix": 670374000000,
+        "posix": 606870000000,
         "save": 3600000,
         "rules": "Russia"
       },

@@ -3,14 +3,6 @@
     "America/Santiago": [
       "z",
       {
-        "wallclock": 1430006400000,
-        "format": "CLT",
-        "abbrev": "CLT",
-        "offset": -10800000,
-        "posix": 1430017200000,
-        "save": 0
-      },
-      {
         "wallclock": -713667600000,
         "format": "CL%sT",
         "abbrev": "CLT",
@@ -129,12 +121,26 @@
   "rules": {
     "Chile": [
       {
-        "from": 2012,
-        "to": 2015,
-        "month": 3,
+        "from": 2016,
+        "to": 1.7976931348623157e+308,
+        "month": 7,
         "day": [
           0,
-          23
+          9
+        ],
+        "time": 240,
+        "clock": "posix",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      },
+      {
+        "from": 2016,
+        "to": 1.7976931348623157e+308,
+        "month": 4,
+        "day": [
+          0,
+          9
         ],
         "time": 180,
         "clock": "posix",
@@ -155,6 +161,20 @@
         "save": 60,
         "letter": "S",
         "saved": 0
+      },
+      {
+        "from": 2012,
+        "to": 2014,
+        "month": 3,
+        "day": [
+          0,
+          23
+        ],
+        "time": 180,
+        "clock": "posix",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
       },
       {
         "from": 2011,
@@ -297,6 +317,20 @@
         "saved": 3600000
       },
       {
+        "from": 1991,
+        "to": 1997,
+        "month": 9,
+        "day": [
+          0,
+          9
+        ],
+        "time": 240,
+        "clock": "posix",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      },
+      {
         "from": 1997,
         "to": 1997,
         "month": 2,
@@ -312,21 +346,21 @@
       },
       {
         "from": 1991,
-        "to": 1997,
-        "month": 9,
+        "to": 1996,
+        "month": 2,
         "day": [
           0,
           9
         ],
-        "time": 240,
+        "time": 180,
         "clock": "posix",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
       },
       {
-        "from": 1991,
-        "to": 1996,
+        "from": 1988,
+        "to": 1990,
         "month": 2,
         "day": [
           0,
@@ -351,20 +385,6 @@
         "save": 60,
         "letter": "S",
         "saved": 0
-      },
-      {
-        "from": 1988,
-        "to": 1990,
-        "month": 2,
-        "day": [
-          0,
-          9
-        ],
-        "time": 180,
-        "clock": "posix",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
       },
       {
         "from": 1988,
