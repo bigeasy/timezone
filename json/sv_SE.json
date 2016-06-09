@@ -54,7 +54,9 @@
     "",
     ""
   ],
-  "date": "%P%p%Y-%m-%d",
-  "time24": "%P%p%H:%M:%S",
-  "dateTime": "%P%p%a %_d %b %Y %H:%M:%S"
+  "date": "%Y-%m-%d",
+  "time24": "%H:%M:%S",
+  "dateTime": "%a %e %b %Y %H:%M:%S",
+  "time12": "",
+  "full": "%a %e %b %Y %H:%M:%S %Z"
 }

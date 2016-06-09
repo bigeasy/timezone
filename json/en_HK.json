@@ -54,7 +54,8 @@
     "AM",
     "PM"
   ],
-  "date": "%aday, %btember %d, %Y",
+  "date": "%A, %B %d, %Y",
   "time24": "%I:%M:%S %Z",
-  "dateTime": "%aday, %btember %d, %Y %p%I:%M:%S %Z"
+  "dateTime": "%A, %B %d, %Y %p%I:%M:%S %Z",
+  "time12": "%p%I:%M:%S %Z"
 }

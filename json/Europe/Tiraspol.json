@@ -21,29 +21,13 @@
         "rules": "E-Eur"
       },
       {
-        "wallclock": 662688000000,
+        "wallclock": 641959200000,
         "format": "EE%sT",
-        "abbrev": "EET",
+        "abbrev": "EEST",
         "offset": 7200000,
-        "posix": 662680800000,
-        "save": 0,
+        "posix": 641944800000,
+        "save": 3600000,
         "rules": "Russia"
-      },
-      {
-        "wallclock": 641952000000,
-        "format": "EET",
-        "abbrev": "EET",
-        "offset": 7200000,
-        "posix": 641941200000,
-        "save": 0
-      },
-      {
-        "wallclock": 631152000000,
-        "format": "MSK",
-        "abbrev": "MSK",
-        "offset": 10800000,
-        "posix": 631141200000,
-        "save": 0
       },
       {
         "wallclock": -800150400000,

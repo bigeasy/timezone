@@ -1,89 +1,79 @@
 {
   "zones": {
-    "Europe/Samara": [
+    "Europe/Astrakhan": [
       "z",
       {
+        "wallclock": 1459044000000,
+        "format": "+04",
+        "abbrev": "+04",
+        "offset": 14400000,
+        "posix": 1459033200000,
+        "save": 0
+      },
+      {
+        "wallclock": 1414288800000,
+        "format": "+03",
+        "abbrev": "+03",
+        "offset": 10800000,
+        "posix": 1414274400000,
+        "save": 0
+      },
+      {
         "wallclock": 1301191200000,
-        "format": "SAMT",
-        "abbrev": "SAMT",
+        "format": "+04",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": 1301180400000,
         "save": 0
       },
       {
-        "wallclock": 1269741600000,
-        "format": "SAM%sT",
-        "abbrev": "SAMST",
+        "wallclock": 701834400000,
+        "format": "+03/+04",
+        "abbrev": "+04",
         "offset": 10800000,
-        "posix": 1269727200000,
+        "posix": 701820000000,
         "save": 3600000,
         "rules": "Russia"
-      },
-      {
-        "wallclock": 687927600000,
-        "format": "SAM%sT",
-        "abbrev": "SAMT",
-        "offset": 14400000,
-        "posix": 687916800000,
-        "save": 0,
-        "rules": "Russia"
-      },
-      {
-        "wallclock": 686113200000,
-        "format": "SAMT",
-        "abbrev": "SAMT",
-        "offset": 10800000,
-        "posix": 686102400000,
-        "save": 0
       },
       {
         "wallclock": 670384800000,
-        "format": "EE%sT",
-        "abbrev": "EEST",
-        "offset": 7200000,
+        "format": "+04",
+        "abbrev": "+04",
+        "offset": 14400000,
         "posix": 670374000000,
-        "save": 3600000,
-        "rules": "Russia"
+        "save": 0
       },
       {
         "wallclock": 606880800000,
-        "format": "MSK/MSD",
-        "abbrev": "MSD",
+        "format": "+03/+04",
+        "abbrev": "+04",
         "offset": 10800000,
         "posix": 606866400000,
         "save": 3600000,
         "rules": "Russia"
       },
       {
-        "wallclock": -1102291200000,
-        "format": "KUY%sT",
-        "abbrev": "KUYT",
+        "wallclock": -1247529600000,
+        "format": "+04/+05",
+        "abbrev": "+04",
         "offset": 14400000,
-        "posix": -1102305600000,
+        "posix": -1247540400000,
         "save": 0,
         "rules": "Russia"
       },
       {
-        "wallclock": -1247529600000,
-        "format": "SAMT",
-        "abbrev": "SAMT",
-        "offset": 14400000,
-        "posix": -1247540400000,
-        "save": 0
-      },
-      {
-        "wallclock": -1593813600000,
-        "format": "SAMT",
-        "abbrev": "SAMT",
+        "wallclock": -1441238400000,
+        "format": "+03",
+        "abbrev": "+03",
         "offset": 10800000,
-        "posix": -1593825620000,
+        "posix": -1441249932000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 12020000,
+        "offset": 11532000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

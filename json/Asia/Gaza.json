@@ -111,14 +111,14 @@
   "rules": {
     "Palestine": [
       {
-        "from": 2015,
+        "from": 2016,
         "to": 1.7976931348623157e+308,
         "month": 2,
         "day": [
-          5,
+          6,
           -31
         ],
-        "time": 1440,
+        "time": 60,
         "clock": "wallclock",
         "save": 60,
         "letter": "S",
@@ -137,6 +137,20 @@
         "save": 0,
         "letter": "",
         "saved": 3600000
+      },
+      {
+        "from": 2015,
+        "to": 2015,
+        "month": 2,
+        "day": [
+          5,
+          -31
+        ],
+        "time": 1440,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
       },
       {
         "from": 2012,

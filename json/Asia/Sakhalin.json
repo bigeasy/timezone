@@ -3,6 +3,14 @@
     "Asia/Sakhalin": [
       "z",
       {
+        "wallclock": 1459044000000,
+        "format": "SAKT",
+        "abbrev": "SAKT",
+        "offset": 39600000,
+        "posix": 1459008000000,
+        "save": 0
+      },
+      {
         "wallclock": 1414288800000,
         "format": "SAKT",
         "abbrev": "SAKT",

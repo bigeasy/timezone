@@ -55,6 +55,8 @@
     "PM"
   ],
   "date": "%y-%m-%d",
-  "time24": "%I:%M:%S %p",
-  "dateTime": "%a %d %b %Y %I:%M:%S %p %Z"
+  "time24": "%r",
+  "dateTime": "%a %d %b %Y %r %Z",
+  "time12": "%I:%M:%S %p",
+  "full": "%a %b %e %H:%M:%S %Z %Y"
 }

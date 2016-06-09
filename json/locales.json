@@ -66,7 +66,7 @@
     "day": {
       "abbrev": [
         "እሑድ",
-        "ሰኞ",
+        "ሰኞ ",
         "ማክሰ",
         "ረቡዕ",
         "ሐሙስ",
@@ -89,8 +89,8 @@
         "ፌብሩ",
         "ማርች",
         "ኤፕረ",
-        "ሜይ",
-        "ጁን",
+        "ሜይ ",
+        "ጁን ",
         "ጁላይ",
         "ኦገስ",
         "ሴፕቴ",
@@ -118,8 +118,10 @@
       "ከሰዓት"
     ],
     "date": "%d/%m/%Y",
-    "time24": "%_I:%M:%S",
-    "dateTime": "%a፣ %bምበር %_d ቀን %Y %_I:%M:%S %p %Z"
+    "time24": "%l:%M:%S",
+    "dateTime": "%A፣ %B %e ቀን %Y %r %Z",
+    "time12": "%X %p",
+    "full": "%A፣ %B %e ቀን %r %Z %Y ዓ/ም"
   },
   {
     "name": "bg_BG",
@@ -796,8 +798,10 @@
       "PM"
     ],
     "date": "%y-%m-%d",
-    "time24": "%I:%M:%S %p",
-    "dateTime": "%a %d %b %Y %I:%M:%S %p %Z"
+    "time24": "%r",
+    "dateTime": "%a %d %b %Y %r %Z",
+    "time12": "%I:%M:%S %p",
+    "full": "%a %b %e %H:%M:%S %Z %Y"
   },
   {
     "name": "en_GB",
@@ -858,7 +862,7 @@
     "date": "%d/%m/%y",
     "time24": "%T",
     "dateTime": "%a %d %b %Y %T %Z",
-    "time12": "",
+    "time12": "%l:%M:%S %P %Z",
     "full": "%a %b %e %H:%M:%S %Z %Y"
   },
   {
@@ -917,9 +921,10 @@
       "AM",
       "PM"
     ],
-    "date": "%aday, %btember %d, %Y",
+    "date": "%A, %B %d, %Y",
     "time24": "%I:%M:%S %Z",
-    "dateTime": "%aday, %btember %d, %Y %p%I:%M:%S %Z"
+    "dateTime": "%A, %B %d, %Y %p%I:%M:%S %Z",
+    "time12": "%p%I:%M:%S %Z"
   },
   {
     "name": "en_NZ",
@@ -1350,8 +1355,10 @@
       "p.m."
     ],
     "date": "%d/%m/%y",
-    "time24": "%H:%M:%S",
-    "dateTime": "%a %d %b %Y %H:%M:%S %Z"
+    "time24": "%T",
+    "dateTime": "%a %d %b %Y %T %Z",
+    "time12": "%I:%M:%S %p",
+    "full": "%a %b %e %H:%M:%S %Z %Y"
   },
   {
     "name": "es_EC",
@@ -2215,9 +2222,11 @@
       "",
       ""
     ],
-    "date": "%P%p%d.%m.%Y",
-    "time24": "%P%p%H.%M.%S",
-    "dateTime": "%P%p%a %_d. %bkuuta %Y %H.%M.%S"
+    "date": "%d.%m.%Y",
+    "time24": "%H.%M.%S",
+    "dateTime": "%a %e. %Bta %Y %H.%M.%S",
+    "time12": "",
+    "full": "%a %-d.%-m.%Y %H.%M.%S %z"
   },
   {
     "name": "fr_BE",
@@ -2279,7 +2288,7 @@
     "time24": "%T",
     "dateTime": "%a %d %b %Y %T %Z",
     "time12": "",
-    "full": "%a %b %e %H:%M:%S %Z %Y"
+    "full": "%A %-e %B %Y, %H:%M:%S (UTC%z)"
   },
   {
     "name": "fr_CA",
@@ -2341,7 +2350,7 @@
     "time24": "%T",
     "dateTime": "%a %d %b %Y %T %Z",
     "time12": "",
-    "full": "%a %b %e %H:%M:%S %Z %Y"
+    "full": "%A %-e %B %Y, %H:%M:%S (UTC%z)"
   },
   {
     "name": "fr_CH",
@@ -2403,7 +2412,7 @@
     "time24": "%T",
     "dateTime": "%a %d %b %Y %T %Z",
     "time12": "",
-    "full": "%a %b %e %H:%M:%S %Z %Y"
+    "full": "%A %-e %B %Y, %H:%M:%S (UTC%z)"
   },
   {
     "name": "fr_FR",
@@ -2461,9 +2470,11 @@
       "",
       ""
     ],
-    "date": "%P%p%d/%m/%Y",
-    "time24": "%P%p%H:%M:%S",
-    "dateTime": "%P%p%a %d %b %Y %H:%M:%S %Z"
+    "date": "%d/%m/%Y",
+    "time24": "%T",
+    "dateTime": "%a %d %b %Y %T %Z",
+    "time12": "",
+    "full": "%A %-e %B %Y, %H:%M:%S (UTC%z)"
   },
   {
     "name": "gl_ES",
@@ -2593,22 +2604,22 @@
     "name": "hi_IN",
     "day": {
       "abbrev": [
-        "रवि",
-        "सोम",
-        "मंगल",
-        "बुध",
-        "गुरु",
-        "शुक्र",
-        "शनि"
+        "रवि ",
+        "सोम ",
+        "मंगल ",
+        "बुध ",
+        "गुरु ",
+        "शुक्र ",
+        "शनि "
       ],
       "full": [
-        "रविवार",
-        "सोमवार",
-        "मंगलवार",
-        "बुधवार",
-        "गुरुवार",
-        "शुक्रवार",
-        "शनिवार"
+        "रविवार ",
+        "सोमवार ",
+        "मंगलवार ",
+        "बुधवार ",
+        "गुरुवार ",
+        "शुक्रवार ",
+        "शनिवार "
       ]
     },
     "month": {
@@ -2645,9 +2656,11 @@
       "पूर्वाह्न",
       "अपराह्न"
     ],
-    "date": "%aवार  %d %b %Y",
+    "date": "%A %d %b %Y",
     "time24": "%I:%M:%S  %Z",
-    "dateTime": "%aवार  %d %b %Y %I:%M:%S %p %Z"
+    "dateTime": "%A %d %b %Y %I:%M:%S %p %Z",
+    "time12": "%I:%M:%S %p %Z",
+    "full": "%a %b %e %H:%M:%S %Z %Y"
   },
   {
     "name": "hr_HR",
@@ -2831,7 +2844,7 @@
     ],
     "date": "%d/%m/%y",
     "time24": "%T",
-    "dateTime": "%a %d %b %Y %r  %Z",
+    "dateTime": "%a %d %b %Y %r %Z",
     "time12": "",
     "full": "%a %b %e %H:%M:%S %Z %Y"
   },
@@ -2983,15 +2996,15 @@
     },
     "month": {
       "abbrev": [
-        "1月",
-        "2月",
-        "3月",
-        "4月",
-        "5月",
-        "6月",
-        "7月",
-        "8月",
-        "9月",
+        " 1月",
+        " 2月",
+        " 3月",
+        " 4月",
+        " 5月",
+        " 6月",
+        " 7月",
+        " 8月",
+        " 9月",
         "10月",
         "11月",
         "12月"
@@ -3015,9 +3028,11 @@
       "午前",
       "午後"
     ],
-    "date": "%Y年%m月%d%a",
+    "date": "%Y年%m月%d日",
     "time24": "%H時%M分%S秒",
-    "dateTime": "%Y年%m月%d%a %H時%M分%S秒"
+    "dateTime": "%Y年%m月%d日 %H時%M分%S秒",
+    "time12": "%p%I時%M分%S秒",
+    "full": "%Y年 %b %e日 %A %H:%M:%S %Z"
   },
   {
     "name": "ko_KR",
@@ -3043,15 +3058,15 @@
     },
     "month": {
       "abbrev": [
-        "1월",
-        "2월",
-        "3월",
-        "4월",
-        "5월",
-        "6월",
-        "7월",
-        "8월",
-        "9월",
+        " 1월",
+        " 2월",
+        " 3월",
+        " 4월",
+        " 5월",
+        " 6월",
+        " 7월",
+        " 8월",
+        " 9월",
         "10월",
         "11월",
         "12월"
@@ -3075,9 +3090,11 @@
       "오전",
       "오후"
     ],
-    "date": "%Y년 %m월 %d%a",
+    "date": "%Y년 %m월 %d일",
     "time24": "%H시 %M분 %S초",
-    "dateTime": "%Y년 %m월 %d%a (일) %p %I시 %M분 %S초"
+    "dateTime": "%x (%a) %r",
+    "time12": "%p %I시 %M분 %S초",
+    "full": "%Y. %m. %d. (%a) %H:%M:%S %Z"
   },
   {
     "name": "lt_LT",
@@ -3146,13 +3163,12 @@
     "day": {
       "abbrev": [
         "Sv",
-        "P",
-        "O",
-        "T",
-        "C",
+        "P ",
+        "O ",
+        "T ",
+        "C ",
         "Pk",
-        "S",
-        ""
+        "S "
       ],
       "full": [
         "svētdiena",
@@ -3198,9 +3214,11 @@
       "",
       ""
     ],
-    "date": "%P%p%Y.%m.%d.",
-    "time24": "%P%p%H:%M:%S",
-    "dateTime": "%P%p%A, %Y. gada %_d. %btembris, plkst. %H un %M"
+    "date": "%Y.%m.%d.",
+    "time24": "%T",
+    "dateTime": "%A, %Y. gada %e. %B, plkst. %H un %M",
+    "time12": "",
+    "full": "%a %b %e %H:%M:%S %Z %Y"
   },
   {
     "name": "ms_MY",
@@ -3825,29 +3843,22 @@
     "name": "sq_AL",
     "day": {
       "abbrev": [
-        "Die",
-        "Hën",
-        "Mar",
-        "Mër",
-        "Enj",
-        "Pre",
-        "Sht"
+        "Die ",
+        "Hën ",
+        "Mar ",
+        "Mër ",
+        "Enj ",
+        "Pre ",
+        "Sht "
       ],
       "full": [
-        "e",
-        "diel",
-        "e",
-        "hënë",
-        "e",
-        "martë",
-        "e",
-        "mërkurë",
-        "e",
-        "enjte",
-        "e",
-        "premte",
-        "e",
-        "shtunë"
+        "e diel ",
+        "e hënë ",
+        "e martë ",
+        "e mërkurë ",
+        "e enjte ",
+        "e premte ",
+        "e shtunë "
       ]
     },
     "month": {
@@ -3886,7 +3897,9 @@
     ],
     "date": "%Y-%b-%d",
     "time24": "%I.%M.%S. %Z",
-    "dateTime": "%Y-%b-%d %I.%M.%S.%p %Z"
+    "dateTime": "%Y-%b-%d %I.%M.%S.%p %Z",
+    "time12": "%I.%M.%S.%p %Z",
+    "full": "%a %b %e %H:%M:%S %Z %Y"
   },
   {
     "name": "sr_RS",
@@ -4006,9 +4019,11 @@
       "",
       ""
     ],
-    "date": "%P%p%Y-%m-%d",
-    "time24": "%P%p%H:%M:%S",
-    "dateTime": "%P%p%a %_d %b %Y %H:%M:%S"
+    "date": "%Y-%m-%d",
+    "time24": "%H:%M:%S",
+    "dateTime": "%a %e %b %Y %H:%M:%S",
+    "time12": "",
+    "full": "%a %e %b %Y %H:%M:%S %Z"
   },
   {
     "name": "ta_IN",
@@ -4207,20 +4222,13 @@
         "T7"
       ],
       "full": [
-        "Chủ",
-        "nhật",
-        "Thứ",
-        "hai",
-        "Thứ",
-        "ba",
-        "Thứ",
-        "tư",
-        "Thứ",
-        "năm",
-        "Thứ",
-        "sáu",
-        "Thứ",
-        "bảy"
+        "Chủ nhật",
+        "Thứ hai",
+        "Thứ ba",
+        "Thứ tư",
+        "Thứ năm",
+        "Thứ sáu",
+        "Thứ bảy"
       ]
     },
     "month": {
@@ -4239,32 +4247,18 @@
         "Th12"
       ],
       "full": [
-        "Tháng",
-        "một",
-        "Tháng",
-        "hai",
-        "Tháng",
-        "ba",
-        "Tháng",
-        "tư",
-        "Tháng",
-        "năm",
-        "Tháng",
-        "sáu",
-        "Tháng",
-        "bảy",
-        "Tháng",
-        "tám",
-        "Tháng",
-        "chín",
-        "Tháng",
-        "mười",
-        "Tháng",
-        "mười",
-        "một",
-        "Tháng",
-        "mười",
-        "hai"
+        "Tháng một",
+        "Tháng hai",
+        "Tháng ba",
+        "Tháng tư",
+        "Tháng năm",
+        "Tháng sáu",
+        "Tháng bảy",
+        "Tháng tám",
+        "Tháng chín",
+        "Tháng mười",
+        "Tháng mười một",
+        "Tháng mười hai"
       ]
     },
     "meridiem": [
@@ -4272,8 +4266,10 @@
       "PM"
     ],
     "date": "%d/%m/%Y",
-    "time24": "%H:%M:%S",
-    "dateTime": "%A nhật, %d %B chín Năm %Y %H:%M:%S %Z"
+    "time24": "%T",
+    "dateTime": "%A, %d %B Năm %Y %T %Z",
+    "time12": "%I:%M %p",
+    "full": "%A, %d %B năm %Y %T %Z"
   },
   {
     "name": "zh_CN",
@@ -4299,15 +4295,15 @@
     },
     "month": {
       "abbrev": [
-        "1月",
-        "2月",
-        "3月",
-        "4月",
-        "5月",
-        "6月",
-        "7月",
-        "8月",
-        "9月",
+        " 1月",
+        " 2月",
+        " 3月",
+        " 4月",
+        " 5月",
+        " 6月",
+        " 7月",
+        " 8月",
+        " 9月",
         "10月",
         "11月",
         "12月"
@@ -4331,9 +4327,11 @@
       "上午",
       "下午"
     ],
-    "date": "%Y年%m月%d%a",
+    "date": "%Y年%m月%d日",
     "time24": "%H时%M分%S秒",
-    "dateTime": "%Y年%m月%d%a %A %H时%M分%S秒"
+    "dateTime": "%Y年%m月%d日 %A %H时%M分%S秒",
+    "time12": "%p %I时%M分%S秒",
+    "full": "%Y年 %m月 %d日 %A %H:%M:%S %Z"
   },
   {
     "name": "zh_HK",
@@ -4421,15 +4419,15 @@
     },
     "month": {
       "abbrev": [
-        "1月",
-        "2月",
-        "3月",
-        "4月",
-        "5月",
-        "6月",
-        "7月",
-        "8月",
-        "9月",
+        " 1月",
+        " 2月",
+        " 3月",
+        " 4月",
+        " 5月",
+        " 6月",
+        " 7月",
+        " 8月",
+        " 9月",
         "10月",
         "11月",
         "12月"
@@ -4453,8 +4451,10 @@
       "上午",
       "下午"
     ],
-    "date": "%Y年%m月%d%a",
+    "date": "%Y年%m月%d日",
     "time24": "%H時%M分%S秒",
-    "dateTime": "%Y年%m月%d%a (%A) %H時%M分%S秒"
+    "dateTime": "%Y年%m月%d日 (%A) %H時%M分%S秒",
+    "time12": "%p %I時%M分%S秒",
+    "full": "%a %b %e %H:%M:%S %Z %Y"
   }
 ]
