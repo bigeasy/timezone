@@ -44,8 +44,8 @@
       },
       {
         "wallclock": -163036800000,
-        "format": "zzz",
-        "abbrev": "zzz",
+        "format": "-00",
+        "abbrev": "-00",
         "offset": 0,
         "posix": -163062000000,
         "save": 0
@@ -60,8 +60,8 @@
       },
       {
         "wallclock": -1.7976931348623157e+308,
-        "format": "zzz",
-        "abbrev": "zzz",
+        "format": "-00",
+        "abbrev": "-00",
         "offset": 0,
         "posix": -1.7976931348623157e+308,
         "save": 0

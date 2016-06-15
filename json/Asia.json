@@ -1717,11 +1717,11 @@
           "rules": "EUAsia"
         },
         {
-          "wallclock": 717548400000,
+          "wallclock": 717562800000,
           "format": "AZT",
           "abbrev": "AZT",
           "offset": 14400000,
-          "posix": 717534000000,
+          "posix": 717548400000,
           "save": 0
         },
         {
