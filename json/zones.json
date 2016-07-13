@@ -830,664 +830,6 @@
       "rules": {
         "Egypt": [
           {
-            "from": 2055,
-            "to": 1.7976931348623157e+308,
-            "month": 3,
-            "day": [
-              4,
-              -30
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2039,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              4,
-              -31
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2054,
-            "to": 2054,
-            "month": 4,
-            "day": [
-              7,
-              14
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2053,
-            "to": 2053,
-            "month": 4,
-            "day": [
-              7,
-              22
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2052,
-            "to": 2052,
-            "month": 4,
-            "day": [
-              7,
-              30
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2051,
-            "to": 2051,
-            "month": 4,
-            "day": [
-              7,
-              11
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2051,
-            "to": 2051,
-            "month": 5,
-            "day": [
-              7,
-              15
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2023,
-            "to": 2051,
-            "month": 3,
-            "day": [
-              4,
-              -30
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2050,
-            "to": 2050,
-            "month": 5,
-            "day": [
-              7,
-              23
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2050,
-            "to": 2050,
-            "month": 4,
-            "day": [
-              7,
-              19
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2049,
-            "to": 2049,
-            "month": 6,
-            "day": [
-              7,
-              1
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2049,
-            "to": 2049,
-            "month": 4,
-            "day": [
-              7,
-              27
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2048,
-            "to": 2048,
-            "month": 5,
-            "day": [
-              7,
-              11
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2048,
-            "to": 2048,
-            "month": 6,
-            "day": [
-              7,
-              16
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2047,
-            "to": 2047,
-            "month": 5,
-            "day": [
-              7,
-              20
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2047,
-            "to": 2047,
-            "month": 6,
-            "day": [
-              7,
-              25
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2046,
-            "to": 2046,
-            "month": 5,
-            "day": [
-              7,
-              28
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2046,
-            "to": 2046,
-            "month": 7,
-            "day": [
-              7,
-              9
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2045,
-            "to": 2045,
-            "month": 7,
-            "day": [
-              7,
-              17
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2045,
-            "to": 2045,
-            "month": 6,
-            "day": [
-              7,
-              13
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2044,
-            "to": 2044,
-            "month": 7,
-            "day": [
-              7,
-              25
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2044,
-            "to": 2044,
-            "month": 6,
-            "day": [
-              7,
-              21
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2043,
-            "to": 2043,
-            "month": 7,
-            "day": [
-              7,
-              6
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2043,
-            "to": 2043,
-            "month": 8,
-            "day": [
-              7,
-              10
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2042,
-            "to": 2042,
-            "month": 8,
-            "day": [
-              7,
-              18
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2042,
-            "to": 2042,
-            "month": 7,
-            "day": [
-              7,
-              14
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2041,
-            "to": 2041,
-            "month": 8,
-            "day": [
-              7,
-              26
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2041,
-            "to": 2041,
-            "month": 7,
-            "day": [
-              7,
-              22
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2040,
-            "to": 2040,
-            "month": 9,
-            "day": [
-              7,
-              11
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2040,
-            "to": 2040,
-            "month": 8,
-            "day": [
-              7,
-              6
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2039,
-            "to": 2039,
-            "month": 8,
-            "day": [
-              7,
-              15
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2039,
-            "to": 2039,
-            "month": 9,
-            "day": [
-              7,
-              20
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2038,
-            "to": 2038,
-            "month": 8,
-            "day": [
-              7,
-              23
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2037,
-            "to": 2037,
-            "month": 9,
-            "day": [
-              7,
-              8
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2036,
-            "to": 2036,
-            "month": 9,
-            "day": [
-              7,
-              16
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2016,
-            "to": 2035,
-            "month": 9,
-            "day": [
-              4,
-              -31
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 3600000
-          },
-          {
-            "from": 2022,
-            "to": 2022,
-            "month": 4,
-            "day": [
-              7,
-              5
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2021,
-            "to": 2021,
-            "month": 4,
-            "day": [
-              7,
-              13
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2020,
-            "to": 2020,
-            "month": 4,
-            "day": [
-              7,
-              28
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2019,
-            "to": 2019,
-            "month": 4,
-            "day": [
-              7,
-              2
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2019,
-            "to": 2019,
-            "month": 5,
-            "day": [
-              7,
-              6
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2017,
-            "to": 2019,
-            "month": 3,
-            "day": [
-              4,
-              -30
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2018,
-            "to": 2018,
-            "month": 5,
-            "day": [
-              7,
-              14
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2018,
-            "to": 2018,
-            "month": 4,
-            "day": [
-              7,
-              10
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2017,
-            "to": 2017,
-            "month": 5,
-            "day": [
-              7,
-              29
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2017,
-            "to": 2017,
-            "month": 4,
-            "day": [
-              7,
-              25
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 3600000
-          },
-          {
-            "from": 2016,
-            "to": 2016,
-            "month": 6,
-            "day": [
-              7,
-              7
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
             "from": 2014,
             "to": 2014,
             "month": 8,
@@ -1500,6 +842,34 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2014,
+            "to": 2014,
+            "month": 5,
+            "day": [
+              7,
+              26
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 3600000
+          },
+          {
+            "from": 2014,
+            "to": 2014,
+            "month": 4,
+            "day": [
+              7,
+              15
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
           },
           {
             "from": 2014,
@@ -1508,34 +878,6 @@
             "day": [
               7,
               31
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 2014,
-            "to": 2014,
-            "month": 5,
-            "day": [
-              7,
-              26
-            ],
-            "time": 1440,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 3600000
-          },
-          {
-            "from": 2014,
-            "to": 2014,
-            "month": 4,
-            "day": [
-              7,
-              15
             ],
             "time": 1440,
             "clock": "wallclock",
@@ -1670,20 +1012,6 @@
             "saved": 3600000
           },
           {
-            "from": 1990,
-            "to": 1994,
-            "month": 4,
-            "day": [
-              7,
-              1
-            ],
-            "time": 60,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
             "from": 1966,
             "to": 1994,
             "month": 9,
@@ -1696,6 +1024,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 1990,
+            "to": 1994,
+            "month": 4,
+            "day": [
+              7,
+              1
+            ],
+            "time": 60,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
           },
           {
             "from": 1989,
@@ -83285,25 +82627,17 @@
         "Asia/Novokuznetsk": [
           "z",
           {
-            "wallclock": 1414288800000,
-            "format": "KRAT",
-            "abbrev": "KRAT",
-            "offset": 25200000,
-            "posix": 1414263600000,
-            "save": 0
-          },
-          {
             "wallclock": 1301191200000,
-            "format": "NOVT",
-            "abbrev": "NOVT",
+            "format": "+07",
+            "abbrev": "+07",
             "offset": 25200000,
             "posix": 1301169600000,
             "save": 0
           },
           {
             "wallclock": 1269741600000,
-            "format": "NOV%sT",
-            "abbrev": "NOVST",
+            "format": "+06/+07",
+            "abbrev": "+07",
             "offset": 21600000,
             "posix": 1269716400000,
             "save": 3600000,
@@ -83311,8 +82645,8 @@
           },
           {
             "wallclock": 695786400000,
-            "format": "KRA%sT",
-            "abbrev": "KRAT",
+            "format": "+07/+08",
+            "abbrev": "+07",
             "offset": 25200000,
             "posix": 695764800000,
             "save": 0,
@@ -83320,8 +82654,8 @@
           },
           {
             "wallclock": 670384800000,
-            "format": "KRA%sT",
-            "abbrev": "KRAST",
+            "format": "+06/+07",
+            "abbrev": "+07",
             "offset": 21600000,
             "posix": 670359600000,
             "save": 3600000,
@@ -83329,8 +82663,8 @@
           },
           {
             "wallclock": -1247529600000,
-            "format": "KRA%sT",
-            "abbrev": "KRAT",
+            "format": "+07/+08",
+            "abbrev": "+07",
             "offset": 25200000,
             "posix": -1247551200000,
             "save": 0,
@@ -83338,8 +82672,8 @@
           },
           {
             "wallclock": -1441238400000,
-            "format": "KRAT",
-            "abbrev": "KRAT",
+            "format": "+06",
+            "abbrev": "+06",
             "offset": 21600000,
             "posix": -1441259328000,
             "save": 0
@@ -83588,25 +82922,33 @@
         "Asia/Novosibirsk": [
           "z",
           {
+            "wallclock": 1469325600000,
+            "format": "+07",
+            "abbrev": "+07",
+            "offset": 25200000,
+            "posix": 1469304000000,
+            "save": 0
+          },
+          {
             "wallclock": 1414288800000,
-            "format": "NOVT",
-            "abbrev": "NOVT",
+            "format": "+06",
+            "abbrev": "+06",
             "offset": 21600000,
             "posix": 1414263600000,
             "save": 0
           },
           {
             "wallclock": 1301191200000,
-            "format": "NOVT",
-            "abbrev": "NOVT",
+            "format": "+07",
+            "abbrev": "+07",
             "offset": 25200000,
             "posix": 1301169600000,
             "save": 0
           },
           {
             "wallclock": 738115200000,
-            "format": "NOV%sT",
-            "abbrev": "NOVST",
+            "format": "+06/+07",
+            "abbrev": "+07",
             "offset": 21600000,
             "posix": 738086400000,
             "save": 3600000,
@@ -83614,8 +82956,8 @@
           },
           {
             "wallclock": 695786400000,
-            "format": "NOV%sT",
-            "abbrev": "NOVT",
+            "format": "+07/+08",
+            "abbrev": "+07",
             "offset": 25200000,
             "posix": 695764800000,
             "save": 0,
@@ -83623,8 +82965,8 @@
           },
           {
             "wallclock": 670384800000,
-            "format": "NOV%sT",
-            "abbrev": "NOVST",
+            "format": "+06/+07",
+            "abbrev": "+07",
             "offset": 21600000,
             "posix": 670359600000,
             "save": 3600000,
@@ -83632,8 +82974,8 @@
           },
           {
             "wallclock": -1247529600000,
-            "format": "NOV%sT",
-            "abbrev": "NOVT",
+            "format": "+07/+08",
+            "abbrev": "+07",
             "offset": 25200000,
             "posix": -1247551200000,
             "save": 0,
@@ -83641,8 +82983,8 @@
           },
           {
             "wallclock": -1579456800000,
-            "format": "NOVT",
-            "abbrev": "NOVT",
+            "format": "+06",
+            "abbrev": "+06",
             "offset": 21600000,
             "posix": -1579476700000,
             "save": 0
@@ -132708,37 +132050,13 @@
             "save": 0
           },
           {
-            "wallclock": 717555600000,
+            "wallclock": 670384800000,
             "format": "EE%sT",
             "abbrev": "EEST",
             "offset": 7200000,
-            "posix": 717544800000,
+            "posix": 670374000000,
             "save": 3600000,
             "rules": "Russia"
-          },
-          {
-            "wallclock": 701827200000,
-            "format": "EEST",
-            "abbrev": "EEST",
-            "offset": 7200000,
-            "posix": 701820000000,
-            "save": 3600000
-          },
-          {
-            "wallclock": 686113200000,
-            "format": "EET",
-            "abbrev": "EET",
-            "offset": 7200000,
-            "posix": 686102400000,
-            "save": 0
-          },
-          {
-            "wallclock": 670384800000,
-            "format": "EEST",
-            "abbrev": "EEST",
-            "offset": 7200000,
-            "posix": 670374000000,
-            "save": 3600000
           },
           {
             "wallclock": 631152000000,
