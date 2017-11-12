@@ -62,6 +62,8 @@
       case "wallclock":
         actualized.posix = actualized.wallclock - entry.offset - rule.saved;
       }
+      // Oh, now. This is what it supposed to look like, this indent style. This
+      // is even worse.
       actualized.clocks =
       { posix: iso8601(actualized.posix)
       , wallclock: iso8601(actualized.wallclock)
@@ -109,7 +111,7 @@
     });
   }
 
-  function walk (data, begin, end, table) {
+  function walk (_rules, begin, end, table) {
     var match
       , actual
       , max;
@@ -119,12 +121,17 @@
     var rule
       , abbrevs
       , year = getYear(new Date().getTime()) + 1
-      , rules = data.rules[begin.rules]
+      , rules = _rules[begin.rules]
       , actualized = [];
 
     if (abbrevs = /^([^\/]+)\/(.+)$/.exec(begin.format)) abbrevs.shift();
     else abbrevs = []
 
+    // For each entry we generate every possible actualization. I do not
+    // remember the reason for this overkill. Probably decided that ranging in
+    // on the correct window was more logic than creating this table and not
+    // worth it for a function that runs a couple times every few months.
+    // Programmer efficency to slurp.
     for (var i = 0, length = rules.length; i < length; i++) {
       rules[i].index = i;
       for (var j = rules[i].from, to = Math.min(rules[i].to, year); j <= to; j++) {
@@ -143,7 +150,7 @@
     var previous = begin;
 
     if (i == length) {
-      var rules = data.rules[begin.rules], offset;
+      var rules = _rules[begin.rules], offset;
       for (var j = 0; j < rules.length; j++) {
         if (!rules[j].save) {
           begin.abbrev = abbrevs[0] || begin.format.replace(/%s/, function () { return rules[j].letter });
@@ -153,6 +160,8 @@
       return begin;
     }
 
+    // Okay. This should have done it. Resolved what happens when an zone entry
+    // coincides with a rule entry.
     if (begin[actualized[i].clock] == actualized[i][actualized[i].clock]) {
       var temp = table.pop();
       actualized[i].rules =  temp.rules;
@@ -162,7 +171,7 @@
       previous = table[table.length - 1];
     } else {
       if (i === 0) {
-        var rules = data.rules[begin.rules], offset;
+        var rules = _rules[begin.rules], offset;
         for (var j = 0; j < rules.length; j++) {
           if (!rules[j].save) {
             begin.abbrev = abbrevs[0] || begin.format.replace(/%s/, function () { return rules[j].letter });
@@ -188,7 +197,7 @@
 
   function iso8601 (date) { try { return new Date(date).toISOString().replace(/\..*$/, "") } catch (e) { return "-" } }
 
-  function skipList (data, name, table) {
+  function skipList (_rules, table) {
     var i, I, rules, rule, skip = [], year;
     for (i = 0, I = table.length; i < I; i++) {
       if (table[i].type == "rule") {
@@ -201,7 +210,7 @@
         if (table[i].rule.saved == null) {
           table[i].rule.saved = table[i - 1].save;
         } else if (table[i].rule.saved != table[i - 1].save) {
-          rules = data.rules[skip[skip.length - 1].rules];
+          rules = _rules[skip[skip.length - 1].rules];
           year = getYear(table[i].posix)
           var rule = rules[table[i].rule.index], copy = {};
           if (year > rule.from) {
@@ -254,14 +263,14 @@
     return last;
   }
 
-  function find (data, skipList, time, clock) {
+  function find (_rules, skipList, time, clock) {
     var i, I, entry, year = getYear(time), found;
     for (i = 0, I = skipList.length; i < I; i++) {
       if (skipList[i][clock] <= time) break;
     }
     entry = skipList[i];
     if (typeof entry.rules == "string") {
-      rules = data.rules[entry.rules].slice(0);
+      rules = _rules[entry.rules].slice(0);
       rules.sort(function (a, b) { return b.to - a.to });
       var actualized = [];
       var to = applicable(entry, rules, actualized, time, clock);
@@ -277,18 +286,18 @@
     return found || entry;
   }
 
-  function verify (data, skipList, sorted, name)  {
+  function verify (_rules, skipList, sorted, name)  {
     var i, I, j, J, entry, found;
     sorted = sorted.slice(0);
     sorted.pop();
     skipList.reverse();
     for (var i = 1, I = sorted.length; i < I; i++) {
-      var found = find (data, skipList, sorted[i].posix, "posix");
+      var found = find (_rules, skipList, sorted[i].posix, "posix");
       if (sorted[i].posix != found.posix) {
         die("NOPE", name, iso8601(sorted[i].posix), found);
       }
 
-      var found = find (data, skipList, sorted[i].posix - 1, "posix");
+      var found = find (_rules, skipList, sorted[i].posix - 1, "posix");
       if (sorted[i - 1].posix != found.posix) {
         die("NOPE", name, iso8601(sorted[i].posix), iso8601(sorted[i - 1].posix), found);
       }
@@ -298,11 +307,11 @@
       if (sorted[i - 1].save != found.save) {
         die("NOPE", name, iso8601(sorted[i].posix), iso8601(sorted[i - 1].posix), found);
       }
-      var found = find (data, skipList, sorted[i].wallclock, "wallclock");
+      var found = find (_rules, skipList, sorted[i].wallclock, "wallclock");
       if (sorted[i].wallclock != found.wallclock) {
         die("NOPE 0", name, iso8601(sorted[i].wallclock), found);
       }
-      var found = find (data, skipList, sorted[i].wallclock - 1, "wallclock");
+      var found = find (_rules, skipList, sorted[i].wallclock - 1, "wallclock");
       if (sorted[i - 1].wallclock != found.wallclock) {
         die("NOPE -1", name, iso8601(sorted[i].wallclock), iso8601(sorted[i - 1].wallclock), sorted[i - 1].save, iso8601(found.wallclock), found);
       }
@@ -328,9 +337,13 @@
 
       if (previous.rules) {
         if (typeof previous.rules == "number") {
+          var abbrevs
+          if (abbrevs = /^([^\/]+)\/(.+)$/.exec(previous.format)) abbrevs.shift();
+          else abbrevs = []
+          previous.abbrev = abbrevs[1] || previous.format;
           previous.save = previous.rules * 6e4;
         } else {
-          previous = walk(data, previous, entry, table); // previous is last rule, not last zone.
+          previous = walk(data.rules, previous, entry, table);
         }
       } else {
         previous.save = 0;
@@ -356,10 +369,10 @@
       return copy;
     });
 
-    var skippy = skipList(data, zoneName, table.slice(0, table.length - 1));
+    var skippy = skipList(data.rules, table.slice(0, table.length - 1));
     if (skippy == null) return module.exports(data, zoneName, true);
 
-    verify(data, skippy, table, zoneName);
+    verify(data.rules, skippy, table, zoneName);
 
     var zones = {};
 
