@@ -48,9 +48,6 @@ function write (name, skipList, data) {
       if (e.saved == null) break;
       e.clock = "wallclock"
       e.time += (e.saved / 6e4);
-      if (e.time / 60 > 24) {
-        throw new Error("Failed: " + key + ", " + (e.time / 60));
-      }
       break;
     default:
       if (!e.saved) e.saved = 0;
