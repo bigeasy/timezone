@@ -87,6 +87,7 @@ function write (name, skipList, data) {
   record.zones[name] = zone;
   var fs = require("fs");
   var parts = [ "build", "timezone" ].concat(name.split(/\//)), path;
+  console.log(zone)
   for (var j = 0, stop = parts.length - 1; j < stop; j++) {
     path = parts.slice(0, j + 1).join("/");
     try {
@@ -113,7 +114,7 @@ function write (name, skipList, data) {
     }
   });
   var set = process.argv[2] ? [ process.argv[2] ] : Object.keys(data.zones);
-  for (var i = 0, length = set.length; i < length; i++) { transitions(data, set[i]) }
+//  for (var i = 0, length = set.length; i < length; i++) { transitions(data, set[i]) }
   for (var i = 0, length = set.length; i < length; i++) {
     try {
       write(set[i], skipLists[set[i]] = transitions(data, set[i]).skipList, data);
