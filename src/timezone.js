@@ -168,12 +168,12 @@
       if (date == "*") {
         date = request.clock();
       } else if (Array.isArray(date)) {
-        date = date.slice();
+        $ = [];
         I = !date[7];
-        for (i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
-        --date[1]; // Grr..
-        date = Date.UTC.apply(Date.UTC, date.slice(0, 8)) +
-          -date[7] * (date[8] * 36e5 + date[9] * 6e4 + date[10] * 1e3);
+        for (i = 0; i < 11; i++) $[i] = +(date[i] || 0); // conversion necessary for decrement
+        --$[1]; // Grr..
+        date = Date.UTC.apply(Date.UTC, $.slice(0, 8)) +
+          -$[7] * ($[8] * 36e5 + $[9] * 6e4 + $[10] * 1e3);
       } else {
         date = Math.floor(date);
       }
