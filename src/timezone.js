@@ -168,6 +168,7 @@
       if (date == "*") {
         date = request.clock();
       } else if (Array.isArray(date)) {
+        date = date.slice();
         I = !date[7];
         for (i = 0; i < 11; i++) date[i] = +(date[i] || 0); // conversion necessary for decrement
         --date[1]; // Grr..
