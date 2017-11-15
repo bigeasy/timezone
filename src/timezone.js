@@ -172,8 +172,7 @@
         I = !date[7];
         for (i = 0; i < 11; i++) $[i] = +(date[i] || 0); // conversion necessary for decrement
         --$[1]; // Grr..
-        date = Date.UTC.apply(Date.UTC, $.slice(0, 8)) +
-          -$[7] * ($[8] * 36e5 + $[9] * 6e4 + $[10] * 1e3);
+        date = Date.UTC.apply(Date.UTC, $) + -$[7] * ($[8] * 36e5 + $[9] * 6e4 + $[10] * 1e3);
       } else {
         date = Math.floor(date);
       }
