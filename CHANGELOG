@@ -1,3 +1,8 @@
+- Version 1.0.7.
+
+ * Upgrade IANA TZ Database to `2016g`. #278.
+ * Do not change input date array. #276.
+
 - Version 1.0.6.
 
 Wed Jul 13 16:22:50 UTC 2016
