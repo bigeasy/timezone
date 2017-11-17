@@ -4,16 +4,16 @@
       "z",
       {
         "wallclock": 1301191200000,
-        "format": "PETT",
-        "abbrev": "PETT",
+        "format": "+12",
+        "abbrev": "+12",
         "offset": 43200000,
         "posix": 1301151600000,
         "save": 0
       },
       {
         "wallclock": 1269741600000,
-        "format": "PET%sT",
-        "abbrev": "PETST",
+        "format": "+11/+12",
+        "abbrev": "+12",
         "offset": 39600000,
         "posix": 1269698400000,
         "save": 3600000,
@@ -21,8 +21,8 @@
       },
       {
         "wallclock": 695786400000,
-        "format": "PET%sT",
-        "abbrev": "PETT",
+        "format": "+12/+13",
+        "abbrev": "+12",
         "offset": 43200000,
         "posix": 695746800000,
         "save": 0,
@@ -30,8 +30,8 @@
       },
       {
         "wallclock": 670384800000,
-        "format": "PET%sT",
-        "abbrev": "PETST",
+        "format": "+11/+12",
+        "abbrev": "+12",
         "offset": 39600000,
         "posix": 670341600000,
         "save": 3600000,
@@ -39,8 +39,8 @@
       },
       {
         "wallclock": -1247529600000,
-        "format": "PET%sT",
-        "abbrev": "PETT",
+        "format": "+12/+13",
+        "abbrev": "+12",
         "offset": 43200000,
         "posix": -1247569200000,
         "save": 0,
@@ -48,8 +48,8 @@
       },
       {
         "wallclock": -1487721600000,
-        "format": "PETT",
-        "abbrev": "PETT",
+        "format": "+11",
+        "abbrev": "+11",
         "offset": 39600000,
         "posix": -1487759676000,
         "save": 0
@@ -147,7 +147,7 @@
         "time": 1380,
         "clock": "wallclock",
         "save": 120,
-        "letter": "MSM",
+        "letter": "+05",
         "saved": 3600000
       },
       {
@@ -214,8 +214,8 @@
           7,
           1
         ],
-        "time": 120,
-        "clock": "wallclock",
+        "time": 0,
+        "clock": "posix",
         "save": 60,
         "letter": "MSD",
         "saved": 0

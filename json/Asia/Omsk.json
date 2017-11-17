@@ -4,24 +4,24 @@
       "z",
       {
         "wallclock": 1414288800000,
-        "format": "OMST",
-        "abbrev": "OMST",
+        "format": "+06",
+        "abbrev": "+06",
         "offset": 21600000,
         "posix": 1414263600000,
         "save": 0
       },
       {
         "wallclock": 1301191200000,
-        "format": "OMST",
-        "abbrev": "OMST",
+        "format": "+07",
+        "abbrev": "+07",
         "offset": 25200000,
         "posix": 1301169600000,
         "save": 0
       },
       {
         "wallclock": 695786400000,
-        "format": "OMS%sT",
-        "abbrev": "OMST",
+        "format": "+06/+07",
+        "abbrev": "+06",
         "offset": 21600000,
         "posix": 695768400000,
         "save": 0,
@@ -29,8 +29,8 @@
       },
       {
         "wallclock": 670384800000,
-        "format": "OMS%sT",
-        "abbrev": "OMSST",
+        "format": "+05/+06",
+        "abbrev": "+06",
         "offset": 18000000,
         "posix": 670363200000,
         "save": 3600000,
@@ -38,8 +38,8 @@
       },
       {
         "wallclock": -1247529600000,
-        "format": "OMS%sT",
-        "abbrev": "OMST",
+        "format": "+06/+07",
+        "abbrev": "+06",
         "offset": 21600000,
         "posix": -1247547600000,
         "save": 0,
@@ -47,8 +47,8 @@
       },
       {
         "wallclock": -1582070400000,
-        "format": "OMST",
-        "abbrev": "OMST",
+        "format": "+05",
+        "abbrev": "+05",
         "offset": 18000000,
         "posix": -1582088010000,
         "save": 0
@@ -146,7 +146,7 @@
         "time": 1380,
         "clock": "wallclock",
         "save": 120,
-        "letter": "MSM",
+        "letter": "+05",
         "saved": 3600000
       },
       {
@@ -213,8 +213,8 @@
           7,
           1
         ],
-        "time": 120,
-        "clock": "wallclock",
+        "time": 0,
+        "clock": "posix",
         "save": 60,
         "letter": "MSD",
         "saved": 0

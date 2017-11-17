@@ -459,7 +459,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "S",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1944,
@@ -473,7 +473,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "S",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1943,
@@ -501,7 +501,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "S",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1940,
@@ -529,7 +529,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "S",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1939,
@@ -555,7 +555,7 @@
             0,
             -30
           ],
-          "time": 120,
+          "time": 60,
           "clock": "wallclock",
           "save": 60,
           "letter": "D",
@@ -611,7 +611,7 @@
             7,
             14
           ],
-          "time": 120,
+          "time": 121,
           "clock": "wallclock",
           "save": 60,
           "letter": "D",
@@ -819,7 +819,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "S",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1944,
@@ -833,7 +833,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "S",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1943,
@@ -861,7 +861,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "S",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1940,
@@ -889,7 +889,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "S",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1939,
@@ -1030,7 +1030,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "S",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 2001,

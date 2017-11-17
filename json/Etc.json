@@ -21,8 +21,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT+1",
-          "abbrev": "GMT+1",
+          "format": "-01",
+          "abbrev": "-01",
           "offset": -3600000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -37,8 +37,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT+10",
-          "abbrev": "GMT+10",
+          "format": "-10",
+          "abbrev": "-10",
           "offset": -36000000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -53,8 +53,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT+11",
-          "abbrev": "GMT+11",
+          "format": "-11",
+          "abbrev": "-11",
           "offset": -39600000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -69,8 +69,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT+12",
-          "abbrev": "GMT+12",
+          "format": "-12",
+          "abbrev": "-12",
           "offset": -43200000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -85,8 +85,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT+2",
-          "abbrev": "GMT+2",
+          "format": "-02",
+          "abbrev": "-02",
           "offset": -7200000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -101,8 +101,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT+3",
-          "abbrev": "GMT+3",
+          "format": "-03",
+          "abbrev": "-03",
           "offset": -10800000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -117,8 +117,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT+4",
-          "abbrev": "GMT+4",
+          "format": "-04",
+          "abbrev": "-04",
           "offset": -14400000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -133,8 +133,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT+5",
-          "abbrev": "GMT+5",
+          "format": "-05",
+          "abbrev": "-05",
           "offset": -18000000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -149,8 +149,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT+6",
-          "abbrev": "GMT+6",
+          "format": "-06",
+          "abbrev": "-06",
           "offset": -21600000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -165,8 +165,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT+7",
-          "abbrev": "GMT+7",
+          "format": "-07",
+          "abbrev": "-07",
           "offset": -25200000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -181,8 +181,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT+8",
-          "abbrev": "GMT+8",
+          "format": "-08",
+          "abbrev": "-08",
           "offset": -28800000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -197,8 +197,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT+9",
-          "abbrev": "GMT+9",
+          "format": "-09",
+          "abbrev": "-09",
           "offset": -32400000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -229,8 +229,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT-1",
-          "abbrev": "GMT-1",
+          "format": "+01",
+          "abbrev": "+01",
           "offset": 3600000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -245,8 +245,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT-10",
-          "abbrev": "GMT-10",
+          "format": "+10",
+          "abbrev": "+10",
           "offset": 36000000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -261,8 +261,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT-11",
-          "abbrev": "GMT-11",
+          "format": "+11",
+          "abbrev": "+11",
           "offset": 39600000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -277,8 +277,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT-12",
-          "abbrev": "GMT-12",
+          "format": "+12",
+          "abbrev": "+12",
           "offset": 43200000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -293,8 +293,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT-13",
-          "abbrev": "GMT-13",
+          "format": "+13",
+          "abbrev": "+13",
           "offset": 46800000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -309,8 +309,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT-14",
-          "abbrev": "GMT-14",
+          "format": "+14",
+          "abbrev": "+14",
           "offset": 50400000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -325,8 +325,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT-2",
-          "abbrev": "GMT-2",
+          "format": "+02",
+          "abbrev": "+02",
           "offset": 7200000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -341,8 +341,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT-3",
-          "abbrev": "GMT-3",
+          "format": "+03",
+          "abbrev": "+03",
           "offset": 10800000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -357,8 +357,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT-4",
-          "abbrev": "GMT-4",
+          "format": "+04",
+          "abbrev": "+04",
           "offset": 14400000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -373,8 +373,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT-5",
-          "abbrev": "GMT-5",
+          "format": "+05",
+          "abbrev": "+05",
           "offset": 18000000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -389,8 +389,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT-6",
-          "abbrev": "GMT-6",
+          "format": "+06",
+          "abbrev": "+06",
           "offset": 21600000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -405,8 +405,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT-7",
-          "abbrev": "GMT-7",
+          "format": "+07",
+          "abbrev": "+07",
           "offset": 25200000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -421,8 +421,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT-8",
-          "abbrev": "GMT-8",
+          "format": "+08",
+          "abbrev": "+08",
           "offset": 28800000,
           "posix": -1.7976931348623157e+308,
           "save": 0
@@ -437,8 +437,8 @@
         "z",
         {
           "wallclock": -1.7976931348623157e+308,
-          "format": "GMT-9",
-          "abbrev": "GMT-9",
+          "format": "+09",
+          "abbrev": "+09",
           "offset": 32400000,
           "posix": -1.7976931348623157e+308,
           "save": 0

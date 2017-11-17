@@ -4,40 +4,40 @@
       "z",
       {
         "wallclock": 1329872400000,
-        "format": "DAVT",
-        "abbrev": "DAVT",
+        "format": "+07",
+        "abbrev": "+07",
         "offset": 25200000,
         "posix": 1329854400000,
         "save": 0
       },
       {
         "wallclock": 1319767200000,
-        "format": "DAVT",
-        "abbrev": "DAVT",
+        "format": "+05",
+        "abbrev": "+05",
         "offset": 18000000,
         "posix": 1319742000000,
         "save": 0
       },
       {
         "wallclock": 1268269200000,
-        "format": "DAVT",
-        "abbrev": "DAVT",
+        "format": "+07",
+        "abbrev": "+07",
         "offset": 25200000,
         "posix": 1268251200000,
         "save": 0
       },
       {
         "wallclock": 1255831200000,
-        "format": "DAVT",
-        "abbrev": "DAVT",
+        "format": "+05",
+        "abbrev": "+05",
         "offset": 18000000,
         "posix": 1255806000000,
         "save": 0
       },
       {
         "wallclock": -28857600000,
-        "format": "DAVT",
-        "abbrev": "DAVT",
+        "format": "+07",
+        "abbrev": "+07",
         "offset": 25200000,
         "posix": -28857600000,
         "save": 0
@@ -52,8 +52,8 @@
       },
       {
         "wallclock": -409190400000,
-        "format": "DAVT",
-        "abbrev": "DAVT",
+        "format": "+07",
+        "abbrev": "+07",
         "offset": 25200000,
         "posix": -409190400000,
         "save": 0

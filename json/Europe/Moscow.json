@@ -63,11 +63,11 @@
         "rules": "Russia"
       },
       {
-        "wallclock": -1593813600000,
+        "wallclock": -1593804521000,
         "format": "%s",
         "abbrev": "MSD",
         "offset": 10800000,
-        "posix": -1593829879000,
+        "posix": -1593820800000,
         "save": 3600000,
         "rules": "Russia"
       },
@@ -181,7 +181,7 @@
         "time": 1380,
         "clock": "wallclock",
         "save": 120,
-        "letter": "MSM",
+        "letter": "+05",
         "saved": 3600000
       },
       {
@@ -248,8 +248,8 @@
           7,
           1
         ],
-        "time": 120,
-        "clock": "wallclock",
+        "time": 0,
+        "clock": "posix",
         "save": 60,
         "letter": "MSD",
         "saved": 0

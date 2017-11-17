@@ -4,24 +4,24 @@
       "z",
       {
         "wallclock": 1414288800000,
-        "format": "YEKT",
-        "abbrev": "YEKT",
+        "format": "+05",
+        "abbrev": "+05",
         "offset": 18000000,
         "posix": 1414267200000,
         "save": 0
       },
       {
         "wallclock": 1301191200000,
-        "format": "YEKT",
-        "abbrev": "YEKT",
+        "format": "+06",
+        "abbrev": "+06",
         "offset": 21600000,
         "posix": 1301173200000,
         "save": 0
       },
       {
         "wallclock": 695786400000,
-        "format": "YEK%sT",
-        "abbrev": "YEKT",
+        "format": "+05/+06",
+        "abbrev": "+05",
         "offset": 18000000,
         "posix": 695772000000,
         "save": 0,
@@ -29,8 +29,8 @@
       },
       {
         "wallclock": 670384800000,
-        "format": "SVE%sT",
-        "abbrev": "SVEST",
+        "format": "+04/+05",
+        "abbrev": "+05",
         "offset": 14400000,
         "posix": 670366800000,
         "save": 3600000,
@@ -38,8 +38,8 @@
       },
       {
         "wallclock": -1247529600000,
-        "format": "SVE%sT",
-        "abbrev": "SVET",
+        "format": "+05/+06",
+        "abbrev": "+05",
         "offset": 18000000,
         "posix": -1247544000000,
         "save": 0,
@@ -47,8 +47,8 @@
       },
       {
         "wallclock": -1592596800000,
-        "format": "SVET",
-        "abbrev": "SVET",
+        "format": "+04",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": -1592610305000,
         "save": 0
@@ -154,7 +154,7 @@
         "time": 1380,
         "clock": "wallclock",
         "save": 120,
-        "letter": "MSM",
+        "letter": "+05",
         "saved": 3600000
       },
       {
@@ -221,8 +221,8 @@
           7,
           1
         ],
-        "time": 120,
-        "clock": "wallclock",
+        "time": 0,
+        "clock": "posix",
         "save": 60,
         "letter": "MSD",
         "saved": 0

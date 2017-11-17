@@ -89,7 +89,7 @@
         "clock": "posix",
         "save": 0,
         "letter": "",
-        "saved": 3600000
+        "saved": 0
       },
       {
         "from": 1977,
@@ -117,7 +117,7 @@
         "clock": "posix",
         "save": 0,
         "letter": "",
-        "saved": 3600000
+        "saved": 0
       },
       {
         "from": 1977,
@@ -131,7 +131,7 @@
         "clock": "posix",
         "save": 0,
         "letter": "",
-        "saved": 3600000
+        "saved": 0
       }
     ],
     "GB-Eire": [

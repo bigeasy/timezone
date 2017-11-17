@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -415497600000,
-        "format": "DDUT",
-        "abbrev": "DDUT",
+        "format": "+10",
+        "abbrev": "+10",
         "offset": 36000000,
         "posix": -415497600000,
         "save": 0
@@ -20,8 +20,8 @@
       },
       {
         "wallclock": -725846400000,
-        "format": "PMT",
-        "abbrev": "PMT",
+        "format": "+10",
+        "abbrev": "+10",
         "offset": 36000000,
         "posix": -725846400000,
         "save": 0

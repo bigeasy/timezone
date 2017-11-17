@@ -206,7 +206,7 @@
         "clock": "wallclock",
         "save": 0,
         "letter": "S",
-        "saved": 3600000
+        "saved": 0
       },
       {
         "from": 1944,
@@ -220,7 +220,7 @@
         "clock": "wallclock",
         "save": 0,
         "letter": "S",
-        "saved": 3600000
+        "saved": 0
       },
       {
         "from": 1943,
@@ -248,7 +248,7 @@
         "clock": "wallclock",
         "save": 0,
         "letter": "S",
-        "saved": 3600000
+        "saved": 0
       },
       {
         "from": 1940,
@@ -276,7 +276,7 @@
         "clock": "wallclock",
         "save": 0,
         "letter": "S",
-        "saved": 3600000
+        "saved": 0
       },
       {
         "from": 1939,

@@ -147,7 +147,7 @@
         "time": 1380,
         "clock": "wallclock",
         "save": 120,
-        "letter": "MSM",
+        "letter": "+05",
         "saved": 3600000
       },
       {
@@ -214,8 +214,8 @@
           7,
           1
         ],
-        "time": 120,
-        "clock": "wallclock",
+        "time": 0,
+        "clock": "posix",
         "save": 60,
         "letter": "MSD",
         "saved": 0

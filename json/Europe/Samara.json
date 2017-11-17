@@ -4,16 +4,16 @@
       "z",
       {
         "wallclock": 1301191200000,
-        "format": "SAMT",
-        "abbrev": "SAMT",
+        "format": "+04",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": 1301180400000,
         "save": 0
       },
       {
         "wallclock": 1269741600000,
-        "format": "SAM%sT",
-        "abbrev": "SAMST",
+        "format": "+03/+04",
+        "abbrev": "+04",
         "offset": 10800000,
         "posix": 1269727200000,
         "save": 3600000,
@@ -21,8 +21,8 @@
       },
       {
         "wallclock": 687927600000,
-        "format": "SAM%sT",
-        "abbrev": "SAMT",
+        "format": "+04/+05",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": 687916800000,
         "save": 0,
@@ -30,16 +30,16 @@
       },
       {
         "wallclock": 686113200000,
-        "format": "SAMT",
-        "abbrev": "SAMT",
+        "format": "+03",
+        "abbrev": "+03",
         "offset": 10800000,
         "posix": 686102400000,
         "save": 0
       },
       {
         "wallclock": 670384800000,
-        "format": "EE%sT",
-        "abbrev": "EEST",
+        "format": "+02/+03",
+        "abbrev": "+03",
         "offset": 7200000,
         "posix": 670374000000,
         "save": 3600000,
@@ -47,8 +47,8 @@
       },
       {
         "wallclock": 606880800000,
-        "format": "MSK/MSD",
-        "abbrev": "MSD",
+        "format": "+03/+04",
+        "abbrev": "+04",
         "offset": 10800000,
         "posix": 606866400000,
         "save": 3600000,
@@ -56,8 +56,8 @@
       },
       {
         "wallclock": -1102291200000,
-        "format": "KUY%sT",
-        "abbrev": "KUYT",
+        "format": "+04/+05",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": -1102305600000,
         "save": 0,
@@ -65,18 +65,18 @@
       },
       {
         "wallclock": -1247529600000,
-        "format": "SAMT",
-        "abbrev": "SAMT",
+        "format": "+04",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": -1247540400000,
         "save": 0
       },
       {
-        "wallclock": -1593813600000,
-        "format": "SAMT",
-        "abbrev": "SAMT",
+        "wallclock": -1593808780000,
+        "format": "+03",
+        "abbrev": "+03",
         "offset": 10800000,
-        "posix": -1593825620000,
+        "posix": -1593820800000,
         "save": 0
       },
       {
@@ -172,7 +172,7 @@
         "time": 1380,
         "clock": "wallclock",
         "save": 120,
-        "letter": "MSM",
+        "letter": "+05",
         "saved": 3600000
       },
       {
@@ -239,8 +239,8 @@
           7,
           1
         ],
-        "time": 120,
-        "clock": "wallclock",
+        "time": 0,
+        "clock": "posix",
         "save": 60,
         "letter": "MSD",
         "saved": 0

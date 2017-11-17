@@ -5,7 +5,7 @@
       {
         "wallclock": 1108166400000,
         "format": "%s",
-        "abbrev": "UTC",
+        "abbrev": "+00",
         "offset": 0,
         "posix": 1108166400000,
         "save": 0,
@@ -34,7 +34,7 @@
         "time": 60,
         "clock": "posix",
         "save": 120,
-        "letter": "CEST",
+        "letter": "+02",
         "saved": 0
       },
       {
@@ -48,7 +48,7 @@
         "time": 60,
         "clock": "posix",
         "save": 0,
-        "letter": "UTC",
+        "letter": "+00",
         "saved": 7200000
       }
     ]

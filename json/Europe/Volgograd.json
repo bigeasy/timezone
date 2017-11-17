@@ -4,24 +4,24 @@
       "z",
       {
         "wallclock": 1414288800000,
-        "format": "MSK",
-        "abbrev": "MSK",
+        "format": "+03",
+        "abbrev": "+03",
         "offset": 10800000,
         "posix": 1414274400000,
         "save": 0
       },
       {
         "wallclock": 1301191200000,
-        "format": "MSK",
-        "abbrev": "MSK",
+        "format": "+04",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": 1301180400000,
         "save": 0
       },
       {
         "wallclock": 701834400000,
-        "format": "MSK/MSD",
-        "abbrev": "MSD",
+        "format": "+03/+04",
+        "abbrev": "+04",
         "offset": 10800000,
         "posix": 701820000000,
         "save": 3600000,
@@ -29,16 +29,16 @@
       },
       {
         "wallclock": 670384800000,
-        "format": "VOLT",
-        "abbrev": "VOLT",
+        "format": "+04",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": 670374000000,
         "save": 0
       },
       {
         "wallclock": 575431200000,
-        "format": "VOL%sT",
-        "abbrev": "VOLST",
+        "format": "+03/+04",
+        "abbrev": "+04",
         "offset": 10800000,
         "posix": 575416800000,
         "save": 3600000,
@@ -46,8 +46,8 @@
       },
       {
         "wallclock": -256867200000,
-        "format": "VOL%sT",
-        "abbrev": "VOLT",
+        "format": "+04/+05",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": -256881600000,
         "save": 0,
@@ -55,24 +55,16 @@
       },
       {
         "wallclock": -1247529600000,
-        "format": "STAT",
-        "abbrev": "STAT",
+        "format": "+04",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": -1247540400000,
         "save": 0
       },
       {
-        "wallclock": -1411862400000,
-        "format": "STAT",
-        "abbrev": "STAT",
-        "offset": 10800000,
-        "posix": -1411873200000,
-        "save": 0
-      },
-      {
         "wallclock": -1577750400000,
-        "format": "TSAT",
-        "abbrev": "TSAT",
+        "format": "+03",
+        "abbrev": "+03",
         "offset": 10800000,
         "posix": -1577761060000,
         "save": 0
@@ -170,7 +162,7 @@
         "time": 1380,
         "clock": "wallclock",
         "save": 120,
-        "letter": "MSM",
+        "letter": "+05",
         "saved": 3600000
       },
       {
@@ -237,8 +229,8 @@
           7,
           1
         ],
-        "time": 120,
-        "clock": "wallclock",
+        "time": 0,
+        "clock": "posix",
         "save": 60,
         "letter": "MSD",
         "saved": 0

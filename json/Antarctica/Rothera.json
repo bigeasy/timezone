@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": 218246400000,
-        "format": "ROTT",
-        "abbrev": "ROTT",
+        "format": "-03",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": 218246400000,
         "save": 0

@@ -12,8 +12,8 @@
       },
       {
         "wallclock": 1301191200000,
-        "format": "FET",
-        "abbrev": "FET",
+        "format": "+03",
+        "abbrev": "+03",
         "offset": 10800000,
         "posix": 1301184000000,
         "save": 0
@@ -147,8 +147,8 @@
         "time": 1380,
         "clock": "wallclock",
         "save": 120,
-        "letter": "MSM",
-        "saved": 3600000
+        "letter": "+05",
+        "saved": 0
       },
       {
         "from": 1921,
@@ -190,7 +190,7 @@
         "clock": "wallclock",
         "save": 60,
         "letter": "MSD",
-        "saved": 7200000
+        "saved": 0
       },
       {
         "from": 1919,
@@ -204,7 +204,7 @@
         "clock": "wallclock",
         "save": 0,
         "letter": "MSK",
-        "saved": 3600000
+        "saved": 0
       },
       {
         "from": 1919,
@@ -214,8 +214,8 @@
           7,
           1
         ],
-        "time": 120,
-        "clock": "wallclock",
+        "time": 0,
+        "clock": "posix",
         "save": 60,
         "letter": "MSD",
         "saved": 0
@@ -232,7 +232,7 @@
         "clock": "wallclock",
         "save": 120,
         "letter": "MDST",
-        "saved": 3600000
+        "saved": 0
       },
       {
         "from": 1918,
@@ -246,7 +246,7 @@
         "clock": "wallclock",
         "save": 60,
         "letter": "MST",
-        "saved": 7200000
+        "saved": 0
       },
       {
         "from": 1918,
@@ -274,7 +274,7 @@
         "clock": "wallclock",
         "save": 0,
         "letter": "MMT",
-        "saved": 3600000
+        "saved": 0
       },
       {
         "from": 1917,

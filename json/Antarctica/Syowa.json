@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -407808000000,
-        "format": "SYOT",
-        "abbrev": "SYOT",
+        "format": "+03",
+        "abbrev": "+03",
         "offset": 10800000,
         "posix": -407808000000,
         "save": 0

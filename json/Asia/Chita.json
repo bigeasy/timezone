@@ -4,32 +4,32 @@
       "z",
       {
         "wallclock": 1459044000000,
-        "format": "YAKT",
-        "abbrev": "YAKT",
+        "format": "+09",
+        "abbrev": "+09",
         "offset": 32400000,
         "posix": 1459015200000,
         "save": 0
       },
       {
         "wallclock": 1414288800000,
-        "format": "IRKT",
-        "abbrev": "IRKT",
+        "format": "+08",
+        "abbrev": "+08",
         "offset": 28800000,
         "posix": 1414252800000,
         "save": 0
       },
       {
         "wallclock": 1301191200000,
-        "format": "YAKT",
-        "abbrev": "YAKT",
+        "format": "+10",
+        "abbrev": "+10",
         "offset": 36000000,
         "posix": 1301158800000,
         "save": 0
       },
       {
         "wallclock": 695786400000,
-        "format": "YAK%sT",
-        "abbrev": "YAKT",
+        "format": "+09/+10",
+        "abbrev": "+09",
         "offset": 32400000,
         "posix": 695757600000,
         "save": 0,
@@ -37,8 +37,8 @@
       },
       {
         "wallclock": 670384800000,
-        "format": "YAK%sT",
-        "abbrev": "YAKST",
+        "format": "+08/+09",
+        "abbrev": "+09",
         "offset": 28800000,
         "posix": 670352400000,
         "save": 3600000,
@@ -46,8 +46,8 @@
       },
       {
         "wallclock": -1247529600000,
-        "format": "YAK%sT",
-        "abbrev": "YAKT",
+        "format": "+09/+10",
+        "abbrev": "+09",
         "offset": 32400000,
         "posix": -1247558400000,
         "save": 0,
@@ -55,8 +55,8 @@
       },
       {
         "wallclock": -1579392000000,
-        "format": "YAKT",
-        "abbrev": "YAKT",
+        "format": "+08",
+        "abbrev": "+08",
         "offset": 28800000,
         "posix": -1579419232000,
         "save": 0
@@ -154,7 +154,7 @@
         "time": 1380,
         "clock": "wallclock",
         "save": 120,
-        "letter": "MSM",
+        "letter": "+05",
         "saved": 3600000
       },
       {
@@ -221,8 +221,8 @@
           7,
           1
         ],
-        "time": 120,
-        "clock": "wallclock",
+        "time": 0,
+        "clock": "posix",
         "save": 60,
         "letter": "MSD",
         "saved": 0

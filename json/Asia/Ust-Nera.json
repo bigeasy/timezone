@@ -4,32 +4,32 @@
       "z",
       {
         "wallclock": 1414288800000,
-        "format": "VLAT",
-        "abbrev": "VLAT",
+        "format": "+10",
+        "abbrev": "+10",
         "offset": 36000000,
         "posix": 1414249200000,
         "save": 0
       },
       {
         "wallclock": 1315872000000,
-        "format": "VLAT",
-        "abbrev": "VLAT",
+        "format": "+11",
+        "abbrev": "+11",
         "offset": 39600000,
         "posix": 1315828800000,
         "save": 0
       },
       {
         "wallclock": 1301191200000,
-        "format": "MAGT",
-        "abbrev": "MAGT",
+        "format": "+12",
+        "abbrev": "+12",
         "offset": 43200000,
         "posix": 1301151600000,
         "save": 0
       },
       {
         "wallclock": 695786400000,
-        "format": "MAG%sT",
-        "abbrev": "MAGT",
+        "format": "+11/+12",
+        "abbrev": "+11",
         "offset": 39600000,
         "posix": 695750400000,
         "save": 0,
@@ -37,8 +37,8 @@
       },
       {
         "wallclock": 670384800000,
-        "format": "MAG%sT",
-        "abbrev": "MAGST",
+        "format": "+10/+11",
+        "abbrev": "+11",
         "offset": 36000000,
         "posix": 670345200000,
         "save": 3600000,
@@ -46,8 +46,8 @@
       },
       {
         "wallclock": 354931200000,
-        "format": "MAG%sT",
-        "abbrev": "MAGST",
+        "format": "+11/+12",
+        "abbrev": "+12",
         "offset": 39600000,
         "posix": 354898800000,
         "save": 3600000,
@@ -55,8 +55,8 @@
       },
       {
         "wallclock": -1247529600000,
-        "format": "YAKT",
-        "abbrev": "YAKT",
+        "format": "+09/+10",
+        "abbrev": "+09",
         "offset": 32400000,
         "posix": -1247558400000,
         "save": 0,
@@ -64,8 +64,8 @@
       },
       {
         "wallclock": -1579392000000,
-        "format": "YAKT",
-        "abbrev": "YAKT",
+        "format": "+08",
+        "abbrev": "+08",
         "offset": 28800000,
         "posix": -1579426374000,
         "save": 0
@@ -163,7 +163,7 @@
         "time": 1380,
         "clock": "wallclock",
         "save": 120,
-        "letter": "MSM",
+        "letter": "+05",
         "saved": 3600000
       },
       {
@@ -230,8 +230,8 @@
           7,
           1
         ],
-        "time": 120,
-        "clock": "wallclock",
+        "time": 0,
+        "clock": "posix",
         "save": 60,
         "letter": "MSD",
         "saved": 0

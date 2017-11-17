@@ -89,8 +89,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -115,6 +157,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -734,7 +790,7 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
           "month": 8,
           "day": [
@@ -746,6 +802,34 @@
           "save": 0,
           "letter": "",
           "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1979,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 0
         },
         {
           "from": 1977,
@@ -773,7 +857,7 @@
           "clock": "posix",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1977,
@@ -787,7 +871,7 @@
           "clock": "posix",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         }
       ]
     }
@@ -956,7 +1040,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
+          "letter": "+05",
           "saved": 3600000
         },
         {
@@ -1023,8 +1107,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -1191,8 +1275,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -1217,6 +1343,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -1597,8 +1737,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -1623,6 +1805,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -2662,8 +2858,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -2688,6 +2926,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -3037,8 +3289,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -3063,6 +3357,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -3569,8 +3877,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -3595,6 +3945,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -4077,8 +4441,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -4103,6 +4509,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -4619,11 +5039,10 @@
             0,
             -31
           ],
-          "time": 180,
-          "clock": "wallclock",
+          "time": 120,
+          "clock": "standard",
           "save": 0,
-          "letter": "",
-          "saved": 3600000
+          "letter": ""
         },
         {
           "from": 1981,
@@ -4634,10 +5053,9 @@
             -31
           ],
           "time": 120,
-          "clock": "wallclock",
+          "clock": "standard",
           "save": 60,
-          "letter": "S",
-          "saved": 0
+          "letter": "S"
         },
         {
           "from": 1979,
@@ -4647,11 +5065,10 @@
             0,
             -30
           ],
-          "time": 180,
-          "clock": "wallclock",
+          "time": 120,
+          "clock": "standard",
           "save": 0,
-          "letter": "",
-          "saved": 3600000
+          "letter": ""
         },
         {
           "from": 1977,
@@ -4784,10 +5201,9 @@
             1
           ],
           "time": 120,
-          "clock": "wallclock",
+          "clock": "standard",
           "save": 60,
-          "letter": "S",
-          "saved": 0
+          "letter": "S"
         },
         {
           "from": 1917,
@@ -4946,8 +5362,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -4972,6 +5430,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -5544,8 +6016,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -5570,6 +6084,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -6163,8 +6691,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -6189,6 +6759,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -6542,8 +7126,8 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
-          "saved": 3600000
+          "letter": "+05",
+          "saved": 0
         },
         {
           "from": 1921,
@@ -6585,7 +7169,7 @@
           "clock": "wallclock",
           "save": 60,
           "letter": "MSD",
-          "saved": 7200000
+          "saved": 0
         },
         {
           "from": 1919,
@@ -6599,7 +7183,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "MSK",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1919,
@@ -6609,8 +7193,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -6627,7 +7211,7 @@
           "clock": "wallclock",
           "save": 120,
           "letter": "MDST",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1918,
@@ -6641,7 +7225,7 @@
           "clock": "wallclock",
           "save": 60,
           "letter": "MST",
-          "saved": 7200000
+          "saved": 0
         },
         {
           "from": 1918,
@@ -6669,7 +7253,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "MMT",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1917,
@@ -6932,10 +7516,9 @@
             -31
           ],
           "time": 0,
-          "clock": "wallclock",
+          "clock": "standard",
           "save": 60,
-          "letter": "S",
-          "saved": 0
+          "letter": "S"
         },
         {
           "from": 1991,
@@ -6945,11 +7528,10 @@
             0,
             -30
           ],
-          "time": 60,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "standard",
           "save": 0,
-          "letter": "",
-          "saved": 3600000
+          "letter": ""
         },
         {
           "from": 1980,
@@ -6977,7 +7559,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1979,
@@ -7005,7 +7587,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1932,
@@ -7141,8 +7723,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -7167,6 +7791,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -7361,11 +7999,10 @@
             0,
             -31
           ],
-          "time": 180,
-          "clock": "wallclock",
+          "time": 120,
+          "clock": "standard",
           "save": 0,
-          "letter": "",
-          "saved": 3600000
+          "letter": ""
         },
         {
           "from": 1981,
@@ -7747,7 +8384,7 @@
           "clock": "posix",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1977,
@@ -7775,7 +8412,7 @@
           "clock": "posix",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1977,
@@ -7789,7 +8426,7 @@
           "clock": "posix",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         }
       ],
       "GB-Eire": [
@@ -8777,8 +9414,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -8803,6 +9482,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -9827,8 +10520,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -9853,6 +10588,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -10868,8 +11617,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -10894,6 +11685,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -11064,8 +11869,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -11090,6 +11937,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -12039,6 +12900,14 @@
       "Europe/Istanbul": [
         "z",
         {
+          "wallclock": 1473206400000,
+          "format": "+03",
+          "abbrev": "+03",
+          "offset": 10800000,
+          "posix": 1473195600000,
+          "save": 0
+        },
+        {
           "wallclock": 1446955200000,
           "format": "EE%sT",
           "abbrev": "EET",
@@ -12109,8 +12978,8 @@
         },
         {
           "wallclock": 277257600000,
-          "format": "TR%sT",
-          "abbrev": "TRST",
+          "format": "+03/+04",
+          "abbrev": "+04",
           "offset": 10800000,
           "posix": 277246800000,
           "save": 3600000,
@@ -12174,8 +13043,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -12200,6 +13111,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -13084,8 +14009,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -13110,6 +14077,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -14068,8 +15049,8 @@
         },
         {
           "wallclock": 1301191200000,
-          "format": "FET",
-          "abbrev": "FET",
+          "format": "+03",
+          "abbrev": "+03",
           "offset": 10800000,
           "posix": 1301184000000,
           "save": 0
@@ -14203,8 +15184,8 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
-          "saved": 3600000
+          "letter": "+05",
+          "saved": 0
         },
         {
           "from": 1921,
@@ -14246,7 +15227,7 @@
           "clock": "wallclock",
           "save": 60,
           "letter": "MSD",
-          "saved": 7200000
+          "saved": 0
         },
         {
           "from": 1919,
@@ -14260,7 +15241,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "MSK",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1919,
@@ -14270,8 +15251,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -14288,7 +15269,7 @@
           "clock": "wallclock",
           "save": 120,
           "letter": "MDST",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1918,
@@ -14302,7 +15283,7 @@
           "clock": "wallclock",
           "save": 60,
           "letter": "MST",
-          "saved": 7200000
+          "saved": 0
         },
         {
           "from": 1918,
@@ -14330,7 +15311,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "MMT",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1917,
@@ -14979,8 +15960,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -15005,6 +16028,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -15203,7 +16240,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
+          "letter": "+05",
           "saved": 3600000
         },
         {
@@ -15270,8 +16307,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -15641,11 +16678,11 @@
           "rules": "Russia"
         },
         {
-          "wallclock": -1593813600000,
+          "wallclock": -1593808872000,
           "format": "+03",
           "abbrev": "+03",
           "offset": 10800000,
-          "posix": -1593825528000,
+          "posix": -1593820800000,
           "save": 0
         },
         {
@@ -15741,7 +16778,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
+          "letter": "+05",
           "saved": 3600000
         },
         {
@@ -15808,8 +16845,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -15993,8 +17030,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -16019,6 +17098,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -16933,8 +18026,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -16959,6 +18094,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -17318,7 +18467,7 @@
           "clock": "posix",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1977,
@@ -17346,7 +18495,7 @@
           "clock": "posix",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1977,
@@ -17360,7 +18509,7 @@
           "clock": "posix",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         }
       ],
       "GB-Eire": [
@@ -18376,8 +19525,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -18402,6 +19593,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -19543,8 +20748,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -19569,6 +20816,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -20127,8 +21388,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -20153,6 +21456,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -21097,8 +22414,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -21123,6 +22482,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -21218,17 +22591,9 @@
       "Europe/Minsk": [
         "z",
         {
-          "wallclock": 1414285200000,
-          "format": "MSK",
-          "abbrev": "MSK",
-          "offset": 10800000,
-          "posix": 1414274400000,
-          "save": 0
-        },
-        {
           "wallclock": 1301191200000,
-          "format": "FET",
-          "abbrev": "FET",
+          "format": "+03",
+          "abbrev": "+03",
           "offset": 10800000,
           "posix": 1301184000000,
           "save": 0
@@ -21385,8 +22750,8 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
-          "saved": 3600000
+          "letter": "+05",
+          "saved": 0
         },
         {
           "from": 1921,
@@ -21428,7 +22793,7 @@
           "clock": "wallclock",
           "save": 60,
           "letter": "MSD",
-          "saved": 7200000
+          "saved": 0
         },
         {
           "from": 1919,
@@ -21442,7 +22807,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "MSK",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1919,
@@ -21452,8 +22817,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -21470,7 +22835,7 @@
           "clock": "wallclock",
           "save": 120,
           "letter": "MDST",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1918,
@@ -21484,7 +22849,7 @@
           "clock": "wallclock",
           "save": 60,
           "letter": "MST",
-          "saved": 7200000
+          "saved": 0
         },
         {
           "from": 1918,
@@ -21512,7 +22877,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "MMT",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1917,
@@ -21538,11 +22903,10 @@
             0,
             -31
           ],
-          "time": 180,
-          "clock": "wallclock",
+          "time": 120,
+          "clock": "standard",
           "save": 0,
-          "letter": "",
-          "saved": 3600000
+          "letter": ""
         },
         {
           "from": 1981,
@@ -21553,10 +22917,9 @@
             -31
           ],
           "time": 120,
-          "clock": "wallclock",
+          "clock": "standard",
           "save": 60,
-          "letter": "S",
-          "saved": 0
+          "letter": "S"
         },
         {
           "from": 1979,
@@ -21566,11 +22929,10 @@
             0,
             -30
           ],
-          "time": 180,
-          "clock": "wallclock",
+          "time": 120,
+          "clock": "standard",
           "save": 0,
-          "letter": "",
-          "saved": 3600000
+          "letter": ""
         },
         {
           "from": 1977,
@@ -21703,10 +23065,9 @@
             1
           ],
           "time": 120,
-          "clock": "wallclock",
+          "clock": "standard",
           "save": 60,
-          "letter": "S",
-          "saved": 0
+          "letter": "S"
         },
         {
           "from": 1917,
@@ -21847,8 +23208,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -21873,6 +23276,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -22560,11 +23977,11 @@
           "rules": "Russia"
         },
         {
-          "wallclock": -1593813600000,
+          "wallclock": -1593804521000,
           "format": "%s",
           "abbrev": "MSD",
           "offset": 10800000,
-          "posix": -1593829879000,
+          "posix": -1593820800000,
           "save": 3600000,
           "rules": "Russia"
         },
@@ -22678,7 +24095,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
+          "letter": "+05",
           "saved": 3600000
         },
         {
@@ -22745,8 +24162,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -23112,8 +24529,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -23138,6 +24597,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -23603,8 +25076,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -23629,6 +25144,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -23742,7 +25271,7 @@
           "clock": "wallclock",
           "save": 120,
           "letter": "M",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1943,
@@ -23756,7 +25285,7 @@
           "clock": "wallclock",
           "save": 60,
           "letter": "S",
-          "saved": 7200000
+          "saved": 0
         },
         {
           "from": 1943,
@@ -23770,7 +25299,7 @@
           "clock": "wallclock",
           "save": 120,
           "letter": "M",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1942,
@@ -23784,7 +25313,7 @@
           "clock": "wallclock",
           "save": 60,
           "letter": "S",
-          "saved": 7200000
+          "saved": 0
         },
         {
           "from": 1942,
@@ -23798,7 +25327,7 @@
           "clock": "wallclock",
           "save": 120,
           "letter": "M",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1941,
@@ -23812,7 +25341,7 @@
           "clock": "wallclock",
           "save": 120,
           "letter": "M",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1941,
@@ -23826,7 +25355,7 @@
           "clock": "wallclock",
           "save": 60,
           "letter": "S",
-          "saved": 7200000
+          "saved": 0
         },
         {
           "from": 1940,
@@ -24582,8 +26111,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -24608,6 +26179,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -24956,8 +26541,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -24982,6 +26609,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -25121,11 +26762,10 @@
             0,
             -31
           ],
-          "time": 180,
-          "clock": "wallclock",
+          "time": 120,
+          "clock": "standard",
           "save": 0,
-          "letter": "",
-          "saved": 3600000
+          "letter": ""
         },
         {
           "from": 1981,
@@ -25512,8 +27152,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -25538,6 +27220,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -25680,8 +27376,8 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
-          "saved": 3600000
+          "letter": "+05",
+          "saved": 0
         },
         {
           "from": 1921,
@@ -25723,7 +27419,7 @@
           "clock": "wallclock",
           "save": 60,
           "letter": "MSD",
-          "saved": 7200000
+          "saved": 0
         },
         {
           "from": 1919,
@@ -25737,7 +27433,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "MSK",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1919,
@@ -25747,8 +27443,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -25765,7 +27461,7 @@
           "clock": "wallclock",
           "save": 120,
           "letter": "MDST",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1918,
@@ -25779,7 +27475,7 @@
           "clock": "wallclock",
           "save": 60,
           "letter": "MST",
-          "saved": 7200000
+          "saved": 0
         },
         {
           "from": 1918,
@@ -25807,7 +27503,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "MMT",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1917,
@@ -26151,8 +27847,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -26177,6 +27915,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -26957,16 +28709,16 @@
         "z",
         {
           "wallclock": 1301191200000,
-          "format": "SAMT",
-          "abbrev": "SAMT",
+          "format": "+04",
+          "abbrev": "+04",
           "offset": 14400000,
           "posix": 1301180400000,
           "save": 0
         },
         {
           "wallclock": 1269741600000,
-          "format": "SAM%sT",
-          "abbrev": "SAMST",
+          "format": "+03/+04",
+          "abbrev": "+04",
           "offset": 10800000,
           "posix": 1269727200000,
           "save": 3600000,
@@ -26974,8 +28726,8 @@
         },
         {
           "wallclock": 687927600000,
-          "format": "SAM%sT",
-          "abbrev": "SAMT",
+          "format": "+04/+05",
+          "abbrev": "+04",
           "offset": 14400000,
           "posix": 687916800000,
           "save": 0,
@@ -26983,16 +28735,16 @@
         },
         {
           "wallclock": 686113200000,
-          "format": "SAMT",
-          "abbrev": "SAMT",
+          "format": "+03",
+          "abbrev": "+03",
           "offset": 10800000,
           "posix": 686102400000,
           "save": 0
         },
         {
           "wallclock": 670384800000,
-          "format": "EE%sT",
-          "abbrev": "EEST",
+          "format": "+02/+03",
+          "abbrev": "+03",
           "offset": 7200000,
           "posix": 670374000000,
           "save": 3600000,
@@ -27000,8 +28752,8 @@
         },
         {
           "wallclock": 606880800000,
-          "format": "MSK/MSD",
-          "abbrev": "MSD",
+          "format": "+03/+04",
+          "abbrev": "+04",
           "offset": 10800000,
           "posix": 606866400000,
           "save": 3600000,
@@ -27009,8 +28761,8 @@
         },
         {
           "wallclock": -1102291200000,
-          "format": "KUY%sT",
-          "abbrev": "KUYT",
+          "format": "+04/+05",
+          "abbrev": "+04",
           "offset": 14400000,
           "posix": -1102305600000,
           "save": 0,
@@ -27018,18 +28770,18 @@
         },
         {
           "wallclock": -1247529600000,
-          "format": "SAMT",
-          "abbrev": "SAMT",
+          "format": "+04",
+          "abbrev": "+04",
           "offset": 14400000,
           "posix": -1247540400000,
           "save": 0
         },
         {
-          "wallclock": -1593813600000,
-          "format": "SAMT",
-          "abbrev": "SAMT",
+          "wallclock": -1593808780000,
+          "format": "+03",
+          "abbrev": "+03",
           "offset": 10800000,
-          "posix": -1593825620000,
+          "posix": -1593820800000,
           "save": 0
         },
         {
@@ -27125,7 +28877,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
+          "letter": "+05",
           "saved": 3600000
         },
         {
@@ -27192,8 +28944,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -27360,8 +29112,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -27386,6 +29180,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -28255,8 +30063,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -28281,6 +30131,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -28720,8 +30584,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -28746,6 +30652,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -28858,7 +30778,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
+          "letter": "+05",
           "saved": 3600000
         },
         {
@@ -28925,8 +30845,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -29421,8 +31341,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -29447,6 +31409,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -29837,8 +31813,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -29863,6 +31881,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -29988,11 +32020,10 @@
             0,
             -31
           ],
-          "time": 180,
-          "clock": "wallclock",
+          "time": 120,
+          "clock": "standard",
           "save": 0,
-          "letter": "",
-          "saved": 3600000
+          "letter": ""
         },
         {
           "from": 1981,
@@ -30153,10 +32184,9 @@
             1
           ],
           "time": 120,
-          "clock": "wallclock",
+          "clock": "standard",
           "save": 60,
-          "letter": "S",
-          "saved": 0
+          "letter": "S"
         },
         {
           "from": 1917,
@@ -30375,8 +32405,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -30401,6 +32473,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -30580,8 +32666,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -30606,6 +32734,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -30954,8 +33096,8 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
-          "saved": 3600000
+          "letter": "+05",
+          "saved": 0
         },
         {
           "from": 1921,
@@ -30997,7 +33139,7 @@
           "clock": "wallclock",
           "save": 60,
           "letter": "MSD",
-          "saved": 7200000
+          "saved": 0
         },
         {
           "from": 1919,
@@ -31011,7 +33153,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "MSK",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1919,
@@ -31021,8 +33163,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -31039,7 +33181,7 @@
           "clock": "wallclock",
           "save": 120,
           "letter": "MDST",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1918,
@@ -31053,7 +33195,7 @@
           "clock": "wallclock",
           "save": 60,
           "letter": "MST",
-          "saved": 7200000
+          "saved": 0
         },
         {
           "from": 1918,
@@ -31081,7 +33223,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "MMT",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1917,
@@ -31171,7 +33313,7 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
           "month": 8,
           "day": [
@@ -31183,6 +33325,34 @@
           "save": 0,
           "letter": "",
           "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1979,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 0
         },
         {
           "from": 1977,
@@ -31210,7 +33380,7 @@
           "clock": "posix",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1977,
@@ -31224,7 +33394,7 @@
           "clock": "posix",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         }
       ],
       "Albania": [
@@ -31872,7 +34042,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
+          "letter": "+05",
           "saved": 3600000
         },
         {
@@ -31939,8 +34109,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -32447,11 +34617,11 @@
           "rules": "Russia"
         },
         {
-          "wallclock": -1593813600000,
+          "wallclock": -1593809184000,
           "format": "+03",
           "abbrev": "+03",
           "offset": 10800000,
-          "posix": -1593825216000,
+          "posix": -1593820800000,
           "save": 0
         },
         {
@@ -32547,7 +34717,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
+          "letter": "+05",
           "saved": 3600000
         },
         {
@@ -32614,8 +34784,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -32822,8 +34992,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -32848,6 +35060,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -33046,7 +35272,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
+          "letter": "+05",
           "saved": 3600000
         },
         {
@@ -33113,8 +35339,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -33499,8 +35725,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -33525,6 +35793,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -33676,8 +35958,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -33702,6 +36026,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -34582,8 +36920,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -34610,6 +36990,20 @@
           "saved": 0
         },
         {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 0
+        },
+        {
           "from": 1978,
           "to": 1978,
           "month": 9,
@@ -34621,7 +37015,7 @@
           "clock": "posix",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1977,
@@ -34635,7 +37029,7 @@
           "clock": "posix",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         }
       ],
       "Austria": [
@@ -34761,11 +37155,10 @@
             0,
             -31
           ],
-          "time": 180,
-          "clock": "wallclock",
+          "time": 120,
+          "clock": "standard",
           "save": 0,
-          "letter": "",
-          "saved": 3600000
+          "letter": ""
         },
         {
           "from": 1981,
@@ -34776,10 +37169,9 @@
             -31
           ],
           "time": 120,
-          "clock": "wallclock",
+          "clock": "standard",
           "save": 60,
-          "letter": "S",
-          "saved": 0
+          "letter": "S"
         },
         {
           "from": 1979,
@@ -34789,11 +37181,10 @@
             0,
             -30
           ],
-          "time": 180,
-          "clock": "wallclock",
+          "time": 120,
+          "clock": "standard",
           "save": 0,
-          "letter": "",
-          "saved": 3600000
+          "letter": ""
         },
         {
           "from": 1977,
@@ -34926,10 +37317,9 @@
             1
           ],
           "time": 120,
-          "clock": "wallclock",
+          "clock": "standard",
           "save": 60,
-          "letter": "S",
-          "saved": 0
+          "letter": "S"
         },
         {
           "from": 1917,
@@ -35153,8 +37543,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -35179,6 +37611,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -35527,8 +37973,8 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
-          "saved": 3600000
+          "letter": "+05",
+          "saved": 0
         },
         {
           "from": 1921,
@@ -35570,7 +38016,7 @@
           "clock": "wallclock",
           "save": 60,
           "letter": "MSD",
-          "saved": 7200000
+          "saved": 0
         },
         {
           "from": 1919,
@@ -35584,7 +38030,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "MSK",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1919,
@@ -35594,8 +38040,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -35612,7 +38058,7 @@
           "clock": "wallclock",
           "save": 120,
           "letter": "MDST",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1918,
@@ -35626,7 +38072,7 @@
           "clock": "wallclock",
           "save": 60,
           "letter": "MST",
-          "saved": 7200000
+          "saved": 0
         },
         {
           "from": 1918,
@@ -35654,7 +38100,7 @@
           "clock": "wallclock",
           "save": 0,
           "letter": "MMT",
-          "saved": 3600000
+          "saved": 0
         },
         {
           "from": 1917,
@@ -35679,24 +38125,24 @@
         "z",
         {
           "wallclock": 1414288800000,
-          "format": "MSK",
-          "abbrev": "MSK",
+          "format": "+03",
+          "abbrev": "+03",
           "offset": 10800000,
           "posix": 1414274400000,
           "save": 0
         },
         {
           "wallclock": 1301191200000,
-          "format": "MSK",
-          "abbrev": "MSK",
+          "format": "+04",
+          "abbrev": "+04",
           "offset": 14400000,
           "posix": 1301180400000,
           "save": 0
         },
         {
           "wallclock": 701834400000,
-          "format": "MSK/MSD",
-          "abbrev": "MSD",
+          "format": "+03/+04",
+          "abbrev": "+04",
           "offset": 10800000,
           "posix": 701820000000,
           "save": 3600000,
@@ -35704,16 +38150,16 @@
         },
         {
           "wallclock": 670384800000,
-          "format": "VOLT",
-          "abbrev": "VOLT",
+          "format": "+04",
+          "abbrev": "+04",
           "offset": 14400000,
           "posix": 670374000000,
           "save": 0
         },
         {
           "wallclock": 575431200000,
-          "format": "VOL%sT",
-          "abbrev": "VOLST",
+          "format": "+03/+04",
+          "abbrev": "+04",
           "offset": 10800000,
           "posix": 575416800000,
           "save": 3600000,
@@ -35721,8 +38167,8 @@
         },
         {
           "wallclock": -256867200000,
-          "format": "VOL%sT",
-          "abbrev": "VOLT",
+          "format": "+04/+05",
+          "abbrev": "+04",
           "offset": 14400000,
           "posix": -256881600000,
           "save": 0,
@@ -35730,24 +38176,16 @@
         },
         {
           "wallclock": -1247529600000,
-          "format": "STAT",
-          "abbrev": "STAT",
+          "format": "+04",
+          "abbrev": "+04",
           "offset": 14400000,
           "posix": -1247540400000,
           "save": 0
         },
         {
-          "wallclock": -1411862400000,
-          "format": "STAT",
-          "abbrev": "STAT",
-          "offset": 10800000,
-          "posix": -1411873200000,
-          "save": 0
-        },
-        {
           "wallclock": -1577750400000,
-          "format": "TSAT",
-          "abbrev": "TSAT",
+          "format": "+03",
+          "abbrev": "+03",
           "offset": 10800000,
           "posix": -1577761060000,
           "save": 0
@@ -35845,7 +38283,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
+          "letter": "+05",
           "saved": 3600000
         },
         {
@@ -35912,8 +38350,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -36107,8 +38545,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -36133,6 +38613,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -36862,8 +39356,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -36888,6 +39424,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -37261,8 +39811,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -37287,6 +39879,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,
@@ -37485,7 +40091,7 @@
           "time": 1380,
           "clock": "wallclock",
           "save": 120,
-          "letter": "MSM",
+          "letter": "+05",
           "saved": 3600000
         },
         {
@@ -37552,8 +40158,8 @@
             7,
             1
           ],
-          "time": 120,
-          "clock": "wallclock",
+          "time": 0,
+          "clock": "posix",
           "save": 60,
           "letter": "MSD",
           "saved": 0
@@ -37938,8 +40544,50 @@
           "saved": 3600000
         },
         {
-          "from": 1979,
+          "from": 1985,
           "to": 1995,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1984,
+          "to": 1984,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1982,
+          "to": 1983,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1981,
+          "to": 1981,
           "month": 8,
           "day": [
             0,
@@ -37964,6 +40612,20 @@
           "save": 60,
           "letter": "S",
           "saved": 0
+        },
+        {
+          "from": 1979,
+          "to": 1980,
+          "month": 8,
+          "day": [
+            0,
+            -30
+          ],
+          "time": 60,
+          "clock": "posix",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
         },
         {
           "from": 1978,

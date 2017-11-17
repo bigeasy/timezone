@@ -3057,7 +3057,7 @@
             0,
             -30
           ],
-          "time": 120,
+          "time": 60,
           "clock": "wallclock",
           "save": 60,
           "letter": "D",
@@ -3113,7 +3113,7 @@
             7,
             14
           ],
-          "time": 120,
+          "time": 121,
           "clock": "wallclock",
           "save": 60,
           "letter": "D",

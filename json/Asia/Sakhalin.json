@@ -4,32 +4,32 @@
       "z",
       {
         "wallclock": 1459044000000,
-        "format": "SAKT",
-        "abbrev": "SAKT",
+        "format": "+11",
+        "abbrev": "+11",
         "offset": 39600000,
         "posix": 1459008000000,
         "save": 0
       },
       {
         "wallclock": 1414288800000,
-        "format": "SAKT",
-        "abbrev": "SAKT",
+        "format": "+10",
+        "abbrev": "+10",
         "offset": 36000000,
         "posix": 1414249200000,
         "save": 0
       },
       {
         "wallclock": 1301191200000,
-        "format": "SAKT",
-        "abbrev": "SAKT",
+        "format": "+11",
+        "abbrev": "+11",
         "offset": 39600000,
         "posix": 1301155200000,
         "save": 0
       },
       {
         "wallclock": 859687200000,
-        "format": "SAK%sT",
-        "abbrev": "SAKST",
+        "format": "+10/+11",
+        "abbrev": "+11",
         "offset": 36000000,
         "posix": 859647600000,
         "save": 3600000,
@@ -37,8 +37,8 @@
       },
       {
         "wallclock": 695786400000,
-        "format": "SAK%sT",
-        "abbrev": "SAKT",
+        "format": "+11/+12",
+        "abbrev": "+11",
         "offset": 39600000,
         "posix": 695750400000,
         "save": 0,
@@ -46,8 +46,8 @@
       },
       {
         "wallclock": 670384800000,
-        "format": "SAK%sT",
-        "abbrev": "SAKST",
+        "format": "+10/+11",
+        "abbrev": "+11",
         "offset": 36000000,
         "posix": 670345200000,
         "save": 3600000,
@@ -55,25 +55,17 @@
       },
       {
         "wallclock": -768528000000,
-        "format": "SAK%sT",
-        "abbrev": "SAKT",
+        "format": "+11/+12",
+        "abbrev": "+11",
         "offset": 39600000,
         "posix": -768560400000,
         "save": 0,
         "rules": "Russia"
       },
       {
-        "wallclock": -1017792000000,
-        "format": "JST",
-        "abbrev": "JST",
-        "offset": 32400000,
-        "posix": -1017824400000,
-        "save": 0
-      },
-      {
         "wallclock": -2031004800000,
-        "format": "JCST",
-        "abbrev": "JCST",
+        "format": "+09",
+        "abbrev": "+09",
         "offset": 32400000,
         "posix": -2031039048000,
         "save": 0
@@ -171,7 +163,7 @@
         "time": 1380,
         "clock": "wallclock",
         "save": 120,
-        "letter": "MSM",
+        "letter": "+05",
         "saved": 3600000
       },
       {
@@ -238,8 +230,8 @@
           7,
           1
         ],
-        "time": 120,
-        "clock": "wallclock",
+        "time": 0,
+        "clock": "posix",
         "save": 60,
         "letter": "MSD",
         "saved": 0

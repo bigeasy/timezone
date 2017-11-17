@@ -161,8 +161,50 @@
         "saved": 3600000
       },
       {
-        "from": 1979,
+        "from": 1985,
         "to": 1995,
+        "month": 8,
+        "day": [
+          0,
+          -30
+        ],
+        "time": 60,
+        "clock": "posix",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      },
+      {
+        "from": 1984,
+        "to": 1984,
+        "month": 8,
+        "day": [
+          0,
+          -30
+        ],
+        "time": 60,
+        "clock": "posix",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      },
+      {
+        "from": 1982,
+        "to": 1983,
+        "month": 8,
+        "day": [
+          0,
+          -30
+        ],
+        "time": 60,
+        "clock": "posix",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      },
+      {
+        "from": 1981,
+        "to": 1981,
         "month": 8,
         "day": [
           0,
@@ -187,6 +229,20 @@
         "save": 60,
         "letter": "S",
         "saved": 0
+      },
+      {
+        "from": 1979,
+        "to": 1980,
+        "month": 8,
+        "day": [
+          0,
+          -30
+        ],
+        "time": 60,
+        "clock": "posix",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
       },
       {
         "from": 1978,
@@ -535,8 +591,8 @@
         "time": 1380,
         "clock": "wallclock",
         "save": 120,
-        "letter": "MSM",
-        "saved": 3600000
+        "letter": "+05",
+        "saved": 0
       },
       {
         "from": 1921,
@@ -578,7 +634,7 @@
         "clock": "wallclock",
         "save": 60,
         "letter": "MSD",
-        "saved": 7200000
+        "saved": 0
       },
       {
         "from": 1919,
@@ -592,7 +648,7 @@
         "clock": "wallclock",
         "save": 0,
         "letter": "MSK",
-        "saved": 3600000
+        "saved": 0
       },
       {
         "from": 1919,
@@ -602,8 +658,8 @@
           7,
           1
         ],
-        "time": 120,
-        "clock": "wallclock",
+        "time": 0,
+        "clock": "posix",
         "save": 60,
         "letter": "MSD",
         "saved": 0
@@ -620,7 +676,7 @@
         "clock": "wallclock",
         "save": 120,
         "letter": "MDST",
-        "saved": 3600000
+        "saved": 0
       },
       {
         "from": 1918,
@@ -634,7 +690,7 @@
         "clock": "wallclock",
         "save": 60,
         "letter": "MST",
-        "saved": 7200000
+        "saved": 0
       },
       {
         "from": 1918,
@@ -662,7 +718,7 @@
         "clock": "wallclock",
         "save": 0,
         "letter": "MMT",
-        "saved": 3600000
+        "saved": 0
       },
       {
         "from": 1917,
