@@ -6,17 +6,9 @@ declare -A k
 printf "    %-24s %11s %11s %11s %11s\n" File Raw Min Zip Min/Zip
 for file in $@; do
   b[raw]=$(cat $file | wc -c)
-  b[min]=$(cat $file | uglifyjs | wc -c)
-  alt=$(cat $file | uglifyjs --lift-vars | wc -c)
-  if [ $alt -lt ${b[min]} ]; then
-    b[min]=$alt
-  fi
+  b[min]=$(cat $file | uglifyjs -c -m | wc -c)
   b[zip]=$(cat $file | gzip -c  | wc -c)
-  b[minzip]=$(cat $file | uglifyjs | gzip -c | wc -c)
-  alt=$(cat $file | uglifyjs --lift-vars | gzip -c | wc -c)
-  if [ $alt -lt ${b[minzip]} ]; then
-    b[minzip]=$alt
-  fi
+  b[minzip]=$(cat $file | uglifyjs -c -m | gzip -c | wc -c)
   for field in raw min zip minzip; do
     k[$field]=$(echo "${b[$field]} 1024" | awk '{printf "%.2f \n", $1/$2}')
   done
