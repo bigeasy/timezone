@@ -26,14 +26,9 @@ echo ""
 
 # On Travis CI we rerun all the tests against the minified source just in case.
 if [ "$TRAVIS" = "true" ] || [ "$MINIFY" = "true" ]; then
-  default=$(cat src/timezone.js | uglifyjs | gzip -c | wc -c)
-  lift=$(cat src/timezone.js | uglifyjs --lift-vars | gzip -c | wc -c)
+  echo $PATH
 
-  if [ $default -lt $lift ]; then
-    cat src/timezone.js | uglifyjs > build/timezone/index.js
-  else
-    cat src/timezone.js | uglifyjs --lift-vars > build/timezone/index.js
-  fi
+  cat src/timezone.js | uglifyjs -m -c > build/timezone/index.js
 
   ls -la build/timezone/index.js
 
