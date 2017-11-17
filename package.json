@@ -22,7 +22,8 @@
     "dependencies" :    {
                         },
     "devDependencies":  {
-                            "proof": "1.2.x"
+                            "proof": "1.2.x",
+                            "uglify-js": "3.1.x"
                         },
     "scripts" :         {
                             "test": "NODE_PATH=build util/test"

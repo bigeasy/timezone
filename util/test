@@ -26,8 +26,6 @@ echo ""
 
 # On Travis CI we rerun all the tests against the minified source just in case.
 if [ "$TRAVIS" = "true" ] || [ "$MINIFY" = "true" ]; then
-  echo $PATH
-
   cat src/timezone.js | uglifyjs -m -c > build/timezone/index.js
 
   ls -la build/timezone/index.js
