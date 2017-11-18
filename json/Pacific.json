@@ -2598,8 +2598,8 @@
         "z",
         {
           "wallclock": 915148800000,
-          "format": "TO%sT",
-          "abbrev": "TOT",
+          "format": "+13/+14",
+          "abbrev": "+13",
           "offset": 46800000,
           "posix": 915102000000,
           "save": 0,
@@ -2607,16 +2607,16 @@
         },
         {
           "wallclock": -915148800000,
-          "format": "TOT",
-          "abbrev": "TOT",
+          "format": "+13",
+          "abbrev": "+13",
           "offset": 46800000,
           "posix": -915193200000,
           "save": 0
         },
         {
           "wallclock": -2177452800000,
-          "format": "TOT",
-          "abbrev": "TOT",
+          "format": "+1220",
+          "abbrev": "+1220",
           "offset": 44400000,
           "posix": -2177497160000,
           "save": 0
@@ -2633,6 +2633,34 @@
     },
     "rules": {
       "Tonga": [
+        {
+          "from": 2016,
+          "to": 1.7976931348623157e+308,
+          "month": 10,
+          "day": [
+            0,
+            1
+          ],
+          "time": 120,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
+        },
+        {
+          "from": 2017,
+          "to": 1.7976931348623157e+308,
+          "month": 0,
+          "day": [
+            0,
+            15
+          ],
+          "time": 180,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
         {
           "from": 2001,
           "to": 2002,
