@@ -1,4 +1,4 @@
-require('proof')(21, prove)
+require('proof')(22, prove)
 
 function prove (assert) {
     var tz = require('timezone'), util = require('../util')
@@ -18,8 +18,12 @@ function prove (assert) {
     // we use the formatting information for the last rule change to set the
     // abbrevation variable.
     assert(detroit(util.moonwalk, '%Z'), 'EST', 'format no rule in effect')
+    // TODO This actually changed and there is an annotation in the files
+    // with an entry that references a Free Press article.
     // Detroit did observe DST for a the year 1967.
-    assert(detroit(util.moonwalk, '-2 years', '%Z'), 'EDT', 'format with letter')
+    assert(detroit(util.moonwalk, '-2 years', '%Z'), 'EST', 'format with letter')
+    // So, let's try 1971.
+    assert(detroit(util.moonwalk, '+2 years', '%Z'), 'EST', 'format with letter')
 
     // RFC 3999 friendly offsets
     assert(detroit(util.utc(2011, 0, 1, 0, 59), 'America/Detroit', '%^z'), '-05:00', 'RFC 3999 hours and minutes')
