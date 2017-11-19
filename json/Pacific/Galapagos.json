@@ -4,16 +4,17 @@
       "z",
       {
         "wallclock": 504921600000,
-        "format": "GALT",
-        "abbrev": "GALT",
+        "format": "-06/-05",
+        "abbrev": "-06",
         "offset": -21600000,
         "posix": 504939600000,
-        "save": 0
+        "save": 0,
+        "rules": "Ecuador"
       },
       {
         "wallclock": -1230768000000,
-        "format": "ECT",
-        "abbrev": "ECT",
+        "format": "-05",
+        "abbrev": "-05",
         "offset": -18000000,
         "posix": -1230746496000,
         "save": 0
@@ -28,5 +29,36 @@
       }
     ]
   },
-  "rules": {}
+  "rules": {
+    "Ecuador": [
+      {
+        "from": 1993,
+        "to": 1993,
+        "month": 1,
+        "day": [
+          7,
+          5
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      },
+      {
+        "from": 1992,
+        "to": 1992,
+        "month": 10,
+        "day": [
+          7,
+          28
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      }
+    ]
+  }
 }

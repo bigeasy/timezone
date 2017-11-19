@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -1577923200000,
-        "format": "GST",
-        "abbrev": "GST",
+        "format": "+04",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": -1577936472000,
         "save": 0

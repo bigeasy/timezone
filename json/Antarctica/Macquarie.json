@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": 1270350000000,
-        "format": "MIST",
-        "abbrev": "MIST",
+        "format": "+11",
+        "abbrev": "+11",
         "offset": 39600000,
         "posix": 1270310400000,
         "save": 0

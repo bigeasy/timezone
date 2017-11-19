@@ -13,16 +13,16 @@
         },
         {
           "wallclock": -946771200000,
-          "format": "BEAUT",
-          "abbrev": "BEAUT",
+          "format": "+0245",
+          "abbrev": "+0245",
           "offset": 9900000,
           "posix": -946780200000,
           "save": 0
         },
         {
           "wallclock": -1262304000000,
-          "format": "BEAT",
-          "abbrev": "BEAT",
+          "format": "+0230",
+          "abbrev": "+0230",
           "offset": 9000000,
           "posix": -1262314800000,
           "save": 0
@@ -53,16 +53,16 @@
         "z",
         {
           "wallclock": 820454400000,
-          "format": "IOT",
-          "abbrev": "IOT",
+          "format": "+06",
+          "abbrev": "+06",
           "offset": 21600000,
           "posix": 820436400000,
           "save": 0
         },
         {
           "wallclock": -1988150400000,
-          "format": "IOT",
-          "abbrev": "IOT",
+          "format": "+05",
+          "abbrev": "+05",
           "offset": 18000000,
           "posix": -1988167780000,
           "save": 0
@@ -85,8 +85,8 @@
         "z",
         {
           "wallclock": -2364076800000,
-          "format": "CXT",
-          "abbrev": "CXT",
+          "format": "+07",
+          "abbrev": "+07",
           "offset": 25200000,
           "posix": -2364102172000,
           "save": 0
@@ -109,8 +109,8 @@
         "z",
         {
           "wallclock": -2208988800000,
-          "format": "CCT",
-          "abbrev": "CCT",
+          "format": "+0630",
+          "abbrev": "+0630",
           "offset": 23400000,
           "posix": -2209012060000,
           "save": 0
@@ -141,16 +141,16 @@
         },
         {
           "wallclock": -946771200000,
-          "format": "BEAUT",
-          "abbrev": "BEAUT",
+          "format": "+0245",
+          "abbrev": "+0245",
           "offset": 9900000,
           "posix": -946780200000,
           "save": 0
         },
         {
           "wallclock": -1262304000000,
-          "format": "BEAT",
-          "abbrev": "BEAT",
+          "format": "+0230",
+          "abbrev": "+0230",
           "offset": 9000000,
           "posix": -1262314800000,
           "save": 0
@@ -205,8 +205,8 @@
         "z",
         {
           "wallclock": -2006640000000,
-          "format": "SCT",
-          "abbrev": "SCT",
+          "format": "+04",
+          "abbrev": "+04",
           "offset": 14400000,
           "posix": -2006653308000,
           "save": 0
@@ -229,8 +229,8 @@
         "z",
         {
           "wallclock": -315619200000,
-          "format": "MVT",
-          "abbrev": "MVT",
+          "format": "+05",
+          "abbrev": "+05",
           "offset": 18000000,
           "posix": -315636840000,
           "save": 0
@@ -261,8 +261,8 @@
         "z",
         {
           "wallclock": -1988150400000,
-          "format": "MU%sT",
-          "abbrev": "MUT",
+          "format": "+04/+05",
+          "abbrev": "+04",
           "offset": 14400000,
           "posix": -1988164200000,
           "save": 0,
@@ -353,16 +353,16 @@
         },
         {
           "wallclock": -946771200000,
-          "format": "BEAUT",
-          "abbrev": "BEAUT",
+          "format": "+0245",
+          "abbrev": "+0245",
           "offset": 9900000,
           "posix": -946780200000,
           "save": 0
         },
         {
           "wallclock": -1262304000000,
-          "format": "BEAT",
-          "abbrev": "BEAT",
+          "format": "+0230",
+          "abbrev": "+0230",
           "offset": 9000000,
           "posix": -1262314800000,
           "save": 0
@@ -393,8 +393,8 @@
         "z",
         {
           "wallclock": -1848873600000,
-          "format": "RET",
-          "abbrev": "RET",
+          "format": "+04",
+          "abbrev": "+04",
           "offset": 14400000,
           "posix": -1848886912000,
           "save": 0

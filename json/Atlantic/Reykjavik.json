@@ -12,8 +12,8 @@
       },
       {
         "wallclock": -1956614400000,
-        "format": "IS%sT",
-        "abbrev": "IST",
+        "format": "-01/+00",
+        "abbrev": "-01",
         "offset": -3600000,
         "posix": -1956609120000,
         "save": 0,

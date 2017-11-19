@@ -4,32 +4,24 @@
       "z",
       {
         "wallclock": 662688000000,
-        "format": "GYT",
-        "abbrev": "GYT",
+        "format": "-04",
+        "abbrev": "-04",
         "offset": -14400000,
         "posix": 662698800000,
         "save": 0
       },
       {
         "wallclock": 175996800000,
-        "format": "GYT",
-        "abbrev": "GYT",
+        "format": "-03",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": 176010300000,
         "save": 0
       },
       {
-        "wallclock": -113702400000,
-        "format": "GYT",
-        "abbrev": "GYT",
-        "offset": -13500000,
-        "posix": -113688900000,
-        "save": 0
-      },
-      {
         "wallclock": -1730592000000,
-        "format": "GBGT",
-        "abbrev": "GBGT",
+        "format": "-0345",
+        "abbrev": "-0345",
         "offset": -13500000,
         "posix": -1730578040000,
         "save": 0

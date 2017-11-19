@@ -12,8 +12,8 @@
       },
       {
         "wallclock": -862617600000,
-        "format": "IST",
-        "abbrev": "IST",
+        "format": "+0630",
+        "abbrev": "+0630",
         "offset": 19800000,
         "posix": -862637400000,
         "save": 3600000
@@ -28,8 +28,8 @@
       },
       {
         "wallclock": -891561600000,
-        "format": "BURT",
-        "abbrev": "BURT",
+        "format": "+0630",
+        "abbrev": "+0630",
         "offset": 23400000,
         "posix": -891582800000,
         "save": 0

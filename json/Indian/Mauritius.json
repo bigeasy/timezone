@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -1988150400000,
-        "format": "MU%sT",
-        "abbrev": "MUT",
+        "format": "+04/+05",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": -1988164200000,
         "save": 0,

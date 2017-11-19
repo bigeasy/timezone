@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": 279676800000,
-        "format": "CK%sT",
-        "abbrev": "CKHST",
+        "format": "-10/-0930",
+        "abbrev": "-0930",
         "offset": -36000000,
         "posix": 279714600000,
         "save": 1800000,
@@ -13,8 +13,8 @@
       },
       {
         "wallclock": -2177452800000,
-        "format": "CKT",
-        "abbrev": "CKT",
+        "format": "-1030",
+        "abbrev": "-1030",
         "offset": -37800000,
         "posix": -2177414456000,
         "save": 0

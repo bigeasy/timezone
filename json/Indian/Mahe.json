@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -2006640000000,
-        "format": "SCT",
-        "abbrev": "SCT",
+        "format": "+04",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": -2006653308000,
         "save": 0

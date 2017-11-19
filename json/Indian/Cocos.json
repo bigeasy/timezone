@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -2208988800000,
-        "format": "CCT",
-        "abbrev": "CCT",
+        "format": "+0630",
+        "abbrev": "+0630",
         "offset": 23400000,
         "posix": -2209012060000,
         "save": 0

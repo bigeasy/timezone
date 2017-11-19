@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -1938556800000,
-        "format": "PE%sT",
-        "abbrev": "PET",
+        "format": "-05/-04",
+        "abbrev": "-05",
         "offset": -18000000,
         "posix": -1938538284000,
         "save": 0,

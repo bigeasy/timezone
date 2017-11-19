@@ -4,16 +4,16 @@
       "z",
       {
         "wallclock": 1033430400000,
-        "format": "FNT",
-        "abbrev": "FNT",
+        "format": "-02",
+        "abbrev": "-02",
         "offset": -7200000,
         "posix": 1033437600000,
         "save": 0
       },
       {
         "wallclock": 1000339200000,
-        "format": "FN%sT",
-        "abbrev": "FNT",
+        "format": "-02/-01",
+        "abbrev": "-02",
         "offset": -7200000,
         "posix": 1000346400000,
         "save": 0,
@@ -21,16 +21,16 @@
       },
       {
         "wallclock": 971568000000,
-        "format": "FNT",
-        "abbrev": "FNT",
+        "format": "-02",
+        "abbrev": "-02",
         "offset": -7200000,
         "posix": 971571600000,
         "save": 0
       },
       {
         "wallclock": 938649600000,
-        "format": "FN%sT",
-        "abbrev": "FNT",
+        "format": "-02/-01",
+        "abbrev": "-02",
         "offset": -7200000,
         "posix": 938656800000,
         "save": 0,
@@ -38,16 +38,16 @@
       },
       {
         "wallclock": 653529600000,
-        "format": "FNT",
-        "abbrev": "FNT",
+        "format": "-02",
+        "abbrev": "-02",
         "offset": -7200000,
         "posix": 653536800000,
         "save": 0
       },
       {
         "wallclock": -1767225600000,
-        "format": "FN%sT",
-        "abbrev": "FNT",
+        "format": "-02/-01",
+        "abbrev": "-02",
         "offset": -7200000,
         "posix": -1767217820000,
         "save": 0,

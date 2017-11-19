@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -1192320000000,
-        "format": "BOT",
-        "abbrev": "BOT",
+        "format": "-04",
+        "abbrev": "-04",
         "offset": -14400000,
         "posix": -1192307244000,
         "save": 0

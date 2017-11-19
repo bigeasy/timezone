@@ -12,16 +12,16 @@
       },
       {
         "wallclock": -799459200000,
-        "format": "ACST",
-        "abbrev": "ACST",
+        "format": "+0930",
+        "abbrev": "+0930",
         "offset": 34200000,
         "posix": -799491600000,
         "save": 0
       },
       {
         "wallclock": -1172880000000,
-        "format": "WIT",
-        "abbrev": "WIT",
+        "format": "+09",
+        "abbrev": "+09",
         "offset": 32400000,
         "posix": -1172913768000,
         "save": 0

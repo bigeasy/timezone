@@ -4,7 +4,7 @@
       "z",
       {
         "wallclock": -1822521600000,
-        "format": "C%sT",
+        "format": "%s",
         "abbrev": "CST",
         "offset": -21600000,
         "posix": -1822500432000,
@@ -34,7 +34,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 0,
-        "letter": "S",
+        "letter": "CST",
         "saved": 3600000
       },
       {
@@ -48,7 +48,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 60,
-        "letter": "D",
+        "letter": "CDT",
         "saved": 0
       },
       {
@@ -62,7 +62,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 0,
-        "letter": "S",
+        "letter": "CST",
         "saved": 3600000
       },
       {
@@ -76,7 +76,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 60,
-        "letter": "D",
+        "letter": "CDT",
         "saved": 0
       },
       {
@@ -90,7 +90,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 0,
-        "letter": "S",
+        "letter": "CST",
         "saved": 1800000
       },
       {
@@ -104,7 +104,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 30,
-        "letter": "HD",
+        "letter": "-0530",
         "saved": 0
       }
     ]

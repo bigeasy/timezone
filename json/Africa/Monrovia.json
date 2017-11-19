@@ -12,8 +12,8 @@
       },
       {
         "wallclock": -1604361600000,
-        "format": "LRT",
-        "abbrev": "LRT",
+        "format": "-004430",
+        "abbrev": "-004430",
         "offset": -2670000,
         "posix": -1604359012000,
         "save": 0

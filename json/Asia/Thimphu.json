@@ -4,16 +4,16 @@
       "z",
       {
         "wallclock": 560044800000,
-        "format": "BTT",
-        "abbrev": "BTT",
+        "format": "+06",
+        "abbrev": "+06",
         "offset": 21600000,
         "posix": 560025000000,
         "save": 0
       },
       {
         "wallclock": -706320000000,
-        "format": "IST",
-        "abbrev": "IST",
+        "format": "+0530",
+        "abbrev": "+0530",
         "offset": 19800000,
         "posix": -706341516000,
         "save": 0

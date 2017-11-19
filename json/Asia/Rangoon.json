@@ -4,24 +4,24 @@
       "z",
       {
         "wallclock": -778377600000,
-        "format": "MMT",
-        "abbrev": "MMT",
+        "format": "+0630",
+        "abbrev": "+0630",
         "offset": 23400000,
         "posix": -778410000000,
         "save": 0
       },
       {
         "wallclock": -873244800000,
-        "format": "JST",
-        "abbrev": "JST",
+        "format": "+09",
+        "abbrev": "+09",
         "offset": 32400000,
         "posix": -873268200000,
         "save": 0
       },
       {
         "wallclock": -1577923200000,
-        "format": "BURT",
-        "abbrev": "BURT",
+        "format": "+0630",
+        "abbrev": "+0630",
         "offset": 23400000,
         "posix": -1577946280000,
         "save": 0

@@ -29,8 +29,8 @@
       },
       {
         "wallclock": -1509667200000,
-        "format": "CANT",
-        "abbrev": "CANT",
+        "format": "-01",
+        "abbrev": "-01",
         "offset": -3600000,
         "posix": -1509663504000,
         "save": 0

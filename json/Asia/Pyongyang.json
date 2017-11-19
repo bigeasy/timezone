@@ -19,17 +19,9 @@
         "save": 0
       },
       {
-        "wallclock": -1017792000000,
+        "wallclock": -1830384000000,
         "format": "JST",
         "abbrev": "JST",
-        "offset": 32400000,
-        "posix": -1017824400000,
-        "save": 0
-      },
-      {
-        "wallclock": -1830384000000,
-        "format": "JCST",
-        "abbrev": "JCST",
         "offset": 32400000,
         "posix": -1830414600000,
         "save": 0

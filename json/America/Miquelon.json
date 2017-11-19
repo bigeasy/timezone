@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": 536457600000,
-        "format": "PM%sT",
-        "abbrev": "PMST",
+        "format": "-03/-02",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": 536468400000,
         "save": 0,
@@ -13,8 +13,8 @@
       },
       {
         "wallclock": 325987200000,
-        "format": "PMST",
-        "abbrev": "PMST",
+        "format": "-03",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": 326001600000,
         "save": 0

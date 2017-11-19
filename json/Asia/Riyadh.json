@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -719625600000,
-        "format": "AST",
-        "abbrev": "AST",
+        "format": "+03",
+        "abbrev": "+03",
         "offset": 10800000,
         "posix": -719636812000,
         "save": 0

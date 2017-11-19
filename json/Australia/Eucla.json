@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -836438400000,
-        "format": "ACW%sT",
-        "abbrev": "ACWST",
+        "format": "+0845/+0945",
+        "abbrev": "+0845",
         "offset": 31500000,
         "posix": -836469900000,
         "save": 0,
@@ -13,8 +13,8 @@
       },
       {
         "wallclock": -2337897600000,
-        "format": "ACW%sT",
-        "abbrev": "ACWST",
+        "format": "+0845/+0945",
+        "abbrev": "+0845",
         "offset": 31500000,
         "posix": -2337928528000,
         "save": 0,

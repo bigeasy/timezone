@@ -4,16 +4,16 @@
       "z",
       {
         "wallclock": 893635200000,
-        "format": "PST",
-        "abbrev": "PST",
+        "format": "-08",
+        "abbrev": "-08",
         "offset": -28800000,
         "posix": 893665800000,
         "save": 0
       },
       {
         "wallclock": -2177452800000,
-        "format": "PNT",
-        "abbrev": "PNT",
+        "format": "-0830",
+        "abbrev": "-0830",
         "offset": -30600000,
         "posix": -2177421580000,
         "save": 0

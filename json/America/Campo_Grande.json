@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -1767225600000,
-        "format": "AM%sT",
-        "abbrev": "AMT",
+        "format": "-04/-03",
+        "abbrev": "-04",
         "offset": -14400000,
         "posix": -1767212492000,
         "save": 0,

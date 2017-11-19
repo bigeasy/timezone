@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": 134006400000,
-        "format": "PY%sT",
-        "abbrev": "PYT",
+        "format": "-04/-03",
+        "abbrev": "-04",
         "offset": -14400000,
         "posix": 134017200000,
         "save": 0,
@@ -13,16 +13,16 @@
       },
       {
         "wallclock": 86745600000,
-        "format": "PYT",
-        "abbrev": "PYT",
+        "format": "-03",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": 86760000000,
         "save": 0
       },
       {
         "wallclock": -1206403200000,
-        "format": "PYT",
-        "abbrev": "PYT",
+        "format": "-04",
+        "abbrev": "-04",
         "offset": -14400000,
         "posix": -1206389360000,
         "save": 0

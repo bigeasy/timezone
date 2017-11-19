@@ -4,16 +4,16 @@
       "z",
       {
         "wallclock": -71107200000,
-        "format": "GFT",
-        "abbrev": "GFT",
+        "format": "-03",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": -71092800000,
         "save": 0
       },
       {
         "wallclock": -1846281600000,
-        "format": "GFT",
-        "abbrev": "GFT",
+        "format": "-04",
+        "abbrev": "-04",
         "offset": -14400000,
         "posix": -1846269040000,
         "save": 0

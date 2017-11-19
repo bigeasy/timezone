@@ -4,16 +4,16 @@
       "z",
       {
         "wallclock": -788918400000,
-        "format": "AFT",
-        "abbrev": "AFT",
+        "format": "+0430",
+        "abbrev": "+0430",
         "offset": 16200000,
         "posix": -788932800000,
         "save": 0
       },
       {
         "wallclock": -2524521600000,
-        "format": "AFT",
-        "abbrev": "AFT",
+        "format": "+04",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": -2524538208000,
         "save": 0

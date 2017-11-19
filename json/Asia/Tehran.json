@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": 283996800000,
-        "format": "IR%sT",
-        "abbrev": "IRST",
+        "format": "+0330/+0430",
+        "abbrev": "+0330",
         "offset": 12600000,
         "posix": 283982400000,
         "save": 0,
@@ -13,8 +13,8 @@
       },
       {
         "wallclock": 247190400000,
-        "format": "IR%sT",
-        "abbrev": "IRST",
+        "format": "+04/+05",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": 247177800000,
         "save": 0,
@@ -22,8 +22,8 @@
       },
       {
         "wallclock": -757382400000,
-        "format": "IRST",
-        "abbrev": "IRST",
+        "format": "+0330",
+        "abbrev": "+0330",
         "offset": 12600000,
         "posix": -757394744000,
         "save": 0

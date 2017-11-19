@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -1739059200000,
-        "format": "CO%sT",
-        "abbrev": "COT",
+        "format": "-05/-04",
+        "abbrev": "-05",
         "offset": -18000000,
         "posix": -1739041424000,
         "save": 0,

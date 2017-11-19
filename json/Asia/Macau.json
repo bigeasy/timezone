@@ -3,18 +3,9 @@
     "Asia/Macau": [
       "z",
       {
-        "wallclock": 945648000000,
+        "wallclock": -1830384000000,
         "format": "C%sT",
         "abbrev": "CST",
-        "offset": 28800000,
-        "posix": 945619200000,
-        "save": 0,
-        "rules": "PRC"
-      },
-      {
-        "wallclock": -1830384000000,
-        "format": "MO%sT",
-        "abbrev": "MOT",
         "offset": 28800000,
         "posix": -1830411260000,
         "save": 0,
@@ -31,50 +22,6 @@
     ]
   },
   "rules": {
-    "PRC": [
-      {
-        "from": 1986,
-        "to": 1991,
-        "month": 8,
-        "day": [
-          0,
-          11
-        ],
-        "time": 0,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "S",
-        "saved": 3600000
-      },
-      {
-        "from": 1987,
-        "to": 1991,
-        "month": 3,
-        "day": [
-          0,
-          10
-        ],
-        "time": 0,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "D",
-        "saved": 0
-      },
-      {
-        "from": 1986,
-        "to": 1986,
-        "month": 4,
-        "day": [
-          7,
-          4
-        ],
-        "time": 0,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "D",
-        "saved": 0
-      }
-    ],
     "Macau": [
       {
         "from": 1978,
@@ -87,7 +34,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -101,7 +48,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 60,
-        "letter": "S",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -115,7 +62,7 @@
         "time": 210,
         "clock": "wallclock",
         "save": 60,
-        "letter": "S",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -129,7 +76,7 @@
         "time": 210,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -143,7 +90,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 60,
-        "letter": "S",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -157,7 +104,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -171,7 +118,7 @@
         "time": 210,
         "clock": "wallclock",
         "save": 60,
-        "letter": "S",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -185,7 +132,7 @@
         "time": 210,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -199,7 +146,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -213,7 +160,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 60,
-        "letter": "S",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -227,7 +174,7 @@
         "time": 210,
         "clock": "wallclock",
         "save": 0,
-        "letter": "",
+        "letter": "S",
         "saved": 3600000
       },
       {
@@ -241,7 +188,7 @@
         "time": 210,
         "clock": "wallclock",
         "save": 60,
-        "letter": "S",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -255,7 +202,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 60,
-        "letter": "S",
+        "letter": "D",
         "saved": 0
       },
       {
@@ -269,7 +216,7 @@
         "time": 210,
         "clock": "wallclock",
         "save": 60,
-        "letter": "S",
+        "letter": "D",
         "saved": 0
       }
     ]

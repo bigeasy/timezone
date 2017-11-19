@@ -67,14 +67,14 @@
         "format": "+05",
         "abbrev": "+05",
         "offset": 18000000,
-        "posix": -1247544000000,
+        "posix": -1247540400000,
         "save": 0
       },
       {
         "wallclock": -1441152000000,
-        "format": "+04",
-        "abbrev": "+04",
-        "offset": 14400000,
+        "format": "+03",
+        "abbrev": "+03",
+        "offset": 10800000,
         "posix": -1441164324000,
         "save": 0
       },

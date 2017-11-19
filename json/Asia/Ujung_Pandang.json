@@ -12,16 +12,16 @@
       },
       {
         "wallclock": -880243200000,
-        "format": "JST",
-        "abbrev": "JST",
+        "format": "+09",
+        "abbrev": "+09",
         "offset": 32400000,
         "posix": -880272000000,
         "save": 0
       },
       {
         "wallclock": -1172880000000,
-        "format": "WITA",
-        "abbrev": "WITA",
+        "format": "+08",
+        "abbrev": "+08",
         "offset": 28800000,
         "posix": -1172908656000,
         "save": 0

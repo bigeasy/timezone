@@ -5,8 +5,8 @@
         "z",
         {
           "wallclock": -713667600000,
-          "format": "CL%sT",
-          "abbrev": "CLT",
+          "format": "-04/-03",
+          "abbrev": "-04",
           "offset": -14400000,
           "posix": -713649600000,
           "save": 0,
@@ -14,56 +14,56 @@
         },
         {
           "wallclock": -718070400000,
-          "format": "CLT",
-          "abbrev": "CLT",
+          "format": "-05",
+          "abbrev": "-05",
           "offset": -18000000,
           "posix": -718056000000,
           "save": 0
         },
         {
           "wallclock": -736387200000,
-          "format": "CLT",
-          "abbrev": "CLT",
+          "format": "-04",
+          "abbrev": "-04",
           "offset": -14400000,
           "posix": -736376400000,
           "save": 0
         },
         {
           "wallclock": -740534400000,
-          "format": "CLST",
-          "abbrev": "CLST",
+          "format": "-03",
+          "abbrev": "-03",
           "offset": -14400000,
           "posix": -740520000000,
           "save": 3600000
         },
         {
           "wallclock": -865296000000,
-          "format": "CLT",
-          "abbrev": "CLT",
+          "format": "-04",
+          "abbrev": "-04",
           "offset": -14400000,
           "posix": -865278000000,
           "save": 0
         },
         {
           "wallclock": -870566400000,
-          "format": "CLT",
-          "abbrev": "CLT",
+          "format": "-05",
+          "abbrev": "-05",
           "offset": -18000000,
           "posix": -870552000000,
           "save": 0
         },
         {
           "wallclock": -1178150400000,
-          "format": "CLT",
-          "abbrev": "CLT",
+          "format": "-04",
+          "abbrev": "-04",
           "offset": -14400000,
           "posix": -1178132400000,
           "save": 0
         },
         {
           "wallclock": -1336003200000,
-          "format": "CL%sT",
-          "abbrev": "CLST",
+          "format": "-05/-04",
+          "abbrev": "-04",
           "offset": -18000000,
           "posix": -1335986234000,
           "save": 3600000,
@@ -79,8 +79,8 @@
         },
         {
           "wallclock": -1619222400000,
-          "format": "CLT",
-          "abbrev": "CLT",
+          "format": "-04",
+          "abbrev": "-04",
           "offset": -14400000,
           "posix": -1619205434000,
           "save": 0
@@ -95,8 +95,8 @@
         },
         {
           "wallclock": -1892678400000,
-          "format": "CLT",
-          "abbrev": "CLT",
+          "format": "-05",
+          "abbrev": "-05",
           "offset": -18000000,
           "posix": -1892661434000,
           "save": 0
@@ -578,8 +578,8 @@
         "z",
         {
           "wallclock": 384901200000,
-          "format": "EAS%sT",
-          "abbrev": "EAST",
+          "format": "-06/-05",
+          "abbrev": "-06",
           "offset": -21600000,
           "posix": 384922800000,
           "save": 0,
@@ -587,8 +587,8 @@
         },
         {
           "wallclock": -1178150400000,
-          "format": "EAS%sT",
-          "abbrev": "EAST",
+          "format": "-07/-06",
+          "abbrev": "-07",
           "offset": -25200000,
           "posix": -1178124152000,
           "save": 0,

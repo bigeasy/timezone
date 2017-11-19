@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -2177452800000,
-        "format": "PONT",
-        "abbrev": "PONT",
+        "format": "+11",
+        "abbrev": "+11",
         "offset": 39600000,
         "posix": -2177490772000,
         "save": 0

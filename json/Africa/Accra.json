@@ -4,7 +4,7 @@
       "z",
       {
         "wallclock": -1640995200000,
-        "format": "%s",
+        "format": "GMT/+0020",
         "abbrev": "GMT",
         "offset": 0,
         "posix": -1640995148000,

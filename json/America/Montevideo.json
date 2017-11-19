@@ -3,9 +3,45 @@
     "America/Montevideo": [
       "z",
       {
+        "wallclock": 156902400000,
+        "format": "-03/-02",
+        "abbrev": "-02",
+        "offset": -10800000,
+        "posix": 156911400000,
+        "save": 3600000,
+        "rules": "Uruguay"
+      },
+      {
+        "wallclock": 126230400000,
+        "format": "-03/-0230",
+        "abbrev": "-03",
+        "offset": -10800000,
+        "posix": 126241200000,
+        "save": 0,
+        "rules": "Uruguay"
+      },
+      {
+        "wallclock": 31536000000,
+        "format": "-03/-02",
+        "abbrev": "-03",
+        "offset": -10800000,
+        "posix": 31546800000,
+        "save": 0,
+        "rules": "Uruguay"
+      },
+      {
+        "wallclock": -63158400000,
+        "format": "-03/-0230",
+        "abbrev": "-03",
+        "offset": -10800000,
+        "posix": -63147600000,
+        "save": 0,
+        "rules": "Uruguay"
+      },
+      {
         "wallclock": -853632000000,
-        "format": "UY%sT",
-        "abbrev": "UYST",
+        "format": "-03/-02",
+        "abbrev": "-02",
         "offset": -10800000,
         "posix": -853619400000,
         "save": 3600000,
@@ -13,8 +49,8 @@
       },
       {
         "wallclock": -1567468800000,
-        "format": "UY%sT",
-        "abbrev": "UYT",
+        "format": "-0330/-03",
+        "abbrev": "-0330",
         "offset": -12600000,
         "posix": -1567455316000,
         "save": 0,
@@ -332,7 +368,7 @@
         "clock": "wallclock",
         "save": 60,
         "letter": "S",
-        "saved": 1800000
+        "saved": 0
       },
       {
         "from": 1974,

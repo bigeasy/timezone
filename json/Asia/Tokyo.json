@@ -3,29 +3,13 @@
     "Asia/Tokyo": [
       "z",
       {
-        "wallclock": -1017792000000,
+        "wallclock": -2587678861000,
         "format": "J%sT",
         "abbrev": "JST",
         "offset": 32400000,
-        "posix": -1017824400000,
+        "posix": -2587712400000,
         "save": 0,
         "rules": "Japan"
-      },
-      {
-        "wallclock": -2335219200000,
-        "format": "JCST",
-        "abbrev": "JCST",
-        "offset": 32400000,
-        "posix": -2335251600000,
-        "save": 0
-      },
-      {
-        "wallclock": -2587678861000,
-        "format": "JST",
-        "abbrev": "JST",
-        "offset": 32400000,
-        "posix": -2587712400000,
-        "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,

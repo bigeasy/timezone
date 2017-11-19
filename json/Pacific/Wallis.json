@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -2177452800000,
-        "format": "WFT",
-        "abbrev": "WFT",
+        "format": "+12",
+        "abbrev": "+12",
         "offset": 43200000,
         "posix": -2177496920000,
         "save": 0

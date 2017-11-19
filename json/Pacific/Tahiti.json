@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -1806710400000,
-        "format": "TAHT",
-        "abbrev": "TAHT",
+        "format": "-10",
+        "abbrev": "-10",
         "offset": -36000000,
         "posix": -1806674504000,
         "save": 0

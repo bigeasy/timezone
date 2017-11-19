@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -2177452800000,
-        "format": "GILT",
-        "abbrev": "GILT",
+        "format": "+12",
+        "abbrev": "+12",
         "offset": 43200000,
         "posix": -2177494324000,
         "save": 0

@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -1570060800000,
-        "format": "ICT",
-        "abbrev": "ICT",
+        "format": "+07",
+        "abbrev": "+07",
         "offset": 25200000,
         "posix": -1570084924000,
         "save": 0

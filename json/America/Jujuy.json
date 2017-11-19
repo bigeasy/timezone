@@ -4,16 +4,16 @@
       "z",
       {
         "wallclock": 1224288000000,
-        "format": "ART",
-        "abbrev": "ART",
+        "format": "-03",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": 1224298800000,
         "save": 0
       },
       {
         "wallclock": 952041600000,
-        "format": "AR%sT",
-        "abbrev": "ART",
+        "format": "-03/-02",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": 952052400000,
         "save": 0,
@@ -21,8 +21,8 @@
       },
       {
         "wallclock": 938908800000,
-        "format": "AR%sT",
-        "abbrev": "ARST",
+        "format": "-04/-03",
+        "abbrev": "-03",
         "offset": -14400000,
         "posix": 938919600000,
         "save": 3600000,
@@ -30,8 +30,8 @@
       },
       {
         "wallclock": 694224000000,
-        "format": "AR%sT",
-        "abbrev": "ARST",
+        "format": "-03/-02",
+        "abbrev": "-02",
         "offset": -10800000,
         "posix": 694231200000,
         "save": 3600000,
@@ -39,40 +39,40 @@
       },
       {
         "wallclock": 686707200000,
-        "format": "ARST",
-        "abbrev": "ARST",
+        "format": "-02",
+        "abbrev": "-02",
         "offset": -10800000,
         "posix": 686721600000,
         "save": 3600000
       },
       {
         "wallclock": 669168000000,
-        "format": "WART",
-        "abbrev": "WART",
+        "format": "-04",
+        "abbrev": "-04",
         "offset": -14400000,
         "posix": 669178800000,
         "save": 0
       },
       {
         "wallclock": 657072000000,
-        "format": "WARST",
-        "abbrev": "WARST",
+        "format": "-03",
+        "abbrev": "-03",
         "offset": -14400000,
         "posix": 657086400000,
         "save": 3600000
       },
       {
         "wallclock": 636508800000,
-        "format": "WART",
-        "abbrev": "WART",
+        "format": "-04",
+        "abbrev": "-04",
         "offset": -14400000,
         "posix": 636516000000,
         "save": 0
       },
       {
         "wallclock": -7603200000,
-        "format": "AR%sT",
-        "abbrev": "ART",
+        "format": "-03/-02",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": -7588800000,
         "save": 0,
@@ -80,8 +80,8 @@
       },
       {
         "wallclock": -1233446400000,
-        "format": "AR%sT",
-        "abbrev": "ARST",
+        "format": "-04/-03",
+        "abbrev": "-03",
         "offset": -14400000,
         "posix": -1233432000000,
         "save": 3600000,
@@ -89,8 +89,8 @@
       },
       {
         "wallclock": -1567468800000,
-        "format": "ART",
-        "abbrev": "ART",
+        "format": "-04",
+        "abbrev": "-04",
         "offset": -14400000,
         "posix": -1567453392000,
         "save": 0

@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": 384901200000,
-        "format": "EAS%sT",
-        "abbrev": "EAST",
+        "format": "-06/-05",
+        "abbrev": "-06",
         "offset": -21600000,
         "posix": 384922800000,
         "save": 0,
@@ -13,8 +13,8 @@
       },
       {
         "wallclock": -1178150400000,
-        "format": "EAS%sT",
-        "abbrev": "EAST",
+        "format": "-07/-06",
+        "abbrev": "-07",
         "offset": -25200000,
         "posix": -1178124152000,
         "save": 0,

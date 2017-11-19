@@ -4,32 +4,32 @@
       "z",
       {
         "wallclock": 1462069800000,
-        "format": "VET",
-        "abbrev": "VET",
+        "format": "-04",
+        "abbrev": "-04",
         "offset": -14400000,
         "posix": 1462086000000,
         "save": 0
       },
       {
         "wallclock": 1197169200000,
-        "format": "VET",
-        "abbrev": "VET",
+        "format": "-0430",
+        "abbrev": "-0430",
         "offset": -16200000,
         "posix": 1197183600000,
         "save": 0
       },
       {
         "wallclock": -157766400000,
-        "format": "VET",
-        "abbrev": "VET",
+        "format": "-04",
+        "abbrev": "-04",
         "offset": -14400000,
         "posix": -157750200000,
         "save": 0
       },
       {
         "wallclock": -1826755200000,
-        "format": "VET",
-        "abbrev": "VET",
+        "format": "-0430",
+        "abbrev": "-0430",
         "offset": -16200000,
         "posix": -1826739140000,
         "save": 0

@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -1829347200000,
-        "format": "VU%sT",
-        "abbrev": "VUT",
+        "format": "+11/+12",
+        "abbrev": "+11",
         "offset": 39600000,
         "posix": -1829387596000,
         "save": 0,

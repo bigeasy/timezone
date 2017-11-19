@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -2364076800000,
-        "format": "CXT",
-        "abbrev": "CXT",
+        "format": "+07",
+        "abbrev": "+07",
         "offset": 25200000,
         "posix": -2364102172000,
         "save": 0

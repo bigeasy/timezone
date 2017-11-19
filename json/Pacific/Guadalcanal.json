@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -1806710400000,
-        "format": "SBT",
-        "abbrev": "SBT",
+        "format": "+11",
+        "abbrev": "+11",
         "offset": 39600000,
         "posix": -1806748788000,
         "save": 0

@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -1709942400000,
-        "format": "FJ%sT",
-        "abbrev": "FJT",
+        "format": "+12/+13",
+        "abbrev": "+12",
         "offset": 43200000,
         "posix": -1709985344000,
         "save": 0,

@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -757382400000,
-        "format": "CHA%sT",
-        "abbrev": "CHAST",
+        "format": "+1245/+1345",
+        "abbrev": "+1245",
         "offset": 45900000,
         "posix": -757426500000,
         "save": 0,
@@ -13,8 +13,8 @@
       },
       {
         "wallclock": -3192393600000,
-        "format": "CHAST",
-        "abbrev": "CHAST",
+        "format": "+1215",
+        "abbrev": "+1215",
         "offset": 44100000,
         "posix": -3192437628000,
         "save": 0

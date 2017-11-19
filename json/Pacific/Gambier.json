@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -1806710400000,
-        "format": "GAMT",
-        "abbrev": "GAMT",
+        "format": "-09",
+        "abbrev": "-09",
         "offset": -32400000,
         "posix": -1806678012000,
         "save": 0

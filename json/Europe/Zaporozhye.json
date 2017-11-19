@@ -56,8 +56,8 @@
       },
       {
         "wallclock": -2840140800000,
-        "format": "CUT",
-        "abbrev": "CUT",
+        "format": "+0220",
+        "abbrev": "+0220",
         "offset": 8400000,
         "posix": -2840149240000,
         "save": 0

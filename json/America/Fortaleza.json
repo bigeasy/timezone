@@ -4,16 +4,16 @@
       "z",
       {
         "wallclock": 1033430400000,
-        "format": "BRT",
-        "abbrev": "BRT",
+        "format": "-03",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": 1033441200000,
         "save": 0
       },
       {
         "wallclock": 1000339200000,
-        "format": "BR%sT",
-        "abbrev": "BRT",
+        "format": "-03/-02",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": 1000350000000,
         "save": 0,
@@ -21,16 +21,16 @@
       },
       {
         "wallclock": 972172800000,
-        "format": "BRT",
-        "abbrev": "BRT",
+        "format": "-03",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": 972180000000,
         "save": 0
       },
       {
         "wallclock": 938649600000,
-        "format": "BR%sT",
-        "abbrev": "BRT",
+        "format": "-03/-02",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": 938660400000,
         "save": 0,
@@ -38,16 +38,16 @@
       },
       {
         "wallclock": 653529600000,
-        "format": "BRT",
-        "abbrev": "BRT",
+        "format": "-03",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": 653540400000,
         "save": 0
       },
       {
         "wallclock": -1767225600000,
-        "format": "BR%sT",
-        "abbrev": "BRT",
+        "format": "-03/-02",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": -1767216360000,
         "save": 0,

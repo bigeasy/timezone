@@ -4,32 +4,32 @@
       "z",
       {
         "wallclock": 1384041600000,
-        "format": "ACT",
-        "abbrev": "ACT",
+        "format": "-05",
+        "abbrev": "-05",
         "offset": -18000000,
         "posix": 1384056000000,
         "save": 0
       },
       {
         "wallclock": 1214265600000,
-        "format": "AMT",
-        "abbrev": "AMT",
+        "format": "-04",
+        "abbrev": "-04",
         "offset": -14400000,
         "posix": 1214283600000,
         "save": 0
       },
       {
         "wallclock": 780192000000,
-        "format": "ACT",
-        "abbrev": "ACT",
+        "format": "-05",
+        "abbrev": "-05",
         "offset": -18000000,
         "posix": 780210000000,
         "save": 0
       },
       {
         "wallclock": 749174400000,
-        "format": "AC%sT",
-        "abbrev": "ACT",
+        "format": "-05/-04",
+        "abbrev": "-05",
         "offset": -18000000,
         "posix": 749192400000,
         "save": 0,
@@ -37,16 +37,16 @@
       },
       {
         "wallclock": 590025600000,
-        "format": "ACT",
-        "abbrev": "ACT",
+        "format": "-05",
+        "abbrev": "-05",
         "offset": -18000000,
         "posix": 590043600000,
         "save": 0
       },
       {
         "wallclock": -1767225600000,
-        "format": "AC%sT",
-        "abbrev": "ACT",
+        "format": "-05/-04",
+        "abbrev": "-05",
         "offset": -18000000,
         "posix": -1767208832000,
         "save": 0,

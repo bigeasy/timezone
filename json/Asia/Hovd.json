@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": 252460800000,
-        "format": "HOV%sT",
-        "abbrev": "HOVT",
+        "format": "+07/+08",
+        "abbrev": "+07",
         "offset": 25200000,
         "posix": 252439200000,
         "save": 0,
@@ -13,8 +13,8 @@
       },
       {
         "wallclock": -2032905600000,
-        "format": "HOVT",
-        "abbrev": "HOVT",
+        "format": "+06",
+        "abbrev": "+06",
         "offset": 21600000,
         "posix": -2032927596000,
         "save": 0
@@ -33,7 +33,7 @@
     "Mongol": [
       {
         "from": 2015,
-        "to": 1.7976931348623157e+308,
+        "to": 2016,
         "month": 2,
         "day": [
           6,
@@ -47,7 +47,7 @@
       },
       {
         "from": 2015,
-        "to": 1.7976931348623157e+308,
+        "to": 2016,
         "month": 8,
         "day": [
           6,

@@ -13,8 +13,8 @@
       },
       {
         "wallclock": -1136073600000,
-        "format": "WAT",
-        "abbrev": "WAT",
+        "format": "-01",
+        "abbrev": "-01",
         "offset": -3600000,
         "posix": -1136070432000,
         "save": 0

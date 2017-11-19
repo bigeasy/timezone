@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -2177452800000,
-        "format": "CHUT",
-        "abbrev": "CHUT",
+        "format": "+10",
+        "abbrev": "+10",
         "offset": 36000000,
         "posix": -2177489228000,
         "save": 0

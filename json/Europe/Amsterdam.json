@@ -31,8 +31,8 @@
       },
       {
         "wallclock": -1025740800000,
-        "format": "NE%sT",
-        "abbrev": "NEST",
+        "format": "+0020/+0120",
+        "abbrev": "+0120",
         "offset": 1200000,
         "posix": -1025745572000,
         "save": 3600000,

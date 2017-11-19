@@ -45,8 +45,8 @@
       },
       {
         "wallclock": -2458166400000,
-        "format": "SWAT",
-        "abbrev": "SWAT",
+        "format": "+0130",
+        "abbrev": "+0130",
         "offset": 5400000,
         "posix": -2458170504000,
         "save": 0

@@ -4,24 +4,16 @@
       "z",
       {
         "wallclock": 465436800000,
-        "format": "SRT",
-        "abbrev": "SRT",
+        "format": "-03",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": 465449400000,
         "save": 0
       },
       {
-        "wallclock": 185673600000,
-        "format": "SRT",
-        "abbrev": "SRT",
-        "offset": -12600000,
-        "posix": 185686200000,
-        "save": 0
-      },
-      {
         "wallclock": -765331200000,
-        "format": "NEGT",
-        "abbrev": "NEGT",
+        "format": "-0330",
+        "abbrev": "-0330",
         "offset": -12600000,
         "posix": -765317964000,
         "save": 0

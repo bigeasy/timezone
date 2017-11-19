@@ -4,24 +4,24 @@
       "z",
       {
         "wallclock": 1214265600000,
-        "format": "BRT",
-        "abbrev": "BRT",
+        "format": "-03",
+        "abbrev": "-03",
         "offset": -10800000,
         "posix": 1214280000000,
         "save": 0
       },
       {
         "wallclock": 590025600000,
-        "format": "AMT",
-        "abbrev": "AMT",
+        "format": "-04",
+        "abbrev": "-04",
         "offset": -14400000,
         "posix": 590040000000,
         "save": 0
       },
       {
         "wallclock": -1767225600000,
-        "format": "AM%sT",
-        "abbrev": "AMT",
+        "format": "-04/-03",
+        "abbrev": "-04",
         "offset": -14400000,
         "posix": -1767212472000,
         "save": 0,

@@ -21,8 +21,8 @@
       },
       {
         "wallclock": -2335219200000,
-        "format": "JWST",
-        "abbrev": "JWST",
+        "format": "CST",
+        "abbrev": "CST",
         "offset": 28800000,
         "posix": -2335248360000,
         "save": 0

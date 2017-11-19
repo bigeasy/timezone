@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -2366755200000,
-        "format": "PGT",
-        "abbrev": "PGT",
+        "format": "+10",
+        "abbrev": "+10",
         "offset": 36000000,
         "posix": -2366790512000,
         "save": 0

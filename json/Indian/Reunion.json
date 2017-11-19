@@ -4,8 +4,8 @@
       "z",
       {
         "wallclock": -1848873600000,
-        "format": "RET",
-        "abbrev": "RET",
+        "format": "+04",
+        "abbrev": "+04",
         "offset": 14400000,
         "posix": -1848886912000,
         "save": 0

@@ -5,8 +5,8 @@
         "z",
         {
           "wallclock": 1325203200000,
-          "format": "WS%sT",
-          "abbrev": "WSDT",
+          "format": "+13/+14",
+          "abbrev": "+14",
           "offset": 46800000,
           "posix": 1325239200000,
           "save": 3600000,
@@ -14,8 +14,8 @@
         },
         {
           "wallclock": -631152000000,
-          "format": "S%sT",
-          "abbrev": "SST",
+          "format": "-11/-10",
+          "abbrev": "-11",
           "offset": -39600000,
           "posix": -631110600000,
           "save": 0,
@@ -23,8 +23,8 @@
         },
         {
           "wallclock": -1861920000000,
-          "format": "WSST",
-          "abbrev": "WSST",
+          "format": "-1130",
+          "abbrev": "-1130",
           "offset": -41400000,
           "posix": -1861878784000,
           "save": 0
@@ -389,32 +389,32 @@
         "z",
         {
           "wallclock": 1419732000000,
-          "format": "BST",
-          "abbrev": "BST",
+          "format": "+11",
+          "abbrev": "+11",
           "offset": 39600000,
           "posix": 1419696000000,
           "save": 0
         },
         {
           "wallclock": -768873600000,
-          "format": "PGT",
-          "abbrev": "PGT",
+          "format": "+10",
+          "abbrev": "+10",
           "offset": 36000000,
           "posix": -768906000000,
           "save": 0
         },
         {
           "wallclock": -867974400000,
-          "format": "JST",
-          "abbrev": "JST",
+          "format": "+09",
+          "abbrev": "+09",
           "offset": 32400000,
           "posix": -868010400000,
           "save": 0
         },
         {
           "wallclock": -2366755200000,
-          "format": "PGT",
-          "abbrev": "PGT",
+          "format": "+10",
+          "abbrev": "+10",
           "offset": 36000000,
           "posix": -2366790512000,
           "save": 0
@@ -445,8 +445,8 @@
         "z",
         {
           "wallclock": -757382400000,
-          "format": "CHA%sT",
-          "abbrev": "CHAST",
+          "format": "+1245/+1345",
+          "abbrev": "+1245",
           "offset": 45900000,
           "posix": -757426500000,
           "save": 0,
@@ -454,8 +454,8 @@
         },
         {
           "wallclock": -3192393600000,
-          "format": "CHAST",
-          "abbrev": "CHAST",
+          "format": "+1215",
+          "abbrev": "+1215",
           "offset": 44100000,
           "posix": -3192437628000,
           "save": 0
@@ -607,8 +607,8 @@
         "z",
         {
           "wallclock": -2177452800000,
-          "format": "CHUT",
-          "abbrev": "CHUT",
+          "format": "+10",
+          "abbrev": "+10",
           "offset": 36000000,
           "posix": -2177489228000,
           "save": 0
@@ -631,8 +631,8 @@
         "z",
         {
           "wallclock": 384901200000,
-          "format": "EAS%sT",
-          "abbrev": "EAST",
+          "format": "-06/-05",
+          "abbrev": "-06",
           "offset": -21600000,
           "posix": 384922800000,
           "save": 0,
@@ -640,8 +640,8 @@
         },
         {
           "wallclock": -1178150400000,
-          "format": "EAS%sT",
-          "abbrev": "EAST",
+          "format": "-07/-06",
+          "abbrev": "-07",
           "offset": -25200000,
           "posix": -1178124152000,
           "save": 0,
@@ -1124,8 +1124,8 @@
         "z",
         {
           "wallclock": -1829347200000,
-          "format": "VU%sT",
-          "abbrev": "VUT",
+          "format": "+11/+12",
+          "abbrev": "+11",
           "offset": 39600000,
           "posix": -1829387596000,
           "save": 0,
@@ -1236,24 +1236,24 @@
         "z",
         {
           "wallclock": 788918400000,
-          "format": "PHOT",
-          "abbrev": "PHOT",
+          "format": "+13",
+          "abbrev": "+13",
           "offset": 46800000,
           "posix": 788958000000,
           "save": 0
         },
         {
           "wallclock": 307584000000,
-          "format": "PHOT",
-          "abbrev": "PHOT",
+          "format": "-11",
+          "abbrev": "-11",
           "offset": -39600000,
           "posix": 307627200000,
           "save": 0
         },
         {
           "wallclock": -2177452800000,
-          "format": "PHOT",
-          "abbrev": "PHOT",
+          "format": "-12",
+          "abbrev": "-12",
           "offset": -43200000,
           "posix": -2177411740000,
           "save": 0
@@ -1276,16 +1276,16 @@
         "z",
         {
           "wallclock": 1325203200000,
-          "format": "TKT",
-          "abbrev": "TKT",
+          "format": "+13",
+          "abbrev": "+13",
           "offset": 46800000,
           "posix": 1325242800000,
           "save": 0
         },
         {
           "wallclock": -2177452800000,
-          "format": "TKT",
-          "abbrev": "TKT",
+          "format": "-11",
+          "abbrev": "-11",
           "offset": -39600000,
           "posix": -2177411704000,
           "save": 0
@@ -1308,8 +1308,8 @@
         "z",
         {
           "wallclock": -1709942400000,
-          "format": "FJ%sT",
-          "abbrev": "FJT",
+          "format": "+12/+13",
+          "abbrev": "+12",
           "offset": 43200000,
           "posix": -1709985344000,
           "save": 0,
@@ -1476,8 +1476,8 @@
         "z",
         {
           "wallclock": -2177452800000,
-          "format": "TVT",
-          "abbrev": "TVT",
+          "format": "+12",
+          "abbrev": "+12",
           "offset": 43200000,
           "posix": -2177495812000,
           "save": 0
@@ -1500,16 +1500,17 @@
         "z",
         {
           "wallclock": 504921600000,
-          "format": "GALT",
-          "abbrev": "GALT",
+          "format": "-06/-05",
+          "abbrev": "-06",
           "offset": -21600000,
           "posix": 504939600000,
-          "save": 0
+          "save": 0,
+          "rules": "Ecuador"
         },
         {
           "wallclock": -1230768000000,
-          "format": "ECT",
-          "abbrev": "ECT",
+          "format": "-05",
+          "abbrev": "-05",
           "offset": -18000000,
           "posix": -1230746496000,
           "save": 0
@@ -1524,7 +1525,38 @@
         }
       ]
     },
-    "rules": {}
+    "rules": {
+      "Ecuador": [
+        {
+          "from": 1993,
+          "to": 1993,
+          "month": 1,
+          "day": [
+            7,
+            5
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
+          "from": 1992,
+          "to": 1992,
+          "month": 10,
+          "day": [
+            7,
+            28
+          ],
+          "time": 0,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
+        }
+      ]
+    }
   },
   {
     "zones": {
@@ -1532,8 +1564,8 @@
         "z",
         {
           "wallclock": -1806710400000,
-          "format": "GAMT",
-          "abbrev": "GAMT",
+          "format": "-09",
+          "abbrev": "-09",
           "offset": -32400000,
           "posix": -1806678012000,
           "save": 0
@@ -1556,8 +1588,8 @@
         "z",
         {
           "wallclock": -1806710400000,
-          "format": "SBT",
-          "abbrev": "SBT",
+          "format": "+11",
+          "abbrev": "+11",
           "offset": 39600000,
           "posix": -1806748788000,
           "save": 0
@@ -1748,24 +1780,24 @@
         "z",
         {
           "wallclock": 788918400000,
-          "format": "LINT",
-          "abbrev": "LINT",
+          "format": "+14",
+          "abbrev": "+14",
           "offset": 50400000,
           "posix": 788954400000,
           "save": 0
         },
         {
           "wallclock": 307584000000,
-          "format": "LINT",
-          "abbrev": "LINT",
+          "format": "-10",
+          "abbrev": "-10",
           "offset": -36000000,
           "posix": 307622400000,
           "save": 0
         },
         {
           "wallclock": -2177452800000,
-          "format": "LINT",
-          "abbrev": "LINT",
+          "format": "-1040",
+          "abbrev": "-1040",
           "offset": -38400000,
           "posix": -2177415040000,
           "save": 0
@@ -1788,24 +1820,24 @@
         "z",
         {
           "wallclock": 915148800000,
-          "format": "KOST",
-          "abbrev": "KOST",
+          "format": "+11",
+          "abbrev": "+11",
           "offset": 39600000,
           "posix": 915105600000,
           "save": 0
         },
         {
           "wallclock": -7948800000,
-          "format": "KOST",
-          "abbrev": "KOST",
+          "format": "+12",
+          "abbrev": "+12",
           "offset": 43200000,
           "posix": -7988400000,
           "save": 0
         },
         {
           "wallclock": -2177452800000,
-          "format": "KOST",
-          "abbrev": "KOST",
+          "format": "+11",
+          "abbrev": "+11",
           "offset": 39600000,
           "posix": -2177491916000,
           "save": 0
@@ -1828,24 +1860,24 @@
         "z",
         {
           "wallclock": 745804800000,
-          "format": "MHT",
-          "abbrev": "MHT",
+          "format": "+12",
+          "abbrev": "+12",
           "offset": 43200000,
           "posix": 745848000000,
           "save": 0
         },
         {
           "wallclock": -7948800000,
-          "format": "KWAT",
-          "abbrev": "KWAT",
+          "format": "-12",
+          "abbrev": "-12",
           "offset": -43200000,
           "posix": -7988400000,
           "save": 0
         },
         {
           "wallclock": -2177452800000,
-          "format": "MHT",
-          "abbrev": "MHT",
+          "format": "+11",
+          "abbrev": "+11",
           "offset": 39600000,
           "posix": -2177492960000,
           "save": 0
@@ -1868,16 +1900,16 @@
         "z",
         {
           "wallclock": -7948800000,
-          "format": "MHT",
-          "abbrev": "MHT",
+          "format": "+12",
+          "abbrev": "+12",
           "offset": 43200000,
           "posix": -7988400000,
           "save": 0
         },
         {
           "wallclock": -2177452800000,
-          "format": "MHT",
-          "abbrev": "MHT",
+          "format": "+11",
+          "abbrev": "+11",
           "offset": 39600000,
           "posix": -2177493888000,
           "save": 0
@@ -1900,8 +1932,8 @@
         "z",
         {
           "wallclock": -1806710400000,
-          "format": "MART",
-          "abbrev": "MART",
+          "format": "-0930",
+          "abbrev": "-0930",
           "offset": -34200000,
           "posix": -1806676920000,
           "save": 0
@@ -1923,25 +1955,9 @@
       "Pacific/Midway": [
         "z",
         {
-          "wallclock": 438998400000,
+          "wallclock": -1861920000000,
           "format": "SST",
           "abbrev": "SST",
-          "offset": -39600000,
-          "posix": 439038000000,
-          "save": 0
-        },
-        {
-          "wallclock": -86918400000,
-          "format": "BST",
-          "abbrev": "BST",
-          "offset": -39600000,
-          "posix": -86878800000,
-          "save": 0
-        },
-        {
-          "wallclock": -1861920000000,
-          "format": "NST",
-          "abbrev": "NST",
           "offset": -39600000,
           "posix": -1861879032000,
           "save": 0
@@ -1972,32 +1988,32 @@
         "z",
         {
           "wallclock": 294364800000,
-          "format": "NRT",
-          "abbrev": "NRT",
+          "format": "+12",
+          "abbrev": "+12",
           "offset": 43200000,
           "posix": 294323400000,
           "save": 0
         },
         {
           "wallclock": -800928000000,
-          "format": "NRT",
-          "abbrev": "NRT",
+          "format": "+1130",
+          "abbrev": "+1130",
           "offset": 41400000,
           "posix": -800960400000,
           "save": 0
         },
         {
           "wallclock": -877305600000,
-          "format": "JST",
-          "abbrev": "JST",
+          "format": "+09",
+          "abbrev": "+09",
           "offset": 32400000,
           "posix": -877347000000,
           "save": 0
         },
         {
           "wallclock": -1545091200000,
-          "format": "NRT",
-          "abbrev": "NRT",
+          "format": "+1130",
+          "abbrev": "+1130",
           "offset": 41400000,
           "posix": -1545131260000,
           "save": 0
@@ -2020,24 +2036,24 @@
         "z",
         {
           "wallclock": 276048000000,
-          "format": "NUT",
-          "abbrev": "NUT",
+          "format": "-11",
+          "abbrev": "-11",
           "offset": -39600000,
           "posix": 276089400000,
           "save": 0
         },
         {
           "wallclock": -599616000000,
-          "format": "NUT",
-          "abbrev": "NUT",
+          "format": "-1130",
+          "abbrev": "-1130",
           "offset": -41400000,
           "posix": -599575200000,
           "save": 0
         },
         {
           "wallclock": -2177452800000,
-          "format": "NUT",
-          "abbrev": "NUT",
+          "format": "-1120",
+          "abbrev": "-1120",
           "offset": -40800000,
           "posix": -2177412020000,
           "save": 0
@@ -2060,40 +2076,40 @@
         "z",
         {
           "wallclock": 1443924000000,
-          "format": "NFT",
-          "abbrev": "NFT",
+          "format": "+11",
+          "abbrev": "+11",
           "offset": 39600000,
           "posix": 1443882600000,
           "save": 0
         },
         {
           "wallclock": 162957600000,
-          "format": "NFT",
-          "abbrev": "NFT",
+          "format": "+1130",
+          "abbrev": "+1130",
           "offset": 41400000,
           "posix": 162912600000,
           "save": 0
         },
         {
           "wallclock": 152071200000,
-          "format": "NFST",
-          "abbrev": "NFST",
+          "format": "+1230",
+          "abbrev": "+1230",
           "offset": 41400000,
           "posix": 152029800000,
           "save": 3600000
         },
         {
           "wallclock": -599616000000,
-          "format": "NFT",
-          "abbrev": "NFT",
+          "format": "+1130",
+          "abbrev": "+1130",
           "offset": 41400000,
           "posix": -599656320000,
           "save": 0
         },
         {
           "wallclock": -2177452800000,
-          "format": "NMT",
-          "abbrev": "NMT",
+          "format": "+1112",
+          "abbrev": "+1112",
           "offset": 40320000,
           "posix": -2177493112000,
           "save": 0
@@ -2116,8 +2132,8 @@
         "z",
         {
           "wallclock": -1829347200000,
-          "format": "NC%sT",
-          "abbrev": "NCT",
+          "format": "+11/+12",
+          "abbrev": "+11",
           "offset": 39600000,
           "posix": -1829387148000,
           "save": 0,
@@ -2199,25 +2215,9 @@
       "Pacific/Pago_Pago": [
         "z",
         {
-          "wallclock": 438998400000,
+          "wallclock": -1861920000000,
           "format": "SST",
           "abbrev": "SST",
-          "offset": -39600000,
-          "posix": 439038000000,
-          "save": 0
-        },
-        {
-          "wallclock": -86918400000,
-          "format": "BST",
-          "abbrev": "BST",
-          "offset": -39600000,
-          "posix": -86878800000,
-          "save": 0
-        },
-        {
-          "wallclock": -1861920000000,
-          "format": "NST",
-          "abbrev": "NST",
           "offset": -39600000,
           "posix": -1861879032000,
           "save": 0
@@ -2248,8 +2248,8 @@
         "z",
         {
           "wallclock": -2177452800000,
-          "format": "PWT",
-          "abbrev": "PWT",
+          "format": "+09",
+          "abbrev": "+09",
           "offset": 32400000,
           "posix": -2177485076000,
           "save": 0
@@ -2272,16 +2272,16 @@
         "z",
         {
           "wallclock": 893635200000,
-          "format": "PST",
-          "abbrev": "PST",
+          "format": "-08",
+          "abbrev": "-08",
           "offset": -28800000,
           "posix": 893665800000,
           "save": 0
         },
         {
           "wallclock": -2177452800000,
-          "format": "PNT",
-          "abbrev": "PNT",
+          "format": "-0830",
+          "abbrev": "-0830",
           "offset": -30600000,
           "posix": -2177421580000,
           "save": 0
@@ -2304,8 +2304,8 @@
         "z",
         {
           "wallclock": -2177452800000,
-          "format": "PONT",
-          "abbrev": "PONT",
+          "format": "+11",
+          "abbrev": "+11",
           "offset": 39600000,
           "posix": -2177490772000,
           "save": 0
@@ -2328,8 +2328,8 @@
         "z",
         {
           "wallclock": -2177452800000,
-          "format": "PONT",
-          "abbrev": "PONT",
+          "format": "+11",
+          "abbrev": "+11",
           "offset": 39600000,
           "posix": -2177490772000,
           "save": 0
@@ -2352,8 +2352,8 @@
         "z",
         {
           "wallclock": -2366755200000,
-          "format": "PGT",
-          "abbrev": "PGT",
+          "format": "+10",
+          "abbrev": "+10",
           "offset": 36000000,
           "posix": -2366790512000,
           "save": 0
@@ -2384,8 +2384,8 @@
         "z",
         {
           "wallclock": 279676800000,
-          "format": "CK%sT",
-          "abbrev": "CKHST",
+          "format": "-10/-0930",
+          "abbrev": "-0930",
           "offset": -36000000,
           "posix": 279714600000,
           "save": 1800000,
@@ -2393,8 +2393,8 @@
         },
         {
           "wallclock": -2177452800000,
-          "format": "CKT",
-          "abbrev": "CKT",
+          "format": "-1030",
+          "abbrev": "-1030",
           "offset": -37800000,
           "posix": -2177414456000,
           "save": 0
@@ -2501,25 +2501,9 @@
       "Pacific/Samoa": [
         "z",
         {
-          "wallclock": 438998400000,
+          "wallclock": -1861920000000,
           "format": "SST",
           "abbrev": "SST",
-          "offset": -39600000,
-          "posix": 439038000000,
-          "save": 0
-        },
-        {
-          "wallclock": -86918400000,
-          "format": "BST",
-          "abbrev": "BST",
-          "offset": -39600000,
-          "posix": -86878800000,
-          "save": 0
-        },
-        {
-          "wallclock": -1861920000000,
-          "format": "NST",
-          "abbrev": "NST",
           "offset": -39600000,
           "posix": -1861879032000,
           "save": 0
@@ -2550,8 +2534,8 @@
         "z",
         {
           "wallclock": -1806710400000,
-          "format": "TAHT",
-          "abbrev": "TAHT",
+          "format": "-10",
+          "abbrev": "-10",
           "offset": -36000000,
           "posix": -1806674504000,
           "save": 0
@@ -2574,8 +2558,8 @@
         "z",
         {
           "wallclock": -2177452800000,
-          "format": "GILT",
-          "abbrev": "GILT",
+          "format": "+12",
+          "abbrev": "+12",
           "offset": 43200000,
           "posix": -2177494324000,
           "save": 0
@@ -2726,8 +2710,8 @@
         "z",
         {
           "wallclock": -2177452800000,
-          "format": "CHUT",
-          "abbrev": "CHUT",
+          "format": "+10",
+          "abbrev": "+10",
           "offset": 36000000,
           "posix": -2177489228000,
           "save": 0
@@ -2750,8 +2734,8 @@
         "z",
         {
           "wallclock": -2177452800000,
-          "format": "WAKT",
-          "abbrev": "WAKT",
+          "format": "+12",
+          "abbrev": "+12",
           "offset": 43200000,
           "posix": -2177492788000,
           "save": 0
@@ -2774,8 +2758,8 @@
         "z",
         {
           "wallclock": -2177452800000,
-          "format": "WFT",
-          "abbrev": "WFT",
+          "format": "+12",
+          "abbrev": "+12",
           "offset": 43200000,
           "posix": -2177496920000,
           "save": 0
@@ -2798,8 +2782,8 @@
         "z",
         {
           "wallclock": -2177452800000,
-          "format": "CHUT",
-          "abbrev": "CHUT",
+          "format": "+10",
+          "abbrev": "+10",
           "offset": 36000000,
           "posix": -2177489228000,
           "save": 0
