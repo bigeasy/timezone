@@ -3,6 +3,15 @@
     "Asia/Famagusta": [
       "z",
       {
+        "wallclock": 1509249600000,
+        "format": "EE%sT",
+        "abbrev": "EET",
+        "offset": 7200000,
+        "posix": 1509238800000,
+        "save": 0,
+        "rules": "EUAsia"
+      },
+      {
         "wallclock": 1473292800000,
         "format": "+03",
         "abbrev": "+03",

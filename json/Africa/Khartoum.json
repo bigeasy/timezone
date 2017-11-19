@@ -3,6 +3,14 @@
     "Africa/Khartoum": [
       "z",
       {
+        "wallclock": 1509494400000,
+        "format": "CAT",
+        "abbrev": "CAT",
+        "offset": 7200000,
+        "posix": 1509483600000,
+        "save": 0
+      },
+      {
         "wallclock": 947937600000,
         "format": "EAT",
         "abbrev": "EAT",

@@ -3,6 +3,15 @@
     "Asia/Yerevan": [
       "z",
       {
+        "wallclock": 1293840000000,
+        "format": "+04/+05",
+        "abbrev": "+04",
+        "offset": 14400000,
+        "posix": 1293825600000,
+        "save": 0,
+        "rules": "Armenia"
+      },
+      {
         "wallclock": 852076800000,
         "format": "+04/+05",
         "abbrev": "+04",
@@ -56,9 +65,9 @@
     ]
   },
   "rules": {
-    "RussiaAsia": [
+    "Armenia": [
       {
-        "from": 1985,
+        "from": 2011,
         "to": 2011,
         "month": 2,
         "day": [
@@ -72,8 +81,38 @@
         "saved": 0
       },
       {
-        "from": 1996,
+        "from": 2011,
         "to": 2011,
+        "month": 9,
+        "day": [
+          0,
+          -31
+        ],
+        "time": 180,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      }
+    ],
+    "RussiaAsia": [
+      {
+        "from": 1985,
+        "to": 2010,
+        "month": 2,
+        "day": [
+          0,
+          -31
+        ],
+        "time": 120,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      },
+      {
+        "from": 1996,
+        "to": 2010,
         "month": 9,
         "day": [
           0,

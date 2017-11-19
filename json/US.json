@@ -56,11 +56,11 @@
           "save": 0
         },
         {
-          "wallclock": -3225312000000,
+          "wallclock": -3225173303000,
           "format": "LMT",
           "abbrev": "LMT",
           "offset": -35976000,
-          "posix": -3225362424000,
+          "posix": -3225223727000,
           "save": 0
         },
         {
@@ -325,18 +325,18 @@
           "save": 0
         },
         {
-          "wallclock": -3225312000000,
+          "wallclock": -3225179725000,
           "format": "LMT",
           "abbrev": "LMT",
           "offset": -42398000,
-          "posix": -3225356001000,
+          "posix": -3225223727000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 44001000,
+          "offset": 44002000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -2429,34 +2429,6 @@
       ],
       "Detroit": [
         {
-          "from": 1967,
-          "to": 1967,
-          "month": 5,
-          "day": [
-            7,
-            14
-          ],
-          "time": 120,
-          "clock": "wallclock",
-          "save": 60,
-          "letter": "D",
-          "saved": 0
-        },
-        {
-          "from": 1967,
-          "to": 1967,
-          "month": 9,
-          "day": [
-            0,
-            -31
-          ],
-          "time": 120,
-          "clock": "wallclock",
-          "save": 0,
-          "letter": "S",
-          "saved": 3600000
-        },
-        {
           "from": 1948,
           "to": 1948,
           "month": 3,
@@ -3118,11 +3090,11 @@
           "save": 0
         },
         {
-          "wallclock": -2855692800000,
+          "wallclock": -2445379200000,
           "format": "LMT",
           "abbrev": "LMT",
           "offset": -40968000,
-          "posix": -2855738232000,
+          "posix": -2445424632000,
           "save": 0
         },
         {

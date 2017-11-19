@@ -38,11 +38,11 @@
         "rules": "GB-Eire"
       },
       {
-        "wallclock": -699487200000,
+        "wallclock": -699483600000,
         "format": "GMT",
         "abbrev": "GMT",
         "offset": 0,
-        "posix": -699490800000,
+        "posix": -699487200000,
         "save": 0
       },
       {
@@ -54,11 +54,11 @@
         "save": 3600000
       },
       {
-        "wallclock": -733356000000,
+        "wallclock": -733352400000,
         "format": "GMT",
         "abbrev": "GMT",
         "offset": 0,
-        "posix": -733359600000,
+        "posix": -733356000000,
         "save": 0
       },
       {

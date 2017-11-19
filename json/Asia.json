@@ -84,7 +84,7 @@
       "RussiaAsia": [
         {
           "from": 1985,
-          "to": 2011,
+          "to": 2010,
           "month": 2,
           "day": [
             0,
@@ -98,7 +98,7 @@
         },
         {
           "from": 1996,
-          "to": 2011,
+          "to": 2010,
           "month": 9,
           "day": [
             0,
@@ -1007,7 +1007,7 @@
       "RussiaAsia": [
         {
           "from": 1985,
-          "to": 2011,
+          "to": 2010,
           "month": 2,
           "day": [
             0,
@@ -1021,7 +1021,7 @@
         },
         {
           "from": 1996,
-          "to": 2011,
+          "to": 2010,
           "month": 9,
           "day": [
             0,
@@ -1163,7 +1163,7 @@
       "RussiaAsia": [
         {
           "from": 1985,
-          "to": 2011,
+          "to": 2010,
           "month": 2,
           "day": [
             0,
@@ -1177,7 +1177,7 @@
         },
         {
           "from": 1996,
-          "to": 2011,
+          "to": 2010,
           "month": 9,
           "day": [
             0,
@@ -1286,7 +1286,7 @@
       "RussiaAsia": [
         {
           "from": 1985,
-          "to": 2011,
+          "to": 2010,
           "month": 2,
           "day": [
             0,
@@ -1300,7 +1300,7 @@
         },
         {
           "from": 1996,
-          "to": 2011,
+          "to": 2010,
           "month": 9,
           "day": [
             0,
@@ -1409,7 +1409,7 @@
       "RussiaAsia": [
         {
           "from": 1985,
-          "to": 2011,
+          "to": 2010,
           "month": 2,
           "day": [
             0,
@@ -1423,7 +1423,7 @@
         },
         {
           "from": 1996,
-          "to": 2011,
+          "to": 2010,
           "month": 9,
           "day": [
             0,
@@ -1566,7 +1566,7 @@
       "RussiaAsia": [
         {
           "from": 1985,
-          "to": 2011,
+          "to": 2010,
           "month": 2,
           "day": [
             0,
@@ -1580,7 +1580,7 @@
         },
         {
           "from": 1996,
-          "to": 2011,
+          "to": 2010,
           "month": 9,
           "day": [
             0,
@@ -1969,7 +1969,7 @@
       "RussiaAsia": [
         {
           "from": 1985,
-          "to": 2011,
+          "to": 2010,
           "month": 2,
           "day": [
             0,
@@ -1983,7 +1983,7 @@
         },
         {
           "from": 1996,
-          "to": 2011,
+          "to": 2010,
           "month": 9,
           "day": [
             0,
@@ -2866,7 +2866,7 @@
       "RussiaAsia": [
         {
           "from": 1985,
-          "to": 2011,
+          "to": 2010,
           "month": 2,
           "day": [
             0,
@@ -2880,7 +2880,7 @@
         },
         {
           "from": 1996,
-          "to": 2011,
+          "to": 2010,
           "month": 9,
           "day": [
             0,
@@ -3001,16 +3001,32 @@
           "wallclock": -891561600000,
           "format": "+0630",
           "abbrev": "+0630",
-          "offset": 23400000,
-          "posix": -891582800000,
+          "offset": 19800000,
+          "posix": -891581400000,
+          "save": 3600000
+        },
+        {
+          "wallclock": -2019686400000,
+          "format": "IST",
+          "abbrev": "IST",
+          "offset": 19800000,
+          "posix": -2019705670000,
           "save": 0
         },
         {
-          "wallclock": -2840140800000,
+          "wallclock": -3155673600000,
+          "format": "MMT",
+          "abbrev": "MMT",
+          "offset": 19270000,
+          "posix": -3155694800000,
+          "save": 0
+        },
+        {
+          "wallclock": -3645216000000,
           "format": "HMT",
           "abbrev": "HMT",
           "offset": 21200000,
-          "posix": -2840162008000,
+          "posix": -3645237208000,
           "save": 0
         },
         {
@@ -4749,7 +4765,7 @@
       "RussiaAsia": [
         {
           "from": 1985,
-          "to": 2011,
+          "to": 2010,
           "month": 2,
           "day": [
             0,
@@ -4763,7 +4779,7 @@
         },
         {
           "from": 1996,
-          "to": 2011,
+          "to": 2010,
           "month": 9,
           "day": [
             0,
@@ -4824,6 +4840,15 @@
     "zones": {
       "Asia/Famagusta": [
         "z",
+        {
+          "wallclock": 1509249600000,
+          "format": "EE%sT",
+          "abbrev": "EET",
+          "offset": 7200000,
+          "posix": 1509238800000,
+          "save": 0,
+          "rules": "EUAsia"
+        },
         {
           "wallclock": 1473292800000,
           "format": "+03",
@@ -13610,16 +13635,32 @@
           "wallclock": -891561600000,
           "format": "+0630",
           "abbrev": "+0630",
-          "offset": 23400000,
-          "posix": -891582800000,
+          "offset": 19800000,
+          "posix": -891581400000,
+          "save": 3600000
+        },
+        {
+          "wallclock": -2019686400000,
+          "format": "IST",
+          "abbrev": "IST",
+          "offset": 19800000,
+          "posix": -2019705670000,
           "save": 0
         },
         {
-          "wallclock": -2840140800000,
+          "wallclock": -3155673600000,
+          "format": "MMT",
+          "abbrev": "MMT",
+          "offset": 19270000,
+          "posix": -3155694800000,
+          "save": 0
+        },
+        {
+          "wallclock": -3645216000000,
           "format": "HMT",
           "abbrev": "HMT",
           "offset": 21200000,
-          "posix": -2840162008000,
+          "posix": -3645237208000,
           "save": 0
         },
         {
@@ -16272,7 +16313,7 @@
       "RussiaAsia": [
         {
           "from": 1985,
-          "to": 2011,
+          "to": 2010,
           "month": 2,
           "day": [
             0,
@@ -16286,7 +16327,7 @@
         },
         {
           "from": 1996,
-          "to": 2011,
+          "to": 2010,
           "month": 9,
           "day": [
             0,
@@ -16638,7 +16679,7 @@
       "RussiaAsia": [
         {
           "from": 1985,
-          "to": 2011,
+          "to": 2010,
           "month": 2,
           "day": [
             0,
@@ -16652,7 +16693,7 @@
         },
         {
           "from": 1996,
-          "to": 2011,
+          "to": 2010,
           "month": 9,
           "day": [
             0,
@@ -16734,22 +16775,22 @@
           "format": "+0630",
           "abbrev": "+0630",
           "offset": 23400000,
-          "posix": -1577946280000,
+          "posix": -1577946287000,
           "save": 0
         },
         {
           "wallclock": -2840140800000,
           "format": "RMT",
           "abbrev": "RMT",
-          "offset": 23080000,
-          "posix": -2840163880000,
+          "offset": 23087000,
+          "posix": -2840163887000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 23080000,
+          "offset": 23087000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -17247,7 +17288,7 @@
       "RussiaAsia": [
         {
           "from": 1985,
-          "to": 2011,
+          "to": 2010,
           "month": 2,
           "day": [
             0,
@@ -17261,7 +17302,7 @@
         },
         {
           "from": 1996,
-          "to": 2011,
+          "to": 2010,
           "month": 9,
           "day": [
             0,
@@ -18378,7 +18419,7 @@
       "RussiaAsia": [
         {
           "from": 1985,
-          "to": 2011,
+          "to": 2010,
           "month": 2,
           "day": [
             0,
@@ -18392,7 +18433,7 @@
         },
         {
           "from": 1996,
-          "to": 2011,
+          "to": 2010,
           "month": 9,
           "day": [
             0,
@@ -18553,7 +18594,7 @@
       "RussiaAsia": [
         {
           "from": 1985,
-          "to": 2011,
+          "to": 2010,
           "month": 2,
           "day": [
             0,
@@ -18567,7 +18608,7 @@
         },
         {
           "from": 1996,
-          "to": 2011,
+          "to": 2010,
           "month": 9,
           "day": [
             0,
@@ -22458,22 +22499,22 @@
           "format": "+0630",
           "abbrev": "+0630",
           "offset": 23400000,
-          "posix": -1577946280000,
+          "posix": -1577946287000,
           "save": 0
         },
         {
           "wallclock": -2840140800000,
           "format": "RMT",
           "abbrev": "RMT",
-          "offset": 23080000,
-          "posix": -2840163880000,
+          "offset": 23087000,
+          "posix": -2840163887000,
           "save": 0
         },
         {
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 23080000,
+          "offset": 23087000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -22788,6 +22829,15 @@
       "Asia/Yerevan": [
         "z",
         {
+          "wallclock": 1293840000000,
+          "format": "+04/+05",
+          "abbrev": "+04",
+          "offset": 14400000,
+          "posix": 1293825600000,
+          "save": 0,
+          "rules": "Armenia"
+        },
+        {
           "wallclock": 852076800000,
           "format": "+04/+05",
           "abbrev": "+04",
@@ -22841,9 +22891,9 @@
       ]
     },
     "rules": {
-      "RussiaAsia": [
+      "Armenia": [
         {
-          "from": 1985,
+          "from": 2011,
           "to": 2011,
           "month": 2,
           "day": [
@@ -22857,8 +22907,38 @@
           "saved": 0
         },
         {
-          "from": 1996,
+          "from": 2011,
           "to": 2011,
+          "month": 9,
+          "day": [
+            0,
+            -31
+          ],
+          "time": 180,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        }
+      ],
+      "RussiaAsia": [
+        {
+          "from": 1985,
+          "to": 2010,
+          "month": 2,
+          "day": [
+            0,
+            -31
+          ],
+          "time": 120,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
+        },
+        {
+          "from": 1996,
+          "to": 2010,
           "month": 9,
           "day": [
             0,

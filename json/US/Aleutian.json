@@ -63,18 +63,18 @@
         "save": 0
       },
       {
-        "wallclock": -3225312000000,
+        "wallclock": -3225179725000,
         "format": "LMT",
         "abbrev": "LMT",
         "offset": -42398000,
-        "posix": -3225356001000,
+        "posix": -3225223727000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 44001000,
+        "offset": 44002000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

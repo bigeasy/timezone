@@ -3961,7 +3961,7 @@
           "format": "CA%sT",
           "abbrev": "CAT",
           "offset": 7200000,
-          "posix": -1230775808000,
+          "posix": -1230775588000,
           "save": 0,
           "rules": "Sudan"
         },
@@ -3969,7 +3969,7 @@
           "wallclock": -1.7976931348623157e+308,
           "format": "LMT",
           "abbrev": "LMT",
-          "offset": 7808000,
+          "offset": 7588000,
           "posix": -1.7976931348623157e+308,
           "save": 0
         }
@@ -4088,6 +4088,14 @@
     "zones": {
       "Africa/Khartoum": [
         "z",
+        {
+          "wallclock": 1509494400000,
+          "format": "CAT",
+          "abbrev": "CAT",
+          "offset": 7200000,
+          "posix": 1509483600000,
+          "save": 0
+        },
         {
           "wallclock": 947937600000,
           "format": "EAT",
@@ -5580,11 +5588,19 @@
       "Africa/Windhoek": [
         "z",
         {
-          "wallclock": 765331200000,
+          "wallclock": 1504404000000,
+          "format": "CAT",
+          "abbrev": "CAT",
+          "offset": 7200000,
+          "posix": 1504400400000,
+          "save": 0
+        },
+        {
+          "wallclock": 764208000000,
           "format": "WA%sT",
           "abbrev": "WAT",
           "offset": 3600000,
-          "posix": 765324000000,
+          "posix": 764200800000,
           "save": 0,
           "rules": "Namibia"
         },
@@ -5641,8 +5657,22 @@
     "rules": {
       "Namibia": [
         {
+          "from": 1995,
+          "to": 2017,
+          "month": 3,
+          "day": [
+            0,
+            1
+          ],
+          "time": 120,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "",
+          "saved": 3600000
+        },
+        {
           "from": 1994,
-          "to": 1.7976931348623157e+308,
+          "to": 2016,
           "month": 8,
           "day": [
             0,
@@ -5655,18 +5685,18 @@
           "saved": 0
         },
         {
-          "from": 1995,
-          "to": 1.7976931348623157e+308,
-          "month": 3,
+          "from": 1994,
+          "to": 1994,
+          "month": 2,
           "day": [
-            0,
-            1
+            7,
+            21
           ],
-          "time": 120,
+          "time": 0,
           "clock": "wallclock",
           "save": 0,
           "letter": "",
-          "saved": 3600000
+          "saved": 0
         }
       ]
     }

@@ -30,11 +30,11 @@
           "save": 0
         },
         {
-          "wallclock": -2855692800000,
+          "wallclock": -2445379200000,
           "format": "LMT",
           "abbrev": "LMT",
           "offset": -41216000,
-          "posix": -2855737984000,
+          "posix": -2445424384000,
           "save": 0
         },
         {
@@ -1347,7 +1347,7 @@
           "month": 0,
           "day": [
             0,
-            15
+            14
           ],
           "time": 180,
           "clock": "wallclock",
@@ -1963,11 +1963,11 @@
           "save": 0
         },
         {
-          "wallclock": -2855692800000,
+          "wallclock": -2445379200000,
           "format": "LMT",
           "abbrev": "LMT",
           "offset": -40968000,
-          "posix": -2855738232000,
+          "posix": -2445424632000,
           "save": 0
         },
         {
@@ -2223,11 +2223,11 @@
           "save": 0
         },
         {
-          "wallclock": -2855692800000,
+          "wallclock": -2445379200000,
           "format": "LMT",
           "abbrev": "LMT",
           "offset": -40968000,
-          "posix": -2855738232000,
+          "posix": -2445424632000,
           "save": 0
         },
         {
@@ -2509,11 +2509,11 @@
           "save": 0
         },
         {
-          "wallclock": -2855692800000,
+          "wallclock": -2445379200000,
           "format": "LMT",
           "abbrev": "LMT",
           "offset": -40968000,
-          "posix": -2855738232000,
+          "posix": -2445424632000,
           "save": 0
         },
         {
@@ -2618,22 +2618,8 @@
     "rules": {
       "Tonga": [
         {
-          "from": 2016,
-          "to": 1.7976931348623157e+308,
-          "month": 10,
-          "day": [
-            0,
-            1
-          ],
-          "time": 120,
-          "clock": "wallclock",
-          "save": 60,
-          "letter": "S",
-          "saved": 0
-        },
-        {
           "from": 2017,
-          "to": 1.7976931348623157e+308,
+          "to": 2017,
           "month": 0,
           "day": [
             0,
@@ -2644,6 +2630,20 @@
           "save": 0,
           "letter": "",
           "saved": 3600000
+        },
+        {
+          "from": 2016,
+          "to": 2016,
+          "month": 10,
+          "day": [
+            0,
+            1
+          ],
+          "time": 120,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "S",
+          "saved": 0
         },
         {
           "from": 2001,
