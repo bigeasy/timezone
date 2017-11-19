@@ -91,7 +91,7 @@
       },
       {
         "wallclock": -2185401600000,
-        "format": "EET",
+        "format": "EET/EEST",
         "abbrev": "EET",
         "offset": 7200000,
         "posix": -2185409872000,

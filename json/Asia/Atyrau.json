@@ -1,6 +1,6 @@
 {
   "zones": {
-    "Asia/Aqtau": [
+    "Asia/Atyrau": [
       "z",
       {
         "wallclock": 1099191600000,
@@ -11,12 +11,12 @@
         "save": 0
       },
       {
-        "wallclock": 780462000000,
+        "wallclock": 922586400000,
         "format": "+04/+05",
-        "abbrev": "+04",
+        "abbrev": "+05",
         "offset": 14400000,
-        "posix": 780440400000,
-        "save": 0,
+        "posix": 922568400000,
+        "save": 3600000,
         "rules": "RussiaAsia"
       },
       {
@@ -67,14 +67,14 @@
         "format": "+04",
         "abbrev": "+04",
         "offset": 14400000,
-        "posix": -1441164064000,
+        "posix": -1441164464000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": 12064000,
+        "offset": 12464000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }
