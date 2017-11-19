@@ -44638,8 +44638,22 @@
     "rules": {
       "Haiti": [
         {
-          "from": 2012,
-          "to": 2015,
+          "from": 2017,
+          "to": 1.7976931348623157e+308,
+          "month": 10,
+          "day": [
+            0,
+            1
+          ],
+          "time": 120,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "S",
+          "saved": 3600000
+        },
+        {
+          "from": 2017,
+          "to": 1.7976931348623157e+308,
           "month": 2,
           "day": [
             0,
@@ -44666,6 +44680,20 @@
           "saved": 3600000
         },
         {
+          "from": 2012,
+          "to": 2015,
+          "month": 2,
+          "day": [
+            0,
+            8
+          ],
+          "time": 120,
+          "clock": "wallclock",
+          "save": 60,
+          "letter": "D",
+          "saved": 0
+        },
+        {
           "from": 2005,
           "to": 2006,
           "month": 3,
@@ -44688,6 +44716,20 @@
             -31
           ],
           "time": 0,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "S",
+          "saved": 3600000
+        },
+        {
+          "from": 1988,
+          "to": 1997,
+          "month": 9,
+          "day": [
+            0,
+            -31
+          ],
+          "time": 120,
           "clock": "wallclock",
           "save": 0,
           "letter": "S",
@@ -44706,20 +44748,6 @@
           "save": 60,
           "letter": "D",
           "saved": 0
-        },
-        {
-          "from": 1988,
-          "to": 1997,
-          "month": 9,
-          "day": [
-            0,
-            -31
-          ],
-          "time": 120,
-          "clock": "wallclock",
-          "save": 0,
-          "letter": "S",
-          "saved": 3600000
         },
         {
           "from": 1984,

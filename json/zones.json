@@ -4598,17 +4598,17 @@
         "Africa/Monrovia": [
           "z",
           {
-            "wallclock": 73526400000,
+            "wallclock": 63590400000,
             "format": "GMT",
             "abbrev": "GMT",
             "offset": 0,
-            "posix": 73529070000,
+            "posix": 63593070000,
             "save": 0
           },
           {
             "wallclock": -1604361600000,
-            "format": "-004430",
-            "abbrev": "-004430",
+            "format": "MMT",
+            "abbrev": "MMT",
             "offset": -2670000,
             "posix": -1604359012000,
             "save": 0
@@ -50313,8 +50313,22 @@
       "rules": {
         "Haiti": [
           {
-            "from": 2012,
-            "to": 2015,
+            "from": 2017,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 2017,
+            "to": 1.7976931348623157e+308,
             "month": 2,
             "day": [
               0,
@@ -50341,6 +50355,20 @@
             "saved": 3600000
           },
           {
+            "from": 2012,
+            "to": 2015,
+            "month": 2,
+            "day": [
+              0,
+              8
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "D",
+            "saved": 0
+          },
+          {
             "from": 2005,
             "to": 2006,
             "month": 3,
@@ -50363,6 +50391,20 @@
               -31
             ],
             "time": 0,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 1988,
+            "to": 1997,
+            "month": 9,
+            "day": [
+              0,
+              -31
+            ],
+            "time": 120,
             "clock": "wallclock",
             "save": 0,
             "letter": "S",
@@ -50381,20 +50423,6 @@
             "save": 60,
             "letter": "D",
             "saved": 0
-          },
-          {
-            "from": 1988,
-            "to": 1997,
-            "month": 9,
-            "day": [
-              0,
-              -31
-            ],
-            "time": 120,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "S",
-            "saved": 3600000
           },
           {
             "from": 1984,

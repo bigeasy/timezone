@@ -3,17 +3,17 @@
     "Africa/Monrovia": [
       "z",
       {
-        "wallclock": 73526400000,
+        "wallclock": 63590400000,
         "format": "GMT",
         "abbrev": "GMT",
         "offset": 0,
-        "posix": 73529070000,
+        "posix": 63593070000,
         "save": 0
       },
       {
         "wallclock": -1604361600000,
-        "format": "-004430",
-        "abbrev": "-004430",
+        "format": "MMT",
+        "abbrev": "MMT",
         "offset": -2670000,
         "posix": -1604359012000,
         "save": 0
