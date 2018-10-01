@@ -55,9 +55,7 @@ build/timezone/America/Detroit.js: $(olson_as_json) build/olson/index.js util/zo
 	touch $@
 
 eggert/tz/zic:
-	(cd eggert/tz && cp zdump.c zdump.c.bak && patch < ../../zdump.patch)
 	make -C eggert/tz -f Makefile	
-	(cd eggert/tz && mv zdump.c.bak zdump.c)
 
 $(zoneinfo_files): $(zone_sources)
 	mkdir -p build
