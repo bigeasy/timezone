@@ -1,5 +1,7 @@
 - Version 1.0.14.
 
+ * Build with Node.js 10 on Travis CI. #296.
+ * Remove `zdump.patch`. #295.
  * Upgrade IANA TZ Database for `2018a`. #293.
 
 - Version 1.0.13.
