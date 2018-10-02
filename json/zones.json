@@ -1530,7 +1530,7 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
+            "saved": 3600000
           },
           {
             "from": 2018,
@@ -3258,7 +3258,7 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
+            "saved": 3600000
           },
           {
             "from": 2018,
@@ -4830,18 +4830,34 @@
         "Africa/Sao_Tome": [
           "z",
           {
+            "wallclock": 1514768400000,
+            "format": "WAT",
+            "abbrev": "WAT",
+            "offset": 3600000,
+            "posix": 1514768400000,
+            "save": 0
+          },
+          {
             "wallclock": -1830384000000,
             "format": "GMT",
             "abbrev": "GMT",
             "offset": 0,
-            "posix": -1830383032000,
+            "posix": -1830381795000,
+            "save": 0
+          },
+          {
+            "wallclock": -2713910400000,
+            "format": "LMT",
+            "abbrev": "LMT",
+            "offset": -2205000,
+            "posix": -2713912016000,
             "save": 0
           },
           {
             "wallclock": -1.7976931348623157e+308,
             "format": "LMT",
             "abbrev": "LMT",
-            "offset": -968000,
+            "offset": 1616000,
             "posix": -1.7976931348623157e+308,
             "save": 0
           }
@@ -6350,6 +6366,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -6361,20 +6391,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -6487,6 +6503,20 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
             "saved": 0
           },
           {
@@ -14909,6 +14939,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -14920,20 +14964,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -15046,6 +15076,20 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
             "saved": 0
           },
           {
@@ -16244,6 +16288,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -16255,20 +16313,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -16381,6 +16425,20 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
             "saved": 0
           },
           {
@@ -17495,6 +17553,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -17506,20 +17578,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -17633,6 +17691,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
           },
           {
             "from": 2015,
@@ -19582,6 +19654,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -19593,20 +19679,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -19720,6 +19792,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
           },
           {
             "from": 2015,
@@ -22895,6 +22981,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -22906,20 +23006,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -23033,6 +23119,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
           },
           {
             "from": 2015,
@@ -25837,6 +25937,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -25848,20 +25962,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -25975,6 +26075,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
           },
           {
             "from": 2015,
@@ -28155,6 +28269,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -28166,20 +28294,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -28292,6 +28406,20 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
             "saved": 0
           },
           {
@@ -38586,8 +38714,8 @@
           },
           {
             "wallclock": -1205971200000,
-            "format": "BOST",
-            "abbrev": "BOST",
+            "format": "BST",
+            "abbrev": "BST",
             "offset": -16356000,
             "posix": -1205954844000,
             "save": 3600000
@@ -39660,6 +39788,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -39671,20 +39813,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -39797,6 +39925,20 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
             "saved": 0
           },
           {
@@ -40778,6 +40920,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -40789,20 +40945,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -40916,6 +41058,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
           },
           {
             "from": 2015,
@@ -47540,6 +47696,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -47551,20 +47721,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -47677,6 +47833,20 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
             "saved": 0
           },
           {
@@ -50554,6 +50724,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -50565,20 +50749,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -50692,6 +50862,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
           },
           {
             "from": 2015,
@@ -51486,6 +51670,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -51497,20 +51695,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -51624,6 +51808,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
           },
           {
             "from": 2015,
@@ -53811,6 +54009,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -53822,20 +54034,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -53948,6 +54146,20 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
             "saved": 0
           },
           {
@@ -55419,6 +55631,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -55430,20 +55656,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -55557,6 +55769,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
           },
           {
             "from": 2015,
@@ -57474,6 +57700,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -57485,20 +57725,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -57611,6 +57837,20 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
             "saved": 0
           },
           {
@@ -59317,6 +59557,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -59328,20 +59582,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -59455,6 +59695,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
           },
           {
             "from": 2015,
@@ -103498,6 +103752,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -103509,20 +103777,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -103636,6 +103890,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
           },
           {
             "from": 2015,
@@ -104464,6 +104732,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -104475,20 +104757,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -104602,6 +104870,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
           },
           {
             "from": 2015,
@@ -105405,6 +105687,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -105416,20 +105712,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -105543,6 +105825,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
           },
           {
             "from": 2015,
@@ -106354,6 +106650,20 @@
       "rules": {
         "Brazil": [
           {
+            "from": 2018,
+            "to": 1.7976931348623157e+308,
+            "month": 10,
+            "day": [
+              0,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 2038,
             "to": 1.7976931348623157e+308,
             "month": 1,
@@ -106365,20 +106675,6 @@
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2008,
-            "to": 1.7976931348623157e+308,
-            "month": 9,
-            "day": [
-              0,
-              15
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
             "saved": 0
           },
           {
@@ -106492,6 +106788,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2008,
+            "to": 2017,
+            "month": 9,
+            "day": [
+              0,
+              15
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
           },
           {
             "from": 2015,
@@ -121013,30 +121323,13 @@
         "Europe/Dublin": [
           "z",
           {
-            "wallclock": 820454400000,
-            "format": "GMT/IST",
-            "abbrev": "GMT",
-            "offset": 0,
-            "posix": 820454400000,
-            "save": 0,
-            "rules": "EU"
-          },
-          {
-            "wallclock": 57726000000,
-            "format": "GMT/IST",
-            "abbrev": "GMT",
-            "offset": 0,
-            "posix": 57722400000,
-            "save": 0,
-            "rules": "GB-Eire"
-          },
-          {
             "wallclock": -37238400000,
-            "format": "IST",
+            "format": "IST/GMT",
             "abbrev": "IST",
             "offset": 3600000,
             "posix": -37242000000,
-            "save": 0
+            "save": 0,
+            "rules": "Eire"
           },
           {
             "wallclock": -684972000000,
@@ -121124,7 +121417,7 @@
         ]
       },
       "rules": {
-        "EU": [
+        "Eire": [
           {
             "from": 1981,
             "to": 1.7976931348623157e+308,
@@ -121135,9 +121428,9 @@
             ],
             "time": 60,
             "clock": "posix",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
+            "save": 0,
+            "letter": "IST",
+            "saved": -3600000
           },
           {
             "from": 1996,
@@ -121149,64 +121442,78 @@
             ],
             "time": 60,
             "clock": "posix",
-            "save": 0,
-            "letter": "",
-            "saved": 3600000
+            "save": -60,
+            "letter": "GMT",
+            "saved": 0
           },
           {
-            "from": 1979,
+            "from": 1990,
             "to": 1995,
-            "month": 8,
+            "month": 9,
             "day": [
               0,
-              -30
+              22
             ],
             "time": 60,
+            "clock": "posix",
+            "save": -60,
+            "letter": "GMT",
+            "saved": 0
+          },
+          {
+            "from": 1981,
+            "to": 1989,
+            "month": 9,
+            "day": [
+              0,
+              23
+            ],
+            "time": 60,
+            "clock": "posix",
+            "save": -60,
+            "letter": "GMT",
+            "saved": 0
+          },
+          {
+            "from": 1972,
+            "to": 1980,
+            "month": 2,
+            "day": [
+              0,
+              16
+            ],
+            "time": 120,
             "clock": "posix",
             "save": 0,
-            "letter": "",
-            "saved": 0
+            "letter": "IST",
+            "saved": -3600000
           },
           {
-            "from": 1977,
+            "from": 1972,
             "to": 1980,
-            "month": 3,
+            "month": 9,
             "day": [
               0,
-              1
+              23
             ],
-            "time": 60,
+            "time": 120,
             "clock": "posix",
-            "save": 60,
-            "letter": "S",
+            "save": -60,
+            "letter": "GMT",
             "saved": 0
           },
           {
-            "from": 1978,
-            "to": 1978,
+            "from": 1971,
+            "to": 1971,
             "month": 9,
             "day": [
               7,
-              1
+              31
             ],
-            "time": 60,
+            "time": 120,
             "clock": "posix",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 1977,
-            "to": 1977,
-            "month": 8,
-            "day": [
-              0,
-              -30
-            ],
-            "time": 60,
-            "clock": "posix",
-            "save": 0,
-            "letter": "",
+            "save": -60,
+            "letter": "GMT",
             "saved": 0
           }
         ],

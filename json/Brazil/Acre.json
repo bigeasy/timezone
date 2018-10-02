@@ -48,6 +48,20 @@
   "rules": {
     "Brazil": [
       {
+        "from": 2018,
+        "to": 1.7976931348623157e+308,
+        "month": 10,
+        "day": [
+          0,
+          1
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      },
+      {
         "from": 2038,
         "to": 1.7976931348623157e+308,
         "month": 1,
@@ -59,20 +73,6 @@
         "clock": "wallclock",
         "save": 0,
         "letter": "",
-        "saved": 0
-      },
-      {
-        "from": 2008,
-        "to": 1.7976931348623157e+308,
-        "month": 9,
-        "day": [
-          0,
-          15
-        ],
-        "time": 0,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "S",
         "saved": 0
       },
       {
@@ -186,6 +186,20 @@
         "save": 0,
         "letter": "",
         "saved": 3600000
+      },
+      {
+        "from": 2008,
+        "to": 2017,
+        "month": 9,
+        "day": [
+          0,
+          15
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
       },
       {
         "from": 2015,

@@ -3,30 +3,13 @@
     "Europe/Dublin": [
       "z",
       {
-        "wallclock": 820454400000,
-        "format": "GMT/IST",
-        "abbrev": "GMT",
-        "offset": 0,
-        "posix": 820454400000,
-        "save": 0,
-        "rules": "EU"
-      },
-      {
-        "wallclock": 57726000000,
-        "format": "GMT/IST",
-        "abbrev": "GMT",
-        "offset": 0,
-        "posix": 57722400000,
-        "save": 0,
-        "rules": "GB-Eire"
-      },
-      {
         "wallclock": -37238400000,
-        "format": "IST",
+        "format": "IST/GMT",
         "abbrev": "IST",
         "offset": 3600000,
         "posix": -37242000000,
-        "save": 0
+        "save": 0,
+        "rules": "Eire"
       },
       {
         "wallclock": -684972000000,
@@ -114,7 +97,7 @@
     ]
   },
   "rules": {
-    "EU": [
+    "Eire": [
       {
         "from": 1981,
         "to": 1.7976931348623157e+308,
@@ -125,9 +108,9 @@
         ],
         "time": 60,
         "clock": "posix",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
+        "save": 0,
+        "letter": "IST",
+        "saved": -3600000
       },
       {
         "from": 1996,
@@ -139,64 +122,78 @@
         ],
         "time": 60,
         "clock": "posix",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
+        "save": -60,
+        "letter": "GMT",
+        "saved": 0
       },
       {
-        "from": 1979,
+        "from": 1990,
         "to": 1995,
-        "month": 8,
+        "month": 9,
         "day": [
           0,
-          -30
+          22
         ],
         "time": 60,
+        "clock": "posix",
+        "save": -60,
+        "letter": "GMT",
+        "saved": 0
+      },
+      {
+        "from": 1981,
+        "to": 1989,
+        "month": 9,
+        "day": [
+          0,
+          23
+        ],
+        "time": 60,
+        "clock": "posix",
+        "save": -60,
+        "letter": "GMT",
+        "saved": 0
+      },
+      {
+        "from": 1972,
+        "to": 1980,
+        "month": 2,
+        "day": [
+          0,
+          16
+        ],
+        "time": 120,
         "clock": "posix",
         "save": 0,
-        "letter": "",
-        "saved": 0
+        "letter": "IST",
+        "saved": -3600000
       },
       {
-        "from": 1977,
+        "from": 1972,
         "to": 1980,
-        "month": 3,
+        "month": 9,
         "day": [
           0,
-          1
+          23
         ],
-        "time": 60,
+        "time": 120,
         "clock": "posix",
-        "save": 60,
-        "letter": "S",
+        "save": -60,
+        "letter": "GMT",
         "saved": 0
       },
       {
-        "from": 1978,
-        "to": 1978,
+        "from": 1971,
+        "to": 1971,
         "month": 9,
         "day": [
           7,
-          1
+          31
         ],
-        "time": 60,
+        "time": 120,
         "clock": "posix",
-        "save": 0,
-        "letter": "",
-        "saved": 0
-      },
-      {
-        "from": 1977,
-        "to": 1977,
-        "month": 8,
-        "day": [
-          0,
-          -30
-        ],
-        "time": 60,
-        "clock": "posix",
-        "save": 0,
-        "letter": "",
+        "save": -60,
+        "letter": "GMT",
         "saved": 0
       }
     ],
