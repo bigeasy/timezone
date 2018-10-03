@@ -32,7 +32,7 @@ Publish data files to `gh-pages`.
 - [ ] In the `code` submodule `make clean && make zic && make && npm test`.
 - [ ] In the root directory run `NODE_PATH=code/build node data.js`.
 - [ ] Run `git add v$version`.
-- [ ] Run `git commit -m $'Data files for v$version.\n\nSee #$issue.' -a`.
+- [ ] Run `git commit -m $'Update GitHub Pages and data files for v$version.\n\nSee #$issue.' -a`.
 - [ ] Push commit with `git push origin HEAD`.
 
 Publish data files as zip. (This is specific to my checkouts.)
@@ -44,7 +44,7 @@ Publish data files as zip. (This is specific to my checkouts.)
 - [ ] Run `rm -rf amd json jsonp`.
 - [ ] Run `rsync -av /home/timezone/pages/v$version/ ./`
 - [ ] Run `git add .`.
-- [ ] Run `git commit -m $'Release $version.\n\nSee #$issue.' -a`.
+- [ ] Run `git commit -m $'Update data file archives for v$version.\n\nSee #$issue.' -a`.
 - [ ] Run `git tag data-v$version && git push origin data-v$version`.
 - [ ] Push commit with `git push origin HEAD`.
 EOF
