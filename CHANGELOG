@@ -1,5 +1,7 @@
 - Version 1.0.16.
 
+Wed Oct  3 16:26:12 UTC 2018
+
  * Upgrade IANA TZ Database for `2018c`. Closes #300.
  * Tidy commit messages in checklist utility. Closes #303.
 
