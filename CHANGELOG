@@ -1,5 +1,6 @@
 - Version 1.0.15.
 
+ * Remove dimensions from `README.md` image. #299.
  * Upgrade IANA TZ Database for `2018b`. #297.
 
 - Version 1.0.14.
