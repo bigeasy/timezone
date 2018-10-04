@@ -28,10 +28,10 @@
         "to": 1951,
         "month": 8,
         "day": [
-          6,
-          8
+          0,
+          9
         ],
-        "time": 120,
+        "time": 0,
         "clock": "wallclock",
         "save": 0,
         "letter": "S",
@@ -42,10 +42,10 @@
         "to": 1951,
         "month": 4,
         "day": [
-          0,
+          6,
           1
         ],
-        "time": 120,
+        "time": 1440,
         "clock": "wallclock",
         "save": 60,
         "letter": "D",
@@ -56,10 +56,10 @@
         "to": 1949,
         "month": 3,
         "day": [
-          0,
+          6,
           1
         ],
-        "time": 120,
+        "time": 1440,
         "clock": "wallclock",
         "save": 60,
         "letter": "D",
@@ -70,10 +70,10 @@
         "to": 1948,
         "month": 4,
         "day": [
-          0,
+          6,
           1
         ],
-        "time": 120,
+        "time": 1440,
         "clock": "wallclock",
         "save": 60,
         "letter": "D",
