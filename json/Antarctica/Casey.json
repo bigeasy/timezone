@@ -3,6 +3,14 @@
     "Antarctica/Casey": [
       "z",
       {
+        "wallclock": 1520740800000,
+        "format": "+08",
+        "abbrev": "+08",
+        "offset": 28800000,
+        "posix": 1520701200000,
+        "save": 0
+      },
+      {
         "wallclock": 1477094400000,
         "format": "+11",
         "abbrev": "+11",

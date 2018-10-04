@@ -3,11 +3,11 @@
     "Asia/Macau": [
       "z",
       {
-        "wallclock": -1830384000000,
+        "wallclock": -1830385540000,
         "format": "C%sT",
         "abbrev": "CST",
         "offset": 28800000,
-        "posix": -1830411260000,
+        "posix": -1830412800000,
         "save": 0,
         "rules": "Macau"
       },

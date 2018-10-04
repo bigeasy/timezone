@@ -24,22 +24,22 @@
         "format": "EST",
         "abbrev": "EST",
         "offset": -18000000,
-        "posix": -1827687169000,
+        "posix": -1827687170000,
         "save": 0
       },
       {
         "wallclock": -2524521600000,
         "format": "KMT",
         "abbrev": "KMT",
-        "offset": -18431000,
-        "posix": -2524503169000,
+        "offset": -18430000,
+        "posix": -2524503170000,
         "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
         "format": "LMT",
         "abbrev": "LMT",
-        "offset": -18431000,
+        "offset": -18430000,
         "posix": -1.7976931348623157e+308,
         "save": 0
       }

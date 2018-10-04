@@ -34,7 +34,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 20,
-        "letter": "GHST",
+        "letter": "",
         "saved": 0
       },
       {
@@ -48,7 +48,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 0,
-        "letter": "GMT",
+        "letter": "",
         "saved": 1200000
       }
     ]

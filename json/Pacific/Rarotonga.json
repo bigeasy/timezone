@@ -56,7 +56,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 30,
-        "letter": "HS",
+        "letter": "",
         "saved": 0
       },
       {
@@ -70,7 +70,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 30,
-        "letter": "HS",
+        "letter": "",
         "saved": 0
       }
     ]

@@ -93,7 +93,7 @@
         "time": 120,
         "clock": "wallclock",
         "save": 60,
-        "letter": "S",
+        "letter": "",
         "saved": 0
       },
       {
@@ -135,7 +135,7 @@
         "time": 0,
         "clock": "wallclock",
         "save": 60,
-        "letter": "S",
+        "letter": "",
         "saved": 0
       },
       {

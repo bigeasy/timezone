@@ -111,11 +111,11 @@
         "rules": "Port"
       },
       {
-        "wallclock": -1830384000000,
+        "wallclock": -1830383672000,
         "format": "-02/-01",
         "abbrev": "-02",
         "offset": -7200000,
-        "posix": -1830377128000,
+        "posix": -1830376800000,
         "save": 0,
         "rules": "Port"
       },

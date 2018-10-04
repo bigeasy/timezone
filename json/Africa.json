@@ -59,7 +59,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 20,
-          "letter": "GHST",
+          "letter": "",
           "saved": 0
         },
         {
@@ -73,7 +73,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 0,
-          "letter": "GMT",
+          "letter": "",
           "saved": 1200000
         }
       ]
@@ -712,11 +712,11 @@
           "save": 0
         },
         {
-          "wallclock": -1830384000000,
+          "wallclock": -1830384140000,
           "format": "-01",
           "abbrev": "-01",
           "offset": -3600000,
-          "posix": -1830380260000,
+          "posix": -1830380400000,
           "save": 0
         },
         {
@@ -4837,11 +4837,11 @@
           "save": 0
         },
         {
-          "wallclock": -1830384000000,
+          "wallclock": -1830386205000,
           "format": "GMT",
           "abbrev": "GMT",
           "offset": 0,
-          "posix": -1830381795000,
+          "posix": -1830384000000,
           "save": 0
         },
         {

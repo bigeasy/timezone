@@ -4,6 +4,14 @@
       "Antarctica/Casey": [
         "z",
         {
+          "wallclock": 1520740800000,
+          "format": "+08",
+          "abbrev": "+08",
+          "offset": 28800000,
+          "posix": 1520701200000,
+          "save": 0
+        },
+        {
           "wallclock": 1477094400000,
           "format": "+11",
           "abbrev": "+11",
@@ -974,7 +982,7 @@
           "time": 240,
           "clock": "posix",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1002,7 +1010,7 @@
           "time": 240,
           "clock": "posix",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1030,7 +1038,7 @@
           "time": 240,
           "clock": "posix",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1072,7 +1080,7 @@
           "time": 240,
           "clock": "posix",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1142,7 +1150,7 @@
           "time": 240,
           "clock": "posix",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1170,7 +1178,7 @@
           "time": 240,
           "clock": "posix",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1226,7 +1234,7 @@
           "time": 240,
           "clock": "posix",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1240,7 +1248,7 @@
           "time": 240,
           "clock": "posix",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1268,7 +1276,7 @@
           "time": 240,
           "clock": "posix",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1296,7 +1304,7 @@
           "time": 240,
           "clock": "posix",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1310,7 +1318,7 @@
           "time": 240,
           "clock": "posix",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1352,7 +1360,7 @@
           "time": 240,
           "clock": "posix",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1380,7 +1388,7 @@
           "time": 240,
           "clock": "posix",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1408,7 +1416,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         }
       ],
@@ -1438,7 +1446,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1452,7 +1460,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1480,7 +1488,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1508,7 +1516,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1522,7 +1530,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1550,7 +1558,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1578,7 +1586,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1620,7 +1628,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1648,7 +1656,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1662,7 +1670,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1704,7 +1712,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1718,7 +1726,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1746,7 +1754,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1774,7 +1782,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1802,7 +1810,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         },
         {
@@ -1816,7 +1824,7 @@
           "time": 0,
           "clock": "wallclock",
           "save": 60,
-          "letter": "S",
+          "letter": "",
           "saved": 0
         }
       ]

@@ -3,11 +3,11 @@
     "Pacific/Kiritimati": [
       "z",
       {
-        "wallclock": 788918400000,
+        "wallclock": 788832000000,
         "format": "+14",
         "abbrev": "+14",
         "offset": 50400000,
-        "posix": 788954400000,
+        "posix": 788868000000,
         "save": 0
       },
       {

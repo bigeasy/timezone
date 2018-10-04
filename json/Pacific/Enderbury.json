@@ -3,11 +3,11 @@
     "Pacific/Enderbury": [
       "z",
       {
-        "wallclock": 788918400000,
+        "wallclock": 788832000000,
         "format": "+13",
         "abbrev": "+13",
         "offset": 46800000,
-        "posix": 788958000000,
+        "posix": 788871600000,
         "save": 0
       },
       {
