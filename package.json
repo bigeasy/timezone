@@ -12,7 +12,7 @@
     "license":          "MIT",
     "repository":       {
                             "type": "git",
-                            "url": "git://github.com/bigeasy/timezone.git"
+                            "url": "bigeasy/timezone"
                         },
     "contributors" :    [
                             "Eero Ränik <eeror@eeror.com> (http://www.eeror.com/)",
