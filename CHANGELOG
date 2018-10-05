@@ -1,5 +1,7 @@
 - Version 1.0.18.
 
+Fri Oct  5 07:15:16 UTC 2018
+
  * Upgrade IANA TZ Database for `2018e`. #302.
  * Allow negative time zone offset in Rules column. #307.
 
