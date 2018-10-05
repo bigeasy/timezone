@@ -5604,29 +5604,13 @@
       "Africa/Windhoek": [
         "z",
         {
-          "wallclock": 1504404000000,
-          "format": "CAT",
-          "abbrev": "CAT",
-          "offset": 7200000,
-          "posix": 1504400400000,
-          "save": 0
-        },
-        {
-          "wallclock": 764208000000,
-          "format": "WA%sT",
-          "abbrev": "WAT",
-          "offset": 3600000,
-          "posix": 764200800000,
-          "save": 0,
-          "rules": "Namibia"
-        },
-        {
           "wallclock": 637977600000,
-          "format": "CAT",
+          "format": "%s",
           "abbrev": "CAT",
           "offset": 7200000,
           "posix": 637970400000,
-          "save": 0
+          "save": 0,
+          "rules": "Namibia"
         },
         {
           "wallclock": -845244000000,
@@ -5673,6 +5657,20 @@
     "rules": {
       "Namibia": [
         {
+          "from": 1994,
+          "to": 2017,
+          "month": 8,
+          "day": [
+            0,
+            1
+          ],
+          "time": 120,
+          "clock": "wallclock",
+          "save": 0,
+          "letter": "CAT",
+          "saved": -3600000
+        },
+        {
           "from": 1995,
           "to": 2017,
           "month": 3,
@@ -5682,22 +5680,8 @@
           ],
           "time": 120,
           "clock": "wallclock",
-          "save": 0,
-          "letter": "",
-          "saved": 3600000
-        },
-        {
-          "from": 1994,
-          "to": 2016,
-          "month": 8,
-          "day": [
-            0,
-            1
-          ],
-          "time": 120,
-          "clock": "wallclock",
-          "save": 60,
-          "letter": "S",
+          "save": -60,
+          "letter": "WAT",
           "saved": 0
         },
         {
@@ -5710,8 +5694,8 @@
           ],
           "time": 0,
           "clock": "wallclock",
-          "save": 0,
-          "letter": "",
+          "save": -60,
+          "letter": "WAT",
           "saved": 0
         }
       ]
