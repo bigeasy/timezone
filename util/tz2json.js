@@ -136,7 +136,7 @@ for (name in info.zones) {
     record.clock = "wallclock";
     if (record.rules == "-") {
       record.rules = false;
-    } else if (/^\d+:\d+$/.test(record.rules)) {
+    } else if (/^-?\d+:\d+$/.test(record.rules)) {
       record.rules = parseOffset(record.rules) / 6e4;
     }
     if (record.until.length) {
