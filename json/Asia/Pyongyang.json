@@ -3,11 +3,11 @@
     "Asia/Pyongyang": [
       "z",
       {
-        "wallclock": 1525478400000,
+        "wallclock": 1525476600000,
         "format": "KST",
         "abbrev": "KST",
         "offset": 32400000,
-        "posix": 1525447800000,
+        "posix": 1525446000000,
         "save": 0
       },
       {

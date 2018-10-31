@@ -38445,6 +38445,14 @@
       "Europe/Volgograd": [
         "z",
         {
+          "wallclock": 1540692000000,
+          "format": "+04",
+          "abbrev": "+04",
+          "offset": 14400000,
+          "posix": 1540681200000,
+          "save": 0
+        },
+        {
           "wallclock": 1414288800000,
           "format": "+03",
           "abbrev": "+03",

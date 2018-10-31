@@ -3,6 +3,12 @@
 A separate history disconnected from source and GitHub:Pages branches used to
 archive the **Timezone** data files.
 
+ * **Timezone 1.0.19 data** including IANA TZ Database `2018f` &mdash;
+   [zip](https://github.com/bigeasy/timezone/zipball/data-v1.0.19)
+   /
+   [tar.gz](https://github.com/bigeasy/timezone/tarball/data-v1.0.19)
+   /
+   [source](https://github.com/bigeasy/timezone/tree/data-v1.0.19).
  * **Timezone 1.0.18 data** including IANA TZ Database `2018e` &mdash;
    [zip](https://github.com/bigeasy/timezone/zipball/data-v1.0.18)
    /

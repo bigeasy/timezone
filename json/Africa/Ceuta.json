@@ -20,13 +20,21 @@
         "save": 0
       },
       {
-        "wallclock": -1293840000000,
+        "wallclock": -94694400000,
         "format": "WE%sT",
         "abbrev": "WET",
         "offset": 0,
-        "posix": -1293840000000,
+        "posix": -94694400000,
         "save": 0,
         "rules": "SpainAfrica"
+      },
+      {
+        "wallclock": -1293840000000,
+        "format": "WET",
+        "abbrev": "WET",
+        "offset": 0,
+        "posix": -1293840000000,
+        "save": 0
       },
       {
         "wallclock": -1451692800000,
