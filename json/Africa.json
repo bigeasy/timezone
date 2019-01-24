@@ -5611,6 +5611,14 @@
       "Africa/Sao_Tome": [
         "z",
         {
+          "wallclock": 1546308000000,
+          "format": "GMT",
+          "abbrev": "GMT",
+          "offset": 0,
+          "posix": 1546304400000,
+          "save": 0
+        },
+        {
           "wallclock": 1514768400000,
           "format": "WAT",
           "abbrev": "WAT",
