@@ -89,10 +89,10 @@
         "to": 1960,
         "month": 8,
         "day": [
-          0,
-          18
+          6,
+          17
         ],
-        "time": 0,
+        "time": 1440,
         "clock": "wallclock",
         "save": 0,
         "letter": "S",
@@ -118,9 +118,9 @@
         "month": 8,
         "day": [
           7,
-          30
+          29
         ],
-        "time": 0,
+        "time": 1440,
         "clock": "wallclock",
         "save": 0,
         "letter": "S",
@@ -160,9 +160,9 @@
         "month": 8,
         "day": [
           7,
-          9
+          8
         ],
-        "time": 0,
+        "time": 1440,
         "clock": "wallclock",
         "save": 0,
         "letter": "S",
@@ -187,10 +187,10 @@
         "to": 1951,
         "month": 8,
         "day": [
-          0,
-          8
+          6,
+          7
         ],
-        "time": 0,
+        "time": 1440,
         "clock": "wallclock",
         "save": 0,
         "letter": "S",
@@ -230,9 +230,9 @@
         "month": 8,
         "day": [
           7,
-          13
+          12
         ],
-        "time": 0,
+        "time": 1440,
         "clock": "wallclock",
         "save": 0,
         "letter": "S",

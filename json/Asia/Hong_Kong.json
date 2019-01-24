@@ -3,11 +3,11 @@
     "Asia/Hong_Kong": [
       "z",
       {
-        "wallclock": -766713600000,
+        "wallclock": -766627200000,
         "format": "HK%sT",
         "abbrev": "HKT",
         "offset": 28800000,
-        "posix": -766746000000,
+        "posix": -766659600000,
         "save": 0,
         "rules": "HK"
       },
@@ -16,17 +16,32 @@
         "format": "JST",
         "abbrev": "JST",
         "offset": 32400000,
-        "posix": -884246400000,
+        "posix": -884248200000,
         "save": 0
       },
       {
-        "wallclock": -2056665600000,
-        "format": "HK%sT",
+        "wallclock": -891547200000,
+        "format": "HKT",
+        "abbrev": "HKT",
+        "offset": 30600000,
+        "posix": -891579600000,
+        "save": 0
+      },
+      {
+        "wallclock": -900880200000,
+        "format": "HKST",
+        "abbrev": "HKST",
+        "offset": 28800000,
+        "posix": -900909000000,
+        "save": 3600000
+      },
+      {
+        "wallclock": -2056663398000,
+        "format": "HKT",
         "abbrev": "HKT",
         "offset": 28800000,
-        "posix": -2056693002000,
-        "save": 0,
-        "rules": "HK"
+        "posix": -2056690800000,
+        "save": 0
       },
       {
         "wallclock": -1.7976931348623157e+308,
@@ -139,6 +154,20 @@
         "saved": 0
       },
       {
+        "from": 1954,
+        "to": 1964,
+        "month": 2,
+        "day": [
+          0,
+          18
+        ],
+        "time": 210,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      },
+      {
         "from": 1955,
         "to": 1964,
         "month": 10,
@@ -154,25 +183,25 @@
       },
       {
         "from": 1954,
-        "to": 1964,
-        "month": 2,
-        "day": [
-          0,
-          18
-        ],
-        "time": 210,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
-      },
-      {
-        "from": 1954,
         "to": 1954,
         "month": 9,
         "day": [
           7,
           31
+        ],
+        "time": 210,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
+      },
+      {
+        "from": 1952,
+        "to": 1953,
+        "month": 10,
+        "day": [
+          0,
+          1
         ],
         "time": 210,
         "clock": "wallclock",
@@ -193,34 +222,6 @@
         "save": 60,
         "letter": "S",
         "saved": 0
-      },
-      {
-        "from": 1953,
-        "to": 1953,
-        "month": 10,
-        "day": [
-          7,
-          1
-        ],
-        "time": 210,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
-        "from": 1952,
-        "to": 1952,
-        "month": 9,
-        "day": [
-          7,
-          25
-        ],
-        "time": 210,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
       },
       {
         "from": 1948,
@@ -299,34 +300,6 @@
         "day": [
           7,
           20
-        ],
-        "time": 210,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
-      },
-      {
-        "from": 1941,
-        "to": 1941,
-        "month": 8,
-        "day": [
-          7,
-          30
-        ],
-        "time": 210,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
-        "from": 1941,
-        "to": 1941,
-        "month": 3,
-        "day": [
-          7,
-          1
         ],
         "time": 210,
         "clock": "wallclock",

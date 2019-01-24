@@ -1285,12 +1285,13 @@
         "Africa/Casablanca": [
           "z",
           {
-            "wallclock": 1540598400000,
-            "format": "+01",
+            "wallclock": 1540695600000,
+            "format": "+01/+00",
             "abbrev": "+01",
             "offset": 3600000,
-            "posix": 1540594800000,
-            "save": 0
+            "posix": 1540692000000,
+            "save": 0,
+            "rules": "Morocco"
           },
           {
             "wallclock": 504921600000,
@@ -1330,6 +1331,566 @@
       },
       "rules": {
         "Morocco": [
+          {
+            "from": 2037,
+            "to": 2037,
+            "month": 10,
+            "day": [
+              7,
+              15
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2037,
+            "to": 2037,
+            "month": 9,
+            "day": [
+              7,
+              4
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2036,
+            "to": 2036,
+            "month": 9,
+            "day": [
+              7,
+              19
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2036,
+            "to": 2036,
+            "month": 10,
+            "day": [
+              7,
+              23
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2035,
+            "to": 2035,
+            "month": 9,
+            "day": [
+              7,
+              28
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2035,
+            "to": 2035,
+            "month": 11,
+            "day": [
+              7,
+              2
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2034,
+            "to": 2034,
+            "month": 11,
+            "day": [
+              7,
+              17
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2034,
+            "to": 2034,
+            "month": 10,
+            "day": [
+              7,
+              5
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2033,
+            "to": 2033,
+            "month": 11,
+            "day": [
+              7,
+              25
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2033,
+            "to": 2033,
+            "month": 10,
+            "day": [
+              7,
+              20
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2033,
+            "to": 2033,
+            "month": 0,
+            "day": [
+              7,
+              9
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2032,
+            "to": 2032,
+            "month": 10,
+            "day": [
+              7,
+              28
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2032,
+            "to": 2032,
+            "month": 0,
+            "day": [
+              7,
+              18
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2031,
+            "to": 2031,
+            "month": 11,
+            "day": [
+              7,
+              14
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2031,
+            "to": 2031,
+            "month": 0,
+            "day": [
+              7,
+              26
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2030,
+            "to": 2030,
+            "month": 11,
+            "day": [
+              7,
+              22
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2030,
+            "to": 2030,
+            "month": 1,
+            "day": [
+              7,
+              10
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2029,
+            "to": 2029,
+            "month": 11,
+            "day": [
+              7,
+              30
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2029,
+            "to": 2029,
+            "month": 1,
+            "day": [
+              7,
+              18
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2029,
+            "to": 2029,
+            "month": 0,
+            "day": [
+              7,
+              14
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2028,
+            "to": 2028,
+            "month": 1,
+            "day": [
+              7,
+              27
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2028,
+            "to": 2028,
+            "month": 0,
+            "day": [
+              7,
+              23
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2027,
+            "to": 2027,
+            "month": 2,
+            "day": [
+              7,
+              14
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2027,
+            "to": 2027,
+            "month": 1,
+            "day": [
+              7,
+              7
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2026,
+            "to": 2026,
+            "month": 2,
+            "day": [
+              7,
+              22
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2026,
+            "to": 2026,
+            "month": 1,
+            "day": [
+              7,
+              15
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2025,
+            "to": 2025,
+            "month": 3,
+            "day": [
+              7,
+              6
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2025,
+            "to": 2025,
+            "month": 1,
+            "day": [
+              7,
+              23
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2024,
+            "to": 2024,
+            "month": 3,
+            "day": [
+              7,
+              14
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2024,
+            "to": 2024,
+            "month": 2,
+            "day": [
+              7,
+              10
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2023,
+            "to": 2023,
+            "month": 3,
+            "day": [
+              7,
+              23
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2023,
+            "to": 2023,
+            "month": 2,
+            "day": [
+              7,
+              19
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2022,
+            "to": 2022,
+            "month": 4,
+            "day": [
+              7,
+              8
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2022,
+            "to": 2022,
+            "month": 2,
+            "day": [
+              7,
+              27
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2021,
+            "to": 2021,
+            "month": 4,
+            "day": [
+              7,
+              16
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2021,
+            "to": 2021,
+            "month": 3,
+            "day": [
+              7,
+              11
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2020,
+            "to": 2020,
+            "month": 4,
+            "day": [
+              7,
+              24
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": -3600000
+          },
+          {
+            "from": 2020,
+            "to": 2020,
+            "month": 3,
+            "day": [
+              7,
+              19
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2019,
+            "to": 2019,
+            "month": 4,
+            "day": [
+              7,
+              5
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2019,
+            "to": 2019,
+            "month": 5,
+            "day": [
+              7,
+              9
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": -3600000
+          },
           {
             "from": 2014,
             "to": 2018,
@@ -1389,20 +1950,6 @@
           {
             "from": 2017,
             "to": 2017,
-            "month": 4,
-            "day": [
-              7,
-              21
-            ],
-            "time": 180,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 3600000
-          },
-          {
-            "from": 2017,
-            "to": 2017,
             "month": 6,
             "day": [
               7,
@@ -1415,18 +1962,18 @@
             "saved": 0
           },
           {
-            "from": 2016,
-            "to": 2016,
-            "month": 6,
+            "from": 2017,
+            "to": 2017,
+            "month": 4,
             "day": [
               7,
-              10
+              21
             ],
-            "time": 120,
+            "time": 180,
             "clock": "wallclock",
-            "save": 60,
+            "save": 0,
             "letter": "",
-            "saved": 0
+            "saved": 3600000
           },
           {
             "from": 2016,
@@ -1443,12 +1990,12 @@
             "saved": 3600000
           },
           {
-            "from": 2015,
-            "to": 2015,
+            "from": 2016,
+            "to": 2016,
             "month": 6,
             "day": [
               7,
-              19
+              10
             ],
             "time": 120,
             "clock": "wallclock",
@@ -1469,6 +2016,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2015,
+            "to": 2015,
+            "month": 6,
+            "day": [
+              7,
+              19
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
           },
           {
             "from": 2014,
@@ -1501,20 +2062,6 @@
           {
             "from": 2013,
             "to": 2013,
-            "month": 7,
-            "day": [
-              7,
-              10
-            ],
-            "time": 120,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2013,
-            "to": 2013,
             "month": 6,
             "day": [
               7,
@@ -1525,6 +2072,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2013,
+            "to": 2013,
+            "month": 7,
+            "day": [
+              7,
+              10
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
           },
           {
             "from": 2012,
@@ -1543,20 +2104,6 @@
           {
             "from": 2012,
             "to": 2012,
-            "month": 7,
-            "day": [
-              7,
-              20
-            ],
-            "time": 120,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2012,
-            "to": 2012,
             "month": 6,
             "day": [
               7,
@@ -1567,6 +2114,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2012,
+            "to": 2012,
+            "month": 7,
+            "day": [
+              7,
+              20
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
           },
           {
             "from": 2012,
@@ -2856,12 +3417,13 @@
         "Africa/El_Aaiun": [
           "z",
           {
-            "wallclock": 1540598400000,
-            "format": "+01",
+            "wallclock": 1540695600000,
+            "format": "+01/+00",
             "abbrev": "+01",
             "offset": 3600000,
-            "posix": 1540594800000,
-            "save": 0
+            "posix": 1540692000000,
+            "save": 0,
+            "rules": "Morocco"
           },
           {
             "wallclock": 198288000000,
@@ -2892,6 +3454,566 @@
       },
       "rules": {
         "Morocco": [
+          {
+            "from": 2037,
+            "to": 2037,
+            "month": 10,
+            "day": [
+              7,
+              15
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2037,
+            "to": 2037,
+            "month": 9,
+            "day": [
+              7,
+              4
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2036,
+            "to": 2036,
+            "month": 9,
+            "day": [
+              7,
+              19
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2036,
+            "to": 2036,
+            "month": 10,
+            "day": [
+              7,
+              23
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2035,
+            "to": 2035,
+            "month": 9,
+            "day": [
+              7,
+              28
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2035,
+            "to": 2035,
+            "month": 11,
+            "day": [
+              7,
+              2
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2034,
+            "to": 2034,
+            "month": 11,
+            "day": [
+              7,
+              17
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2034,
+            "to": 2034,
+            "month": 10,
+            "day": [
+              7,
+              5
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2033,
+            "to": 2033,
+            "month": 11,
+            "day": [
+              7,
+              25
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2033,
+            "to": 2033,
+            "month": 10,
+            "day": [
+              7,
+              20
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2033,
+            "to": 2033,
+            "month": 0,
+            "day": [
+              7,
+              9
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2032,
+            "to": 2032,
+            "month": 10,
+            "day": [
+              7,
+              28
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2032,
+            "to": 2032,
+            "month": 0,
+            "day": [
+              7,
+              18
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2031,
+            "to": 2031,
+            "month": 11,
+            "day": [
+              7,
+              14
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2031,
+            "to": 2031,
+            "month": 0,
+            "day": [
+              7,
+              26
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2030,
+            "to": 2030,
+            "month": 11,
+            "day": [
+              7,
+              22
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2030,
+            "to": 2030,
+            "month": 1,
+            "day": [
+              7,
+              10
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2029,
+            "to": 2029,
+            "month": 11,
+            "day": [
+              7,
+              30
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2029,
+            "to": 2029,
+            "month": 1,
+            "day": [
+              7,
+              18
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2029,
+            "to": 2029,
+            "month": 0,
+            "day": [
+              7,
+              14
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2028,
+            "to": 2028,
+            "month": 1,
+            "day": [
+              7,
+              27
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2028,
+            "to": 2028,
+            "month": 0,
+            "day": [
+              7,
+              23
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2027,
+            "to": 2027,
+            "month": 2,
+            "day": [
+              7,
+              14
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2027,
+            "to": 2027,
+            "month": 1,
+            "day": [
+              7,
+              7
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2026,
+            "to": 2026,
+            "month": 2,
+            "day": [
+              7,
+              22
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2026,
+            "to": 2026,
+            "month": 1,
+            "day": [
+              7,
+              15
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2025,
+            "to": 2025,
+            "month": 3,
+            "day": [
+              7,
+              6
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2025,
+            "to": 2025,
+            "month": 1,
+            "day": [
+              7,
+              23
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2024,
+            "to": 2024,
+            "month": 3,
+            "day": [
+              7,
+              14
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2024,
+            "to": 2024,
+            "month": 2,
+            "day": [
+              7,
+              10
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2023,
+            "to": 2023,
+            "month": 3,
+            "day": [
+              7,
+              23
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2023,
+            "to": 2023,
+            "month": 2,
+            "day": [
+              7,
+              19
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2022,
+            "to": 2022,
+            "month": 4,
+            "day": [
+              7,
+              8
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2022,
+            "to": 2022,
+            "month": 2,
+            "day": [
+              7,
+              27
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2021,
+            "to": 2021,
+            "month": 4,
+            "day": [
+              7,
+              16
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2021,
+            "to": 2021,
+            "month": 3,
+            "day": [
+              7,
+              11
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2020,
+            "to": 2020,
+            "month": 4,
+            "day": [
+              7,
+              24
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": -3600000
+          },
+          {
+            "from": 2020,
+            "to": 2020,
+            "month": 3,
+            "day": [
+              7,
+              19
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2019,
+            "to": 2019,
+            "month": 4,
+            "day": [
+              7,
+              5
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": -60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2019,
+            "to": 2019,
+            "month": 5,
+            "day": [
+              7,
+              9
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": -3600000
+          },
           {
             "from": 2014,
             "to": 2018,
@@ -2951,20 +4073,6 @@
           {
             "from": 2017,
             "to": 2017,
-            "month": 4,
-            "day": [
-              7,
-              21
-            ],
-            "time": 180,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 3600000
-          },
-          {
-            "from": 2017,
-            "to": 2017,
             "month": 6,
             "day": [
               7,
@@ -2977,18 +4085,18 @@
             "saved": 0
           },
           {
-            "from": 2016,
-            "to": 2016,
-            "month": 6,
+            "from": 2017,
+            "to": 2017,
+            "month": 4,
             "day": [
               7,
-              10
+              21
             ],
-            "time": 120,
+            "time": 180,
             "clock": "wallclock",
-            "save": 60,
+            "save": 0,
             "letter": "",
-            "saved": 0
+            "saved": 3600000
           },
           {
             "from": 2016,
@@ -3005,12 +4113,12 @@
             "saved": 3600000
           },
           {
-            "from": 2015,
-            "to": 2015,
+            "from": 2016,
+            "to": 2016,
             "month": 6,
             "day": [
               7,
-              19
+              10
             ],
             "time": 120,
             "clock": "wallclock",
@@ -3031,6 +4139,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2015,
+            "to": 2015,
+            "month": 6,
+            "day": [
+              7,
+              19
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
           },
           {
             "from": 2014,
@@ -3063,20 +4185,6 @@
           {
             "from": 2013,
             "to": 2013,
-            "month": 7,
-            "day": [
-              7,
-              10
-            ],
-            "time": 120,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2013,
-            "to": 2013,
             "month": 6,
             "day": [
               7,
@@ -3087,6 +4195,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2013,
+            "to": 2013,
+            "month": 7,
+            "day": [
+              7,
+              10
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
           },
           {
             "from": 2012,
@@ -3105,20 +4227,6 @@
           {
             "from": 2012,
             "to": 2012,
-            "month": 7,
-            "day": [
-              7,
-              20
-            ],
-            "time": 120,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2012,
-            "to": 2012,
             "month": 6,
             "day": [
               7,
@@ -3129,6 +4237,20 @@
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2012,
+            "to": 2012,
+            "month": 7,
+            "day": [
+              7,
+              20
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
           },
           {
             "from": 2012,
@@ -43359,6 +44481,23 @@
         "America/Metlakatla": [
           "z",
           {
+            "wallclock": 1552186800000,
+            "format": "AK%sT",
+            "abbrev": "AKDT",
+            "offset": -32400000,
+            "posix": 1552215600000,
+            "save": 3600000,
+            "rules": "US"
+          },
+          {
+            "wallclock": 1541296800000,
+            "format": "PST",
+            "abbrev": "PST",
+            "offset": -28800000,
+            "posix": 1541325600000,
+            "save": 0
+          },
+          {
             "wallclock": 1446343200000,
             "format": "AK%sT",
             "abbrev": "AKST",
@@ -78926,11 +80065,11 @@
         "Asia/Hong_Kong": [
           "z",
           {
-            "wallclock": -766713600000,
+            "wallclock": -766627200000,
             "format": "HK%sT",
             "abbrev": "HKT",
             "offset": 28800000,
-            "posix": -766746000000,
+            "posix": -766659600000,
             "save": 0,
             "rules": "HK"
           },
@@ -78939,17 +80078,32 @@
             "format": "JST",
             "abbrev": "JST",
             "offset": 32400000,
-            "posix": -884246400000,
+            "posix": -884248200000,
             "save": 0
           },
           {
-            "wallclock": -2056665600000,
-            "format": "HK%sT",
+            "wallclock": -891547200000,
+            "format": "HKT",
+            "abbrev": "HKT",
+            "offset": 30600000,
+            "posix": -891579600000,
+            "save": 0
+          },
+          {
+            "wallclock": -900880200000,
+            "format": "HKST",
+            "abbrev": "HKST",
+            "offset": 28800000,
+            "posix": -900909000000,
+            "save": 3600000
+          },
+          {
+            "wallclock": -2056663398000,
+            "format": "HKT",
             "abbrev": "HKT",
             "offset": 28800000,
-            "posix": -2056693002000,
-            "save": 0,
-            "rules": "HK"
+            "posix": -2056690800000,
+            "save": 0
           },
           {
             "wallclock": -1.7976931348623157e+308,
@@ -79062,6 +80216,20 @@
             "saved": 0
           },
           {
+            "from": 1954,
+            "to": 1964,
+            "month": 2,
+            "day": [
+              0,
+              18
+            ],
+            "time": 210,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "S",
+            "saved": 0
+          },
+          {
             "from": 1955,
             "to": 1964,
             "month": 10,
@@ -79077,25 +80245,25 @@
           },
           {
             "from": 1954,
-            "to": 1964,
-            "month": 2,
-            "day": [
-              0,
-              18
-            ],
-            "time": 210,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 1954,
             "to": 1954,
             "month": 9,
             "day": [
               7,
               31
+            ],
+            "time": 210,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 3600000
+          },
+          {
+            "from": 1952,
+            "to": 1953,
+            "month": 10,
+            "day": [
+              0,
+              1
             ],
             "time": 210,
             "clock": "wallclock",
@@ -79116,34 +80284,6 @@
             "save": 60,
             "letter": "S",
             "saved": 0
-          },
-          {
-            "from": 1953,
-            "to": 1953,
-            "month": 10,
-            "day": [
-              7,
-              1
-            ],
-            "time": 210,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 3600000
-          },
-          {
-            "from": 1952,
-            "to": 1952,
-            "month": 9,
-            "day": [
-              7,
-              25
-            ],
-            "time": 210,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 3600000
           },
           {
             "from": 1948,
@@ -79222,34 +80362,6 @@
             "day": [
               7,
               20
-            ],
-            "time": 210,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "S",
-            "saved": 0
-          },
-          {
-            "from": 1941,
-            "to": 1941,
-            "month": 8,
-            "day": [
-              7,
-              30
-            ],
-            "time": 210,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 3600000
-          },
-          {
-            "from": 1941,
-            "to": 1941,
-            "month": 3,
-            "day": [
-              7,
-              1
             ],
             "time": 210,
             "clock": "wallclock",
@@ -86355,8 +87467,172 @@
     },
     {
       "zones": {
+        "Asia/Qostanay": [
+          "z",
+          {
+            "wallclock": 1099191600000,
+            "format": "+06",
+            "abbrev": "+06",
+            "offset": 21600000,
+            "posix": 1099170000000,
+            "save": 0
+          },
+          {
+            "wallclock": 695786400000,
+            "format": "+05/+06",
+            "abbrev": "+05",
+            "offset": 18000000,
+            "posix": 695772000000,
+            "save": 0,
+            "rules": "RussiaAsia"
+          },
+          {
+            "wallclock": 670384800000,
+            "format": "+04/+05",
+            "abbrev": "+05",
+            "offset": 14400000,
+            "posix": 670366800000,
+            "save": 3600000,
+            "rules": "RussiaAsia"
+          },
+          {
+            "wallclock": 386467200000,
+            "format": "+05/+06",
+            "abbrev": "+06",
+            "offset": 18000000,
+            "posix": 386445600000,
+            "save": 3600000,
+            "rules": "RussiaAsia"
+          },
+          {
+            "wallclock": 370742400000,
+            "format": "+06",
+            "abbrev": "+06",
+            "offset": 21600000,
+            "posix": 370720800000,
+            "save": 0
+          },
+          {
+            "wallclock": 354931200000,
+            "format": "+06",
+            "abbrev": "+06",
+            "offset": 18000000,
+            "posix": 354913200000,
+            "save": 3600000
+          },
+          {
+            "wallclock": -1247529600000,
+            "format": "+05",
+            "abbrev": "+05",
+            "offset": 18000000,
+            "posix": -1247544000000,
+            "save": 0
+          },
+          {
+            "wallclock": -1441152000000,
+            "format": "+04",
+            "abbrev": "+04",
+            "offset": 14400000,
+            "posix": -1441167268000,
+            "save": 0
+          },
+          {
+            "wallclock": -1.7976931348623157e+308,
+            "format": "LMT",
+            "abbrev": "LMT",
+            "offset": 15268000,
+            "posix": -1.7976931348623157e+308,
+            "save": 0
+          }
+        ]
+      },
+      "rules": {
+        "RussiaAsia": [
+          {
+            "from": 1985,
+            "to": 2010,
+            "month": 2,
+            "day": [
+              0,
+              -31
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 1996,
+            "to": 2010,
+            "month": 9,
+            "day": [
+              0,
+              -31
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 3600000
+          },
+          {
+            "from": 1984,
+            "to": 1995,
+            "month": 8,
+            "day": [
+              0,
+              -30
+            ],
+            "time": 180,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 3600000
+          },
+          {
+            "from": 1981,
+            "to": 1984,
+            "month": 3,
+            "day": [
+              7,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 1981,
+            "to": 1983,
+            "month": 9,
+            "day": [
+              7,
+              1
+            ],
+            "time": 0,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 3600000
+          }
+        ]
+      }
+    },
+    {
+      "zones": {
         "Asia/Qyzylorda": [
           "z",
+          {
+            "wallclock": 1545350400000,
+            "format": "+05",
+            "abbrev": "+05",
+            "offset": 18000000,
+            "posix": 1545328800000,
+            "save": 0
+          },
           {
             "wallclock": 1099191600000,
             "format": "+06",
@@ -87227,10 +88503,10 @@
             "to": 1960,
             "month": 8,
             "day": [
-              0,
-              18
+              6,
+              17
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "S",
@@ -87256,9 +88532,9 @@
             "month": 8,
             "day": [
               7,
-              30
+              29
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "S",
@@ -87298,9 +88574,9 @@
             "month": 8,
             "day": [
               7,
-              9
+              8
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "S",
@@ -87325,10 +88601,10 @@
             "to": 1951,
             "month": 8,
             "day": [
-              0,
-              8
+              6,
+              7
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "S",
@@ -87368,9 +88644,9 @@
             "month": 8,
             "day": [
               7,
-              13
+              12
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "S",
@@ -88663,14 +89939,742 @@
       "rules": {
         "Iran": [
           {
-            "from": 2036,
+            "from": 2088,
             "to": 1.7976931348623157e+308,
+            "month": 8,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2088,
+            "to": 1.7976931348623157e+308,
+            "month": 2,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2087,
+            "to": 2087,
+            "month": 2,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2087,
+            "to": 2087,
             "month": 8,
             "day": [
               7,
               21
             ],
-            "time": 0,
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2084,
+            "to": 2086,
+            "month": 2,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2084,
+            "to": 2086,
+            "month": 8,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2083,
+            "to": 2083,
+            "month": 8,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2083,
+            "to": 2083,
+            "month": 2,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2080,
+            "to": 2082,
+            "month": 8,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2080,
+            "to": 2082,
+            "month": 2,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2079,
+            "to": 2079,
+            "month": 8,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2079,
+            "to": 2079,
+            "month": 2,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2076,
+            "to": 2078,
+            "month": 2,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2076,
+            "to": 2078,
+            "month": 8,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2075,
+            "to": 2075,
+            "month": 2,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2075,
+            "to": 2075,
+            "month": 8,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2072,
+            "to": 2074,
+            "month": 8,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2072,
+            "to": 2074,
+            "month": 2,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2071,
+            "to": 2071,
+            "month": 8,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2071,
+            "to": 2071,
+            "month": 2,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2068,
+            "to": 2070,
+            "month": 8,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2068,
+            "to": 2070,
+            "month": 2,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2067,
+            "to": 2067,
+            "month": 8,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2067,
+            "to": 2067,
+            "month": 2,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2064,
+            "to": 2066,
+            "month": 8,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2064,
+            "to": 2066,
+            "month": 2,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2063,
+            "to": 2063,
+            "month": 8,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2063,
+            "to": 2063,
+            "month": 2,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2060,
+            "to": 2062,
+            "month": 2,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2060,
+            "to": 2062,
+            "month": 8,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2058,
+            "to": 2059,
+            "month": 8,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2058,
+            "to": 2059,
+            "month": 2,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2056,
+            "to": 2057,
+            "month": 8,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2056,
+            "to": 2057,
+            "month": 2,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2054,
+            "to": 2055,
+            "month": 8,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2054,
+            "to": 2055,
+            "month": 2,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2052,
+            "to": 2053,
+            "month": 8,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2052,
+            "to": 2053,
+            "month": 2,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2050,
+            "to": 2051,
+            "month": 8,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2050,
+            "to": 2051,
+            "month": 2,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2048,
+            "to": 2049,
+            "month": 8,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2048,
+            "to": 2049,
+            "month": 2,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2046,
+            "to": 2047,
+            "month": 8,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2046,
+            "to": 2047,
+            "month": 2,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2044,
+            "to": 2045,
+            "month": 8,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2044,
+            "to": 2045,
+            "month": 2,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2042,
+            "to": 2043,
+            "month": 8,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2042,
+            "to": 2043,
+            "month": 2,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2040,
+            "to": 2041,
+            "month": 8,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2040,
+            "to": 2041,
+            "month": 2,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2038,
+            "to": 2039,
+            "month": 8,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2038,
+            "to": 2039,
+            "month": 2,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2036,
+            "to": 2037,
+            "month": 8,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -88678,13 +90682,13 @@
           },
           {
             "from": 2036,
-            "to": 1.7976931348623157e+308,
+            "to": 2037,
             "month": 2,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -88696,9 +90700,9 @@
             "month": 2,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -88710,9 +90714,9 @@
             "month": 8,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -88724,9 +90728,9 @@
             "month": 8,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -88738,9 +90742,9 @@
             "month": 2,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -88752,9 +90756,9 @@
             "month": 8,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -88766,9 +90770,23 @@
             "month": 2,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2028,
+            "to": 2029,
+            "month": 2,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -88780,25 +90798,11 @@
             "month": 8,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2028,
-            "to": 2029,
-            "month": 2,
-            "day": [
-              7,
-              21
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
             "letter": "",
             "saved": 0
           },
@@ -88808,9 +90812,9 @@
             "month": 8,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -88822,9 +90826,23 @@
             "month": 2,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2024,
+            "to": 2024,
+            "month": 2,
+            "day": [
+              7,
+              20
+            ],
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -88836,37 +90854,9 @@
             "month": 8,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 0,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2024,
-            "to": 2024,
-            "month": 2,
-            "day": [
-              7,
-              21
-            ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2021,
-            "to": 2023,
-            "month": 8,
-            "day": [
-              7,
-              22
-            ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -88878,11 +90868,25 @@
             "month": 2,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
+            "letter": "",
+            "saved": 0
+          },
+          {
+            "from": 2021,
+            "to": 2023,
+            "month": 8,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 0,
             "letter": "",
             "saved": 0
           },
@@ -88892,13 +90896,13 @@
             "month": 8,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
-            "saved": 0
+            "saved": 3600000
           },
           {
             "from": 2020,
@@ -88906,9 +90910,9 @@
             "month": 2,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -88920,9 +90924,9 @@
             "month": 8,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -88934,9 +90938,9 @@
             "month": 2,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -88948,9 +90952,9 @@
             "month": 8,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -88962,9 +90966,9 @@
             "month": 2,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -88976,9 +90980,9 @@
             "month": 8,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -88990,9 +90994,9 @@
             "month": 2,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -89004,9 +91008,9 @@
             "month": 8,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -89018,23 +91022,9 @@
             "month": 2,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2009,
-            "to": 2011,
-            "month": 2,
-            "day": [
-              7,
-              22
-            ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -89046,13 +91036,27 @@
             "month": 8,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2009,
+            "to": 2011,
+            "month": 2,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
           },
           {
             "from": 2008,
@@ -89060,9 +91064,9 @@
             "month": 8,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -89074,9 +91078,9 @@
             "month": 2,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -89088,9 +91092,9 @@
             "month": 8,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -89102,9 +91106,9 @@
             "month": 2,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -89116,9 +91120,9 @@
             "month": 8,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -89130,23 +91134,9 @@
             "month": 2,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
-            "clock": "wallclock",
-            "save": 60,
-            "letter": "",
-            "saved": 0
-          },
-          {
-            "from": 2001,
-            "to": 2003,
-            "month": 2,
-            "day": [
-              7,
-              22
-            ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -89158,13 +91148,27 @@
             "month": 8,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
             "saved": 3600000
+          },
+          {
+            "from": 2001,
+            "to": 2003,
+            "month": 2,
+            "day": [
+              7,
+              21
+            ],
+            "time": 1440,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "",
+            "saved": 0
           },
           {
             "from": 2000,
@@ -89172,9 +91176,9 @@
             "month": 8,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -89186,9 +91190,9 @@
             "month": 2,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -89200,9 +91204,9 @@
             "month": 8,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -89214,9 +91218,9 @@
             "month": 2,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -89228,9 +91232,9 @@
             "month": 8,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -89242,9 +91246,9 @@
             "month": 2,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -89256,9 +91260,9 @@
             "month": 8,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -89270,9 +91274,9 @@
             "month": 2,
             "day": [
               7,
-              22
+              21
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -89284,9 +91288,9 @@
             "month": 4,
             "day": [
               7,
-              3
+              2
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -89298,9 +91302,9 @@
             "month": 2,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 60,
             "letter": "",
@@ -89312,9 +91316,9 @@
             "month": 8,
             "day": [
               7,
-              23
+              22
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -89326,9 +91330,9 @@
             "month": 8,
             "day": [
               7,
-              19
+              18
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -89340,9 +91344,9 @@
             "month": 9,
             "day": [
               7,
-              21
+              20
             ],
-            "time": 0,
+            "time": 1440,
             "clock": "wallclock",
             "save": 0,
             "letter": "",
@@ -157173,6 +159177,38 @@
         "Pacific/Chuuk": [
           "z",
           {
+            "wallclock": -770601600000,
+            "format": "+10",
+            "abbrev": "+10",
+            "offset": 36000000,
+            "posix": -770634000000,
+            "save": 0
+          },
+          {
+            "wallclock": -907372800000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -907408800000,
+            "save": 0
+          },
+          {
+            "wallclock": -1606780800000,
+            "format": "+10",
+            "abbrev": "+10",
+            "offset": 36000000,
+            "posix": -1606813200000,
+            "save": 0
+          },
+          {
+            "wallclock": -1743638400000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -1743674400000,
+            "save": 0
+          },
+          {
             "wallclock": -2177452800000,
             "format": "+10",
             "abbrev": "+10",
@@ -157181,10 +159217,18 @@
             "save": 0
           },
           {
-            "wallclock": -1.7976931348623157e+308,
+            "wallclock": -3944678400000,
             "format": "LMT",
             "abbrev": "LMT",
             "offset": 36428000,
+            "posix": -3944628428000,
+            "save": 0
+          },
+          {
+            "wallclock": -1.7976931348623157e+308,
+            "format": "LMT",
+            "abbrev": "LMT",
+            "offset": -49972000,
             "posix": -1.7976931348623157e+308,
             "save": 0
           }
@@ -158214,6 +160258,23 @@
             "save": 0
           },
           {
+            "wallclock": -802224000000,
+            "format": "G%sT",
+            "abbrev": "GST",
+            "offset": 36000000,
+            "posix": -802256400000,
+            "save": 0,
+            "rules": "Guam"
+          },
+          {
+            "wallclock": -885513600000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -885549600000,
+            "save": 0
+          },
+          {
             "wallclock": -2177452800000,
             "format": "GST",
             "abbrev": "GST",
@@ -158239,7 +160300,206 @@
           }
         ]
       },
-      "rules": {}
+      "rules": {
+        "Guam": [
+          {
+            "from": 1977,
+            "to": 1977,
+            "month": 7,
+            "day": [
+              7,
+              28
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 1977,
+            "to": 1977,
+            "month": 3,
+            "day": [
+              7,
+              24
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "D",
+            "saved": 0
+          },
+          {
+            "from": 1976,
+            "to": 1976,
+            "month": 7,
+            "day": [
+              7,
+              22
+            ],
+            "time": 121,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 1976,
+            "to": 1976,
+            "month": 4,
+            "day": [
+              7,
+              26
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "D",
+            "saved": 0
+          },
+          {
+            "from": 1974,
+            "to": 1974,
+            "month": 1,
+            "day": [
+              7,
+              24
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 1973,
+            "to": 1973,
+            "month": 11,
+            "day": [
+              7,
+              16
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "D",
+            "saved": 0
+          },
+          {
+            "from": 1970,
+            "to": 1971,
+            "month": 3,
+            "day": [
+              0,
+              -30
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "D",
+            "saved": 0
+          },
+          {
+            "from": 1970,
+            "to": 1971,
+            "month": 8,
+            "day": [
+              0,
+              1
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 1969,
+            "to": 1969,
+            "month": 7,
+            "day": [
+              7,
+              31
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 1969,
+            "to": 1969,
+            "month": 5,
+            "day": [
+              7,
+              22
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "D",
+            "saved": 0
+          },
+          {
+            "from": 1969,
+            "to": 1969,
+            "month": 0,
+            "day": [
+              7,
+              26
+            ],
+            "time": 1,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 1967,
+            "to": 1967,
+            "month": 8,
+            "day": [
+              7,
+              1
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "D",
+            "saved": 0
+          },
+          {
+            "from": 1961,
+            "to": 1961,
+            "month": 0,
+            "day": [
+              7,
+              29
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 1959,
+            "to": 1959,
+            "month": 5,
+            "day": [
+              7,
+              27
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "D",
+            "saved": 0
+          }
+        ]
+      }
     },
     {
       "zones": {
@@ -158770,6 +161030,46 @@
             "save": 0
           },
           {
+            "wallclock": -770601600000,
+            "format": "+11",
+            "abbrev": "+11",
+            "offset": 39600000,
+            "posix": -770634000000,
+            "save": 0
+          },
+          {
+            "wallclock": -907372800000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -907408800000,
+            "save": 0
+          },
+          {
+            "wallclock": -1041379200000,
+            "format": "+10",
+            "abbrev": "+10",
+            "offset": 36000000,
+            "posix": -1041418800000,
+            "save": 0
+          },
+          {
+            "wallclock": -1606780800000,
+            "format": "+11",
+            "abbrev": "+11",
+            "offset": 39600000,
+            "posix": -1606813200000,
+            "save": 0
+          },
+          {
+            "wallclock": -1743638400000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -1743678000000,
+            "save": 0
+          },
+          {
             "wallclock": -2177452800000,
             "format": "+11",
             "abbrev": "+11",
@@ -158778,10 +161078,18 @@
             "save": 0
           },
           {
-            "wallclock": -1.7976931348623157e+308,
+            "wallclock": -3944678400000,
             "format": "LMT",
             "abbrev": "LMT",
             "offset": 39116000,
+            "posix": -3944631116000,
+            "save": 0
+          },
+          {
+            "wallclock": -1.7976931348623157e+308,
+            "format": "LMT",
+            "abbrev": "LMT",
+            "offset": -47284000,
             "posix": -1.7976931348623157e+308,
             "save": 0
           }
@@ -158794,11 +161102,11 @@
         "Pacific/Kwajalein": [
           "z",
           {
-            "wallclock": 745804800000,
+            "wallclock": 745891200000,
             "format": "+12",
             "abbrev": "+12",
             "offset": 43200000,
-            "posix": 745848000000,
+            "posix": 745934400000,
             "save": 0
           },
           {
@@ -158807,6 +161115,30 @@
             "abbrev": "-12",
             "offset": -43200000,
             "posix": -7988400000,
+            "save": 0
+          },
+          {
+            "wallclock": -817430400000,
+            "format": "+11",
+            "abbrev": "+11",
+            "offset": 39600000,
+            "posix": -817462800000,
+            "save": 0
+          },
+          {
+            "wallclock": -907372800000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -907408800000,
+            "save": 0
+          },
+          {
+            "wallclock": -1041379200000,
+            "format": "+10",
+            "abbrev": "+10",
+            "offset": 36000000,
+            "posix": -1041418800000,
             "save": 0
           },
           {
@@ -158839,6 +161171,46 @@
             "abbrev": "+12",
             "offset": 43200000,
             "posix": -7988400000,
+            "save": 0
+          },
+          {
+            "wallclock": -818035200000,
+            "format": "+11",
+            "abbrev": "+11",
+            "offset": 39600000,
+            "posix": -818067600000,
+            "save": 0
+          },
+          {
+            "wallclock": -907372800000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -907408800000,
+            "save": 0
+          },
+          {
+            "wallclock": -1041379200000,
+            "format": "+10",
+            "abbrev": "+10",
+            "offset": 36000000,
+            "posix": -1041418800000,
+            "save": 0
+          },
+          {
+            "wallclock": -1606780800000,
+            "format": "+11",
+            "abbrev": "+11",
+            "offset": 39600000,
+            "posix": -1606813200000,
+            "save": 0
+          },
+          {
+            "wallclock": -1743638400000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -1743678000000,
             "save": 0
           },
           {
@@ -158922,27 +161294,27 @@
         "Pacific/Nauru": [
           "z",
           {
-            "wallclock": 294364800000,
+            "wallclock": 287460000000,
             "format": "+12",
             "abbrev": "+12",
             "offset": 43200000,
-            "posix": 294323400000,
+            "posix": 287418600000,
             "save": 0
           },
           {
-            "wallclock": -800928000000,
+            "wallclock": -767318400000,
             "format": "+1130",
             "abbrev": "+1130",
             "offset": 41400000,
-            "posix": -800960400000,
+            "posix": -767350800000,
             "save": 0
           },
           {
-            "wallclock": -877305600000,
+            "wallclock": -862876800000,
             "format": "+09",
             "abbrev": "+09",
             "offset": 32400000,
-            "posix": -877347000000,
+            "posix": -862918200000,
             "save": 0
           },
           {
@@ -159190,10 +161562,18 @@
             "save": 0
           },
           {
-            "wallclock": -1.7976931348623157e+308,
+            "wallclock": -3944678400000,
             "format": "LMT",
             "abbrev": "LMT",
             "offset": 32276000,
+            "posix": -3944624276000,
+            "save": 0
+          },
+          {
+            "wallclock": -1.7976931348623157e+308,
+            "format": "LMT",
+            "abbrev": "LMT",
+            "offset": -54124000,
             "posix": -1.7976931348623157e+308,
             "save": 0
           }
@@ -159238,6 +161618,46 @@
         "Pacific/Pohnpei": [
           "z",
           {
+            "wallclock": -770601600000,
+            "format": "+11",
+            "abbrev": "+11",
+            "offset": 39600000,
+            "posix": -770634000000,
+            "save": 0
+          },
+          {
+            "wallclock": -907372800000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -907408800000,
+            "save": 0
+          },
+          {
+            "wallclock": -1041379200000,
+            "format": "+10",
+            "abbrev": "+10",
+            "offset": 36000000,
+            "posix": -1041418800000,
+            "save": 0
+          },
+          {
+            "wallclock": -1606780800000,
+            "format": "+11",
+            "abbrev": "+11",
+            "offset": 39600000,
+            "posix": -1606813200000,
+            "save": 0
+          },
+          {
+            "wallclock": -1743638400000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -1743678000000,
+            "save": 0
+          },
+          {
             "wallclock": -2177452800000,
             "format": "+11",
             "abbrev": "+11",
@@ -159246,10 +161666,18 @@
             "save": 0
           },
           {
-            "wallclock": -1.7976931348623157e+308,
+            "wallclock": -3944678400000,
             "format": "LMT",
             "abbrev": "LMT",
             "offset": 37972000,
+            "posix": -3944629972000,
+            "save": 0
+          },
+          {
+            "wallclock": -1.7976931348623157e+308,
+            "format": "LMT",
+            "abbrev": "LMT",
+            "offset": -48428000,
             "posix": -1.7976931348623157e+308,
             "save": 0
           }
@@ -159262,6 +161690,46 @@
         "Pacific/Ponape": [
           "z",
           {
+            "wallclock": -770601600000,
+            "format": "+11",
+            "abbrev": "+11",
+            "offset": 39600000,
+            "posix": -770634000000,
+            "save": 0
+          },
+          {
+            "wallclock": -907372800000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -907408800000,
+            "save": 0
+          },
+          {
+            "wallclock": -1041379200000,
+            "format": "+10",
+            "abbrev": "+10",
+            "offset": 36000000,
+            "posix": -1041418800000,
+            "save": 0
+          },
+          {
+            "wallclock": -1606780800000,
+            "format": "+11",
+            "abbrev": "+11",
+            "offset": 39600000,
+            "posix": -1606813200000,
+            "save": 0
+          },
+          {
+            "wallclock": -1743638400000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -1743678000000,
+            "save": 0
+          },
+          {
             "wallclock": -2177452800000,
             "format": "+11",
             "abbrev": "+11",
@@ -159270,10 +161738,18 @@
             "save": 0
           },
           {
-            "wallclock": -1.7976931348623157e+308,
+            "wallclock": -3944678400000,
             "format": "LMT",
             "abbrev": "LMT",
             "offset": 37972000,
+            "posix": -3944629972000,
+            "save": 0
+          },
+          {
+            "wallclock": -1.7976931348623157e+308,
+            "format": "LMT",
+            "abbrev": "LMT",
+            "offset": -48428000,
             "posix": -1.7976931348623157e+308,
             "save": 0
           }
@@ -159404,6 +161880,23 @@
             "save": 0
           },
           {
+            "wallclock": -802224000000,
+            "format": "G%sT",
+            "abbrev": "GST",
+            "offset": 36000000,
+            "posix": -802256400000,
+            "save": 0,
+            "rules": "Guam"
+          },
+          {
+            "wallclock": -885513600000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -885549600000,
+            "save": 0
+          },
+          {
             "wallclock": -2177452800000,
             "format": "GST",
             "abbrev": "GST",
@@ -159429,7 +161922,206 @@
           }
         ]
       },
-      "rules": {}
+      "rules": {
+        "Guam": [
+          {
+            "from": 1977,
+            "to": 1977,
+            "month": 7,
+            "day": [
+              7,
+              28
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 1977,
+            "to": 1977,
+            "month": 3,
+            "day": [
+              7,
+              24
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "D",
+            "saved": 0
+          },
+          {
+            "from": 1976,
+            "to": 1976,
+            "month": 7,
+            "day": [
+              7,
+              22
+            ],
+            "time": 121,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 1976,
+            "to": 1976,
+            "month": 4,
+            "day": [
+              7,
+              26
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "D",
+            "saved": 0
+          },
+          {
+            "from": 1974,
+            "to": 1974,
+            "month": 1,
+            "day": [
+              7,
+              24
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 1973,
+            "to": 1973,
+            "month": 11,
+            "day": [
+              7,
+              16
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "D",
+            "saved": 0
+          },
+          {
+            "from": 1970,
+            "to": 1971,
+            "month": 3,
+            "day": [
+              0,
+              -30
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "D",
+            "saved": 0
+          },
+          {
+            "from": 1970,
+            "to": 1971,
+            "month": 8,
+            "day": [
+              0,
+              1
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 1969,
+            "to": 1969,
+            "month": 7,
+            "day": [
+              7,
+              31
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 1969,
+            "to": 1969,
+            "month": 5,
+            "day": [
+              7,
+              22
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "D",
+            "saved": 0
+          },
+          {
+            "from": 1969,
+            "to": 1969,
+            "month": 0,
+            "day": [
+              7,
+              26
+            ],
+            "time": 1,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 1967,
+            "to": 1967,
+            "month": 8,
+            "day": [
+              7,
+              1
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "D",
+            "saved": 0
+          },
+          {
+            "from": 1961,
+            "to": 1961,
+            "month": 0,
+            "day": [
+              7,
+              29
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 0,
+            "letter": "S",
+            "saved": 3600000
+          },
+          {
+            "from": 1959,
+            "to": 1959,
+            "month": 5,
+            "day": [
+              7,
+              27
+            ],
+            "time": 120,
+            "clock": "wallclock",
+            "save": 60,
+            "letter": "D",
+            "saved": 0
+          }
+        ]
+      }
     },
     {
       "zones": {
@@ -159644,6 +162336,38 @@
         "Pacific/Truk": [
           "z",
           {
+            "wallclock": -770601600000,
+            "format": "+10",
+            "abbrev": "+10",
+            "offset": 36000000,
+            "posix": -770634000000,
+            "save": 0
+          },
+          {
+            "wallclock": -907372800000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -907408800000,
+            "save": 0
+          },
+          {
+            "wallclock": -1606780800000,
+            "format": "+10",
+            "abbrev": "+10",
+            "offset": 36000000,
+            "posix": -1606813200000,
+            "save": 0
+          },
+          {
+            "wallclock": -1743638400000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -1743674400000,
+            "save": 0
+          },
+          {
             "wallclock": -2177452800000,
             "format": "+10",
             "abbrev": "+10",
@@ -159652,10 +162376,18 @@
             "save": 0
           },
           {
-            "wallclock": -1.7976931348623157e+308,
+            "wallclock": -3944678400000,
             "format": "LMT",
             "abbrev": "LMT",
             "offset": 36428000,
+            "posix": -3944628428000,
+            "save": 0
+          },
+          {
+            "wallclock": -1.7976931348623157e+308,
+            "format": "LMT",
+            "abbrev": "LMT",
+            "offset": -49972000,
             "posix": -1.7976931348623157e+308,
             "save": 0
           }
@@ -159716,6 +162448,38 @@
         "Pacific/Yap": [
           "z",
           {
+            "wallclock": -770601600000,
+            "format": "+10",
+            "abbrev": "+10",
+            "offset": 36000000,
+            "posix": -770634000000,
+            "save": 0
+          },
+          {
+            "wallclock": -907372800000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -907408800000,
+            "save": 0
+          },
+          {
+            "wallclock": -1606780800000,
+            "format": "+10",
+            "abbrev": "+10",
+            "offset": 36000000,
+            "posix": -1606813200000,
+            "save": 0
+          },
+          {
+            "wallclock": -1743638400000,
+            "format": "+09",
+            "abbrev": "+09",
+            "offset": 32400000,
+            "posix": -1743674400000,
+            "save": 0
+          },
+          {
             "wallclock": -2177452800000,
             "format": "+10",
             "abbrev": "+10",
@@ -159724,10 +162488,18 @@
             "save": 0
           },
           {
-            "wallclock": -1.7976931348623157e+308,
+            "wallclock": -3944678400000,
             "format": "LMT",
             "abbrev": "LMT",
             "offset": 36428000,
+            "posix": -3944628428000,
+            "save": 0
+          },
+          {
+            "wallclock": -1.7976931348623157e+308,
+            "format": "LMT",
+            "abbrev": "LMT",
+            "offset": -49972000,
             "posix": -1.7976931348623157e+308,
             "save": 0
           }
