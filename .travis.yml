@@ -18,5 +18,5 @@ branches:
 
 before_install:
   - npm install
-  - npm ls
+  - npm ls || true
   - make zic && make
