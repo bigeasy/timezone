@@ -79,20 +79,6 @@
       {
         "from": 1948,
         "to": 1949,
-        "month": 8,
-        "day": [
-          7,
-          30
-        ],
-        "time": 1440,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "S",
-        "saved": 3600000
-      },
-      {
-        "from": 1948,
-        "to": 1949,
         "month": 4,
         "day": [
           7,
@@ -105,12 +91,12 @@
         "saved": 0
       },
       {
-        "from": 1947,
-        "to": 1947,
-        "month": 9,
+        "from": 1948,
+        "to": 1949,
+        "month": 8,
         "day": [
           7,
-          31
+          30
         ],
         "time": 1440,
         "clock": "wallclock",
@@ -131,6 +117,20 @@
         "save": 60,
         "letter": "D",
         "saved": 0
+      },
+      {
+        "from": 1947,
+        "to": 1947,
+        "month": 9,
+        "day": [
+          7,
+          31
+        ],
+        "time": 1440,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "S",
+        "saved": 3600000
       },
       {
         "from": 1946,
@@ -191,20 +191,6 @@
       {
         "from": 1941,
         "to": 1941,
-        "month": 10,
-        "day": [
-          7,
-          1
-        ],
-        "time": 1440,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "S",
-        "saved": 3600000
-      },
-      {
-        "from": 1941,
-        "to": 1941,
         "month": 2,
         "day": [
           7,
@@ -217,12 +203,12 @@
         "saved": 0
       },
       {
-        "from": 1940,
-        "to": 1940,
-        "month": 9,
+        "from": 1941,
+        "to": 1941,
+        "month": 10,
         "day": [
           7,
-          12
+          1
         ],
         "time": 1440,
         "clock": "wallclock",
@@ -243,6 +229,20 @@
         "save": 60,
         "letter": "D",
         "saved": 0
+      },
+      {
+        "from": 1940,
+        "to": 1940,
+        "month": 9,
+        "day": [
+          7,
+          12
+        ],
+        "time": 1440,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "S",
+        "saved": 3600000
       }
     ]
   }

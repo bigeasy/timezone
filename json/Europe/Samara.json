@@ -92,20 +92,6 @@
   "rules": {
     "Russia": [
       {
-        "from": 1996,
-        "to": 2010,
-        "month": 9,
-        "day": [
-          0,
-          -31
-        ],
-        "time": 180,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
         "from": 1985,
         "to": 2010,
         "month": 2,
@@ -118,6 +104,20 @@
         "save": 60,
         "letter": "S",
         "saved": 0
+      },
+      {
+        "from": 1996,
+        "to": 2010,
+        "month": 9,
+        "day": [
+          0,
+          -31
+        ],
+        "time": 180,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
       },
       {
         "from": 1984,
@@ -164,34 +164,6 @@
       {
         "from": 1921,
         "to": 1921,
-        "month": 2,
-        "day": [
-          7,
-          20
-        ],
-        "time": 1380,
-        "clock": "wallclock",
-        "save": 120,
-        "letter": "+05",
-        "saved": 3600000
-      },
-      {
-        "from": 1921,
-        "to": 1921,
-        "month": 9,
-        "day": [
-          7,
-          1
-        ],
-        "time": 0,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 0
-      },
-      {
-        "from": 1921,
-        "to": 1921,
         "month": 1,
         "day": [
           7,
@@ -202,6 +174,20 @@
         "save": 60,
         "letter": "MSD",
         "saved": 0
+      },
+      {
+        "from": 1921,
+        "to": 1921,
+        "month": 2,
+        "day": [
+          7,
+          20
+        ],
+        "time": 1380,
+        "clock": "wallclock",
+        "save": 120,
+        "letter": "+05",
+        "saved": 3600000
       },
       {
         "from": 1921,
@@ -218,17 +204,31 @@
         "saved": 7200000
       },
       {
-        "from": 1919,
-        "to": 1919,
-        "month": 7,
+        "from": 1921,
+        "to": 1921,
+        "month": 9,
         "day": [
           7,
-          16
+          1
         ],
         "time": 0,
         "clock": "wallclock",
         "save": 0,
-        "letter": "MSK",
+        "letter": "",
+        "saved": 0
+      },
+      {
+        "from": 1919,
+        "to": 1919,
+        "month": 4,
+        "day": [
+          7,
+          31
+        ],
+        "time": 1380,
+        "clock": "wallclock",
+        "save": 120,
+        "letter": "MDST",
         "saved": 3600000
       },
       {
@@ -248,30 +248,16 @@
       {
         "from": 1919,
         "to": 1919,
-        "month": 4,
-        "day": [
-          7,
-          31
-        ],
-        "time": 1380,
-        "clock": "wallclock",
-        "save": 120,
-        "letter": "MDST",
-        "saved": 3600000
-      },
-      {
-        "from": 1918,
-        "to": 1918,
-        "month": 8,
+        "month": 7,
         "day": [
           7,
           16
         ],
-        "time": 60,
+        "time": 0,
         "clock": "wallclock",
-        "save": 60,
-        "letter": "MST",
-        "saved": 7200000
+        "save": 0,
+        "letter": "MSK",
+        "saved": 3600000
       },
       {
         "from": 1918,
@@ -288,18 +274,18 @@
         "saved": 0
       },
       {
-        "from": 1917,
-        "to": 1917,
-        "month": 11,
+        "from": 1918,
+        "to": 1918,
+        "month": 8,
         "day": [
           7,
-          28
+          16
         ],
-        "time": 0,
+        "time": 60,
         "clock": "wallclock",
-        "save": 0,
-        "letter": "MMT",
-        "saved": 3600000
+        "save": 60,
+        "letter": "MST",
+        "saved": 7200000
       },
       {
         "from": 1917,
@@ -314,6 +300,20 @@
         "save": 60,
         "letter": "MST",
         "saved": 0
+      },
+      {
+        "from": 1917,
+        "to": 1917,
+        "month": 11,
+        "day": [
+          7,
+          28
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "MMT",
+        "saved": 3600000
       }
     ]
   }

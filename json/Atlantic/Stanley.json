@@ -60,20 +60,6 @@
       {
         "from": 2001,
         "to": 2010,
-        "month": 8,
-        "day": [
-          0,
-          1
-        ],
-        "time": 120,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "",
-        "saved": 0
-      },
-      {
-        "from": 2001,
-        "to": 2010,
         "month": 3,
         "day": [
           0,
@@ -86,18 +72,18 @@
         "saved": 3600000
       },
       {
-        "from": 1986,
-        "to": 2000,
-        "month": 3,
+        "from": 2001,
+        "to": 2010,
+        "month": 8,
         "day": [
           0,
-          16
+          1
         ],
-        "time": 0,
+        "time": 120,
         "clock": "wallclock",
-        "save": 0,
+        "save": 60,
         "letter": "",
-        "saved": 3600000
+        "saved": 0
       },
       {
         "from": 1985,
@@ -112,6 +98,20 @@
         "save": 60,
         "letter": "",
         "saved": 0
+      },
+      {
+        "from": 1986,
+        "to": 2000,
+        "month": 3,
+        "day": [
+          0,
+          16
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
       },
       {
         "from": 1984,

@@ -51,6 +51,20 @@
       {
         "from": 2002,
         "to": 1.7976931348623157e+308,
+        "month": 3,
+        "day": [
+          0,
+          1
+        ],
+        "time": 120,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "D",
+        "saved": 0
+      },
+      {
+        "from": 2002,
+        "to": 1.7976931348623157e+308,
         "month": 9,
         "day": [
           0,
@@ -63,9 +77,9 @@
         "saved": 3600000
       },
       {
-        "from": 2002,
-        "to": 1.7976931348623157e+308,
-        "month": 3,
+        "from": 2001,
+        "to": 2001,
+        "month": 4,
         "day": [
           0,
           1
@@ -91,9 +105,9 @@
         "saved": 3600000
       },
       {
-        "from": 2001,
-        "to": 2001,
-        "month": 4,
+        "from": 1996,
+        "to": 2000,
+        "month": 3,
         "day": [
           0,
           1
@@ -117,20 +131,6 @@
         "save": 0,
         "letter": "S",
         "saved": 3600000
-      },
-      {
-        "from": 1996,
-        "to": 2000,
-        "month": 3,
-        "day": [
-          0,
-          1
-        ],
-        "time": 120,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "D",
-        "saved": 0
       },
       {
         "from": 1950,
@@ -219,20 +219,6 @@
       {
         "from": 1939,
         "to": 1939,
-        "month": 5,
-        "day": [
-          7,
-          25
-        ],
-        "time": 0,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "S",
-        "saved": 0
-      },
-      {
-        "from": 1939,
-        "to": 1939,
         "month": 1,
         "day": [
           7,
@@ -242,6 +228,20 @@
         "clock": "wallclock",
         "save": 60,
         "letter": "D",
+        "saved": 0
+      },
+      {
+        "from": 1939,
+        "to": 1939,
+        "month": 5,
+        "day": [
+          7,
+          25
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "S",
         "saved": 0
       }
     ]

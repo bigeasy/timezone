@@ -292,20 +292,6 @@
     ],
     "C-Eur": [
       {
-        "from": 1996,
-        "to": 1.7976931348623157e+308,
-        "month": 9,
-        "day": [
-          0,
-          -31
-        ],
-        "time": 180,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
         "from": 1981,
         "to": 1.7976931348623157e+308,
         "month": 2,
@@ -318,6 +304,20 @@
         "save": 60,
         "letter": "S",
         "saved": 0
+      },
+      {
+        "from": 1996,
+        "to": 1.7976931348623157e+308,
+        "month": 9,
+        "day": [
+          0,
+          -31
+        ],
+        "time": 180,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
       },
       {
         "from": 1979,
@@ -416,20 +416,6 @@
       {
         "from": 1943,
         "to": 1943,
-        "month": 9,
-        "day": [
-          7,
-          4
-        ],
-        "time": 180,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
-        "from": 1943,
-        "to": 1943,
         "month": 2,
         "day": [
           7,
@@ -440,6 +426,20 @@
         "save": 60,
         "letter": "S",
         "saved": 0
+      },
+      {
+        "from": 1943,
+        "to": 1943,
+        "month": 9,
+        "day": [
+          7,
+          4
+        ],
+        "time": 180,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
       },
       {
         "from": 1942,
@@ -472,20 +472,6 @@
       {
         "from": 1917,
         "to": 1918,
-        "month": 8,
-        "day": [
-          1,
-          15
-        ],
-        "time": 180,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
-        "from": 1917,
-        "to": 1918,
         "month": 3,
         "day": [
           1,
@@ -498,14 +484,14 @@
         "saved": 0
       },
       {
-        "from": 1916,
-        "to": 1916,
-        "month": 9,
+        "from": 1917,
+        "to": 1918,
+        "month": 8,
         "day": [
-          7,
-          1
+          1,
+          15
         ],
-        "time": 60,
+        "time": 180,
         "clock": "wallclock",
         "save": 0,
         "letter": "",
@@ -524,6 +510,20 @@
         "save": 60,
         "letter": "S",
         "saved": 0
+      },
+      {
+        "from": 1916,
+        "to": 1916,
+        "month": 9,
+        "day": [
+          7,
+          1
+        ],
+        "time": 60,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
       }
     ]
   }

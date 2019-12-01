@@ -34,6 +34,20 @@
       {
         "from": 1959,
         "to": 1959,
+        "month": 3,
+        "day": [
+          0,
+          -30
+        ],
+        "time": 120,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "D",
+        "saved": 0
+      },
+      {
+        "from": 1959,
+        "to": 1959,
         "month": 9,
         "day": [
           0,
@@ -46,8 +60,8 @@
         "saved": 3600000
       },
       {
-        "from": 1959,
-        "to": 1959,
+        "from": 1947,
+        "to": 1957,
         "month": 3,
         "day": [
           0,
@@ -74,12 +88,12 @@
         "saved": 3600000
       },
       {
-        "from": 1947,
-        "to": 1957,
+        "from": 1946,
+        "to": 1946,
         "month": 3,
         "day": [
           0,
-          -30
+          8
         ],
         "time": 120,
         "clock": "wallclock",
@@ -94,34 +108,6 @@
         "day": [
           0,
           8
-        ],
-        "time": 120,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "S",
-        "saved": 3600000
-      },
-      {
-        "from": 1946,
-        "to": 1946,
-        "month": 3,
-        "day": [
-          0,
-          8
-        ],
-        "time": 120,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "D",
-        "saved": 0
-      },
-      {
-        "from": 1945,
-        "to": 1945,
-        "month": 8,
-        "day": [
-          0,
-          -30
         ],
         "time": 120,
         "clock": "wallclock",
@@ -144,6 +130,20 @@
         "saved": 3600000
       },
       {
+        "from": 1945,
+        "to": 1945,
+        "month": 8,
+        "day": [
+          0,
+          -30
+        ],
+        "time": 120,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "S",
+        "saved": 3600000
+      },
+      {
         "from": 1942,
         "to": 1942,
         "month": 1,
@@ -155,6 +155,20 @@
         "clock": "wallclock",
         "save": 60,
         "letter": "W",
+        "saved": 0
+      },
+      {
+        "from": 1937,
+        "to": 1941,
+        "month": 3,
+        "day": [
+          0,
+          8
+        ],
+        "time": 0,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "D",
         "saved": 0
       },
       {
@@ -170,20 +184,6 @@
         "save": 0,
         "letter": "S",
         "saved": 3600000
-      },
-      {
-        "from": 1937,
-        "to": 1941,
-        "month": 3,
-        "day": [
-          0,
-          8
-        ],
-        "time": 0,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "D",
-        "saved": 0
       },
       {
         "from": 1938,
@@ -216,20 +216,6 @@
       {
         "from": 1930,
         "to": 1934,
-        "month": 9,
-        "day": [
-          0,
-          1
-        ],
-        "time": 0,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "S",
-        "saved": 3600000
-      },
-      {
-        "from": 1930,
-        "to": 1934,
         "month": 4,
         "day": [
           0,
@@ -242,14 +228,14 @@
         "saved": 0
       },
       {
-        "from": 1918,
-        "to": 1918,
+        "from": 1930,
+        "to": 1934,
         "month": 9,
         "day": [
-          7,
-          27
+          0,
+          1
         ],
-        "time": 120,
+        "time": 0,
         "clock": "wallclock",
         "save": 0,
         "letter": "S",
@@ -268,6 +254,20 @@
         "save": 60,
         "letter": "D",
         "saved": 0
+      },
+      {
+        "from": 1918,
+        "to": 1918,
+        "month": 9,
+        "day": [
+          7,
+          27
+        ],
+        "time": 120,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "S",
+        "saved": 3600000
       }
     ]
   }

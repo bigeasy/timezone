@@ -123,20 +123,6 @@
       {
         "from": 2019,
         "to": 1.7976931348623157e+308,
-        "month": 8,
-        "day": [
-          0,
-          2
-        ],
-        "time": 240,
-        "clock": "posix",
-        "save": 60,
-        "letter": "",
-        "saved": 0
-      },
-      {
-        "from": 2019,
-        "to": 1.7976931348623157e+308,
         "month": 3,
         "day": [
           0,
@@ -149,12 +135,12 @@
         "saved": 3600000
       },
       {
-        "from": 2016,
-        "to": 2018,
-        "month": 7,
+        "from": 2019,
+        "to": 1.7976931348623157e+308,
+        "month": 8,
         "day": [
           0,
-          9
+          2
         ],
         "time": 240,
         "clock": "posix",
@@ -177,12 +163,12 @@
         "saved": 3600000
       },
       {
-        "from": 2012,
-        "to": 2014,
-        "month": 8,
+        "from": 2016,
+        "to": 2018,
+        "month": 7,
         "day": [
           0,
-          2
+          9
         ],
         "time": 240,
         "clock": "posix",
@@ -205,12 +191,12 @@
         "saved": 3600000
       },
       {
-        "from": 2011,
-        "to": 2011,
-        "month": 7,
+        "from": 2012,
+        "to": 2014,
+        "month": 8,
         "day": [
           0,
-          16
+          2
         ],
         "time": 240,
         "clock": "posix",
@@ -233,18 +219,18 @@
         "saved": 3600000
       },
       {
-        "from": 2010,
-        "to": 2010,
-        "month": 3,
+        "from": 2011,
+        "to": 2011,
+        "month": 7,
         "day": [
           0,
-          1
+          16
         ],
-        "time": 180,
+        "time": 240,
         "clock": "posix",
-        "save": 0,
+        "save": 60,
         "letter": "",
-        "saved": 3600000
+        "saved": 0
       },
       {
         "from": 1999,
@@ -259,6 +245,20 @@
         "save": 60,
         "letter": "",
         "saved": 0
+      },
+      {
+        "from": 2010,
+        "to": 2010,
+        "month": 3,
+        "day": [
+          0,
+          1
+        ],
+        "time": 180,
+        "clock": "posix",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
       },
       {
         "from": 2009,
@@ -319,20 +319,6 @@
       {
         "from": 1998,
         "to": 1998,
-        "month": 8,
-        "day": [
-          7,
-          27
-        ],
-        "time": 240,
-        "clock": "posix",
-        "save": 60,
-        "letter": "",
-        "saved": 0
-      },
-      {
-        "from": 1998,
-        "to": 1998,
         "month": 2,
         "day": [
           0,
@@ -343,6 +329,20 @@
         "save": 0,
         "letter": "",
         "saved": 3600000
+      },
+      {
+        "from": 1998,
+        "to": 1998,
+        "month": 8,
+        "day": [
+          7,
+          27
+        ],
+        "time": 240,
+        "clock": "posix",
+        "save": 60,
+        "letter": "",
+        "saved": 0
       },
       {
         "from": 1991,
@@ -429,20 +429,6 @@
         "saved": 0
       },
       {
-        "from": 1987,
-        "to": 1987,
-        "month": 3,
-        "day": [
-          7,
-          12
-        ],
-        "time": 180,
-        "clock": "posix",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
         "from": 1974,
         "to": 1987,
         "month": 9,
@@ -455,6 +441,20 @@
         "save": 60,
         "letter": "",
         "saved": 0
+      },
+      {
+        "from": 1987,
+        "to": 1987,
+        "month": 3,
+        "day": [
+          7,
+          12
+        ],
+        "time": 180,
+        "clock": "posix",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
       },
       {
         "from": 1972,
@@ -529,20 +529,6 @@
       {
         "from": 1969,
         "to": 1969,
-        "month": 10,
-        "day": [
-          7,
-          23
-        ],
-        "time": 240,
-        "clock": "posix",
-        "save": 60,
-        "letter": "",
-        "saved": 0
-      },
-      {
-        "from": 1969,
-        "to": 1969,
         "month": 2,
         "day": [
           7,
@@ -553,6 +539,20 @@
         "save": 0,
         "letter": "",
         "saved": 3600000
+      },
+      {
+        "from": 1969,
+        "to": 1969,
+        "month": 10,
+        "day": [
+          7,
+          23
+        ],
+        "time": 240,
+        "clock": "posix",
+        "save": 60,
+        "letter": "",
+        "saved": 0
       },
       {
         "from": 1968,

@@ -85,6 +85,20 @@
       {
         "from": 2013,
         "to": 2013,
+        "month": 2,
+        "day": [
+          5,
+          -31
+        ],
+        "time": 60,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "S",
+        "saved": 0
+      },
+      {
+        "from": 2013,
+        "to": 2013,
         "month": 9,
         "day": [
           5,
@@ -97,14 +111,14 @@
         "saved": 0
       },
       {
-        "from": 2013,
-        "to": 2013,
-        "month": 2,
+        "from": 1997,
+        "to": 1997,
+        "month": 3,
         "day": [
-          5,
-          -31
+          7,
+          4
         ],
-        "time": 60,
+        "time": 0,
         "clock": "wallclock",
         "save": 60,
         "letter": "S",
@@ -125,12 +139,12 @@
         "saved": 0
       },
       {
-        "from": 1997,
-        "to": 1997,
+        "from": 1987,
+        "to": 1989,
         "month": 3,
         "day": [
           7,
-          4
+          1
         ],
         "time": 0,
         "clock": "wallclock",
@@ -153,12 +167,12 @@
         "saved": 3600000
       },
       {
-        "from": 1987,
-        "to": 1989,
+        "from": 1986,
+        "to": 1986,
         "month": 3,
         "day": [
           7,
-          1
+          4
         ],
         "time": 0,
         "clock": "wallclock",
@@ -181,18 +195,18 @@
         "saved": 3600000
       },
       {
-        "from": 1986,
-        "to": 1986,
-        "month": 3,
+        "from": 1982,
+        "to": 1985,
+        "month": 9,
         "day": [
           7,
-          4
+          1
         ],
         "time": 0,
         "clock": "wallclock",
-        "save": 60,
-        "letter": "S",
-        "saved": 0
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
       },
       {
         "from": 1985,
@@ -207,20 +221,6 @@
         "save": 60,
         "letter": "S",
         "saved": 0
-      },
-      {
-        "from": 1982,
-        "to": 1985,
-        "month": 9,
-        "day": [
-          7,
-          1
-        ],
-        "time": 0,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
       },
       {
         "from": 1982,

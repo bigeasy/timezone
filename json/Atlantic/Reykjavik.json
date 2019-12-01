@@ -32,20 +32,6 @@
   "rules": {
     "Iceland": [
       {
-        "from": 1967,
-        "to": 1967,
-        "month": 9,
-        "day": [
-          7,
-          29
-        ],
-        "time": 120,
-        "clock": "wallclock",
-        "save": 0,
-        "letter": "",
-        "saved": 3600000
-      },
-      {
         "from": 1947,
         "to": 1967,
         "month": 3,
@@ -58,6 +44,20 @@
         "save": 60,
         "letter": "",
         "saved": 0
+      },
+      {
+        "from": 1967,
+        "to": 1967,
+        "month": 9,
+        "day": [
+          7,
+          29
+        ],
+        "time": 120,
+        "clock": "wallclock",
+        "save": 0,
+        "letter": "",
+        "saved": 3600000
       },
       {
         "from": 1950,
@@ -160,6 +160,20 @@
       {
         "from": 1939,
         "to": 1939,
+        "month": 3,
+        "day": [
+          7,
+          29
+        ],
+        "time": 1380,
+        "clock": "wallclock",
+        "save": 60,
+        "letter": "",
+        "saved": 0
+      },
+      {
+        "from": 1939,
+        "to": 1939,
         "month": 9,
         "day": [
           7,
@@ -172,12 +186,12 @@
         "saved": 3600000
       },
       {
-        "from": 1939,
-        "to": 1939,
-        "month": 3,
+        "from": 1921,
+        "to": 1921,
+        "month": 2,
         "day": [
           7,
-          29
+          19
         ],
         "time": 1380,
         "clock": "wallclock",
@@ -200,9 +214,9 @@
         "saved": 3600000
       },
       {
-        "from": 1921,
-        "to": 1921,
-        "month": 2,
+        "from": 1917,
+        "to": 1919,
+        "month": 1,
         "day": [
           7,
           19
@@ -226,20 +240,6 @@
         "save": 0,
         "letter": "",
         "saved": 3600000
-      },
-      {
-        "from": 1917,
-        "to": 1919,
-        "month": 1,
-        "day": [
-          7,
-          19
-        ],
-        "time": 1380,
-        "clock": "wallclock",
-        "save": 60,
-        "letter": "",
-        "saved": 0
       },
       {
         "from": 1917,
