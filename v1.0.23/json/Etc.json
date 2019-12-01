@@ -1,0 +1,562 @@
+[
+  {
+    "zones": {
+      "Etc/GMT+0": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "GMT",
+          "abbrev": "GMT",
+          "offset": 0,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT+1": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "-01",
+          "abbrev": "-01",
+          "offset": -3600000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT+10": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "-10",
+          "abbrev": "-10",
+          "offset": -36000000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT+11": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "-11",
+          "abbrev": "-11",
+          "offset": -39600000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT+12": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "-12",
+          "abbrev": "-12",
+          "offset": -43200000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT+2": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "-02",
+          "abbrev": "-02",
+          "offset": -7200000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT+3": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "-03",
+          "abbrev": "-03",
+          "offset": -10800000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT+4": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "-04",
+          "abbrev": "-04",
+          "offset": -14400000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT+5": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "-05",
+          "abbrev": "-05",
+          "offset": -18000000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT+6": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "-06",
+          "abbrev": "-06",
+          "offset": -21600000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT+7": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "-07",
+          "abbrev": "-07",
+          "offset": -25200000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT+8": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "-08",
+          "abbrev": "-08",
+          "offset": -28800000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT+9": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "-09",
+          "abbrev": "-09",
+          "offset": -32400000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT-0": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "GMT",
+          "abbrev": "GMT",
+          "offset": 0,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT-1": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "+01",
+          "abbrev": "+01",
+          "offset": 3600000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT-10": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "+10",
+          "abbrev": "+10",
+          "offset": 36000000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT-11": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "+11",
+          "abbrev": "+11",
+          "offset": 39600000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT-12": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "+12",
+          "abbrev": "+12",
+          "offset": 43200000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT-13": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "+13",
+          "abbrev": "+13",
+          "offset": 46800000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT-14": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "+14",
+          "abbrev": "+14",
+          "offset": 50400000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT-2": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "+02",
+          "abbrev": "+02",
+          "offset": 7200000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT-3": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "+03",
+          "abbrev": "+03",
+          "offset": 10800000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT-4": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "+04",
+          "abbrev": "+04",
+          "offset": 14400000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT-5": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "+05",
+          "abbrev": "+05",
+          "offset": 18000000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT-6": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "+06",
+          "abbrev": "+06",
+          "offset": 21600000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT-7": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "+07",
+          "abbrev": "+07",
+          "offset": 25200000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT-8": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "+08",
+          "abbrev": "+08",
+          "offset": 28800000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT-9": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "+09",
+          "abbrev": "+09",
+          "offset": 32400000,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "GMT",
+          "abbrev": "GMT",
+          "offset": 0,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/GMT0": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "GMT",
+          "abbrev": "GMT",
+          "offset": 0,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/Greenwich": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "GMT",
+          "abbrev": "GMT",
+          "offset": 0,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/UCT": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "UTC",
+          "abbrev": "UTC",
+          "offset": 0,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/UTC": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "UTC",
+          "abbrev": "UTC",
+          "offset": 0,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/Universal": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "UTC",
+          "abbrev": "UTC",
+          "offset": 0,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  },
+  {
+    "zones": {
+      "Etc/Zulu": [
+        "z",
+        {
+          "wallclock": -1.7976931348623157e+308,
+          "format": "UTC",
+          "abbrev": "UTC",
+          "offset": 0,
+          "posix": -1.7976931348623157e+308,
+          "save": 0
+        }
+      ]
+    },
+    "rules": {}
+  }
+]
