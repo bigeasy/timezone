@@ -249,7 +249,7 @@
     , j: function (date) { return Math.floor((date.getTime() - Date.UTC(date.getUTCFullYear(), 0)) / 864e5) + 1 }
     , s: function (date) { return Math.floor(date.getTime() / 1000) }
     , C: function (date) { return Math.floor(date.getUTCFullYear() / 100) }
-    , N: function (date) { return date.getTime() % 1000 * 1000000 }
+    , N: function (date) { return nanoSubSeconds(date) }
     , m: function (date) { return date.getUTCMonth() + 1 }
     , Y: function (date) { return date.getUTCFullYear() }
     , y: function (date) { return date.getUTCFullYear() % 100 }
@@ -311,6 +311,11 @@
   context.k.style = "_";
   context.l.style = "_";
   context.e.style = "_";
+
+  function nanoSubSeconds(date) {
+    var ms = (date.getTime() % 1000 + 1000) % 1000;
+    return ms * 1e6;
+  }
 
   function weekOfYear (date, startOfWeek) {
     var diff, nyd, weekStart;
