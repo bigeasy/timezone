@@ -1,3 +1,8 @@
+- Version 1.0.24.
+
+ * Upgrade IANA TZ Database for `2019b`. #328.
+ * First day of week less than or equal to specific date. #327.
+
 - Version 1.0.23.
 
 Sat Nov 30 20:40:10 UTC 2019
