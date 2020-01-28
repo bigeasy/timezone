@@ -68,7 +68,7 @@ function write (name, skipList, data) {
   // date and we search for the day starting at the given date.
   const daysInMonth = [ 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
   for (var key in rules) rules[key] = rules[key].map(function (e) {
-    var date = /^(?:(\d+)|last(\w+)|(\w+)>=(\d+))$/.exec(e.day), day, i, I;
+    var date = /^(?:(\d+)|last(\w+)|(\w+)>=(\d+))|(\w+)<=(\d+)$/.exec(e.day), day, i, I;
     if (date[1]) {
       day = [ 7, parseInt(date[1], 10) ];
     } else if (date[2]) {
@@ -83,10 +83,15 @@ function write (name, skipList, data) {
         }
       }
       day = [ i, -daysInMonth[e.month] ];
-    } else {
+    } else if (date[3]) {
       for (i = 0, I = ABBREV.length; i < I; i++)
         if (ABBREV[i] === date[3]) break;
       day = [ i, parseInt(date[4], 10) ];
+    } else {
+      for (i = 0, I = ABBREV.length; i < I; i++)
+        if (ABBREV[i] === date[5]) break;
+      day = [ i, -parseInt(date[6], 10) ];
+      console.log(day)
     }
     // This indent style is stupid. Aesthetically unpleasing. Gap at the outset.
     // A jitter to read. What problem is it supposed to solve? A missing comma

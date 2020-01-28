@@ -12,10 +12,11 @@
   function say () { return console.log.apply(console, __slice.call(arguments, 0)) }
 */
   function actualize (entry, rule, year) {
-    var actualized, date = rule.day[1];
+    var actualized, date = Math.abs(rule.day[1]), inc = rule.day[1] / date;
 
     do {
-      actualized = new Date(Date.UTC(year, rule.month, Math.abs(date++)));
+      actualized = new Date(Date.UTC(year, rule.month, date));
+      date += inc
     } while (rule.day[0] < 7 && actualized.getUTCDay() != rule.day[0])
 
     actualized = {
