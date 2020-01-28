@@ -3,7 +3,7 @@
 
   function actualize (entry, rule, year, saved) {
     time = rule.time * 6e4;
-    var date = /^(?:(\d+)|last(\w+)|(\w+)>=(\d+))$/.exec(rule.day);
+    var date = /^(?:(\d+)|last(\w+)|(\w+)>=(\d+))|(\w+)<=(\d+)$/.exec(rule.day);
     var fields;
     if (date[1]) {
       fields = new Date(Date.UTC(year, rule.month, parseInt(date[1], 10)));
@@ -16,7 +16,7 @@
       // hour, so the hour doesn't push the day into tomorrow. If you're tempted
       // to create the full date in the loop, Amman says no.
       while ((fields = new Date(Date.UTC(year, rule.month, day))).getUTCDay() != i) day--;
-    } else {
+    } else if (date[3]) {
       var day = parseInt(date[4], 10);
       for (var i = 0, stop = ABBREV.length; i < stop; i++)
         if (ABBREV[i] === date[3]) break;
@@ -24,6 +24,15 @@
         fields = new Date(Date.UTC(year, rule.month, day));
         if (fields.getUTCDay() === i) break;
         day++;
+      }
+    } else {
+      var day = parseInt(date[6], 10);
+      for (var i = 0, stop = ABBREV.length; i < stop; i++)
+        if (ABBREV[i] === date[5]) break;
+      for (;;) {
+        fields = new Date(Date.UTC(year, rule.month, day));
+        if (fields.getUTCDay() === i) break;
+        day--;
       }
     }
 
