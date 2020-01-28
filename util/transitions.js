@@ -17,13 +17,12 @@
       // to create the full date in the loop, Amman says no.
       while ((fields = new Date(Date.UTC(year, rule.month, day))).getUTCDay() != i) day--;
     } else {
-      var min = parseInt(date[4], 10);
+      var day = parseInt(date[4], 10);
       for (var i = 0, stop = ABBREV.length; i < stop; i++)
         if (ABBREV[i] === date[3]) break;
-      day = 1;
       for (;;) {
         fields = new Date(Date.UTC(year, rule.month, day));
-        if (fields.getUTCDay() === i && fields.getUTCDate() >= min) break;
+        if (fields.getUTCDay() === i) break;
         day++;
       }
     }
