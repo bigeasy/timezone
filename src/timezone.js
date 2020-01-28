@@ -250,7 +250,7 @@
     , j: function (date) { return Math.floor((date.getTime() - Date.UTC(date.getUTCFullYear(), 0)) / 864e5) + 1 }
     , s: function (date) { return Math.floor(date.getTime() / 1000) }
     , C: function (date) { return Math.floor(date.getUTCFullYear() / 100) }
-    , N: function (date) { return date.getTime() % 1000 * 1000000 }
+    , N: function (date) { return ((date.getTime() % 1000 + 1000) % 1000) * 1000000 }
     , m: function (date) { return date.getUTCMonth() + 1 }
     , Y: function (date) { return date.getUTCFullYear() }
     , y: function (date) { return date.getUTCFullYear() % 100 }
