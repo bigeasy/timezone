@@ -60,7 +60,6 @@ bash.on('exit', (code) => {
     process.exit(1)
   } else {
     const lines = stdout.join("").split(/\n/)
-    console.log(lines)
     if (output == "locale") {
       for (const line of lines) {
         process.stdout.write(`// ${line}\n`)
@@ -71,15 +70,12 @@ bash.on('exit', (code) => {
       locale.month.abbrev = lines.shift().split(/\s+/)
       locale.month.full = lines.shift().split(/\s+/)
       let [ am, pm ] = lines.splice(0, 2)
-      console.log('!', lines, 'am', am, 'pm', pm)
       if (am && pm) {
         locale.meridiem[0] = am
         locale.meridiem[1] = pm
       }
       ;([ am, pm ] = lines.splice(0, 2))
-      console.log('!', lines, 'am', am, 'pm', pm)
       if (am && pm) {
-        console.log('>>>', am, pm, '|', locale.meridiem[0].toLowerCase())
         if (locale.meridiem[0].toLowerCase() != am) {
           throw new Error('nope')
         }
@@ -88,10 +84,8 @@ bash.on('exit', (code) => {
         }
       }
       ;([ am, pm ] = lines.splice(0, 2))
-      console.log('>>', am, pm)
       locale.date = createPattern(locale, am, pm)
       ;([ am, pm ] = lines.splice(0, 2))
-      console.log('>>', am, pm)
       locale.time24 = createPattern(locale, am, pm)
       ;([ am, pm ] = lines.splice(0, 2))
       locale.dateTime = createPattern(locale, am, pm)
@@ -107,7 +101,6 @@ bash.on('exit', (code) => {
       let [ dateFormat ] = lines.splice(0, 2)
       let [ morningTimeFormat, eveningTimeFormat ] = lines.splice(0, 2)
       let [ morningDateTimeFormat, eveningDateTimeFormat ] = lines.splice(0, 2)
-      console.log(dateFormat, eveningDateTimeFormat)
       try {
         fs.mkdirSync(`t/locale/${name}`, 0o755)
       } catch (e) {
@@ -218,7 +211,6 @@ bash.on('exit', (code) => {
 })
 let count = 0
 function createPattern (locale, am, pm) {
-    console.log(am, pm)
   am = am.replace("04", "%S")
   am = am.replace("05", "%M")
   let clock = /11/.test(pm) ? "I" : "H"
