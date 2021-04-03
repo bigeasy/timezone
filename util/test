@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if ! { ruby --version | grep -q '^ruby 1.9.3'; }
-then
-  echo "Zone verification tests fail without Ruby 1.9.3." >&2
-fi
+#if ! { ruby --version | grep -q '^ruby 1.9.3'; }
+#then
+#  echo "Zone verification tests fail without Ruby 1.9.3." >&2
+#fi
 
 # On Travis CI we need to run a little setup, print a few diagnostics.
 if [ "$TRAVIS" = "true" ]; then
