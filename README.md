@@ -36,7 +36,9 @@ A full-featured time zone aware date formatter for JavaScript.
 
 ```console
 $ git clone --quiet https://github.com/bigeasy/timezone.git
-$ cd timezone && make && npm install && npm test
+$ cd timezone 
+$ git submodule update --init --recursive
+$ make && npm install && npm test
 ```
 
 ## License
