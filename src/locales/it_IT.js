@@ -51,8 +51,8 @@ module.exports = {
     ]
   },
   "meridiem": [
-    "",
-    ""
+    "AM",
+    "PM"
   ],
   "date": "%d/%m/%Y",
   "time24": "%T",
